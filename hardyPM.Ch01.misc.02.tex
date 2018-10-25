@@ -600,8 +600,8 @@ formed by every factorial-representation possible.
 Finally,
 \(\mathbb{Q}_{01}\) is the set of ALL non-negative rational numbers less than one, 
 where \(p\) and \(q\) are co-prime. We specify the co-prime condition
-to get unique members of the set, otherwise the set isn't well defined\footnote{By definition sets
-must contain unique members.}.
+to get unique members of the set, otherwise the set isn't well defined.
+% \footnote{By definition sets must contain unique members.}.
 
 Recall that two sets, \(X\) and \(Y\) are equal if and only if, for all \(a\),
 
@@ -652,79 +652,6 @@ hence,
 \end{gather}
 }
 
-% A useful observation to make about the sets \(\mathcal{F}_k\) and \(\mathcal{S}_k\) 
-% is that \(\mathcal{F}_2
-% \subset \mathcal{F}_3
-% \subset \mathcal{F}_4
-% \subset \dots{}\)
-% and
-% \(\mathcal{S}_2
-% \subset \mathcal{S}_3
-% \subset \mathcal{S}_4
-% \subset \dots{}\).
-% 
-% Lemma 3 tells us that \(\mathcal{F}_k = \mathcal{S}_k\),
-% so proving that 
-% \(\mathcal{F}_i\) is a proper subset of its successor \(\mathcal{F}_{i+1}, \forall i \ge{} 2\)
-% means that it must be true for \(\mathcal{S}_i, \forall i \ge{} 2\).
-% However it's interesting to see the specific
-% mechanisms that makes each sequence of supersets true without relying on Lemma 3.
-% % We'll start with \(\mathcal{F}_k\).
-% 
-% For all \(\frac{p}{k!} \in \mathcal{F}_k\),
-% since \(\frac{p}{k!} = \frac{(k+1)\cdot{}p}{(k+1)\cdot{}k!} = \frac{(k+1)\cdot{}p}{(k+1)!}\),
-% and \(\frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1}\),
-% therefore \(\frac{p}{k!} \in \mathcal{F}_{k+1}\),
-% hence \(\mathcal{F}_k \subset \mathcal{F}_{k+1}\).
-% 
-% Since each successive set's size grows larger, then by induction it is straightforward to conclude that
-% \(\mathcal{F}_2
-% \subset \mathcal{F}_3
-% \subset \mathcal{F}_4
-% \subset \dots{}
-% \), for all \(\mathcal{F}_i\), \(i \ge{} 2\).
-% 
-% Similarly for \(\mathcal{S}_k\);
-% For all \(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!} \in \mathcal{S}_k\),
-% since
-% \(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!} =
-% \frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}\!+\!\frac{0}{(k+1)!}\)
-% and
-% \(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}\!+\!\frac{0}{(k+1)!}
-% \in \mathcal{S}_{k+1}\) then 
-% \(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}
-% \in \mathcal{S}_{k+1}\). Hence 
-% \(\mathcal{S}_k \subset \mathcal{S}_{k+1}\).
-% 
-% Since each successive set's size grow larger, then
-% by induction it is straightforward to conclude that
-% \(\mathcal{S}_2
-% \subset \mathcal{S}_3
-% \subset \mathcal{S}_4
-% \subset \dots{}
-% \), for all \(\mathcal{S}_i\), \(i \ge{} 2\).
-% 
-% This infinite chain of supersets helps us to think about the
-% meaning of our new sets
-% \(\mathcal{F}\) and \(\mathcal{S}\), each of which are defined as a union of 
-% an infinite sequence of \(\mathcal{F}_i\)'s and \(\mathcal{S}_i\)'s.
-% 
-% We can imagine that as
-% we build up either master-set by including each successive
-% \(\mathcal{F}_i\) or \(\mathcal{S}_i\), that either we're only adding
-% new elements to the ones that we've already gathered up, or we're simply tossing
-% the whole previous collection out, then using the entire contents of
-% the new largest set in its place. Either way of thinking about
-% building up our infinite union of sets is valid.
-% 
-% For all \(a \in \mathcal{S}\), the factorial-representation for \(a\) is unique.
-% This is fairly trivial to see, because by definition an element of a set is unique,
-% and since no elements ever disappear from a union of sets, then it must be true.
-% However to shed more light on the matter, once a particular rational number \(\frac{p}{k!}\)
-% finds it's way into one of the sets \(\mathcal{S}_i\) for some \(i\), then it will forever
-% be in all successive sets \(\mathcal{S}_n\) for \(n > i\), and it's factorial-representation is
-% unique within each of those successively larger sets.
-
 For all \(\frac{p}{k} \in \mathbb{Q}_{01}\) we have
 \(\frac{p}{k} \in{} \mathcal{F}_k\) because,
 {\small
@@ -762,6 +689,90 @@ hence by the transitivity of equality, and equation \eqref{eqn2} above,
 \end{center}
 
 QED.
+
+\section*{Corollary to Lemma 4}
+
+The factorial-representation for every rational number in \(\mathbb{Q}_{01}\) is \emph{unique}.
+
+The corollary is a direct result of the fact that
+the sets \(\mathcal{S}\) and \(\mathbb{Q}_{01}\) are equal.
+
+That statement is sufficient to prove the corollary, so you can skip to
+the actual proof of the ``Factorial Representation Theorem'' if you like, however
+to shed a little more light on why this corollary is true, it's worth looking at a few details.
+
+We first note that
+\(\mathcal{F}_2
+\subset \mathcal{F}_3
+\subset \mathcal{F}_4
+\subset \dots{}\) because,
+for all \(\frac{p}{k!} \in \mathcal{F}_k\),
+since \(\frac{p}{k!} = \frac{(k+1)\cdot{}p}{(k+1)\cdot{}k!} = \frac{(k+1)\cdot{}p}{(k+1)!}\),
+and \(\frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1}\),
+therefore \(\frac{p}{k!} \in \mathcal{F}_{k+1}\),
+hence \(\mathcal{F}_k \subset \mathcal{F}_{k+1}\).
+
+% and
+% Lemma 3 tells us that \(\mathcal{F}_k = \mathcal{S}_k\),
+% so proving that 
+% \(\mathcal{F}_i\) is a proper subset of its successor \(\mathcal{F}_{i+1}, \forall i \ge{} 2\)
+% means that it must be true for \(\mathcal{S}_i, \forall i \ge{} 2\).
+% However it's interesting to see the specific
+% mechanisms that makes each sequence of supersets true without relying on Lemma 3.
+% We'll start with \(\mathcal{F}_k\).
+
+Since each successive set's size grows larger, then by induction it is straightforward to conclude that
+\(\mathcal{F}_2
+\subset \mathcal{F}_3
+\subset \mathcal{F}_4
+\subset \dots{}
+\), for all \(\mathcal{F}_i\), \(i \ge{} 2\).
+
+Similarly
+\(\mathcal{S}_2
+\subset \mathcal{S}_3
+\subset \mathcal{S}_4
+\subset \dots{}\), because
+for all \(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!} \in \mathcal{S}_k\),
+since\newline
+\(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!} =
+\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}\!+\!\frac{0}{(k+1)!}\)
+and
+\(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}\!+\!\frac{0}{(k+1)!}
+\in \mathcal{S}_{k+1}\) then,\newline
+\(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}
+\in \mathcal{S}_{k+1}\). Hence 
+\(\mathcal{S}_k \subset \mathcal{S}_{k+1}\).
+
+Since each successive set's size grow larger, then
+by induction it is straightforward to conclude that
+\(\mathcal{S}_2
+\subset \mathcal{S}_3
+\subset \mathcal{S}_4
+\subset \dots{}
+\), for all \(\mathcal{S}_i\), \(i \ge{} 2\).
+
+This infinite chain of supersets helps us to think about the
+meaning of our new sets
+\(\mathcal{F}\) and \(\mathcal{S}\), each of which are defined as a union of 
+an infinite sequence of \(\mathcal{F}_i\)'s and \(\mathcal{S}_i\)'s.
+
+We can imagine that as
+we build up either master-set by including each successive
+\(\mathcal{F}_i\) or \(\mathcal{S}_i\), that either we're only adding
+new elements to the ones that we've already gathered up, or we're simply tossing
+the whole previous collection out, then using the entire contents of
+the new largest set in its place. Either way of thinking about
+building up our infinite union of sets is valid.
+
+% For all \(a \in \mathcal{S}\), the factorial-representation for \(a\) is unique.
+% This is fairly trivial to see, because by definition an element of a set is unique,
+% and since no elements ever disappear from a union of sets, then it must be true.
+% However to shed more light on the matter, 
+So once a particular rational number \(\frac{p}{q} \in \mathbb{Q}_{01}\)
+finds it's way into one of the sets \(\mathcal{S}_i\) for some \(i\), then it will forever
+be in all successive sets \(\mathcal{S}_n\) for \(n > i\), and it's factorial-representation is
+unique within each of those successively larger sets.
 
 \section*{Factorial Representation Theorem}
 
@@ -808,22 +819,22 @@ Which tells us that all positive rational numbers \(\frac{j}{q}\) can be
 written as
 an integer part, \(i\), plus a fractional part \(\frac{p}{q}\), where \(0\le{}\frac{p}{q}<1\).
 
-% In our theorem, the \(a_1\) variable plays the role of the integer part \(i\),
-% and the rest of the expression, \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-% plays the role of the fractional part \(\frac{p}{q}\), where \(0\le{}\frac{p}{q}<1\).
-
 Apply the Euclidean Division Theorem to \(\frac{j}{q}\) and let \(a_1 = i\). If there is no fractional remainder, then
 the theorem has been proven.
 
 When there is a non-zero fractional remainder \(\frac{p}{q}\), then 
-by Lemma 4 we know that \(\frac{p}{q} \in \mathcal{S}\).
+by the Corollary to Lemma 4 we know that there is a
+unique factorial-representation for \(\frac{p}{q}\).
 
-So \(\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\), for some
-\(k \ge{} 2\), and this sum is uniquely associated
-with \(\frac{p}{q}\) (because \(\mathcal{S}\) and \(\mathbb{Q}_{01}\) are equal, and
-all the elements of \(\mathbb{Q}_{01}\) are unique ((( ** BULLSHIT WARNING ** - need to go 
-back, my defn for Q01 did not account for eg 1/2, 2/4, 3,6 etc all are mapped to 1/2! )))
-therefore
+So \(\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_n}{n!} \in \mathcal{S}_n\), for some
+\(n \ge{} 2\), and this sum is uniquely associated with \(\frac{p}{q}\).
+If we choose \(k\) such that \(a_k \ne{} 0 \) but \(a_{k+1} =
+a_{k+2} =
+a_{k+3} =
+\dots{} =
+a_{n-1} =
+a_{n} = 0\) then we can satisfy the condition that the last term in the sum is non-zero, and hence:
+
 \(\frac{j}{q} = a_1 + \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
 is uniquely associated with all positive rational numbers \(\frac{j}{q}\).
 
