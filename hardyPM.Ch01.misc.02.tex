@@ -100,9 +100,9 @@
 %\normalsize
 % \bigskip
 
-Miscellaneous example\footnote{Hardy doesn't call them `Exercises' or `Questions', but that's what they
-are, math exercises for the student.} \#2 at the end
-of chapter 1 in Hardy's `Pure Mathematics'
+Miscellaneous example-2\footnote{Hardy doesn't call them `Exercises' or `Questions', but that's what they
+are, math exercises for the student.} at the end
+of chapter 1 in G. H. Hardy's `A Course of Pure Mathematics'
 presents us with a fascinating result.
 The theorem feels like what the `\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0}
 {basis-representation-theorem}'
@@ -135,16 +135,11 @@ where \(a_1, a_2, \dots{}, a_k\) are integers, and
 
 \section*{Observations that led me to the proof.}
 
-% The first thing to note are the ranges of the integers \(a_1, a_2, a_3, \dots{}, a_k\).
+% What follow are some thoughts
+% that pointed me in a certain direction,
+% which led to the proof below.
 
-% The first one, \(a_1\), is just a plain-old non-negative integer.
-
-% The crux of the problem seemed to be showing that \emph{every} rational number has such a representation -
-% Proving uniqueness didn't seem as daunting.
-Here are some thoughts that pointed me in
-a certain direction that led me to the proof below.
-
-We know that any positive rational number\footnote{Every variable,
+I know that any positive rational number\footnote{Every variable,
 or constant (eg. \(a_1, a_k, m, n, i, p, q\)) in this
 paper is going to represent a non-negative integer. We aren't dealing with `real numbers' here, just
 non-negative rational numbers which we will always discuss in terms of one integer divided
@@ -154,7 +149,7 @@ written as an
 integer part, \(i\), plus a fractional part, \(\frac{p}{q}\), such that
 \(\frac{m}{q} = i + \frac{p}{q}\), where \(0 \le{} \frac{p}{q} < 1\) (note that \(i\) can be zero).
 
-So if we're trying to represent any positive
+So trying to represent any positive
 rational number \(\frac{m}{q}\) in the form of the theorem then the integer \(a_1\)
 wants to play the role of the integer part, \(i\),
 and the remainder of the expression \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
@@ -179,17 +174,12 @@ looks to be playing the role of the rational part, \(\frac{p}{q}\), where,
 It seemed to me a good idea to forget about the integer \(a_1\)
 and just focus on the integers \(a_2, a_3, \dots{}, a_k\).
 In other words,
-first prove the theorem for rational numbers \(\frac{p}{q}\),
-where \(0 \le{} \frac{p}{q} < 1\); it should then be simple to extend it to ALL rational numbers
-by dealing with 
-the \(a_1\) later.
-Also, it started to become clear that including zero (that is, not JUST positive rational numbers) was
-going to make things easier with the approach I wanted
-to follow\footnote{Did you notice how the theorem restricts the last integer, \(a_k\), to
-be strictly greater than zero, unlike all the other variables? We loosen up that
-restriction by allowing \(a_k\) to be equal to zero so that
-all the variables are treated the same. At the very end of the
-proof it's easy to reintroduce that restriction on the integer \(a_k\).}.
+first prove a restricted form of the theorem for rational numbers between zero and one,
+then later prove the full theorem by adding back the \(a_1\) to get all positive rational numbers.
+
+Also, it became clear that including zero (that is, not JUST positive rational numbers) was
+going to make things easier with this more restrictive approach of forgetting all the
+rational numbers greater than or equal to one.
 
 At first, it wasn't remotely obvious how I'd go about calculating
 the values of the integers \(a_2, a_3, \dots{}, a_k\) for a given rational number
@@ -200,7 +190,7 @@ let alone that it would be unique.
 
 After playing around for a while, and finally figuring out
 a way to calculate the variables \(a_2, a_3, \dots{}, a_k\)
-for a given rational number,
+for a given rational number
 % \(\frac{p}{q}\),
 (it's kinda like doing long-division)
 a few patterns started to jump out at me.
@@ -240,12 +230,16 @@ that if I assigned the largest possible values to the variables,
 % from \(a_2\) up to \(a_k\) (with all subsequent variables being zero)
 I would get the rational number \(\frac{k!-1}{k!}\),
 which is as close to 1 as one can get with a denominator of \(k!\) without actually
-hitting 1. (What happens if we add \(\frac{1}{k!}\) to \(\frac{k!-1}{k!}\)?)
+hitting 1. (What is \(\frac{1}{k!} + \frac{k!-1}{k!}\)?)
 This turned out to be
 a pretty useful observation, and it became `Lemma 1' in what follows.
 
-Also, if we assign zeros to all the variables then naturally we get \(\frac{0}{k!}\), plus
-it's pretty obvious to figure out how to make the smallest such non-zero rational number: \(\frac{1}{k!}\).
+Also, assigning zeros to all the variables then naturally we get \(\frac{0}{k!}\)
+which is the smallest non-negative value possible.
+
+Furthermore it's pretty obvious how to make the smallest such positive rational number: \(\frac{1}{k!}\) by
+letting all the terms be zero except for \(a_k = 1\).
+
 Then thinking about continually adding \(\frac{1}{k!}\) to the result, we get an idea about how the
 \(a_i\) variables change as you keep incrementing by \(\frac{1}{k!}\).
 
