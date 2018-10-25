@@ -99,7 +99,7 @@
 In the delightful film ``\href{https://en.wikipedia.org/wiki/School_of_Rock}{School
 of Rock}'' Jack Black's character is put on the spot when
 the school principle comes into class and demands that he show
-her his teaching methods which involve an electric guitar.
+her his teaching methods which apparently involve an electric guitar.
 So he sings ``\href{https://www.youtube.com/watch?v=aa8U0nL-KXg}{The
 Math Song}'' wherein the final line of his
 improvised tune is ``\dots{}yes it's 9, and that's a magic-number\dots{}''
@@ -157,14 +157,15 @@ which of course is divisible by 3, but not by 9.
 So given that the term ``magic-number'' hasn't got
 a formal definition in the math world, I think it's time to give it one.
 How about if we call ANY number that has this
-divisibility property when adding up its digits a ``magic-number''?
+divisibility property (with respect to adding up the digits of some other number) a ``magic-number''?
 
 Too bad 3 and 9 are the only magic-numbers in base-10,
 but what about other bases?
 The heptapods in the film ``Arrival'' have 7 limbs, 3 arms and 4 legs, with 7 fingers/toes each.
 I'm going to guess that they probably use some form of positional
 notation, but instead of base-10 they probably use base-7, base-21,
-maybe even base-49. An understanding of magic-numbers in one-of-those-bases
+maybe even base-49\footnote{For an understanding of alternate bases please see
+the paper ``\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0} {Counting}'' by James Philip Rowell}. An understanding of magic-numbers in one-of-those-bases
 might come in handy when trying to learn their times-tables!
 
 Let's examine some magic-numbers
@@ -202,9 +203,7 @@ then we don't need to go to any trouble of adding up digits to find this out.
 So let's exclude 1 from being considered as a magic-number - it's not helpful.
 
 Let's review what it means for a number to be divisible 
-by another number\footnote{See
-``\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0} {Counting}'' p. 21,
-also written by J.P. Rowell}.
+by another number\footnote{``\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0} {Counting}'' p. 21}.
 
 \section*{Euclidean Division Theorem}
 \begin{jprIn}
@@ -224,12 +223,11 @@ r is the \emph{remainder} & (``the leftover'')
 \end{jprIn}
 \end{jprIn}
 
-So to say that a number $a$ is divisible by $b$ simply means that $r$ is zero.
-
-In other words, to say an integer $a$ is divisible by another integer $b$
-(not zero) means there is a third integer $q$ such that\footnote{Paraphrased
+So to say that $a$ is divisible by $b$ simply means\footnote{Paraphrased
 from ``An Introduction to the Theory of Numbers" by G. H. Hardy
-and E. M. Wright. Pg 1.}:
+and E. M. Wright. Pg 1.}
+that $r$ is zero
+so we can write:
 \[a=q\cdot{}b\text{\hspace{2.5em}or\hspace{2.5em}}\frac{a}{b}=q\]
 We express the fact that $a$ is divisible by $b$, and say
 ``$b$ divides $a$'' using this notation:
@@ -243,8 +241,8 @@ also
 In order to create our theorem with a 
 nice definition for ``magic-number''
 we need to remind ourselves 
-what it means to write a number in a given base\footnote{Also from
-``\href{https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0} {Counting} p. 2''}:
+what it means to write a number in a given
+base\footnote{``\href{https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0} {Counting} p. 2''}:
 
 \section*{Basis Representation Theorem}
 \begin{jprIn}
@@ -261,6 +259,9 @@ Definition: $n$ is represented in base-$b$ by the string
 of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
 \end{jprIn}
 
+\bigskip
+Armed with our divisibility notation above plus what it means to
+express an arbitrary number in a given base we can state our new theorem as follows.
 \section*{Magic-Number Theorem}
 \begin{jprIn}
 Let
