@@ -104,11 +104,11 @@ Miscellaneous example\footnote{Hardy doesn't call them `Exercises' or `Questions
 are, math exercises for the student, like calculations to perform, theorems to prove etc.} \#2 at the end
 of chapter 1 in Hardy's `Pure Mathematics'
 presents us with a fascinating result (which was new to me).
-The theorem feels like what the
-basis-representation-theorem is for integers, but this one is for rational numbers, \dots{} beautiful!
+The theorem feels like what the `\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0}
+{basis-representation-theorem}'
+is for integers, but this one is for rational numbers, \dots{} beautiful!
 
-\section*{Factorial Representation Theorem\footnote{...anyway, that's what
-I'm calling the theorem.}}
+\section*{Factorial Representation Theorem\footnote{...it's not named in the text but what I'm calling the theorem!}}
 
 Any positive rational number can be expressed in one and only one way in the form
 {\small
@@ -133,26 +133,26 @@ where \(a_1, a_2, \dots{}, a_k\) are integers, and
 \end{center}
 }
 
-\section*{Observations to get us started.}
+\section*{Observations that lead to the proof.}
 
-The first thing to note are the ranges of the coefficients \(a_1, a_2, a_3, \dots{}, a_k\).
+% The first thing to note are the ranges of the coefficients \(a_1, a_2, a_3, \dots{}, a_k\).
 
-The first one, \(a_1\), is unrestricted in terms of how big it can be. It's just a plain-old non-negative
-integer, which is pretty obvious because it has no other number dividing it.
+% The first one, \(a_1\), is just a plain-old non-negative integer.
 
 We know that any rational number\footnote{Every variable,
 coefficient or constant (eg. \(a_1, a_k, m, n, i, p, q\)) in this
 paper is going to represent a non-negative integer. We aren't dealing with `real numbers' here, just
 rational numbers which we will always discuss in terms of one integer divided
 by another integer, like \(\frac{p}{q}\).}, say \(\frac{m}{q}\), can be written as an
-integer
-\(i\), part PLUS a fractional part \(\frac{p}{q}\) such that
+integer part,
+\(i\), PLUS a fractional part, \(\frac{p}{q}\), such that
 \(\frac{m}{q} = i + \frac{p}{q}\), where \(0 \le{} \frac{p}{q} < 1\) (note that \(i\) can be zero).
 
 So if we're trying to represent any positive rational number \(\frac{m}{q}\) in terms
-of the theorem then the \(a_1\) term will be the integer part, \(i\),
+of the theorem then the \(a_1\) term
+wants to play the role of the integer part, \(i\),
 and the remainder of the expression \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-should be the rational part, \(\frac{p}{q}\), such that,
+looks to be playing the roll of the rational part, \(\frac{p}{q}\), such that,
 
 {\small
 \bgroup                                  %% open the group
@@ -171,17 +171,21 @@ should be the rational part, \(\frac{p}{q}\), such that,
 }
 
 It seemed to me a good idea to forget about the \(a_1\) term
-and just focus on the \(a_1, a_2, a_3, \dots{}, a_k\) terms.
-So I began to only focus on proving the theorem for rational numbers \(\frac{p}{q}\),
-such that \(0 \le{} \frac{p}{q} < 1\), as it would be trivial to extend it to all rational numbers later.
+and just focus on the \(a_2, a_3, \dots{}, a_k\) terms.
+In other words,
+prove the theorem for rational numbers \(\frac{p}{q}\),
+such that \(0 \le{} \frac{p}{q} < 1\), then it would be trivial to extend it to ALL rational numbers
+by tacking the \(a_1\) term back on at the end of the proof.
 Also, it started to become clear that including zero (that is, not JUST positive rational numbers) was
-going to simplify the task too\footnote{Did you notice how the theorem restricts the last term, \(a_k\), to
+going to simplify the task\footnote{Did you notice how the theorem restricts the last term, \(a_k\), to
 be strictly greater than zero, unlike all the other terms? We loosen up that
 restriction allow \(a_k\) to be equal to zero so all the terms are treated the same. At the very end of the
 proof it's trivial to reintroduce that restriction on the \(a_k\) term.}.
 
-At first glance it not even remotely obvious how you'd go about finding such
+At first glance it wasn't remotely obvious to me how I'd go about finding such
 an assignment of coefficients \(a_2, a_3, \dots{}, a_k\) for a given rational number
+\(\frac{p}{q}\), such that
+\(0 \le{} \frac{p}{q} < 1\),
 let alone that it would be unique.
 
 After playing around for a good chunk of time, and finally figuring out
@@ -190,8 +194,9 @@ for a given rational number \(\frac{p}{q}\), a few thing started to jump out at 
 For starters look at these particular rational numbers,
 
 {\small
-\bgroup                                  %% open the group
-\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
+\bgroup
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
 \begin{gather*}
 \frac{1}{2}
 = \frac{1}{1\cdot{}2}
@@ -211,11 +216,12 @@ For starters look at these particular rational numbers,
 + \frac{2\cdot{}4}{1\cdot{}2\cdot{}3\cdot{}4}
 + \frac{3}{1\cdot{}2\cdot{}3\cdot{}4}
 = \frac{12+8+3}{24}
-= \frac{4!-1}{4!}\\
+= \frac{4!-1}{4!}
 \end{gather*}
 \egroup
 }
-This was a pretty strong hint! It seemed to be the case
+
+Good clue! It seemed to be the case
 that if we assign the largest possible values to the coefficients,
 from \(a_2\) up to say \(a_k\) we get this rational number, \(\frac{k!-1}{k!}\).
 This number is as close to 1 as you can get with a denominator of \(k!\) without actually
@@ -242,6 +248,23 @@ Hmmmmm, the following set has \(k!\) members,
 \(\{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}\).
 So that, plus one or two other thoughts is what lead me to the proof below. I won't spoil the rest of it,
 to find out, go ahead and read the rest of the paper!
+
+\section*{Definitions}
+
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}
+\begin{center}
+\begin{gather*}
+\mathcal{S}_k = \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\enspace\mid\enspace 
+0\! \le{}\! a_2\! <\! 2,\enspace 
+0\! \le{}\! a_3\! <\! 3,\enspace 
+\dots{},\enspace 0\! \le{}\! a_k\! <\! k\},\\
+\mathcal{F}_k = \{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}
+\end{gather*}
+\end{center}
+\egroup
+}
 
 \break
 \section*{Lemma-1}
@@ -307,36 +330,18 @@ QED
 \end{center}
 \section*{Lemma-3}
 
-For any integer \(k \ge{} 2\), and integers \(a_2, a_3, \dots{} a_k,\) the set of rational numbers,
-
 {\small
 \bgroup                                  %% open the group
 \setlength{\abovedisplayskip}{0pt}
 \begin{center}
 \begin{equation*}
-\mathcal{S}_k = \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\enspace\mid\enspace 
-0\! \le{}\! a_2\! <\! 2,\enspace 
-0\! \le{}\! a_3\! <\! 3,\enspace 
-\dots{},\enspace 0\! \le{}\! a_k\! <\! k\},
+\mathcal{S}_k = \mathcal{F}_k
 \end{equation*}
 \end{center}
 \egroup
 }
 
-is identical to the set of rational numbers,
-
-{\small
-\bgroup                                  %% open the group
-\setlength{\abovedisplayskip}{0pt}
-\begin{center}
-\begin{equation*}
-\mathcal{F}_k = \{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}
-\end{equation*}
-\end{center}
-\egroup
-}
-
-Which implies that for every rational number \(0 \le{} \frac{p}{k!} < 1\)
+Corollary: For integers \(p, k\), where \(k \ge{} 2\), every rational number \(\frac{p}{k!}\), where \(0 \le{} \frac{p}{k!} < 1\),
 there is a unique sequence of integers \(a_2, a_3, \dots{} a_k\) such that,
 
 {\small
