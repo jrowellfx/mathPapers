@@ -591,19 +591,8 @@ between the sets
 
 {\small
 \begin{gather*}
-\mathcal{F} = \bigcup\limits_{k=2}^{\infty} \{\frac{p}{k!} \mid p \in \mathbb{Z}, 0 \le{} p < k!\}\\
-% \mathcal{F} = \{\frac{p}{k!} \mid
-% p,k \in \mathbb{Z}, k \ge{} 2, 0 \le{} p < k!\}\\
-\mathcal{S} = \{0\} \cup \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{}
-+ \frac{a_{k-1}}{(k\!-\!1)!}
-+ \frac{a_k}{k!}
-\mid
-k\!\ge{}\!2,\ 
-0\!\le{}\!a_2\!<\!2,\ 
-0\!\le{}\!a_3\!<\!3,\ 
-\dots{},\ 
-0\!\le{}\!a_{k-1}\!<\!k\!-\!1,\ 
-1\!\le{}\!a_k\!<\!k\}\\
+\mathcal{F} = \bigcup\limits_{k=2}^{\infty} \mathcal{F}_k \\
+\mathcal{S} = \bigcup\limits_{k=2}^{\infty} \mathcal{S}_k \\
 \mathbb{Q}_{01} = \{\frac{p}{q} \mid p, q \in \mathbb{Z},\text{ where } q \ge{} 2,\ 0 \le{} p < q,
 \text{ and } \gcd(p,q) = 1\}
 \end{gather*}
@@ -613,30 +602,15 @@ k\!\ge{}\!2,\
 all possible factorials as the denominator.
 
 \(\mathcal{S}\) is the set of ALL non-negative rational numbers, less than one,
-formed by every possible sum of the form we've been examining,
-whose smallest term
-is non-zero, in union with the set 
-\(\{0\}\) since otherwise the integer zero would be excluded.
+formed by every possible sum of the form we've been examining.
 
 Finally,
 \(\mathbb{Q}_{01}\) is just the set of ALL non-negative rational numbers less than one, 
 where \(p\) and \(q\) are co-prime. We specify the co-prime condition
 to get unique members of the set, otherwise the set isn't well defined (i.e.; by definition sets
-only contain unique members). 
+must contain unique members). 
 
-Here's what it means for a set to be the limit of a sequence of sets, using \(\mathcal{F}\) as an example:
-
-The set \(\mathcal{F}\) is the limit of the sequence
-\(\mathcal{F}_2, \mathcal{F}_3, \mathcal{F}_4, \dots{}\), if and only if for all \(a;\newline
-a \in \mathcal{F}\ \Leftrightarrow\ 
-\exists N, \text{ such that }
-\forall n \ge N, a \in \mathcal{F}_n.\)
-
-In plain English that means every element of \(\mathcal{F}\)
-is in all but finitely many \(\mathcal{F}_i\), or in our case it turns out that
-if an element is in some \(\mathcal{F}_i\), then it's in \(\mathcal{F}\) and visa versa.
-
-Also, two infinite sets, \(X\) and \(Y\) are equal if and only if, for all \(a\),
+Recall that two sets, \(X\) and \(Y\) are equal if and only if, for all \(a\),
 
 {\normalsize
 \bgroup                                  %% open the group
@@ -653,7 +627,6 @@ a \in Y.
 \egroup
 }
 
-\break
 \section*{Lemma 4}
 
 {\normalsize
@@ -668,8 +641,79 @@ a \in Y.
 \egroup
 }
 
+\break
 \subsubsection*{Proof}
 
+A useful observation to make about the sets \(\mathcal{F}_k\) and \(\mathcal{S}_k\) 
+is that \(\mathcal{F}_2
+\subset \mathcal{F}_3
+\subset \mathcal{F}_4
+\subset \dots{}\)
+and
+\(\mathcal{S}_2
+\subset \mathcal{S}_3
+\subset \mathcal{S}_4
+\subset \dots{}\).
+
+Lemma 3 tells us that \(\mathcal{F}_k = \mathcal{S}_k\),
+so proving that 
+\(\mathcal{F}_i\) is a proper subset of its successor \(\mathcal{F}_{i+1}, \forall i \ge{} 2\)
+means that it must be true for \(\mathcal{S}_i, \forall i \ge{} 2\).
+However it's interesting to see the specific
+mechanisms that makes each sequence of supersets true without relying on Lemma 3.
+% We'll start with \(\mathcal{F}_k\).
+
+For all \(\frac{p}{k!} \in \mathcal{F}_k\),
+since \(\frac{p}{k!} = \frac{(k+1)\cdot{}p}{(k+1)\cdot{}k!} = \frac{(k+1)\cdot{}p}{(k+1)!}\),
+and \(\frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1}\),
+therefore \(\frac{p}{k!} \in \mathcal{F}_{k+1}\),
+hence \(\mathcal{F}_k \subset \mathcal{F}_{k+1}\).
+
+Since each successive set's size grows larger, then by induction it is straightforward to conclude that
+\(\mathcal{F}_2
+\subset \mathcal{F}_3
+\subset \mathcal{F}_4
+\subset \dots{}
+\), for all \(\mathcal{F}_i\), \(i \ge{} 2\).
+
+Similarly for \(\mathcal{S}_k\);
+For all \(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!} \in \mathcal{S}_k\),
+since
+\(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!} =
+\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}\!+\!\frac{0}{(k+1)!}\)
+and
+\(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}\!+\!\frac{0}{(k+1)!}
+\in \mathcal{S}_{k+1}\) then 
+\(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}
+\in \mathcal{S}_{k+1}\). Hence 
+\(\mathcal{S}_k \subset \mathcal{S}_{k+1}\).
+
+Since each successive set's size grow larger, then
+by induction it is straightforward to conclude that
+\(\mathcal{S}_2
+\subset \mathcal{S}_3
+\subset \mathcal{S}_4
+\subset \dots{}
+\), for all \(\mathcal{S}_i\), \(i \ge{} 2\).
+
+This infinite chain of supersets helps us to think about the
+meaning of our new sets
+\(\mathcal{F}\) and \(\mathcal{S}\), each of which are defined as a union of 
+an infinite sequence of \(\mathcal{F}_i\)'s and \(\mathcal{S}_i\)'s.
+
+We can imagine that as
+we build up either master-set by including each successive
+\(\mathcal{F}_i\) or \(\mathcal{S}_i\), that either we're only adding
+new elements to the ones that we've already gathered up, or we're simply tossing
+the whole previous collection out, then using the entire contents of
+the new largest set in its place. Either way of thinking about the
+master-set gives the same result.
+
+I claim that for \(a \in \mathcal{S}\) that it's representation 
+using a sequence of \(a_2, a_3, \dots{}, a_k, 0, 0, \dots{}\)'s is unique. We know that it's representation
+is unique within any given set, for example say \(a \in \mathcal{S}_k\)
+
+\break
 
 We're going to prove the lemma through a series of equalities as follows:
 
@@ -686,21 +730,6 @@ We're going to prove the lemma through a series of equalities as follows:
 \end{center}
 \egroup
 }
-
-\eqref{eqn2}:
-For all \(\frac{p}{k!} \in \mathcal{F}_k\),
-since \(\frac{p}{k!} = \frac{(k+1)\cdot{}p}{(k+1)\cdot{}k!} = \frac{(k+1)\cdot{}p}{(k+1)!}\),
-and \(\frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1}\),
-therefore \(\frac{p}{k!} \in \mathcal{F}_{k+1}\),
-hence \(\mathcal{F}_k \subset \mathcal{F}_{k+1}\).
-
-By induction it is straightforward to conclude that
-\(\mathcal{F}_2
-\subset \mathcal{F}_3
-\subset \mathcal{F}_4
-\subset \dots{}
-\), for all \(\mathcal{F}_i\), \(i \ge{} 2\). Therefore when
-\(\frac{p}{k!} \in \mathcal{F}_k\), then \(\frac{p}{k!} \in \mathcal{F}_n, \forall\ n \ge{} k\).
 
 By definition, \(\frac{p}{k!} \in \mathcal{F}\),
 therefore, \(\frac{p}{k!} \in \mathcal{F} \Leftrightarrow \frac{p}{k!}
@@ -736,6 +765,7 @@ hence,
 \end{center}
 
 \bigskip
+
 \eqref{eqn4}:
 For all \(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!} \in \mathcal{S}_k\),
 since
