@@ -179,10 +179,11 @@ It seemed to me a good idea to forget about the integer \(a_1\)
 and just focus on the integers \(a_2, a_3, \dots{}, a_k\).
 In other words,
 prove the theorem for rational numbers \(\frac{p}{q}\),
-where \(0 \le{} \frac{p}{q} < 1\), then it should be trivial to extend it to ALL rational numbers
+where \(0 \le{} \frac{p}{q} < 1\), then it should be simple to extend it to ALL rational numbers
 by tacking the \(a_1\) back on at the end of the proof.
 Also, it started to become clear that including zero (that is, not JUST positive rational numbers) was
-going to simplify the task\footnote{Did you notice how the theorem restricts the last integer, \(a_k\), to
+going to make things easier with the approach I wanted
+to follow\footnote{Did you notice how the theorem restricts the last integer, \(a_k\), to
 be strictly greater than zero, unlike all the other variables? We loosen up that
 restriction by allowing \(a_k\) to be equal to zero so that
 all the variables are treated the same. At the very end of the
@@ -262,9 +263,9 @@ gives us \(2\cdot{}3\cdot{}4\cdot{}\cdot{}\cdot{}k = k!\) possible different sum
 Hmmm, the following set has \(k!\) members,
 \(\{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}\).
 With a little algebraic tinkering we can see that
-this set contains each of the rational numbers between zero and one with
+this set contains \emph{all} of the rational numbers between zero and one with
 denominators from 2 up to \(k\), so if we let \(k\) grow without bound
-then we should get a set that contains all the rational numbers between zero and one.
+then we should get a set that contains \emph{all} the rational numbers between zero and one.
 
 So that, plus one or two other thoughts is what led me to the proof below. I won't spoil the rest of it;
 to find out, go ahead and read the rest of the paper!
@@ -374,7 +375,7 @@ If \(a \in \mathcal{S}_k\), then the sum \(a = \frac{a_2}{2!} + \frac{a_3}{3!} +
 where
 \(k \ge{} 2\), and \(0\! \le{}\! a_2\! <\! 2,\enspace
 0\! \le{}\! a_3\! <\! 3,\enspace
-\dots{},\enspace 0\! \le{}\! a_k\! <\! k\), is called the ``factorial-representation'' of \(a\).
+\dots{},\enspace\newline 0\! \le{}\! a_k\! <\! k\), is called the ``factorial-representation'' of \(a\).
 
 \section*{Lemma 3}
 
@@ -587,7 +588,7 @@ the sets
 \begin{gather*}
 \mathcal{F} = \bigcup\limits_{k=2}^{\infty} \mathcal{F}_k \\
 \mathcal{S} = \bigcup\limits_{k=2}^{\infty} \mathcal{S}_k \\
-\mathbb{Q}_{01} = \{\frac{p}{q} \mid p, q \in \mathbb{Z},\text{ where } q \ge{} 2,\ 0 \le{} p < q,
+\mathbb{Q}_{01} = \{0\} \cup \{\frac{p}{q} \mid p, q \in \mathbb{Z},\text{ where } q \ge{} 2,\ 1 \le{} p < q,
 \text{ and } \gcd(p,q) = 1\}
 \end{gather*}
 }
@@ -602,7 +603,10 @@ Finally,
 \(\mathbb{Q}_{01}\) is the set of ALL non-negative rational numbers less than one, 
 where \(p\) and \(q\) are co-prime. We specify the co-prime condition
 to get unique members of the set (otherwise the set isn't well defined).
+Also we want zero, so we have to toss it back into the set.
 % \footnote{By definition sets must contain unique members.}.
+I'm not going to prove it here, but \(\mathbb{Q}_{01}\) contains ALL the
+rational numbers between zero and one, I'm taking this as established.
 
 Recall that two sets, \(X\) and \(Y\) are equal if and only if, for all \(a\),
 
@@ -971,7 +975,8 @@ However, I'll leave that proof for another day.
 
 A final thought is that the number 
 \(2\!+\!\frac{1}{2!}\!+\!\frac{1}{3!}\!+\!\frac{1}{4!}\!+\!\frac{1}{5!}\!+\!\dots{}\) is not in \(\mathcal{S}\)
-because we can't point to any particular \(\mathcal{S}_k\) that it would be a member of.  Not surprising really as
+because we can't point to any particular \(\mathcal{S}_k\) that the fractional part would be a member of.
+Not surprising really as
 this number isn't rational - it's \(e\).
 
 \end{document}
