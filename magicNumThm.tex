@@ -15,7 +15,8 @@
 
 %%% PAGE DIMENSIONS
 \usepackage{geometry} % to change the page dimensions
-\geometry{a4paper} % or letterpaper (US) or a5paper or....
+\geometry{letterpaper} % or letterpaper (US) or a5paper or....
+\geometry{margin=1.35in} % for example, change the margins to 2 inches all round
 % \geometry{margin=2in} % for example, change the margins to 2 inches all round
 % \geometry{landscape} % set up the page for landscape
 % read geometry.pdf for detailed page layout information
@@ -58,8 +59,16 @@
 \usepackage{changepage}
 \usepackage{enumerate}
 %\usepackage{setspace}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
 
 \newenvironment{jprIn}{\begin{adjustwidth}{2em}{}}{\end{adjustwidth}}
+
 \addtolength{\skip\footins}{6pt}
 
 \usepackage{alphalph}
@@ -77,7 +86,7 @@
 
 %%% The "real" document content comes below...
 
-\title{School of Rock - Math Department}
+\title{Magic Numbers}
 \author{James Rowell}
 %\date{} % Activate to display a given date or no date (if empty),
 % otherwise the current date is printed 
@@ -86,38 +95,51 @@
 \maketitle
 %\bigskip
 
-Magic Numbers
 
-In the delightful film ``School of Rock'' Jack Black's character Dewey Finn,
+
+In the delightful film ``\href{https://en.wikipedia.org/wiki/School_of_Rock}{School of Rock}'' Jack Black's character Dewey Finn,
 pretending to be substitute teacher Ned Schneebly, is put on the spot when
-Ms. Mullins, the school principle, comes into class and demands that he show
+Miss. Mullins, the school principle, comes into class and demands that he show
 her his teaching methods which apparently involve an electric guitar.
-So ``Mr. S'' sings ``The Math Song'' - in the final line of his
+So ``Mr. S'' sings ``\href{https://www.youtube.com/watch?v=aa8U0nL-KXg}{The Math Song}'' - in the final line of his
 improvised tune he sings ``...yes it's 9, and that's a magic number...''
 
 He's right - he's referring to the fact that if you add up the digits of
 any number then if that sum is divisible by 9, then the original number
 must be divisible by 9. It works the other way too, that is, if we know
 that a number is divisible by 9 then the sum of its digits must also be
-divisible by 9. For example 95=59049 and 5+9+0+4+9=27,
-and of course 9 divides 27 because 3x9=27.
+divisible by 9.
 
-It turns out that 9 is a magic number in base-ten but if we used another
+For example:
+\begin{jprIn}
+$9^5=59049$ and $5+9+0+4+9=27$.\\
+Of course 9 divides 27 because $27 = 3\times{}9$.
+\end{jprIn}
+
+9 is a magic number in base-ten but if we used another
 base, say 8, then 7 is a magic number. 4 is a magic number
-in base 5; 15 is a magic number in base 16; and 30 is a magic number in base 31 etc.
+in base-5; 15 is a magic number in base-16; and 30 is a magic number in base-31 etc.
 
-Let's look at a couple of examples.
+Let's look at a couple of examples\footnote{We are going to use the conventions for specifying
+numbers in alternate bases as outlined on page 7 of ``Sesame Street++'' 
+also written by James Rowell.}.
+\begin{itemize}
+\item $7\times{}7=49$ written in base-8 is $(61)_8$ and $6+1=7$.
+\item $7^3\times{}5=1715$ written in base-8 is $(3263)_8$ and $3+2+6+3=14$ (7 divides 14).
+\item $4\times{}67=268$ written in base-5 is $(2033)_5$ and $2+3+3=8$ (4 divides 8).
+\item $15\times{}23=345$ written in base-16 is $(159)_{16}$ and $1+5+9=15$.
+\item $30\times{}29\times{}113=98310$ written in base-31 is $(3999)_{31}$ and $3+9+9+9=30$
+\end{itemize}
 
-$7\times{}7=49$ written in base 8 (Octal) is 61 and 6+1=7.
-$73\times{}5=1715$ written in base 8 is 3263 and 3+2+6+3=14.
-$15\times{}23=345$ written in base 16 (Hexadecimal) is 159 and 1+5+9=15.
-
-It's also true that 3 is a magic number in base 10.
+It's also true that 3 is a magic number in base-10.
 That is; the sum of the digits of any number is divisible by 3
 if and only if that original number is divisible by 3.
-For example $3\times{}67=201$ and 2+0+1=3
 
-2, 3, 5, 6, 10, 15 and 30 are all magic numbers in base 31.
+For example $3\times{}67=201$ and $2+0+1=3$. Note that even though 9 is a magic number
+in base-10, since the sum of the digits of 201 equals 3, we should be able to safely conclude that 9 does NOT divide 201, which
+in fact it doesn't because $201=22\times9+3$.
+
+2, 3, 5, 6, 10, 15 and 30 are all magic numbers in base-31.
 
 See the pattern? It looks like any divisors of the biggest numeral in our base are magic numbers.
 
@@ -127,19 +149,19 @@ then we don't need to go to any trouble of adding up digits to find this out.
 So let's exclude 1 from being considered as a magic number. (Akin to 1 not being a prime number).
 
 Here's a precise statement defining a magic number
-m for any base N and declaring what its properties are:
+m for any base-N and declaring what its properties are:
 
 ``Magic Number'' Theorem:
 
 Let m,N ? Z+and let m be a divisor of N-1.
 
-Then any integer represented in base N is divisible by m
-if and only if the sum of its digits (in base N)
+Then any integer represented in base-N is divisible by m
+if and only if the sum of its digits (in base-N)
 is divisible by m.
 Let's define all such m?1 as a 'magic number'.
 
 As an interesting side note - according to our definition, binary,
-or base 2, doesn't have a magic number.
+or base-2, doesn't have a magic number.
 No great loss, as we said above 1 isn't helpful to consider as a magic number. 
 
 Let's look at the definition of a number represented in a given base.
@@ -179,14 +201,14 @@ Proof of ``Magic Number'' Theorem:
 
 Let N=M+1.
 
-That is; we are going to consider representations of numbers in base M+1, so think of M as our magic number.
+That is; we are going to consider representations of numbers in base-M+1, so think of M as our magic number.
 
 Also let M=1, so our smallest possible base will be 2.
-Then every integer n is uniquely expressible in base M+1 as follows:
+Then every integer n is uniquely expressible in base-M+1 as follows:
 n=ak(M+1)k+ak-1(M+1)k-1+?+a2(M+1)2+a1(M+1)+a0
 where 0=ai=M for all the ``digits'' ai where 0=i=k.
 n is divisible by M if and only if n mod M=0. 
-Substitute the base M+1 expression of n into the above relationship, therefor
+Substitute the base-M+1 expression of n into the above relationship, therefor
 0=(ak(M+1)k+ak-1(M+1)k-1+?+a2(M+1)2+a1(M+1)+a0)mod M
 
 
