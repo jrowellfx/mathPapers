@@ -586,44 +586,40 @@ QED.
 
 \section*{Definitions}
 
-{\small
-\bgroup                                  %% open the group
-\setlength{\abovedisplayskip}{0pt}
-\begin{center}
-\begin{gather*}
-\mathcal{F}_\infty = \lim_{n \to \infty}\mathcal{F}_n
-\text{\quad and \quad}
-\mathcal{S}_\infty = \lim_{n \to \infty}\mathcal{S}_n 
-\text{\quad and \quad}
-\mathbb{Q}_{p<q} = \{\frac{p}{q} \mid p, q \in \mathbb{Z}, \text{ where } 2 < q,\ 0 \le{} p < q\}
-\end{gather*}
-\end{center}
-\egroup
-}
+\begin{equation*}
+\mathcal{F}_\infty
+= \lim_{n \to \infty}\mathcal{F}_n
+= \{\frac{p}{k!} \mid
+% \forall\ 
+p,k \in \mathbb{Z}, k \ge{} 2, 0 \le{} p < k!\}
+\end{equation*}
 
 The set \(\mathcal{F}_\infty\) is the limit of the sequence
-\(\mathcal{F}_2, \mathcal{F}_3, \mathcal{F}_4, \dots{}\), if and only if for all \(a\),
-
-{\normalsize
-\bgroup                                  %% open the group
-\setlength{\abovedisplayskip}{0pt}
-\begin{center}
-\begin{equation*}
+\(\mathcal{F}_2, \mathcal{F}_3, \mathcal{F}_4, \dots{}\), if and only if for all \(a;\newline
 a \in \mathcal{F}_\infty\ \Leftrightarrow\ 
 \exists N, \text{ such that }
-\forall n \ge N, a \in \mathcal{F}_n.
-\end{equation*}
-\end{center}
-\egroup
+\forall n \ge N, a \in \mathcal{F}_n.\)
+
+\bigskip
+Also,
+{\small
+\begin{gather*}
+\mathcal{S}_\infty = \lim_{n \to \infty}\mathcal{S}_n
+= \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} \mid
+% \forall\ 
+k\!\ge{}\!2,\ 
+0\!\le{}\!a_2\!<\!2,\ 
+0\!\le{}\!a_3\!<\!3,\ 
+\dots{},\ 
+0\!\le{}\!a_k\!<\!k\}\\
+\mathbb{Q}_{p<q} = \{\frac{p}{q} \mid p, q \in \mathbb{Z},\text{ where } q \ge{} 2,\ 0 \le{} p < q\}
+\end{gather*}
 }
-
-
 % \(a \in \mathcal{F}_\infty \Leftrightarrow 
 % \text{ there exists } N, \text{ where for all }
 % n \ge N, a \in \mathcal{F}_n\)
-
-(Similarly for \(\mathcal{S}_\infty\).)
-
+% 
+% (Similarly for \(\mathcal{S}_\infty\).)
 \section*{Lemma 4}
 
 {\normalsize
@@ -631,7 +627,7 @@ a \in \mathcal{F}_\infty\ \Leftrightarrow\
 \setlength{\abovedisplayskip}{0pt}
 \begin{center}
 \begin{equation*}
-\mathcal{F}_\infty =\; \mathbb{Q}_{p<q}
+\mathcal{F}_\infty =\; \mathbb{Q}_{p<q} = \mathcal{S}_\infty
 \end{equation*}
 \end{center}
 \egroup
