@@ -135,21 +135,20 @@ where \(a_1, a_2, \dots{}, a_k\) are integers, and
 
 \section*{Observations that lead to the proof.}
 
-% The first thing to note are the ranges of the coefficients \(a_1, a_2, a_3, \dots{}, a_k\).
+% The first thing to note are the ranges of the integers \(a_1, a_2, a_3, \dots{}, a_k\).
 
 % The first one, \(a_1\), is just a plain-old non-negative integer.
 
 We know that any rational number\footnote{Every variable,
-coefficient or constant (eg. \(a_1, a_k, m, n, i, p, q\)) in this
+or constant (eg. \(a_1, a_k, m, n, i, p, q\)) in this
 paper is going to represent a non-negative integer. We aren't dealing with `real numbers' here, just
 rational numbers which we will always discuss in terms of one integer divided
 by another integer, like \(\frac{p}{q}\).}, say \(\frac{m}{q}\), can be written as an
-integer part,
-\(i\), PLUS a fractional part, \(\frac{p}{q}\), such that
+integer part, \(i\), PLUS a fractional part, \(\frac{p}{q}\), such that
 \(\frac{m}{q} = i + \frac{p}{q}\), where \(0 \le{} \frac{p}{q} < 1\) (note that \(i\) can be zero).
 
-So if we're trying to represent any positive rational number \(\frac{m}{q}\) in terms
-of the theorem then the \(a_1\) term
+So if we're trying to represent any positive
+rational number \(\frac{m}{q}\) in the form of the theorem then the integer \(a_1\)
 wants to play the role of the integer part, \(i\),
 and the remainder of the expression \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
 looks to be playing the roll of the rational part, \(\frac{p}{q}\), where,
@@ -170,26 +169,26 @@ looks to be playing the roll of the rational part, \(\frac{p}{q}\), where,
 \egroup
 }
 
-It seemed to me a good idea to forget about the \(a_1\) term
-and just focus on the \(a_2, a_3, \dots{}, a_k\) terms.
+It seemed to me a good idea to forget about the integer \(a_1\)
+and just focus on the integers \(a_2, a_3, \dots{}, a_k\).
 In other words,
 prove the theorem for rational numbers \(\frac{p}{q}\),
 where \(0 \le{} \frac{p}{q} < 1\), then it should be trivial to extend it to ALL rational numbers
-by tacking the \(a_1\) term back on at the end of the proof.
+by tacking the \(a_1\) back on at the end of the proof.
 Also, it started to become clear that including zero (that is, not JUST positive rational numbers) was
-going to simplify the task\footnote{Did you notice how the theorem restricts the last term, \(a_k\), to
-be strictly greater than zero, unlike all the other terms? We loosen up that
-restriction allow \(a_k\) to be equal to zero so all the terms are treated the same. At the very end of the
-proof it's trivial to reintroduce that restriction on the \(a_k\) term.}.
+going to simplify the task\footnote{Did you notice how the theorem restricts the last integer, \(a_k\), to
+be strictly greater than zero, unlike all the other variables? We loosen up that
+restriction allow \(a_k\) to be equal to zero so all the variables are treated the same. At the very end of the
+proof it's trivial to reintroduce that restriction on the integer \(a_k\).}.
 
 At first glance it wasn't remotely obvious to me how I'd go about finding such
-an assignment of coefficients \(a_2, a_3, \dots{}, a_k\) for a given rational number
+an assignment of integers \(a_2, a_3, \dots{}, a_k\) for a given rational number
 \(\frac{p}{q}\), where
 \(0 \le{} \frac{p}{q} < 1\),
 let alone that it would be unique.
 
 After playing around for a while, and finally figuring out
-a way to calculate the \(a_i\) terms
+a way to calculate the \(a_i\) variables
 for a given rational number \(\frac{p}{q}\), a few thing started to jump out at me.
 For example, look at these rational numbers,
 
@@ -222,17 +221,18 @@ For example, look at these rational numbers,
 }
 
 Good clue! It seemed to be the case
-that if we assign the largest possible values to the coefficients,
-from \(a_2\) up to say \(a_k\) we get this rational number, \(\frac{k!-1}{k!}\).
+that if we assign the largest possible values to the variables,
+from \(a_2\) up to say \(a_k\) (and all subsequent variables
+set to zero) we get this rational number, \(\frac{k!-1}{k!}\).
 This number is as close to 1 as you can get with a denominator of \(k!\) without actually
 hitting 1. (What happens if you add \(\frac{1}{k!}\) to \(\frac{k!-1}{k!}\)?)
 This turned out to be
 a pretty useful observation, and it became my `Lemma-1' in the proof below.
 
-Also, if we assign zeros to all the coefficients then naturally we get \(\frac{0}{k!}\), plus
+Also, if we assign zeros to all the variables then naturally we get \(\frac{0}{k!}\), plus
 it's pretty simple to figure out how to make the smallest non-zero such rational number \(\frac{1}{k!}\).
 Then thinking about continually adding \(\frac{1}{k!}\) to the result gives us an idea about how the
-\(a_i\) terms change as you keep incrementing by \(\frac{1}{k!}\).
+\(a_i\) variables change as you keep incrementing by \(\frac{1}{k!}\).
 
 So we we restrict ourselves to using only \(a_2, a_3, \dots{}, a_k\), then
 can generate the smallest rational number (\(\frac{0}{k!}\)) and the largest
@@ -242,9 +242,9 @@ can generate the smallest rational number (\(\frac{0}{k!}\)) and the largest
 One further observation to help understand the motivation
 behind this proof is that by using combinatorics we can
 count how many possible combinations of \(a_i\)'s there are.
-So, we have two choices for the \(a_2\) term (0, 1), combined with three choices for the \(a_3\) term (0, 1, 2),
-combined with four choices for the \(a_4\) term (0, 1, 2, 3), \dots{} combined with \(k\) choices for
-the \(a_k\) term (0, 1, 2, \dots{}, \(k\!-\!1\)), that
+So, we have two choices for the \(a_2\) variable (0, 1), combined with three choices for the \(a_3\) variable (0, 1, 2),
+combined with four choices for the \(a_4\) variable (0, 1, 2, 3), \dots{} combined with \(k\) choices for
+the \(a_k\) variable (0, 1, 2, \dots{}, \(k\!-\!1\)), that
 gives us \(2\cdot{}3\cdot{}4\cdot{}\cdot{}\cdot{}k = k!\) possibly different sums.
 
 Hmmmmm, the following set has \(k!\) members,
@@ -381,8 +381,8 @@ that the size of \(\mathcal{F}_k\) is \(k!\, \).
 
 The smallest member of the set \(\mathcal{S}_k\) 
 is \(\frac{0}{k!}\) and
-occurs when all the coefficients of the sum are zero.
-Furthermore, the largest member of the set occurs when all the coefficients of the sum are set to
+occurs when all the variables of the sum are set to zero.
+Furthermore, the largest member of the set occurs when all the variables of the sum are set to
 their maximum value, which gives us \(\frac{k!-1}{k!}\) as shown in lemma-1.
 
 We also note that every member of \(\mathcal{S}_k\) can be written as a rational number
@@ -418,17 +418,17 @@ Therefore any member of the set \(\mathcal{S}_k\) can be written as
 \egroup
 }
 
-Furthermore, each possible assignment of values to the coefficients of
+Furthermore, each possible assignment of values to the variables of
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
 produce a unique member of the set \(\mathcal{S}_k\).
 
 For if this weren't true and both
 \(\frac{p}{k!} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) and
 \(\frac{p}{k!} = \frac{b_2}{2!} + \frac{b_3}{3!} + \dots{} + \frac{b_k}{k!}\)
-for different coefficients \(a_2, a_3, \dots{}, a_k\)
+for different variables \(a_2, a_3, \dots{}, a_k\)
 and \(b_2, b_3, \dots{}, b_k\), then we can arrive at a contradiction as follows.
 
-First suppose that \(a_i\ne{}b_i\) is the first such pair of coefficients
+First suppose that \(a_i\ne{}b_i\) is the first such pair of variables
 that differ from each other. In other words, \(a_2=b_2, a_3=b_3, \dots{}, a_{i-1}=b_{i-1}\).
 Also, without loss of generality we can assume that \(a_i > b_i\), and because
 of the equality of the two different representations for \(\frac{p}{q}\) we can write,
@@ -450,9 +450,10 @@ Since \(a_i - b_i \ge{} 1\), then \(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!}\).
 
 Also,
 \(\frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!} \ge{} \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\)
-regardless of the values of the coefficients
+regardless of the values of the variables
 on the right side of the inequality\footnote{Letting all the \(b\)'s be their maximum value,
-and all the \(a\)'s be zero will produce the largest numerators in each term of the sum, any other possibility will result in a smaller term for the sum.}.
+and all the \(a\)'s be zero will produce the largest numerators in each
+term of the sum, any other possibility will result in a smaller term for the sum.}.
 
 Because lemma-2 tells us that \(\frac{1}{i!} > \frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!}\) then
 we can string all our inequalities together like so,
@@ -466,21 +467,21 @@ that \(\frac{a_i - b_i}{i!} = \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac
 which contradicts the strict inequality above.
 
 Therefore our assumption that there can be a second set
-of coefficients to produce the same rational number \(\frac{p}{k!}\) must be false.
-Therefore any assignment of values to the coefficients of
+of variables to produce the same rational number \(\frac{p}{k!}\) must be false.
+Therefore any assignment of values to the variables of
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
 must produce a unique member of the set \(\mathcal{S}_k\).
 
 Now we can count the number of members of \(\mathcal{S}_k\), by looking at all the
-possible combinations of values for the coefficients \(a_2, a_3, \dots{}, a_k\).
-There are 2 choices for the coefficient \(a_2\),
+possible combinations of values for the variables \(a_2, a_3, \dots{}, a_k\).
+There are 2 choices for the variable \(a_2\),
 combined with 3 choices for \(a_3\),
 combined with 4 choices for \(a_4\),
 \dots{},
 combined with \(k\) choices for \(a_k\).
 
 Therefore the total number of combinations of values
-that can be assigned to all the coefficients of \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
+that can be assigned to all the variables of \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
 is \(2\cdot{}3\cdot{}4\cdot\cdot{}\cdot{}k = k!\,\), and since each set of assignments 
 creates a unique member of the set, then the size of \(\mathcal{S}_k\) is \(k!\,\), which
 is the same size as \(\mathcal{F}_k\).
@@ -658,7 +659,7 @@ there exist unique integers \(i\) and \(p\) such that,
 Which tells us that all rational numbers \(\frac{j}{q}\) can be written as
 an integer part, \(i\), plus a fractional part \(\frac{p}{q}\), where \(0\le{}\frac{p}{q}<1\).
 
-In our theorem, the \(a_1\) coefficient plays the role of the integer part \(i\),
+In our theorem, the \(a_1\) variable plays the role of the integer part \(i\),
 and the rest of the expression, \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
 plays the role of the fractional part \(\frac{p}{q}\), where \(0\le{}\frac{p}{q}<1\).
 
@@ -675,7 +676,7 @@ is uniquely associated with all rational numbers \(\frac{j}{q}\).
 To meet the precise requirements of the theorem, we throw away that fact that we can
 represent zero, and suppose that if \(\frac{p}{q} \in{} \mathcal{S}_n\) for some \(n \ge{} q\)
 that we take
-for the coefficients \(a_2, a_3, \dots{}, a_k\) in the sum for \(\frac{p}{q} \in{} \mathcal{S}_n\)
+for the variables \(a_2, a_3, \dots{}, a_k\) in the sum for \(\frac{p}{q} \in{} \mathcal{S}_n\)
 all those for which \(a_k \ne{} 0\) but \(a_{k+1} = a_{k+2} = \dots{} = a_n = 0\).
 
 QED
