@@ -140,12 +140,12 @@ is divisible by 9.
 
 For example:
 \begin{jprIn}
-$9^5=9\times{}9\times{}9\times{}9\times{}9=59049$
-and $5+9+0+4+9=27$ and 9 divides 27 because $27 = 3\times{}9$.
+$9^5=9\cdot{}9\cdot{}9\cdot{}9\cdot{}9=59049$
+and $5+9+0+4+9=27$ and $\frac{27}{9} = 3$.
 \end{jprIn}
 
 But 3 is also has this magic-number property, for example:
-\[ 3\times{}67=201 \text{ and } 2+0+1=3\]
+\[ 3\cdot{}67=201 \text{ and } 2+0+1=3\]
 In this case, 9 does not divide 201\footnote{Why is it immediately
 apparent that 9 does not divide 201? Hint: both 3 and 67 are prime numbers.
 Check the ``\href{https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic}{Fundamental
@@ -170,13 +170,55 @@ the paper ``\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl
 
 Let's examine some numbers
 in other bases.
+%{\small
+%\begin{itemize}
+%\item $4\cdot{}67=268$ in base-5 is $(2033)_5$ and $2+0+3+3=8$ ($\frac{8}{4}=2$).
+%\item $7\cdot{}181=1267$ in base-8 is $(2363)_8$ and $2+3+6+3=14$ ($\frac{14}{7}=2$).
+%\item $15\cdot{}23=345$ in base-16 is $(159)_{16}$ and $1+5+9=15$. ($\frac{15}{15}=1$).
+%\item $20\cdot{}908249=18164980$ in base-21 is $(498991)_{21}$ and $4+9+8+9+9+1=40$ ($\frac{40}{20}=2$).
+%\item $30\cdot{}35951=1078530$ in base-31 is $(15699)_{31}$ and $1+5+6+9+9=30$ ($\frac{30}{30}=1$).
+%\end{itemize}
+%}
+{\small
 \begin{itemize}
-\item $4\times{}67=268$ written in base-5 is $(2033)_5$ and $2+0+3+3=8$ (4 divides 8).
-\item $7\times{}181=1267$ written in base-8 is $(2363)_8$ and $2+3+6+3=14$ (7 divides 14).
-\item $15\times{}23=345$ written in base-16 is $(159)_{16}$ and $1+5+9=15$.
-\item $20\times{}908249=18164980$ written in base-21 is $(498991)_{21}$ and $4+9+8+9+9+1=40$
-\item $30\times{}35951=1078530$ written in base-31 is $(15699)_{31}$ and $1+5+6+9+9=30$
+\item $4\cdot{}67=268$ in base-5 is $(2033)_5$ and $2+0+3+3=8$ ($\frac{8}{4}=2$).
+\item $7\cdot{}181=1267$ in base-8 is $(2363)_8$ and $2+3+6+3=14$ ($\frac{14}{7}=2$).
+\item $15\cdot{}23=345$ in base-16 is $(159)_{16}$ and $1+5+9=15$. ($\frac{15}{15}=1$).
+\item $20\cdot{}908249=18164980$ in base-21 is $(498991)_{21}$ and $4+9+8+9+9+1=40$ ($\frac{40}{20}=2$).
+\item $30\cdot{}35951=1078530$ in base-31 is $(15699)_{31}$ and $1+5+6+9+9=30$ ($\frac{30}{30}=1$).
 \end{itemize}
+}
+
+{\small
+\begin{alignat*}{8}
+ 4&\cdot{}67=268          &&\text{ in base-5 is } (2033)_5       &&\quad\text{and}\quad &     2+0+3+3&=8  &&\quad(\tfrac{8}{4}=2) \\
+ 7&\cdot{}181=1267        &&\text{ in base-8 is } (2363)_8       &&\quad\text{and}\quad &     2+3+6+3&=14 &&\quad(\tfrac{14}{7}=2) \\
+15&\cdot{}23=345          &&\text{ in base-16 is } (159)_{16}    &&\quad\text{and}\quad &       1+5+9&=15 &&\quad(\tfrac{15}{15}=1) \\
+20&\cdot{}908249=18164980 &&\text{ in base-21 is } (498991)_{21} &&\quad\text{and}\quad & 4+9+8+9+9+1&=40 &&\quad(\tfrac{40}{20}=2) \\
+30&\cdot{}35951=1078530   &&\text{ in base-31 is } (15699)_{31}  &&\quad\text{and}\quad &   1+5+6+9+9&=30 &&\quad(\tfrac{30}{30}=1)
+\end{alignat*}
+}
+
+%% &&m\cdot{}q
+%% &= b-1 && &&\quad\text{(Definition of }m\mid{}(b-1)\text{)}\\
+%% &\Leftrightarrow\quad
+%% &m\cdot{}q+1
+%% &= b && &&\quad\text{(Add 1 to both sides)}
+%% \intertext{Given this equality we can state the following modular-congruence:}
+%% &&m\cdot{}q+1
+%% &\equiv b &&\pmod{m}\\
+%% &\Leftrightarrow\quad
+%% &0\cdot{}q+1
+%% &\equiv b &&\pmod{m} &&\quad\text{(Since }m\bmod{m}=0\text{)}\\
+%% &\Leftrightarrow\quad
+%% &1
+%% &\equiv b &&\pmod{m}% &&\quad\text{(1 is congruent to }b\text{)}
+%% \intertext{Furthermore,}
+%% &&1
+%% &\equiv 1^k &&\pmod{m} &&\quad\text{(For all }k>=0\text{)}\\
+%% &\Leftrightarrow\quad
+%% &1
+%% &\equiv b^k &&\pmod{m} &&\quad\text{(Substitute }b\text{ for 1 since they are congruent)}
 
 Notice the pattern in our examples:
 $(b-1)$ acts like a magic-number in base-$b$.
@@ -186,12 +228,12 @@ It appears that 2, 3, 5, 6, 10, 15 (along with 30)
 might \emph{all} be magic-numbers in base-31, as we we can see
 with the following examples:
 \begin{itemize}
-\item $2\times{}409\times{}1129=923522$ written in base-31 is $(10001)_{31}$ and $1+0+0+0+1=2$.
-\item $3\times{}641=1923$ written in base-31 is $(201)_{31}$ and $2+0+1=3$.
-\item $5\times{}139\times{}2659=1848005$ written in base-31 is $(20102)_{31}$ and $2+0+1+0+2=5$.
-\item $6\times{}10091=60546$ written in base-31 is $(2103)_{31}$ and $2+1+0+3=6$.
-\item $10\times{}197\times{}941=1853770$ written in base-31 is $(20701)_{31}$ and $2+0+7+0+1=10$.
-\item $15\times{}71503=1072545$ written in base-31 is $(15027)_{31}$ and $1+5+0+2+7=15$.
+\item $2\cdot{}409\cdot{}1129=923522$ written in base-31 is $(10001)_{31}$ and $1+0+0+0+1=2$.
+\item $3\cdot{}641=1923$ written in base-31 is $(201)_{31}$ and $2+0+1=3$.
+\item $5\cdot{}139\cdot{}2659=1848005$ written in base-31 is $(20102)_{31}$ and $2+0+1+0+2=5$.
+\item $6\cdot{}10091=60546$ written in base-31 is $(2103)_{31}$ and $2+1+0+3=6$.
+\item $10\cdot{}197\cdot{}941=1853770$ written in base-31 is $(20701)_{31}$ and $2+0+7+0+1=10$.
+\item $15\cdot{}71503=1072545$ written in base-31 is $(15027)_{31}$ and $1+5+0+2+7=15$.
 \end{itemize}
 
 See the pattern? All the divisors of 30 seem to be magic-numbers in base-31.
@@ -281,7 +323,7 @@ If $m$ is a positive integer such that $m\mid{}(b-1)$ then\footnote{Recall that 
 bidirectional arrow symbol $\Leftrightarrow$
 means ``if and only if'' - it's like a logical ``equals'' sign},
 \[m\mid{}n \text{\hspace{2.5em}} \Leftrightarrow \text{\hspace{2.5em}}m\mid{}(d_k+\dots+d_2+d_1+d_0)\]
-Definition: We call $m\ne1$ a ``magic-number'' in base-$b$.
+Definition: $m\ne1$ is called a ``magic-number in base-$b$''.
 \end{jprIn}
 \bigskip
 
@@ -375,4 +417,6 @@ Also let $m$ be a positive integer such that $m\mid{}(b-1)$. Therefore,
 \end{alignat*}
 }
 QED
+\section*{Epilogue}
+Blah blah blah - look for ``Heptapods have the best number system''!
 \end{document}
