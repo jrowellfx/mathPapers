@@ -645,7 +645,7 @@ is in all but finitely many \(\mathcal{F}_i\).
 
 We're going to prove the lemma through a series of equalities as follows:
 
-{\small
+{\normalsize
 \bgroup                                  %% open the group
 \setlength{\abovedisplayskip}{0pt}
 \begin{center}
@@ -666,7 +666,9 @@ We're going to prove the lemma through a series of equalities as follows:
 \egroup
 }
 
+\break
 Proof of equation \eqref{eqn02}:
+
 For all \(\frac{p}{k!} \in \mathcal{F}_k\),
 since \(\frac{p}{k!} = \frac{(k+1)\cdot{}p}{(k+1)\cdot{}k!} = \frac{(k+1)\cdot{}p}{(k+1)!}\),
 and\newline \(\frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1}\),
@@ -686,9 +688,15 @@ By definition, \(\frac{p}{k!} \in \mathcal{F}\), for all \(k \ge{} 2, 0 \le{} p 
 therefore, \(\frac{p}{k!} \in \mathcal{F} \Leftrightarrow \frac{p}{k!}
 \in \mathcal{F}_n\), for all \(n \ge k\).
 % \in \displaystyle{\lim_{n \to \infty}\mathcal{F}_n}\)
-hence, \(\displaystyle{\mathcal{F} = \lim_{n \to \infty}\mathcal{F}_n}\). \quad QED equation \eqref{eqn02}.
+hence, \(\displaystyle{\mathcal{F} = \lim_{n \to \infty}\mathcal{F}_n}\).
+% Note: \(\frac{p}{k!} \in \mathcal{F}_k \Rightarrow \frac{p}{k!} \in \mathcal{F}\).
 
-Proof of equation \eqref{eqn03}: If \(\frac{p}{k} \in \mathbb{Q}_{p<q}\)
+QED equation \eqref{eqn02}.
+
+\bigskip
+Proof of equation \eqref{eqn03}:
+
+If \(\frac{p}{k} \in \mathbb{Q}_{p<q}\)
 then \(\frac{p}{k} \in{} \mathcal{F}_k\) because,
 
 {\small
@@ -703,20 +711,21 @@ then \(\frac{p}{k} \in{} \mathcal{F}_k\) because,
 }
 
 Therefore \(\frac{p}{k} \in \mathcal{F}_k\), therefor \(\frac{p}{k} \in \mathcal{F}\)
-for all \(\frac{p}{k} \in \mathbb{Q}_{p<q}\), i.e.; \(\mathcal{F} = \mathbb{Q}_{p<q}\). \quad QED \eqref{eqn03}.
+for all \(\frac{p}{k} \in \mathbb{Q}_{p<q}\), i.e.; \(\mathcal{F} = \mathbb{Q}_{p<q}\).
 
-Similarly we can show
-that the set {\footnotesize\(\displaystyle{\mathcal{S} = \lim_{n \to \infty}\mathcal{S}_n}\)}.
+QED \eqref{eqn03}.
 
-Observe that for all integers \(k \ge{} 2\), we know
-that
+\bigskip
+Proof of equation \eqref{eqn04}:
+
+Observe that for all integers \(k \ge{} 2\), we know that
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} \in \mathcal{S}_k\) for
 integers \(a_2, a_3, \dots{}, a_k\) where
 \(0\!\le{}\!a_2\!<\!2,\ 
 0\!\le{}\!a_3\!<\!3,\ 
 \dots{},\ 
 0\!\le{}\!a_k\!<\!k\).
-Therefore, \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} + \frac{0}{k!}  \in \mathcal{S}_{k+1}\) for
+Therefore, \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} + \frac{0}{(k+1)!}  \in \mathcal{S}_{k+1}\) for
 all such members of the set \(\mathcal{S}_k\), then 
 \(\mathcal{S}_k \subset \mathcal{S}_{k+1}\).
 
@@ -725,18 +734,30 @@ By induction it is straightforward to conclude that
 \subset \mathcal{S}_3
 \subset \mathcal{S}_4
 \subset \dots{}
-\), for all \(\mathcal{S}_i\), \(i \ge{} 2\). Therefore once an element is introduced to
-a set \(\mathcal{S}_i\), then it is in all subsequent sets in the sequence.
+\), for all \(\mathcal{S}_i\), \(i \ge{} 2\).
+Therefore when
+\(a \in \mathcal{S}_k\), then \(a \in \mathcal{S}_n, \forall\ n \ge{} k\).
 
-Therefor for all \(a; 
-a \in \mathcal{S}\ \Leftrightarrow\ 
-\exists N, \text{ such that }
-\forall n \ge N, a \in \mathcal{S}_n.\) and hence \(\mathcal{S}\) is the
-limit of the sequence of sets \(\mathcal{S}_2, \mathcal{S}_3, \mathcal{S}_4, \dots{}\).
+% Therefor for all \(a; 
+% a \in \mathcal{S}\ \Leftrightarrow\ 
+% \exists N, \text{ such that }
+% \forall n \ge N, a \in \mathcal{S}_n.\) and hence \(\mathcal{S}\) is the
+% limit of the sequence of sets \(\mathcal{S}_2, \mathcal{S}_3, \mathcal{S}_4, \dots{}\).
 
-% To summarize; All rational numbers \(\frac{p}{k}\) where \(k \ge{} 2\) and \(0 \le{} \frac{p}{k} < 1\) are in
-% the set \(\mathcal{F}_{\infty}\)
-% 
+Rewrite this next paragraph for S... (jpr left off here)
+
+By definition, \(\frac{p}{k!} \in \mathcal{F}\), for all \(k \ge{} 2, 0 \le{} p < k!\),
+therefore, \(\frac{p}{k!} \in \mathcal{F} \Leftrightarrow \frac{p}{k!}
+\in \mathcal{F}_n\), for all \(n \ge k\).
+% \in \displaystyle{\lim_{n \to \infty}\mathcal{F}_n}\)
+hence, \(\displaystyle{\mathcal{F} = \lim_{n \to \infty}\mathcal{F}_n}\).
+% Note: \(\frac{p}{k!} \in \mathcal{F}_k \Rightarrow \frac{p}{k!} \in \mathcal{F}\).
+
+QED equation \eqref{eqn04}.
+
+TBD. 
+Because of equality between Sk and Fk then each of S and F are limits of other Fk and Sk ie S = F, hence S = Q.
+
 QED.
 
 \section*{Lemma 5}
@@ -767,6 +788,8 @@ where \(a_2, \dots{}, a_k\) are integers, and
 }
 
 \subsubsection*{Proof}
+
+The following can be greatly similified.  JPR
 
 Suppose \(\frac{p}{q}\) is a positive rational number less than one. We note that its 
 denominator is at least 2, so by Lemma 4 we can say that
