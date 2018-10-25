@@ -191,7 +191,11 @@ in other bases - Note the first number being multiplied versus the base of the c
 \end{alignat*}
 %% }
 Notice the pattern in our examples:
-$(b-1)$ acts like a magic-number in base-$b$.
+$b-1$ (like 4 in the first example) acts like a magic-number in base-$b$
+(base-5 in the first example, because clearly 4 divides 268 sixty-seven times,
+but writing out 268 in base-5, then the sum of those digits is also divisible by 4).
+%$b-1$ (like 15 in the third example) acts like a magic-number in base-$b$ (because clearly 15 divides 345,
+%but writing out 345 in base-16, then the sum of adding up those digits is also divisible by 15).
 
 Let's take a look at some other examples in base-31.
 It appears that 2, 3, 5, 6, 10, 15 (along with 30 above)
@@ -297,7 +301,8 @@ be the base-$b$-representation of $n$.
 
 If $m$ is a positive integer such that $m\mid{}(b-1)$ then\footnote{Recall that the 
 bidirectional arrow symbol $\Leftrightarrow$
-means ``if and only if'' - it's like a logical ``equals'' sign},
+means ``if and only if'' - it's like a logical ``equals'' sign, the truth of one implies the truth
+of the other.},
 \[m\mid{}n \text{\hspace{2.5em}} \Leftrightarrow \text{\hspace{2.5em}}m\mid{}(d_k+\dots+d_2+d_1+d_0)\]
 Definition: $m\ne1$ is called a ``magic-number in base-$b$''.
 \end{jprIn}
