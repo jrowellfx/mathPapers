@@ -592,40 +592,77 @@ QED.
 \begin{center}
 \begin{gather*}
 \mathcal{F}_\infty = \lim_{n \to \infty}\mathcal{F}_n
-\text{\qquad and \qquad}
+\text{\quad and \quad}
 \mathcal{S}_\infty = \lim_{n \to \infty}\mathcal{S}_n 
+\text{\quad and \quad}
+\mathbb{Q}_{p<q} = \{\frac{p}{q} \mid p, q \in \mathbb{Z}, \text{ where } 2 < q,\ 0 \le{} p < q\}
 \end{gather*}
 \end{center}
 \egroup
 }
 
+The set \(\mathcal{F}_\infty\) is the limit of the sequence
+\(\mathcal{F}_2, \mathcal{F}_3, \mathcal{F}_4, \dots{}\), if and only if for all \(a\),
 
-To define what it means to be a member of \(\mathcal{F}_\infty\) we observe that
-for all integers \(k \ge{} 2, \mathcal{F}_k \subset \mathcal{F}_{k+1}\) because if
-\(\frac{p}{k!} \in \mathcal{F}_k\)
-then \(\frac{(k+1)\cdot{}p}{(k+1)\cdot{}k!} = \frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1}\).
+{\normalsize
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}
+\begin{center}
+\begin{equation*}
+a \in \mathcal{F}_\infty\ \Leftrightarrow\ 
+\exists N, \text{ such that }
+\forall n \ge N, a \in \mathcal{F}_n.
+\end{equation*}
+\end{center}
+\egroup
+}
+
+
+% \(a \in \mathcal{F}_\infty \Leftrightarrow 
+% \text{ there exists } N, \text{ where for all }
+% n \ge N, a \in \mathcal{F}_n\)
+
+(Similarly for \(\mathcal{S}_\infty\).)
+
+\section*{Lemma 4}
+
+{\normalsize
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}
+\begin{center}
+\begin{equation*}
+\mathcal{F}_\infty =\; \mathbb{Q}_{p<q}
+\end{equation*}
+\end{center}
+\egroup
+}
+
+\subsubsection*{Proof}
+
+We first note that the limit-set \(\mathcal{F}_\infty\) exists by the following reasoning;
+
+For all integers \(k \ge{} 2\), we know
+that \(\frac{p}{k!} \in \mathcal{F}_k\)
+and since \(\frac{(k+1)\cdot{}p}{(k+1)\cdot{}k!} = \frac{(k+1)\cdot{}p}{(k+1)!}\),
+therefore\newline \(\frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1},
+\text{ hence } \mathcal{F}_k \subset \mathcal{F}_{k+1}\).
 
 By induction it is straightforward to conclude that
 \(\mathcal{F}_2
 \subset \mathcal{F}_3
 \subset \mathcal{F}_4
 \subset \dots{}
-\subset \mathcal{F}_{n-1}
-\subset \mathcal{F}_n
-\), for all \(n \ge{} 2\),
-therefore \(\mathcal{F}_k \subset \mathcal{F}_{\infty}\) for all \(k \ge{} 2\).
+\), for all \(\mathcal{F}_i\), \(i \ge{} 2\). Therefore once an element is introduced to
+a set \(\mathcal{F}_i\), then it is in all subsequent sets in the sequence,
+thus satisfying the criterea for the existence of the limit-set.
+
+% therefore \(\mathcal{F}_k \subset \mathcal{F}_{\infty}\) for all \(k \ge{} 2\).
 
 \(a \in \mathcal{F}_\infty\) means that there exists an integer \(k \ge 2\) such that
 \(a \in \mathcal{F}_k\) which carries with it the idea that it is
 also a member of every larger set \(\mathcal{F}_{k+1}, \mathcal{F}_{k+2}, \dots{}\)
 
 We define \(a \in \mathcal{S}_\infty\) in a similar way. (ELFS\footnote{Exercise Left For Student.})
-
-\section*{Lemma 4}
-
-The set \(\mathcal{F}_\infty\) contains all non-negative rational numbers less than one.
-
-\subsubsection*{Proof}
 
 % p/k is in Fk - therefor p/k is in Finf for all k. Therefor all rational numbers are in Finf.
 
