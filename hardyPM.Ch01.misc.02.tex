@@ -106,7 +106,7 @@ of chapter 1 in Hardy's `Pure Mathematics'
 presents us with a fascinating result.
 The theorem feels like what the `\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0}
 {basis-representation-theorem}'
-is for integers, but for rational numbers, \dots{} beautiful!
+is for integers, but for rational numbers \dots{} beautiful!
 
 \section*{Factorial Representation Theorem\footnote{...it's not named in the text, so I named the theorem.}}
 
@@ -133,7 +133,7 @@ where \(a_1, a_2, \dots{}, a_k\) are integers, and
 \end{center}
 }
 
-\section*{Observations that lead to the proof.}
+\section*{Observations that led to the proof.}
 
 % The first thing to note are the ranges of the integers \(a_1, a_2, a_3, \dots{}, a_k\).
 
@@ -151,7 +151,7 @@ So if we're trying to represent any positive
 rational number \(\frac{m}{q}\) in the form of the theorem then the integer \(a_1\)
 wants to play the role of the integer part, \(i\),
 and the remainder of the expression \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-looks to be playing the roll of the rational part, \(\frac{p}{q}\), where,
+looks to be playing the role of the rational part, \(\frac{p}{q}\), where,
 
 {\small
 \bgroup                                  %% open the group
@@ -178,7 +178,8 @@ by tacking the \(a_1\) back on at the end of the proof.
 Also, it started to become clear that including zero (that is, not JUST positive rational numbers) was
 going to simplify the task\footnote{Did you notice how the theorem restricts the last integer, \(a_k\), to
 be strictly greater than zero, unlike all the other variables? We loosen up that
-restriction allow \(a_k\) to be equal to zero so all the variables are treated the same. At the very end of the
+restriction by allowing \(a_k\) to be equal to zero so that
+all the variables are treated the same. At the very end of the
 proof it's trivial to reintroduce that restriction on the integer \(a_k\).}.
 
 At first glance it wasn't remotely obvious to me how I'd go about calculating
@@ -221,40 +222,41 @@ For example, look at these rational numbers,
 \egroup
 }
 
-Good clue! It seemed to be the case
+An obvious patter emerged!
+It seemed to be the case
 that if we assign the largest possible values to the variables,
 from \(a_2\) up to say \(a_k\) (and all subsequent variables
 set to zero) we get this rational number, \(\frac{k!-1}{k!}\).
 This number is as close to 1 as you can get with a denominator of \(k!\) without actually
 hitting 1. (What happens if you add \(\frac{1}{k!}\) to \(\frac{k!-1}{k!}\)?)
 This turned out to be
-a pretty useful observation, and it became my `Lemma-1' in the proof below.
+a pretty useful observation, and it became my `Lemma 1' in the proof below.
 
 Also, if we assign zeros to all the variables then naturally we get \(\frac{0}{k!}\), plus
 it's pretty simple to figure out how to make the smallest non-zero such rational number \(\frac{1}{k!}\).
 Then thinking about continually adding \(\frac{1}{k!}\) to the result gives us an idea about how the
 \(a_i\) variables change as you keep incrementing by \(\frac{1}{k!}\).
 
-So we we restrict ourselves to using only \(a_2, a_3, \dots{}, a_k\), then
+So if we restrict ourselves to using only \(a_2, a_3, \dots{}, a_k\), then we
 can generate the smallest rational number (\(\frac{0}{k!}\)) and the largest
 (\(\frac{k!-1}{k!}\)) where
 \(0 \le{} \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} < 1\).
 
 One further observation to help understand the motivation
 behind this proof is that by using combinatorics we can
-count how many possible combinations of \(a_i\)'s there are.
+count how many possible combinations of \(a_i\)'s are possible.
 So, we have two choices for the \(a_2\) variable (0, 1), combined with three choices for the \(a_3\) variable (0, 1, 2),
 combined with four choices for the \(a_4\) variable (0, 1, 2, 3), \dots{} combined with \(k\) choices for
-the \(a_k\) variable (0, 1, 2, \dots{}, \(k\!-\!1\)), that
-gives us \(2\cdot{}3\cdot{}4\cdot{}\cdot{}\cdot{}k = k!\) possibly different sums.
+the \(a_k\) variable (0, 1, 2, \dots{}, \(k\!-\!1\)), which
+gives us \(2\cdot{}3\cdot{}4\cdot{}\cdot{}\cdot{}k = k!\) possible different sums.
 
 Hmmmmm, the following set has \(k!\) members,
 \(\{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}\).
-So that, plus one or two other thoughts is what lead me to the proof below. I won't spoil the rest of it,
+So that, plus one or two other thoughts is what led me to the proof below. I won't spoil the rest of it;
 to find out, go ahead and read the rest of the paper!
 
 \break
-\section*{Lemma-1}
+\section*{Lemma 1}
 {\small
 \bgroup                                  %% open the group
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
@@ -265,9 +267,9 @@ to find out, go ahead and read the rest of the paper!
 \end{center}
 \egroup
 }
-\section*{Proof of Lemma-1}
+\section*{Proof of Lemma 1 (make smaller)}
 
-This equality is fairly trivial to demonstrate by induction, since \(\frac{1}{2!} = \frac{2!-1}{2!}\) and, 
+This equality is straighforward to demonstrate by induction, since \(\frac{1}{2!} = \frac{2!-1}{2!}\) and, 
 {\scriptsize
 \begin{alignat*}{1}
   &\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-2}{(k-1)!} + \frac{k-1}{k!}\\
@@ -277,9 +279,11 @@ This equality is fairly trivial to demonstrate by induction, since \(\frac{1}{2!
   =\  &\frac{k!-1}{k!}
 \end{alignat*}
 }
-\dots{}thus establishing lemma-1 for all values of \(k \ge 2\). QED
+\dots{}thus establishing lemma 1 for all values of \(k \ge 2\).\quad QED.
 
-\section*{Lemma-2}
+Insert commentary.
+
+\section*{Lemma 2}
 
 For integers \(i,k\) where \(2\le{}i<k\),
 
@@ -288,14 +292,17 @@ For integers \(i,k\) where \(2\le{}i<k\),
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
 \begin{center}
 \begin{equation*}
-\frac{1}{i!} > \frac{i}{(i+1)!}
+\frac{1}{i!} >
+\frac{i}{(i+1)!}
++ \frac{i+1}{(i+2)!}
 + \dots{}
++ \frac{k-2}{(k-1)!}
 + \frac{k-1}{k!}
 \end{equation*}
 \end{center}
 \egroup
 }
-\section*{Proof of Lemma-2}
+\section*{Proof of Lemma 2}
 {\small
 \bgroup
 \setlength{\abovedisplayskip}{0pt}
@@ -304,7 +311,7 @@ For integers \(i,k\) where \(2\le{}i<k\),
   &\frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!}\\
   =\  &(\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-1}{k!})
   - (\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{i-1}{i!})\quad&\\
-  =\  &\frac{k!-1}{k!} - \frac{i!-1}{i!} &\text{(by lemma-1)}\\
+  =\  &\frac{k!-1}{k!} - \frac{i!-1}{i!} \text{\quad \quad \quad (by Lemma 1)}\\
   =\  &\frac{k!}{k!} - \frac{1}{k!} - \frac{i!}{i!} + \frac{1}{i!}\\
   =\  &\frac{1}{i!} - \frac{1}{k!}\\
   <\  &\frac{1}{i!}
@@ -318,7 +325,7 @@ QED
 
 \section*{Definitions}
 
-For integer \(k \ge 2\), and integers \(a_2, a_3, \dots{}, a_k\),
+For integer \(k \ge 2\), and integers \(a_2, a_3, \dots{}, a_k\), we define the following sets,
 
 {\small
 \bgroup                                  %% open the group
@@ -335,7 +342,9 @@ For integer \(k \ge 2\), and integers \(a_2, a_3, \dots{}, a_k\),
 \egroup
 }
 
-\section*{Lemma-3}
+Note JPR : line up by equals sign
+
+\section*{Lemma 3}
 
 {\small
 \bgroup                                  %% open the group
@@ -367,7 +376,7 @@ there is a unique sequence of integers \(a_2, a_3, \dots{} a_k\) such that,
 
 where \(0\! \le{}\! a_2\! <\! 2,\enspace 0\! \le{}\! a_3\! <\! 3,\enspace \dots{},\enspace 0\! \le{}\! a_k\! <\! k\).
 
-\section*{Proof of Lemma-3}
+\section*{Proof of Lemma 3}
 
 To show
 that the set \(\mathcal{S}_k\) is the same
@@ -384,7 +393,7 @@ The smallest member of the set \(\mathcal{S}_k\)
 is \(\frac{0}{k!}\) and
 occurs when all the variables of the sum are set to zero.
 Furthermore, the largest member of the set occurs when all the variables of the sum are set to
-their maximum value, which gives us \(\frac{k!-1}{k!}\) as shown in lemma-1.
+their maximum value, which gives us \(\frac{k!-1}{k!}\) as shown in lemma 1.
 
 We also note that every member of \(\mathcal{S}_k\) can be written as a rational number
 with \(k!\) as the denominator, like so,
@@ -421,7 +430,7 @@ Therefore any member of the set \(\mathcal{S}_k\) can be written as
 
 Furthermore, each possible assignment of values to the variables of
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-produce a unique member of the set \(\mathcal{S}_k\).
+produces a \emph{unique} member of the set \(\mathcal{S}_k\).
 
 For if this weren't true and both
 \(\frac{p}{k!} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) and
@@ -430,7 +439,7 @@ for different variables \(a_2, a_3, \dots{}, a_k\)
 and \(b_2, b_3, \dots{}, b_k\), then we can arrive at a contradiction as follows.
 
 First suppose that \(a_i\ne{}b_i\) is the first such pair of variables
-that differ from each other. In other words, \(a_2=b_2, a_3=b_3, \dots{}, a_{i-1}=b_{i-1}\).
+that differ. In other words, \(a_2=b_2, a_3=b_3, \dots{}, a_{i-1}=b_{i-1}, a_i\ne{}b_i\).
 Also, without loss of generality we can assume that \(a_i > b_i\), and because
 of the equality of the two different representations for \(\frac{p}{q}\) we can write,
 
@@ -447,17 +456,19 @@ of the equality of the two different representations for \(\frac{p}{q}\) we can 
 \egroup
 }%\vspace{-4mm}
 
-Since \(a_i - b_i \ge{} 1\), then \(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!}\).
+(JPR NOTE: possibly add more terms to make pattern clear.)
 
-Also,
+But \(a_i - b_i \ge{} 1\), so \(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!}\).
+
+Also, (Rewrite by starting out with footnote "hence" etc.)
 \(\frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!} \ge{} \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\)
 regardless of the values of the variables
 on the right side of the inequality\footnote{Letting all the \(b\)'s be their maximum value,
 and all the \(a\)'s be zero will produce the largest numerators in each
-term of the sum, any other possibility will result in a smaller term for the sum.}.
+term of the sum; any other possibility will result in a smaller term for the sum.}.
 
-Because lemma-2 tells us that \(\frac{1}{i!} > \frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!}\) then
-we can string all our inequalities together like so,
+Because lemma 2 tells us that \(\frac{1}{i!} > \frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!}\)
+we can string all our inequalities together as follows,
 
 \begin{center}
 \(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!} > \frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!} \ge{} \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\),
@@ -465,13 +476,13 @@ we can string all our inequalities together like so,
 
 But we had also deduced
 that \(\frac{a_i - b_i}{i!} = \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\)
-which contradicts the strict inequality above.
+which contradicts the strict inequality above. (Rewrite using label to above equality).
 
 Therefore our assumption that there can be a second set
-of variables to produce the same rational number \(\frac{p}{k!}\) must be false.
+of variables representing the same rational number \(\frac{p}{k!}\) must be false.
 Therefore any assignment of values to the variables of
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-must produce a unique member of the set \(\mathcal{S}_k\).
+is unique.
 
 Now we can count the number of members of \(\mathcal{S}_k\), by looking at all the
 possible combinations of values for the variables \(a_2, a_3, \dots{}, a_k\).
@@ -496,10 +507,9 @@ Furthermore the corollary is a direct result of the fact that there is a one-to-
 between the two sets.
 QED
 
-\section*{Lemma-4}
+\section*{Lemma 4}
 
-Any non-negative rational number
-that is less than one,
+Any non-negative rational number \emph{less than one},
 %, \(\frac{p}{q}\), where \(0 \le{} \frac{p}{q} < 1\)
 can
 be expressed in one and only one way in the form
@@ -525,7 +535,7 @@ where \(a_2, \dots{}, a_k\) are integers, and
 \end{center}
 }
 
-\section*{Proof Lemma-4}
+\section*{Proof Lemma 4}
 
 If \(\frac{p}{q}\) is a rational number where
 \(0\le{}\frac{p}{q}<1\) and \(2\le{}q\le{k}\)
@@ -570,7 +580,7 @@ rational numbers being \(
 \egroup
 }
 
-Therefore \(\frac{p}{q}\) is an element of \(\mathcal{F}_k\) which is the same as the set \(\mathcal{S}_k\).
+Therefore \(\frac{p}{q}\) is an element of \(\mathcal{F}_k\), hence an element of \(\mathcal{S}_k\).
 In other words, all non-negative rational numbers \(\frac{p}{q}\) with denominators \(q\) from 2 up to \(k\)
 where \(0\le{}\frac{p}{q}<1\) 
 are uniquely represented by the expression,
@@ -662,7 +672,9 @@ there exist unique integers \(i\) and \(p\) such that,
 \end{alignat*}
 \egroup
 }\par
-Which tells us that all positive rational numbers \(\frac{j}{q}\) can be written as
+Which tells us that all positive rational numbers \(\frac{j}{q}\) can be
+\emph{uniquely}
+written as
 an integer part, \(i\), plus a fractional part \(\frac{p}{q}\), where \(0\le{}\frac{p}{q}<1\).
 
 In our theorem, the \(a_1\) variable plays the role of the integer part \(i\),
@@ -673,7 +685,7 @@ Therefore to express any positive rational number in the form of the theorem, fi
 Euclidean Division Theorem to \(\frac{j}{q}\) and let \(a_1 = i\). If there is no fractional remainder, then
 the theorem is trivially true,
 however if there is a fractional remainder \(\frac{p}{q}\), then 
-by lemma-4 we know that the sum \(\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) is
+by lemma 4 we know that the sum \(\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) is
 uniquely associated
 with \(\frac{p}{q}\)
 so clearly \(\frac{j}{q} = a_1 + \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
