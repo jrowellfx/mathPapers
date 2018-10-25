@@ -157,7 +157,7 @@ which of course is divisible by 3, but not by 9.
 So given that the term ``magic-number'' hasn't got
 a formal definition in the math world, I think it's time to give it one.
 How about if we call ANY number that has this
-divisibility property (with respect to adding up the digits of some other number) a ``magic-number''?
+divisibility property (with respect to adding up the digits of another number) a ``magic-number''?
 
 Too bad 3 and 9 are the only magic-numbers in base-10,
 but what about other bases?
@@ -192,7 +192,7 @@ Notice the pattern in our examples:
 $(b-1)$ acts like a magic-number in base-$b$.
 
 Let's take a look at some other examples in base-31.
-It appears that 2, 3, 5, 6, 10, 15 (along with 30)
+It appears that 2, 3, 5, 6, 10, 15 (along with 30 above)
 might \emph{all} be magic-numbers in base-31:
 % \begin{itemize}
 % \item $2\cdot{}409\cdot{}1129=923522$ written in base-31 is $(10001)_{31}$ and $1+0+0+0+1=2$.
@@ -202,19 +202,18 @@ might \emph{all} be magic-numbers in base-31:
 % \item $10\cdot{}197\cdot{}941=1853770$ written in base-31 is $(20701)_{31}$ and $2+0+7+0+1=10$.
 % \item $15\cdot{}71503=1072545$ written in base-31 is $(15027)_{31}$ and $1+5+0+2+7=15$.
 % \end{itemize}
-\begin{alignat*}{6}
- 2&\cdot{}409\cdot{}1129=923522  &&\text{ is } (10001)_{31} &&\quad\text{and}\quad & 1+0+0+0+1&=2 \\
- 3&\cdot{}641=1923               &&\text{ is } (201)_{31}   &&\quad\text{and}\quad & 2+0+1&=3 \\
- 5&\cdot{}139\cdot{}2659=1848005 &&\text{ is } (20102)_{31} &&\quad\text{and}\quad & 2+0+1+0+2&=5 \\
- 6&\cdot{}10091=60546            &&\text{ is } (2103)_{31}  &&\quad\text{and}\quad & 2+1+0+3&=6 \\
-10&\cdot{}197\cdot{}941=1853770  &&\text{ is } (20701)_{31} &&\quad\text{and}\quad & 2+0+7+0+1&=10 \\
-15&\cdot{}71503=1072545          &&\text{ is } (15027)_{31} &&\quad\text{and}\quad & 1+5+0+2+7&=15
+\begin{alignat*}{8}
+ 2&\cdot{}409\cdot{}1129&&=923522  &&= (10001)_{31} &&\quad\text{and}\quad & 1+0+0+0+1&=2 \\
+ 3&\cdot{}641&&=1923               &&= (201)_{31}   &&\quad\text{and}\quad & 2+0+1&=3 \\
+ 5&\cdot{}139\cdot{}2659&&=1848005 &&= (20102)_{31} &&\quad\text{and}\quad & 2+0+1+0+2&=5 \\
+ 6&\cdot{}10091&&=60546            &&= (2103)_{31}  &&\quad\text{and}\quad & 2+1+0+3&=6 \\
+10&\cdot{}197\cdot{}941&&=1853770  &&= (20701)_{31} &&\quad\text{and}\quad & 2+0+7+0+1&=10 \\
+15&\cdot{}71503&&=1072545          &&= (15027)_{31} &&\quad\text{and}\quad & 1+5+0+2+7&=15
 \end{alignat*}
 
 See the pattern? All the divisors of 30 seem to be magic-numbers in base-31.
 It turns out that in base-$b$, then any divisor of $(b-1)$ is a magic-number in base-$b$;
-however, since we've only looked at some examples, we can't make that claim unless we prove it for ALL
-such situations.
+however, since we've only looked at some examples, we can't make that claim unless we prove it in general.
 
 What about 1? Wouldn't 1 a magic-number in all bases? Of course it would because
 we know that all numbers are divisible by 1, and adding up any set of digits is also 
@@ -393,5 +392,12 @@ Also let $m$ be a positive integer such that $m\mid{}(b-1)$. Therefore,
 }
 QED
 \section*{Epilogue}
-Blah blah blah - look for ``Heptapods have the best number system''!
+It's amazing how simple is is to prove our theorem using modular arithmetic. I believe the magic-number-theorem
+isn't usually granted any special status (like giving it a name and adding a new
+definition for ``magic-number'') and is likely only
+presented as a simple excercise for students in elemetary-algebra or elementary-number-theory textbooks.
+
+However, it's fun and I want to use this theorem and some other observations about times-tables to see if I can determine
+what the ``best'' base-number-system might be! (I'll define ``best'' later.) At any rate, I think the
+Heptapods in ``Arrival'' might be the winners with base-21. Stay tuned for my next paper!
 \end{document}
