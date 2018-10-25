@@ -112,13 +112,19 @@ Here it is, followed by my proof which starts out with some lemmas to get us rol
 \section*{Theorem}
 
 Any positive rational number can be expressed in one and only one way in the form
-
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
 \begin{center}
-\(a_1 + \frac{a_2}{1\cdot{}2}
+\begin{equation*}
+a_1 + \frac{a_2}{1\cdot{}2}
 + \frac{a_3}{1\cdot{}2\cdot{}3}
 + \dots{}
-+ \frac{a_k}{1\cdot{}2\cdot{}3\cdot{}\dots{}\cdot{}k},\)\par
++ \frac{a_k}{1\cdot{}2\cdot{}3\cdot{}\dots{}\cdot{}k},
+\end{equation*}
 \end{center}
+\egroup
+}
 
 where $a_1, a_2, \dots{}, a_k$ are integers, and
 
@@ -151,9 +157,55 @@ This equality is fairly trivial to demonstrate by induction, since $\frac{1}{2!}
 }
 \dots{}thus establishing lemma-1 for all values of k.
 
-\section*{Lemma}
+\section*{Lemma-2}
 
-The set of rational numbers,\newline
+For integers $i,k$ where $2\le{}i<k$ such that,
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
+\begin{center}
+\begin{equation*}
+\frac{1}{2!} + \frac{2}{3!}
++ \dots{}
++ \frac{i-1}{i!}
++ \frac{i}{(i+1)!}
++ \dots{}
++ \frac{k-1}{k!},
+\end{equation*}
+\end{center}
+\egroup
+}
+then
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
+\begin{center}
+\begin{equation*}
+\frac{1}{i!} - \frac{1}{k!}
+= \frac{i}{(i+1)!}
++ \dots{}
++ \frac{k-1}{k!}
+\end{equation*}
+\end{center}
+\egroup
+}
+\section*{Proof of Lemma-2}
+{\small
+\bgroup
+\setlength{\abovedisplayskip}{0pt}%
+\setlength{\belowdisplayskip}{0pt}%
+\begin{alignat*}{1}
+  &\frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!}\\
+  =\  &(\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-1}{k!})
+  - (\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{i-1}{i!})\\
+  =\  &\frac{k!-1}{k!} - \frac{i!-1}{i!}\\
+  =\  &\frac{k!}{k!} - \frac{1}{k!} - \frac{i!}{i!} + \frac{1}{i!}\\
+  =\  &\frac{1}{i!} - \frac{1}{k!}
+\end{alignat*}%
+\egroup}
+\section*{Lemma-3}
+
+The set of rational numbers,
 
 \centerline{$\mathcal{S} = \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\enspace\mid\enspace 
 0\! \le{}\! a_2\! <\! 2,\enspace 
@@ -164,9 +216,7 @@ is identical to the set of rational numbers,\newline
 
 \centerline{$\mathcal{F} = \{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}$}
 
-\break
-\section*{Proof of Lemma}
-
+\section*{Proof of Lemma-3}
 
 Now we make note of the fact that the smallest member of the set $\mathcal{S}$ 
 occurs when all the coefficients of the sum are zero, i.e.; $\frac{0}{k!}$.
@@ -202,15 +252,6 @@ Then we can conclude that,
 
 Because,
 
-\begin{alignat*}{1}
-  &\frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!}\\
-  =\  &(\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-1}{k!})
-  - (\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{i-1}{i!})\\
-  =\  &\frac{k!-1}{k!} - \frac{i!-1}{i!}\\
-  =\  &\frac{k!}{k!} - \frac{1}{k!} - \frac{i!}{i!} + \frac{1}{i!}\\
-  =\  &\frac{1}{i!} - \frac{1}{k!}
-\end{alignat*}
-
 From here we can deduce that any assignment
 of values to the coefficients of a member of $\mathcal{S}$ produces a unique member
 of the set, for if it didn't and
@@ -229,88 +270,3 @@ that can be assigned to all the coefficients is $2\cdot{}3\cdot{}4\cdot\dots{}\c
 The size of $\mathcal{F}$ is clearly $k!$
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\centerline{$\frac{1}{1}, \enspace\frac{3}{2}, \enspace\frac{7}{5}, \enspace\frac{17}{12}, \enspace\frac{41}{29}, \enspace\frac{99}{70}$}
-
-So these numbers squared are:\newline
-
-\centerline{$\frac{1}{1}, \enspace\frac{9}{4}, \enspace\frac{49}{25}, \enspace\frac{289}{144}, \enspace\frac{1681}{841}, \enspace\frac{9801}{4900}$}
-
-And their differences from 2 are:\newline
-
-\centerline{$-1, \enspace\frac{1}{4}, \enspace-\frac{1}{25}, \enspace\frac{1}{144}, \enspace-\frac{1}{841}, \enspace\frac{1}{4900}$}
-
-\section*{Lemma}
-
-Let $m$, $n$ and $a$ be positive integers
-
-\[\frac{m^2}{n^2}+\frac{a}{n^2}=2 \text{\hspace{2.5em}} \Leftrightarrow \text{\hspace{2.5em}}\frac{(m+2n)^2}{(m+n)^2}-\frac{a}{(m+n)^2}=2\]
-
-\section*{Proof of Lemma}
-
-\begin{alignat*}{2}
-  &&\frac{(m+2n)^2}{(m+n)^2}-\frac{a}{(m+n)^2}
-  \text{\hspace{0.5em}}&=\text{\hspace{0.5em}}
-  2\\
-  &\Leftrightarrow\quad
-  &(m+2n)^2 - a
-  \text{\hspace{0.5em}}&=\text{\hspace{0.5em}}
-  2(m+n)^2\\
-  &\Leftrightarrow\quad
-  &m^2 + 4mn + 4n^2
-  \text{\hspace{0.5em}}&=\text{\hspace{0.5em}}
-  2m^2 + 4mn + 2n^2 + a\\
-  &\Leftrightarrow\quad
-  &4n^2 - 2n^2
-  \text{\hspace{0.5em}}&=\text{\hspace{0.5em}}
-  2m^2 - m^2 + a\\
-  &\Leftrightarrow\quad
-  &2n^2
-  \text{\hspace{0.5em}}&=\text{\hspace{0.5em}}
-  m^2 + a\\
-  &\Leftrightarrow\quad
-  &2
-  \text{\hspace{0.5em}}&=\text{\hspace{0.5em}}
-  \frac{m^2}{n^2}+\frac{a}{n^2}\\
-\end{alignat*}
-\centerline{QED}
-
-\section*{Proof of Theorem}
-Define the ``error'' of a rational approximation to $\sqrt{2}$ as the difference between the
-approximation-squared and 2.
-So we learn from the Lemma that the error for the $\frac{m}{n}$ approximation of $\sqrt{2}$ is\newline
-\centerline{$\abs*{\frac{a}{n^2}} = \abs*{2 - \frac{m^2}{n^2}}$,}
-
-and the error for the $\frac{(m+2n)}{(m+n)}$ approximation of $\sqrt{2}$ is\newline
-\centerline{$\abs*{\frac{-a}{(m+n)^2}} = \abs*{2 - \frac{(m+2n)^2}{(m+n)^2}}$.}
-
-\bigskip
-The denominator $(m+n)^2$ is always larger than $n^2$ therefore,
-\[\abs*{\frac{-a}{(m+n)^2}} < \abs*{\frac{a}{n^2}} \text{,}\]
-showing that the approximation $\frac{(m+2n)}{(m+n)}$ for
-$\sqrt{2}$ 
-has a smaller error that that of $\frac{m}{n}$ and is therefore
-a better approximation to $\sqrt{2}$.
-
-Furthermore, we also learn from the Lemma that the successive approximations flip
-to either side of 2 because:
-
-If $\frac{m^2}{n^2} < 2$ then $a$ is positive therefore $\frac{(m+2n)}{(m+n)} > 2$, similarly,
-
-If $\frac{m^2}{n^2} > 2$ then $a$ is negative therefore $\frac{(m+2n)}{(m+n)} < 2$.
-
-\bigskip
-\centerline{QED}
