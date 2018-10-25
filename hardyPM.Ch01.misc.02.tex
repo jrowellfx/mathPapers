@@ -186,7 +186,7 @@ going to simplify the task\footnote{Did you notice how the theorem restricts the
 be strictly greater than zero, unlike all the other variables? We loosen up that
 restriction by allowing \(a_k\) to be equal to zero so that
 all the variables are treated the same. At the very end of the
-proof it's trivial to reintroduce that restriction on the integer \(a_k\).}.
+proof it's easy to reintroduce that restriction on the integer \(a_k\).}.
 
 At first, it wasn't remotely obvious to me how I'd go about calculating
 the values of the integers \(a_2, a_3, \dots{}, a_k\) for a given rational number
@@ -259,7 +259,7 @@ combined with four choices for the \(a_4\) variable (0, 1, 2, 3), \dots{} combin
 the \(a_k\) variable (0, 1, 2, \dots{}, \(k\!-\!1\)), which
 gives us \(2\cdot{}3\cdot{}4\cdot{}\cdot{}\cdot{}k = k!\) possible different sums.
 
-Hmmmmm, the following set has \(k!\) members,
+Hmmm, the following set has \(k!\) members,
 \(\{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}\).
 With a little algebraic tinkering we can see that
 this set contains each of the rational numbers between zero and one with
@@ -282,7 +282,8 @@ to find out, go ahead and read the rest of the paper!
 }
 \subsubsection*{Proof}
 
-This equality is straightforward to demonstrate by induction, since \(\frac{1}{2!} = \frac{2!-1}{2!}\) and, 
+Induction: When \(k = 2\) it's true that \(\frac{1}{2!} = \frac{2!-1}{2!}\), and noting that
+\(\frac{2-2}{1!} = \frac{0}{1!} = \frac{1!-1}{1!}\) then
 {\scriptsize
 \begin{alignat*}{1}
   &\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-2}{(k-1)!} + \frac{k-1}{k!}\\
@@ -369,7 +370,7 @@ For integer \(k \ge 2\), and integers \(a_2, a_3, \dots{}, a_k\), we define the 
 \egroup
 }
 
-If \(a \in \mathcal{S}_k\), then the sum \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\),
+If \(a \in \mathcal{S}_k\), then the sum \(a = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\),
 where
 \(k \ge{} 2\), and \(0\! \le{}\! a_2\! <\! 2,\enspace
 0\! \le{}\! a_3\! <\! 3,\enspace
@@ -591,8 +592,8 @@ the sets
 \end{gather*}
 }
 
-\(\mathcal{F}\) is the set of ALL non-negative rational numbers, less than one, with
-all possible factorials as the denominator.
+\(\mathcal{F}\) is the set of ALL non-negative rational numbers, less than one, that could be
+formed with any factorial as the denominator.
 
 \(\mathcal{S}\) is the set of ALL non-negative rational numbers, less than one,
 formed by every factorial-representation possible.
@@ -600,7 +601,7 @@ formed by every factorial-representation possible.
 Finally,
 \(\mathbb{Q}_{01}\) is the set of ALL non-negative rational numbers less than one, 
 where \(p\) and \(q\) are co-prime. We specify the co-prime condition
-to get unique members of the set, otherwise the set isn't well defined.
+to get unique members of the set (otherwise the set isn't well defined).
 % \footnote{By definition sets must contain unique members.}.
 
 Recall that two sets, \(X\) and \(Y\) are equal if and only if, for all \(a\),
@@ -752,7 +753,7 @@ by induction it is straightforward to conclude that
 \subset \dots{}
 \), for all \(\mathcal{S}_i\), \(i \ge{} 2\).
 
-This infinite chain of supersets helps us to think about the
+This infinite chain of super-sets helps us to think about the
 meaning of our new sets
 \(\mathcal{F}\) and \(\mathcal{S}\), each of which are defined as a union of 
 an infinite sequence of \(\mathcal{F}_i\)'s and \(\mathcal{S}_i\)'s.
@@ -967,5 +968,10 @@ is to pick
 \(q\) divides \(k!\)\! .
 
 However, I'll leave that proof for another day.
+
+A final thought is that the number 
+\(2\!+\!\frac{1}{2!}\!+\!\frac{1}{3!}\!+\!\frac{1}{4!}\!+\!\frac{1}{5!}\!+\!\dots{}\) is not in \(\mathcal{S}\)
+because we can't point to any particular \(\mathcal{S}_k\) that it would be a member of.  Not surprising really as
+this number isn't rational - it's \(e\).
 
 \end{document}
