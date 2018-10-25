@@ -103,7 +103,8 @@
 What does ``10'' mean?
 
 We got it drilled into us watching Sesame Street that ``10'' is the symbol for the number
-``ten'' which is this many apples
+``\href{https://youtu.be/YcRBEqq-tGY?list=PLjBV4gvZoIcwHfhAWBmP6i7vEuqU6Q6vE}{ten}''
+which is this many apples
 ``\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}''
 or the number of fingers on a typical person's two hands.
 
@@ -165,10 +166,13 @@ Note: in general integers do NOT have multiplicative inverses
 that are also integers. (eg. $\frac{1}{2}$ is the multiplicative
 inverse of 2 because $\frac{1}{2}\cdot{}2=1$ but $\frac{1}{2}$ is not an integer.)}.
 
-Since our ability to count in base-ten is not axiomatic, we need
-to define what it means to write out a number in base-ten,
-then state its properties in a theorem which we must prove
-to be true with a series of arguments that logically connects it
+Since our ability to count in base-ten is not axiomatic, then to properly ground
+it in modern mathematics we should
+define what it means to write out a number in base-ten,
+state its properties in a theorem,
+then provide a proof of that theorem -
+The proof being
+a series of arguments that logically connects it
 directly\footnote{directly \dots{}or indirectly
 via other previously proven theorems.} to the axioms. 
 In doing so, the only way
@@ -193,38 +197,40 @@ of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
 \bigskip
 
 ``That's nuts!'' you might say, I don't even see a ``ten'' in there so how could that
-be about how we learned to count watching Sesame Street? If you let $b=\text{ten}$
+describe how we learned to count watching Sesame Street? If you let $b=\text{ten}$
 in the above theorem, then we have the ``Base-Ten Representation Theorem''. We could let $b=2$, then we'd have
-``Base-Two Representation Theorem'' which states that we can count in binary.
+``Base-Two Representation Theorem'' which states how we count in binary.
 
-Anyway, if you're not a "math-person" don't fear, by the end of this paper you will know
-how to read that theorem so that it makes sense
+This theorem is a good example of what mathematicians like to do - they generalize ideas.
+Why restrict ourselves to ten when the idea applies equally well to two, three, four, five, ... etc.?
+The heptapods in ``Arrival'' have  seven limbs with seven fingers each, perhaps they
+use base-fourty-nine.  By generalizing the idea to a base $b$, where $b$ is any number two or higher,
+we gain deeper understanding about the subject in question.
+
+Even though doing arithmetic in base-ten
+has been going on for almost two-thousand
+years, formalizing it and generalizing it into a theorem is fairly recent.
+The earliest reference I've found to our theorem
+is in ``Elementary Number Theory" by E. Landau in 1958.
+We probably don't need to look further back than
+Leibniz time when he introduced the idea of binary
+arithmetic in 1679. So our theorem is fairly recent 
+on the world stage.
+
+Anyway, if you're not a ``math-person" don't fear, by the end of this paper you will know
+how to read the ``Basis Representation Theorem'' above so that it makes sense
 plus you'll know how to prove it.
 
 Let's take a big leap back and work up to the statement of that theorem step by step, using
 our familiar base-ten for discussion.
 
-\end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-In practice, using some base-$b$ to count with,
+When using some arbitrary base-$b$ to count with,
 it's useful to have simple symbols to represent each of the integers from zero to up to $(b-1)$.
-So in base-ten it's our
-familiar 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9.
+So in our base-ten system we use the
+digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9.
 
-Base-ten uses the idea of stringing a series of digits together
-(a digit being one of the numbers 0, 1, 2, \dots{} 9),
-one after the other to be able to represent each whole number.
+Base-ten strings a series of these digits together
+one after the other to be able to represent each positive integer.
 Let's look at the first two-digit number, that is, ten,
 which as you well know looks like this: ``10".
 This extra digit on the left tells us how many tens we have and the last,
@@ -278,7 +284,7 @@ The above list explicitly shows the cases for $k = 2, 3$ and $4$.
 Using the $k$ like that is just a way to show that we can pick ANY whole number,
 i.e., there is no limit on how big $k$ can be.
 
-The notation of $10^k$ is very handy, in fact it extends
+The notation of $10^k$ is handy and extends
 to the case when $k=0$ and $k=1$.
 %\footnote{$10^k$ also extends to the cases
 %when $k$ is negative as in $10^{-1}$, or $10^{-2}$, etc.
@@ -369,55 +375,17 @@ followed by 9999 more zeros, then a ``5'', which means this:
 +5{\times{}}10^{0}\]
 Clearly we can keep going as high as we like.
 
-But how do we \emph{know} that we can create ALL the positive
-integers with this scheme?
-How do we \emph{know} that we didn't miss one?
-How do we \emph{know} that some string of
-digits doesn't represent two different integers?
-I know it seems silly to ask these kinds of questions - 
-after all, people have been counting in base-ten for almost two thousand years,
-if there was a problem, you'd think we'd have heard about it by now! ...so, obviously it works.
+\end{document}
 
-Here's the thing about modern mathematics - the \emph{only} ideas we take as obvious
-and don't require deeper explanation
-are the axioms - those are the mathematical ideas that
-are so simple that they can't be expressed in
-yet other even-simpler ideas. The axioms are the minimal set of simple,
-obvious, irrefutable ideas from which
-everything else in mathematics is built\footnote{The axioms:
-For every integer $a,b\text{ and }c$:
-Associativity: $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$;
-Commutativity: $a+b=b+a$ and $ab=ba$;
-Distributive: $a(b+c)=(b+c)a=ab+ac$;
-Identities: There are integers 0 and 1 such that,
-$a+0=0+a=a$ and $a\cdot{}1=1\cdot{}a=a$ and
-Additive Inverse: $a+(-a)=0$.
-Note: in general integers do NOT have multiplicative inverses 
-that are also integers. (eg. $\frac{1}{2}$ is the multiplicative
-inverse of 2 because $\frac{1}{2}\cdot{}2=1$ but $\frac{1}{2}$ is not an integer!)}.
 
-As obvious as it seems, the fact that
-we can use base-ten to represent the integers is NOT among the list of axioms.
 
-However because base-ten numbers are in
-a perfect one-to-one correspondence with the integers then
-it's safe to think of each
-integer's unique base-ten label \emph{as} the integer.
-But to firmly establish this fact we need to (at least once) take the time to
-spell out exactly what it means to represent a number in base-ten with a theorem\footnote{I can't find where
-the first such theorem was stated, I think it's quite recent.}. Then that theorem must be proven to
-be true with a series of arguments that logically connects it
-directly\footnote{directly \dots{}or indirectly
-via other previously proven theorems.} to the axioms, so that the only way
-that the theorem could be false is if the axioms themselves are false.
 
-I could just state the ``Base-Ten Representation Theorem'' right here, but
-how to get to its clear, simple and succinct statement is an interesting journey.
-The rest of the paper is that journey. In fact we're going to end up generalizing upon our
-intuitive understanding about
-counting with base-ten and come up with a
-better theorem that covers base-ten and more. At the very least this new understanding
-will help you to ``get'' the cryptic joke about binary on page one!
+
+
+
+
+
+
 
 \break
 We intuitively know that counting with
