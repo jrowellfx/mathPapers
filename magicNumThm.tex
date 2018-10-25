@@ -1,25 +1,11 @@
-% !TEX TS-program = pdflatex
-% !TEX encoding = UTF-8 Unicode
-
-% This is a simple template for a LaTeX document using the "article" class.
-% See "book", "report", "letter" for other types of document.
-
-%\documentclass[11pt]{article} % use larger type; default would be 10pt
 \documentclass{article}
 
 \usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
-
-%%% Examples of Article customizations
-% These packages are optional, depending whether you want the features they provide.
-% See the LaTeX Companion or other references for full information.
 
 %%% PAGE DIMENSIONS
 \usepackage{geometry} % to change the page dimensions
 \geometry{letterpaper} % or letterpaper (US) or a5paper or....
 \geometry{margin=1.35in} % for example, change the margins to 2 inches all round
-% \geometry{margin=2in} % for example, change the margins to 2 inches all round
-% \geometry{landscape} % set up the page for landscape
-% read geometry.pdf for detailed page layout information
 
 \usepackage{graphicx} % support the \includegraphics command and options
 
@@ -59,16 +45,31 @@
 \usepackage{changepage}
 \usepackage{enumerate}
 %\usepackage{setspace}
-\usepackage{hyperref}
+\usepackage{relsize}
+\usepackage{wasysym}
+%\usepackage{romannum}
+ 
+\usepackage[pdftex,
+            pdfauthor={James Rowell},
+            pdftitle={\jobname},
+            pdfsubject={Magic Numbers},
+            pdfkeywords={decimal, base-ten, binary, base-two, integers, theorem, proof, mathematics, number-theory, divisors},
+            pdfproducer={Latex},
+            pdfcreator={miktex or lualatex}]{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
     filecolor=magenta,      
     urlcolor=blue,
 }
+\usepackage{hyperxmp}
+\hypersetup{
+    pdfauthor={James Philip Rowell},
+    pdfcopyright={Copyright Â© 2017 by James Philip Rowell. All rights reserved.}
+}
+\usepackage{lipsum}
 
 \newenvironment{jprIn}{\begin{adjustwidth}{2em}{}}{\end{adjustwidth}}
-
 \addtolength{\skip\footins}{6pt}
 
 \usepackage{alphalph}
@@ -83,6 +84,7 @@
 \MakePerPage{footnote}
 
 %%% END Article customizations
+
 
 %%% The "real" document content comes below...
 
@@ -168,6 +170,20 @@ So let's exclude 1 from being considered as a magic-number - it's not helpful.
 
 \section*{Magic Number Theorem}
 \begin{jprIn}
+Let $b$ be a positive integer greater than 1.
+
+Let $n$ be a positive integer such that 
+
+\hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
+
+Given a sequence
+of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
+
+
+
+where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+
+
 Let $b, m, n\in\mathbb{Z}$ such that $b\ge2$ and $m\big|(b-1)$.
 
 If $n=d_kb^k+\dots+d_2b^2+d_1b^1+d_0b^0$, $d_i\in\mathbb{Z}: 0\le{}d_i\le(b-1)\ \forall{}\ i\in\{0,1,\dots{}k\}$ then
