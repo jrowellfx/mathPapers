@@ -95,14 +95,12 @@
 \maketitle
 %\bigskip
 
-
-
 In the delightful film ``\href{https://en.wikipedia.org/wiki/School_of_Rock}{School of Rock}'' Jack Black's character Dewey Finn,
 pretending to be substitute teacher Ned Schneebly, is put on the spot when
 Miss. Mullins, the school principle, comes into class and demands that he show
 her his teaching methods which apparently involve an electric guitar.
 So ``Mr. S'' sings ``\href{https://www.youtube.com/watch?v=aa8U0nL-KXg}{The Math Song}'' - in the final line of his
-improvised tune he sings ``...yes it's 9, and that's a magic number...''
+improvised tune he sings ``...yes it's 9, and that's a magic-number...''
 
 He's right - he's referring to the fact that if you add up the digits of
 any number then if that sum is divisible by 9, then the original number
@@ -115,7 +113,7 @@ For example:
 $9^5=59049$ and $5+9+0+4+9=27$ and 9 divides 27 because $27 = 3\times{}9$.
 \end{jprIn}
 
-You may recall that 3 is also a magic number, for example:
+You may recall that 3 is also a magic-number, for example:
 \[ 3\times{}67=201 \text{ and } 2+0+1=3\]
 In this case, 9 does not divide 201\footnote{Why is it immediately apparent that 9 does not divide 201? Hint: both 3 and 67 are prime numbers.
 Google the ``Fundamental Theorem of Arithmetic'' for further insight.}
@@ -126,21 +124,14 @@ Anytime I want to check to see if a number is divisible by 3 (but don't feel lik
 I use this little trick of checking to see if the digits add up to some multiple of 3. Along with the tricks to see if the number is divisible by 2 (last digit is even) or is divisible 
 by 5 (last digit is 0 or 5) - you can decide if you can factor out 2, 3 or 5 from any number pretty quickly.  7 takes real work \dots{}but I digress.
 
-3 and 9 are the only magic numbers in base-10.
+3 and 9 are the only magic-numbers in base-10.
+However 7 is a magic-number in base-8;
+And 4 is a magic-number in base-5;
+15 is a magic-number in base-16;
+\dots{}and 30 is a magic-number in base-31.
 
-However if we use another
-base, say 8, then 7 is a magic number in base-8.
-
-Also 4 is a magic number
-in base-5;
-
-15 is a magic number in base-16;
-
-\dots{}and 30 is a magic number in base-31.
-
-\break
 Here are some examples demonstrating\footnote{We are going to use the conventions for specifying
-numbers in alternate bases as outlined in the paper ``Sesame~Street++''.} this fact about magic numbers
+numbers in alternate bases as outlined in the paper ``Sesame~Street++''.} this fact about magic-numbers
 in alternate bases:
 \begin{itemize}
 \item $7\times{}7=49$ written in base-8 is $(61)_8$ and $6+1=7$.
@@ -150,12 +141,13 @@ in alternate bases:
 \item $30\times{}35951=1078530$ written in base-31 is $(15699)_{31}$ and $1+5+6+9+9=30$
 \end{itemize}
 
-You may notice a pattern: the biggest digit in any base is a magic number.  Using our examples, 9 is the biggest
-digit in base-10, 7 is the biggest digit in base-8 and 4 is the biggest digit in base-5.  To write this out in a general way
-we would say that if $b$ is our base, then $(b-1)$ is a magic number in that base.
+You may notice a pattern: the biggest ``digit'' in any base (which is always one less than the base) is a magic-number.
+Using our examples, 9 is the biggest
+digit in base-10; 7 is the biggest digit in base-8; and 4 is the biggest digit in base-5.  To write this out in a general way
+we would say that if $b$ is our base, then $(b-1)$ is a magic-number in base-$b$.
 
-So what about 3 also being a magic number in base-10?  Let's take a look at the interesting (but probably never used outside this paper) base-31.
-It appears that 2, 3, 5, 6, 10, 15 (along with 30) are \emph{all} magic numbers in base-31, as we we can see
+So what about 3 also being a magic-number in base-10?  Let's take a look at the interesting (but probably never used outside this paper) base-31.
+It appears that 2, 3, 5, 6, 10, 15 (along with 30) are \emph{all} magic-numbers in base-31, as we we can see
 with the following examples:
 \begin{itemize}
 \item $2\times{}13\times{}37=962$ written in base-31 is $(101)_{31}$ and $1+0+1=2$.
@@ -166,31 +158,27 @@ with the following examples:
 \item $15\times{}71503=1072545$ written in base-31 is $(15027)_{31}$ and $1+5+0+2+7=15$.
 \end{itemize}
 
-See the pattern? All the divisors of the magic-number 30 (in base-31) are \emph{also} magic numbers.
-(Maybe you can see why I picked base-31 for our examples, because $30=2\times{}3\times{}5$ has lots of divisors!)
+See the pattern? All the divisors of the 30 are \emph{also} magic-numbers in base-31.
+It turns out that in base-$b$, then any divisor of $(b-1)$ is a magic-number in base-$b$.
 
-Whatever the base is, let's call it $b$, then any divisor of $(b-1)$ is a ``magic number'' in that base.
-
-I guess that begs the question: What about 1? Isn't 1 a magic number in all bases?
+I guess that begs the question: What about 1? Isn't 1 a magic-number in all bases?
 Since we already know that all numbers are divisible by 1,
 then we don't need to go to any trouble of adding up digits to find this out.
-So let's exclude 1 from being considered as a magic number. (Akin to 1 not being a prime number).
+So let's exclude 1 from being considered as a magic-number is it's not helpful information.
 
-Here's a precise statement defining a magic number
-m for any base-N and declaring what its properties are:
-
-``Magic Number'' Theorem:
-
-Let m,N ? Z+and let m be a divisor of N-1.
-
-Then any integer represented in base-N is divisible by m
-if and only if the sum of its digits (in base-N)
-is divisible by m.
-Let's define all such m?1 as a 'magic number'.
+\section*{Magic Number Theorem}
+\begin{jprIn}
+Let $b, m, n\in\mathbb{Z}$ such that $b\ge2$ and $m\big|(b-1)$,
+\[\forall{}\;n\text{ such that }n=d_kb^k+\dots+d_2b^2+d_1b^1+d_0b^0\text{ where }0\le{}d_i\le(b-1)\]
+then
+\[m\big|n \Leftrightarrow m\big|(d_k+\dots+d_2+d_1+d_0)\]
+and $m\ne1$ is called a ``magic-number'' in base-$b$.
+\end{jprIn}
+\bigskip
 
 As an interesting side note - according to our definition, binary,
-or base-2, doesn't have a magic number.
-No great loss, as we said above 1 isn't helpful to consider as a magic number. 
+or base-2, doesn't have a magic-number.
+No great loss, as we said above 1 isn't helpful to consider as a magic-number. 
 
 Let's look at the definition of a number represented in a given base.
 
@@ -229,7 +217,7 @@ Proof of ``Magic Number'' Theorem:
 
 Let N=M+1.
 
-That is; we are going to consider representations of numbers in base-M+1, so think of M as our magic number.
+That is; we are going to consider representations of numbers in base-M+1, so think of M as our magic-number.
 
 Also let M=1, so our smallest possible base will be 2.
 Then every integer n is uniquely expressible in base-M+1 as follows:
