@@ -112,32 +112,40 @@ divisible by 9.
 
 For example:
 \begin{jprIn}
-$9^5=59049$ and $5+9+0+4+9=27$.\\
-Of course 9 divides 27 because $27 = 3\times{}9$.
+$9^5=59049$ and $5+9+0+4+9=27$ and 9 divides 27 because $27 = 3\times{}9$.
 \end{jprIn}
 
 9 is a magic number in base-ten but if we used another
 base, say 8, then 7 is a magic number. 4 is a magic number
-in base-5; 15 is a magic number in base-16; and 30 is a magic number in base-31 etc.
+in base-5; 15 is a magic number in base-16; and 30 is a magic number in base-31.
+The pattern being that one-less-than the base, is a magic number.
 
 Let's look at a couple of examples\footnote{We are going to use the conventions for specifying
-numbers in alternate bases as outlined on page 7 of ``Sesame Street++'' 
-also written by James Rowell.}.
+numbers in alternate bases as outlined on page 7 of the paper entitled ``Sesame Street++''  by James Rowell.}.
 \begin{itemize}
 \item $7\times{}7=49$ written in base-8 is $(61)_8$ and $6+1=7$.
 \item $7^3\times{}5=1715$ written in base-8 is $(3263)_8$ and $3+2+6+3=14$ (7 divides 14).
-\item $4\times{}67=268$ written in base-5 is $(2033)_5$ and $2+3+3=8$ (4 divides 8).
+\item $4\times{}67=268$ written in base-5 is $(2033)_5$ and $2+0+3+3=8$ (4 divides 8).
 \item $15\times{}23=345$ written in base-16 is $(159)_{16}$ and $1+5+9=15$.
 \item $30\times{}29\times{}113=98310$ written in base-31 is $(3999)_{31}$ and $3+9+9+9=30$
 \end{itemize}
 
-It's also true that 3 is a magic number in base-10.
+But what about this example?
+\[ 3\times{}67=201 \text{ and } 2+0+1=3\]
+Clearly 9 does not divide 201\footnote{Why is it immediately apparent that 9 does not divide 201? Hint: both 3 and 67 are prime numbers.
+Google the ``Fundamental Theorem of Arithmetic''.}
+but 3 does divide 201. It's also the case that adding up the digits of 201 gives us 3, which is trivially divisible by three.
+So, we can also call 3 a magic number in base 10.
 That is; the sum of the digits of any number is divisible by 3
 if and only if that original number is divisible by 3.
 
-For example $3\times{}67=201$ and $2+0+1=3$. Note that even though 9 is a magic number
-in base-10, since the sum of the digits of 201 equals 3, we should be able to safely conclude that 9 does NOT divide 201, which
-in fact it doesn't because $201=22\times9+3$.
+\break
+Let's look at another few examples, in base-31.
+\begin{itemize}
+\item $2\times{}13\times{}37=962$ written in base-31 is $(101)_{31}$ and $1+0+1=2$.
+\end{itemize}
+
+
 
 2, 3, 5, 6, 10, 15 and 30 are all magic numbers in base-31.
 
