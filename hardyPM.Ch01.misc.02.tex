@@ -253,21 +253,46 @@ it seemed like it would be fairly easy to show that the two sets are identical.
 Another insight was that in order to be able to represent
 a fraction with a prime-number denominator (say \(p\))
 then the sum in our
-expression would \emph{have to contain} at least this term,
+expression would \emph{have to contain} this term,
 \(\frac{a_p}{p!}\),
-for a non-zero value of \(a_p\).
+with a non-zero value of \(a_p\).
 
 This led me to the realization that any fraction \(\frac{m}{k}\)
-would be guaranteed to be able to be represented by the expression
+should be able to be represented by the expression
 if the terms went so far as to include \(\frac{a_k}{k!}\). For that
 matter by using terms up to \(\frac{a_k}{k!}\), then I'd
-also be guaranteed to be able to represent \(\frac{b}{k-1},
-\frac{b}{k-2},
-\frac{c}{k-3}, \dots{},
-\frac{d}{3},
-\frac{2}{3},
-\frac{1}{2}\) with the expression.
-(JPR NOTE: Better list in increasing order..)
+also be able to represent all fractions with
+\((k-1)\) as the denominator or 
+\((k-2)\) as the denominator, or \dots{}
+4, 3, or 2 as the denominator. In other words,
+\(\frac{1}{2}\),
+\(\frac{1}{3}\),
+\(\frac{2}{3}\),
+\(\frac{1}{4}\),
+\(\frac{2}{4}\),
+\(\frac{3}{4}\),
+\(\frac{1}{5}\),
+\(\frac{2}{5}\),
+\(\frac{3}{5}\),
+\(\frac{4}{5}\),
+\(\dots{}\),
+\(\frac{1}{k-1}\),
+\(\frac{2}{k-1}\),
+\(\frac{3}{k-1}\),
+\(\frac{4}{k-1}\),
+\(\dots{}\),
+\(\frac{k-3}{k-1}\),
+\(\frac{k-2}{k-1}\),
+\(\frac{1}{k}\),
+\(\frac{2}{k}\),
+\(\frac{3}{k}\),
+\(\frac{4}{k}\),
+\(\dots{}\),
+\(\frac{k-2}{k}\),
+\(\frac{k-1}{k}\)
+should be
+representable with the expression 
+\(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\). 
 
 So by using sets to collect all the numbers generated
 by our expression, then letting \(k\) grow without bound
