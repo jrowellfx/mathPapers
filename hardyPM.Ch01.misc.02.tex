@@ -317,6 +317,8 @@ QED
 
 \section*{Definitions}
 
+For integer \(k \ge 2\), and integers \(a_2, a_3, \dots{}, a_k\),
+
 {\small
 \bgroup                                  %% open the group
 \setlength{\abovedisplayskip}{0pt}
@@ -428,7 +430,8 @@ and \(b_2, b_3, \dots{}, b_k\), then we can arrive at a contradiction as follows
 
 First suppose that \(a_i\ne{}b_i\) is the first such pair of coefficients
 that differ from each other. In other words, \(a_2=b_2, a_3=b_3, \dots{}, a_{i-1}=b_{i-1}\).
-Also, without loss of generality we can assume that \(a_i > b_i\) and state the following equality:
+Also, without loss of generality we can assume that \(a_i > b_i\), and because
+of the equality of the two different representations for \(\frac{p}{q}\) we can write,
 
 {\normalsize
 \bgroup
@@ -451,33 +454,44 @@ regardless of the values of the coefficients
 on the right side of the inequality\footnote{Letting all the \(b\)'s be their maximum value,
 and all the \(a\)'s be zero will produce the largest numerators in each term of the sum, any other possibility will result in a smaller term for the sum.}.
 
-However, lemma-2 tells us,\par
+Because lemma-2 tells us that \(\frac{1}{i!} > \frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!}\) then
+we can string all our inequalities together to get the following.
+
 \begin{center}
 \(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!} > \frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!} \ge{} \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\),
-\end{center}\par
-demonstrating that equality between the two expressions at either end of the inequality
-is impossible, so our assumption that there can be a second set
-of coefficients to produce the same rational number \(\frac{p}{k!}\) is false.
+\end{center}
+
+But we had also deduced
+that \(\frac{a_i - b_i}{i!} = \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\)
+which is in contradiction with the above strict inequality.
+Therefore our assumption that there can be a second set
+of coefficients to produce the same rational number \(\frac{p}{k!}\) must be false.
 Therefore any assignment of values to the coefficients of
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-produces a unique member of the set \(\mathcal{S}_k\).
+must produce a unique member of the set \(\mathcal{S}_k\).
 
-Now we can count the number of members of the set \(\mathcal{S}_k\), by looking at all the
+Now we can count the number of members of \(\mathcal{S}_k\), by looking at all the
 possible combinations of values for the coefficients \(a_2, a_3, \dots{}, a_k\).
 There are 2 choices for the coefficient \(a_2\),
-multiplied by the 3 choices for \(a_3\),
-multiplied by the 4 choices for \(a_4\),
+combined with 3 choices for \(a_3\),
+combined with 4 choices for \(a_4\),
 \dots{},
-up to multiplying by \(k\) values that \(a_k\) can assume.
+combined with \(k\) choices for \(a_k\).
 
 Therefore the total number of combinations of values
 that can be assigned to all the coefficients of \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-is \(2\cdot{}3\cdot{}4\cdot\cdot{}\cdot{}k = k!\,\),
-which means the size of the set \(\mathcal{S}_k\) is \(k!\, \). Recalling our previous conclusion that
-all members of the set \(\mathcal{S}_k\) are of the form \(0\le{}\frac{p}{k!}<1\) we
-can assert that \(\mathcal{S}_k = \mathcal{F}_k\).
+is \(2\cdot{}3\cdot{}4\cdot\cdot{}\cdot{}k = k!\,\), and since each set of assignments 
+creates a unique member of the set, then the size of \(\mathcal{S}_k\) is \(k!\,\), which
+is the same size as \(\mathcal{F}_k\).
+Since any 
+member of the set \(\mathcal{S}_k\), say \(\frac{a}{b}\),
+can be written as \(\frac{a}{b} = \frac{p}{k!}\), for some \(p\) where 
+\(0\le{}\frac{p}{k!}<1\) then
+\(\mathcal{S}_k = \mathcal{F}_k\).
 
-Furthermore the corollary was shown during the course of the proof.  QED
+Furthermore the corollary is a direct result of the fact that there is a one-to-one mapping
+between the two sets.
+QED
 
 \section*{Lemma-4}
 
@@ -554,7 +568,8 @@ rational numbers being \(
 }
 
 Therefore \(\frac{p}{q}\) is an element of \(\mathcal{F}_k\) which is the same as the set \(\mathcal{S}_k\).
-In other words, all non-negative rational numbers with denominators from 2 up to \(k\) that are less than 1
+In other words, all non-negative rational numbers \(\frac{p}{q}\) with denominators \(q\) from 2 up to \(k\)
+where \(0\le{}\frac{p}{q}<1\) 
 are uniquely represented by the expression,
 
 {\small
@@ -574,18 +589,15 @@ are uniquely represented by the expression,
 where \(a_2, a_3, \dots{}, a_k\) are integers, and
 \(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0\le{}a_k<k\)
 
+If we fix \(q\) and let \(k\) go to infinity then it's clear that we can make a set \(\mathcal{S}_k\) that contains
+all rational numbers between zero and one.
+Since \(\frac{p}{q}\) is uniquely represented by
+our expression within \(\mathcal{S}_k\) then it is unique for all rational numbers between zero and one.
 
-If we fix q and let k go to infinity... then we have result for all possible denominators and.
+QED
 
-But furthermore,  
-
-JPR here. fix...
-
-...this unique representation is also the same for all rational numbers greater than \(k\) because
-if \(\frac{p}{q} \in{} \mathcal{S}_k\) then by the corollary to lemma-3 there is a unique sequence 
-of integers,\newline
-{\small \(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0<a_k<k\)}
-such that,
+Alternate observation: Another way to see this is to look at what happens to the 
+expression for \(\frac{p}{q} \in \mathcal{S}_k\) when we let \(\mathcal{S}_k\) increase in size.
 
 {\small
 \bgroup                                  %% open the group
@@ -599,10 +611,9 @@ such that,
 \egroup
 }
 
-Therefore, \(\frac{p}{q} \in{} \mathcal{S}_n\) for all \(n \ge{} k\), also demonstrating
-that the sum for \(\frac{p}{q}\) is the same for all \(n \ge{} k\), establishing it's unique
-association with \(\frac{p}{q}\).
+Therefore, \(\frac{p}{q} \in{} \mathcal{S}_n\) for all \(n \ge{} k\).
 
+\break
 \section*{Theorem (restated)}
 
 Any positive rational number can be expressed in one and only one way in the form
@@ -631,43 +642,45 @@ where \(a_1, a_2, \dots{}, a_k\) are integers, and
 
 \section*{Proof of Theorem}
 
-Thanks to Euclid we know that for all integers \(j\ge{}0\) and \(q>0\),
+Thanks to Euclid we know that for all integers \(h\ge{}0\) and \(q>0\),
 there exist unique integers \(i\) and \(p\) such that,
 
 {\normalsize
 \bgroup                                  %% open the group
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group
 \begin{alignat*}{3}
-&&j = i\cdot{}q + p\ &;\quad 0\le{}p<q \\
-&\Leftrightarrow\quad &\frac{j}{q} = i + \frac{p}{q}\ &;\quad 0\le{}\frac{p}{q}<1
+&&h = i\cdot{}q + p\ &;\quad 0\le{}p<q \\
+&\Leftrightarrow\quad &\frac{h}{q} = i + \frac{p}{q}\ &;\quad 0\le{}\frac{p}{q}<1
 \end{alignat*}
 \egroup
-}
-
-Which tells us that all rational numbers \(\frac{j}{q}\) can be written as
-an integer part, \(i\), plus a fractional part \(0\le{}\frac{p}{q}<1\).
+}\par
+Which tells us that all rational numbers \(\frac{h}{q}\) can be written as
+an integer part, \(i\), plus a fractional part \(\frac{p}{q}\), where \(0\le{}\frac{p}{q}<1\).
 
 In our theorem, the \(a_1\) coefficient plays the role of the integer part \(i\),
 and the rest of the expression, \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-plays the role of the fractional part \(0\le{}\frac{p}{q}<1\).
+plays the role of the fractional part \(\frac{p}{q}\), where \(0\le{}\frac{p}{q}<1\).
 
 Therefore to express any rational number in the form of the theorem, first apply the
-Euclidean Division Theorem to \(\frac{j}{q}\) and let \(a_1 = i\). If there is no fractional remainder, then
+Euclidean Division Theorem to \(\frac{h}{q}\) and let \(a_1 = i\). If there is no fractional remainder, then
 the theorem is trivially true,
 however if there is a fractional remainder \(\frac{p}{q}\), then it is a member of all sets \(\mathcal{S}_n\)
 where \(n \ge{} q\).
 
-We take for the coefficients \(a_2, a_3, \dots{}, a_k\) in the sum for \(\frac{p}{q} \in{} \mathcal{S}_n\)
-all those for which \(a_k \ne{} 0\) but \(a_{k+1} = a_{k+2} = \dots{} = a_n = 0\).
-
 By lemma-4 we know that the sum \(\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) is
 uniquely associated
 with \(\frac{p}{q}\)
-then clearly \(\frac{j}{q} = a_1 + \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-is uniquely associated with all rational numbers \(\frac{j}{q}\).
+then clearly \(\frac{h}{q} = a_1 + \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
+is uniquely associated with all rational numbers \(\frac{h}{q}\).
+
+To exactly meet the requirements of the theorem, we throw away that fact that we can
+represent zero, and we take
+for the coefficients \(a_2, a_3, \dots{}, a_j\) in the sum for \(\frac{p}{q} \in{} \mathcal{S}_k\)
+all those for which \(a_j \ne{} 0\) but \(a_{j+1} = a_{j+2} = \dots{} = a_k = 0\).
 
 QED
 
+\break
 \section*{Additional Observations}
 
 While it's true that \(\frac{p}{q} \in{} \mathcal{S}_q\), \(\mathcal{S}_q\) is not necessarily 
@@ -786,9 +799,11 @@ Also, \(
 \}
 \), which demonstrates the claim above that \(\mathcal{S}_3\) contains \(0 \le{} \frac{p}{6} < 1\).
 
-I believe that for a given \(q \ge 2\) then the smallest set for which \(0 \le{} \frac{p}{q} < 1\)
-are members is the set \(\mathcal{S}_k\) where \(k\) is the smallest value for which
-\(q\) divides \(k!\).
+I believe that for a given \(q \ge 2\) then the smallest set for which rational number
+\(\frac{p}{q} \in \mathcal{S}_k\),
+is to pick
+\(k\) such that it is the smallest value for which
+\(q\) divides \(k!\)\! .
 
 However, I'll leave that proof for another day.
 
