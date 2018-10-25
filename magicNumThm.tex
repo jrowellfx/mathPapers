@@ -55,7 +55,7 @@
             pdftitle={\jobname},
             pdfsubject={Magic Numbers},
             pdfkeywords={decimal, base-ten, binary, base-two, integers,
-	    theorem, proof, mathematics, number-theory, divisors, magic number},
+	    theorem, proof, mathematics, number-theory, divisors, magic-number},
             pdfproducer={Latex},
             pdfcreator={miktex or lualatex}]{hyperref}
 \hypersetup{
@@ -88,18 +88,16 @@
 
 %%% END Article customizations
 
-\title{Magic Numbers}
+\title{Magic-Numbers}
 \author{James Philip Rowell}
 %\date{} % Activate to display a given date or no date (if empty),
 % otherwise the current date is printed 
 
 \begin{document}
 \maketitle
-%\bigskip
 
 In the delightful film ``\href{https://en.wikipedia.org/wiki/School_of_Rock}{School
-of Rock}'' Jack Black's character
-(pretending to be a substitute teacher) is put on the spot when
+of Rock}'' Jack Black's character is put on the spot when
 the school principle comes into class and demands that he show
 her his teaching methods which involve an electric guitar.
 So he sings ``\href{https://www.youtube.com/watch?v=aa8U0nL-KXg}{The
@@ -114,11 +112,11 @@ However referring to 9 as a magic-number isn't
 as well known\footnote{According to my own \emph{highly scientific}
 informal poll conducted Facebook, %\today{}
 ``9'' is NOT the first thing that pops into people's heads when they
-hear the phrase ``magic number'' - in fact no one answered ``9'' in my poll.}.
+hear the phrase ``magic-number'' - in fact no one answered ``9'' in my poll.}.
 
-Mind you, it's not a total stretch, there is precedent
-for using the term ``\href{http://mathworld.wolfram.com/MagicNumber.html}{Magic
-Number}'' when referring to to the number 9.
+Mind you, there is precedent
+for using the term ``\href{http://mathworld.wolfram.com/MagicNumber.html}{magic-number}''
+when referring to to the number 9.
 There are a host of
 \href{http://mathematics-in-europe.eu/?p=144}{mathematical-magic-tricks}
 that rely on properties of the number 9.
@@ -130,19 +128,7 @@ for a number where you take its ``digital sum''. 9
 plays a similar role in all these processes - so within these contexts sometimes 9
 is referred to as a magic-number.
 
-So the musical-math-lesson is legit, if Jack is referring to this fact about 9:
-% \begin{enumerate}[i)]
-% \item
-% If you add up the digits of
-% any number then if that sum is divisible by 9, then the original number
-% must be divisible by 9.
-% \item
-% Conversely, if we know
-% that a number is divisible by 9 then the sum of its digits must also be
-% divisible by 9.
-% \end{enumerate}
-% \begin{enumerate}[i)]
-% \item
+So the musical-math-lesson is legit, assuming that Jack is referring to this fact about 9:
 \begin{center}
 The sum of the digits of a number divisible by 9,
 \break
@@ -168,48 +154,26 @@ but 3 does (67 times).
 We can see that adding up the digits of 201 gives us 3,
 which of course is divisible by 3, but not by 9.
 
-So given that the term ``magic number'' hasn't got
+So given that the term ``magic-number'' hasn't got
 a formal definition in the math world, I think it's time to give it one.
 How about if we call ANY number that has this
-divisibility property with respect to adding up the digits etc.\ (like 3 and 9) a magic-number?
-% After all, the cultural touchstones
-% ``Schoolhouse Rock'' \emph{and} ``The School of Rock''
-% have set precedent for using
-% ``magic number'' to describe 3 and 9, so we may be on to something big here!
+divisibility property when adding up its digits a ``magic-number''?
 
 Too bad 3 and 9 are the only magic-numbers in base-10,
-%Darn - perhaps our new term won't catch on and sweep the nation after all, \dots{} or 
-%maybe it will!
-% We happen to use base-10 because we have ten fingers\footnote{To be honest, base-10 is
-% not ``universal'' among humans, there are plenty of
-% \href{https://www.youtube.com/watch?v=l4bmZ1gRqCc}{other bases} in use, albeit not
-% as widely used nor as mathematically useful as base-10. This doesn't count
-% octal, hexadecimal and binary which are used in the computer world
-% so by necessity are, mathematically speaking, \emph{incredibly} useful.}
 but what about other bases?
 The heptapods in the film ``Arrival'' have 7 limbs, 3 arms and 4 legs, with 7 fingers/toes each.
-I'm going to guess that at least at some point in their history they used positional
-notation, like our base-10, but instead of 10 they probably base-7 or base-21,
-maybe even base-49? So an understanding of magic-numbers in alternate
-bases might come in handy when we're called upon to do alien arithmetic.
+I'm going to guess that they probably use some form of positional
+notation, but instead of base-10 they probably use base-7, base-21,
+maybe even base-49. An understanding of magic-numbers in one-of-those-bases
+might come in handy when trying to learn their times-tables!
 
 Let's examine some magic-numbers
-%(according to our proposed usage of the term)
 in other bases.
-% In the way that 9 is a magic-number in base-10,
-% then 4 is a magic-number in base-5;
-% Also 7 is a magic-number in base-8;
-% 15 is a magic-number in base-16;
-% \dots{}and 30 is a magic-number in base-31, as you can see with these
-% examples\footnote{We are going to use the conventions for specifying
-% numbers in alternate bases as outlined in the paper
-% ``\href
-% {https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf}
-% {Counting}''}:
 \begin{itemize}
 \item $4\times{}67=268$ written in base-5 is $(2033)_5$ and $2+0+3+3=8$ (4 divides 8).
 \item $7\times{}181=1267$ written in base-8 is $(2363)_8$ and $2+3+6+3=14$ (7 divides 14).
 \item $15\times{}23=345$ written in base-16 is $(159)_{16}$ and $1+5+9=15$.
+\item $20\times{}908249=18164980$ written in base-21 is $(498991)_{21}$ and $4+9+8+9+9+1=40$
 \item $30\times{}35951=1078530$ written in base-31 is $(15699)_{31}$ and $1+5+6+9+9=30$
 \end{itemize}
 
@@ -237,11 +201,10 @@ Since we already know that all numbers are divisible by 1,
 then we don't need to go to any trouble of adding up digits to find this out.
 So let's exclude 1 from being considered as a magic-number - it's not helpful.
 
-Let's quickly review what it means for a number to be divisible 
-by another number
-\footnote{See ``\href {https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf} {Counting}'', also written by Rowell}.
-%Recall from the paper ``\href
-%{https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf} {Counting}''\dots
+Let's review what it means for a number to be divisible 
+by another number\footnote{See
+``\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0} {Counting}'' p. 21,
+also written by J.P. Rowell}.
 
 \section*{Euclidean Division Theorem}
 \begin{jprIn}
@@ -276,20 +239,12 @@ So the following is always true:
 \text{\hspace{0.5em}and\hspace{0.5em}}a\mid{}a;\]
 also
 \[b\mid{}0\text{ for every }b\text{ except }0\]
-%We sometimes use the following symbol to say that ``$b$ does not divide $a$'',
-%\[b\nmid{}a\]
-%
-%Also it should be plain that:
-%\[\text{If }c\mid{}b\text{ and }b\mid{}a\text{, then }c\mid{}a\]
-%\[b\mid{}a\text{ implies }bc\mid{}ac\text{, when }c\ne0\]
-%And lastly check for yourself that this is always true:
-%\[\text{If }c\mid{}a\text{ and }c\mid{}b\text{, then }c\mid{}ma+nb\text{, for all integers }m,n.\]
 
 In order to create our theorem with a 
-nice definition for ``magic number''
+nice definition for ``magic-number''
 we need to remind ourselves 
-what it means to write a number in a given base
-\footnote{Also from ``\href {https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf} {Counting}''}:
+what it means to write a number in a given base\footnote{Also from
+``\href{https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0} {Counting} p. 2''}:
 
 \section*{Basis Representation Theorem}
 \begin{jprIn}
@@ -305,22 +260,14 @@ where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
 Definition: $n$ is represented in base-$b$ by the string
 of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
 \end{jprIn}
-%\bigskip
-%So given the Basis-Representation-Theorem and our new notation for divisibility
-%then here's our
-%proposed theorem and definition for ``magic number'':
-%\footnote{Recall that the double-arrow, that
-%is $\Leftrightarrow$, should be read as ``if and only if''.}
-%
-\section*{Magic Number Theorem}
+
+\section*{Magic-Number Theorem}
 \begin{jprIn}
 Let
-% $n$
 $n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
 be the base-$b$-representation of $n$.
 
 If $m$ is a positive integer such that $m\mid{}(b-1)$ then,
-%\[m\mid{}n \Leftrightarrow m\mid{}(d_k+\dots+d_2+d_1+d_0)\]
 \[m\mid{}n \text{\hspace{2.5em}if and only if\hspace{2.5em}}m\mid{}(d_k+\dots+d_2+d_1+d_0)\]
 Definition: We call $m\ne1$ a ``magic-number'' in base-$b$.
 \end{jprIn}
@@ -341,59 +288,18 @@ If we take the $a,b,q$ and $r$ from the Euclidean Division Theorem above where:
 \[a=qb+r  \text{ such that } 0\le{}r<\lvert{}b\rvert\]
 Then the ``mod'' operator is defined like this:
 \[a\bmod{b} = r\]
-%
-%In summary, modular arithmetic is the kind of arithmetic you use when
-%you tell time with a 12 hour clock.
-%
-%For example, if it's 7 o'clock and I ask you to ``meet me in 7 hours"
-%then you know I mean ``meet me at 2 o'clock".  Suppose instead I said ``meet me in 31 hours"
-%then you would know that our meeting time
-%is also going to be 2 o'clock (albeit 1 day hence) because:
-%\[7\text{ o'clock}+ 31\text{ hours}= 7\text{ o'clock}+ (7 + 24)\text{ hours}= 2\text{ o'clock}\]
-%When we do ``clock arithmetic" we add some
-%number of hours to the current time then divide that sum by 12;
-%The remainder of the division then
-%tells us the clock time.
-%
-%Any time on the clock, say $T$ o'clock, plus 12 hours is also $T$ o'clock.  Furthermore,
-%adding ANY multiple of 12 hours (eg 24, 36, 48, \dots{}) to $T$ o'clock gets us back to $T$ o'clock.
-%We can say that $T, T{+}12, T{+}24, T{+}36, T{+}48, \dots{}$ are all equivalent times
-%on the clock, or that these numbers are all equivalent modulo 12. It just means the hour hand
-%has spun around the clock exactly 1, 2, or 3, etc.\ more times.
-%
-%So numbers being equivalent modulo 12 (i.e. some number of rotations
-%of the hour hand comes back to the same time), means that they have the same
-%remainder when divided by 12. For example 1 is equivalent to 13 modulo 12.
-%If your drill sargent barks an order at you to meet him at 13:00 hours,
-%you'd better show up at 1 o'clock in the afternoon!
-%
 To prove our theorem we need to prove that 
-the remainder of $n$ divided by $m$ is zero if and only if
+the remainder of $n$ divided by $m$ is zero, if and only if,
 the remainder of $d_k+\dots+d_1+d_0$ divided by $m$ 
 is also zero.
 Restated in terms of
-modular-arithmetic:
+modular-arithmetic, we need to prove:
 \[n\bmod{m} = 0\text{\hspace{2.5em}if and only if\hspace{2.5em}}(d_k+\dots+d_1+d_0)\bmod{m} = 0\]
 
 SKIP FURTHER EXPLANATION OF MOD UNTIL PROOF COMPLETED.
 
-\section*{Proof of Magic Number Theorem}
-
-Let $b$ be a positive integer greater than 1.
-
-Let $n$ be represented in base-$b$ with the sequence
-of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
-
-\hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
-
-where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
-
-Also let $m$ be a positive integer such that $m\mid{}(b-1)$, in other words
-there exists some integer $q$ such that:
-\[m\cdot{}q=b-1\]
-
-%\break
-Lemma:
+\section*{Lemma}
+...add stuff about m divides b-1...
 \[b^k\equiv1\pmod{m}\text{, for all integers }k\ge0\]
 Proof of Lemma:
 \begin{jprIn}
@@ -422,6 +328,21 @@ Let $k$ be an integer such that $k\ge0$.
 \end{alignat*}
 QED - Lemma.
 \end{jprIn}
+
+\section*{Proof of Magic-Number Theorem}
+
+Let $b$ be a positive integer greater than 1.
+
+Let $n$ be represented in base-$b$ with the sequence
+of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
+
+\hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
+
+where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+
+Also let $m$ be a positive integer such that $m\mid{}(b-1)$, in other words
+there exists some integer $q$ such that:
+\[m\cdot{}q=b-1\]
 Again here's the base-$b$ expression for $n$:
 \begin{alignat*}{3}
 &&n
