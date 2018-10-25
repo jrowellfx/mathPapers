@@ -1,0 +1,1658 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{letterpaper} % or letterpaper (US) or a5paper or....
+\geometry{margin=1.35in} % for example, change the margins to 2 inches all round
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy/
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+%\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+% JPR added
+\usepackage{fontawesome}
+\usepackage{amsfonts}
+%\usepackage{amsmath}
+\usepackage{mathtools}% includes amsmath
+\usepackage{changepage}
+\usepackage{enumerate}
+%\usepackage{setspace}
+\usepackage{relsize}
+\usepackage{wasysym}
+%\usepackage{romannum}
+ 
+\usepackage[pdftex,
+            pdfauthor={James Rowell},
+            pdftitle={\jobname},
+            pdfsubject={Counting or The Basis Representation Theorem},
+            pdfkeywords={decimal, base-ten, binary, base-two, integers, theorem, proof, mathematics, number-theory},
+            pdfproducer={Latex},
+            pdfcreator={miktex or lualatex}]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\usepackage{hyperxmp}
+\hypersetup{
+    pdfauthor={James Philip Rowell},
+    pdfcopyright={Copyright © 2017 by James Philip Rowell. All rights reserved.}
+}
+\usepackage{lipsum}
+
+\newenvironment{jprIn}{\begin{adjustwidth}{2em}{}}{\end{adjustwidth}}
+\addtolength{\skip\footins}{6pt}
+
+\usepackage{alphalph}
+\makeatletter
+\newalphalph{\fnsymbolwrap}[wrap]{\@fnsymbol}{}
+\makeatother
+\renewcommand*{\thefootnote}{%
+  \fnsymbolwrap{\value{footnote}}%
+}
+
+\usepackage{perpage}
+\MakePerPage{footnote}
+
+%%% END Article customizations
+
+\title{Counting}
+\author{James Rowell}
+%\date{} % Activate to display a given date or no date (if empty),
+% otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+\begin{em}
+\centerline{\small{}There are 10 sorts of people in the world: those who understand binary and those who don't.}
+%\par
+%\setlength{\parskip}{0pt}
+\end{em}
+%\normalsize
+\bigskip
+
+What does ``10'' mean?
+
+We got it drilled into us watching Sesame Street that it's this many apples
+``\faApple{}\faApple{}\faApple{}\faApple{}\faApple{} \faApple{}\faApple{}\faApple{}\faApple{}\faApple{}'',
+or is the number of fingers on a typical person's two hands.
+
+That Sesame Street training was great. We need to be able to count with ease and to
+automatically associate the symbol ``10'', that is; a one-followed-by-a-zero,
+with the number that represents ten things.
+
+Once we are trained to think of ``10'' as ten, we quickly move past it to learn about 100 and 1000
+and combinations of single-digit numbers like 92507. Even at a young age we'd
+be able to accurately count out a pile of
+ninety-two-thousand-five-hundred-and-seven apples as time consuming and agonizing as it might be.
+Furthermore, learning how to add and multiply is pretty simple once you can count in
+base-ten since the techniques are simple and straight-forward.
+
+What about kids in ancient Rome?
+Try adding two numbers together in ancient Rome, or worse,
+multiplying or dividing them.
+What's XI times IX? Would you believe me if I told
+you it's XCIX?
+
+Unless you convert those to Hindu-Arabic decimal or base-ten numerals to check,
+you're just gonna have to trust me.
+Truth is - I don't know how to multiply using Roman
+numerals - nor did most Romans. Not only that,
+but I'll bet that most modern eight-year-olds 
+can count higher than any Roman could - as the
+Roman system only effectively allowed counting up to 4999.
+
+Even though we use different symbols, ancient Romans and us
+are talking about the same set of numbers. The idea of the number undeneath
+is exactly the same once you peel the symbol away.
+Mathematics deals with numbers in this pure sort of way, divorced from the symbols used for counting.
+
+When a mathematical theorem talks about whole numbers, it's really talking about the set of numbers 
+that represent successivly larger piles of apples.
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+Most of us think about ``whole numbers'' not too differently from the way
+we learned to count by watching Sesame Street,
+the difference being that now we can count a little higher.
+How we've trained ourselves, it's automatic to think the way
+that we write a number or say a number \emph{is} the number.
+
+If I owe you 13 cents and I give you one dime and three pennies then 
+after thanking me profusely for repaying this staggering debt,
+we'll agree that it's settled with those coins equaling 13 pennies. 
+We identify the symbol ``13'' very strongly with this particular number - it would 
+be tough to get through life in the modern world without such an automatic process
+running in our brains. 
+This example highlights what this particular symbol ``13'' actually means -
+one dime $(1 \times 10)$ plus three pennies $(3 \times 1)$.
+
+Let's look at the number 13 in some alternative ways - it's the 
+number of months in a year plus one month;
+what I'm suggesting is that there is no need for the symbol ``13'' in order
+to think about this particular number of months. Similarly, 13 is this many apples
+\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{};
+or 13 is the sixth prime number. None of these ways of thinking about the number
+13 require that we represent it using the digits 1 and 3 butted up next to each other.
+
+Each number exists independently from any symbol or word that might represent it.
+Numbers are an idea - perhaps such a strong idea that the universe wouldn't exist without them!
+Anyway, for our purposes whole numbers exist in some abstract realm -
+Each number is one whole unit more than the previous number,
+starting at nothing, that is ``zero'', and jumping to something, that is ``one'',
+then one more, which gets us to ``two'',
+then again to ``three'', etc. Continuing in this way forever\dots{} we get them all.
+
+To get back to the idea of what a whole number really is,
+try to forget about the symbols or words we use and picture a pile of apples.
+There are zero apples (it's hard to show no-apples),
+then we introduce an ``\faApple{}" to get our very first,
+and smallest, non-empty pile of apples.
+Then add another apple to get a pile of ``\faApple{}\faApple{}",
+then ``\faApple{}\faApple{}\faApple{}",
+then ``\faApple{}\faApple{}\faApple{}\faApple{}"
+then some big pile of
+``\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\dots{}\faApple{}\faApple{}\faApple{}"
+after we've been adding apples for a while.
+Each successively bigger pile of apples corresponds with each successive whole number.
+%
+We expand this entire set of whole numbers to include their
+negative-counterparts and call this larger set ``integers".
+%We denote the set of integers with this symbol: $\mathbb{Z}$.
+
+However, using a ``1" followed by a ``3" to represent the integer
+``\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}"
+is VERY handy. So we use Hindu-Arabic numbers and the positional notation of ``base-ten",
+more commonly known as ``decimal", to represent each specific integer.
+We slap a ``-" on the front if we need to talk about a negative integer.
+
+\break
+Base-ten representation of an integer is far superior to ancient Roman numerals for example.
+Try adding two numbers together in ancient Rome, or worse,
+multiplying or dividing them.
+What's XI times IX? Would you believe me if I told
+you it's XCIX? Unless you convert those to Hindu-Arabic numerals to check,
+you're just gonna have to trust me.
+Truth is - I don't know how to multiply using Roman
+numerals - nor did most Romans! Not only that,
+but I'll bet that most kids who graduated from Sesame Street
+can count higher than any Roman could - as the
+Roman system only effectively allowed counting up to 4999.
+
+Using base-ten for us is automatic,
+we barely think about it when we're adding numbers or multiplying
+them - but it's worth looking carefully at how base-ten
+works - so let's examine it from the ground up\footnote{Please forgive
+the incredibly obvious nature of much
+of the following discussion, but I want to take a good running start
+at some more unfamiliar notions.
+Perhaps looking at the familiar with fresh eyes will help in seeing the new ideas easier.}.
+
+It's useful to have simple symbols to represent each of the integers from one to nine,
+namely our familiar 1, 2, 3, 4, 5, 6, 7, 8 and 9
+which have an interesting history and predate their use in base-ten.
+
+Slightly more modern, but still quite ancient,
+is the symbol ``0" for ``zero", originally meaning ``empty".
+Zero also predates its use in base-ten but without zero,
+base-ten wouldn't be possible.
+
+Base-ten uses the idea of stringing a series of digits together
+(a digit being one of the numbers 0, 1, 2, \dots{} 9),
+one after the other to be able to represent each whole number.
+Let's look at the first two-digit number, that is, ten,
+which as you well know looks like this: ``10".
+This extra digit on the left tells us how many tens we have and the last,
+or rightmost digit says how many additional units to add to it.
+
+So our very first two-digit number 10 means ``one lot of ten - plus zero units".
+When we see ``11" - we interpret it to mean ``one lot of ten - plus one unit",
+and ``12" is ``one lot of ten - plus two units", etc.
+
+Continuing on; ``20" - we interpret to mean ``two lots of ten,
+plus zero units", etc. up to ``90" meaning ``nine lots of ten,
+plus zero units".
+
+Following this line of reasoning since ``10" now means the integer ten,
+then ``100" must mean ``ten lots of ten,
+plus zero units"- which is exactly what it means.
+We have a special word for this number we call it ``one hundred" or ``one lot of a hundred,
+plus zero lots of tens, plus zero units".
+Similarly ``200" means ``two lots of a hundred, plus zero lots of ten,
+plus zero units", etc.
+
+We can keep going by one-hundred until we similarly get to ``1000" or ``ten lots of a hundred,
+plus zero lots of ten, plus zero units" otherwise known
+as ``a thousand" or more specifically ``one lot of a thousand,
+plus zero lots of a hundred, plus zero lots of ten, plus zero units".
+
+It gets a little tedious to be so specific when reading out
+a number so our language has developed quite a few verbal shortcuts.
+Furthermore it doesn't take long before we run out of fancy names
+for these ``powers-of-ten" like, million, billion, trillion,
+zillion etc. So let's introduce some nice clean mathematical notation
+to describe these powers-of-ten and let's forget the fancy words.
+
+\begin{align*}
+100&=10\times10=10^2,\\
+1000&= 10\times10\times10=10^3,\\
+10000&= 10\times10\times10\times10=10^4,\\
+\dots{}\\
+\underbrace{10\dots{}000}_\text{k zeros}&=
+\underbrace{10\times10\times10\times10\times\dots{}\times10}_\text{k 10s}=10^k
+\end{align*}
+$10^k$ means there are $k$ tens multiplied together - 
+also written as a 1 followed by $k$ zeros\footnote{$k$ is called the ``exponent'' and you should
+read the symbol $10^k$ as ``ten-raised-to-the-$k$\textsuperscript{th}-power'' or ``ten-to-the-k'',
+so $10^2$ is ``ten raised to the second power'' or $10^4$ is ``ten-to-the-fourth''.
+You may also see $10^2$ referred to as ``ten squared'',
+similarly $10^3$ as ``ten cubed'' - but since we 
+don't live in 4 dimensional hyperspace,
+we don't have a way of saying $10^4$ that has geometric meaning.}.
+The above list explicitly shows the cases for $k = 2, 3$ and $4$.
+Using the $k$ like that is just a way to show that we can pick ANY whole number,
+i.e., there is no limit on how big $k$ can be.
+
+The notation of $10^k$ is very handy, in fact it extends
+to the case when $k=0$ and $k=1$.
+%\footnote{$10^k$ also extends to the cases
+%when $k$ is negative as in $10^{-1}$, or $10^{-2}$, etc.
+%which means $\frac{1}{10}$ and $\frac{1}{100}$ respectively
+%but those are called ``rational numbers''. We aren't concerning
+%ourselves with rational numbers in this paper.}
+
+So $10^1$ means\footnote{Don't forget to read $10^1$
+as ``ten-to-the-one''.} that there is only one ten multiplied together,
+or one ``0" following the ``1",
+in other words just the number ten itself.
+
+How about when $k=0$?
+Examining the pattern of how the power $k$ relates to how many zeros follow the ``1"
+(eg, $10^1=10$, $10^2=100$, $10^3=1000$,
+etc.) then it must be the case that $10^0=1$,
+i.e., no zeros follow the ``1", which is exactly right.
+Furthermore every number raised to the 0\textsuperscript{th}
+power~is~1.\footnote{Proof: Since $a^{b+c}=a^ba^c$ consider when $c=0$; that is,
+$a^b=a^{b+0}=a^ba^0$ so because of the uniqueness
+of the multiplicative identity ``1'', then $a^0$ \emph{must} be 1 since it's behaving 
+like a ``1'' in the expression $a^b=a^ba^0$.}
+
+Let's look at an example.
+Reading the number 92507 out according to our technique we can see
+that it's ``nine lots of ten-thousand,
+plus two lots of a thousand, plus five lots of a hundred,
+plus zero lots of ten, plus seven units":
+
+\begin{center}
+\begin{tabular}{r r r r c r r}
+\phantom & 9 & $\times$ & 10000 & \phantom & \phantom & 90000\\
++ & 2 & $\times$ & 1000 & \phantom & + & 2000\\
++ & 5 & $\times$ & 100 & \; \; \; = \; \; \; & + & 500\\
++ & 0 & $\times$ & 10 & \phantom & + & 00\\
++ & 7 & $\times$ & 1 & \phantom & + & 7\\
+\cline{6-7}
+\phantom & \phantom & \phantom & \phantom & \phantom & = & 92507
+\end{tabular}
+\end{center}
+
+Written\footnote{Recall the mnemonic ``bedmas'' for
+the ``\href{https://en.wikipedia.org/wiki/Order_of_operations}{Order of Operations}'' in
+evaluating an expression, which is no different from
+what we did in our table above the expression.}
+in terms of powers-of-ten:
+$92507=9{\times{}}10^4+2{\times{}}10^3+5{\times{}}10^2+0{\times{}}10^1+7{\times{}}10^0$.
+
+This way of breaking down the base-ten representation of a number into
+an algebraic expression can be done for EVERY string of decimal digits. It's the key to 
+understanding what a string of decimal digits means.
+
+Recalling that $10^0 = 1$ you might wonder why we bother to multiply
+$7{\times{}}10^0=7{\times{}}1=7$ since there is no actual effect
+when multiplying by one.
+Even though it's not necessary, including the $10^0$ in the
+expression reveals a kind of mathematical symmetry.
+Each successive digit is multiplied by an ever
+decreasing power-of-ten, including
+the units digit,
+which is just some number from 0 to 9 times a power-of-ten
+like any of the other digits.
+
+Our example number 92507 only has five digits and it's biggest power-of-ten is $10^4$,
+but there's
+no limit on how big a power-of-ten could be involved in our expression.
+Look at ``a trillion and one'', i.e.; 1,000,000,000,001 which can be expressed as:
+\[1{\times{}}10^{12}
++0{\times{}}10^{11}
++0{\times{}}10^{10}
++\cdots{}
++0{\times{}}10^{2}
++0{\times{}}10^{1}
++1{\times{}}10^{0}\]
+%
+Or pushing that limit to silly heights we can also describe this next ludicrous number.
+It's twenty-thousand-and-one digits long, a
+``7'' followed by 9999 zeros, then a ``3''
+followed by 9999 more zeros, then a ``5'', which means this:
+\[7{\times{}}10^{20000}
++0{\times{}}10^{19999}
++\cdots{}
++0{\times{}}10^{10001}
++3{\times{}}10^{10000}
++0{\times{}}10^{9999}
++\cdots{}
++0{\times{}}10^{1}
++5{\times{}}10^{0}\]
+Clearly we can keep going as high as we like.
+
+But how do we \emph{know} that we can create ALL the positive
+integers with this scheme?
+How do we \emph{know} that we didn't miss one?
+How do we \emph{know} that some string of
+digits doesn't represent two different integers?
+I know it seems silly to ask these kinds of questions - 
+after all, people have been counting in base-ten for almost two thousand years,
+if there was a problem, you'd think we'd have heard about it by now! ...so, obviously it works.
+
+Here's the thing about modern mathematics - the \emph{only} ideas we take as obvious
+and don't require deeper explanation
+are the axioms - those are the mathematical ideas that
+are so simple that they can't be expressed in
+yet other even-simpler ideas. The axioms are the minimal set of simple,
+obvious, irrefutable ideas from which
+everything else in mathematics is built\footnote{The axioms:
+For every integer $a,b\text{ and }c$:
+Associativity: $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$;
+Commutativity: $a+b=b+a$ and $ab=ba$;
+Distributive: $a(b+c)=(b+c)a=ab+ac$;
+Identities: There are integers 0 and 1 such that,
+$a+0=0+a=a$ and $a\cdot{}1=1\cdot{}a=a$ and
+Additive Inverse: $a+(-a)=0$.
+Note: in general integers do NOT have multiplicative inverses 
+that are also integers. (eg. $\frac{1}{2}$ is the multiplicative
+inverse of 2 because $\frac{1}{2}\cdot{}2=1$ but $\frac{1}{2}$ is not an integer!)}.
+
+As obvious as it seems, the fact that
+we can use base-ten to represent the integers is NOT among the list of axioms.
+
+However because base-ten numbers are in
+a perfect one-to-one correspondence with the integers then
+it's safe to think of each
+integer's unique base-ten label \emph{as} the integer.
+But to firmly establish this fact we need to (at least once) take the time to
+spell out exactly what it means to represent a number in base-ten with a theorem\footnote{I can't find where
+the first such theorem was stated, I think it's quite recent.}. Then that theorem must be proven to
+be true with a series of arguments that logically connects it
+directly\footnote{directly \dots{}or indirectly
+via other previously proven theorems.} to the axioms, so that the only way
+that the theorem could be false is if the axioms themselves are false.
+
+I could just state the ``Base-Ten Representation Theorem'' right here, but
+how to get to its clear, simple and succinct statement is an interesting journey.
+The rest of the paper is that journey. In fact we're going to end up generalizing upon our
+intuitive understanding about
+counting with base-ten and come up with a
+better theorem that covers base-ten and more. At the very least this new understanding
+will help you to ``get'' the cryptic joke about binary on page one!
+
+\break
+We intuitively know that counting with
+base-ten covers all the positive integers.
+For example, the odometer in your car that keeps churning out
+new numbers for each mile you drive, starting from zero when it rolls
+off the production line.  If your odometer was long enough that it 
+stretched off past the horizon on your left, there's no limit on
+how many miles you could count.
+
+Our intuition is good - let's write it down
+in our theorem. We might say:
+
+\emph{Base-Ten Representation Theorem (initial draft)}
+\begin{jprIn}
+Every integer has a representation in base-ten.
+\end{jprIn}
+
+\bigskip
+Something else we know intuitively is that each number written
+in base-ten represents only ONE integer.
+It almost feels silly to spell it out, but if we were to count out
+4 piles of 100-apples-each-pile, then 9 piles of 10-apples-each-pile,
+then count out 9 additional apples, \emph{then}
+scoop them all into a big pile that
+we'd always get the exact same size big-pile-of-apples.
+
+It goes the other way too. If we were handed the aforementioned
+big-pile-of-apples we could start counting out
+piles of 100. We'd try to make as many piles of 100 as we could,
+and we'd find that we'd have 4 piles of 100 before
+we couldn't make another such pile.
+Then we would start counting out piles of 10 with the remaining apples.
+After we made as many piles of ten as we could out of those remaining apples,
+we would discover that we'd have 9 such piles of ten
+with 9 apples left over, in other words 499 apples! There is NO other
+way to divvy up this big-pile-of-apples
+if we follow this procedure.  In other words, each integer is
+represented by only ONE base-ten number.
+
+Let's strengthen our theorem based on the last two observations.
+
+\emph{Base-Ten Representation Theorem (second draft)}
+\begin{jprIn}
+Every integer has a \emph{unique} representation in base-ten.
+\end{jprIn}
+
+\bigskip
+We can also restrict our theorem to positive integers, because
+we know that for every positive integer
+there exists a unique negative integer
+(such that if you add them together you get zero).
+So if we can prove the
+Base-Ten Representation Theorem for the positive integers then we
+can easily extend it to the negative integers (and zero) with a corollary.
+Our corollary could say something like ``Slap a `-' (minus)
+sign in front of the positive base-ten representation to 
+get a unique representation for
+it's negative counterpart'' \dots{}or some such words.
+
+Also, moving forward it would be helpful to have a name for our 
+positive integer so that we can refer to it directly - how about $n$ for ``number'':
+
+\emph{Base-Ten Representation Theorem (third draft)}
+\begin{jprIn}
+Every \emph{positive} integer $n$ has a unique representation in base-ten.
+\end{jprIn}
+
+At the moment it's not very helpful to have named $n$ (the theorem as it stands
+doesn't say anything more about $n$ so why did we bother naming it?) but
+as we flush out the remaining details of the theorem
+we can refer to $n$ which carries the important information that it could be ANY positive integer.
+
+Earlier we looked at the number 92507 by adding up
+each digit times a power-of-ten\footnote{It's time
+to replace our ``$\times{}$'' symbol for multiplication, with ``$\cdot{}$''
+because ``$\times{}$'' might get confused for an ``$x$'' in an expression,
+whereas ``$\cdot{}$'' never will be. Eg. $x\times{}2$
+vs. $x\cdot{}2$, additionally ending up with something that is more aesthetically pleasing.
+You may also see the ``$\cdot$'' omitted entirely as
+in $ab$ - which means $a\cdot{}b$ as you have seen in earlier footnotes.}:
+\[92507=9{\cdot}10^4+2{\cdot}10^3+5{\cdot}10^2+0{\cdot}10^1+7{\cdot}10^0\]
+\emph{Every} base-ten number implicitly describes an algebraic expression like this, so
+let's come up
+with a general expression of this form that can describe ANY positive integer $n$.
+
+Let's replace one of the digits in our example number 92507 with $d$, how about the 5 like this $92d07$. What I
+mean becomes clear if I write it out:
+\[n=92d07=9{\cdot}10^4+2{\cdot}10^3+d{\cdot}10^2+0{\cdot}10^1+7{\cdot}10^0\]
+So $n$ is one of the following numbers:
+92007,
+92107,
+92207,
+92307,
+92407,
+92507,
+92607,
+92707,
+92807 or
+92907.
+
+As you can see, the digit $d$ must be an integer between 0 and 9 inclusive 
+which we can write as ``$0\le{}d\le{}9$'' however I suggest that ``$0\le{}d<10$" is better\footnote{Read 
+$0\le{}d\le{}9$ as ``zero is less-than-or-equal-to dee which is less-than-or-equal-to nine"
+and $0\le{}d<10$ as ``zero is less-than-or-equal-to dee which is (strictly) less-than ten".}!
+It's logically equivalent to ``$0\le{}d\le{}9$''  but conveys more important information
+to the reader. Why even talk about nine when the theorem is about base TEN?
+\begin{align*}
+n =\ &9{\cdot}10^4+2{\cdot}10^3+d{\cdot}10^2+0{\cdot}10^1+7{\cdot}10^0,\text{ where}\\
+&d\text{ is an integer such that }0\le{}d<10
+\end{align*}
+This statement for $n$ only represents the integers 92007, 92107, \dots{} or 92907, so let's come up
+with a statement for $n$ that will allow us to generate ANY five-digit number from 10000 
+the way up to 99999 (which is a complete list of all the five-digit numbers).
+
+In order to describe this general five-digit number, we need
+five different `$d$'s, one for each of the five digits.
+In other words, we need to associate a different term $d$ with each of the powers
+$10^4$, $10^3$, $10^2$, $10^1$ and $10^0$.
+
+Mathematics has a convention for coming up with
+a list of terms for situations just like this -
+we tack a subscript onto the name like so: $d_2$ which
+you read as ``dee-two''\footnote{\dots{}yes like artoo-detoo, which perhaps
+George should have written as ``$R_2D_2$'' and not ``R2-D2''!}.
+$d_2$ is a term to represent a digit just like the $d$ we used above.
+But now we can use that little subscript as a way to
+associate it to a specific power-of-ten.
+Naturally we'll associate $d_2$ with $10^2$ (ten squared) as follows:
+\begin{align*}
+n =\ &9{\cdot}10^4+2{\cdot}10^3+d_2{\cdot}10^2+0{\cdot}10^1+7{\cdot}10^0,\text{ where}\\
+&d_2\text{ is an integer such that }0\le{}d_2<10
+\end{align*}
+If we define $d_2$ like this, then we know that when we refer to the digit $d_2$
+that we are talking about the digit that is multiplied with $10^2$.
+
+\break
+Let our five-digit-number $n$ use $d_0,d_1,d_2,d_3$ and $d_4$ for its digits. Then
+the general expression for $n$ looks like this\footnote{That expression looks like
+hard-core math, so let's take a moment
+to read it out loud, as a Math-Professor might do in a lecture.  She might say:
+``$n$ is equal to dee-four times ten-to-the-fourth, \dots{}
+plus dee-three times ten-cubed, \dots{} plus dee-two times ten-squared,
+  \dots{} plus dee-one times ten,  \dots{} plus dee-zero times one.''}:
+\begin{align*}
+n =\ &d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0\text{, where}\\
+& d_0\text{ is an integer such that }0\le{}d_0<10\text{, and}\\
+& d_1\text{ is an integer such that }0\le{}d_1<10\text{, and}\\
+& d_2\text{ is an integer such that }0\le{}d_2<10\text{, and}\\
+& d_3\text{ is an integer such that }0\le{}d_3<10\text{, and}\\
+& d_4\text{ is an integer such that }1\le{}d_4<10.
+\end{align*}
+Ok, hold on a minute - that's getting a little cumbersome. it's clunky and hard to read -
+plus did  you notice how we slipped in that different range for $d_4$?
+
+First let's deal with the different range on that $d_4$. To make sure $n$ is a legitimate five-digit number we have to
+call out the exception that $d_4$ can NOT be zero - it has to be at least 1.
+Why? Because if $d_4$ were zero then $n$ would only be a
+four-digit number, or perhaps a three-digit number, or only two-digits etc.
+
+Secondly, to clean up the presentation
+a common convention
+is to let another term like $i$, for perhaps ``index'', stand in for the subscript
+when you want to talk about all your `$d$'s at once:
+\begin{jprIn}
+\begin{jprIn}
+\begin{jprIn}
+Let $d_0, d_1, d_2,d_3$ and $d_4$ be integers such that:
+
+\hspace{3em}$n
+=d_4{\cdot}{1\hspace{-0.12em}0}^4
++d_3{\cdot}{1\hspace{-0.12em}0}^3
++d_2{\cdot}{1\hspace{-0.12em}0}^2
++d_1{\cdot}{1\hspace{-0.12em}0}^1
++d_0{\cdot}{1\hspace{-0.12em}0}^0$
+
+where $0\le{}d_i<10$ for all $i$ in $\{0,1,2,3,4\}$ and $d_4\ne0$.
+\end{jprIn}
+\end{jprIn}
+\end{jprIn}
+That's it! Those statements, and the expression for $n$ describe EVERY five-digit number.
+
+Now let's extend
+our five-digit expression for $n$ to an arbitrary
+number of digits.
+Consider the following progression:
+\begin{center}
+\begin{tabular}{r l}
+expression for $n$ & number-of-digits\\
+$d_0{\cdot}10^0$ & 1\\
+$d_1{\cdot}10^1+d_0{\cdot}10^0$ & 2\\
+$d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0$ & 3\\
+$d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0$ & 4\\
+$d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0$ & 5\\
+\dots{} & \dots{}\\
+$d_k{\cdot}10^k+\dots{}+d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0$ & k+1
+\end{tabular}
+\end{center}
+Using $k$ like this let's us specify any number of digits we want.
+If we let $k=0$ we get the first ``single digit'' 
+item on the list.  $k=4$ gives us our five-digit number above,
+or we could let $k$ be a billion, which would allow
+us to specify an integer that has a billion-and-one
+digits in it\footnote{A billion-and-one digit number is 
+\emph{ridiculously} large,
+consider that our estimate of the number of molecules in
+the entire universe would only need a base-ten
+number with the $k$ set to somewhere between 78 and 82 to count them all.}!
+
+\break
+So there we have it, we found our expression for being able to
+express each positive integer, let's use
+it in a revised draft of our theorem:
+
+\emph{Base-Ten Representation Theorem (close to final draft)}
+\begin{jprIn}
+For every positive integer $n$ there is a unique sequence
+of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
+
+\hspace{3em}$n=d_k{\cdot}{1\hspace{-0.12em}0}^k+d_{k-1}{\cdot}{1\hspace{-0.12em}0}^{k-1}+\dots+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
+
+where $0\le{}d_i<10$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+
+Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\cdots}d_2d_1d_0$
+\end{jprIn}
+
+Our newly added ``Definition'' introduces exactly what it means to write
+the number out in base-ten; that is,
+we toss out all the extraneous stuff from our expression
+and string all the digits one after another.
+Starting at the most-significant digit $d_k$ on the left,
+down to the next digit to its right which is $d_{k-1}$
+(read as ``dee-kay-minus-one''\footnote{\dots{}and $d_{k-1}$ is
+multiplied by ``ten-to-the-power-of-(kay-minus-one)''.})
+all the way down to the least-significant units-digit $d_0$ on the right.
+
+We are so darn close, but there is one super-picky detail
+that we should be concerned about.
+Our theorem establishes what it means to represent a number in base-ten, so until
+we've proven it, how can we actually use the first two-digit number ``10" to represent
+the integer ten!? We need a symbol for ten in the theorem,
+so what can we do?
+
+Apart from ``10" we don't have a symbol for the integer ten so
+we have to make one up, how about $T$ for ``Ten'':
+\begin{jprIn}
+Let $T$ represent the integer ten.
+
+For every positive integer $n$ there is a unique sequence
+of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
+
+\hspace{3em}$n=d_k{\cdot}{T}^k+d_{k-1}{\cdot}{T}^{k-1}+\dots+d_2{\cdot}{T}^2+d_1{\cdot}{T}^1+d_0{\cdot}{T}^0$\\
+\dots{} etc.
+\end{jprIn}
+That's a little confusing, so 
+let's solve our problem by defining the 
+two digit number ``10" (i.e., a one followed by a zero) to be the integer ten.
+It's ok - we're not violating any rules by doing this. At this point we're just defining
+a symbol to stand in for the integer ten. Here's our
+FINAL draft of the theorem:
+\section*{Base-Ten Representation Theorem}
+\begin{jprIn}
+Let the two digit number ``${1\hspace{-0.12em}0}$" represent the integer ten.
+
+For every positive integer $n$ there is a unique
+sequence of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
+
+\hspace{3em}$n
+=d_k{\cdot}{1\hspace{-0.12em}0}^k
++d_{k-1}{\cdot}{1\hspace{-0.12em}0}^{k-1}
++\dots
++d_2{\cdot}{1\hspace{-0.12em}0}^2
++d_1{\cdot}{1\hspace{-0.12em}0}^1
++d_0{\cdot}{1\hspace{-0.12em}0}^0$
+
+where $0\le{}d_i<{1\hspace{-0.12em}0}$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+
+Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\cdots}d_2d_1d_0$
+\end{jprIn}
+\bigskip
+
+\break
+Consider that base-ten is not the only base in use these days.
+Since the introduction of the EDVAC\footnote{You might be thinking, don't you
+mean ENIAC which was earlier? Actually no - the ENIAC
+used base-ten accumulators, not binary!} computer, around 1950,
+there have been many orders of magnitude more calculations done
+in base-two (otherwise known as binary) by computers than have EVER
+been done by people in base-ten for the entirety of human history.
+(This might even be true if we only count one-day's worth of
+binary computer calculations - someone needs to check this.)
+
+Binary-computer logic gates (the building blocks of the modern computer)
+can only take one of two states, that is; ``off" or ``on".
+We interpret these two states to represent these two numbers: 0 and 1.
+By doing so, in the same way that base-ten uses ten numbers 0,
+1, 2, 3, 4, 5, 6, 7, 8, and 9 for its digits; we can represent integers
+in base-two with just the digits 0 and 1. How is this possible?
+Let's find out with an imaginary trip into space.
+
+Consider distant Planet-Nova on which the emergent
+intelligent species only have nine fingers on their hands.
+They have three hands with three fingers each - anyway,
+that's why they use base-nine, so they only need the numbers 0,
+1, 2, 3, 4, 5, 6, 7 and 8 for their digits\footnote{Digit
+is another word for finger! Of course that's where the math term got its start.}.
+So like we Earthlings do for the integer ten,
+instead of making up a new symbol for nine,
+they use ``10" to represent the integer nine - which
+for them means ``One lot of nine, plus zero units".
+
+Similarly on Planet-Ocho, since they only have eight fingers,
+then they use base-eight and only use numbers 0, 1,
+2, 3, 4, 5, 6 and 7 for their digits. For them ``10''
+means ``One lot of eight, plus zero units".
+
+On and on past Planet-Gary-Seven, and Planet-Secks, Planet-Penta, \dots{}
+
+Finally we come upon Planet-Claire (well someone
+has to come from Planet-Claire,
+I know she came from there),
+where the poor blighters only have two fingers
+so they only use the digits 0 and 1 and base-two,
+so for them ``10" means ``one lot of two and zero units".
+So on Planet-Claire ``10" means two.
+Recall above how we arrived at our 100 in base-ten,
+being ``ten lots of ten,
+plus zero units" - similarly on Planet-Claire ``100''
+in base-two for them means ``Two lots of two plus zero units" in other words,
+four! What is ``11" in base-two? Using our technique to
+describe the digits we see that it's ``One lot of two, plus one unit",
+in other words three.
+
+Here's how they count on Planet-Claire using base-two:
+\begin{center}
+\begin{tabular}{r l c r l}
+base-two & base-ten & \; \; \; \; & base-two & base-ten\\
+0 & 0 & \phantom& (\dots cont)\\
+1 & 1 & \phantom& 1101 & 13\\
+10 & 2 & \phantom& 1110 & 14\\
+11 & 3 & \phantom& 1111 & 15\\
+100 & 4 & \phantom& 10000 & 16\\
+101 & 5 & \phantom& 10001 & 17\\
+110 & 6 & \phantom& \dots{}\\
+111 & 7 & \phantom& 11111 & 31\\
+1000 & 8 & \phantom& 100000 & 32\\
+1001 & 9 & \phantom& \dots{}\\
+1010 & 10 & \phantom & 1000000 & 64\\
+1011 & 11 & \phantom& 10000000 & 128\\
+1100 & 12 (cont\dots) & \phantom& 100000000 & 256
+\end{tabular}
+\end{center}
+\break
+Note something interesting in the list above - the powers of two,
+written in base-two,
+resemble our powers of 10 in base-ten! That is:
+\begin{align*}
+1 = 2^0&= 1, & 32 = 2^5&= 100000_{(\text{base-2})},\\
+2 = 2^1&= 10_{(\text{base-2})}, & 64 = 2^6&= 1000000_{(\text{base-2})},\\
+4 = 2^2&= 100_{(\text{base-2})}, & 128 = 2^7&= 10000000_{(\text{base-2})},\\
+8 = 2^3&= 1000_{(\text{base-2})},& 256 = 2^8&= 100000000_{(\text{base-2})},\\
+16 = 2^4&= 10000_{(\text{base-2})},& & \dots{}
+\end{align*}
+Let's look at the binary number 11010 for example.
+Using our wordy technique to describe the number
+we can see that it's ``One lot of sixteen,
+plus one lot of eight, plus zero lots of four,
+plus one lot of two, plus zero units": 
+\begin{center}
+\begin{tabular}{r r r r c r r l}
+\phantom & 1 & $\times$ & 10000 & \phantom & \phantom & 10000 & (16)\\
++ & 1 & $\times$ & 1000 & \phantom & + & 1000 & (8)\\
++ & 0 & $\times$ & 100 & \; \; = \; \; & + & 000 & \\
++ & 1 & $\times$ & 10 & \phantom & + & 10 & (2)\\
++ & 0 & $\times$ & 1 & \phantom & + & 0\\
+\cline{6-8}
+\phantom & \phantom & \phantom & \phantom & \phantom & = & 11010 & (26)\\
+\end{tabular}
+\end{center}
+Written in terms of powers of two:
+$11010_{(\text{base-2})}=26=1\cdot2^4+1\cdot2^3+0\cdot2^2+1\cdot2^1+0\cdot2^0$.
+
+Does that expression look familiar? It has exactly the same form
+as the expression for our five-digit base-ten number 92507.
+All the reasoning we used to come up with the statement of the ``Base-Ten
+Representation Theorem" can be used again, but swapping powers-of-two
+for powers-of-ten, and limiting the values for the digits
+to be zero or one.
+Following our line of reasoning this is what the Planet-Claire mathematicians would have
+come up with:
+
+\section*{Base-Two Representation Theorem}
+\begin{jprIn}
+For every positive integer $n$ there is a unique
+sequence of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
+
+\hspace{3em}$n=d_k2^k+d_{k-1}2^{k-1}+\dots+d_22^2+d_12^1+d_02^0$,
+
+where $0\le{}d_i<2$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+
+Definition: $n$ is represented in base-two by the string
+of binary-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_2$
+\end{jprIn}
+\bigskip
+
+Our new Base-Two Representation Theorem introduced some helpful new notation.
+How do you know what I'm talking about if I just
+write ``1000"? Do I mean $10^3$ or $2^3$?
+If there is any possibility for confusion we write
+the number like this $(1000)_{10}$ 
+for the base-ten version meaning one-thousand and $(1000)_2$
+for the binary version meaning eight.
+That's what the ``Definition'' is spelling out with the ``$(\dots)_2$'' extra notation.
+
+As is hinted by the habits of our various alien friends
+above it seems that we can use ANY integer greater than
+or equal to 2 as a base (base-one doesn't really make
+sense - think about it for a while).
+In fact computer graphics artists are known
+to stumble upon numbers written in hexadecimal (usually relating to specifying a color-channel),
+which is base-sixteen.
+
+Base-sixteen introduces some new single-character symbols to the usual numbers 0, 1,
+2, thru 9,
+to represent the numbers 10, 11, 12, 13, 14 and 15.
+Base-sixteen adds the digits A, B, C, D, E and F where
+A\textsubscript{16}=(10)\textsubscript{10},
+B\textsubscript{16}=(11)\textsubscript{10},
+C\textsubscript{16}=(12)\textsubscript{10},
+D\textsubscript{16}=(13)\textsubscript{10},
+E\textsubscript{16}=(14)\textsubscript{10},
+F\textsubscript{16}=(15)\textsubscript{10}.
+So (80FB)\textsubscript{16} is a four digit number in base-sixteen.
+(As we'll see shortly it means (33019)\textsubscript{10} in base-ten).
+
+Note that if we omit the parentheses and subscript from a number,
+it means we're talking about it in base-ten; our ``default" base.
+Case in point: the subscripts that we use to denote the base
+(like the ``16" in (80FB)\textsubscript{16}) are written in base-ten!
+
+We could go ahead and prove our ``Base-Ten'' and ``Base-Two'' theorems above,
+but what about proving the ``Base-Nine" version of the theorem for the aliens on Planet-Nova,
+or the ``Base-Eight" version for the inhabitants of Planet-Ocho?
+
+To cover all bases (pun intended) let's restate our theorem for the general case,
+call it ``base-$b$",
+where $b$ is some number greater than or equal to two.
+If we can prove that theorem,
+then we'll automatically get all the cases of specific bases for free.
+
+\section*{Basis Representation Theorem}
+\begin{jprIn}
+Let $b$ be a positive integer greater than 1.
+
+For every positive integer $n$ there is a unique sequence
+of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
+
+\hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
+
+where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+
+Definition: $n$ is represented in base-$b$ by the string
+of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
+\end{jprIn}
+\bigskip
+
+So to get the ``Base-Ten Representation Theorem'' let $b$ equal ten.
+To get the ``Base-Two Representation Theorem'' let $b=2$; or the ``Base-Nine Representation Theorem''
+let $b=9$; etc.
+
+\bigskip
+The Basis Representation Theorem
+implies that we can safely convert between
+different bases. Why? (Exercise left for student).
+
+Recall how we defined $(\text{A})_{16}=10$
+and $(\text{F})_{16}=15$ as base-sixteen digits, then:
+\[
+(\text{97A3F2})_{16}
+=9\cdot{}16^5
++7\cdot{}16^4
++10\cdot{}16^3
++3\cdot{}16^2
++15\cdot{}16^1
++2\cdot{}16^0
+=9,937,906\]
+\dots{}which gives you an idea of how you can convert from an alternate base into base-ten.
+
+We should extend the Basis Representation Theorem to include all the integers.
+
+We can take comfort in knowing that this shouldn't be too difficult.
+0 itself is a perfectly acceptable representation for zero in all bases.
+Actually, we could have included zero as part of the original theorem if
+we had just allowed for the exception: ``\dots{}and $d_k\ne0$ except when $n=0$",
+but at this point we're just talking about book-keeping type details.
+
+Also, as we discussed earlier, since negative numbers are unique (they pair one-to-one with
+their positive counterpart) then by simply adding a new symbol like ``-'', and 
+defining what ``-1'' means, we should be able to make an extension to the 
+theorem that defines unique representations for negative numbers fairly easily.
+
+\break
+\section*{Intermission}
+At this point we really ought to get to the proof of the Basis Representation Theorem.
+
+However truth be told, the proof supplied below, while elementary, isn't the most beautiful proof 
+in the world.
+In fact here's what one of the
+world's greatest mathematicians\footnote{along with the Gauss
+and Euclid mentioned later in this paper.},
+G.~H.~Hardy, had to say about such
+proofs\footnote{in an essay he wrote called ``A Mathematician's Apology''.}:
+
+\begin{jprIn}
+``We do not want many `variations' in the proof of a mathematical
+theorem: `enumeration of cases', indeed, is one
+of the duller forms of mathematical argument. A mathematical proof
+should resemble a simple and clear-cut constellation, not a scattered
+cluster in the Milky Way.''
+\end{jprIn}
+
+The proof of the Basis Representation Theorem supplied in this paper is of the duller type described by Hardy.  
+I couldn't agree more with him so I apologize in advance for the proof's lack of elegance.
+I still invite you to to take a stab at following it,
+I tried my best to make it clear and interesting.
+If you do try to follow it (it's at the end of this paper) - it does
+have some points of interest - not the least
+of which is that it works, some of the algebraic manipulations are amusing,
+but most importantly you'll learn about a very powerful tool
+called ``The Principle of Mathematical Induction''. 
+
+Better than diving into the proof right away, please try
+your hand at a couple of exercises for fun! If you get stuck, or to
+check your work, the
+answers are also supplied below - but please don't peek until you try the questions yourself.
+
+If you feel bewildered when facing the exercises below, know that you are in good
+company - this is a common feeling among mathematicians, you'll get used to it!
+But like any ``workout'' if you push through you will succeed and get stronger, I promise.
+
+\section*{Exercises}
+\begin{enumerate}
+\item What are the following numbers expressed in base-ten?
+\begin{enumerate}[i)]
+\item $(110101)_2$
+\item $(\text{A}053\text{D})_{16}$
+\item $(1017)_{23}$
+\end{enumerate}
+\item What are the following base-ten numbers expressed in an alternate base?
+\begin{enumerate}[i)]
+\item 33 expressed in base-two?
+\item 127 expressed in base-two? (Hint: $127 = (128-1)$)
+\item 8079 expressed in base-sixteen?
+
+Hint: For a moment, pretend that we don't use base-ten to
+write out our numbers, instead picture a pile of apples.
+Can you picture 7654 apples?  Yes?  Good let's use 7654 as our example.
+
+Let's divide 7654 by 10 so we get the following:
+\[7654 = 765\cdot{}10+4\]
+Notice the remainder 4 is the least significant digit of our
+integer 7654  (i.e. the $d_0$ digit in the theorem).
+
+How do we get the next digit, i.e. the $d_1$ digit that corresponds to the $10^1$ term? Well, it’s kind of cheating, but
+since we happen to be looking at that last expression written in
+base-ten we can see it sitting right there in at the
+end of the quotient ``765''. So, let's use the same technique and divide 765 by 10:
+\[765 = 76\cdot{}10+5\]
+So the remainder is 5 our $d_1$ digit.  Let's keep going, this time dividing the previous quotient 76 by 10.\dots	
+\[76 = 7\cdot{}10+6\]
+and finally,
+\[7= 0\cdot{}10+7\]
+So, our series of remainders happens to be the digits of the number in base-ten.
+Specifically $d_3 = 7$, $d_2=6$, $d_1=5$ and $d_0=4$.
+
+Try doing that for 8079, but use 16 instead of 10 as the divisor.
+\item Let $\text{A}_{23} = 10, \text{B}_{23} = 11, \text{C}_{23} = 12, \text{D}_{23} = 13, \text{E}_{23} = 14, \text{F}_{23} = 15,
+\text{G}_{23} = 16,\\
+\text{H}_{23} = 17, \text{I}_{23} = 18, \text{J}_{23} = 19, \text{K}_{23} = 20, \text{L}_{23} = 21$ and $\text{M}_{23} = 22$,\\
+then what is 185190 expressed in base-twenty-three?
+\item 291480 expressed in base-twenty-three?
+\end{enumerate}
+
+\end{enumerate}
+
+\section*{Answers}
+\begin{enumerate}
+\item What are the following numbers expressed in base-ten?
+\begin{enumerate}[i)]
+\item $(110101)_2 = 53$
+\item $(\text{A}053\text{D})_{16}=656701$
+\item $(1017)_{23} = 12197$
+\end{enumerate}
+\item What are the following base-ten numbers expressed in an alternate base?
+\begin{enumerate}[i)]
+\item $33 = (100001)_2$
+\item $127 = (1111111)_2$
+\item $8079 = (1\text{F}8\text{F})_{16}$
+\item $185190 = (\text{F}51\text{H})_{23}$
+\item $291480 = (10\text{M}01)_{23}$
+\end{enumerate}
+\end{enumerate}
+
+\break
+\section*{The Principle of Mathematical Induction}
+
+As we discussed way up at the top of this paper,
+we think about generating the set of positive integers as a process that builds them up one by one.
+That is, each successive integer is one more than the previous one,
+starting at 1, then one more
+taking us to 2,
+then 3, 4, 5, \dots{}ad~infinitum\footnote{``ad
+infinitum'' means ``to infinity'', or ``continue forever, without limit''.}.
+
+This idea of being able to step one after the other,
+beginning at 1 and going forever is embodied within the principle of mathematical
+induction and is a basic property of the positive integers.
+This principle is more than just a way to generate the set of integers,
+it's also a way of thinking about properties of the integers.
+
+Suppose
+that $P(n)$ means that the property $P$ holds
+for the number $n$; where $n$ is a positive integer.
+Then the principle of mathematical induction states that $P(n)$
+is true for ALL positive integers $n$ provided that\footnote{This wording of the
+definition of ``The Principle of Mathematical Induction'' is essentially borrowed
+from ``Calculus'' by Michael Spivak - a fabulous introductory textbook on Analysis.}:
+
+\begin{enumerate}[i)]
+\item $P(1)$ is true
+\item Whenever $P(k)$ is true, $P(k+1)$ is true.
+\end{enumerate}
+
+Why would these two conditions show that $P(n)$ is true for all
+positive integers? Note that condition ii) only asserts the truth
+of $P(k+1)$ under the assumption that $P(k)$ is true.
+However if we also know that $P(1)$ is true then condition ii) implies that $P(2)$ is true,
+which again implies that $P(3)$ is true,
+which in turn leads to the truth of $P(4)$,
+etc., over and over for all positive integers.
+
+Some people picture an infinite row of dominoes.
+Having condition i) (called the ``base case") is like being
+able to knock over the first domino.
+Then knowing condition ii) is also true (called the ``induction step") is like the
+fact that any one domino has the ability to knock over the next.
+Once you've knocked over the first domino,
+they all fall.
+
+Let's look at a simple example:
+Perhaps you've heard the story of young Carl Friedrich Gauss
+as a boy in
+the 1780s who was assigned (along with all his classmates)
+the tedious task of summing the first 100 integers -
+presumably to keep them quiet and busy while the
+teacher corrected some papers. Anyway,
+young Gauss immediately produced the answer,
+5050, before most of the boys had summed the first couple of numbers.
+
+It wasn't young Gauss's extraordinary computational speed which allowed
+him to perform this dazzling task,
+but he had the deeper insight that instead of adding 1 plus 2,
+then adding 3, then 4, etc.
+he saw that if you paired 1 with 100,
+and 2 with 99,
+and 3 with 98,
+etc.,
+that each of those pairs added up to 101,
+furthermore he knew he'd have 50 such pairs,
+meaning he could state the result in a heartbeat - tada - ``5050"!
+Gauss is widely regarded as being one of the greatest
+mathematicians who has ever lived - the young eight-year old was just getting started.
+
+\break
+Anyway,
+to generalize young Gauss's insight we can write the expression like this:
+\[1+2+3+\ldots+n=\frac{n(n+1)}{2}\]
+So let's prove this relationship using the principle of mathematical induction.
+\bigskip
+
+Let $n=1$ for the ``base case'',
+then
+\[\frac{1(1+1)}{2}=\frac{2}{2}=1\]
+Which is the trivial sum\footnote{The word ``sum'' here is used
+in the context of the expression
+we are trying to prove. In this case we are summing
+only one item thus it's ``trivial''.} of the first positive integer 1.
+\bigskip
+
+Now let's assume the relationship is true for $n$,
+and prove that it must also be true for $n+1$ for our ``induction step":
+\begin{alignat*}{2}
+&(1+2+3+\ldots+n) + (n+1) \;\;  &&\text{(Add together 1 through }n+1\text{.)}\\
+=\ &\frac{n(n+1)}{2} + (n+1) &&\text{(Substitute induction assumption for 1 through }n\text{.)}\\
+=\ &\frac{n(n+1)}{2} + \frac{2(n+1)}{2} &&\text{(Common denominator of 2.)}\\
+=\ &\frac{n^2+n+2n+2}{2} &&\text{(Multiply out numerator.)}\\
+=\ &\frac{n^2+3n+2}{2} &&\text{(Add like terms.)}\\
+=\ &\frac{(n+1)(n+2)}{2} &&\text{(Factor numerator.)}\\
+=\ &\frac{(n+1)((n+1)+1)}{2} &&\text{(Rewrite in terms of }(n+1)\text{.)}
+\end{alignat*}
+Which proves young Gauss's expression is true for
+the positive integer $n+1$ whenever it's true for $n$ (to see this, compare
+our new expression for adding the first $(n+1)$ integers
+to the expression for $n$ at the top
+of the page) - then
+by the principle of mathematical induction,
+the expression is true for all positive integers. QED\footnote{``QED'' - is
+often used at the conclusion of a proof to state that it's
+done - it's an acronym for the Latin phrase
+``quod erat demonstrandum'' which means ``that which was to be demonstrated''.
+In other words we've proven what we set out to prove.}
+
+\section*{Extra Exercise: Geometric Series Theorem}
+If $b, n$ are nonnegative integers and $b\ne1$ then prove,
+\[1+b+b^2+\dots+b^{n-1} = \frac{b^n-1}{b-1}\]
+Hint: use induction on $n$, the base case being $n=1$.  Before you turn the page, try proving this, you can do it!
+
+\section*{Proof for Extra Exercise: Geometric Series Theorem}
+Base case: $n=1$
+\[\frac{b^1-1}{b-1}=\frac{b-1}{b-1}=1=b^0=b^{1-1}\]
+
+Induction step:
+Assume the following
+\[1+b+b^2+\dots+b^{n-1} = \frac{b^n-1}{b-1}\]
+Then,
+\begin{alignat*}{2}
+&(1+b+b^2+\dots+b^{n-1}) + b^n  \;\;  &&\text{(Add }n+1\text{ terms of series together.)}\\
+=\ &\frac{b^n-1}{b-1}+b^n &&\text{(Substitute induction assumption for first }n\text{ terms.)}\\
+=\ &\frac{b^n-1}{b-1}+\frac{b^n(b-1)}{b-1}  &&\text{(Common denominator of }b-1\text{.)}\\
+=\ &\frac{b^n-1+b^{n+1}-b^n}{b-1} &&\text{(Multiply out numerator.)}\\
+=\ &\frac{b^{n+1}+b^n-b^n-1}{b-1} &&\text{(Reorder terms (Associativity).)}\\
+=\ &\frac{b^{n+1}-1}{b-1} &&\text{(Adding then subtracting }b^n\text{ is zero.)}
+\end{alignat*}
+QED
+\section*{Proof of the Basis Representation Theorem}
+How do we prove our theorem? There are several ways to approach it.
+
+The mathematician George E. Andrews (in his book
+``Number Theory") has an interesting proof.
+He asks us to imagine a function that given a positive integer $n$,
+counts the number of base-$b$ representations of $n$.
+Then with some fairly straightforward reasoning he shows that this counting-function
+MUST produce a count of ``1" for every $n$, both establishing the uniqueness 
+and the existence in one fell swoop.
+It's a cool proof - short and sweet, I'll bet G. H. Hardy would approve of
+it from an aesthetic standpoint.
+
+We could also use the Euclidean Division Theorem to prove our theorem.
+We could show that by dividing our integer $n$ by $b$, then dividing that
+result by $b$ again, then again, and again, etc. that we'd get a series
+of remainders which are the base-$b$-digits of $n$.
+This is an interesting approach to the proof in that it also gives us a technique
+to construct a base-$b$ representation of each integer.
+If we were to go down this road
+we would try to generalize how we solved
+exercise number 2-iii) above, it's worth a try for fun.
+
+However, we're going to follow a much more straightforward approach.
+We'll use the principle of mathematical induction directly on $n$
+to prove that
+a base-$b$ representation of each positive integer exists.
+Then we'll use a different approach to prove that each such representation is unique.
+
+\bigskip
+Using the
+principle of mathematical induction 
+to prove that a base-$b$ number exists for all the positive integers is pretty simple.
+The crux of the approach is to show that if $n$ can be expressed in base-$b$,
+then it necessarily follows that $n+1$ can also be represented in base-$b$.
+
+This is best thought of as a magic
+odometer in your new magic car.
+As you pull it out of the dealership parking lot
+on the first day you notice its odometer is only one digit wide.
+That one and only display-digit shows a ``1", I guess the factory was only one mile away.
+
+As you get close to the end of your drive home
+you see you've clocked 9 miles.
+Naturally you're a little curious about how it's going to
+count to 10 since the odometer apparently only has one digit for counting.
+While pondering this curiosity you see the 9 starting to roll
+over back to 0, and a second digit to it's left magically materializes!
+It rolls to a 1 as the 9 settles back to 0.
+Nice new feature - the unlimited odometer!
+Apparently this magic odometer only adds new digits to the left
+as it needs them.
+The magic odometer should be able to display ANY number of miles, no matter how large.
+(Good thing too, this
+new line of magic cars from Tesla are guaranteed to last forever.)
+
+Our proof is going to take care of the three cases that happen with
+the magic-odometer. Imagine that we've already driven some arbitrarily large
+number of miles, and we're watching the odometer roll over to the
+next mile. We have the following cases:
+
+\begin{enumerate}[i)]
+\item The units digit is less than 9, so driving one more mile only increments
+the units digit, not affecting any of the other digits.
+
+Example: We've driven 782995 miles so far, so the next mile driven is
+$782995 + 1 = 782996$.
+
+So that units digit turned from a ``5" to a ``6", all the rest of
+the digits remaining unchanged,
+so the new number is a legitimate base-ten number.
+\item The units digit, and perhaps a few directly to the left of it, are all 9's,
+so driving one more mile will spin all those 9's to 0,
+at the same time incrementing
+the rightmost digit \emph{that isn't a} 9 by one.
+
+Example: We've driven 782999 miles so far, so the next mile driven is:
+\begin{align*}
+782999+1 &= 780000+2999+1\\
+&=780000+(3000-1)+1\\
+&=780000+3000+(-1+1)\\
+&=780000+3000+0\\
+&=783000
+\end{align*}
+That looks overly complicated, but I broke it down
+like that to demonstrate the idea behind the algebraic ``trick" that's
+used in the proof.
+
+Anyway, it's clear that the rightmost digit that-isn't-a-9, in our case the 2, got changed
+to a 3 and all the 9's got changed to 0's, while the rest of the digits remained unchanged
+leaving us with a legitimate base-ten number.
+\item ALL the digits from the units digit up to the highest digit are 9's,
+so driving one more mile
+engages the magic odometer feature, materializing a new leftmost digit.
+The newly materialized digit turns to a 1 and all the 9's spin back to 0.
+In this case the number of digits on the odometer will have been extended by one.
+
+Example: We've driven 999999 miles so far, so the next mile driven is:
+\begin{align*}
+999999+1 &=(1000000-1)+1\\
+&=1000000+(-1+1)\\
+&=1000000+0\\
+&=1000000
+\end{align*}
+Same ``trick" as the previous case, but this time our number grew from a
+six digit number to a seven digit number. Ya, we just drove a million miles
+which is definitely a legitimate base-ten number!
+\end{enumerate}
+
+\bigskip
+Even though we can use induction to prove the existence of base-$b$
+numbers for every integer, let's think about why it
+doesn't prove the ``uniqueness" aspect of 
+the theorem.
+Imagine a magic-box
+that also makes base-$b$ representations for each
+integer.
+In other words, if the odometer is the principle-of-mathematical-induction then the magic-box
+is some different mechanism working in a different way.
+Why not? We weren't careful to show that induction is the ONLY way
+to generate a base-$b$ representation for each number. (It isn't.)
+
+So we need to prove that if such a magic-box exists then it MUST
+produce the same results as our odometer.
+
+The easiest way to prove this, is to assume that there is a magic-box
+that DOES NOT produce the same representation as our odometer, then we show that
+this assumption leads to an irreconcilable contradiction.
+So either our assumption is wrong or the axioms are.
+Since we're VERY confident in the axioms being correct we can only 
+conclude that our assumption must be wrong - meaning
+that there is only \emph{one} way 
+to make a base-$b$ representation for each integer.
+
+Without further adieu, let's get to the actual proof!
+
+\break
+\section*{Existence Proof of the Basis Representation Theorem}
+Let $b$ be a positive integer greater than 1.
+
+We will show that for every positive integer $n$ there is a sequence
+of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
+
+\hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
+
+where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+
+\bigskip
+We will refer to the previous expression as the
+``base-$b$-representation" for $n$ in the following induction proof.
+
+\bigskip
+Base case:
+\begin{jprIn}
+Consider when $n=1$.
+
+Let $d_0=1$ be the only integer in the sequence.  Then,
+
+\hspace{3em}$d_0b^0=1\cdot{}b^0=1\cdot{}1=1=n$
+
+Since $d_0<b$ and $d_0\ne0$ (note: $k=0$) then this
+shows that a 
+base-$b$-representation exists for the integer 1.
+\end{jprIn}
+
+\bigskip
+Induction Step:
+\begin{jprIn}
+Let $n$ be a positive integer, and assume that
+there is a sequence
+of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
+
+\hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
+
+where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+
+We will prove that $n+1$ also has a
+base-$b$-representation by looking at two cases.
+
+\bigskip
+Case 1) $d_0<(b-1)$
+\begin{jprIn}
+This case examines when the least significant
+digit of $n$ is \emph{strictly-less-than} the largest value it can take in base-$b$.
+(For example, in base-two $d_0 = 0$;
+In base-five $d_0\le{}3$;
+In base-ten $d_0\le{}8$.)\footnote{Please read the following
+bidirectional arrow symbol $\Leftrightarrow$
+as ``if and only if'' - it's like a logical ``equals'' sign}
+%\footnote{Use
+%the axiom of Distribution \big(i.e.; $ac+bc=(a+b)c$\big) to factor out the $b^0$ below.}
+{\small
+\begin{alignat*}{3}
+  &&n
+  &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 &&\quad\text{(Induction Assumption)}\\
+  &\Leftrightarrow\quad
+  &n+1
+  &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + 1 &&\quad\text{(Add 1 to both sides)}\\  
+  &&&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + b^0 &&\quad\text{(Restate 1 as }b^0\text{)}\\
+  &&&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1 + (d_0+1)b^0 &&\quad\text{(Axiom of Distribution)}
+\end{alignat*}
+}The expression for $n+1$ uses the same sequence of
+integers $d_k, d_{k-1},\dots{},d_2,d_1$ as $n$, with only
+change being that the integer $d_0$ was altered to $(d_0{+}1)$, but since:
+\begin{alignat*}{3}
+  &&d_0
+  &< (b-1) &&\quad\text{(Case 1 Assumption)}\\
+  &\Leftrightarrow\quad
+  &d_0+1
+  &< (b-1)+1 &&\quad\text{(Add 1 to both sides)}\\  
+  &\Leftrightarrow\quad
+  &d_0+1
+  &< b
+\end{alignat*}
+Therefore, given the conditions of ``Case 1", $n+1$ has a base-$b$-representation whenever $n$ does.
+\end{jprIn}
+
+\bigskip
+Case 2) $d_0=(b-1)$
+\begin{jprIn}
+Now we'll look at the case when the least significant digit of $n$ is \emph{exactly-equal-to}
+the largest value it can take in base-$b$.
+%(Note that  ``Case 1" and ``Case 2" cover all the possibilities for what $d_0$ can be.)
+(For example in base-two
+$d_0=1$; in base-five
+$d_0=4$; in base-ten $d_0=9$.)
+
+We're going to split this case into two cases.
+
+\begin{enumerate}[a)]
+\item \emph{All} the digits of $n$ are equal-to $b{-}1$ (eg. 999999 in base-ten).
+\item $d_0=(b-1)$ but \emph{at least one other} digit is not-equal-to $(b-1)$\\
+(eg. 782999 in base-ten).
+\end{enumerate}
+%
+%Then we're going to find out what happens when we add 1 to each case, thus giving us our
+%resultant expression for $n+1$
+
+Case 2a) ALL of the digits of $n$ are equal to $(b-1)$.
+\begin{jprIn}
+So $n$ can be expressed like this:
+\begin{alignat*}{3}
+  &\quad&n
+  &= (b{-}1)b^k+\dots{}+(b{-}1)b^2+(b{-}1)b^1+(b{-}1)b^0 &&\quad\text{(Induction Assumption)}
+\end{alignat*}
+Recall in the ``Extra Exercise: Geometric Series Theorem"
+we showed that:
+\[1+b+b^2+\dots{}+b^k=\frac{b^{k+1}-1}{b-1}\]
+
+We can use this theorem to show that $n+1=b^{k+1}$ as follows:
+\smallskip
+{\small
+\begin{alignat*}{3}
+  &&b^k+\dots{}+b^2+b+1
+  &= \frac{b^{k+1}-1}{b-1} &&\quad\text{(Reorder terms of G.S.Thm.)}\\
+  &\Leftrightarrow\quad
+  &b^k+\dots{}+b^2+b^1+b^0
+  &= \frac{b^{k+1}-1}{b-1} &&\quad\text{(Rewrite with }b^1, b^0\text{)}\\
+  &\Leftrightarrow\quad
+  &(b-1)(b^k+\dots{}+b^2+b^1+b^0)
+  &= b^{k+1}-1 &&\quad\text{(Mult both side by }(b{-}1)\text{)}\\
+  &\Leftrightarrow\quad
+  &(b{-}1)b^k+\dots{}+(b{-}1)b^1+(b{-}1)b^0
+  &= b^{k+1}-1 &&\quad\text{(Distribution of }(b{-}1)\text{)}\\
+  &\Leftrightarrow\quad
+  &n
+  &= b^{k+1}-1 &&\quad\text{(Substitute }n\text{ for expression)}\\
+  &\Leftrightarrow\quad
+  &n+1
+  &= b^{k+1} &&\quad\text{(Add 1 to both sides)}
+\end{alignat*}
+}Let's rewrite $n+1$:
+\[n+1= 1\cdot{}b^{k+1}+0\cdot{}b^{k}+\dots{}+0\cdot{}b^2+0\cdot{}b^1+0\cdot{}b^0,\]
+Therefore, given the conditions of ``case 2a", $n+1$ has
+a valid base-$b$-representation whenever $n$ does.
+We note that
+the number of integers in the sequence associated
+with $n+1$ is one longer than for $n$. i.e., $n+1$ is one digit longer that $n$.
+
+\break
+\end{jprIn}
+Case 2b) $d_0=(b-1)$ but at least one other digit is not equal to $(b-1)$
+\begin{jprIn}
+Let $j$ be the lowest power-of-$b$ such that $d_j<(b{-}1)$,
+i.e.; we can write $n$ as follows:
+\[n = d_kb^k+d_{k-1}b^{k-1}+\dots+d_jb^j+(b{-}1)b^{j-1}+\dots+(b{-}1)b^1+(b{-}1)b^0\]
+Similar to how we used the ``Geometric Series Theorem'' above,
+we can simplify the expression for $n$ as follows:
+{\small
+\begin{alignat*}{3}
+  &&n
+  &= d_kb^k+\dots+d_jb^j+\big((b{-}1)b^{j-1}+\dots+(b{-}1)b^1+(b{-}1)b^0\big)&&\\
+  &\Leftrightarrow\quad
+  &n
+  &= d_kb^k+\dots+d_jb^j+(b^j-1) &&\text{(Geom. Series Thm.)}\\
+  &\Leftrightarrow\quad
+  &n+1
+  &=  d_kb^k+\dots+d_jb^j+b^j &&\text{(Add 1 to both sides)}\\
+  &\Leftrightarrow\quad
+  &n+1
+  &=  d_kb^k+\dots+(d_j+1)b^j &&\text{(Distr Axiom)}
+\end{alignat*}
+}Rewriting the expression for $n$ in explicit terms:
+\[n+1= d_kb^k+\dots+d_{j+1}b^{j+1}+(d_j+1)b^j+0{\cdot{}}{}b^{j-1}+\dots{}+0{\cdot{}}b^1+0{\cdot{}}b^0\]
+We can see that the expression for $n+1$ uses the same
+sequence of integers $d_k,\dots{},d_{j+1}$ as $n$.
+The integer $d_j$ was altered to $(d_j{+}1)$, which is a valid digit since:
+\begin{alignat*}{3}
+  &&d_j
+  &< (b-1) &&\quad\text{(Previous assumption)}\\
+  &\Leftrightarrow\quad
+  &d_j+1
+  &< (b-1)+1 &&\quad\text{(Add 1 to both sides)}\\  
+  &\Leftrightarrow\quad
+  &d_j+1
+  &< b
+\end{alignat*}
+Furthermore the remaining sequence of integers $d_{j-1}=\dots{}=d_2=d_1=d_0=0$.
+
+Therefore, given the conditions of ``case 2b", $n+1$ has
+a valid base-$b$-representation whenever $n$ does.
+\end{jprIn}
+\end{jprIn}
+Taking ``Case 1" and ``Case 2" together proves that $n+1$
+always has a base-$b$-representation whenever $n$ does.
+Having also established the base-case, therefore by the principle of mathematical induction
+all positive integers have a base-$b$-representation.
+
+QED
+\end{jprIn}
+
+\bigskip
+In order to proceed
+with proving the uniqueness aspect of the Basis Representation Theorem, we
+need to make use of a well established theorem
+called the ``Euclidean Division Theorem''.
+It sounds onerous, but don't worry, you learned it
+in the third grade but perhaps not so formally, you called it ``long division''. It simply states the following\dots{}
+
+\break
+\section*{Euclidean Division Theorem}
+\begin{jprIn}
+For all integers $a$ and $b$ such that $b>0$,
+there exist \emph{unique} integers $q$ and $r$ such that\footnote{Aside:
+Actually the theorem is stronger than we have stated here.
+Specifically, it only requires that $b\ne0$, however
+to keep the remainder positive, the restriction on $r$
+would have to be stated like
+this $0\le{}r<\left|b\right|$ to deal with
+the possibility that $b$ might be negative.}:
+\[a=qb+r  \text{ such that } 0\le{}r<b\]
+Definition: In the above equation:
+\begin{jprIn}
+\begin{tabular}{l l}
+a is the \emph{dividend} & (``the number being divided'')\\
+b is the \emph{divisor} & (``the number doing the dividing'')\\
+q is the \emph{quotient} & (``the result of the division'')\\
+r is the \emph{remainder} & (``the leftover'')
+\end{tabular}
+\end{jprIn}
+\end{jprIn}
+This is how you first learned to divide.
+For example if someone asks you ``What is nineteen divided by three?'', you’d
+answer ``six with one remaining''. Here 19 is the \emph{dividend},  3 is the \emph{divisor},
+6 is the \emph{quotient} and 1 is the \emph{remainder}. Written in the form of the theorem:
+\[19=6\cdot3+1\]
+Often proofs make use of little mini-theorems of their own.
+Creating these mini-theorems is a way to simplify a step in
+the main proof by establishing a useful
+intermediary result. It makes reading the main proof
+easier to follow by not having us get sidetracked with
+the technicalities of a step we want to make.
+These mini-theorems are called ``Lemmas''.
+We're going to make a lemma to help with proving the uniqueness part
+of the Basis Representation Theorem. But first we're going to make use of the
+Euclidean Division Theorem to prove our lemma.
+
+\section*{Lemma}
+\begin{jprIn}
+Let $b, q$ and $r$ be integers such that $b>0$ and $0\le{}r<b$, then:
+\begin{center}
+$0=qb+r$ 
+\hspace{1.5em}if and only if\hspace{1.5em}
+$q=0$ and $r=0$.
+\end{center}
+\end{jprIn}
+
+\section*{Proof of Lemma}
+\begin{jprIn}
+Let $b, q$ and $r$ be integers such that $b>0$ and $0\le{}r<b$.
+
+If $q=0$ and $r=0$, then \\
+\hphantom{2em}$qb+r=0\cdot{}b+0=0$
+
+\dots{}and if $0=qb+r$ then \\
+\hphantom{2em}because the Euclidean Division Theorem says that $q$ and $r$ are unique, therefore\\
+\hphantom{2em}$q=0$ and $r=0$ must be true otherwise they would not be unique.
+
+QED
+\end{jprIn}
+
+\section*{Uniqueness Proof of the Basis Representation Theorem}
+
+Let $b$ be a positive integer greater than 1.
+
+By the ``Existence Proof of the Basis Representation Theorem'' we know
+that for every positive integer $n$ there is a sequence
+of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
+\begin{jprIn}
+$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$, where\\
+\hphantom{2em}$0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+\end{jprIn}
+
+Assume this expression for $n$ is not unique and that there also exists
+a different sequence
+of integers $c_0, c_1, c_2,\dots{},c_k$ such that:
+\begin{jprIn}
+$n=c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0$, where\\
+\hphantom{2em}where $0\le{}c_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $c_k\ne0$.
+\end{jprIn}
+
+Let's further suppose that $j$ is the lowest power such that the integers $d_j\ne{}c_j$ and without any loss of generality
+let's assume that $d_j>c_j$. Since both expressions are equal to $n$ then:
+\begin{center}
+$c_kb^k+\dots+c_2b^2+c_1b^1+c_0b^0=d_kb^k+\dots+d_2b^2+d_1b^1+d_0b,$
+
+\smallskip
+if and only if,
+\end{center}
+{\small
+\begin{alignat*}{3}
+  &&0
+  &= (d_k-c_k)b^k+\dots+(d_j-c_j)b^j&&\quad\text{(Subtract LHS from both sides)}\\
+  &\Leftrightarrow\quad
+  &\frac{0}{b^j}
+  &= \frac{(d_k-c_k)b^k+\dots+(d_j-c_j)b^j}{b^j} &&\quad\text{(Divide by }b^j\text{, since }b>0\text{)}\\
+  &\Leftrightarrow\quad
+  &0
+  &=(d_k-c_k)b^{k-j}+\dots+(d_{j+1}-c_{j+1})b+(d_j-c_j) &&\quad\text{(Divide each term in numerator by }b^j{)}\\
+  &\Leftrightarrow\quad
+  &0
+  &= \big((d_k-c_k)b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})\big)b+(d_j-c_j) &&\quad\text{(Factor out common }b{)}
+\end{alignat*}
+}
+
+Let $q=\big((d_k-c_k)b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})\big)$, then
+\[0=qb+(d_j-c_j)\]
+Since $0\le(d_j-c_j)<b$ and $b>0$ then by our lemma we know that
+$q=0$ and $d_j-c_j = 0$.
+
+But $d_j-c_j = 0$ if and only if $d_j = c_j$
+contradicting our assumption that $d_j\ne{}c_j$. This implies that the initial assumption that ``$n$
+is not unique'' is \emph{false}, in other words:
+\begin{center}
+The base-$b$ representation of $n$ is unique.\\
+QED
+\end{center}
+%QED - Uniqueness Proof of the B.R.T.
+
+\bigskip
+Since we have proven that a base-$b$-representation exists for ALL the postive integers, \emph{and}
+that this representation is unique, then we
+have proven the Basis Representation Theorem.
+
+\break
+\section*{Epilogue}
+It is my great hope that this paper, while on a very simple subject (so simple that we rightfully take
+it for granted), tickled your fancy even just a little bit, and opened you up to some new pleasures.
+
+I honestly don't know
+if I've taken a fruitful approach to draw new people into the world of mathematics. My reasoning
+is that taking such a familiar subject and applying rigorous mathematical reasoning,
+that you could get familiar with the ``language'' of mathematics and get a taste for the
+sharpness of the thought process. Most importantly I hope
+you found some amusement in and among the mathematical tidbits sprinkled here 
+and there.
+
+I take great pleasure in math, even though I'm no mathematician (by any stretch of the imagination)
+I don't let that stop me digging in and trying to digest new ideas as I stumble across them. I feel that
+not being able to enjoy mathematics is as tragic as someone who is blind who can't enjoy the MoMA, or
+someone who is deaf who can't while away the hours listening to their favorite band. This paper is
+my attempt at trying to open up the world of mathematics to you so that you can also enjoy one of the greatest
+achievements humanity has to offer.
+
+%The world of mathematics is rich and varied, and filled with such fascinating characters (the mathematicians
+%themselves) who by rights ought to be treated like rock stars.
+%
+If this paper has the opposite effect, then I apologize from the bottom of my heart, as I have
+done you a great disservice.
