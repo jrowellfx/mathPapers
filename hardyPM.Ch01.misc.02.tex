@@ -139,16 +139,18 @@ where \(a_1, a_2, \dots{}, a_k\) are integers, and
 
 % The first one, \(a_1\), is just a plain-old non-negative integer.
 
-The crux of the problem seems to be showing that every rational number has such a representation -
-Proving uniqueness doesn't seem as daunting. Here are some thoughts that pointed me in
+The crux of the problem seemed to be showing that \emph{every} rational number has such a representation -
+Proving uniqueness didn't seem as daunting. Here are some thoughts that pointed me in
 a certain direction that led me to the proof below.
 
 We know that any rational number\footnote{Every variable,
 or constant (eg. \(a_1, a_k, m, n, i, p, q\)) in this
 paper is going to represent a non-negative integer. We aren't dealing with `real numbers' here, just
 non-negative rational numbers which we will always discuss in terms of one integer divided
-by another integer, like \(\frac{p}{q}\).}, say \(\frac{m}{q}\), can be written as an
-integer part, \(i\), PLUS a fractional part, \(\frac{p}{q}\), such that
+by another integer, like \(\frac{p}{q}\).}, say \(\frac{m}{q}\), can be
+% \emph{uniquely}
+written as an
+integer part, \(i\), plus a fractional part, \(\frac{p}{q}\), such that
 \(\frac{m}{q} = i + \frac{p}{q}\), where \(0 \le{} \frac{p}{q} < 1\) (note that \(i\) can be zero).
 
 So if we're trying to represent any positive
@@ -232,7 +234,7 @@ For example, look at these numbers,
 An obvious pattern has emerged!
 It seems to be the case
 that if we assign the largest possible values to the variables,
-from \(a_2\) up to say \(a_k\) (with all subsequent variables being zero)
+from \(a_2\) up to \(a_k\) (with all subsequent variables being zero)
 we get the rational number \(\frac{k!-1}{k!}\),
 which is as close to 1 as you can get with a denominator of \(k!\) without actually
 hitting 1. (What happens if you add \(\frac{1}{k!}\) to \(\frac{k!-1}{k!}\)?)
@@ -240,8 +242,8 @@ This turned out to be
 a pretty useful observation, and it became my `Lemma 1' in the proof below.
 
 Also, if we assign zeros to all the variables then naturally we get \(\frac{0}{k!}\), plus
-it's pretty simple to figure out how to make the smallest non-zero such rational number \(\frac{1}{k!}\).
-Then thinking about continually adding \(\frac{1}{k!}\) to the result gives us an idea about how the
+it's pretty obvious to figure out how to make the smallest such non-zero rational number \(\frac{1}{k!}\).
+Then thinking about continually adding \(\frac{1}{k!}\) to the result, we get an idea about how the
 \(a_i\) variables change as you keep incrementing by \(\frac{1}{k!}\).
 
 So if we restrict ourselves to using only \(a_2, a_3, \dots{}, a_k\), then we
@@ -534,7 +536,7 @@ Therefore our assumption that there can be a second set
 of variables representing the same rational number \(\frac{p}{k!}\) must be false.
 Therefore any assignment of values to the variables of the sum
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-produces a \emph{unique} number.
+produces a \emph{unique} number in the set \(\mathcal{S}_k\).
 
 Now we can count the number of members of \(\mathcal{S}_k\), by looking at all the
 possible combinations of values for the variables \(a_2, a_3, \dots{}, a_k\).
@@ -545,10 +547,14 @@ combined with 4 choices for \(a_4\),
 combined with \(k\) choices for \(a_k\).
 
 Therefore the total number of combinations of values
-that can be assigned to all the variables of \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-is \(2\cdot{}3\cdot{}4\cdot\cdot{}\cdot{}k = k!\,\), and since each set of assignments 
-creates a \emph{unique} member of the set, then the size of \(\mathcal{S}_k\) is \(k!\,\), which
-is the same size as \(\mathcal{F}_k\).
+that can be assigned to all the variables of
+\(\frac{a_2}{2!}
++ \frac{a_3}{3!}
++ \frac{a_4}{4!}
++ \dots{} + \frac{a_k}{k!}\)
+is \(2\cdot{}3\cdot{}4\cdot\cdot{}\cdot{}k = k!\,\). Since each set of assignments 
+creates a \emph{unique} member of the set, then the size of the set \(\mathcal{S}_k\) is \(k!\)
+which is also the size of the set \(\mathcal{F}_k\).
 Recalling from above that any 
 member of the set \(\mathcal{S}_k\), say \(\frac{a}{b}\),
 can be written as \(\frac{a}{b} = \frac{p}{k!}\), for some \(p\) where 
@@ -576,7 +582,7 @@ can be written as a sum using a \emph{unique} sequence of integers \(a_2, a_3, \
 where \(0\! \le{}\! a_2\! <\! 2,\enspace 0\! \le{}\! a_3\! <\! 3,\enspace
 \dots{},\enspace 0\! \le{}\! a_k\! <\! k\).
 
-The corollary is a direct result of the fact that there is a one-to-one mapping
+The corollary is a direct result of the fact that there is a one-to-one and onto mapping
 between the sets
 \(\mathcal{F}_k\) and
 \(\mathcal{S}_k\).
@@ -585,8 +591,9 @@ between the sets
 
 {\small
 \begin{gather*}
-\mathcal{F} = \{\frac{p}{k!} \mid
-p,k \in \mathbb{Z}, k \ge{} 2, 0 \le{} p < k!\}\\
+\mathcal{F} = \bigcup\limits_{k=2}^{\infty} \{\frac{p}{k!} \mid p \in \mathbb{Z}, 0 \le{} p < k!\}\\
+% \mathcal{F} = \{\frac{p}{k!} \mid
+% p,k \in \mathbb{Z}, k \ge{} 2, 0 \le{} p < k!\}\\
 \mathcal{S} = \{0\} \cup \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{}
 + \frac{a_{k-1}}{(k\!-\!1)!}
 + \frac{a_k}{k!}
@@ -608,12 +615,14 @@ all possible factorials as the denominator.
 \(\mathcal{S}\) is the set of ALL non-negative rational numbers, less than one,
 formed by every possible sum of the form we've been examining,
 whose smallest term
-% (eg. \(\frac{a_k}{k!}\))
-is non-zero.
-The definition adds back \(\{0\}\), since otherwise it would be excluded.
+is non-zero, in union with the set 
+\(\{0\}\) since otherwise the integer zero would be excluded.
 
 Finally,
-\(\mathbb{Q}_{01}\) is just the set of ALL non-negative rational numbers less than one.
+\(\mathbb{Q}_{01}\) is just the set of ALL non-negative rational numbers less than one, 
+where \(p\) and \(q\) are co-prime. We specify the co-prime condition
+to get unique members of the set, otherwise the set isn't well defined (i.e.; by definition sets
+only contain unique members). 
 
 Here's what it means for a set to be the limit of a sequence of sets, using \(\mathcal{F}\) as an example:
 
@@ -624,7 +633,25 @@ a \in \mathcal{F}\ \Leftrightarrow\
 \forall n \ge N, a \in \mathcal{F}_n.\)
 
 In plain English that means every element of \(\mathcal{F}\)
-is in all but finitely many \(\mathcal{F}_i\).
+is in all but finitely many \(\mathcal{F}_i\), or in our case it turns out that
+if an element is in some \(\mathcal{F}_i\), then it's in \(\mathcal{F}\) and visa versa.
+
+Also, two infinite sets, \(X\) and \(Y\) are equal if and only if, for all \(a\),
+
+{\normalsize
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}
+\begin{center}
+\begin{equation*}
+a \in X
+% \mathbb{Q}_{01}
+\Leftrightarrow
+a \in Y.
+% \mathcal{S}
+\end{equation*}
+\end{center}
+\egroup
+}
 
 \break
 \section*{Lemma 4}
@@ -642,6 +669,7 @@ is in all but finitely many \(\mathcal{F}_i\).
 }
 
 \subsubsection*{Proof}
+
 
 We're going to prove the lemma through a series of equalities as follows:
 
