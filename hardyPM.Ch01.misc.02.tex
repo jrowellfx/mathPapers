@@ -88,7 +88,7 @@
 %%% END Article customizations
 
 \author{James Philip Rowell}
-\title{\vspace{-1.5cm}Factoradic Representation of Rational Numbers}
+\title{\vspace{-1.5cm}Factorial Basis Representation of Rational Numbers}
 \date{} % Activate to display a given date or no date (if empty), otherwise the current date is printed 
 \begin{document}
 \maketitle
@@ -142,7 +142,7 @@ where \(a_1, a_2, \dots{}, a_k\) are integers, and
 We know that any rational number\footnote{Every variable,
 or constant (eg. \(a_1, a_k, m, n, i, p, q\)) in this
 paper is going to represent a non-negative integer. We aren't dealing with `real numbers' here, just
-rational numbers which we will always discuss in terms of one integer divided
+non-negative rational numbers which we will always discuss in terms of one integer divided
 by another integer, like \(\frac{p}{q}\).}, say \(\frac{m}{q}\), can be written as an
 integer part, \(i\), PLUS a fractional part, \(\frac{p}{q}\), such that
 \(\frac{m}{q} = i + \frac{p}{q}\), where \(0 \le{} \frac{p}{q} < 1\) (note that \(i\) can be zero).
@@ -181,15 +181,16 @@ be strictly greater than zero, unlike all the other variables? We loosen up that
 restriction allow \(a_k\) to be equal to zero so all the variables are treated the same. At the very end of the
 proof it's trivial to reintroduce that restriction on the integer \(a_k\).}.
 
-At first glance it wasn't remotely obvious to me how I'd go about finding such
-an assignment of integers \(a_2, a_3, \dots{}, a_k\) for a given rational number
+At first glance it wasn't remotely obvious to me how I'd go about calculating
+the values of the integers \(a_2, a_3, \dots{}, a_k\) for a given rational number
 \(\frac{p}{q}\), where
 \(0 \le{} \frac{p}{q} < 1\),
 let alone that it would be unique.
 
 After playing around for a while, and finally figuring out
-a way to calculate the \(a_i\) variables
-for a given rational number \(\frac{p}{q}\), a few thing started to jump out at me.
+a way to calculate the variables \(a_2, a_3, \dots{}, a_k\)
+for a given rational number \(\frac{p}{q}\), (it's kinda like doing long-division)
+a few thing started to jump out at me.
 For example, look at these rational numbers,
 
 {\small
@@ -591,10 +592,15 @@ are uniquely represented by the expression,
 where \(a_2, a_3, \dots{}, a_k\) are integers, and
 \(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0\le{}a_k<k\)
 
-If we fix \(q\) and let \(k\) go to infinity then it's clear that we can make a set \(\mathcal{S}_k\) that contains
+If we fix \(q\) and let \(k\) go to infinity then it's clear that we can make a set \(\mathcal{S}_\infty\) that contains
 all rational numbers between zero and one.
+For example \(\mathcal{S}_{k+1}\) would ALSO contain all rational numbers with denominator \((k+1)\) that
+are between zero and one, 
+and \(\mathcal{S}_{k+2}\) would ALSO contain all fractions with denominator \((k+2)\), 
+that are between zero and one, etc. until you get them all.
 Since \(\frac{p}{q}\) is uniquely represented by
-our expression within \(\mathcal{S}_k\) then it is unique for all rational numbers between zero and one.
+our expression within \(\mathcal{S}_n\) for ALL values of \(n\ge{}k\)
+then it is unique for all rational numbers between zero and one.
 
 QED
 
@@ -656,14 +662,14 @@ there exist unique integers \(i\) and \(p\) such that,
 \end{alignat*}
 \egroup
 }\par
-Which tells us that all rational numbers \(\frac{j}{q}\) can be written as
+Which tells us that all positive rational numbers \(\frac{j}{q}\) can be written as
 an integer part, \(i\), plus a fractional part \(\frac{p}{q}\), where \(0\le{}\frac{p}{q}<1\).
 
 In our theorem, the \(a_1\) variable plays the role of the integer part \(i\),
 and the rest of the expression, \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
 plays the role of the fractional part \(\frac{p}{q}\), where \(0\le{}\frac{p}{q}<1\).
 
-Therefore to express any rational number in the form of the theorem, first apply the
+Therefore to express any positive rational number in the form of the theorem, first apply the
 Euclidean Division Theorem to \(\frac{j}{q}\) and let \(a_1 = i\). If there is no fractional remainder, then
 the theorem is trivially true,
 however if there is a fractional remainder \(\frac{p}{q}\), then 
@@ -671,10 +677,10 @@ by lemma-4 we know that the sum \(\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} 
 uniquely associated
 with \(\frac{p}{q}\)
 so clearly \(\frac{j}{q} = a_1 + \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-is uniquely associated with all rational numbers \(\frac{j}{q}\).
+is uniquely associated with all positive rational numbers \(\frac{j}{q}\).
 
-To meet the precise requirements of the theorem, we throw away that fact that we can
-represent zero, and suppose that if \(\frac{p}{q} \in{} \mathcal{S}_n\) for some \(n \ge{} q\)
+To meet the precise requirements of the theorem, we 
+suppose that if \(\frac{p}{q} \in{} \mathcal{S}_n\) for some \(n \ge{} q\)
 that we take
 for the variables \(a_2, a_3, \dots{}, a_k\) in the sum for \(\frac{p}{q} \in{} \mathcal{S}_n\)
 all those for which \(a_k \ne{} 0\) but \(a_{k+1} = a_{k+2} = \dots{} = a_n = 0\).
