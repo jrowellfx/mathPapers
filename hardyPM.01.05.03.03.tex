@@ -52,8 +52,8 @@
 \usepackage[pdftex,
             pdfauthor={James Philip Rowell},
             pdftitle={\jobname},
-            pdfsubject={Proof of Examples III Number 3 from G.H. Hardy Pure Mathematics, Ch 1, Section 5.},
-            pdfkeywords={approximation, square-root-of-two, rational numbers, theorem, proof, mathematics, number-theory},
+            pdfsubject={Proof of Chapter 1, Section 5, Examples III, Number 3 from G.H. Hardy `A Course of Pure Mathematics'.},
+            pdfkeywords={approximation, square root of two, rational numbers, theorem, proof, mathematics, number theory, Hardy, A Course of Pure Mathematics},
             pdfproducer={Latex},
             pdfcreator={miktex or pdflatex}]{hyperref}
 \hypersetup{
@@ -93,15 +93,17 @@
 \begin{document}
 \maketitle
 \begin{em}
-\centerline{\small{}Examples from `A Course in Pure Mathematics' by G. H. Hardy. Chapter 1, Section 5.}
+\centerline{\small{}From `A Course in Pure Mathematics' by G. H. Hardy. Chapter 1, Section 5, Examples III.}
 %\par
 %\setlength{\parskip}{0pt}
 \end{em}
 %\normalsize
 \bigskip
 
-``Example 2'' in Hardy's ``Pure Mathematics'' (Ch. 1, Section 5, Examples III)
-looks at a sequence of rational approximations to $\sqrt{2}$, that is:\newline
+In `Example 2'\footnote{Hardy doesn't call them `Exercises' or `Questions', but that's what they
+are, i.e.; the problems for the student to sink their teeth into.} from
+Hardy's `Pure Mathematics', chapter 1, section 5, examples III, he has
+us examine a sequence of rational approximations to $\sqrt{2}$, that is:\newline
 
 \centerline{$\frac{1}{1}, \enspace\frac{3}{2}, \enspace\frac{7}{5}, \enspace\frac{17}{12}, \enspace\frac{41}{29}, \enspace\frac{99}{70}$}
 
@@ -109,11 +111,15 @@ So these numbers squared are:\newline
 
 \centerline{$\frac{1}{1}, \enspace\frac{9}{4}, \enspace\frac{49}{25}, \enspace\frac{289}{144}, \enspace\frac{1681}{841}, \enspace\frac{9801}{4900}$}
 
-And their differences from 2 are:\newline
+And we discover that their differences from 2 are:\newline
 
 \centerline{$-1, \enspace\frac{1}{4}, \enspace-\frac{1}{25}, \enspace\frac{1}{144}, \enspace-\frac{1}{841}, \enspace\frac{1}{4900}$}
 
-\section*{Theorem: Examples III, Number 3.}
+\bigskip
+In the next `Example 3' we are asked to prove a theorem, which I do
+directly following its statement below, starting with the lemma.
+
+\section*{Theorem}
 
 Show that if $\frac{m}{m}$ is a good approximation to $\sqrt{2}$, then 
 $\frac{(m+2n)}{(m+n)}$ is a better one, and that the errors in the 
@@ -155,7 +161,7 @@ Let $m$, $n$ and $a$ be positive integers
 \centerline{QED}
 
 \section*{Proof of Theorem}
-Define the ``error'' of a rational approximation to $\sqrt{2}$ as the difference between the
+Define the `error' of a rational approximation to $\sqrt{2}$ as the difference between the
 approximation-squared and 2.
 So we learn from the Lemma that the error for the $\frac{m}{n}$ approximation of $\sqrt{2}$ is\newline
 \centerline{$\abs*{\frac{a}{n^2}} = \abs*{2 - \frac{m^2}{n^2}}$,}
