@@ -106,7 +106,7 @@ of chapter 1 in Hardy's `Pure Mathematics'
 presents us with a fascinating result.
 The theorem feels like what the `\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0}
 {basis-representation-theorem}'
-is for integers, but this one is for rational numbers, \dots{} beautiful!
+is for integers, but for rational numbers, \dots{} beautiful!
 
 \section*{Factorial Representation Theorem\footnote{...it's not named in the text but what I'm calling the theorem!}}
 
@@ -152,7 +152,7 @@ So if we're trying to represent any positive rational number \(\frac{m}{q}\) in 
 of the theorem then the \(a_1\) term
 wants to play the role of the integer part, \(i\),
 and the remainder of the expression \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-looks to be playing the roll of the rational part, \(\frac{p}{q}\), such that,
+looks to be playing the roll of the rational part, \(\frac{p}{q}\), where,
 
 {\small
 \bgroup                                  %% open the group
@@ -174,7 +174,7 @@ It seemed to me a good idea to forget about the \(a_1\) term
 and just focus on the \(a_2, a_3, \dots{}, a_k\) terms.
 In other words,
 prove the theorem for rational numbers \(\frac{p}{q}\),
-such that \(0 \le{} \frac{p}{q} < 1\), then it should be trivial to extend it to ALL rational numbers
+where \(0 \le{} \frac{p}{q} < 1\), then it should be trivial to extend it to ALL rational numbers
 by tacking the \(a_1\) term back on at the end of the proof.
 Also, it started to become clear that including zero (that is, not JUST positive rational numbers) was
 going to simplify the task\footnote{Did you notice how the theorem restricts the last term, \(a_k\), to
@@ -184,14 +184,14 @@ proof it's trivial to reintroduce that restriction on the \(a_k\) term.}.
 
 At first glance it wasn't remotely obvious to me how I'd go about finding such
 an assignment of coefficients \(a_2, a_3, \dots{}, a_k\) for a given rational number
-\(\frac{p}{q}\), such that
+\(\frac{p}{q}\), where
 \(0 \le{} \frac{p}{q} < 1\),
 let alone that it would be unique.
 
 After playing around for a good chunk of time, and finally figuring out
 a way to calculate the \(a_i\) terms
 for a given rational number \(\frac{p}{q}\), a few thing started to jump out at me.
-For starters look at these particular rational numbers,
+For example, look at these rational numbers,
 
 {\small
 \bgroup
@@ -225,7 +225,7 @@ Good clue! It seemed to be the case
 that if we assign the largest possible values to the coefficients,
 from \(a_2\) up to say \(a_k\) we get this rational number, \(\frac{k!-1}{k!}\).
 This number is as close to 1 as you can get with a denominator of \(k!\) without actually
-hitting 1. (Check it out - what happens if you add \(\frac{1}{k!}\) to \(\frac{k!-1}{k!}\)?)
+hitting 1. (Check out what happens if you add \(\frac{1}{k!}\) to \(\frac{k!-1}{k!}\).)
 This turned out to be
 a pretty useful observation, and it became my `Lemma-1' in the proof below.
 
@@ -233,7 +233,7 @@ Also, if we assign zeros to all the coefficients then naturally we get \(\frac{0
 
 So we we restrict ourselves to using only \(a_2, a_3, \dots{}, a_k\), then
 can generate the smallest rational number (\(\frac{0}{k!}\)) and the largest
-(\(\frac{k!-1}{k!}\)) such that 
+(\(\frac{k!-1}{k!}\)) where
 \(0 \le{} \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} < 1\).
 
 One further observation to help understand the motivation
@@ -342,7 +342,10 @@ QED
 \egroup
 }
 
-Corollary: For integers \(p, k\), where \(k \ge{} 2\), every rational number \(\frac{p}{k!}\), where \(0 \le{} \frac{p}{k!} < 1\),
+Corollary: For every
+rational number \(\frac{p}{k!}\), where
+\(k \ge{} 2\) and
+\(0 \le{} \frac{p}{k!} < 1\), then
 there is a unique sequence of integers \(a_2, a_3, \dots{} a_k\) such that,
 
 {\small
@@ -360,12 +363,16 @@ where \(0\! \le{}\! a_2\! <\! 2,\enspace 0\! \le{}\! a_3\! <\! 3,\enspace \dots{
 
 \section*{Proof of Lemma-3}
 
+To show
+that the set \(\mathcal{S}_k\) is the same
+as \(\mathcal{F}_k\), it suffices to show that if \(\frac{a}{b} \in \mathcal{S}_k\)
+then
+\(0\le{}\frac{a}{b}<1\) and \(\frac{a}{b} = \frac{p}{k!}\) for some \(p\),
+and that the size of \(\mathcal{S}_k\) is \(k!\, \).
+
 It's clear that the set \(\mathcal{F}_k\) contains every rational number with denominator \(k!\)
 where \(p\) is an integer and \mbox{\(0\le{}\frac{p}{k!}<1\)} and
-that the size of \(\mathcal{F}_k\) is \(k!\, \). To show
-that the set \(\mathcal{S}_k\) is the same
-as \(\mathcal{F}_k\), it suffices to show that every member of \(\mathcal{S}_k\)
-is also of the form \(0\le{}\frac{p}{k!}<1\), and that the size of \(\mathcal{S}_k\) is also \(k!\, \).
+that the size of \(\mathcal{F}_k\) is \(k!\, \).
 
 The smallest member of the set \(\mathcal{S}_k\) 
 is \(\frac{0}{k!}\) and
@@ -392,8 +399,19 @@ with \(k!\) as the denominator, like so,
 \egroup
 }
 
-Therefore any member of the set \(\mathcal{S}_k\) is of the form \(0\le{}\frac{p}{k!}<1\),
-where \(p\) in some integer in the range \(0\le{}p\le{}k!-1\).
+Therefore any member of the set \(\mathcal{S}_k\) can be written as
+\(\frac{p}{k!}\) for some integer \(p\), where
+
+{\footnotesize
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}
+\begin{center}
+\begin{equation*}
+0 = \frac{0}{k!} \le{} \frac{p}{k!} \le{} \frac{k!-1}{k!} < \frac{k!}{k!} = 1
+\end{equation*}
+\end{center}
+\egroup
+}
 
 Furthermore, each possible assignment of values to the coefficients of
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
@@ -594,7 +612,7 @@ Therefore to express any rational number in the form of the theorem, first apply
 Euclidean Division Theorem to \(\frac{j}{q}\) and let \(a_1 = i\). If there is no fractional remainder, then
 the theorem is trivially true,
 however if there is a fractional remainder \(\frac{p}{q}\), then it is a member of all sets \(\mathcal{S}_n\)
-such that \(n \ge{} q\).
+where \(n \ge{} q\).
 
 We take for the coefficients \(a_2, a_3, \dots{}, a_k\) in the sum for \(\frac{p}{q} \in{} \mathcal{S}_n\)
 all those for which \(a_k \ne{} 0\) but \(a_{k+1} = a_{k+2} = \dots{} = a_n = 0\).
@@ -726,7 +744,7 @@ Also, \(
 \), which demonstrates the claim above that \(\mathcal{S}_3\) contains \(0 \le{} \frac{p}{6} < 1\).
 
 I believe that for a given \(q \ge 2\) then the smallest set for which \(0 \le{} \frac{p}{q} < 1\)
-are members is the set \(\mathcal{S}_k\) such that \(k\) is the smallest value for which
+are members is the set \(\mathcal{S}_k\) where \(k\) is the smallest value for which
 \(q\) divides \(k!\).
 
 However, I'll leave that proof for another day.
