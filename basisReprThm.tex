@@ -123,7 +123,7 @@ multiplying or dividing them.
 What's XI times IX? Would you believe me if I told
 you it's XCIX?
 
-Unless you convert those to Hindu-Arabic decimal or base-ten numerals to check,
+Unless you convert those to Hindu-Arabic decimal or base-ten numbers to check,
 you're just gonna have to trust me.
 Truth is - I don't know how to multiply using Roman
 numerals - nor did most Romans. Not only that,
@@ -168,7 +168,7 @@ inverse of 2 because $\frac{1}{2}\cdot{}2=1$ but $\frac{1}{2}$ is not an integer
 
 Since our ability to count in base-ten is not axiomatic, then to properly ground
 it in modern mathematics we should
-define what it means to write out a number in base-ten,
+define what it means to write out a number in decimal,
 state its properties in a theorem,
 then provide a proof of that theorem -
 The proof being
@@ -197,14 +197,25 @@ of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
 \bigskip
 
 ``That's nuts!'' you might say, I don't even see a ``ten'' in there so how could that
-describe how we learned to count watching Sesame Street? If you let $b=\text{ten}$
-in the above theorem, then we have the ``Base-Ten Representation Theorem''. We could let $b=2$, then we'd have
-``Base-Two Representation Theorem'' which states how we count in binary.
+describe how we learned to count watching Sesame Street? 
+More likely
+if you're unfamiliar with mathematical notation then that stuff above likely looks
+like goblety-gook.
 
-This theorem is a good example of what mathematicians like to do - they generalize ideas.
+Try this: imagine that the above was 
+written such that
+we replace the $b$ with ``ten''. Does it make any more sense?
+At least then we'd have the ``Base-Ten Representation Theorem''. We could also let $b=2$,
+which would give us the 
+``Base-Two Representation Theorem'' stating how we count in binary.
+
+Anyway, don't worry if you can't read the theorem, we'll get to how to do that shortly, but
+this theorem is a good example of the kind of thing mathematicians like to do - generalize ideas.
+
 Why restrict ourselves to ten when the idea applies equally well to two, three, four, five, ... etc.?
 The heptapods in ``Arrival'' have  seven limbs with seven fingers each, perhaps they
-use base-fourty-nine.  By generalizing the idea to a base $b$, where $b$ is any number two or higher,
+use base-fourty-nine, so our
+theorem should cover that case too.  By generalizing the idea to a base $b$, where $b$ is any number two or higher,
 we gain deeper understanding about the subject in question.
 
 Even though doing arithmetic in base-ten
@@ -217,9 +228,9 @@ Leibniz time when he introduced the idea of binary
 arithmetic in 1679. So our theorem is fairly recent 
 on the world stage.
 
-Anyway, if you're not a ``math-person" don't fear, by the end of this paper you will know
-how to read the ``Basis Representation Theorem'' above so that it makes sense
-plus you'll know how to prove it.
+%Anyway, if you're not a ``math-person" don't fear, by the end of this paper you will know
+%how to read the ``Basis Representation Theorem'' above so that it makes sense
+%plus you'll know how to prove it.
 
 Let's take a big leap back and work up to the statement of that theorem step by step, using
 our familiar base-ten for discussion.
@@ -361,7 +372,11 @@ Look at ``a trillion and one'', i.e.; 1,000,000,000,001 which can be expressed a
 +1{\times{}}10^{0}\]
 %
 Or pushing that limit to silly heights we can also describe this next ludicrous number.
-It's twenty-thousand-and-one digits long, a
+It's twenty-thousand-and-one digits long\footnote{A twenty-thousand-and-one digit long number is 
+\emph{ridiculously} large,
+consider that our estimate of the number of molecules in
+the entire universe would only need a base-ten
+number with the $k$ set to somewhere between 78 and 82 to count them all.}, a
 ``7'' followed by 9999 zeros, then a ``3''
 followed by 9999 more zeros, then a ``5'', which means this:
 \[7{\times{}}10^{20000}
@@ -375,19 +390,9 @@ followed by 9999 more zeros, then a ``5'', which means this:
 +5{\times{}}10^{0}\]
 Clearly we can keep going as high as we like.
 
-\end{document}
+Let's use our understanding of counting in base-ten to build up to that
+a statement of the theorem above.
 
-
-
-
-
-
-
-
-
-
-
-\break
 We intuitively know that counting with
 base-ten covers all the positive integers.
 For example, the odometer in your car that keeps churning out
@@ -434,18 +439,21 @@ Every integer has a \emph{unique} representation in base-ten.
 \end{jprIn}
 
 \bigskip
-We can also restrict our theorem to positive integers, because
-we know that for every positive integer
-there exists a unique negative integer
-(such that if you add them together you get zero).
-So if we can prove the
-Base-Ten Representation Theorem for the positive integers then we
-can easily extend it to the negative integers (and zero) with a corollary.
-Our corollary could say something like ``Slap a `-' (minus)
-sign in front of the positive base-ten representation to 
-get a unique representation for
-it's negative counterpart'' \dots{}or some such words.
-
+%We can also restrict our theorem to positive integers, because
+%we know that for every positive integer
+%there exists a unique negative integer
+%(such that if you add them together you get zero).
+%So if we can prove the
+%Base-Ten Representation Theorem for the positive integers then we
+%can easily extend it to the negative integers (and zero) with a corollary.
+%Our corollary could say something like ``Slap a `-' (minus)
+%sign in front of the positive base-ten representation to 
+%get a unique representation for
+%it's negative counterpart'' \dots{}or some such words.
+Let's not even worry about negative integers for now,
+they're easy to represent once you have a way to represent
+positive integers, just slap a minus sign on the front to get the negatives.
+%So let's make our lives easier and forget about them for the time being.
 Also, moving forward it would be helpful to have a name for our 
 positive integer so that we can refer to it directly - how about $n$ for ``number'':
 
@@ -587,13 +595,9 @@ $d_k{\cdot}10^k+\dots{}+d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}1
 Using $k$ like this let's us specify any number of digits we want.
 If we let $k=0$ we get the first ``single digit'' 
 item on the list.  $k=4$ gives us our five-digit number above,
-or we could let $k$ be a billion, which would allow
-us to specify an integer that has a billion-and-one
-digits in it\footnote{A billion-and-one digit number is 
-\emph{ridiculously} large,
-consider that our estimate of the number of molecules in
-the entire universe would only need a base-ten
-number with the $k$ set to somewhere between 78 and 82 to count them all.}!
+or we could let $k$ be a twenty-thousand, which would allow
+us to specify an integer that has a twenty-thousand-and-one
+digits in it.
 
 \break
 So there we have it, we found our expression for being able to
@@ -668,7 +672,8 @@ Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\
 \bigskip
 
 \break
-Consider that base-ten is not the only base in use these days.
+Now let's begin to generalize our theorem to any base.
+
 Since the introduction of the EDVAC\footnote{You might be thinking, don't you
 mean ENIAC which was earlier? Actually no - the ENIAC
 used base-ten accumulators, not binary!} computer, around 1950,
@@ -707,7 +712,7 @@ On and on past Planet-Gary-Seven, and Planet-Secks, Planet-Penta, \dots{}
 Finally we come upon Planet-Claire (well someone
 has to come from Planet-Claire,
 I know she came from there),
-where the poor blighters only have two fingers
+where the poor bastards only have two fingers
 so they only use the digits 0 and 1 and base-two,
 so for them ``10" means ``one lot of two and zero units".
 So on Planet-Claire ``10" means two.
@@ -836,6 +841,9 @@ where $b$ is some number greater than or equal to two.
 If we can prove that theorem,
 then we'll automatically get all the cases of specific bases for free.
 
+Here is our hero-theorem again, but this time, armed with your new mathematical 
+vocabulary, I expect that this theorem will make much more sense to you.
+
 \section*{Basis Representation Theorem}
 \begin{jprIn}
 Let $b$ be a positive integer greater than 1.
@@ -874,18 +882,30 @@ and $(\text{F})_{16}=15$ as base-sixteen digits, then:
 =9,937,906\]
 \dots{}which gives you an idea of how you can convert from an alternate base into base-ten.
 
-We should extend the Basis Representation Theorem to include all the integers.
+%We should extend the Basis Representation Theorem to include all the integers.
+%
+%We can take comfort in knowing that this shouldn't be too difficult.
+%0 itself is a perfectly acceptable representation for zero in all bases.
+%Actually, we could have included zero as part of the original theorem if
+%we had just allowed for the exception: ``\dots{}and $d_k\ne0$ except when $n=0$".
+%
+%Also since negative numbers are unique (they pair one-to-one with
+%their positive counterpart) then by simply adding a new symbol like ``-'', and 
+%defining what ``-1'' means, we should be able to make an extension to the 
+%theorem that defines unique representations for negative numbers fairly easily.
 
-We can take comfort in knowing that this shouldn't be too difficult.
-0 itself is a perfectly acceptable representation for zero in all bases.
-Actually, we could have included zero as part of the original theorem if
-we had just allowed for the exception: ``\dots{}and $d_k\ne0$ except when $n=0$",
-but at this point we're just talking about book-keeping type details.
 
-Also, as we discussed earlier, since negative numbers are unique (they pair one-to-one with
-their positive counterpart) then by simply adding a new symbol like ``-'', and 
-defining what ``-1'' means, we should be able to make an extension to the 
-theorem that defines unique representations for negative numbers fairly easily.
+\end{document}
+
+
+
+
+
+
+
+
+
+
 
 \break
 \section*{Intermission}
