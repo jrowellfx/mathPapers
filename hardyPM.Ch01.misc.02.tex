@@ -217,7 +217,7 @@ The set of rational numbers,
 \setlength{\abovedisplayskip}{0pt}
 \begin{center}
 \begin{equation*}
-\mathcal{S} = \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\enspace\mid\enspace 
+\mathcal{S}(k) = \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\enspace\mid\enspace 
 0\! \le{}\! a_2\! <\! 2,\enspace 
 0\! \le{}\! a_3\! <\! 3,\enspace 
 \dots{},\enspace 0\! \le{}\! a_k\! <\! k\}
@@ -233,7 +233,7 @@ is identical to the set of rational numbers,
 \setlength{\abovedisplayskip}{0pt}
 \begin{center}
 \begin{equation*}
-\mathcal{F} = \{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}
+\mathcal{F}(k) = \{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}
 \end{equation*}
 \end{center}
 \egroup
@@ -241,19 +241,19 @@ is identical to the set of rational numbers,
 
 \section*{Proof of Lemma-3}
 
-It's clear that the set \(\mathcal{F}\) contains every rational number with denominator \(k!\)
-such that \(0\le{}\frac{p}{k!}<1\) and the size of \(\mathcal{F}\) is \(k!\, \). To show
-that the set \(\mathcal{S}\) is the same
-as \(\mathcal{F}\), it suffices to show that every member of \(\mathcal{S}\)
-is also of the form \(0\le{}\frac{p}{k!}<1\), and that the size of the set is also \(k!\, \).
+It's clear that the set \(\mathcal{F}(k)\) contains every rational number with denominator \(k!\)
+where \mbox{\(0\le{}\frac{p}{k!}<1\)} and also clear that the size of \(\mathcal{F}(k)\) is \(k!\, \). To show
+that the set \(\mathcal{S}(k)\) is the same
+as \(\mathcal{F}(k)\), it suffices to show that every member of \(\mathcal{S}(k)\)
+is also of the form \(0\le{}\frac{p}{k!}<1\), and that the size of \(\mathcal{S}(k)\) is also \(k!\, \).
 
-The smallest member of the set \(\mathcal{S}\) 
+The smallest member of the set \(\mathcal{S}(k)\) 
 is \(\frac{0}{k!}\) and
 occurs when all the coefficients of the sum are zero.
 Furthermore, the largest member of the set occurs when all the coefficients of the sum are set to
 their maximum value, which gives us \(\frac{k!-1}{k!}\) as shown in lemma-1.
 
-We also note that every member of \(\mathcal{S}\) can be written as a rational number
+We also note that every member of \(\mathcal{S}(k)\) can be written as a rational number
 with \(k!\) as the denominator, like so,
 
 {\footnotesize
@@ -272,12 +272,12 @@ with \(k!\) as the denominator, like so,
 \egroup
 }
 
-Therefor any member of the set \(\mathcal{S}\) is of the form \(0\le{}\frac{p}{k!}<1\),
+Therefor any member of the set \(\mathcal{S}(k)\) is of the form \(0\le{}\frac{p}{k!}<1\),
 where \(p\) in an integer in the range \(0\le{}p\le{}k!-1\).
 
 Furthermore, each possible assignment of values to the coefficients of
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-produce a unique member of the set \(\mathcal{S}\).
+produce a unique member of the set \(\mathcal{S}(k)\).
 
 For this weren't true and both
 \(\frac{p}{k!} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) and
@@ -304,7 +304,7 @@ Also, without loss of generality we can assume that \(a_i > b_i\) and state the 
 
 Since \(a_i - b_i \ge{} 1\), then \(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!}\).
 
-Also, it's clear that
+Also,
 \(\frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!} \ge{} \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\)
 regardless of the values of the coefficients
 on the right side of the inequality\footnote{Letting all the \(b\)'s be their maximum value,
@@ -314,13 +314,14 @@ However, lemma-2 tells us,\par
 \begin{center}
 \(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!} > \frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!} \ge{} \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\),
 \end{center}\par
-demonstrating that equality is impossible, so our assumption that there can be a second set
+demonstrating that equality two expressions at either end of the inequality
+is impossible, so our assumption that there can be a second set
 of coefficients to produce the same rational number \(\frac{p}{k!}\) is false.
 Therefor any assignment of values to the coefficients of
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-produces a unique member of the set \(\mathcal{S}\).
+produces a unique member of the set \(\mathcal{S}(k)\).
 
-Now we can count the number of members of the set \(\mathcal{S}\), by looking at all the
+Now we can count the number of members of the set \(\mathcal{S}(k)\), by looking at all the
 possible combinations of values for the coefficients \(a_2, a_3, \dots{}, a_k\).
 There are 2 choices for the coefficient \(a_2\),
 multiplied by the 3 choices for \(a_3\),
@@ -330,15 +331,11 @@ up to multiplying by \(k\) values that \(a_k\) can assume.
 
 Therefore the total number of combinations of values
 that can be assigned to all the coefficients of \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-is \(2\cdot{}3\cdot{}4\cdot\dots{}\cdot{}k = k!\,\),
-which means the size of the set \(\mathcal{S}\) is \(k!\, \). This plus our conclusion above that
-all members of the set \(\mathcal{S}\) are of the form \(0\le{}\frac{p}{k!}<1\)
+is \(2\cdot{}3\cdot{}4\cdot\cdot{}\cdot{}k = k!\,\),
+which means the size of the set \(\mathcal{S}(k)\) is \(k!\, \). This plus our conclusion above that
+all members of the set \(\mathcal{S}(k)\) are of the form \(0\le{}\frac{p}{k!}<1\)
 means that
-\(\mathcal{S} = \mathcal{F}\).
-
-\begin{center}
-QED
-\end{center}
+\(\mathcal{S}(k) = \mathcal{F}(k)\).\qquad QED
 
 \section*{Lemma-4}
 
@@ -366,7 +363,7 @@ would look like this,
 \frac{2}{k},
 \dots{},
 \frac{k-2}{k},
-\frac{k-1}{k}\).} are members of the set \(\mathcal{S}\).
+\frac{k-1}{k}\).} are members of the set \(\mathcal{S}(k)\).
 
 \section*{Proof of Lemma-4}
 Since \(0\le{}p<q\) then \(0\le{}\frac{p}{q}<1\) and
@@ -387,7 +384,7 @@ Since \(0\le{}p<q\) then \(0\le{}\frac{p}{q}<1\) and
 \end{alignat*}
 \end{center}
 \egroup
-Therefor \(\frac{p}{q}\) is an element of \(\mathcal{F}\) which is the same as the set \(\mathcal{S}\).\par
+Therefor \(\frac{p}{q}\) is an element of \(\mathcal{F}(k)\) which is the same as the set \(\mathcal{S}(k)\).\par
 QED
 }
 
