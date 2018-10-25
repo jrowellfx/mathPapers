@@ -88,7 +88,7 @@
 %%% END Article customizations
 
 \author{James Philip Rowell}
-\title{\vspace{-1.5cm}Rational Approximation to $\sqrt{2}$}
+\title{\vspace{-1.5cm}Rational Approximations to $\sqrt{2}$}
 \date{} % Activate to display a given date or no date (if empty), otherwise the current date is printed 
 \begin{document}
 \maketitle
@@ -142,18 +142,63 @@ Let $m$, $n$ and $a$ be positive integers
 
 \break
 \section*{Proof of Examples III, Number 3.}
-The error in any rational approximation to $\sqrt{2}$ is the difference between the
+The error for any rational approximation to $\sqrt{2}$ is the difference between the
 approximation-squared and 2.
-Let $e_1$ represent the error for the $\frac{m}{n}$ approximation of $\sqrt{2}$, and
-let $e_2$ represent the error for the $\frac{(m+2n)}{(m+n)}$ approximation of $\sqrt{2}$, in other words:
+So we learn from the Lemma that the error for the $\frac{m}{n}$ approximation of $\sqrt{2}$ is\newline
+\centerline{$\abs*{\frac{a}{n^2}} = \abs*{2 - \frac{m^2}{n^2}}$,}
 
-\[e_1 = \abs*{\frac{a}{n^2}} = \abs*{2 - \frac{m^2}{n^2}}
-  \text{, \hspace{0.5em}and\hspace{1.0em}}
-  e_2 = \abs*{\frac{-a}{(m+n)^2}} =
-  \abs*{2 - \frac{(m+2n)^2}{(m+n)^2}}\]
+and the error for the $\frac{(m+2n)}{(m+n)}$ approximation of $\sqrt{2}$ is\newline
+\centerline{$\abs*{\frac{-a}{(m+n)^2}} = \abs*{2 - \frac{(m+2n)^2}{(m+n)^2}}$.}
 
-Since the denominator $(m+n)^2$ is always larger than $n^2$ therefore,
-\[e_1= \abs*{\frac{a}{n^2}} > \abs*{\frac{-a}{(m+n)^2}} = e_2\text{,}\]
-showing that $\frac{(m+2n)}{(m+n)}$ is a better approximation to $\sqrt{2}$ than $\frac{m}{n}$.
+\bigskip
+The denominator $(m+n)^2$ is always larger than $n^2$ therefore,
+\[\abs*{\frac{-a}{(m+n)^2}} < \abs*{\frac{a}{n^2}} \text{,}\]
+showing that the approximation $\frac{(m+2n)}{(m+n)}$ for
+$\sqrt{2}$ 
+has a smaller error that that of $\frac{m}{n}$ and is therefore
+a better approximation to $\sqrt{2}$.
+
+Furthermore, we also learn from the Lemma that the successive approximations flip
+to either side of 2 because:
+
+If $\frac{m^2}{n^2} < 2$ then $a$ is positive therefore $\frac{(m+2n)}{(m+n)} > 2$, similarly,
+
+If $\frac{m^2}{n^2} > 2$ then $a$ is negative therefore $\frac{(m+2n)}{(m+n)} < 2$.
+
+\bigskip
+
+\centerline{QED}
 
 \end{document}
+
+JPR - Note: I was going to flesh the following out, but it's not clear that I have
+a valid observation. Need to check longer sequence of numbers in each set of approximations
+to see how fast each one converges compared to each other... TBD
+
+\section*{Further Notes}
+
+From ``Example 2'' in Hardy's ``Pure Mathematics'' (Ch. 1, Section 5, Examples III)
+we looked at one sequence of rational approximations to $\sqrt{2}$, that is:\newline
+
+\centerline{$\frac{1}{1}, \enspace\frac{3}{2}, \enspace\frac{7}{5}, \enspace\frac{17}{12}, \enspace\frac{41}{29}, \enspace\frac{99}{70}$}
+
+So these numbers squared are:\newline
+
+\centerline{$\frac{1}{1}, \enspace\frac{9}{4}, \enspace\frac{49}{25}, \enspace\frac{289}{144}, \enspace\frac{1681}{841}, \enspace\frac{9801}{4900}$}
+
+And their differences from 2 are:\newline
+
+\centerline{$-1, \enspace\frac{1}{4}, \enspace-\frac{1}{25}, \enspace\frac{1}{144}, \enspace-\frac{1}{841}, \enspace\frac{1}{4900}$}
+
+\bigskip
+Our proof above shows us that this is the best such sequence of approximations
+to $\sqrt{2}$ possible, since $a$ in this case is 1, which is the smallest it can be, meaning that the
+error in each step is the smallest it can be.
+
+For example let's start the sequence with 
+$\frac{71}{50}$, which is $\sqrt{2}$ rounded UP to the nearest one-hundredth, i.e.;
+the error is already less than $\frac{1}{100}$. So
+$\frac{71^2}{50^2} = \frac{5041}{2500}$, therefore $\abs*{2 - \frac{5041}{2500}} = \frac{41}{2500}$.
+
+The next number in the sequence is therefore $\frac{71+2\cdot{}50}{71+50} = \frac{171}{121}$, and
+$\frac{171^2}{121^2} = \frac{29241}{14641}$ therefore, $\abs*{2 - \frac{29241}{14641}} = \frac{4}{14641}$.
