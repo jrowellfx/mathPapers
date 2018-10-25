@@ -201,7 +201,7 @@ numbers in alternate bases as outlined in the paper
 \item $30\times{}35951=1078530$ written in base-31 is $(15699)_{31}$ and $1+5+6+9+9=30$
 \end{itemize}
 
-Notice the pattern: the biggest single-digit in any base
+Notice the pattern: the biggest base-$b$ digit
 (which is always one less than the base) seems to
 qualify as a magic-number. For example,
 4 is the biggest digit in base-5,
@@ -398,9 +398,7 @@ Let $k$ be an integer such that $k\ge0$.
 &\Leftrightarrow\quad
 &m\cdot{}q+1
 &= b &&\quad\text{(Add 1 to both sides)}
-\end{alignat*}
-Given this expression for $b$ we can state the following modular congruence
-\begin{alignat*}{3}
+\intertext{Given this expression for $b$ we can state the following modular congruence:}
 &&m\cdot{}q+1
 &\equiv b\pmod{m}\\
 &\Leftrightarrow\quad
@@ -409,9 +407,7 @@ Given this expression for $b$ we can state the following modular congruence
 &\Leftrightarrow\quad
 &1
 &\equiv b\pmod{m}% &&\quad\text{(1 is congruent to }b\text{)}
-\end{alignat*}
-Furthermore,
-\begin{alignat*}{3}
+\intertext{Furthermore,}
 &&1
 &\equiv 1^k\pmod{m} \\
 &\Leftrightarrow\quad
@@ -432,15 +428,13 @@ Again here's the base-$b$ expression for $n$:
 &\equiv d_k\cdot{}1+d_{k-1}\cdot{}1+\dots+d_2\cdot{}1+d_1\cdot{}1+d_0\cdot{}1 \pmod{m}\\
 &\Leftrightarrow\quad
 &n
-&\equiv d_k+d_{k-1}+\dots+d_2+d_1+d_0 \pmod{m}
-\end{alignat*}
-$m$ divides $n$ if and only if:
-\begin{alignat*}{3}
+&\equiv d_k+d_{k-1}+\dots+d_2+d_1+d_0 \pmod{m}\text{\hspace{1em}(Note equivalence of sum of digits and }n\text{)}
+\intertext{$m$ divides $n$ if and only if:}
 &&0
 &\equiv n \pmod{m}\\
 &\Leftrightarrow\quad
 &0
-&\equiv d_k+d_{k-1}+\dots+d_2+d_1+d_0 \pmod{m}
+&\equiv d_k+d_{k-1}+\dots+d_2+d_1+d_0 \pmod{m}\text{\hspace{1em}(Sum of digits and }n\text{ are equivalent)}
 \end{alignat*}
 QED
 \end{document}
