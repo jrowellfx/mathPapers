@@ -107,7 +107,10 @@ presents us with a fascinating result (which was new to me).
 The theorem feels like what the
 basis-representation-theorem is for integers, but this one is for rational numbers, \dots{} beautiful!
 
-Here it is, followed by my proof which starts out with some lemmas to get us rolling.
+Here it is, followed by my proof which starts out with
+some lemmas to get us rolling\footnote{Please note that
+the variables used in this
+paper (e.g. \(a, b, a_1, a_2, a_k, i, k, p, q,\) etc.) are all integers.}.
 
 \section*{Theorem}
 
@@ -148,7 +151,7 @@ where \(a_1, a_2, \dots{}, a_k\) are integers, and
 \section*{Proof of Lemma-1}
 
 This equality is fairly trivial to demonstrate by induction, since \(\frac{1}{2!} = \frac{2!-1}{2!}\) and, 
-{\footnotesize
+{\scriptsize
 \begin{alignat*}{1}
   &\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-2}{(k-1)!} + \frac{k-1}{k!}\\
   =\  &\frac{(k-1)!-1}{(k-1)!} + \frac{k-1}{k!}\\
@@ -212,7 +215,7 @@ QED
 \end{center}
 \section*{Lemma-3}
 
-The set of rational numbers,
+For any integer \(k \ge{} 2\), and integers \(a_2, a_3, \dots{} a_k,\) the set of rational numbers,
 
 {\small
 \bgroup                                  %% open the group
@@ -222,7 +225,7 @@ The set of rational numbers,
 \mathcal{S}_k = \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\enspace\mid\enspace 
 0\! \le{}\! a_2\! <\! 2,\enspace 
 0\! \le{}\! a_3\! <\! 3,\enspace 
-\dots{},\enspace 0\! \le{}\! a_k\! <\! k\}
+\dots{},\enspace 0\! \le{}\! a_k\! <\! k\},
 \end{equation*}
 \end{center}
 \egroup
@@ -241,10 +244,27 @@ is identical to the set of rational numbers,
 \egroup
 }
 
+Which implies that for every rational number \(0 \le{} \frac{p}{k!} < 1\)
+there is a unique sequence of integers \(a_2, a_3, \dots{} a_k\) such that,
+
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}
+\begin{center}
+\begin{equation*}
+\frac{p}{k!} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!},
+\end{equation*}
+\end{center}
+\egroup
+}
+
+where \(0\! \le{}\! a_2\! <\! 2,\enspace 0\! \le{}\! a_3\! <\! 3,\enspace \dots{},\enspace 0\! \le{}\! a_k\! <\! k\).
+
 \section*{Proof of Lemma-3}
 
 It's clear that the set \(\mathcal{F}_k\) contains every rational number with denominator \(k!\)
-where \mbox{\(0\le{}\frac{p}{k!}<1\)} and also clear that the size of \(\mathcal{F}_k\) is \(k!\, \). To show
+where \(p\) is an integer and \mbox{\(0\le{}\frac{p}{k!}<1\)} and
+that the size of \(\mathcal{F}_k\) is \(k!\, \). To show
 that the set \(\mathcal{S}_k\) is the same
 as \(\mathcal{F}_k\), it suffices to show that every member of \(\mathcal{S}_k\)
 is also of the form \(0\le{}\frac{p}{k!}<1\), and that the size of \(\mathcal{S}_k\) is also \(k!\, \).
@@ -336,75 +356,33 @@ that can be assigned to all the coefficients of \(\frac{a_2}{2!} + \frac{a_3}{3!
 is \(2\cdot{}3\cdot{}4\cdot\cdot{}\cdot{}k = k!\,\),
 which means the size of the set \(\mathcal{S}_k\) is \(k!\, \). Recalling our previous conclusion that
 all members of the set \(\mathcal{S}_k\) are of the form \(0\le{}\frac{p}{k!}<1\) we
-can assert that \(\mathcal{S}_k = \mathcal{F}_k\).\qquad QED
+can assert that \(\mathcal{S}_k = \mathcal{F}_k\).
+
+Futhermore we've shown above that there is a unique sequence of integers \(a_2, a_3, \dots{} a_k\),
+(with the appropriate ranges of values for each integer
+and \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\))
+for each value of \(\frac{p}{k!} \in \mathcal{F}_k\).\qquad QED
 
 \section*{Corollary to Lemma-3}
 
-The coefficients \(a_2, a_3, \dots{}, a_k\) uniquely determine the value of 
-\(\frac{p}{q} \in{} \mathcal{S}_k\).
+If \(\frac{p}{q} \in{} \mathcal{S}_k\)
+then there is a unique sequence of integers
+\(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0<a_k<k\)
+such that
+\(\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\).
 
 \section*{Proof of Corollary to Lemma-3}
 
-This fact was used in the proof of lemma-3 to show the one-to-one
-correspondence between \(\mathcal{S}_k\) and \(\mathcal{F}_k\), but
-more simply, every element of \(\mathcal{F}_k\) is clearly unique and each
-set of coefficients is associated with one element in \(\mathcal{F}_k\), which
-proves the Corollary.
+Apart from the fact that this was part of the proof of lemma-3
+The immediately follows from lemma-3 because the sets \(\mathcal{S}_k\) and \(\mathcal{S}_k\) 
+are identicaal and there are k! possible combinations of 
+coefficients, one for each of the k! unique members of the set \(\mathcal{F}_k\).
 
-% \section*{Lemma-4}
-% 
-% All rational numbers
-% \(0\le{}\frac{p}{q}<1\)
-% where
-% \(2\le{}q\le{k}\)
-% \footnote{The list of
-% rational numbers being \(
-% \frac{0}{2},
-% \frac{1}{2},
-% \frac{0}{3},
-% \frac{1}{3},
-% \frac{2}{3},
-% \frac{0}{4},
-% \frac{1}{4},
-% \frac{2}{4},
-% \frac{3}{4},
-% \frac{0}{5},
-% \frac{1}{5},
-% \frac{2}{5},
-% \frac{3}{5},
-% \frac{4}{5},
-% \dots{},
-% \frac{0}{k},
-% \frac{1}{k},
-% \frac{2}{k},
-% \dots{},
-% \frac{k-2}{k},
-% \frac{k-1}{k}\).}
-% are members of the set \(\mathcal{S}_k\).
-% 
-% \section*{Proof of Lemma-4}
-% Since
-% \(2\le{}q\le{k}\)
-% then
-% {\normalsize
-% \bgroup                                  %% open the group
-% \setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
-% \begin{alignat*}{1}
-% \frac{p}{q}\quad =\quad &\frac
-% {2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}
-% {2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k} \cdot{} \frac{p}{q}\\
-% =\quad &\frac
-% {2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}p\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}
-% {2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}q\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}\\
-% =\quad &\frac
-% {2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}p\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}
-% {k!}
-% \end{alignat*}
-% \egroup
-% }
-% 
-% Therefore \(\frac{p}{q}\) is an element of \(\mathcal{F}_k\) which is the same as the set \(\mathcal{S}_k\).\par
-% QED
+% This fact was used in the proof of lemma-3 to show the one-to-one
+% correspondence between \(\mathcal{S}_k\) and \(\mathcal{F}_k\), but
+% more simply, every element of \(\mathcal{F}_k\) is clearly unique so each different
+% sequence of coefficients are associated with exactly one element in \(\mathcal{F}_k\), which
+% proves the Corollary.
 
 \section*{Lemma-4}
 
@@ -419,7 +397,10 @@ which implies that the sum is uniquely associated with \(\frac{p}{q}\).
 %when \(2 \le{} j < k\), then by extension if \(k < n\)
 %then \(\frac{p}{k} \in{} \mathcal{S}_n\), but more generally,
 %
-if \(\frac{p}{q} \in{} \mathcal{S}_k\) then,
+if \(\frac{p}{q} \in{} \mathcal{S}_k\) then by the corollary to lemma-3 there is a unique sequence 
+of integers,\newline
+{\small \(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0<a_k<k\)}
+such that,
 
 {\small
 \bgroup                                  %% open the group
