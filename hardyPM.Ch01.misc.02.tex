@@ -667,8 +667,9 @@ We're going to prove the lemma through a series of equalities as follows:
 }
 
 \break
-Proof of equation \eqref{eqn02}:
-
+%Proof of equation \eqref{eqn02}:
+%
+\eqref{eqn02}:
 For all \(\frac{p}{k!} \in \mathcal{F}_k\),
 since \(\frac{p}{k!} = \frac{(k+1)\cdot{}p}{(k+1)\cdot{}k!} = \frac{(k+1)\cdot{}p}{(k+1)!}\),
 and\newline \(\frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1}\),
@@ -684,18 +685,23 @@ By induction it is straightforward to conclude that
 \(\frac{p}{k!} \in \mathcal{F}_k\), then \(\frac{p}{k!} \in \mathcal{F}_n, \forall\ n \ge{} k\).
 % , i.e.; \(\frac{p}{k!} \in \displaystyle{\lim_{n \to \infty}\mathcal{F}_n}\).
 
-By definition, \(\frac{p}{k!} \in \mathcal{F}\), for all \(k \ge{} 2, 0 \le{} p < k!\),
+By definition, \(\frac{p}{k!} \in \mathcal{F}\),
+% for all \(k \ge{} 2, 0 \le{} p < k!\),
 therefore, \(\frac{p}{k!} \in \mathcal{F} \Leftrightarrow \frac{p}{k!}
-\in \mathcal{F}_n\), for all \(n \ge k\).
-% \in \displaystyle{\lim_{n \to \infty}\mathcal{F}_n}\)
-hence, \(\displaystyle{\mathcal{F} = \lim_{n \to \infty}\mathcal{F}_n}\).
+\in \mathcal{F}_n\), for all \(n \ge k\);
+% \in \displaystyle{\lim_{n \to \infty}\mathcal{F}_n}\);
+hence,
+\begin{center}
+\(\displaystyle{\mathcal{F} = \lim_{n \to \infty}\mathcal{F}_n}\).
+\end{center}
 % Note: \(\frac{p}{k!} \in \mathcal{F}_k \Rightarrow \frac{p}{k!} \in \mathcal{F}\).
-
-QED equation \eqref{eqn02}.
+% 
+% QED \eqref{eqn02}.
 
 \bigskip
-Proof of equation \eqref{eqn03}:
-
+% Proof of equation \eqref{eqn03}:
+% 
+\eqref{eqn03}:
 If \(\frac{p}{k} \in \mathbb{Q}_{p<q}\)
 then \(\frac{p}{k} \in{} \mathcal{F}_k\) because,
 
@@ -705,28 +711,39 @@ then \(\frac{p}{k} \in{} \mathcal{F}_k\) because,
 \begin{equation*}
 \frac{p}{k}
 = \frac{2\cdot{}3\cdot{}\cdot{}\cdot{}(k-1)}{2\cdot{}3\cdot{}\cdot{}\cdot{}(k-1)} \cdot{} \frac{p}{k}
-= \frac{2\cdot{}3\cdot{}\cdot{}\cdot{}(k-1)\cdot{}p}{k!}
+= \frac{2\cdot{}3\cdot{}\cdot{}\cdot{}(k-1)\cdot{}p}{k!},
 \end{equation*}
 \egroup
 }
 
-Therefore \(\frac{p}{k} \in \mathcal{F}_k\), therefor \(\frac{p}{k} \in \mathcal{F}\)
-for all \(\frac{p}{k} \in \mathbb{Q}_{p<q}\), i.e.; \(\mathcal{F} = \mathbb{Q}_{p<q}\).
-
-QED \eqref{eqn03}.
+so by \eqref{eqn02} \(\frac{p}{k} \in \mathcal{F}\)
+for all \(\frac{p}{k} \in \mathbb{Q}_{p<q}\). Clearly the converse is also
+true, since if \(a \in \mathcal{F}\), then clearly \(a \in \mathbb{Q}_{p<q}\)
+because \(\mathbb{Q}_{p<q}\) contains all nonnegative rational numbers less than one;
+hence,
+\begin{center}
+\(\mathcal{F} = \mathbb{Q}_{p<q}\).
+\end{center}
+% 
+% QED \eqref{eqn03}.
 
 \bigskip
-Proof of equation \eqref{eqn04}:
-
-Observe that for all integers \(k \ge{} 2\), we know that
-\(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} \in \mathcal{S}_k\) for
-integers \(a_2, a_3, \dots{}, a_k\) where
-\(0\!\le{}\!a_2\!<\!2,\ 
-0\!\le{}\!a_3\!<\!3,\ 
-\dots{},\ 
-0\!\le{}\!a_k\!<\!k\).
-Therefore, \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} + \frac{0}{(k+1)!}  \in \mathcal{S}_{k+1}\) for
-all such members of the set \(\mathcal{S}_k\), then 
+% Proof of equation \eqref{eqn04}:
+% 
+\eqref{eqn04}:
+For all \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} \in \mathcal{S}_k\),
+% (\(k, a_2, a_3, \dots{}, a_k \in \mathbb{Z}\) where
+% \(k \ge{} 2, 0\!\le{}\!a_2\!<\!2,\ 
+% 0\!\le{}\!a_3\!<\!3,\ 
+% \dots{},\ \newline 0\!\le{}\!a_k\!<\!k\)),
+since
+\(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} =
+\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} + \frac{0}{(k+1)!}\)
+and
+\(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} + \frac{0}{(k+1)!}
+\in \mathcal{S}_{k+1}\) then 
+\(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}
+\in \mathcal{S}_{k+1}\). Hence 
 \(\mathcal{S}_k \subset \mathcal{S}_{k+1}\).
 
 By induction it is straightforward to conclude that
@@ -744,18 +761,14 @@ Therefore when
 % \forall n \ge N, a \in \mathcal{S}_n.\) and hence \(\mathcal{S}\) is the
 % limit of the sequence of sets \(\mathcal{S}_2, \mathcal{S}_3, \mathcal{S}_4, \dots{}\).
 
-Rewrite this next paragraph for S... (jpr left off here)
+Let \(a \in \mathcal{S}\), such that its smallest non-zero term in the sum
+is \(\frac{a_k}{k!}\), then it's simple to see that \(a \in \mathcal{S}_k\),
+therefore, \(a \in \mathcal{S} \Leftrightarrow a \in \mathcal{S}_n\), for all \(n \ge k\),
+hence, \(\displaystyle{\mathcal{S} = \lim_{n \to \infty}\mathcal{S}_n}\).
+% 
+% QED \eqref{eqn04}.
 
-By definition, \(\frac{p}{k!} \in \mathcal{F}\), for all \(k \ge{} 2, 0 \le{} p < k!\),
-therefore, \(\frac{p}{k!} \in \mathcal{F} \Leftrightarrow \frac{p}{k!}
-\in \mathcal{F}_n\), for all \(n \ge k\).
-% \in \displaystyle{\lim_{n \to \infty}\mathcal{F}_n}\)
-hence, \(\displaystyle{\mathcal{F} = \lim_{n \to \infty}\mathcal{F}_n}\).
-% Note: \(\frac{p}{k!} \in \mathcal{F}_k \Rightarrow \frac{p}{k!} \in \mathcal{F}\).
-
-QED equation \eqref{eqn04}.
-
-TBD. 
+\bigskip
 Because of equality between Sk and Fk then each of S and F are limits of other Fk and Sk ie S = F, hence S = Q.
 
 QED.
