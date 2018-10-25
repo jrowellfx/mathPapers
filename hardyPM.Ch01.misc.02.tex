@@ -103,7 +103,7 @@
 Miscellaneous example\footnote{Hardy doesn't call them `Exercises' or `Questions', but that's what they
 are, math exercises for the student, like calculations to perform, theorems to prove etc.} \#2 at the end
 of chapter 1 in Hardy's `Pure Mathematics'
-presents us with a fascinating result (which was new to me).
+presents us with a fascinating result.
 The theorem feels like what the `\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0}
 {basis-representation-theorem}'
 is for integers, but this one is for rational numbers, \dots{} beautiful!
@@ -174,7 +174,7 @@ It seemed to me a good idea to forget about the \(a_1\) term
 and just focus on the \(a_2, a_3, \dots{}, a_k\) terms.
 In other words,
 prove the theorem for rational numbers \(\frac{p}{q}\),
-such that \(0 \le{} \frac{p}{q} < 1\), then it would be trivial to extend it to ALL rational numbers
+such that \(0 \le{} \frac{p}{q} < 1\), then it should be trivial to extend it to ALL rational numbers
 by tacking the \(a_1\) term back on at the end of the proof.
 Also, it started to become clear that including zero (that is, not JUST positive rational numbers) was
 going to simplify the task\footnote{Did you notice how the theorem restricts the last term, \(a_k\), to
@@ -249,23 +249,6 @@ Hmmmmm, the following set has \(k!\) members,
 So that, plus one or two other thoughts is what lead me to the proof below. I won't spoil the rest of it,
 to find out, go ahead and read the rest of the paper!
 
-\section*{Definitions}
-
-{\small
-\bgroup                                  %% open the group
-\setlength{\abovedisplayskip}{0pt}
-\begin{center}
-\begin{gather*}
-\mathcal{S}_k = \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\enspace\mid\enspace 
-0\! \le{}\! a_2\! <\! 2,\enspace 
-0\! \le{}\! a_3\! <\! 3,\enspace 
-\dots{},\enspace 0\! \le{}\! a_k\! <\! k\},\\
-\mathcal{F}_k = \{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}
-\end{gather*}
-\end{center}
-\egroup
-}
-
 \break
 \section*{Lemma-1}
 {\small
@@ -328,6 +311,24 @@ For integers \(i,k\) where \(2\le{}i<k\),
 \begin{center}
 QED
 \end{center}
+
+\section*{Definitions}
+
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}
+\begin{center}
+\begin{gather*}
+\mathcal{S}_k = \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\enspace\mid\enspace 
+0\! \le{}\! a_2\! <\! 2,\enspace 
+0\! \le{}\! a_3\! <\! 3,\enspace 
+\dots{},\enspace 0\! \le{}\! a_k\! <\! k\},\\
+\mathcal{F}_k = \{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}
+\end{gather*}
+\end{center}
+\egroup
+}
+
 \section*{Lemma-3}
 
 {\small
@@ -460,40 +461,66 @@ Furthermore we've shown above that there is a unique sequence of integers \(a_2,
 and \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\))
 for each value of \(\frac{p}{k!} \in \mathcal{F}_k\).\qquad QED
 
-\section*{Corollary to Lemma-3}
-
-If \(\frac{p}{q} \in{} \mathcal{S}_k\)
-then there is a unique sequence of integers
-\(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0<a_k<k\)
-such that
-\(\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\).
-
-\section*{Proof of Corollary to Lemma-3}
-
-Apart from the fact that this was part of the proof of lemma-3
-The immediately follows from lemma-3 because the sets \(\mathcal{S}_k\) and \(\mathcal{S}_k\) 
-are identical and there are k! possible combinations of 
-coefficients, one for each of the k! unique members of the set \(\mathcal{F}_k\).
-
-% This fact was used in the proof of lemma-3 to show the one-to-one
-% correspondence between \(\mathcal{S}_k\) and \(\mathcal{F}_k\), but
-% more simply, every element of \(\mathcal{F}_k\) is clearly unique so each different
-% sequence of coefficients are associated with exactly one element in \(\mathcal{F}_k\), which
-% proves the Corollary.
-
 \section*{Lemma-4}
 
-If \(\frac{p}{q} \in{} \mathcal{S}_k\) then \(\frac{p}{q} \in{} \mathcal{S}_n\) for all \(n \ge{} k\).
-Furthermore, the sum associated with \(\frac{p}{q}\) is unchanged for all \(\mathcal{S}_n\),
-which implies that the sum is uniquely associated with \(\frac{p}{q}\).
+blah blah blah \(\frac{p}{q}\) is unique for all rational numbers...
 
 \section*{Proof Lemma-4}
 
-%It is easy to see by lemma-4 that
-%since \(\frac{p'}{j} \in{} \mathcal{S}_k\)
-%when \(2 \le{} j < k\), then by extension if \(k < n\)
-%then \(\frac{p}{k} \in{} \mathcal{S}_n\), but more generally,
-%
+All rational numbers
+\(0\le{}\frac{p}{q}<1\)
+where
+\(2\le{}q\le{k}\)
+\footnote{The list of
+rational numbers being \(
+\frac{0}{2},
+\frac{1}{2},
+\frac{0}{3},
+\frac{1}{3},
+\frac{2}{3},
+\frac{0}{4},
+\frac{1}{4},
+\frac{2}{4},
+\frac{3}{4},
+\frac{0}{5},
+\frac{1}{5},
+\frac{2}{5},
+\frac{3}{5},
+\frac{4}{5},
+\dots{},
+\frac{0}{k},
+\frac{1}{k},
+\frac{2}{k},
+\dots{},
+\frac{k-2}{k},
+\frac{k-1}{k}\).}
+are members of the set \(\mathcal{S}_k\).
+
+\section*{Proof of Lemma-4}
+Since
+\(2\le{}q\le{k}\)
+then
+{\normalsize
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
+\begin{alignat*}{1}
+\frac{p}{q}\quad =\quad &\frac
+{2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}
+{2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k} \cdot{} \frac{p}{q}\\
+=\quad &\frac
+{2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}p\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}
+{2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}q\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}\\
+=\quad &\frac
+{2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}p\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}
+{k!}
+\end{alignat*}
+\egroup
+}
+
+Therefore \(\frac{p}{q}\) is an element of \(\mathcal{F}_k\) which is the same as the set \(\mathcal{S}_k\).\par
+QED
+
+
 if \(\frac{p}{q} \in{} \mathcal{S}_k\) then by the corollary to lemma-3 there is a unique sequence 
 of integers,\newline
 {\small \(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0<a_k<k\)}
