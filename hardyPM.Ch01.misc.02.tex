@@ -134,18 +134,77 @@ is identical to the set of rational numbers,\newline
 
 \centerline{$\mathcal{F} = \{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}$}
 
+\break
 \section*{Proof of Lemma}
 
-The number of values that the coefficient $a_2$ can assume is 2, $a_3$ can take on 3 values, \dots{},
-up to $a_k$ which can take on $k$ values. So the total number of combinations of values
-that can be assigned to all the coefficients is $2\cdot{}3\cdot{}4\cdot\dots{}\cdot{}k = k!\,$.
+It's useful to establish that,
 
-Suppose that the rational number 
+\[\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-1}{k!} = \frac{k!-1}{k!}\]
+
+Which is fairly trivial to demonstrate by induction, since $\frac{1}{2!} = \frac{2!-1}{2!}$ and, 
+\begin{alignat*}{1}
+  &\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-2}{(k-1)!} + \frac{k-1}{k!}\\
+  =\  &\frac{(k-1)!-1}{(k-1)!} + \frac{k-1}{k!}\\
+  =\  &\frac{k((k-1)!-1)}{k(k-1)!} + \frac{k-1}{k!}\\
+  =\  &\frac{k!-k+k-1}{k!}\\
+  =\  &\frac{k!-1}{k!}
+\end{alignat*}
+
+Now we make note of the fact that the smallest member of the set $\mathcal{S}$ 
+occurs when all the coefficients of the sum are zero, i.e.; $\frac{0}{k!}$.
+Furthermore, the largest member of the set occurs when all the coefficients are set to
+their maximum value, which we have just seen gives us $\frac{k!-1}{k!}$.
+
+We also note that every members of $\mathcal{S}$ can be written as a rational number
+with $k!$ as the denominator, like so:\newline
+
+\centerline{$\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}
+= \frac{k\cdot{}(k-1)\cdot{}\cdot{}\cdot{}3\cdot{}a_2}{k!}
++ \frac{k\cdot{}(k-1)\cdot{}\cdot{}\cdot{}4\cdot{}a_2}{k!}
++ \dots{}
++ \frac{a_k}{k!}$}
+
+Also when $i<k$ such that,
+
+\[\frac{1}{2!} + \frac{2}{3!}
++ \dots{}
++ \frac{i-1}{i!}
++ \frac{i}{(i+1)!}
++ \dots{}
++ \frac{k-1}{k!}
+\]
+
+Then we can conclude that,
+
+\[\frac{1}{i!} - \frac{1}{k!}
+= \frac{i}{(i+1)!}
++ \dots{}
++ \frac{k-1}{k!}
+\]
+
+Because,
+
+\begin{alignat*}{1}
+  &\frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!}\\
+  =\  &(\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-1}{k!})
+  - (\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{i-1}{i!})\\
+  =\  &\frac{k!-1}{k!} - \frac{i!-1}{i!}\\
+  =\  &\frac{k!}{k!} - \frac{1}{k!} - \frac{i!}{i!} + \frac{1}{i!}\\
+  =\  &\frac{1}{i!} - \frac{1}{k!}
+\end{alignat*}
+
+From here we can deduce that any assignment
+of values to the coefficients of a member of $\mathcal{S}$ produces a unique member
+of the set, for if it didn't and
 $\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}$ is not uniquely 
 determined by the coefficients
 $a_2, a_3, \dots{}, a_k$. That is, suppose there is a second DIFFERENT sequence of coefficients
 $b_2, b_3, \dots{}, b_k$ such that
 $\frac{p}{q} = \frac{b_2}{2!} + \frac{b_3}{3!} + \dots{} + \frac{b_k}{k!}$.
+
+The number of values that the coefficient $a_2$ can assume is 2, $a_3$ can take on 3 values, \dots{},
+up to $a_k$ which can take on $k$ values. So the total number of combinations of values
+that can be assigned to all the coefficients is $2\cdot{}3\cdot{}4\cdot\dots{}\cdot{}k = k!\,$.
 
 
 
