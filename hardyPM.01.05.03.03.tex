@@ -100,7 +100,20 @@
 %\normalsize
 \bigskip
 
-\section*{Examples III, Number 3.}
+From ``Example 2'' in Hardy's ``Pure Mathematics'' (Ch. 1, Section 5, Examples III)
+we looked at one sequence of rational approximations to $\sqrt{2}$, that is:\newline
+
+\centerline{$\frac{1}{1}, \enspace\frac{3}{2}, \enspace\frac{7}{5}, \enspace\frac{17}{12}, \enspace\frac{41}{29}, \enspace\frac{99}{70}$}
+
+So these numbers squared are:\newline
+
+\centerline{$\frac{1}{1}, \enspace\frac{9}{4}, \enspace\frac{49}{25}, \enspace\frac{289}{144}, \enspace\frac{1681}{841}, \enspace\frac{9801}{4900}$}
+
+And their differences from 2 are:\newline
+
+\centerline{$-1, \enspace\frac{1}{4}, \enspace-\frac{1}{25}, \enspace\frac{1}{144}, \enspace-\frac{1}{841}, \enspace\frac{1}{4900}$}
+
+\section*{Theorem: Examples III, Number 3.}
 
 Show that if $\frac{m}{m}$ is a good approximation to $\sqrt{2}$, then 
 $\frac{(m+2n)}{(m+n)}$ is a better one, and that the errors in the 
@@ -137,11 +150,11 @@ Let $m$, $n$ and $a$ be positive integers
   &\Leftrightarrow\quad
   &2
   \text{\hspace{0.5em}}&=\text{\hspace{0.5em}}
-  \frac{m^2}{n^2}+\frac{a}{n^2}\text{\hspace{6.0em}QED}\\
+  \frac{m^2}{n^2}+\frac{a}{n^2}\\
 \end{alignat*}
+\centerline{QED}
 
-\break
-\section*{Proof of Examples III, Number 3.}
+\section*{Proof of Theorem}
 The error for any rational approximation to $\sqrt{2}$ is the difference between the
 approximation-squared and 2.
 So we learn from the Lemma that the error for the $\frac{m}{n}$ approximation of $\sqrt{2}$ is\newline
@@ -166,7 +179,6 @@ If $\frac{m^2}{n^2} < 2$ then $a$ is positive therefore $\frac{(m+2n)}{(m+n)} > 
 If $\frac{m^2}{n^2} > 2$ then $a$ is negative therefore $\frac{(m+2n)}{(m+n)} < 2$.
 
 \bigskip
-
 \centerline{QED}
 
 \end{document}
@@ -174,22 +186,6 @@ If $\frac{m^2}{n^2} > 2$ then $a$ is negative therefore $\frac{(m+2n)}{(m+n)} < 
 JPR - Note: I was going to flesh the following out, but it's not clear that I have
 a valid observation. Need to check longer sequence of numbers in each set of approximations
 to see how fast each one converges compared to each other... TBD
-
-\section*{Further Notes}
-
-From ``Example 2'' in Hardy's ``Pure Mathematics'' (Ch. 1, Section 5, Examples III)
-we looked at one sequence of rational approximations to $\sqrt{2}$, that is:\newline
-
-\centerline{$\frac{1}{1}, \enspace\frac{3}{2}, \enspace\frac{7}{5}, \enspace\frac{17}{12}, \enspace\frac{41}{29}, \enspace\frac{99}{70}$}
-
-So these numbers squared are:\newline
-
-\centerline{$\frac{1}{1}, \enspace\frac{9}{4}, \enspace\frac{49}{25}, \enspace\frac{289}{144}, \enspace\frac{1681}{841}, \enspace\frac{9801}{4900}$}
-
-And their differences from 2 are:\newline
-
-\centerline{$-1, \enspace\frac{1}{4}, \enspace-\frac{1}{25}, \enspace\frac{1}{144}, \enspace-\frac{1}{841}, \enspace\frac{1}{4900}$}
-
 \bigskip
 Our proof above shows us that this is the best such sequence of approximations
 to $\sqrt{2}$ possible, since $a$ in this case is 1, which is the smallest it can be, meaning that the
