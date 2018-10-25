@@ -586,40 +586,44 @@ QED.
 
 \section*{Definitions}
 
-\begin{equation*}
-\mathcal{F}_\infty
-= \lim_{n \to \infty}\mathcal{F}_n
+\begin{gather*}
+\mathcal{F}
 = \{\frac{p}{k!} \mid
 % \forall\ 
-p,k \in \mathbb{Z}, k \ge{} 2, 0 \le{} p < k!\}
-\end{equation*}
-
-The set \(\mathcal{F}_\infty\) is the limit of the sequence
-\(\mathcal{F}_2, \mathcal{F}_3, \mathcal{F}_4, \dots{}\), if and only if for all \(a;\newline
-a \in \mathcal{F}_\infty\ \Leftrightarrow\ 
-\exists N, \text{ such that }
-\forall n \ge N, a \in \mathcal{F}_n.\)
-
-\bigskip
-Also,
-{\small
-\begin{gather*}
-\mathcal{S}_\infty = \lim_{n \to \infty}\mathcal{S}_n
-= \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} \mid
-% \forall\ 
+p,k \in \mathbb{Z}, k \ge{} 2, 0 \le{} p < k!\}\\
+\mathcal{S} = \{0\} \cup \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} \mid
 k\!\ge{}\!2,\ 
 0\!\le{}\!a_2\!<\!2,\ 
 0\!\le{}\!a_3\!<\!3,\ 
 \dots{},\ 
-0\!\le{}\!a_k\!<\!k\}\\
+1\!\le{}\!a_k\!<\!k\}\\
 \mathbb{Q}_{p<q} = \{\frac{p}{q} \mid p, q \in \mathbb{Z},\text{ where } q \ge{} 2,\ 0 \le{} p < q\}
 \end{gather*}
-}
-% \(a \in \mathcal{F}_\infty \Leftrightarrow 
-% \text{ there exists } N, \text{ where for all }
-% n \ge N, a \in \mathcal{F}_n\)
-% 
-% (Similarly for \(\mathcal{S}_\infty\).)
+
+\(\mathcal{F}\) is the set of ALL non-negative rational numbers, less than one, with
+all possible factorials as the denominator.
+
+\(\mathcal{S}\) is the set of ALL non-negative rational numbers, less than one,
+formed by every possible sum, of the form we've been examining,
+whose smallest term
+% (eg. \(\frac{a_k}{k!}\))
+is non-zero.
+The definition adds back \(\{0\}\), for consistency, since the definition in the set description excludes it.
+
+Finally,
+\(\mathbb{Q}_{p<q}\) is just the set of ALL non-negative rational numbers less than one.
+
+Here's what it means for a set to be the limit of a sequence of sets:
+
+The set \(\mathcal{F}\) is the limit of the sequence
+\(\mathcal{F}_2, \mathcal{F}_3, \mathcal{F}_4, \dots{}\), if and only if for all \(a;\newline
+a \in \mathcal{F}\ \Leftrightarrow\ 
+\exists N, \text{ such that }
+\forall n \ge N, a \in \mathcal{F}_n.\)
+
+In plain english that means every element of \(\mathcal{F}\)
+is in all but finitely many \(\mathcal{F}_n\).
+
 \section*{Lemma 4}
 
 {\normalsize
@@ -627,7 +631,11 @@ k\!\ge{}\!2,\
 \setlength{\abovedisplayskip}{0pt}
 \begin{center}
 \begin{equation*}
-\mathcal{F}_\infty =\; \mathbb{Q}_{p<q} = \mathcal{S}_\infty
+\mathbb{Q}_{p<q}
+= \mathcal{F}
+= \lim_{n \to \infty}\mathcal{F}_n
+= \lim_{n \to \infty}\mathcal{S}_n
+= \mathcal{S}
 \end{equation*}
 \end{center}
 \egroup
@@ -635,12 +643,12 @@ k\!\ge{}\!2,\
 
 \subsubsection*{Proof}
 
-We first note that the limit-set \(\mathcal{F}_\infty\) exists by the following reasoning;
+We'll first show that the set {\footnotesize\(\displaystyle{\mathcal{F} = \lim_{n \to \infty}\mathcal{F}_n}\)}.
 
-For all integers \(k \ge{} 2\), we know
+Observe that for all integers \(k \ge{} 2\), we know
 that \(\frac{p}{k!} \in \mathcal{F}_k\)
 and since \(\frac{(k+1)\cdot{}p}{(k+1)\cdot{}k!} = \frac{(k+1)\cdot{}p}{(k+1)!}\),
-therefore\newline \(\frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1},
+therefore \(\frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1},
 \text{ hence } \mathcal{F}_k \subset \mathcal{F}_{k+1}\).
 
 By induction it is straightforward to conclude that
@@ -649,18 +657,44 @@ By induction it is straightforward to conclude that
 \subset \mathcal{F}_4
 \subset \dots{}
 \), for all \(\mathcal{F}_i\), \(i \ge{} 2\). Therefore once an element is introduced to
-a set \(\mathcal{F}_i\), then it is in all subsequent sets in the sequence,
-thus satisfying the criterea for the existence of the limit-set.
+a set \(\mathcal{F}_i\), then it is in all subsequent sets in the sequence.
 
-% therefore \(\mathcal{F}_k \subset \mathcal{F}_{\infty}\) for all \(k \ge{} 2\).
+Now just describe that for some element of F, which k it belongs to and so N is that k in limit definition...
 
-\(a \in \mathcal{F}_\infty\) means that there exists an integer \(k \ge 2\) such that
-\(a \in \mathcal{F}_k\) which carries with it the idea that it is
-also a member of every larger set \(\mathcal{F}_{k+1}, \mathcal{F}_{k+2}, \dots{}\)
+Therefor for all \(a; 
+a \in \mathcal{F}\ \Leftrightarrow\ 
+\exists N, \text{ such that }
+\forall n \ge N, a \in \mathcal{F}_n.\) and hence \(\mathcal{F}\) is the
+limit of the sequence of sets \(\mathcal{F}_2, \mathcal{F}_3, \mathcal{F}_4, \dots{}\).
 
-We define \(a \in \mathcal{S}_\infty\) in a similar way. (ELFS\footnote{Exercise Left For Student.})
+Similarly we can show
+that the set {\footnotesize\(\displaystyle{\mathcal{S} = \lim_{n \to \infty}\mathcal{S}_n}\)}.
 
-% p/k is in Fk - therefor p/k is in Finf for all k. Therefor all rational numbers are in Finf.
+Observe that for all integers \(k \ge{} 2\), we know
+that
+\(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} \in \mathcal{S}_k\) for
+integers \(a_2, a_3, \dots{}, a_k\) where
+\(0\!\le{}\!a_2\!<\!2,\ 
+0\!\le{}\!a_3\!<\!3,\ 
+\dots{},\ 
+0\!\le{}\!a_k\!<\!k\).
+Therefore, \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} + \frac{0}{k!}  \in \mathcal{S}_{k+1}\) for
+all such members of the set \(\mathcal{S}_k\), then 
+\(\mathcal{S}_k \subset \mathcal{S}_{k+1}\).
+
+By induction it is straightforward to conclude that
+\(\mathcal{S}_2
+\subset \mathcal{S}_3
+\subset \mathcal{S}_4
+\subset \dots{}
+\), for all \(\mathcal{S}_i\), \(i \ge{} 2\). Therefore once an element is introduced to
+a set \(\mathcal{S}_i\), then it is in all subsequent sets in the sequence.
+
+Therefor for all \(a; 
+a \in \mathcal{S}\ \Leftrightarrow\ 
+\exists N, \text{ such that }
+\forall n \ge N, a \in \mathcal{S}_n.\) and hence \(\mathcal{S}\) is the
+limit of the sequence of sets \(\mathcal{S}_2, \mathcal{S}_3, \mathcal{S}_4, \dots{}\).
 
 If \(\frac{p}{k}\) is a rational number where
 \(0\le{}\frac{p}{k}<1\) and \(k \ge{} 2\)
@@ -677,7 +711,7 @@ then \(\frac{p}{k} \in{} \mathcal{F}_k\) because,
 \egroup
 }
 
-Therefore \(\frac{p}{k}\) is an element of \(\mathcal{F}_k\), hence an element of \(\mathcal{F}_\infty\)
+Therefore \(\frac{p}{k}\) is an element of \(\mathcal{F}_k\), hence an element of \(\mathcal{F}\)
 for all integers \(k \ge{} 2\).
 
 % To summarize; All rational numbers \(\frac{p}{k}\) where \(k \ge{} 2\) and \(0 \le{} \frac{p}{k} < 1\) are in
@@ -716,8 +750,8 @@ where \(a_2, \dots{}, a_k\) are integers, and
 
 Suppose \(\frac{p}{q}\) is a positive rational number less than one. We note that its 
 denominator is at least 2, so by Lemma 4 we can say that
-\(\frac{p}{q} \in \mathcal{F}_\infty\), and Lemma 3 tells us that
-\(\mathcal{S}_k = \mathcal{F}_k\) for all \(k \ge 2\), therefore \(\frac{p}{q} \in \mathcal{S}_\infty\).
+\(\frac{p}{q} \in \mathcal{F}\), and Lemma 3 tells us that
+\(\mathcal{S}_k = \mathcal{F}_k\) for all \(k \ge 2\), therefore \(\frac{p}{q} \in \mathcal{S}\).
 
 So \(\frac{p}{q} \in \mathcal{S}_n\) for some \(n \ge 2\) and the following
 expression is \emph{unique} to \(\frac{p}{q}\) among all positive rational numbers less than one,
