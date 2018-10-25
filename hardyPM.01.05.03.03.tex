@@ -143,20 +143,17 @@ Let $m$, $n$ and $a$ be positive integers
 \break
 \section*{Proof of Examples III, Number 3.}
 The error in any rational approximation to $\sqrt{2}$ is the difference between the
-approximation-squared and 2.  Let $e_1$ represent the error for the $\frac{m}{n}$ approximation of $\sqrt{2}$, and
+approximation-squared and 2.
+Let $e_1$ represent the error for the $\frac{m}{n}$ approximation of $\sqrt{2}$, and
 let $e_2$ represent the error for the $\frac{(m+2n)}{(m+n)}$ approximation of $\sqrt{2}$, in other words:
 
-\begin{alignat*}{4}
-  &e_1
-  \text{\hspace{0.5em}}&=\text{\hspace{0.5em}}
-  \abs*{\frac{a}{n^2}}
-  \text{\hspace{0.5em}}&=\text{\hspace{0.5em}}
-  \abs*{2 - \frac{m^2}{n^2}}, \text{\hspace{0.5em}and}\\
-  &e_2
-  \text{\hspace{0.5em}}&=\text{\hspace{0.5em}}
-  \abs*{\frac{-a}{(m+n)^2}}
-  \text{\hspace{0.5em}}&=\text{\hspace{0.5em}}
-  \abs*{2 - \frac{(m+2n)^2}{(m+n)^2}}\\
-\end{alignat*}
+\[e_1 = \abs*{\frac{a}{n^2}} = \abs*{2 - \frac{m^2}{n^2}}
+  \text{, \hspace{0.5em}and\hspace{1.0em}}
+  e_2 = \abs*{\frac{-a}{(m+n)^2}} =
+  \abs*{2 - \frac{(m+2n)^2}{(m+n)^2}}\]
+
+Since the denominator $(m+n)^2$ is always larger than $n^2$ therefore,
+\[e_1= \abs*{\frac{a}{n^2}} > \abs*{\frac{-a}{(m+n)^2}} = e_2\text{,}\]
+showing that $\frac{(m+2n)}{(m+n)}$ is a better approximation to $\sqrt{2}$ than $\frac{m}{n}$.
 
 \end{document}
