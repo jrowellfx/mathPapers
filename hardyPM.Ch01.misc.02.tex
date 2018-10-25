@@ -28,7 +28,7 @@
 
 %%% SECTION TITLE APPEARANCE
 \usepackage{sectsty}
-\allsectionsfont{\mdseries} % (See the fntguide.pdf for font help)
+%\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
 % (This matches ConTeXt defaults)
 
 %%% ToC (table of contents) APPEARANCE
@@ -103,23 +103,40 @@
 Miscellaneous example\footnote{Hardy doesn't call them `Exercises' or `Questions', but that's what they
 are, math exercises like calculations to perform, theorems to prove etc.} \#2 at the end
 of chapter 1 in Hardy's `Pure Mathematics'
-presents us with a fascinating result.
-I had never seen it before, but upon seeing it felt like I
-was looking at a kind of basis-representation-theorem but for rational numbers, \dots{} beautiful!
+presents us with a fascinating result (which was new to me).
+It feels like
+a kind of basis-representation-theorem, but for rational numbers, \dots{} beautiful!
 
-Here it is, followed by my proof starting with the lemma.
+Here it is, followed by my proof which starts out with some lemmas to get us rolling.
 
 \section*{Theorem}
-
-Any positive rational number can be expressed in one and only one way in the form
-
-\[a_1 + \frac{a_2}{1\cdot{}2}
+Any positive rational number can be expressed in one and only one way in the form\par
+\begin{center}
+\(a_1 + \frac{a_2}{1\cdot{}2}
 + \frac{a_3}{1\cdot{}2\cdot{}3}
 + \dots{}
-+ \frac{a_k}{1\cdot{}2\cdot{}3\cdot{}\dots{}\cdot{}k},\]
-
-where $a_1, a_2, \dots{}, a_k$ are integers, and
-\[0\le{}a_1,\quad 0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0<a_k<k \]
++ \frac{a_k}{1\cdot{}2\cdot{}3\cdot{}\dots{}\cdot{}k},\)\par
+\end{center}
+where $a_1, a_2, \dots{}, a_k$ are integers, and\par
+\begin{center}
+\(0\le{}a_1,\quad 0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0<a_k<k\)
+\end{center}
+\section*{Lemma-1}
+\begin{center}
+\(\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-1}{k!} = \frac{k!-1}{k!}\)
+\end{center}
+\section*{Proof of Lemma-1}
+This equality is fairly trivial to demonstrate by induction, since $\frac{1}{2!} = \frac{2!-1}{2!}$ and, 
+{\footnotesize
+\begin{alignat*}{1}
+  &\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-2}{(k-1)!} + \frac{k-1}{k!}\\
+  =\  &\frac{(k-1)!-1}{(k-1)!} + \frac{k-1}{k!}\\
+  =\  &\frac{k((k-1)!-1)}{k(k-1)!} + \frac{k-1}{k!}\\
+  =\  &\frac{k!-k+k-1}{k!}\\
+  =\  &\frac{k!-1}{k!}
+\end{alignat*}
+}
+\dots{}thus establishing lemma-1 for all values of k.
 
 \section*{Lemma}
 
@@ -137,18 +154,6 @@ is identical to the set of rational numbers,\newline
 \break
 \section*{Proof of Lemma}
 
-It's useful to establish that,
-
-\[\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-1}{k!} = \frac{k!-1}{k!}\]
-
-Which is fairly trivial to demonstrate by induction, since $\frac{1}{2!} = \frac{2!-1}{2!}$ and, 
-\begin{alignat*}{1}
-  &\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-2}{(k-1)!} + \frac{k-1}{k!}\\
-  =\  &\frac{(k-1)!-1}{(k-1)!} + \frac{k-1}{k!}\\
-  =\  &\frac{k((k-1)!-1)}{k(k-1)!} + \frac{k-1}{k!}\\
-  =\  &\frac{k!-k+k-1}{k!}\\
-  =\  &\frac{k!-1}{k!}
-\end{alignat*}
 
 Now we make note of the fact that the smallest member of the set $\mathcal{S}$ 
 occurs when all the coefficients of the sum are zero, i.e.; $\frac{0}{k!}$.
