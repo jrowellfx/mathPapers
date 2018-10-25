@@ -473,7 +473,7 @@ of the equality of the two different representations for \(\frac{p}{q}\) we can 
   + \frac{b_{i+2} - a_{i+2}}{(i+2)!}
   + \dots{}
   % + \frac{b_{k-1} - a_{k-1}}{(k-1)!}
-  + \frac{b_k - a_k}{k!} \label{eqn1}
+  + \frac{b_k - a_k}{k!} \label{eqn01}
 \end{alignat}
 \egroup
 }%\vspace{-4mm}
@@ -485,12 +485,12 @@ But \(a_i - b_i \ge{} 1\), so
 \end{center}
 
 In the case that \(i = k\) we get an immediate contradiction because 
-equation \eqref{eqn1} tells us that \(\frac{a_i - b_i}{i!} = 0\) which is
+equation \eqref{eqn01} tells us that \(\frac{a_i - b_i}{i!} = 0\) which is
 clearly false.
 
 So let's carry on assuming that \(i < k\) and examine
 one of the terms
-on the right-side of \eqref{eqn1}, say
+on the right-side of \eqref{eqn01}, say
 the first one \(\frac{b_{i+1} - a_{i+1}}{(i+1)!}\). We can see that since
 \(0 \le b_{i+1} \le{} i\) and \(0 \le a_{i+1} \le{} i\) that,
 
@@ -526,7 +526,7 @@ and hence,
 \(\frac{a_i - b_i}{i!} > \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\),
 \end{center}
 
-But in equation \eqref{eqn1} we had deduced
+But in equation \eqref{eqn01} we had deduced
 that \(\frac{a_i - b_i}{i!} = \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\)
 which contradicts the strict inequality above.
 
@@ -604,16 +604,16 @@ k\!\ge{}\!2,\
 all possible factorials as the denominator.
 
 \(\mathcal{S}\) is the set of ALL non-negative rational numbers, less than one,
-formed by every possible sum, of the form we've been examining,
+formed by every possible sum of the form we've been examining,
 whose smallest term
 % (eg. \(\frac{a_k}{k!}\))
 is non-zero.
-The definition adds back \(\{0\}\), for consistency, since the definition in the set description excludes it.
+The definition adds back \(\{0\}\) for consistency, since otherwise it would be excluded.
 
 Finally,
 \(\mathbb{Q}_{p<q}\) is just the set of ALL non-negative rational numbers less than one.
 
-Here's what it means for a set to be the limit of a sequence of sets (for example):
+Here's what it means for a set to be the limit of a sequence of sets, using \(\mathcal{F}\) as an example:
 
 The set \(\mathcal{F}\) is the limit of the sequence
 \(\mathcal{F}_2, \mathcal{F}_3, \mathcal{F}_4, \dots{}\), if and only if for all \(a;\newline
@@ -645,16 +645,16 @@ is in all but finitely many \(\mathcal{F}_i\).
 
 We're going to prove the lemma through a series of equalities as follows:
 
-{\footnotesize
+{\small
 \bgroup                                  %% open the group
 \setlength{\abovedisplayskip}{0pt}
 \begin{center}
 \begin{alignat}{1}
-\lim_{n \to \infty}\mathcal{F}_n &= \mathcal{F} \label{eqn3}\\
-\mathcal{F} &= \mathbb{Q}_{p<q} \label{eqn4}\\
-\lim_{n \to \infty}\mathcal{S}_n &= \mathcal{S} \label{eqn5}\\
-\mathcal{S} &= \mathcal{F} \label{eqn6}\\
-\mathcal{S} &= \mathbb{Q}_{p<q} \label{eqn7}
+\lim_{n \to \infty}\mathcal{F}_n &= \mathcal{F} \label{eqn02}\\
+\mathcal{F} &= \mathbb{Q}_{p<q} \label{eqn03}\\
+\lim_{n \to \infty}\mathcal{S}_n &= \mathcal{S} \label{eqn04}\\
+\mathcal{S} &= \mathcal{F} \label{eqn05}\\
+\mathcal{S} &= \mathbb{Q}_{p<q} \label{eqn06}
 % 
 % \mathbb{Q}_{p<q}
 % = \mathcal{F}
@@ -666,7 +666,7 @@ We're going to prove the lemma through a series of equalities as follows:
 \egroup
 }
 
-Proof of equation \eqref{eqn3}:
+Proof of equation \eqref{eqn02}:
 For all \(\frac{p}{k!} \in \mathcal{F}_k\),
 since \(\frac{p}{k!} = \frac{(k+1)\cdot{}p}{(k+1)\cdot{}k!} = \frac{(k+1)\cdot{}p}{(k+1)!}\),
 and\newline \(\frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1}\),
@@ -679,15 +679,31 @@ By induction it is straightforward to conclude that
 \subset \mathcal{F}_4
 \subset \dots{}
 \), for all \(\mathcal{F}_i\), \(i \ge{} 2\). Therefore when
-\(\frac{p}{k!} \in \mathcal{F}_N\), then \(\frac{p}{k!} \in \mathcal{F}_n, \forall\ n \ge{} N\), i.e.;
-\(\frac{p}{k!} \in \displaystyle{\lim_{n \to \infty}\mathcal{F}_n}\).
+\(\frac{p}{k!} \in \mathcal{F}_k\), then \(\frac{p}{k!} \in \mathcal{F}_n, \forall\ n \ge{} k\).
+% , i.e.; \(\frac{p}{k!} \in \displaystyle{\lim_{n \to \infty}\mathcal{F}_n}\).
 
 By definition, \(\frac{p}{k!} \in \mathcal{F}\), for all \(k \ge{} 2, 0 \le{} p < k!\),
 therefore, \(\frac{p}{k!} \in \mathcal{F} \Leftrightarrow \frac{p}{k!}
-\in \displaystyle{\lim_{n \to \infty}\mathcal{F}_n}\)
-hence, \(\displaystyle{\mathcal{F} = \lim_{n \to \infty}\mathcal{F}_n}\).
+\in \mathcal{F}_n\), for all \(n \ge k\).
+% \in \displaystyle{\lim_{n \to \infty}\mathcal{F}_n}\)
+hence, \(\displaystyle{\mathcal{F} = \lim_{n \to \infty}\mathcal{F}_n}\). \quad QED equation \eqref{eqn02}.
 
-QED equation \eqref{eqn3}.
+Proof of equation \eqref{eqn03}: If \(\frac{p}{k} \in \mathbb{Q}_{p<q}\)
+then \(\frac{p}{k} \in{} \mathcal{F}_k\) because,
+
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
+\begin{equation*}
+\frac{p}{k}
+= \frac{2\cdot{}3\cdot{}\cdot{}\cdot{}(k-1)}{2\cdot{}3\cdot{}\cdot{}\cdot{}(k-1)} \cdot{} \frac{p}{k}
+= \frac{2\cdot{}3\cdot{}\cdot{}\cdot{}(k-1)\cdot{}p}{k!}
+\end{equation*}
+\egroup
+}
+
+Therefore \(\frac{p}{k} \in \mathcal{F}_k\), therefor \(\frac{p}{k} \in \mathcal{F}\)
+for all \(\frac{p}{k} \in \mathbb{Q}_{p<q}\), i.e.; \(\mathcal{F} = \mathbb{Q}_{p<q}\). \quad QED \eqref{eqn03}.
 
 Similarly we can show
 that the set {\footnotesize\(\displaystyle{\mathcal{S} = \lim_{n \to \infty}\mathcal{S}_n}\)}.
@@ -717,24 +733,6 @@ a \in \mathcal{S}\ \Leftrightarrow\
 \exists N, \text{ such that }
 \forall n \ge N, a \in \mathcal{S}_n.\) and hence \(\mathcal{S}\) is the
 limit of the sequence of sets \(\mathcal{S}_2, \mathcal{S}_3, \mathcal{S}_4, \dots{}\).
-
-If \(\frac{p}{k}\) is a rational number where
-\(0\le{}\frac{p}{k}<1\) and \(k \ge{} 2\)
-then \(\frac{p}{k} \in{} \mathcal{F}_k\) because,
-
-{\small
-\bgroup                                  %% open the group
-\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
-\begin{equation*}
-\frac{p}{k}
-= \frac{2\cdot{}3\cdot{}\cdot{}\cdot{}(k-1)}{2\cdot{}3\cdot{}\cdot{}\cdot{}(k-1)} \cdot{} \frac{p}{k}
-= \frac{2\cdot{}3\cdot{}\cdot{}\cdot{}(k-1)\cdot{}p}{k!}
-\end{equation*}
-\egroup
-}
-
-Therefore \(\frac{p}{k}\) is an element of \(\mathcal{F}_k\), hence an element of \(\mathcal{F}\)
-for all integers \(k \ge{} 2\).
 
 % To summarize; All rational numbers \(\frac{p}{k}\) where \(k \ge{} 2\) and \(0 \le{} \frac{p}{k} < 1\) are in
 % the set \(\mathcal{F}_{\infty}\)
@@ -782,7 +780,7 @@ expression is \emph{unique} to \(\frac{p}{q}\) among all positive rational numbe
 \bgroup                                  %% open the group
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
 \begin{center}
-\begin{equation}\label{eqn2}
+\begin{equation}\label{eqn07}
 \frac{p}{q} = \frac{a_2}{2!}
 + \frac{a_3}{3!}
 + \dots{}
@@ -794,7 +792,7 @@ expression is \emph{unique} to \(\frac{p}{q}\) among all positive rational numbe
 
 where \(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0 \le{} a_n < n\).
 
-We note that there must be at least one non-zero term in equation \eqref{eqn2} otherwise
+We note that there must be at least one non-zero term in equation \eqref{eqn07} otherwise
 the sum would be zero, and we've specified that \(\frac{p}{q}\) is positive.
 
 Choose \(k\) such that \(a_k \ne{} 0 \) but \(a_{k+1} =
@@ -802,7 +800,7 @@ a_{k+2} =
 a_{k+3} =
 \dots{} = 
 a_{n-1} =
-a_{n} = 0\). Therefore we can rewrite equation \eqref{eqn2},
+a_{n} = 0\). Therefore we can rewrite equation \eqref{eqn07},
 
 {\small
 \bgroup                                  %% open the group
