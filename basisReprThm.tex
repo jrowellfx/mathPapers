@@ -109,7 +109,8 @@ or the number of fingers on a typical person's two hands.
 
 Once we are trained to automatically think
 of ``10'' as representing ten things, we quickly move past it to learn about 100 and 1000
-and combinations of single-digit numbers like 92507. Even at a young age we'd
+and how to interpret a string of digits 
+like 92507. Even at a young age we'd
 be able to accurately count out a pile of
 ninety-two-thousand-five-hundred-and-seven apples as time consuming and agonizing as it might be.
 Furthermore, learning how to add and multiply is easy once you can count in
@@ -130,24 +131,25 @@ can count higher than any Roman could - as the
 Roman system only effectively allowed counting up to 4999.
 
 Even though we use different symbols, the ancient Romans and us
-are talking about the same abstract set of numbers, which we call integers\footnote{integers are 
+are talking about the same abstract set of numbers underneath,
+which we call integers\footnote{Integers are 
 the set of all the postive whole numbers, as well as zero and all the negative counterparts to each positive number.
 %We denote the set of integers with this symbol: $\mathbb{Z}$.
 }.
-Mathematics deals with numbers in this pure sort of way, divorced from the symbols used for counting.
+Mathematics deals with numbers in this pure sort of way, divorced from the symbols
+used to represent each number.
 When we talk about positive integers in mathematics, it's best to remind yourself
 that we are really talking about the set of numbers 
-that represent successively larger piles of apples, forgetting the base-ten symbols.
-Even more basic than Sesame Street!
+that represent successively larger piles of apples, forgetting the symbols.
 
-However, we use decimal numbers all the time in our math,
-rarely thinking in terms of piles of apples,
-and take it for granted
+However we use numbers written out in base-ten all the time in mathematics,
+rarely thinking in terms of piles of apples.
+We take it for granted
 that we can use base-ten to represent the set of positive integers.
-But we need to be careful; the only thing modern mathematics takes for granted are axioms.
-The fact that we can use base-ten to represent the integers is NOT among the list of axioms.
+\emph{Caution}: the only thing modern mathematics takes for granted are axioms
+and the fact that we can use base-ten to represent the integers is NOT among the list of axioms.
 
-The axioms describe a few simple properites about addition and multiplication.
+Briefly; the axioms describe a few simple properites about addition and multiplication.
 These properites are \emph{so simple} that they can't be expressed in
 yet other even-simpler ideas. The axioms are the minimal set of simple,
 obvious, irrefutable ideas from which
@@ -161,18 +163,15 @@ $a+0=0+a=a$ and $a\cdot{}1=1\cdot{}a=a$ and
 Additive Inverse: $a+(-a)=0$.
 Note: in general integers do NOT have multiplicative inverses 
 that are also integers. (eg. $\frac{1}{2}$ is the multiplicative
-inverse of 2 because $\frac{1}{2}\cdot{}2=1$ but $\frac{1}{2}$ is not an integer!)}.
+inverse of 2 because $\frac{1}{2}\cdot{}2=1$ but $\frac{1}{2}$ is not an integer.)}.
 
-However because base-ten numbers are in
-a perfect one-to-one correspondence with the integers then
-it's safe to think of each
-integer's unique base-ten label \emph{as} the integer.
-But to firmly establish this fact we need to (at least once) take the time to
-spell out exactly what it means to represent a number in base-ten with a theorem\footnote{I can't find where
-the first such theorem was stated, I think it's quite recent.}. Then that theorem must be proven to
-be true with a series of arguments that logically connects it
+Since our ability to count in base-ten is not axiomatic, we need
+to define what it means to write out a number in base-ten,
+then state its properties in a theorem which we must prove
+to be true with a series of arguments that logically connects it
 directly\footnote{directly \dots{}or indirectly
-via other previously proven theorems.} to the axioms, so that the only way
+via other previously proven theorems.} to the axioms. 
+In doing so, the only way
 that the theorem could be false is if the axioms themselves are false.
 
 Here's what that theorem looks like.
@@ -193,11 +192,17 @@ of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
 \end{jprIn}
 \bigskip
 
-If you're not a "math-person" don't fear!
-By the end of this paper you will know how to read that theorem so that it makes sense to you
-plus you'll be able to follow the proof which will be supplied.
+``That's nuts!'' you might say, I don't even see a ``ten'' in there so how could that
+be about how we learned to count watching Sesame Street? If you let $b=\text{ten}$
+in the above theorem, then we have the ``Base-Ten Representation Theorem''. We could let $b=2$, then we'd have
+``Base-Two Representation Theorem'' which states that we can count in binary.
 
-Let's take a big leap back and work up to the statement of that theorem step by step.
+Anyway, if you're not a "math-person" don't fear, by the end of this paper you will know
+how to read that theorem so that it makes sense
+plus you'll know how to prove it.
+
+Let's take a big leap back and work up to the statement of that theorem step by step, using
+our familiar base-ten for discussion.
 
 \end{document}
 
@@ -212,42 +217,10 @@ Let's take a big leap back and work up to the statement of that theorem step by 
 
 
 
-However, using a ``1" followed by a ``3" to represent the integer
-``\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}"
-is VERY handy. So we use Hindu-Arabic numbers and the positional notation of ``base-ten",
-more commonly known as ``decimal", to represent each specific integer.
-We slap a ``-" on the front if we need to talk about a negative integer.
-
-\break
-Base-ten representation of an integer is far superior to ancient Roman numerals for example.
-Try adding two numbers together in ancient Rome, or worse,
-multiplying or dividing them.
-What's XI times IX? Would you believe me if I told
-you it's XCIX? Unless you convert those to Hindu-Arabic numerals to check,
-you're just gonna have to trust me.
-Truth is - I don't know how to multiply using Roman
-numerals - nor did most Romans! Not only that,
-but I'll bet that most kids who graduated from Sesame Street
-can count higher than any Roman could - as the
-Roman system only effectively allowed counting up to 4999.
-
-Using base-ten for us is automatic,
-we barely think about it when we're adding numbers or multiplying
-them - but it's worth looking carefully at how base-ten
-works - so let's examine it from the ground up\footnote{Please forgive
-the incredibly obvious nature of much
-of the following discussion, but I want to take a good running start
-at some more unfamiliar notions.
-Perhaps looking at the familiar with fresh eyes will help in seeing the new ideas easier.}.
-
-It's useful to have simple symbols to represent each of the integers from one to nine,
-namely our familiar 1, 2, 3, 4, 5, 6, 7, 8 and 9
-which have an interesting history and predate their use in base-ten.
-
-Slightly more modern, but still quite ancient,
-is the symbol ``0" for ``zero", originally meaning ``empty".
-Zero also predates its use in base-ten but without zero,
-base-ten wouldn't be possible.
+In practice, using some base-$b$ to count with,
+it's useful to have simple symbols to represent each of the integers from zero to up to $(b-1)$.
+So in base-ten it's our
+familiar 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9.
 
 Base-ten uses the idea of stringing a series of digits together
 (a digit being one of the numbers 0, 1, 2, \dots{} 9),
