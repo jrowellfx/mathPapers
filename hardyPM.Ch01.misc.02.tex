@@ -178,8 +178,8 @@ going to make things easier with this approach.
 
 At first, it wasn't remotely obvious how I'd go about calculating
 the values of the integers \(a_2, a_3, \dots{}, a_k\) for a given number
-\(\frac{p}{q}\) -
-However, after playing around for a while I figured it out,
+\(\frac{p}{q}\).
+However, after playing around for a while I figured it out;
 it's kinda like doing long-division. At this point
 a few patterns started to jump out at me.
 For example, look at these numbers,
@@ -250,25 +250,26 @@ Hmmm, the following set has \(k!\) members,
 By forming another set out of all possible sums from the expression
 it seemed like it would be fairly easy to show that the two sets are identical.
 
-Another clue was the insight that in order to be able to represent
-any fraction with a prime-number denominator, say the prime is \(P\) and
-the fraction is \(\frac{a}{P}\), then the sum in our
+Another insight was that in order to be able to represent
+a fraction with a prime-number denominator (say \(p\))
+then the sum in our
 expression would \emph{have to contain} at least this term,
-\(\frac{a_P}{P!}\),
-for a non-zero value of \(a_P\).
+\(\frac{a_p}{p!}\),
+for a non-zero value of \(a_p\).
 
-This led me to the realization that any fraction \(\frac{a}{k}\)
+This led me to the realization that any fraction \(\frac{m}{k}\)
 would be guaranteed to be able to be represented by the expression
 if the terms went so far as to include \(\frac{a_k}{k!}\). For that
 matter by using terms up to \(\frac{a_k}{k!}\), then I'd
 also be guaranteed to be able to represent \(\frac{b}{k-1},
-\frac{c}{k-2},
-\frac{d}{k-3}, \dots{},
-\frac{1}{3},
+\frac{b}{k-2},
+\frac{c}{k-3}, \dots{},
+\frac{d}{3},
 \frac{2}{3},
 \frac{1}{2}\) with the expression.
+(JPR NOTE: Better list in increasing order..)
 
-So by using set notation to collect all the numbers generated
+So by using sets to collect all the numbers generated
 by our expression, then letting \(k\) grow without bound
 I should get a set that contains \emph{all} the rational numbers between zero and one!
 Those are the ideas behind the proof that follows.
@@ -421,15 +422,18 @@ so they might not be the same as those in \(\mathcal{F}_k\).
 Third, by showing that the smallest and largest elements are the same, then this pins down exactly where
 the numbers in \(\mathcal{S}_k\) sit on the number-line, and thus establish equality between the two sets.
 
-It's clear that the set \(\mathcal{F}_k\) contains every rational number with denominator \(k!\)
+To begin with, it's clear that the set \(\mathcal{F}_k\) contains every rational number
+of the form \(\frac{p}{k!}\)
+% with denominator \(k!\)
 where \(p\) is an integer and \mbox{\(0\le{}\frac{p}{k!}<1\)} and
-that the size of \(\mathcal{F}_k\) is \(k!\, \).
+that the size of \(\mathcal{F}_k\) is \(k!\, \). That takes care of everything we need to know
+about \(\mathcal{F}_k\); now on to show that \(\mathcal{S}_k\) has these same qualities.
 
 The smallest member of the set \(\mathcal{S}_k\) 
 is \(\frac{0}{k!}\) and
-occurs when all the variables of the sum are set to zero.
-Furthermore, the largest member of the set occurs when all the variables of the sum are set to
-their maximum value, which gives us \(\frac{k!-1}{k!}\) as shown in Lemma 1.
+occurs when all the variables are set to zero.
+Furthermore, the largest member of the set occurs when all the variables are set to
+their maximum value, which sums to \(\frac{k!-1}{k!}\) as shown in Lemma 1.
 
 We also note that every member of \(\mathcal{S}_k\) can be written as a rational number
 with \(k!\) as the denominator, like so,
@@ -467,7 +471,7 @@ Therefore any member of the set \(\mathcal{S}_k\) can be written as
 \egroup
 }
 
-Furthermore, each possible assignment of values to the variables of
+We now show that each possible assignment of values to the variables of
 the factorial-representation of \(\frac{p}{k!}\)
 produces a \emph{unique} member of the set \(\mathcal{S}_k\).
 % \footnote{\dots{} and a good thing too
@@ -479,11 +483,11 @@ For if this weren't true and both
 for different variables \(a_2, a_3, \dots{}, a_k\)
 and \(b_2, b_3, \dots{}, b_k\), then we can arrive at a contradiction as follows.
 
-First suppose that \(a_i\ne{}b_i\), where \(i \le{} k\), is the first such pair of variables
+Suppose \(a_i\ne{}b_i\), where \(i \le{} k\), is the first such pair of variables
 that differ. In other words,
 \(a_2\!=\!b_2,\ a_3\!=\!b_3, \dots{},\ a_{i-1}\!=\!b_{i-1},\ a_i\!\ne{}\!b_i\).
 Without loss of generality, further suppose that \(a_i > b_i\).
-Because of the supposition,
+It follows that,
 % 
 % Because
 % of the equality of the two different representations for \(\frac{p}{k!}\) we can now write,
@@ -530,13 +534,13 @@ Let's examine
 one of the terms
 on the right-side of \eqref{eqn1}, say
 the first one \(\frac{b_{i+1} - a_{i+1}}{(i+1)!}\). We can see that since
-\(0 \le b_{i+1} \le{} i\) and \(0 \le a_{i+1} \le{} i\) that,
+\(0 \le b_{i+1} \le{} i\) and \(0 \le a_{i+1} \le{} i\), so \((i - 0) \ge{} (b_{i+1} - a_{i+1})\), therefore,
 
 \begin{center}
-\(\frac{i - 0}{(i+1)!} \ge{} \frac{b_{i+1} - a_{i+1}}{(i+1)!}\),
+\(\frac{i - 0}{(i+1)!} \ge{} \frac{b_{i+1} - a_{i+1}}{(i+1)!}\).
 \end{center}
 
-and hence by extension to the other terms,
+Similarly by extending this idea to the other terms,
 
 \begin{center}
 \(
@@ -564,11 +568,11 @@ and hence,
 \(\frac{a_i - b_i}{i!} > \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\),
 \end{center}
 
-But in equation \eqref{eqn1} we had deduced
-that \(\frac{a_i - b_i}{i!} = \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\)
-which contradicts the strict inequality above.
+But in equation \eqref{eqn1},
+\(\frac{a_i - b_i}{i!} = \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\)
+which provides the desired contradiction.
 
-Therefore our assumption that there can be a second set
+Therefore our assumption that there can be a different set
 of variables representing the same rational number \(\frac{p}{k!}\) must be false.
 Therefore any assignment of values to the variables of the sum
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
@@ -583,7 +587,7 @@ combined with 4 choices for \(a_4\),
 combined with \(k\) choices for \(a_k\).
 
 Therefore the total number of combinations of values
-that can be assigned to all the variables of
+that can be assigned to the variables of
 \(\frac{a_2}{2!}
 + \frac{a_3}{3!}
 + \frac{a_4}{4!}
@@ -594,7 +598,7 @@ which is also the size of the set \(\mathcal{F}_k\).
 Recalling from above that any 
 member of the set \(\mathcal{S}_k\), say \(\frac{a}{b}\),
 can be written as \(\frac{a}{b} = \frac{p}{k!}\), for some \(p\) where 
-\(0\le{}\frac{p}{k!}<1\) then
+\(0\le{}\frac{p}{k!}<1\) then it follows that
 \(\mathcal{S}_k = \mathcal{F}_k\).
 
 QED.
@@ -627,13 +631,13 @@ formed with any factorial as the denominator.
 formed by every factorial-representation possible.
 
 Finally,
-\(\mathbb{Q}_{01}\) is the set of ALL non-negative rational numbers less than one, 
+\(\mathbb{Q}_{01}\) is the set of ALL non-negative rational numbers \(\frac{p}{q} < 1\),
 where \(p\) and \(q\) are co-prime. We specify the co-prime condition
 so that our description
-generates unique members of the set - This constraint will come in handy later in the proof.
+generates unique members of the set. This constraint will come in handy later in the proof.
 Also, we want zero to be included so we toss it back into the set with the union.
-We are not going to prove it here, but \(\mathbb{Q}_{01}\) contains ALL the
-rational numbers between zero and one; we will take this as established.
+We are not going to prove it here, but it is straightforward to show that \(\mathbb{Q}_{01}\) contains ALL the
+rational numbers between zero and one, and we will take this as established.
 
 Recall that two sets,
 \(\mathcal{X}\) and \(\mathcal{Y}\)
@@ -865,7 +869,7 @@ a_{k+3} =
 a_{n-1} =
 a_{n} = 0\) then we can satisfy the condition that the last term in the sum is non-zero, and hence:
 
-\(\frac{j}{q} = a_1 + \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
+\(a_1 + \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
 is uniquely associated with all positive rational numbers \(\frac{j}{q}\).
 
 QED.
@@ -999,8 +1003,9 @@ However, I'll leave that proof for another day.
 
 A final thought is that the number 
 \(2\!+\!\frac{1}{2!}\!+\!\frac{1}{3!}\!+\!\frac{1}{4!}\!+\!\frac{1}{5!}\!+\!\dots{}\) can't
-be a rational number, as it's fractional-part is not in \(\mathcal{S}\)
+be a rational number, as its fractional-part is not in \(\mathcal{S}\)
 because we can't point to any particular \(\mathcal{S}_k\) that the fractional-part would be a member of.
-Not surprising really, this number is \(e\). Furthermore I think we just proved that \(e\) is irrational!!
+Not surprising really, since this number is the well known constant \(e\).
+Furthermore I think we just proved that \(e\) is irrational!!
 
 \end{document}
