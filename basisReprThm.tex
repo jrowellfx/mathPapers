@@ -711,12 +711,13 @@ then they use base-eight and only use numbers 0, 1,
 2, 3, 4, 5, 6 and 7 for their digits. For them ``10''
 means ``One lot of eight, plus zero units".
 
-On and on past Planet-Gary-Seven, and Planet-Secks, Planet-Penta, \dots{}
+On and on past Planet-Gary-Seven (they have only seven fingers),
+and Planet-Hex (six fingers), Planet-Penta (five fingers), etc\dots{}
 
 Finally we come upon Planet-Claire (well someone
 has to come from Planet-Claire,
 I know she came from there),
-where the poor bastards only have two fingers
+where they only have two fingers
 so they only use the digits 0 and 1 and base-two,
 so for them ``10" means ``one lot of two and zero units".
 So on Planet-Claire ``10" means two.
@@ -728,6 +729,7 @@ four! What is ``11" in base-two? Using our technique to
 describe the digits we see that it's ``One lot of two, plus one unit",
 in other words three.
 
+\break
 Here's how they count on Planet-Claire using base-two:
 \begin{center}
 \begin{tabular}{r l c r l}
@@ -748,7 +750,6 @@ base-two & base-ten & \; \; \; \; & base-two & base-ten\\
 \end{tabular}
 \end{center}
 
-\break
 Note something interesting in the list above - the powers of two,
 written in base-two,
 resemble our powers of 10 in base-ten! That is:
@@ -785,8 +786,9 @@ Representation Theorem" can be used again, but swapping powers-of-two
 for powers-of-ten, and limiting the values for the digits
 to be zero or one.
 Following our line of reasoning this is what the Planet-Claire mathematicians would have
-come up with:
+come up with\dots
 
+\break
 \section*{Base-Two Representation Theorem}
 \begin{jprIn}
 For every positive integer $n$ there is a unique
@@ -869,11 +871,6 @@ of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
 So to get the ``Base-Ten Representation Theorem'' let $b$ equal ten.
 To get the ``Base-Two Representation Theorem'' let $b=2$; or the ``Base-Nine Representation Theorem''
 let $b=9$; etc.
-
-\bigskip
-The Basis Representation Theorem
-implies that we can safely convert between
-different bases. Why? (Exercise left for student).
 
 Recall how we defined $(\text{A})_{16}=10$
 and $(\text{F})_{16}=15$ as base-sixteen digits, then:
@@ -1058,7 +1055,7 @@ etc., over and over for all positive integers.
 Some people picture an infinite row of dominoes.
 Having condition i) (called the ``base case") is like being
 able to knock over the first domino.
-Then knowing condition ii) is also true (called the ``induction step") is like the
+Then knowing that condition ii) is also true (called the ``induction step") is like the
 fact that any one domino has the ability to knock over the next.
 Once you've knocked over the first domino,
 they all fall.
@@ -1173,9 +1170,8 @@ It rolls to a 1 as the 9 settles back to 0.
 Apparently this magic-odometer only adds new digits to the left
 as it needs them.
 The magic-odometer should be able to display ANY number of miles, no matter how large.
-(Good thing too, this
-new line of magic-cars from Tesla are guaranteed to last forever.)
 
+\break
 Our proof is going to take care of the three cases that happen with
 the magic-odometer. Imagine that we've already driven some arbitrarily large
 number of miles, and we're watching the odometer roll over to the
@@ -1198,15 +1194,15 @@ the rightmost digit \emph{that isn't a} 9 by one.
 
 Example: We've driven 782999 miles so far, so the next mile driven is:
 \begin{align*}
-782999+1 &= 780000+2999+1\\
-&=780000+(3000-1)+1\\
-&=780000+3000+(-1+1)\\
+782999+1 &= 780000+2000+999+1\\
+&=780000+2000+(1000-1)+1\\
+&=780000+2000+1000+(-1+1)\\
 &=780000+3000+0\\
 &=783000
 \end{align*}
 That looks overly complicated, but I broke it down
-like that to demonstrate the idea behind the algebraic ``trick" that's
-used in the proof.
+like that to demonstrate the idea behind the algebra that's
+used in the actual proof.
 
 Anyway, it's clear that the rightmost digit that-isn't-a-9, in our case the 2, got changed
 to a 3 and all the 9's got changed to 0's, while the rest of the digits remained unchanged
@@ -1259,16 +1255,15 @@ Without further adieu, let's get to the actual proof!
 \section*{Existence Proof of the Basis Representation Theorem}
 Let $b$ be a positive integer greater than 1.
 
-We will show that for every positive integer $n$ there is a sequence
+Using induction we will show that for every positive integer $n$ there is a sequence
 of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
 
 \hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
 
 where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
 
-\bigskip
-We will refer to the previous expression as the
-``base-$b$-representation" for $n$ in the following induction proof.
+We will henceforth refer to the above expression for $n$ as the
+``base-$b$-representation" for $n$.
 
 \bigskip
 Base case:
@@ -1298,7 +1293,7 @@ where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
 We will prove that $n+1$ also has a
 base-$b$-representation by looking at two cases.
 
-\bigskip
+\break
 Case 1) $d_0<(b-1)$
 \begin{jprIn}
 This case examines when the least significant
@@ -1368,7 +1363,7 @@ Recall in the ``Extra Exercise: Geometric Series Theorem"
 we showed that:
 \[1+b+b^2+\dots{}+b^k=\frac{b^{k+1}-1}{b-1}\]
 
-We can use this theorem to show that $n+1=b^{k+1}$ as follows:
+We can use this theorem to show that $n+1=b^{k+1}$ as follows\dots
 \smallskip
 {\small
 \begin{alignat*}{3}
@@ -1457,7 +1452,6 @@ called the ``Euclidean Division Theorem''.
 It sounds onerous, but don't worry, you learned it
 in the third grade but perhaps not so formally, you called it ``long division''. It simply states the following\dots{}
 
-\break
 \section*{Euclidean Division Theorem}
 \begin{jprIn}
 For all integers $a$ and $b$ such that $b>0$,
@@ -1584,21 +1578,35 @@ have proven the Basis Representation Theorem.
 \break
 \section*{Epilogue}
 
-Congratulations if you've never tried your hand a a proof,
-nor perhaps even read one before - you made it to the end.
+I wrote this paper with a technically savvy audience in mind, namely the many talented visual effects artists
+that I've worked with over the years who probably graduated from Art College. Since Art College doesn't
+usually place an emphasis on higher level Mathematics these younger artists may not have been exposed to
+it - and yet they use tools on a daily basis that are essentially high-level math applications.
 
-My hope with the paper is that by
-taking a familiar subject like counting \`a la Sesame Street and applying rigorous mathematical reasoning,
+If that describes you, then
+my hope with the paper is that by
+taking a familiar and simple subject like counting \`a la Sesame Street and applying rigorous mathematical reasoning,
 that you will become familiar with its ``language'' and get a taste for the
 sharpness of the thought process. Most importantly I hope
 you found some amusement in and among the mathematical tidbits sprinkled here
 and there.
 
-I feel that not being able to enjoy mathematics is as tragic as someone who is blind who can't enjoy the MoMA, or
-someone who is deaf who can't while away the hours listening to their favorite band. This paper is
-my attempt at trying to open up the world of mathematics to you so that you can also enjoy one of the greatest
-achievements humanity has to offer.
+I know you are very sensitive to beauty, after all, you are an artist
+so my hope is to open one more avenue to you to appreciate 
+the beauty that Mathematics has to offer, which rivals and perhaps eclipses any
+musical composition or painting or sculpture.
 
-Go forth and multiply!
+I don't claim that this particular paper contains such beauty (well, the Geometric Series Theorem is pretty
+elegant and nifty) but being comfortable with the language of Mathematics will at least allow
+you to get to some of those marvelous results. I suggest Googling ``Taylor Series'' and ``Maclaurin Series''
+which now that you are a little more comfortable with reading ``mathy'' statements, it might
+begin to make sense reading a wiki page.
+
+Following that thread will take you to an amazing place, one the connects the trigonometric functions
+like sin and cosine with the natural logarithm is totally unexpected ways. Those mathematical
+discoveries point to some deep simple structure that underlies our world that without Mathematics
+you wouldn't get to glimpse. It is truly awe inspiring to experience for the first time - I'm jealous.
+
+Good luck!
 
 \end{document}
