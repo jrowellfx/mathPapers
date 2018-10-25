@@ -104,8 +104,8 @@ Miscellaneous example\footnote{Hardy doesn't call them `Exercises' or `Questions
 are, math exercises like calculations to perform, theorems to prove etc.} \#2 at the end
 of chapter 1 in Hardy's `Pure Mathematics'
 presents us with a fascinating result (which was new to me).
-It feels like
-a kind of basis-representation-theorem, but for rational numbers, \dots{} beautiful!
+The theorem feels like what the
+basis-representation-theorem is for integers, but this one is for rational numbers, \dots{} beautiful!
 
 Here it is, followed by my proof which starts out with some lemmas to get us rolling.
 
@@ -128,9 +128,11 @@ a_1 + \frac{a_2}{1\cdot{}2}
 
 where \(a_1, a_2, \dots{}, a_k\) are integers, and
 
+{\small
 \begin{center}
 \(0\le{}a_1,\quad 0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0<a_k<k\)
 \end{center}
+}
 
 \section*{Lemma-1}
 {\small
@@ -217,7 +219,7 @@ The set of rational numbers,
 \setlength{\abovedisplayskip}{0pt}
 \begin{center}
 \begin{equation*}
-\mathcal{S}(k) = \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\enspace\mid\enspace 
+\mathcal{S}_k = \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\enspace\mid\enspace 
 0\! \le{}\! a_2\! <\! 2,\enspace 
 0\! \le{}\! a_3\! <\! 3,\enspace 
 \dots{},\enspace 0\! \le{}\! a_k\! <\! k\}
@@ -233,7 +235,7 @@ is identical to the set of rational numbers,
 \setlength{\abovedisplayskip}{0pt}
 \begin{center}
 \begin{equation*}
-\mathcal{F}(k) = \{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}
+\mathcal{F}_k = \{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}
 \end{equation*}
 \end{center}
 \egroup
@@ -241,19 +243,19 @@ is identical to the set of rational numbers,
 
 \section*{Proof of Lemma-3}
 
-It's clear that the set \(\mathcal{F}(k)\) contains every rational number with denominator \(k!\)
-where \mbox{\(0\le{}\frac{p}{k!}<1\)} and also clear that the size of \(\mathcal{F}(k)\) is \(k!\, \). To show
-that the set \(\mathcal{S}(k)\) is the same
-as \(\mathcal{F}(k)\), it suffices to show that every member of \(\mathcal{S}(k)\)
-is also of the form \(0\le{}\frac{p}{k!}<1\), and that the size of \(\mathcal{S}(k)\) is also \(k!\, \).
+It's clear that the set \(\mathcal{F}_k\) contains every rational number with denominator \(k!\)
+where \mbox{\(0\le{}\frac{p}{k!}<1\)} and also clear that the size of \(\mathcal{F}_k\) is \(k!\, \). To show
+that the set \(\mathcal{S}_k\) is the same
+as \(\mathcal{F}_k\), it suffices to show that every member of \(\mathcal{S}_k\)
+is also of the form \(0\le{}\frac{p}{k!}<1\), and that the size of \(\mathcal{S}_k\) is also \(k!\, \).
 
-The smallest member of the set \(\mathcal{S}(k)\) 
+The smallest member of the set \(\mathcal{S}_k\) 
 is \(\frac{0}{k!}\) and
 occurs when all the coefficients of the sum are zero.
 Furthermore, the largest member of the set occurs when all the coefficients of the sum are set to
 their maximum value, which gives us \(\frac{k!-1}{k!}\) as shown in lemma-1.
 
-We also note that every member of \(\mathcal{S}(k)\) can be written as a rational number
+We also note that every member of \(\mathcal{S}_k\) can be written as a rational number
 with \(k!\) as the denominator, like so,
 
 {\footnotesize
@@ -272,12 +274,12 @@ with \(k!\) as the denominator, like so,
 \egroup
 }
 
-Therefor any member of the set \(\mathcal{S}(k)\) is of the form \(0\le{}\frac{p}{k!}<1\),
+Therefore any member of the set \(\mathcal{S}_k\) is of the form \(0\le{}\frac{p}{k!}<1\),
 where \(p\) in an integer in the range \(0\le{}p\le{}k!-1\).
 
 Furthermore, each possible assignment of values to the coefficients of
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-produce a unique member of the set \(\mathcal{S}(k)\).
+produce a unique member of the set \(\mathcal{S}_k\).
 
 For this weren't true and both
 \(\frac{p}{k!} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) and
@@ -314,14 +316,14 @@ However, lemma-2 tells us,\par
 \begin{center}
 \(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!} > \frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!} \ge{} \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\),
 \end{center}\par
-demonstrating that equality two expressions at either end of the inequality
+demonstrating that equality between the two expressions at either end of the inequality
 is impossible, so our assumption that there can be a second set
 of coefficients to produce the same rational number \(\frac{p}{k!}\) is false.
-Therefor any assignment of values to the coefficients of
+Therefore any assignment of values to the coefficients of
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-produces a unique member of the set \(\mathcal{S}(k)\).
+produces a unique member of the set \(\mathcal{S}_k\).
 
-Now we can count the number of members of the set \(\mathcal{S}(k)\), by looking at all the
+Now we can count the number of members of the set \(\mathcal{S}_k\), by looking at all the
 possible combinations of values for the coefficients \(a_2, a_3, \dots{}, a_k\).
 There are 2 choices for the coefficient \(a_2\),
 multiplied by the 3 choices for \(a_3\),
@@ -332,17 +334,14 @@ up to multiplying by \(k\) values that \(a_k\) can assume.
 Therefore the total number of combinations of values
 that can be assigned to all the coefficients of \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
 is \(2\cdot{}3\cdot{}4\cdot\cdot{}\cdot{}k = k!\,\),
-which means the size of the set \(\mathcal{S}(k)\) is \(k!\, \). This plus our conclusion above that
-all members of the set \(\mathcal{S}(k)\) are of the form \(0\le{}\frac{p}{k!}<1\)
-means that
-\(\mathcal{S}(k) = \mathcal{F}(k)\).\qquad QED
+which means the size of the set \(\mathcal{S}_k\) is \(k!\, \). Recalling our previous conclusion that
+all members of the set \(\mathcal{S}_k\) are of the form \(0\le{}\frac{p}{k!}<1\) we
+can assert that \(\mathcal{S}_k = \mathcal{F}_k\).\qquad QED
 
 \section*{Lemma-4}
 
-All rational numbers \(\frac{p}{q}\) such that \(0\le{}p<q\) and \(2\le{}q\le{k}\)\footnote{That list
-of rational numbers 
-would look like this,
-\(
+All rational numbers\footnote{The list of
+rational numbers being \(
 \frac{0}{2},
 \frac{1}{2},
 \frac{0}{3},
@@ -363,14 +362,15 @@ would look like this,
 \frac{2}{k},
 \dots{},
 \frac{k-2}{k},
-\frac{k-1}{k}\).} are members of the set \(\mathcal{S}(k)\).
+\frac{k-1}{k}\).}
+\(\frac{p}{q}\) such that \(0\le{}p<q\) and \(2\le{}q\le{k}\)
+are members of the set \(\mathcal{S}_k\).
 
 \section*{Proof of Lemma-4}
 Since \(0\le{}p<q\) then \(0\le{}\frac{p}{q}<1\) and
 {\normalsize
 \bgroup                                  %% open the group
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
-\begin{center}
 \begin{alignat*}{1}
 \frac{p}{q}\quad =\quad &\frac
 {2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}
@@ -382,10 +382,100 @@ Since \(0\le{}p<q\) then \(0\le{}\frac{p}{q}<1\) and
 {2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}p\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}
 {k!}
 \end{alignat*}
+\egroup
+}
+
+Therefore \(\frac{p}{q}\) is an element of \(\mathcal{F}_k\) which is the same as the set \(\mathcal{S}_k\).\par
+QED
+
+\section*{Lemma-5}
+
+if \(\frac{p}{q} \in{} \mathcal{S}_k\) then \(\frac{p}{q} \in{} \mathcal{S}_N\) for all \(N > k\).
+
+\section*{Proof of Lemma-5}
+
+if \(\frac{p}{q} \in{} \mathcal{S}_k\) then,
+
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}
+\begin{center}
+\begin{equation*}
+\frac{p}{q}
+= \frac{a_2}{2!}
++ \frac{a_3}{3!}
++ \dots{}
++ \frac{a_k}{k!}
++ \frac{a_{k+1}}{(k+1)!}
++ \dots{}
++ \frac{a_N}{N!}, \text{\ such that,}
+\end{equation*}
+\begin{equation*}
+0\! \le{}\! a_2\! <\! 2,\enspace 
+0\! \le{}\! a_3\! <\! 3,\enspace 
+\dots{},\enspace
+0\! \le{}\! a_k\! <\! k,\enspace
+a_{k+1} = 0,\enspace
+\dots{},\enspace
+a_N = 0.
+\end{equation*}
 \end{center}
 \egroup
-Therefor \(\frac{p}{q}\) is an element of \(\mathcal{F}(k)\) which is the same as the set \(\mathcal{S}(k)\).\par
-QED
 }
+
+\(\frac{p}{q} \in{} \mathcal{S}_N\) for all \(N > k\).
+
+\section*{Theorem (restated)}
+
+Any positive rational number can be expressed in one and only one way in the form
+
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
+\begin{center}
+\begin{equation*}
+a_1 + \frac{a_2}{1\cdot{}2}
++ \frac{a_3}{1\cdot{}2\cdot{}3}
++ \dots{}
++ \frac{a_k}{1\cdot{}2\cdot{}3\cdot{}\dots{}\cdot{}k},
+\end{equation*}
+\end{center}
+\egroup
+}
+
+where \(a_1, a_2, \dots{}, a_k\) are integers, and
+
+{\small
+\begin{center}
+\(0\le{}a_1,\quad 0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0<a_k<k\)
+\end{center}
+}
+
+\section*{Proof of Theorem}
+
+For all integers \(m\ge{}0\) and \(q>0\),
+there exist unique integers \(n\) and \(p\) such that,
+
+{\normalsize
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group
+\begin{alignat*}{3}
+&&m = nq + p\ &;\quad 0\le{}p<q \\
+&\Leftrightarrow\quad &\frac{m}{q} = n + \frac{p}{q}\ &;\quad 0\le{}\frac{p}{q}<1
+\end{alignat*}
+\egroup
+}
+
+Which tells us that all rational numbers \(\frac{m}{q}\) can be written as
+an integer part, \(n\), plus a fractional part \(0\le{}\frac{p}{q}<1\).
+
+In our theorem, the \(a_1\) coefficient plays the role of the integer part \(n\),
+and the rest of the expression, \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
+plays the role of the fractional part \(0\le{}\frac{p}{q}<1\).
+
+Therefore to express ANY rational number in the form of the theorem, first apply the
+Euclidean Division Theorem and let \(a_1 = n\). If there is no fractional remainder, then
+we are done, however if there is a fractional remainder \(\frac{p}{q}\) (expressed such that
+\(p\) and \(q\) are co-prime) then there exists as a unique representation in the set
 
 \end{document}
