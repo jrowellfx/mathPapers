@@ -613,7 +613,7 @@ The definition adds back \(\{0\}\), for consistency, since the definition in the
 Finally,
 \(\mathbb{Q}_{p<q}\) is just the set of ALL non-negative rational numbers less than one.
 
-Here's what it means for a set to be the limit of a sequence of sets:
+Here's what it means for a set to be the limit of a sequence of sets (for example):
 
 The set \(\mathcal{F}\) is the limit of the sequence
 \(\mathcal{F}_2, \mathcal{F}_3, \mathcal{F}_4, \dots{}\), if and only if for all \(a;\newline
@@ -622,7 +622,7 @@ a \in \mathcal{F}\ \Leftrightarrow\
 \forall n \ge N, a \in \mathcal{F}_n.\)
 
 In plain english that means every element of \(\mathcal{F}\)
-is in all but finitely many \(\mathcal{F}_n\).
+is in all but finitely many \(\mathcal{F}_i\).
 
 \section*{Lemma 4}
 
@@ -632,9 +632,9 @@ is in all but finitely many \(\mathcal{F}_n\).
 \begin{center}
 \begin{equation*}
 \mathbb{Q}_{p<q}
-= \mathcal{F}
-= \lim_{n \to \infty}\mathcal{F}_n
-= \lim_{n \to \infty}\mathcal{S}_n
+% = \mathcal{F}
+% = \lim_{n \to \infty}\mathcal{F}_n
+% = \lim_{n \to \infty}\mathcal{S}_n
 = \mathcal{S}
 \end{equation*}
 \end{center}
@@ -643,29 +643,51 @@ is in all but finitely many \(\mathcal{F}_n\).
 
 \subsubsection*{Proof}
 
-We'll first show that the set {\footnotesize\(\displaystyle{\mathcal{F} = \lim_{n \to \infty}\mathcal{F}_n}\)}.
+We're going to prove the lemma through a series of equalities as follows:
 
-Observe that for all integers \(k \ge{} 2\), we know
-that \(\frac{p}{k!} \in \mathcal{F}_k\)
-and since \(\frac{(k+1)\cdot{}p}{(k+1)\cdot{}k!} = \frac{(k+1)\cdot{}p}{(k+1)!}\),
-therefore \(\frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1},
-\text{ hence } \mathcal{F}_k \subset \mathcal{F}_{k+1}\).
+{\footnotesize
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}
+\begin{center}
+\begin{alignat}{1}
+\lim_{n \to \infty}\mathcal{F}_n &= \mathcal{F} \label{eqn3}\\
+\mathcal{F} &= \mathbb{Q}_{p<q} \label{eqn4}\\
+\lim_{n \to \infty}\mathcal{S}_n &= \mathcal{S} \label{eqn5}\\
+\mathcal{S} &= \mathcal{F} \label{eqn6}\\
+\mathcal{S} &= \mathbb{Q}_{p<q} \label{eqn7}
+% 
+% \mathbb{Q}_{p<q}
+% = \mathcal{F}
+% = \lim_{n \to \infty}\mathcal{F}_n
+% = \lim_{n \to \infty}\mathcal{S}_n
+% = \mathcal{S}
+\end{alignat}
+\end{center}
+\egroup
+}
+
+Proof of equation \eqref{eqn3}:
+For all \(\frac{p}{k!} \in \mathcal{F}_k\),
+since \(\frac{p}{k!} = \frac{(k+1)\cdot{}p}{(k+1)\cdot{}k!} = \frac{(k+1)\cdot{}p}{(k+1)!}\),
+and\newline \(\frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1}\),
+therefore \(\frac{p}{k!} \in \mathcal{F}_{k+1}\),
+hence \(\mathcal{F}_k \subset \mathcal{F}_{k+1}\).
 
 By induction it is straightforward to conclude that
 \(\mathcal{F}_2
 \subset \mathcal{F}_3
 \subset \mathcal{F}_4
 \subset \dots{}
-\), for all \(\mathcal{F}_i\), \(i \ge{} 2\). Therefore once an element is introduced to
-a set \(\mathcal{F}_i\), then it is in all subsequent sets in the sequence.
+\), for all \(\mathcal{F}_i\), \(i \ge{} 2\). Therefore when
+\(\frac{p}{k!} \in \mathcal{F}_N\), then \(\frac{p}{k!} \in \mathcal{F}_n, \forall\ n \ge{} N\), i.e.;
+\(\frac{p}{k!} \in \displaystyle{\lim_{n \to \infty}\mathcal{F}_n}\).
 
-Now just describe that for some element of F, which k it belongs to and so N is that k in limit definition...
+By definition, \(\frac{p}{k!} \in \mathcal{F}\), for all \(k \ge{} 2, 0 \le{} p < k!\),
+therefore, \(\frac{p}{k!} \in \mathcal{F} \Leftrightarrow \frac{p}{k!}
+\in \displaystyle{\lim_{n \to \infty}\mathcal{F}_n}\)
+hence, \(\displaystyle{\mathcal{F} = \lim_{n \to \infty}\mathcal{F}_n}\).
 
-Therefor for all \(a; 
-a \in \mathcal{F}\ \Leftrightarrow\ 
-\exists N, \text{ such that }
-\forall n \ge N, a \in \mathcal{F}_n.\) and hence \(\mathcal{F}\) is the
-limit of the sequence of sets \(\mathcal{F}_2, \mathcal{F}_3, \mathcal{F}_4, \dots{}\).
+QED equation \eqref{eqn3}.
 
 Similarly we can show
 that the set {\footnotesize\(\displaystyle{\mathcal{S} = \lim_{n \to \infty}\mathcal{S}_n}\)}.
