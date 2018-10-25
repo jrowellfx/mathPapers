@@ -82,13 +82,6 @@
   \fnsymbolwrap{\value{footnote}}%
 }
 
-%\newcommand{\divides}{\bigm|}
-%\newcommand{\ndivides}{
-%  \mathrel{\mkern.5mu
-%    \ooalign{\hidewidth$\big|$\hidewidth\cr$\nmid$\cr}
-%  }
-%}
-
 \usepackage{perpage}
 \MakePerPage{footnote}
 
@@ -133,7 +126,7 @@ There is also a process called
 called calculating the
 ``\href{http://mathworld.wolfram.com/DigitalRoot.html}{digital root}''
 for a number where you take its ``digital sum''. 9
-plays a special role in all these processes - so within these contexts sometimes 9
+plays a similar role in all these processes - so within these contexts sometimes 9
 is referred to as a magic-number.
 
 So Mr. S's musical-math-lesson is legit, if indeed he is referring to this fact about 9:
@@ -157,7 +150,7 @@ Check the ``\href{https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmeti
 Theorem of Arithmetic}'' wiki page for further insight.}
 but 3 does (67 times).
 We can see that adding up the digits of 201 gives us 3,
-which of course is divisible by 3 but not by 9.
+which of course is divisible by 3 (but not by 9).
 
 %Let's quickly review what it means for a number to be divisable 
 %by another number.  Recall the ``Euclidean Division Theorem'' which says the following:
@@ -182,27 +175,12 @@ which of course is divisible by 3 but not by 9.
 %
 %So to say that a number $a$ is divisible by $b$ simply means that $r$ is zero.
 
-In general, to say an integer $a$ is divisible by another integer $b\ne0$ means
-there is a third integer $c$ such that:
-\[a=b\cdot{}c\]
-We express the fact that $b$ is a divisor of $a$, or that 
-``$b$ divides $a$'' with this notation:
-\[b\big|a\]
-So the following is always true:
-%\[1\big|a\text{, and }a\big|a\]
-\[1\big|a,\text{\hspace{1em}and\hspace{1em}}a\big|a\]
-
-\[a\mid{}b, a\big|b, a\hspace{-4pt}\not\bigm|b, {a}\not\big|\hspace{2pt} b\]
-
-\[a \not\hspace{2pt} \bigm| b \]
-
-\[a\mid{}b, a\nmid{}b \]
-
 So given that the term ``magic number'' hasn't got
-a formal definition in the math world, I think it's time to give it one!
-How about if we call ANY number that behaves like 3 and 9 a magic-number?
-After all both ``Schoolhouse Rock'' AND ``The School of Rock'' sanction the usage -
-so we may be on to something big here.
+a formal definition in the math world, I think it's time to give it one.
+How about if we call ANY number that has qualities like 3 and 9 (as 
+described above) a magic-number?
+After all both ``Schoolhouse Rock'' AND ``The School of Rock'' sanction using
+``magic number'' for 3 and 9, so we may be on to something big here!
 
 Too bad 3 and 9 are the only magic-numbers\dots{} wait for it \dots{}in base-10.
 We happen to use base-10 because we have ten fingers\footnote{To be honest, base-10 is
@@ -211,7 +189,7 @@ not ``universal'' among humans, there are plenty of
 as widely used nor well defined in the modern world as base-10. This doesn't count
 octal, hexadecimal and binary which are used in the computer world
 so by necessity are, mathematically speaking, very well defined.} but what about other bases?
-The heptapods in ``Arrival'' have seven legs with seven fingers each,
+The heptapods in ``Arrival'' have seven arms/legs with seven fingers each,
 so I'll be dollars to donuts they use base-49.
 
 Let's examine some magic-numbers in other bases.
@@ -219,9 +197,8 @@ Let's examine some magic-numbers in other bases.
 In the way that 9 is a magic-number in base-10, then 7 is a magic-number in base-8.
 Also 4 is a magic-number in base-5;
 15 is a magic-number in base-16;
-\dots{}and 30 is a magic-number in base-31.
-
-Here are examples\footnote{We are going to use the conventions for specifying
+\dots{}and 30 is a magic-number in base-31, as you can see with these
+examples\footnote{We are going to use the conventions for specifying
 numbers in alternate bases as outlined in the paper ``Sesame~Street++''.}:
 \begin{itemize}
 \item $7\times{}7=49$ written in base-8 is $(61)_8$ and $6+1=7$.
@@ -231,14 +208,18 @@ numbers in alternate bases as outlined in the paper ``Sesame~Street++''.}:
 \item $30\times{}35951=1078530$ written in base-31 is $(15699)_{31}$ and $1+5+6+9+9=30$
 \end{itemize}
 
-You may notice a pattern: the biggest ``digit'' in any base (which is always one less than the base) seems to
+You may notice a pattern: the biggest ``digit'' in any base
+(which is always one less than the base) seems to
 qualify as a magic-number.
 Using our examples, 9 is the biggest
-digit in base-10; 7 is the biggest digit in base-8; and 4 is the biggest digit in base-5.  To write this out in a general way
+digit in base-10; 7 is the biggest digit in base-8; and 4 is the biggest digit in base-5.
+To write this out in a general way
 we would say that if $b$ is our base, then $(b-1)$ is a magic-number in base-$b$.
 
-So what about 3 also being a magic-number in base-10?  Let's take a look at the interesting (but probably never used outside this paper) base-31.
-It appears that 2, 3, 5, 6, 10, 15 (along with 30) are \emph{all} magic-numbers in base-31, as we we can see
+So what about 3 also being a magic-number in base-10?
+Let's take a look at the interesting (but probably never used outside this paper) base-31.
+It appears that 2, 3, 5, 6, 10, 15 (along with 30)
+are \emph{all} magic-numbers in base-31, as we we can see
 with the following examples:
 \begin{itemize}
 \item $2\times{}13\times{}37=962$ written in base-31 is $(101)_{31}$ and $1+0+1=2$.
@@ -257,8 +238,10 @@ Since we already know that all numbers are divisible by 1,
 then we don't need to go to any trouble of adding up digits to find this out.
 So let's exclude 1 from being considered as a magic-number - it's not helpful.
 
-So let's come up with a nice formal definition for a ``magic number''. But first we need to remind ourselves exactly
-what it means to write a number in a given base - as described in the paper ``SesameStreet++'':
+So let's come up with a nice formal definition for a ``magic number''.
+But first we need to remind ourselves exactly
+what it means to write a number in a given base - as described in
+much greater detail in the paper ``SesameStreet++'':
 
 \section*{Basis Representation Theorem}
 \begin{jprIn}
@@ -274,20 +257,35 @@ where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
 Definition: $n$ is represented in base-$b$ by the string
 of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
 \end{jprIn}
-
 \bigskip
-With that theorem we have a precise description of what it means to represent an integer in some base.
 
-
-Here's our
-proposed theorem and associated definition for ``magic number'':
+Let's also add some useful notation to our discussion.
+In general, to say an integer $a$ is divisible by another integer $b$
+(not zero) means there is a third integer $c$ such that\footnote{``An
+Introduction to the Theory of Numbers" by G. H. Hardy and E. M. Wright. Pg 1.}:
+\[a=b\cdot{}c\]
+We express the fact that $a$ is divisible by $b$, and say
+``$b$ divides $a$'' using this notation:
+\[b\mid{}a\]
+So the following is always true:
+\[1\mid{}a,
+\text{\hspace{0.5em}and\hspace{0.5em}}a\mid{}a;\]
+also
+\[b\mid{}0\text{ for every }b\text{ except }0\]
+%We also might use the following symbol to say that ``$b$ does not divide $a$'',
+%\[b\nmid{}a\]
+%
+So given the Basis-Representation-Theorem and our new notation for divisability
+then here's our
+proposed theorem and definition for ``magic number''\footnote{Recall that
+the double-arrow, that is $\Leftrightarrow$, should be read as ``if and only if''.}:
 
 \section*{Magic Number Theorem}
 \begin{jprIn}
 Let $n$ be a positive integer represented in base-$b$.
 
-If $m$ is an integer such that $m\big|(b-1)$ then,
-\[m\big|n \Leftrightarrow m\big|(d_k+\dots+d_2+d_1+d_0)\]
+If $m$ is an integer such that $m\mid{}(b-1)$ then,
+\[m\mid{}n \Leftrightarrow m\mid{}(d_k+\dots+d_2+d_1+d_0)\]
 Definition: We call $m\ne1$ a ``magic-number'' in base-$b$.
 \end{jprIn}
 \bigskip
@@ -296,12 +294,11 @@ As an interesting side note - according to our definition, binary,
 or base-2, doesn't have a magic-number.
 No great loss, as we said above 1 isn't helpful to consider as a magic-number. 
 
-Let's look at the definition of a number represented in a given base.
+Let's prove the theorem. The proof is quite easy when we introduce 
+the powerful tool of modular arithmetic.
 
-...wip
-break down what a number is (refer to baseTheorem paper) and explain motivation for mod
-
-We assume the following properties of modular arithmetic where a,b,c ? Zsuch that c>1.
+We assume the following properties of modular arithmetic where $a,b$ and $c$ are
+integers such that $c>1$.
 
 (a+b) mod c=(a mod c+b mod c) mod c
 ab mod c=((a mod c)(b mod c)) mod c
