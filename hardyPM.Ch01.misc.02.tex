@@ -126,7 +126,7 @@ a_1 + \frac{a_2}{1\cdot{}2}
 \egroup
 }
 
-where $a_1, a_2, \dots{}, a_k$ are integers, and
+where \(a_1, a_2, \dots{}, a_k\) are integers, and
 
 \begin{center}
 \(0\le{}a_1,\quad 0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0<a_k<k\)
@@ -145,7 +145,7 @@ where $a_1, a_2, \dots{}, a_k$ are integers, and
 }
 \section*{Proof of Lemma-1}
 
-This equality is fairly trivial to demonstrate by induction, since $\frac{1}{2!} = \frac{2!-1}{2!}$ and, 
+This equality is fairly trivial to demonstrate by induction, since \(\frac{1}{2!} = \frac{2!-1}{2!}\) and, 
 {\footnotesize
 \begin{alignat*}{1}
   &\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-2}{(k-1)!} + \frac{k-1}{k!}\\
@@ -155,11 +155,11 @@ This equality is fairly trivial to demonstrate by induction, since $\frac{1}{2!}
   =\  &\frac{k!-1}{k!}
 \end{alignat*}
 }
-\dots{}thus establishing lemma-1 for all values of k.
+\dots{}thus establishing lemma-1 for all values of k. QED
 
 \section*{Lemma-2}
 
-For integers $i,k$ where $2\le{}i<k$ such that,
+For integers \(i,k\) where \(2\le{}i<k\) such that,
 {\small
 \bgroup                                  %% open the group
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
@@ -208,66 +208,93 @@ then
 
 The set of rational numbers,
 
-\centerline{$\mathcal{S} = \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\enspace\mid\enspace 
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}
+\begin{center}
+\begin{equation*}
+\mathcal{S} = \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\enspace\mid\enspace 
 0\! \le{}\! a_2\! <\! 2,\enspace 
 0\! \le{}\! a_3\! <\! 3,\enspace 
-\dots{},\enspace 0\! \le{}\! a_k\! <\! k\}$,}
-\bigskip
-is identical to the set of rational numbers,\newline
+\dots{},\enspace 0\! \le{}\! a_k\! <\! k\}
+\end{equation*}
+\end{center}
+\egroup
+}
 
-\centerline{$\mathcal{F} = \{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}$}
+is identical to the set of rational numbers,
+
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}
+\begin{center}
+\begin{equation*}
+\mathcal{F} = \{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}
+\end{equation*}
+\end{center}
+\egroup
+}
 
 \section*{Proof of Lemma-3}
 
-Now we make note of the fact that the smallest member of the set $\mathcal{S}$ 
-occurs when all the coefficients of the sum are zero, i.e.; $\frac{0}{k!}$.
-Furthermore, the largest member of the set occurs when all the coefficients are set to
-their maximum value, which we have just seen gives us $\frac{k!-1}{k!}$.
+The smallest member of the set \(\mathcal{S}\) 
+is \(\frac{0}{k!}\) and
+occurs when all the coefficients of the sum are zero.
+Furthermore, the largest member of the set occurs when all the coefficients of the sum are set to
+their maximum value, which adds up to \(\frac{k!-1}{k!}\) as shown in lemma-1.
 
-We also note that every members of $\mathcal{S}$ can be written as a rational number
-with $k!$ as the denominator, like so:\newline
+We also note that every member of \(\mathcal{S}\) can be written as a rational number
+with \(k!\) as the denominator, like so,
 
-\centerline{$\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}
+{\footnotesize
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}
+\begin{center}
+\begin{equation*}
+\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_{k-1}}{(k-1)!} + \frac{a_k}{k!}
 = \frac{k\cdot{}(k-1)\cdot{}\cdot{}\cdot{}3\cdot{}a_2}{k!}
 + \frac{k\cdot{}(k-1)\cdot{}\cdot{}\cdot{}4\cdot{}a_2}{k!}
 + \dots{}
-+ \frac{a_k}{k!}$}
++ \frac{k\cdot{}a_{k-1}}{k!}
++ \frac{a_k}{k!}
+\end{equation*}
+\end{center}
+\egroup
+}
 
-Also when $i<k$ such that,
+Furthermore, each possible assignment of values to the coefficients of
+\(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
+produce a unique member of the set \(\mathcal{S}\).
 
-\[\frac{1}{2!} + \frac{2}{3!}
-+ \dots{}
-+ \frac{i-1}{i!}
-+ \frac{i}{(i+1)!}
-+ \dots{}
-+ \frac{k-1}{k!}
-\]
+For this weren't true and both
+\(\frac{p}{k!} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) and
+\(\frac{p}{k!} = \frac{b_2}{2!} + \frac{b_3}{3!} + \dots{} + \frac{b_k}{k!}\)
+for different coefficients \(a_2, a_3, \dots{}, a_k\)
+and \(b_2, b_3, \dots{}, b_k\), then we can arrive at a contradiction as follows.
 
-Then we can conclude that,
+First suppose that \(a_i\ne{}b_i\) is the first such pair of coefficients
+that differ from each other. In other words, \(a_2=b_2, a_3=b_3, \dots{}, a_{i-1}=b_{i-1}\).
+Also, without loss of generality we can assume that \(a_i > b_i\) and state the following equality:
 
-\[\frac{1}{i!} - \frac{1}{k!}
-= \frac{i}{(i+1)!}
-+ \dots{}
-+ \frac{k-1}{k!}
-\]
+{\normalsize
+\bgroup
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\begin{alignat*}{3}
+  &&\frac{a_i}{i!} + \frac{a_{i+1}}{(i+1)!} + \dots{} + \frac{a_k}{k!}
+  &= \frac{b_i}{i!} + \frac{b_{i+1}}{(i+1)!} + \dots{} + \frac{b_k}{k!}\\
+  &\Leftrightarrow\quad &\frac{a_i - b_i}{i!}
+  &= \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}
+\end{alignat*}
+\egroup
+}%\vspace{-4mm}
 
-Because,
-
-From here we can deduce that any assignment
-of values to the coefficients of a member of $\mathcal{S}$ produces a unique member
-of the set, for if it didn't and
-$\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}$ is not uniquely 
-determined by the coefficients
-$a_2, a_3, \dots{}, a_k$. That is, suppose there is a second DIFFERENT sequence of coefficients
-$b_2, b_3, \dots{}, b_k$ such that
-$\frac{p}{q} = \frac{b_2}{2!} + \frac{b_3}{3!} + \dots{} + \frac{b_k}{k!}$.
-
-The number of values that the coefficient $a_2$ can assume is 2, $a_3$ can take on 3 values, \dots{},
-up to $a_k$ which can take on $k$ values. So the total number of combinations of values
-that can be assigned to all the coefficients is $2\cdot{}3\cdot{}4\cdot\dots{}\cdot{}k = k!\,$.
+The number of values that the coefficient \(a_2\) can assume is 2, \(a_3\) can take on 3 values, \dots{},
+up to \(a_k\) which can take on \(k\) values. So the total number of combinations of values
+that can be assigned to all the coefficients is \(2\cdot{}3\cdot{}4\cdot\dots{}\cdot{}k = k!\,\).
 
 
 
-The size of $\mathcal{F}$ is clearly $k!$
+The size of \(\mathcal{F}\) is clearly \(k!\)
 
 \end{document}
