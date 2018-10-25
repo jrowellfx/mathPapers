@@ -108,7 +108,7 @@ The theorem feels like what the `\href {https://www.dropbox.com/s/bwmrffmkcidnf2
 {basis-representation-theorem}'
 is for integers, but for rational numbers \dots{} beautiful!
 
-\section*{Factorial Representation Theorem\footnote{...it's not named in the text, so I named the theorem.}}
+\section*{Factorial Representation Theorem\footnote{The theorem is not named in the text, so I named it.}}
 
 Any positive rational number can be expressed in one and only one way in the form
 {\small
@@ -138,6 +138,10 @@ where \(a_1, a_2, \dots{}, a_k\) are integers, and
 % The first thing to note are the ranges of the integers \(a_1, a_2, a_3, \dots{}, a_k\).
 
 % The first one, \(a_1\), is just a plain-old non-negative integer.
+
+The crux of the problem seems to be showing that every rational number has such a representation.
+Proving the uniqueness part doesn't seem as daunting. Here are some thoughts that pointed me in
+a certain direction that led me to the proof below.
 
 We know that any rational number\footnote{Every variable,
 or constant (eg. \(a_1, a_k, m, n, i, p, q\)) in this
@@ -182,17 +186,20 @@ restriction by allowing \(a_k\) to be equal to zero so that
 all the variables are treated the same. At the very end of the
 proof it's trivial to reintroduce that restriction on the integer \(a_k\).}.
 
-At first glance it wasn't remotely obvious to me how I'd go about calculating
+At first, it wasn't remotely obvious to me how I'd go about calculating
 the values of the integers \(a_2, a_3, \dots{}, a_k\) for a given rational number
-\(\frac{p}{q}\), where
-\(0 \le{} \frac{p}{q} < 1\),
+\(\frac{p}{q}\)
+(where
+\(0 \le{} \frac{p}{q} < 1\))
 let alone that it would be unique.
 
 After playing around for a while, and finally figuring out
 a way to calculate the variables \(a_2, a_3, \dots{}, a_k\)
-for a given rational number \(\frac{p}{q}\), (it's kinda like doing long-division)
+for a given rational number,
+% \(\frac{p}{q}\),
+(it's kinda like doing long-division)
 a few thing started to jump out at me.
-For example, look at these rational numbers,
+For example, look at these numbers,
 
 {\small
 \bgroup
@@ -226,8 +233,8 @@ An obvious pattern has emerged!
 It seems to be the case
 that if we assign the largest possible values to the variables,
 from \(a_2\) up to say \(a_k\) (with all subsequent variables being zero)
-we get this rational number, \(\frac{k!-1}{k!}\).
-This number is as close to 1 as you can get with a denominator of \(k!\) without actually
+we get the rational number \(\frac{k!-1}{k!}\),
+which is as close to 1 as you can get with a denominator of \(k!\) without actually
 hitting 1. (What happens if you add \(\frac{1}{k!}\) to \(\frac{k!-1}{k!}\)?)
 This turned out to be
 a pretty useful observation, and it became my `Lemma 1' in the proof below.
@@ -252,7 +259,8 @@ gives us \(2\cdot{}3\cdot{}4\cdot{}\cdot{}\cdot{}k = k!\) possible different sum
 
 Hmmmmm, the following set has \(k!\) members,
 \(\{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}\).
-This set contains each of the rational numbers between zero and one with
+With a little algebraic tinkering we can see that
+this set contains each of the rational numbers between zero and one with
 denominators from 2 up to \(k\), so if we let \(k\) grow without bound
 then we should get a set that contains all the rational numbers between zero and one.
 
@@ -265,7 +273,7 @@ to find out, go ahead and read the rest of the paper!
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
 \begin{center}
 \begin{equation*}
-\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-1}{k!} = \frac{k!-1}{k!},\quad \text{for integer } k \ge{} 2
+\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-1}{k!} = \frac{k!-1}{k!},\quad \text{for all integers } k \ge{} 2
 \end{equation*}
 \end{center}
 \egroup
@@ -285,11 +293,11 @@ This equality is straightforward to demonstrate by induction, since \(\frac{1}{2
 \dots{}thus establishing Lemma 1 for all values of \(k \ge 2\).\qquad QED.
 
 \bigskip
-The following Lemma 2 captures an idea that is best described by analogy to the basis representation
+The following lemma captures an idea that is perhaps most easily grasped by analogy to the basis representation
 theorem for integers. For base-ten numbers we can say,
 
 \begin{center}
-{\small\(1\cdot{}10^k >
+{\footnotesize\(1\cdot{}10^k >
 9\cdot{}10^{k-1}
 + 9\cdot{}10^{k-2}
 + \dots{}
@@ -301,14 +309,15 @@ theorem for integers. For base-ten numbers we can say,
 
 The above inequality 
 is merely stating that any single power of ten is bigger than the sum of
-every lower power of ten each times 9.  For example, 1000 is bigger than 999.
+every smaller power of ten, each times 9.  For example, 1000 is bigger than 999.
 Read the statement of the inequality in Lemma 2 with this idea in mind.
+
 
 \section*{Lemma 2}
 
 For integers \(i,k\) where \(2\le{}i<k\),
 
-{\small
+{\footnotesize
 \bgroup                                  %% open the group
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
 \begin{center}
@@ -324,25 +333,20 @@ For integers \(i,k\) where \(2\le{}i<k\),
 \egroup
 }
 \subsubsection*{Proof}
-{\small
+{\footnotesize
 \bgroup
 \setlength{\abovedisplayskip}{0pt}
-\setlength{\belowdisplayskip}{0pt}
-\begin{alignat*}{2}
+\begin{align*}
   &\frac{i}{(i+1)!} + \frac{i+1}{(i+2)!} + \dots{} + \frac{k-2}{(k-1)!} + \frac{k-1}{k!}\\
   =\  &(\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-1}{k!})
-  - (\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{i-1}{i!})\quad&\\
-  =\  &\frac{k!-1}{k!} - \frac{i!-1}{i!} \text{\qquad \qquad \qquad (by Lemma 1)}\\
+  - (\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{i-1}{i!})\\
+  =\  &\frac{k!-1}{k!} - \frac{i!-1}{i!}\qquad \qquad \text{(by Lemma 1)}\\
   =\  &\frac{k!}{k!} - \frac{1}{k!} - \frac{i!}{i!} + \frac{1}{i!}\\
   =\  &\frac{1}{i!} - \frac{1}{k!}\\
-  <\  &\frac{1}{i!}
-\end{alignat*}
+  <\  &\frac{1}{i!} \qquad \qquad \qquad \qquad \qquad \text{QED.}
+\end{align*}
 \egroup
 }
-%}\vspace{-4mm}
-\begin{center}
-QED.
-\end{center}
 
 \section*{Definitions}
 
@@ -422,7 +426,9 @@ Therefore any member of the set \(\mathcal{S}_k\) can be written as
 \setlength{\abovedisplayskip}{0pt}
 \begin{center}
 \begin{equation*}
-0 = \frac{0}{k!} \le{} \frac{p}{k!} \le{} \frac{k!-1}{k!} < \frac{k!}{k!} = 1
+0 = \frac{0}{k!} \le{} \frac{p}{k!} \le{} \frac{k!-1}{k!} < \frac{k!}{k!} = 1,
+\text{\quad hence,\quad}
+0 \le{} \frac{p}{k!} < 1
 \end{equation*}
 \end{center}
 \egroup
@@ -478,15 +484,21 @@ But \(a_i - b_i \ge{} 1\), so
 \(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!}\).
 \end{center}
 
-Furthermore, examining any single term on the right-side of \eqref{eqn1}, say
-the first one \(\frac{b_{i+1} - a_{i+1}}{(i+1)!}\), we can see that since
+In the case that \(i = k\) we get an immediate contradiction because 
+equation \eqref{eqn1} tells us that \(\frac{a_i - b_i}{i!} = 0\) which is
+clearly false.
+
+So let's carry on assuming that \(i < k\) and examine
+one of the terms
+on the right-side of \eqref{eqn1}, say
+the first one \(\frac{b_{i+1} - a_{i+1}}{(i+1)!}\). We can see that since
 \(0 \le b_{i+1} \le{} i\) and \(0 \le a_{i+1} \le{} i\) that,
 
 \begin{center}
 \(\frac{i - 0}{(i+1)!} \ge{} \frac{b_{i+1} - a_{i+1}}{(i+1)!}\),
 \end{center}
 
-and hence,
+and hence by extension to the other terms,
 
 \begin{center}
 \(
@@ -579,16 +591,35 @@ QED.
 \setlength{\abovedisplayskip}{0pt}
 \begin{center}
 \begin{gather*}
-\mathcal{S}_\infty = \lim_{n \to \infty}\mathcal{S}_n 
-\text{\qquad and \qquad}
 \mathcal{F}_\infty = \lim_{n \to \infty}\mathcal{F}_n
+\text{\qquad and \qquad}
+\mathcal{S}_\infty = \lim_{n \to \infty}\mathcal{S}_n 
 \end{gather*}
 \end{center}
 \egroup
 }
 
+
+To define what it means to be a member of \(\mathcal{F}_\infty\) we observe that
+for all integers \(k \ge{} 2, \mathcal{F}_k \subset \mathcal{F}_{k+1}\) because if
+\(\frac{p}{k!} \in \mathcal{F}_k\)
+then \(\frac{(k+1)\cdot{}p}{(k+1)\cdot{}k!} = \frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1}\).
+
+By induction it is straightforward to conclude that
+\(\mathcal{F}_2
+\subset \mathcal{F}_3
+\subset \mathcal{F}_4
+\subset \dots{}
+\subset \mathcal{F}_{n-1}
+\subset \mathcal{F}_n
+\), for all \(n \ge{} 2\),
+therefore \(\mathcal{F}_k \subset \mathcal{F}_{\infty}\) for all \(k \ge{} 2\).
+
 \(a \in \mathcal{F}_\infty\) means that there exists an integer \(k \ge 2\) such that
-\(a \in \mathcal{F}_k\). Similarly for \(a \in \mathcal{S}_\infty\).
+\(a \in \mathcal{F}_k\) which carries with it the idea that it is
+also a member of every larger set \(\mathcal{F}_{k+1}, \mathcal{F}_{k+2}, \dots{}\)
+
+We define \(a \in \mathcal{S}_\infty\) in a similar way. (ELFS\footnote{Exercise Left For Student.})
 
 \section*{Lemma 4}
 
@@ -596,23 +627,11 @@ The set \(\mathcal{F}_\infty\) contains all non-negative rational numbers less t
 
 \subsubsection*{Proof}
 
-For all integers \(k \ge{} 2, \mathcal{F}_k \subset \mathcal{F}_{k+1}\) because if
-\(\frac{p}{k!} \in \mathcal{F}_k\)
-then \(\frac{(k+1)\cdot{}p}{(k+1)\cdot{}k!} = \frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1}\).
-By induction it is simple to conclude that
-\(\mathcal{F}_k
-\subset \mathcal{F}_{k+1}
-\subset \mathcal{F}_{k+2}
-\subset \dots{}
-\subset \mathcal{F}_n
-\), for all \(n > k\),
-and ultimately \(\mathcal{F}_k \subset \mathcal{F}_{\infty}\) for all \(k \ge{} 2\).
-
 % p/k is in Fk - therefor p/k is in Finf for all k. Therefor all rational numbers are in Finf.
 
 If \(\frac{p}{k}\) is a rational number where
-\(0\le{}\frac{p}{k}<1\)
-then \(\frac{p}{k} \in{} \mathcal{S}_k\) because,
+\(0\le{}\frac{p}{k}<1\) and \(k \ge{} 2\)
+then \(\frac{p}{k} \in{} \mathcal{F}_k\) because,
 
 {\small
 \bgroup                                  %% open the group
@@ -628,9 +647,9 @@ then \(\frac{p}{k} \in{} \mathcal{S}_k\) because,
 Therefore \(\frac{p}{k}\) is an element of \(\mathcal{F}_k\), hence an element of \(\mathcal{F}_\infty\)
 for all integers \(k \ge{} 2\).
 
-To summarize; All rational numbers \(\frac{p}{k}\) where \(k \ge{} 2\) and \(0 \le{} \frac{p}{k} < 1\) are in
-the set \(\mathcal{F}_{\infty}\)
-
+% To summarize; All rational numbers \(\frac{p}{k}\) where \(k \ge{} 2\) and \(0 \le{} \frac{p}{k} < 1\) are in
+% the set \(\mathcal{F}_{\infty}\)
+% 
 QED.
 
 \section*{Lemma 5}
@@ -656,7 +675,7 @@ where \(a_2, \dots{}, a_k\) are integers, and
 
 {\small
 \begin{center}
-\(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0<{}a_k<k\)
+\(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0<a_k<k\)
 \end{center}
 }
 
@@ -665,13 +684,56 @@ where \(a_2, \dots{}, a_k\) are integers, and
 Suppose \(\frac{p}{q}\) is a positive rational number less than one. We note that its 
 denominator is at least 2, so by Lemma 4 we can say that
 \(\frac{p}{q} \in \mathcal{F}_\infty\), and Lemma 3 tells us that
-\(\mathcal{S}_k = \mathcal{F}_k\) for all \(k \ge 2\), then \(\frac{p}{q} \in \mathcal{S}_\infty\).
+\(\mathcal{S}_k = \mathcal{F}_k\) for all \(k \ge 2\), therefore \(\frac{p}{q} \in \mathcal{S}_\infty\).
 
-From this we can conclude that there is a unique sequence of variables 
+So \(\frac{p}{q} \in \mathcal{S}_n\) for some \(n \ge 2\) and the following
+expression is \emph{unique} to \(\frac{p}{q}\) among all positive rational numbers less than one,
+
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
+\begin{center}
+\begin{equation}\label{eqn2}
+\frac{p}{q} = \frac{a_2}{2!}
++ \frac{a_3}{3!}
++ \dots{}
++ \frac{a_n}{n!},
+\end{equation}
+\end{center}
+\egroup
+}
+
+where \(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0 \le{} a_n < n\).
+
+We note that there must be at least one non-zero term in equation \eqref{eqn2} otherwise
+the sum would be zero, and we've specified that \(\frac{p}{q}\) is positive.
+
+Choose \(k\) such that \(a_k \ne{} 0 \) but \(a_{k+1} =
+a_{k+2} =
+a_{k+3} =
+\dots{} = 
+a_{n-1} =
+a_{n} = 0\). Therefore we can rewrite equation \eqref{eqn2},
+
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
+\begin{center}
+\begin{equation*}
+\frac{p}{q} = \frac{a_2}{2!}
++ \frac{a_3}{3!}
++ \dots{}
++ \frac{a_k}{k!},
+\end{equation*}
+\end{center}
+\egroup
+}
+
+where \(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0 < a_k < n\).
 
 QED.
 
-\section*{Factorial Representation Theorem (restated)}
+\section*{Factorial Representation Theorem (finally!)}
 
 Any positive rational number can be expressed in one and only one way in the form
 
@@ -716,39 +778,32 @@ Which tells us that all positive rational numbers \(\frac{j}{q}\) can be
 written as
 an integer part, \(i\), plus a fractional part \(\frac{p}{q}\), where \(0\le{}\frac{p}{q}<1\).
 
-In our theorem, the \(a_1\) variable plays the role of the integer part \(i\),
-and the rest of the expression, \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-plays the role of the fractional part \(\frac{p}{q}\), where \(0\le{}\frac{p}{q}<1\).
+% In our theorem, the \(a_1\) variable plays the role of the integer part \(i\),
+% and the rest of the expression, \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
+% plays the role of the fractional part \(\frac{p}{q}\), where \(0\le{}\frac{p}{q}<1\).
 
-Therefore to express any positive rational number in the form of the theorem, first apply the
-Euclidean Division Theorem to \(\frac{j}{q}\) and let \(a_1 = i\). If there is no fractional remainder, then
-the theorem is trivially true,
-however if there is a fractional remainder \(\frac{p}{q}\), then 
+Apply the Euclidean Division Theorem to \(\frac{j}{q}\) and let \(a_1 = i\). If there is no fractional remainder, then
+the theorem has been proven.
+
+However if there is a fractional remainder \(\frac{p}{q}\), then 
 by Lemma 5 we know that the sum \(\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) is
 uniquely associated
 with \(\frac{p}{q}\)
 so clearly \(\frac{j}{q} = a_1 + \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
 is uniquely associated with all positive rational numbers \(\frac{j}{q}\).
 
-To meet the precise requirements of the theorem, we 
-suppose that if \(\frac{p}{q} \in{} \mathcal{S}_n\) for some \(n \ge{} q\)
-that we take
-for the variables \(a_2, a_3, \dots{}, a_k\) in the sum for \(\frac{p}{q} \in{} \mathcal{S}_n\)
-all those for which \(a_k \ne{} 0\) but \(a_{k+1} = a_{k+2} = \dots{} = a_n = 0\).
-
 QED.
 
 \section*{Additional Observations}
 
-While it's true that \(\frac{p}{q} \in{} \mathcal{S}_q\), \(\mathcal{S}_q\) is not necessarily 
+We're guaranteed that \(\frac{p}{q} \in{} \mathcal{S}_q\), but \(\mathcal{S}_q\) is not necessarily 
 the smallest such set for which \(\frac{p}{q}\) is a member.
 
 For example,
 the smallest set containing \(\frac{p}{5}\), where \(0 \le{} \frac{p}{5} < 1\), is \(\mathcal{S}_5\)
 however
-the smallest set containing \(\frac{p}{6}\), where \(0 \le{} \frac{p}{6} < 1\) is \(\mathcal{S}_3\).
-
-Which is easy to see when we list the contents of a couple of sets,
+the smallest set containing \(\frac{p}{6}\), where \(0 \le{} \frac{p}{6} < 1\) is \(\mathcal{S}_3\),
+which is easy to see when we list the contents of a couple of sets,
 %  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 20, 21, 22, 23
 % 24, 24, ...
 %  1   1   1   1   5   1   7   1   3   5  11   1  13   7   5   2  17   3  19  5   7  11  23
@@ -814,8 +869,8 @@ Which is easy to see when we list the contents of a couple of sets,
 \egroup
 }
 
-Which clearly doesn't contain \(\frac{1}{5}\). We've established
-that \(\frac{1}{5}\) is definitely in \(\mathcal{S}_5\) but it's interesting to see what it looks like:
+By examination \(\mathcal{S}_4\) doesn't contain \(\frac{1}{5}\), but it's
+definitely in \(\mathcal{S}_5\) because,
 
 {\small
 \bgroup                                  %% open the group
@@ -846,15 +901,17 @@ Also, \(
 \frac{ 4}{6},
 \frac{ 5}{6}
 \}
-= \{
-\frac{ 0}{6},
-\frac{ 1}{6},
-\frac{ 1}{3},
-\frac{ 1}{2},
-\frac{ 2}{3},
-\frac{ 5}{6}
-\}
-\), which demonstrates the claim above that \(\mathcal{S}_3\) contains \(\frac{p}{6}\), where \(0 \le{} \frac{p}{6} < 1\).
+% = \{
+% \frac{ 0}{6},
+% \frac{ 1}{6},
+% \frac{ 1}{3},
+% \frac{ 1}{2},
+% \frac{ 2}{3},
+% \frac{ 5}{6}
+% \}
+\),
+which demonstrates the claim that \(\mathcal{S}_3\)
+contains \(\frac{p}{6}\),\newline where \(0 \le{} \frac{p}{6} < 1\).
 
 I believe that for a given \(q \ge 2\) then the smallest set for which the rational number
 \(\frac{p}{q} \in \mathcal{S}_k\),
