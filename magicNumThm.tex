@@ -158,21 +158,21 @@ with the following examples:
 \item $15\times{}71503=1072545$ written in base-31 is $(15027)_{31}$ and $1+5+0+2+7=15$.
 \end{itemize}
 
-See the pattern? All the divisors of the 30 are \emph{also} magic-numbers in base-31.
+See the pattern? All the divisors of 30 are magic-numbers in base-31.
 It turns out that in base-$b$, then any divisor of $(b-1)$ is a magic-number in base-$b$.
 
 I guess that begs the question: What about 1? Isn't 1 a magic-number in all bases?
 Since we already know that all numbers are divisible by 1,
 then we don't need to go to any trouble of adding up digits to find this out.
-So let's exclude 1 from being considered as a magic-number is it's not helpful information.
+So let's exclude 1 from being considered as a magic-number - it's not helpful.
 
 \section*{Magic Number Theorem}
 \begin{jprIn}
-Let $b, m, n\in\mathbb{Z}$ such that $b\ge2$ and $m\big|(b-1)$,
-\[\forall{}\;n\text{ such that }n=d_kb^k+\dots+d_2b^2+d_1b^1+d_0b^0\text{ where }0\le{}d_i\le(b-1)\]
-then
+Let $b, m, n\in\mathbb{Z}$ such that $b\ge2$ and $m\big|(b-1)$.
+
+If $n=d_kb^k+\dots+d_2b^2+d_1b^1+d_0b^0$, $d_i\in\mathbb{Z}: 0\le{}d_i\le(b-1)\ \forall{}\ i\in\{0,1,\dots{}k\}$ then
 \[m\big|n \Leftrightarrow m\big|(d_k+\dots+d_2+d_1+d_0)\]
-and $m\ne1$ is called a ``magic-number'' in base-$b$.
+Definition: $m\ne1$ is called a ``magic-number'' in base-$b$.
 \end{jprIn}
 \bigskip
 
