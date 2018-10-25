@@ -92,13 +92,13 @@
 \date{} % Activate to display a given date or no date (if empty), otherwise the current date is printed 
 \begin{document}
 \maketitle
-\begin{em}
-\centerline{\small{}From `A Course of Pure Mathematics' by G. H. Hardy. Chapter 1, Miscellaneous Examples.}
+% \begin{em}
+% \centerline{\small{}From `A Course of Pure Mathematics' by G. H. Hardy. Chapter 1, Miscellaneous Examples.}
 %\par
 %\setlength{\parskip}{0pt}
-\end{em}
+% \end{em}
 %\normalsize
-\bigskip
+% \bigskip
 
 Miscellaneous example\footnote{Hardy doesn't call them `Exercises' or `Questions', but that's what they
 are, math exercises for the student.} \#2 at the end
@@ -133,17 +133,18 @@ where \(a_1, a_2, \dots{}, a_k\) are integers, and
 \end{center}
 }
 
-\section*{Observations that led to the proof.}
+\section*{Observations that led me to the proof.}
 
 % The first thing to note are the ranges of the integers \(a_1, a_2, a_3, \dots{}, a_k\).
 
 % The first one, \(a_1\), is just a plain-old non-negative integer.
 
-The crux of the problem seemed to be showing that \emph{every} rational number has such a representation -
-Proving uniqueness didn't seem as daunting. Here are some thoughts that pointed me in
+% The crux of the problem seemed to be showing that \emph{every} rational number has such a representation -
+% Proving uniqueness didn't seem as daunting.
+Here are some thoughts that pointed me in
 a certain direction that led me to the proof below.
 
-We know that any rational number\footnote{Every variable,
+We know that any positive rational number\footnote{Every variable,
 or constant (eg. \(a_1, a_k, m, n, i, p, q\)) in this
 paper is going to represent a non-negative integer. We aren't dealing with `real numbers' here, just
 non-negative rational numbers which we will always discuss in terms of one integer divided
@@ -178,9 +179,10 @@ looks to be playing the role of the rational part, \(\frac{p}{q}\), where,
 It seemed to me a good idea to forget about the integer \(a_1\)
 and just focus on the integers \(a_2, a_3, \dots{}, a_k\).
 In other words,
-prove the theorem for rational numbers \(\frac{p}{q}\),
-where \(0 \le{} \frac{p}{q} < 1\), then it should be simple to extend it to ALL rational numbers
-by tacking the \(a_1\) back on at the end of the proof.
+first prove the theorem for rational numbers \(\frac{p}{q}\),
+where \(0 \le{} \frac{p}{q} < 1\); it should then be simple to extend it to ALL rational numbers
+by dealing with 
+the \(a_1\) later.
 Also, it started to become clear that including zero (that is, not JUST positive rational numbers) was
 going to make things easier with the approach I wanted
 to follow\footnote{Did you notice how the theorem restricts the last integer, \(a_k\), to
@@ -189,7 +191,7 @@ restriction by allowing \(a_k\) to be equal to zero so that
 all the variables are treated the same. At the very end of the
 proof it's easy to reintroduce that restriction on the integer \(a_k\).}.
 
-At first, it wasn't remotely obvious to me how I'd go about calculating
+At first, it wasn't remotely obvious how I'd go about calculating
 the values of the integers \(a_2, a_3, \dots{}, a_k\) for a given rational number
 \(\frac{p}{q}\)
 (where
@@ -201,7 +203,7 @@ a way to calculate the variables \(a_2, a_3, \dots{}, a_k\)
 for a given rational number,
 % \(\frac{p}{q}\),
 (it's kinda like doing long-division)
-a few thing started to jump out at me.
+a few patterns started to jump out at me.
 For example, look at these numbers,
 
 {\small
@@ -232,18 +234,18 @@ For example, look at these numbers,
 \egroup
 }
 
-An obvious pattern has emerged!
-It seems to be the case
-that if we assign the largest possible values to the variables,
-from \(a_2\) up to \(a_k\) (with all subsequent variables being zero)
-we get the rational number \(\frac{k!-1}{k!}\),
-which is as close to 1 as you can get with a denominator of \(k!\) without actually
-hitting 1. (What happens if you add \(\frac{1}{k!}\) to \(\frac{k!-1}{k!}\)?)
+An obvious pattern emerged!
+It seemed 
+that if I assigned the largest possible values to the variables,
+% from \(a_2\) up to \(a_k\) (with all subsequent variables being zero)
+I would get the rational number \(\frac{k!-1}{k!}\),
+which is as close to 1 as one can get with a denominator of \(k!\) without actually
+hitting 1. (What happens if we add \(\frac{1}{k!}\) to \(\frac{k!-1}{k!}\)?)
 This turned out to be
-a pretty useful observation, and it became my `Lemma 1' in the proof below.
+a pretty useful observation, and it became `Lemma 1' in what follows.
 
 Also, if we assign zeros to all the variables then naturally we get \(\frac{0}{k!}\), plus
-it's pretty obvious to figure out how to make the smallest such non-zero rational number \(\frac{1}{k!}\).
+it's pretty obvious to figure out how to make the smallest such non-zero rational number: \(\frac{1}{k!}\).
 Then thinking about continually adding \(\frac{1}{k!}\) to the result, we get an idea about how the
 \(a_i\) variables change as you keep incrementing by \(\frac{1}{k!}\).
 
@@ -251,6 +253,12 @@ So if we restrict ourselves to using only \(a_2, a_3, \dots{}, a_k\), then we
 can generate the smallest rational number (\(\frac{0}{k!}\)) and the largest
 (\(\frac{k!-1}{k!}\)) where
 \(0 \le{} \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} < 1\).
+
+I then realized how easy it was count how many of these things there were. etc....
+
+We have two choices for a2, and three choices for a3 etc.
+
+which gives blah...
 
 One further observation to help understand the motivation
 behind this proof is that by using combinatorics we can
@@ -260,7 +268,7 @@ combined with four choices for the \(a_4\) variable (0, 1, 2, 3), \dots{} combin
 the \(a_k\) variable (0, 1, 2, \dots{}, \(k\!-\!1\)), which
 gives us \(2\cdot{}3\cdot{}4\cdot{}\cdot{}\cdot{}k = k!\) possible different sums.
 
-Hmmm, the following set has \(k!\) members,
+Hmmm, the following set also has \(k!\) members,
 \(\{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}\).
 With a little algebraic tinkering we can see that
 this set contains \emph{all} of the rational numbers between zero and one with
@@ -270,6 +278,7 @@ then we should get a set that contains \emph{all} the rational numbers between z
 So that, plus one or two other thoughts is what led me to the proof below. I won't spoil the rest of it;
 to find out, go ahead and read the rest of the paper!
 
+\break
 \section*{Lemma 1}
 {\small
 \bgroup                                  %% open the group
@@ -283,7 +292,7 @@ to find out, go ahead and read the rest of the paper!
 }
 \subsubsection*{Proof}
 
-Induction: When \(k = 2\) it's true that \(\frac{1}{2!} = \frac{2!-1}{2!}\), and noting that
+Induction: When \(k = 2\) it's clear that \(\frac{1}{2!} = \frac{2!-1}{2!}\), and noting that
 \(\frac{2-2}{1!} = \frac{0}{1!} = \frac{1!-1}{1!}\) then
 {\scriptsize
 \begin{alignat*}{1}
@@ -371,11 +380,11 @@ For integer \(k \ge 2\), and integers \(a_2, a_3, \dots{}, a_k\), we define the 
 \egroup
 }
 
-If \(a \in \mathcal{S}_k\), then the sum \(a = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\),
-where
+Suppose \(a \in \mathcal{S}_k\). Then \(a = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\),
+for some a2, a3, ... ak where
 \(k \ge{} 2\), and \(0\! \le{}\! a_2\! <\! 2,\enspace
 0\! \le{}\! a_3\! <\! 3,\enspace
-\dots{},\enspace\newline 0\! \le{}\! a_k\! <\! k\), is called the ``factorial-representation'' of \(a\).
+\dots{},\enspace 0\! \le{}\! a_k\! <\! k\). This is called the ``factorial-representation of \(a\)''.
 
 \section*{Lemma 3}
 
@@ -393,11 +402,13 @@ where
 \subsubsection*{Proof}
 
 To show
-that the set \(\mathcal{S}_k\) is the same
-as \(\mathcal{F}_k\), it suffices to show that if \(\frac{a}{b} \in \mathcal{S}_k\)
-then
-\(0\le{}\frac{a}{b}<1\) and \(\frac{a}{b} = \frac{p}{k!}\) for some \(p\),
+that the set \(\mathcal{S}_k\ = \mathcal{F}_k\), it suffices to show that if \(a \in \mathcal{S}_k\)
+then a is in  Sk
+% \(0\le{}a<1\) and 
+\(\frac{a}{b} = \frac{p}{k!}\) for some \(p\),
 and that the size of \(\mathcal{S}_k\) is the same as \(\mathcal{F}_k\).
+
+JPR NOTE: Magnitude and subset - that's all.
 
 It's clear that the set \(\mathcal{F}_k\) contains every rational number with denominator \(k!\)
 where \(p\) is an integer and \mbox{\(0\le{}\frac{p}{k!}<1\)} and
@@ -459,8 +470,11 @@ and \(b_2, b_3, \dots{}, b_k\), then we can arrive at a contradiction as follows
 First suppose that \(a_i\ne{}b_i\), where \(i \le{} k\), is the first such pair of variables
 that differ. In other words,
 \(a_2\!=\!b_2,\ a_3\!=\!b_3, \dots{},\ a_{i-1}\!=\!b_{i-1},\ a_i\!\ne{}\!b_i\).
-Without loss of generality, further suppose that \(a_i > b_i\). Because
-of the equality of the two different representations for \(\frac{p}{k!}\) we can now write,
+Without loss of generality, further suppose that \(a_i > b_i\).
+Because of the suppostion,
+% 
+% Because
+% of the equality of the two different representations for \(\frac{p}{k!}\) we can now write,
 
 {\footnotesize
 \bgroup
@@ -495,11 +509,12 @@ But \(a_i - b_i \ge{} 1\), so
 \(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!}\).
 \end{center}
 
-In the case that \(i = k\) we get an immediate contradiction because 
-equation \eqref{eqn1} tells us that \(\frac{a_i - b_i}{i!} = 0\) which is
-clearly false.
-
-So let's carry on assuming that \(i < k\) and examine
+% In the case that \(i = k\) we get an immediate contradiction because 
+% equation \eqref{eqn1} tells us that \(\frac{a_i - b_i}{i!} = 0\) which is
+% clearly false.
+% 
+% So let's carry on assuming that \(i < k\)
+Let's examine
 one of the terms
 on the right-side of \eqref{eqn1}, say
 the first one \(\frac{b_{i+1} - a_{i+1}}{(i+1)!}\). We can see that since
@@ -580,7 +595,8 @@ The factorial-representation for every non-negative rational number \(\frac{p}{k
 The corollary is a direct result of the fact that
 the sets
 \(\mathcal{F}_k\) and
-\(\mathcal{S}_k\) are equal, which you may recall means \(a \in \mathcal{F}_k \Leftrightarrow a \in \mathcal{S}_k\).
+\(\mathcal{S}_k\) are equal.
+% which you may recall means \(a \in \mathcal{F}_k \Leftrightarrow a \in \mathcal{S}_k\).
 
 \section*{Definitions}
 
@@ -602,11 +618,11 @@ formed by every factorial-representation possible.
 Finally,
 \(\mathbb{Q}_{01}\) is the set of ALL non-negative rational numbers less than one, 
 where \(p\) and \(q\) are co-prime. We specify the co-prime condition
-to get unique members of the set (otherwise the set isn't well defined).
+to insure uniqueness members of the set (otherwise the set isn't well defined).
 Also we want zero, so we have to toss it back into the set.
 % \footnote{By definition sets must contain unique members.}.
 I'm not going to prove it here, but \(\mathbb{Q}_{01}\) contains ALL the
-rational numbers between zero and one, I'm taking this as established.
+rational numbers between zero and one; I'm taking this as established.
 
 Recall that two sets, \(X\) and \(Y\) are equal if and only if, for all \(a\),
 
@@ -726,12 +742,12 @@ hence \(\mathcal{F}_k \subset \mathcal{F}_{k+1}\).
 % mechanisms that makes each sequence of supersets true without relying on Lemma 3.
 % We'll start with \(\mathcal{F}_k\).
 
-Since each successive set's size grows larger, then by induction it is straightforward to conclude that
-\(\mathcal{F}_2
-\subset \mathcal{F}_3
-\subset \mathcal{F}_4
-\subset \dots{}
-\), for all \(\mathcal{F}_i\), \(i \ge{} 2\).
+% Since each successive set is larger, then by induction it is straightforward to conclude that
+% \(\mathcal{F}_2
+% \subset \mathcal{F}_3
+% \subset \mathcal{F}_4
+% \subset \dots{}
+% \), for all \(\mathcal{F}_i\), \(i \ge{} 2\).
 
 Similarly
 \(\mathcal{S}_2
@@ -749,15 +765,15 @@ and
 \in \mathcal{S}_{k+1}\). Hence 
 \(\mathcal{S}_k \subset \mathcal{S}_{k+1}\).
 
-Since each successive set's size grow larger, then
-by induction it is straightforward to conclude that
-\(\mathcal{S}_2
-\subset \mathcal{S}_3
-\subset \mathcal{S}_4
-\subset \dots{}
-\), for all \(\mathcal{S}_i\), \(i \ge{} 2\).
+% Since each successive set's size grow larger, then
+% by induction it is straightforward to conclude that
+% \(\mathcal{S}_2
+% \subset \mathcal{S}_3
+% \subset \mathcal{S}_4
+% \subset \dots{}
+% \), for all \(\mathcal{S}_i\), \(i \ge{} 2\).
 
-This infinite chain of super-sets helps us to think about the
+These infinite chains of super-sets helps us to think about the
 meaning of our new sets
 \(\mathcal{F}\) and \(\mathcal{S}\), each of which are defined as a union of 
 an infinite sequence of \(\mathcal{F}_i\)'s and \(\mathcal{S}_i\)'s.
@@ -929,8 +945,8 @@ definitely in \(\mathcal{S}_5\) because,
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
 \begin{center}
 \begin{equation*}
-\frac{1}{5}
-= \frac{0}{2}
+% \frac{1}{5} = 
+\frac{0}{2}
 + \frac{1}{2\cdot{}3}
 + \frac{0}{2\cdot{}3\cdot{}4}
 + \frac{4}{2\cdot{}3\cdot{}4\cdot{}5}
@@ -965,18 +981,17 @@ Also, \(
 which demonstrates the claim that \(\mathcal{S}_3\)
 contains \(\frac{p}{6}\),\newline where \(0 \le{} \frac{p}{6} < 1\).
 
-I believe that for a given \(q \ge 2\) then the smallest set for which the rational number
-\(\frac{p}{q} \in \mathcal{S}_k\),
-is to pick
-\(k\) such that it is the smallest value for which
-\(q\) divides \(k!\)\! .
+I believe that for a given \(q \ge 2\) the smallest set \(\mathcal{S}_k\) for which \(\frac{p}{q}\)
+is a member
+will be found by choosing the smallest
+\(k\) such that \(q\) divides \(k!\)\! .
 
 However, I'll leave that proof for another day.
 
 A final thought is that the number 
-\(2\!+\!\frac{1}{2!}\!+\!\frac{1}{3!}\!+\!\frac{1}{4!}\!+\!\frac{1}{5!}\!+\!\dots{}\) is not in \(\mathcal{S}\)
-because we can't point to any particular \(\mathcal{S}_k\) that the fractional part would be a member of.
-Not surprising really as
-this number isn't rational - it's \(e\).
+\(2\!+\!\frac{1}{2!}\!+\!\frac{1}{3!}\!+\!\frac{1}{4!}\!+\!\frac{1}{5!}\!+\!\dots{}\) can't
+be a rational number, as it's fractional-part is not in \(\mathcal{S}\)
+because we can't point to any particular \(\mathcal{S}_k\) that the fractional-part would be a member of.
+Not surprising really this number is \(e\).
 
 \end{document}
