@@ -101,14 +101,14 @@
 \bigskip
 
 Miscellaneous example\footnote{Hardy doesn't call them `Exercises' or `Questions', but that's what they
-are, math exercises for the student, like calculations to perform, theorems to prove etc.} \#2 at the end
+are, math exercises for the student.} \#2 at the end
 of chapter 1 in Hardy's `Pure Mathematics'
 presents us with a fascinating result.
 The theorem feels like what the `\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0}
 {basis-representation-theorem}'
 is for integers, but for rational numbers, \dots{} beautiful!
 
-\section*{Factorial Representation Theorem\footnote{...it's not named in the text but what I'm calling the theorem!}}
+\section*{Factorial Representation Theorem\footnote{...it's not named in the text, so I named the theorem.}}
 
 Any positive rational number can be expressed in one and only one way in the form
 {\small
@@ -188,7 +188,7 @@ an assignment of coefficients \(a_2, a_3, \dots{}, a_k\) for a given rational nu
 \(0 \le{} \frac{p}{q} < 1\),
 let alone that it would be unique.
 
-After playing around for a good chunk of time, and finally figuring out
+After playing around for a while, and finally figuring out
 a way to calculate the \(a_i\) terms
 for a given rational number \(\frac{p}{q}\), a few thing started to jump out at me.
 For example, look at these rational numbers,
@@ -225,11 +225,14 @@ Good clue! It seemed to be the case
 that if we assign the largest possible values to the coefficients,
 from \(a_2\) up to say \(a_k\) we get this rational number, \(\frac{k!-1}{k!}\).
 This number is as close to 1 as you can get with a denominator of \(k!\) without actually
-hitting 1. (Check out what happens if you add \(\frac{1}{k!}\) to \(\frac{k!-1}{k!}\).)
+hitting 1. (What happens if you add \(\frac{1}{k!}\) to \(\frac{k!-1}{k!}\)?)
 This turned out to be
 a pretty useful observation, and it became my `Lemma-1' in the proof below.
 
-Also, if we assign zeros to all the coefficients then naturally we get \(\frac{0}{k!}\).
+Also, if we assign zeros to all the coefficients then naturally we get \(\frac{0}{k!}\), plus
+it's pretty simple to figure out how to make the smallest non-zero such rational number \(\frac{1}{k!}\).
+Then thinking about continually adding \(\frac{1}{k!}\) to the result gives us an idea about how the
+\(a_i\) terms change as you keep incrementing by \(\frac{1}{k!}\).
 
 So we we restrict ourselves to using only \(a_2, a_3, \dots{}, a_k\), then
 can generate the smallest rational number (\(\frac{0}{k!}\)) and the largest
@@ -474,21 +477,41 @@ which means the size of the set \(\mathcal{S}_k\) is \(k!\, \). Recalling our pr
 all members of the set \(\mathcal{S}_k\) are of the form \(0\le{}\frac{p}{k!}<1\) we
 can assert that \(\mathcal{S}_k = \mathcal{F}_k\).
 
-Furthermore we've shown above that there is a unique sequence of integers \(a_2, a_3, \dots{} a_k\),
-(with the appropriate ranges of values for each integer
-and \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\))
-for each value of \(\frac{p}{k!} \in \mathcal{F}_k\).\qquad QED
+Furthermore the corollary was shown during the course of the proof.  QED
 
 \section*{Lemma-4}
 
-blah blah blah \(\frac{p}{q}\) is unique for all rational numbers...
+Any non-negative rational number
+that is less than one,
+%, \(\frac{p}{q}\), where \(0 \le{} \frac{p}{q} < 1\)
+can
+be expressed in one and only one way in the form
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
+\begin{center}
+\begin{equation*}
+\frac{a_2}{2!}
++ \frac{a_3}{3!}
++ \dots{}
++ \frac{a_k}{k!}
+\end{equation*}
+\end{center}
+\egroup
+}
+
+where \(a_2, \dots{}, a_k\) are integers, and
+
+{\small
+\begin{center}
+\(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0\le{}a_k<k\)
+\end{center}
+}
 
 \section*{Proof Lemma-4}
 
-All rational numbers
-\(0\le{}\frac{p}{q}<1\)
-where
-\(2\le{}q\le{k}\)
+If \(\frac{p}{q}\) is a rational number where
+\(0\le{}\frac{p}{q}<1\) and \(2\le{}q\le{k}\)
 \footnote{The list of
 rational numbers being \(
 \frac{0}{2},
@@ -511,13 +534,8 @@ rational numbers being \(
 \frac{2}{k},
 \dots{},
 \frac{k-2}{k},
-\frac{k-1}{k}\).}
-are members of the set \(\mathcal{S}_k\).
+\frac{k-1}{k}\).}, then \(\frac{p}{q} \in{} \mathcal{S}_k\) because,
 
-\section*{Proof of Lemma-4}
-Since
-\(2\le{}q\le{k}\)
-then
 {\normalsize
 \bgroup                                  %% open the group
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
@@ -535,10 +553,35 @@ then
 \egroup
 }
 
-Therefore \(\frac{p}{q}\) is an element of \(\mathcal{F}_k\) which is the same as the set \(\mathcal{S}_k\).\par
-QED
+Therefore \(\frac{p}{q}\) is an element of \(\mathcal{F}_k\) which is the same as the set \(\mathcal{S}_k\).
+In other words, all non-negative rational numbers with denominators from 2 up to \(k\) that are less than 1
+are uniquely represented by the expression,
+
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
+\begin{center}
+\begin{equation*}
+\frac{p}{q} = \frac{a_2}{2!}
++ \frac{a_3}{3!}
++ \dots{}
++ \frac{a_k}{k!},
+\end{equation*}
+\end{center}
+\egroup
+}
+
+where \(a_2, a_3, \dots{}, a_k\) are integers, and
+\(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0\le{}a_k<k\)
 
 
+If we fix q and let k go to infinity... then we have result for all possible denominators and.
+
+But furthermore,  
+
+JPR here. fix...
+
+...this unique representation is also the same for all rational numbers greater than \(k\) because
 if \(\frac{p}{q} \in{} \mathcal{S}_k\) then by the corollary to lemma-3 there is a unique sequence 
 of integers,\newline
 {\small \(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0<a_k<k\)}
@@ -617,7 +660,7 @@ where \(n \ge{} q\).
 We take for the coefficients \(a_2, a_3, \dots{}, a_k\) in the sum for \(\frac{p}{q} \in{} \mathcal{S}_n\)
 all those for which \(a_k \ne{} 0\) but \(a_{k+1} = a_{k+2} = \dots{} = a_n = 0\).
 
-By lemma-5 we know that the sum \(\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) is
+By lemma-4 we know that the sum \(\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) is
 uniquely associated
 with \(\frac{p}{q}\)
 then clearly \(\frac{j}{q} = a_1 + \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
