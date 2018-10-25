@@ -102,22 +102,20 @@
 
 What does ``10'' mean?
 
-We got it drilled into us watching Sesame Street that it's this many apples
-``\faApple{}\faApple{}\faApple{}\faApple{}\faApple{} \faApple{}\faApple{}\faApple{}\faApple{}\faApple{}'',
-or is the number of fingers on a typical person's two hands.
+We got it drilled into us watching Sesame Street that ``10'' is the symbol for the number
+``ten'' which is this many apples
+``\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}''
+or the number of fingers on a typical person's two hands.
 
-That Sesame Street training was great. We need to be able to count with ease and to
-automatically associate the symbol ``10'', that is; a one-followed-by-a-zero,
-with the number that represents ten things.
-
-Once we are trained to think of ``10'' as ten, we quickly move past it to learn about 100 and 1000
+Once we are trained to automatically think
+of ``10'' as representing ten things, we quickly move past it to learn about 100 and 1000
 and combinations of single-digit numbers like 92507. Even at a young age we'd
 be able to accurately count out a pile of
 ninety-two-thousand-five-hundred-and-seven apples as time consuming and agonizing as it might be.
-Furthermore, learning how to add and multiply is pretty simple once you can count in
+Furthermore, learning how to add and multiply is easy once you can count in
 base-ten since the techniques are simple and straight-forward.
 
-What about kids in ancient Rome?
+What about kids in ancient Rome, was it as easy for them?
 Try adding two numbers together in ancient Rome, or worse,
 multiplying or dividing them.
 What's XI times IX? Would you believe me if I told
@@ -131,14 +129,75 @@ but I'll bet that most modern eight-year-olds
 can count higher than any Roman could - as the
 Roman system only effectively allowed counting up to 4999.
 
-Even though we use different symbols, ancient Romans and us
-are talking about the same set of numbers. The idea of the number undeneath
-is exactly the same once you peel the symbol away.
+Even though we use different symbols, the ancient Romans and us
+are talking about the same abstract set of numbers, which we call integers\footnote{integers are 
+the set of all the postive whole numbers, as well as zero and all the negative counterparts to each positive number.
+%We denote the set of integers with this symbol: $\mathbb{Z}$.
+}.
 Mathematics deals with numbers in this pure sort of way, divorced from the symbols used for counting.
+When we talk about positive integers in mathematics, it's best to remind yourself
+that we are really talking about the set of numbers 
+that represent successively larger piles of apples, forgetting the base-ten symbols.
+Even more basic than Sesame Street!
 
-When a mathematical theorem talks about whole numbers, it's really talking about the set of numbers 
-that represent successivly larger piles of apples.
+However, we use decimal numbers all the time in our math,
+rarely thinking in terms of piles of apples,
+and take it for granted
+that we can use base-ten to represent the set of positive integers.
+But we need to be careful; the only thing modern mathematics takes for granted are axioms.
+The fact that we can use base-ten to represent the integers is NOT among the list of axioms.
 
+The axioms describe a few simple properites about addition and multiplication.
+These properites are \emph{so simple} that they can't be expressed in
+yet other even-simpler ideas. The axioms are the minimal set of simple,
+obvious, irrefutable ideas from which
+everything else in mathematics is built\footnote{The axioms:
+For every integer $a,b\text{ and }c$:
+Associativity: $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$;
+Commutativity: $a+b=b+a$ and $ab=ba$;
+Distributive: $a(b+c)=(b+c)a=ab+ac$;
+Identities: There are integers 0 and 1 such that,
+$a+0=0+a=a$ and $a\cdot{}1=1\cdot{}a=a$ and
+Additive Inverse: $a+(-a)=0$.
+Note: in general integers do NOT have multiplicative inverses 
+that are also integers. (eg. $\frac{1}{2}$ is the multiplicative
+inverse of 2 because $\frac{1}{2}\cdot{}2=1$ but $\frac{1}{2}$ is not an integer!)}.
+
+However because base-ten numbers are in
+a perfect one-to-one correspondence with the integers then
+it's safe to think of each
+integer's unique base-ten label \emph{as} the integer.
+But to firmly establish this fact we need to (at least once) take the time to
+spell out exactly what it means to represent a number in base-ten with a theorem\footnote{I can't find where
+the first such theorem was stated, I think it's quite recent.}. Then that theorem must be proven to
+be true with a series of arguments that logically connects it
+directly\footnote{directly \dots{}or indirectly
+via other previously proven theorems.} to the axioms, so that the only way
+that the theorem could be false is if the axioms themselves are false.
+
+Here's what that theorem looks like.
+
+\section*{Basis Representation Theorem}
+\begin{jprIn}
+Let $b$ be a positive integer greater than 1.
+
+For every positive integer $n$ there is a unique sequence
+of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
+
+\hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
+
+where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+
+Definition: $n$ is represented in base-$b$ by the string
+of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
+\end{jprIn}
+\bigskip
+
+If you're not a "math-person" don't fear!
+By the end of this paper you will know how to read that theorem so that it makes sense to you
+plus you'll be able to follow the proof which will be supplied.
+
+Let's take a big leap back and work up to the statement of that theorem step by step.
 
 \end{document}
 
@@ -152,53 +211,6 @@ that represent successivly larger piles of apples.
 
 
 
-Most of us think about ``whole numbers'' not too differently from the way
-we learned to count by watching Sesame Street,
-the difference being that now we can count a little higher.
-How we've trained ourselves, it's automatic to think the way
-that we write a number or say a number \emph{is} the number.
-
-If I owe you 13 cents and I give you one dime and three pennies then 
-after thanking me profusely for repaying this staggering debt,
-we'll agree that it's settled with those coins equaling 13 pennies. 
-We identify the symbol ``13'' very strongly with this particular number - it would 
-be tough to get through life in the modern world without such an automatic process
-running in our brains. 
-This example highlights what this particular symbol ``13'' actually means -
-one dime $(1 \times 10)$ plus three pennies $(3 \times 1)$.
-
-Let's look at the number 13 in some alternative ways - it's the 
-number of months in a year plus one month;
-what I'm suggesting is that there is no need for the symbol ``13'' in order
-to think about this particular number of months. Similarly, 13 is this many apples
-\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{};
-or 13 is the sixth prime number. None of these ways of thinking about the number
-13 require that we represent it using the digits 1 and 3 butted up next to each other.
-
-Each number exists independently from any symbol or word that might represent it.
-Numbers are an idea - perhaps such a strong idea that the universe wouldn't exist without them!
-Anyway, for our purposes whole numbers exist in some abstract realm -
-Each number is one whole unit more than the previous number,
-starting at nothing, that is ``zero'', and jumping to something, that is ``one'',
-then one more, which gets us to ``two'',
-then again to ``three'', etc. Continuing in this way forever\dots{} we get them all.
-
-To get back to the idea of what a whole number really is,
-try to forget about the symbols or words we use and picture a pile of apples.
-There are zero apples (it's hard to show no-apples),
-then we introduce an ``\faApple{}" to get our very first,
-and smallest, non-empty pile of apples.
-Then add another apple to get a pile of ``\faApple{}\faApple{}",
-then ``\faApple{}\faApple{}\faApple{}",
-then ``\faApple{}\faApple{}\faApple{}\faApple{}"
-then some big pile of
-``\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\dots{}\faApple{}\faApple{}\faApple{}"
-after we've been adding apples for a while.
-Each successively bigger pile of apples corresponds with each successive whole number.
-%
-We expand this entire set of whole numbers to include their
-negative-counterparts and call this larger set ``integers".
-%We denote the set of integers with this symbol: $\mathbb{Z}$.
 
 However, using a ``1" followed by a ``3" to represent the integer
 ``\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}"
