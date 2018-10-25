@@ -152,35 +152,12 @@ but 3 does (67 times).
 We can see that adding up the digits of 201 gives us 3,
 which of course is divisible by 3 (but not by 9).
 
-%Let's quickly review what it means for a number to be divisable 
-%by another number.  Recall the ``Euclidean Division Theorem'' which says the following:
-%
-%\section*{Euclidean Division Theorem}
-%\begin{jprIn}
-%For all integers $a$ and $b$ such that $b\ne0$,
-%there exist \emph{unique} integers $q$ and $r$ such that:
-%\[a=qb+r  \text{ such that } 0\le{}r<\lvert{}b\rvert\]
-%Definition: In the above equation\footnote{Recall
-%that $\lvert{}b\rvert$ means the ``absolute value'' of $b$ and is always positive. For
-%example $\lvert{}{-13}\rvert = 13$.}:
-%\begin{jprIn}
-%\begin{tabular}{l l}
-%a is the \emph{dividend} & (``the number being divided'')\\
-%b is the \emph{divisor} & (``the number doing the dividing'')\\
-%q is the \emph{quotient} & (``the result of the division'')\\
-%r is the \emph{remainder} & (``the leftover'')
-%\end{tabular}
-%\end{jprIn}
-%\end{jprIn}
-%
-%So to say that a number $a$ is divisible by $b$ simply means that $r$ is zero.
-
 So given that the term ``magic number'' hasn't got
 a formal definition in the math world, I think it's time to give it one.
 How about if we call ANY number that has qualities like 3 and 9 (as 
 described above) a magic-number?
 After all both ``Schoolhouse Rock'' AND ``The School of Rock'' sanction using
-``magic number'' for 3 and 9, so we may be on to something big here!
+the term ``magic number'' for 3 and 9, so we may be on to something big here!
 
 Too bad 3 and 9 are the only magic-numbers in base-10.
 Darn - perhaps our new term isn't going to be all that useful after all, \dots{} or 
@@ -191,11 +168,15 @@ not ``universal'' among humans, there are plenty of
 as widely used nor as mathematically useful as base-10. This doesn't count
 octal, hexadecimal and binary which are used in the computer world
 so by necessity are, mathematically speaking, useful.} but what about other bases?
-The heptapods in ``Arrival'' have seven arms/legs with seven fingers each,
-so I'll be dollars to donuts they use base-49.
+The heptapods in the film ``Arrival'' have 7 limbs, 3 arms and 4 legs, with 7 fingers/toes each.
+I'm going to guess that at least at some point in their history they used positional
+notation like base-10, but instead of 10 they probably base-7 or base-21,
+maybe even base-49. So perhaps an understanding of magic-numbers in alternate
+bases could come in handy.
 
-Let's examine some magic-numbers (according to our proposed
-usage of the term) in other bases.
+Let's examine some magic-numbers
+%(according to our proposed usage of the term)
+in other bases.
 In the way that 9 is a magic-number in base-10,
 then 4 is a magic-number in base-5;
 Also 7 is a magic-number in base-8;
@@ -205,7 +186,7 @@ examples\footnote{We are going to use the conventions for specifying
 numbers in alternate bases as outlined in the paper
 ``\href
 {https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf}
-{Sesame~Street++}''}:
+{SesameStreet++}''}:
 \begin{itemize}
 \item $4\times{}67=268$ written in base-5 is $(2033)_5$ and $2+0+3+3=8$ (4 divides 8).
 \item $7\times{}181=1267$ written in base-8 is $(2363)_8$ and $2+3+6+3=14$ (7 divides 14).
@@ -244,10 +225,61 @@ Since we already know that all numbers are divisible by 1,
 then we don't need to go to any trouble of adding up digits to find this out.
 So let's exclude 1 from being considered as a magic-number - it's not helpful.
 
-So let's come up with a nice formal definition for a ``magic number''.
-But first we need to remind ourselves exactly
-what it means to write a number in a given base - as described in
-much greater detail in the paper ``SesameStreet++'':
+\break
+Let's quickly review what it means for a number to be divisable 
+by another number.  Recall from the paper ``\href
+{https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf}
+{SesameStreet++}'':
+
+\section*{Euclidean Division Theorem}
+\begin{jprIn}
+For all integers $a$ and $b$ such that $b\ne0$,
+there exist \emph{unique} integers $q$ and $r$ such that:
+\[a=qb+r  \text{ such that } 0\le{}r<\lvert{}b\rvert\]
+Definition: In the above equation\footnote{Recall
+that $\lvert{}b\rvert$ means the ``absolute value'' of $b$ and is always positive. For
+example $\lvert{}{-13}\rvert = 13$.}:
+\begin{jprIn}
+\begin{tabular}{l l}
+a is the \emph{dividend} & (``the number being divided'')\\
+b is the \emph{divisor} & (``the number doing the dividing'')\\
+q is the \emph{quotient} & (``the result of the division'')\\
+r is the \emph{remainder} & (``the leftover'')
+\end{tabular}
+\end{jprIn}
+\end{jprIn}
+
+So to say that a number $a$ is divisible by $b$ simply means that $r$ is zero.
+
+In other words, to say an integer $a$ is divisible by another integer $b$
+(not zero) means there is a third integer $q$ such that\footnote{Paraphrased
+from ``An Introduction to the Theory of Numbers" by G. H. Hardy
+and E. M. Wright. Pg 1.}:
+\[a=q\cdot{}b\text{\hspace{2.5em}or\hspace{2.5em}}\frac{a}{b}=q\]
+We express the fact that $a$ is divisible by $b$, and say
+``$b$ divides $a$'' using this notation:
+\[b\mid{}a\]
+So the following is always true:
+\[1\mid{}a,
+\text{\hspace{0.5em}and\hspace{0.5em}}a\mid{}a;\]
+also
+\[b\mid{}0\text{ for every }b\text{ except }0\]
+%We sometimes use the following symbol to say that ``$b$ does not divide $a$'',
+%\[b\nmid{}a\]
+%
+%Also it should be plain that:
+%\[\text{If }c\mid{}b\text{ and }b\mid{}a\text{, then }c\mid{}a\]
+%\[b\mid{}a\text{ implies }bc\mid{}ac\text{, when }c\ne0\]
+%And lastly check for yourself that this is always true:
+%\[\text{If }c\mid{}a\text{ and }c\mid{}b\text{, then }c\mid{}ma+nb\text{, for all integers }m,n.\]
+
+In order to create our therorem with a 
+nice definition for ``magic number''
+we need to remind ourselves 
+what it means to write a number in a given base\footnote{Also from
+``\href
+{https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf}
+{SesameStreet++}''}:
 
 \section*{Basis Representation Theorem}
 \begin{jprIn}
@@ -263,31 +295,13 @@ where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
 Definition: $n$ is represented in base-$b$ by the string
 of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
 \end{jprIn}
-\bigskip
-
-Let's also add some useful notation to our discussion.
-In general, to say an integer $a$ is divisible by another integer $b$
-(not zero) means there is a third integer $c$ such that\footnote{Paraphrased
-from ``An Introduction to the Theory of Numbers" by G. H. Hardy
-and E. M. Wright. Pg 1.}:
-\[a=b\cdot{}c\]
-We express the fact that $a$ is divisible by $b$, and say
-``$b$ divides $a$'' using this notation:
-\[b\mid{}a\]
-So the following is always true:
-\[1\mid{}a,
-\text{\hspace{0.5em}and\hspace{0.5em}}a\mid{}a;\]
-also
-\[b\mid{}0\text{ for every }b\text{ except }0\]
-%We also might use the following symbol to say that ``$b$ does not divide $a$'',
-%\[b\nmid{}a\]
-%
-So given the Basis-Representation-Theorem and our new notation for divisability
-then here's our
-proposed theorem and definition for ``magic number'':
+%\bigskip
+%So given the Basis-Representation-Theorem and our new notation for divisability
+%then here's our
+%proposed theorem and definition for ``magic number'':
 %\footnote{Recall that the double-arrow, that
 %is $\Leftrightarrow$, should be read as ``if and only if''.}
-
+%
 \section*{Magic Number Theorem}
 \begin{jprIn}
 Let $n$ be a positive integer represented in base-$b$.
@@ -303,38 +317,50 @@ As an interesting side note - according to our definition, binary,
 or base-2, doesn't have a magic-number.
 No great loss, as we said above 1 isn't helpful to consider as a magic-number. 
 
-Let's prove the theorem. The proof is quite simple when using 
+Let's prove the theorem. All we need to do is show that if you divide $n$ by $m$
+that the remainder of the division is always zero.
+
+The proof is quite simple when using 
 modular arithmetic. However if you aren't familiar with modular arithmetic
 then I recommend that you check out Khan Academy's
 ``\href{https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic}{What is modular arithmetic?}'' to
 get a clear-cut-crash-course in the subject, it's excellent, as is the 
 entire Khan Academy site in case you've never checked it out.
 
-In summary, modular arithmetic is the kind of arithmetic you use when
-you tell time with a 12 hour clock.
+%In summary, modular arithmetic is the kind of arithmetic you use when
+%you tell time with a 12 hour clock.
+%
+%For example, if it's 7 o'clock and I ask you to ``meet me in 7 hours"
+%then you know I mean ``meet me at 2 o'clock".  Suppose instead I said ``meet me in 31 hours"
+%then you would know that our meeting time
+%is also going to be 2 o'clock (albeit 1 day hence) because:
+%\[7\text{ o'clock}+ 31\text{ hours}= 7\text{ o'clock}+ (7 + 24)\text{ hours}= 2\text{ o'clock}\]
+%When we do ``clock arithmetic" we add some
+%number of hours to the current time then divide that sum by 12;
+%The remainder of the division then
+%tells us the clock time.
+%
+%Any time on the clock, say $T$ o'clock, plus 12 hours is also $T$ o'clock.  Furthermore,
+%adding ANY multiple of 12 hours (eg 24, 36, 48, \dots{}) to $T$ o'clock gets us back to $T$ o'clock.
+%We can say that $T, T{+}12, T{+}24, T{+}36, T{+}48, \dots{}$ are all equivalent times
+%on the clock, or that these numbers are all equivalent modulo 12. It just means the hour hand
+%has spun around the clock exactly 1, 2, or 3, etc.\ more times.
+%
+%So numbers being equivalent modulo 12 (i.e. some number of rotations
+%of the hour hand comes back to the same time), means that they have the same
+%remainder when divided by 12. For example 1 is equivalent to 13 modulo 12.
+%If your drill sargent barks an order at you to meet him at 13:00 hours,
+%you'd better show up at 1 o'clock in the afternoon!
 
-For example, if it's 7 o'clock and I ask you to ``meet me in 7 hours"
-then you know I mean ``meet me at 2 o'clock".  Suppose instead I said ``meet me in 31 hours"
-then you would know that our meeting time
-is also going to be 2 o'clock (albeit 1 day hence) because:
-\[7\text{ o'clock}+ 31\text{ hours}= 7\text{ o'clock}+ (7 + 24)\text{ hours}= 2\text{ o'clock}\]
-When we do ``clock arithmetic" we add some
-number of hours to the current time then divide that sum by 12;
-The remainder of the division then
-tells us the clock time.
+Assuming you're now familiar with modular-arithmetic you understand
+that it gives us very powerful tools to deal with divisiability
+and remainders of integers.
+To say that 
+the remainder of
+dividing $n$ by $m$
+is zero is the same as saying:
+\[n \equiv 0 \pmod{m}\]
 
-Any time on the clock, say $T$ o'clock, plus 12 hours is also $T$ o'clock.  Furthermore,
-adding ANY multiple of 12 hours (eg 24, 36, 48, \dots{}) to $T$ o'clock gets us back to $T$ o'clock.
-We can say that $T, T{+}12, T{+}24, T{+}36, T{+}48, \dots{}$ are all equivalent times
-on the clock, or that these numbers are all equivalent modulo 12. It just means the hour hand
-has spun around the clock exactly 1, 2, or 3, etc.\ more times.
-
-So numbers being equivalent modulo 12, means that they have the same
-remainder when divided by 12. For example 1 is equivalent to 13 modulo 12.
-If your drill sargent barks an order at you to meet him at 13:00 hours,
-you'd better show up at 1 o'clock in the afternoon!
-
-So to say that $a$ is equivalent to $b$ modulo $c$ (where $c>1$) mean
 
 
 where $a,b$ and $c$ are
