@@ -50,12 +50,12 @@
 %\usepackage{romannum}
  
 \usepackage[pdftex,
-            pdfauthor={James Rowell},
+            pdfauthor={James Philip Rowell},
             pdftitle={\jobname},
             pdfsubject={Counting or The Basis Representation Theorem},
             pdfkeywords={decimal, base-ten, binary, base-two, integers, theorem, proof, mathematics, number-theory},
             pdfproducer={Latex},
-            pdfcreator={miktex or lualatex}]{hyperref}
+            pdfcreator={miktex or pdflatex}]{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -86,7 +86,7 @@
 %%% END Article customizations
 
 \title{Counting}
-\author{James Rowell}
+\author{James Philip Rowell}
 %\date{} % Activate to display a given date or no date (if empty),
 % otherwise the current date is printed 
 
@@ -131,7 +131,7 @@ but I'll bet that most modern eight-year-olds
 can count higher than any Roman could - as the
 Roman system only effectively allowed counting up to 4999.
 
-Even though we use different symbols, the ancient Romans and us
+Even though we use different symbols, the ancient Romans and we
 are talking about the same abstract set of numbers underneath,
 which we call integers\footnote{Integers are 
 the set of all the positive whole numbers, as well as zero and all the negative counterparts to each positive number.
@@ -140,10 +140,12 @@ the set of all the positive whole numbers, as well as zero and all the negative 
 Mathematics deals with numbers in this pure sort of way, divorced from the symbols
 used to represent each number.
 When we talk about positive integers in mathematics, it's best to remind yourself
-that each successive number
-represents the quantity of apples in each successively larger piles of apples - i.e.; try to forget about the 
+that we're really talking about different sized piles of apples.
+Each successive number
+represents the quantity of successively larger piles of apples - i.e.; try to forget about the 
 specific symbols
-we use like ``9'' and ``10'' or ``IX'' and ``X''.
+we use like ``9'' and ``10'' or ``IX'' and ``X'' and think about each integer as a specific sized pile
+of apples.
 
 However we use numbers written out in base-ten all the time in mathematics,
 rarely thinking in terms of piles of apples.
@@ -745,6 +747,7 @@ base-two & base-ten & \; \; \; \; & base-two & base-ten\\
 1100 & 12 (cont\dots) & \phantom& 100000000 & 256
 \end{tabular}
 \end{center}
+
 \break
 Note something interesting in the list above - the powers of two,
 written in base-two,
@@ -970,8 +973,8 @@ then what is 185190 expressed in base-twenty-three?
 \item $291480 = (10\text{M}01)_{23}$
 \end{enumerate}
 \end{enumerate}
-\break
 
+\break
 \section*{Introduction to Proofs}
 
 There are several ways to approach
@@ -1572,11 +1575,30 @@ is not unique'' is \emph{false}, in other words:
 The base-$b$ representation of $n$ is unique.\\
 QED
 \end{center}
-%QED - Uniqueness Proof of the B.R.T.
 
 \bigskip
 Since we have proven that a base-$b$-representation exists for ALL the positive integers, \emph{and}
 that this representation is unique, then we
 have proven the Basis Representation Theorem.
+
+\break
+\section*{Epilogue}
+
+Congratulations if you've never tried your hand a a proof,
+nor perhaps even read one before - you made it to the end.
+
+My hope with the paper is that by
+taking a familiar subject like counting \`a la Sesame Street and applying rigorous mathematical reasoning,
+that you will become familiar with its ``language'' and get a taste for the
+sharpness of the thought process. Most importantly I hope
+you found some amusement in and among the mathematical tidbits sprinkled here
+and there.
+
+I feel that not being able to enjoy mathematics is as tragic as someone who is blind who can't enjoy the MoMA, or
+someone who is deaf who can't while away the hours listening to their favorite band. This paper is
+my attempt at trying to open up the world of mathematics to you so that you can also enjoy one of the greatest
+achievements humanity has to offer.
+
+Go forth and multiply!
 
 \end{document}
