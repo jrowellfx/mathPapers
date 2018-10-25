@@ -181,8 +181,7 @@ then
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
 \begin{center}
 \begin{equation*}
-\frac{1}{i!} - \frac{1}{k!}
-= \frac{i}{(i+1)!}
+\frac{1}{i!} > \frac{i}{(i+1)!}
 + \dots{}
 + \frac{k-1}{k!}
 \end{equation*}
@@ -200,10 +199,15 @@ then
   - (\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{i-1}{i!})\\
   =\  &\frac{k!-1}{k!} - \frac{i!-1}{i!}\\
   =\  &\frac{k!}{k!} - \frac{1}{k!} - \frac{i!}{i!} + \frac{1}{i!}\\
-  =\  &\frac{1}{i!} - \frac{1}{k!}
+  =\  &\frac{1}{i!} - \frac{1}{k!}\\
+  <\  &\frac{1}{i!}
 \end{alignat*}
 \egroup
-}\vspace{-4mm}
+}
+%}\vspace{-4mm}
+\begin{center}
+QED
+\end{center}
 \section*{Lemma-3}
 
 The set of rational numbers,
@@ -237,11 +241,17 @@ is identical to the set of rational numbers,
 
 \section*{Proof of Lemma-3}
 
+It's clear that the set \(\mathcal{F}\) contains every rational number with denominator \(k!\)
+such that \(0\le{}\frac{p}{k!}<1\) and the size of \(\mathcal{F}\) is \(k!\, \). To show
+that the set \(\mathcal{S}\) is the same
+as \(\mathcal{F}\), it suffices to show that every member of \(\mathcal{S}\)
+is also of the form \(0\le{}\frac{p}{k!}<1\), and that the size of the set is also \(k!\, \).
+
 The smallest member of the set \(\mathcal{S}\) 
 is \(\frac{0}{k!}\) and
 occurs when all the coefficients of the sum are zero.
 Furthermore, the largest member of the set occurs when all the coefficients of the sum are set to
-their maximum value, which adds up to \(\frac{k!-1}{k!}\) as shown in lemma-1.
+their maximum value, which gives us \(\frac{k!-1}{k!}\) as shown in lemma-1.
 
 We also note that every member of \(\mathcal{S}\) can be written as a rational number
 with \(k!\) as the denominator, like so,
@@ -261,6 +271,9 @@ with \(k!\) as the denominator, like so,
 \end{center}
 \egroup
 }
+
+Therefor any member of the set \(\mathcal{S}\) is of the form \(0\le{}\frac{p}{k!}<1\),
+where \(p\) in an integer in the range \(0\le{}p\le{}k!-1\).
 
 Furthermore, each possible assignment of values to the coefficients of
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
@@ -289,12 +302,93 @@ Also, without loss of generality we can assume that \(a_i > b_i\) and state the 
 \egroup
 }%\vspace{-4mm}
 
-The number of values that the coefficient \(a_2\) can assume is 2, \(a_3\) can take on 3 values, \dots{},
-up to \(a_k\) which can take on \(k\) values. So the total number of combinations of values
-that can be assigned to all the coefficients is \(2\cdot{}3\cdot{}4\cdot\dots{}\cdot{}k = k!\,\).
+Since \(a_i - b_i \ge{} 1\), then \(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!}\).
 
+Also, it's clear that
+\(\frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!} \ge{} \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\)
+regardless of the values of the coefficients
+on the right side of the inequality\footnote{Letting all the \(b\)'s be their maximum value,
+and all the \(a\)'s be zero will produce the largest numerators in each term of the sum, any other possibility will result in a smaller term for the sum.}.
 
+However, lemma-2 tells us,\par
+\begin{center}
+\(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!} > \frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!} \ge{} \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\),
+\end{center}\par
+demonstrating that equality is impossible, so our assumption that there can be a second set
+of coefficients to produce the same rational number \(\frac{p}{k!}\) is false.
+Therefor any assignment of values to the coefficients of
+\(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
+produces a unique member of the set \(\mathcal{S}\).
 
-The size of \(\mathcal{F}\) is clearly \(k!\)
+Now we can count the number of members of the set \(\mathcal{S}\), by looking at all the
+possible combinations of values for the coefficients \(a_2, a_3, \dots{}, a_k\).
+There are 2 choices for the coefficient \(a_2\),
+multiplied by the 3 choices for \(a_3\),
+multiplied by the 4 choices for \(a_4\),
+\dots{},
+up to multiplying by \(k\) values that \(a_k\) can assume.
+
+Therefore the total number of combinations of values
+that can be assigned to all the coefficients of \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
+is \(2\cdot{}3\cdot{}4\cdot\dots{}\cdot{}k = k!\,\),
+which means the size of the set \(\mathcal{S}\) is \(k!\, \). This plus our conclusion above that
+all members of the set \(\mathcal{S}\) are of the form \(0\le{}\frac{p}{k!}<1\)
+means that
+\(\mathcal{S} = \mathcal{F}\).
+
+\begin{center}
+QED
+\end{center}
+
+\section*{Lemma-4}
+
+All rational numbers \(\frac{p}{q}\) such that \(0\le{}p<q\) and \(2\le{}q\le{k}\)\footnote{That list
+of rational numbers 
+would look like this,
+\(
+\frac{0}{2},
+\frac{1}{2},
+\frac{0}{3},
+\frac{1}{3},
+\frac{2}{3},
+\frac{0}{4},
+\frac{1}{4},
+\frac{2}{4},
+\frac{3}{4},
+\frac{0}{5},
+\frac{1}{5},
+\frac{2}{5},
+\frac{3}{5},
+\frac{4}{5},
+\dots{},
+\frac{0}{k},
+\frac{1}{k},
+\frac{2}{k},
+\dots{},
+\frac{k-2}{k},
+\frac{k-1}{k}\).} are members of the set \(\mathcal{S}\).
+
+\section*{Proof of Lemma-4}
+Since \(0\le{}p<q\) then \(0\le{}\frac{p}{q}<1\) and
+{\normalsize
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
+\begin{center}
+\begin{alignat*}{1}
+\frac{p}{q}\quad =\quad &\frac
+{2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}
+{2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k} \cdot{} \frac{p}{q}\\
+=\quad &\frac
+{2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}p\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}
+{2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}q\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}\\
+=\quad &\frac
+{2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}p\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}
+{k!}
+\end{alignat*}
+\end{center}
+\egroup
+Therefor \(\frac{p}{q}\) is an element of \(\mathcal{F}\) which is the same as the set \(\mathcal{S}\).\par
+QED
+}
 
 \end{document}
