@@ -65,7 +65,7 @@
 \usepackage{hyperxmp}
 \hypersetup{
     pdfauthor={James Philip Rowell},
-    pdfcopyright={Copyright © 2017 by James Philip Rowell. All rights reserved.}
+    pdfcopyright={Copyright  2017 by James Philip Rowell. All rights reserved.}
 }
 \usepackage{lipsum}
 
@@ -153,8 +153,8 @@ However, we use numbers written out in base-ten all the time in mathematics,
 rarely thinking in terms of piles of apples.
 We take for granted
 that we can use base-ten to represent the set of positive integers,
-but we should be careful about what we take for granted as the 
-only ideas that modern mathematics
+but, we should be careful about what we take for granted as the 
+only ideas that modern-mathematics
 takes for granted are axioms.
 The fact that we can use base-ten to represent the integers is NOT among the list of axioms.
 
@@ -167,7 +167,7 @@ For every integer $a,b\text{ and }c$:
 Associativity: $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$;
 Commutativity: $a+b=b+a$ and $ab=ba$;
 Distributive: $a(b+c)=(b+c)a=ab+ac$;
-Identities: There are integers 0 and 1 such that,
+Identities: There are integers 0 and 1 ($0\ne1$) such that,
 $a+0=0+a=a$ and $a\cdot{}1=1\cdot{}a=a$ and
 Additive Inverse: $a+(-a)=0$.
 Note: in general integers do NOT have multiplicative inverses 
@@ -221,7 +221,9 @@ this theorem is a good example of the kind of thing mathematicians like to do - 
 Why restrict ourselves to ten when the idea applies equally well to two, three, four, five, ... etc.?
 The heptapods in ``Arrival'' have  seven limbs with seven fingers each, perhaps they
 use base-forty-nine, so our
-theorem should cover that case too.  By generalizing the idea to a base $b$, where $b$ is any number two or higher,
+theorem should cover that case too.  By generalizing the idea to a base $b$,
+where $b$ is any number two or higher (base-one doesn't really make sense
+- think about it for a while\footnote{Is base-one essentially a pile of apples?}),
 we gain a deeper understanding of the subject in question.
 
 Even though doing arithmetic in base-ten
@@ -239,10 +241,10 @@ on the world stage.
 %plus you'll know how to prove it.
 
 Assuming you want to be able to make sense of and read our theorem, then let's take a step
-back and work up to the statement of that theorem, using
-our familiar base-ten for discussion.
+back and work up to its statement,
+using our familiar base-ten for discussion.
 
-When using some arbitrary base-$b$ to count with,
+When using an arbitrary base (i.e.; base-$b$) to count with,
 it's useful to have simple symbols to represent each of the integers from zero to up to $(b-1)$.
 So in our base-ten system we use the
 digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9.
@@ -265,15 +267,14 @@ plus zero units''.
 Following this line of reasoning since ``10'' now means the integer ten,
 then ``100'' must mean ``ten lots of ten,
 plus zero units''- which is exactly what it means.
-We have a special word for this number we call it ``one hundred'' or ``one lot of a hundred,
+We have a special word for this number we call it ``one-hundred'' or ``one lot of a hundred,
 plus zero lots of tens, plus zero units''.
 Similarly ``200'' means ``two lots of a hundred, plus zero lots of ten,
 plus zero units'', etc.
 
 We can keep going by one-hundred until we similarly get to ``1000'' or ``ten lots of a hundred,
 plus zero lots of ten, plus zero units'' otherwise known
-as ``a thousand'' or more specifically ``one lot of a thousand,
-plus zero lots of a hundred, plus zero lots of ten, plus zero units''.
+as ``a thousand'' or ``one lot of a thousand, plus zero ...etc''.
 
 It gets a little tedious to be so specific when reading out
 a number so our language has developed quite a few verbal shortcuts.
@@ -322,8 +323,9 @@ i.e., no zeros follow the ``1'', which is exactly right.
 Furthermore every number raised to the 0\textsuperscript{th}
 power~is~1.\footnote{Proof: Since $a^{b+c}=a^ba^c$ consider when $c=0$; that is,
 $a^b=a^{b+0}=a^ba^0$ so because of the uniqueness
-of the multiplicative identity ``1'', then $a^0$ \emph{must} be 1 since it's behaving 
-like a ``1'' in the expression $a^b=a^ba^0$.}
+of the multiplicative-identity ``1'' (the uniqueness of 1
+is a theorem and \emph{not} an axiom) then $a^0$ \emph{must} be 1 since it's behaving 
+like a 1 in the expression $a^b=a^ba^0$.}
 
 Let's look at an example.
 Reading the number 92507 out according to our wordy technique above we can see
@@ -824,8 +826,7 @@ That's what the ``Definition'' is spelling out with the ``$(\dots)_2$'' notation
 
 As is hinted by the habits of our various alien friends
 above it seems that we can use ANY integer greater than
-or equal to 2 as a base (base-one doesn't really make
-sense - think about it for a while).
+or equal to 2 as a base.
 In fact computer graphics artists are known
 to stumble upon numbers written in hexadecimal (usually relating to specifying a color-channel),
 which is base-sixteen.
@@ -930,7 +931,7 @@ Let's divide 7654 by 10 so we get the following:
 Notice the remainder 4 is the least-significant-digit of our
 integer 7654  (i.e. the $d_0$ digit in the theorem).
 
-How do we get the next digit, i.e. the $d_1$ digit that corresponds to the $10^1$ term? Well, it’s kind of cheating, but
+How do we get the next digit, i.e. the $d_1$ digit that corresponds to the $10^1$ term? Well, its kind of cheating, but
 since we happen to be looking at that last expression written in
 base-ten we can see it sitting right there in at the
 end of the quotient ``765''. So, let's use the same technique and divide 765 by 10:
@@ -991,7 +992,7 @@ This is an interesting approach to the proof in that it also gives us a techniqu
 to construct a base-$b$ representation of each integer.
 If we were to go down this road
 we would try to generalize how we solved
-exercise number 2-iii) above, it's worth a try for fun.
+exercise number 2-iii above.
 
 However, we're going to follow a much more straightforward approach.
 We'll use the principle of mathematical induction directly on $n$
@@ -1098,9 +1099,8 @@ Which is the trivial sum\footnote{The word ``sum'' here is used
 in the context of the expression
 we are trying to prove. In this case we are summing
 only one item thus it's ``trivial''.} of the first positive integer 1.
-\bigskip
+%\bigskip
 
-\break
 Now let's assume the relationship is true for $n$,
 and prove that it must also be true for $n+1$ for our ``induction step'':
 \begin{alignat*}{2}
@@ -1154,18 +1154,18 @@ The crux of the approach is to show that if $n$ can be expressed in base-$b$,
 then it necessarily follows that $n+1$ can also be represented in base-$b$.
 
 Let's pretend we just bought a brand-new car with one of those physical odometers that
-spin little wheels to show the number of miles driven. However, according
+spin little wheels to show the number of miles driven. According
 to the brochure our new car has a magic-odometer.
 We notice as we
 pull out of the dealership parking lot that
-the odometer is only one digit wide.
-That one and only digit displays a ``1'', I guess the factory was only one mile away.
+the odometer is only one digit wide and
+that one-and-only-digit displays a ``1'', I guess the factory was only one mile away.
 
-As you get close to the end of your drive home
-you see you've clocked 9 miles.
-Naturally you're a little curious about how it's going to
-count to 10 since the odometer apparently only has one digit.
-While pondering this curiosity you see the 9 starting to roll
+As we get close to the end of our drive home
+we see we've clocked 9 miles.
+Naturally we're a little curious about how it's going to
+count to ten since the odometer apparently only has one digit.
+While pondering this curiosity we see the 9 starting to roll
 over back to 0, and a second digit to it's left magically materializes!
 It rolls to a 1 as the 9 settles back to 0.
 Apparently this magic-odometer only adds new digits to the left
@@ -1226,33 +1226,9 @@ six-digit-number to a seven-digit-number. Yup, we just drove a million miles
 which is definitely a legitimate base-ten number.
 \end{enumerate}
 
-\bigskip
-Even though we can use induction to prove the existence of base-$b$
-numbers for every integer, let's think about why it
-doesn't prove the ``uniqueness'' aspect of 
-the theorem.
-Imagine a magic-box
-that also makes base-$b$ representations for each
-integer.
-In other words, if the odometer is the principle-of-mathematical-induction then the magic-box
-is some different mechanism working in a different way.
-Why not? We weren't careful to show that induction is the ONLY way
-to generate a base-$b$ representation for each number. (It isn't.)
-
-So we need to prove that if such a magic-box exists then it MUST
-produce the same results as our odometer.
-
-The easiest way to prove this is to assume that there is a magic-box
-that DOES NOT produce the same representation as our odometer, then we show that
-this assumption leads to an irreconcilable contradiction.
-So either our assumption is wrong or the axioms are.
-Since we're VERY confident in the axioms being correct we can only 
-conclude that our assumption must be wrong - meaning
-that there is only \emph{one} way 
-to make a base-$b$ representation for each integer.
-
 Without further adieu, let's get to the actual proof!
 
+\break
 \section*{Existence Proof of the Basis Representation Theorem}
 Let $b$ be a positive integer greater than 1.
 
@@ -1294,7 +1270,6 @@ where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
 We will prove that $n+1$ also has a
 base-$b$-representation by looking at two cases.
 
-\break
 Case 1) $d_0<(b-1)$
 \begin{jprIn}
 This case examines when the least-significant-digit
@@ -1364,7 +1339,6 @@ Recall in the ``Extra Exercise: Geometric Series Theorem''
 we showed that:
 \[1+b+b^2+\dots{}+b^k=\frac{b^{k+1}-1}{b-1}\]
 
-\break
 We can use this theorem to show that $n+1=b^{k+1}$ as follows\dots
 \smallskip
 {\small
@@ -1446,13 +1420,37 @@ all positive integers have a base-$b$-representation.
 QED
 \end{jprIn}
 
-\bigskip
-In order to proceed
-with proving the uniqueness aspect of the Basis Representation Theorem, we
+\section*{Idea behind Uniqueness Proof for the Basis-Reprn-Thm}
+Even though we can use induction to prove the existence of base-$b$
+numbers for every integer, let's think about why it
+doesn't prove the ``uniqueness'' aspect of 
+the theorem.
+Imagine a magic-box
+that also makes base-$b$ representations for each
+integer.
+In other words, if the odometer is the principle-of-mathematical-induction then the magic-box
+is some different mechanism working in a different way.
+Why not? We weren't careful to show that induction is the ONLY way
+to generate a base-$b$ representation for each number. (It isn't.)
+
+So we need to prove that if such a magic-box exists then it MUST
+produce the same results as our odometer.
+
+The easiest way to prove this is to assume that there is a magic-box
+that DOES NOT produce the same representation as our odometer, then we show that
+this assumption leads to an irreconcilable contradiction.
+So either our assumption is wrong or the axioms are.
+Since we're VERY confident in the axioms being correct we can only 
+conclude that our assumption must be wrong - meaning
+that there is only \emph{one} way 
+to make a base-$b$ representation for each integer.
+
+In order to proceed, we
 need to make use of a well-established theorem
 called the ``Euclidean Division Theorem''.
 It sounds onerous, but don't worry, you learned it
-in the third grade but perhaps not so formally, you called it ``long division''. It simply states the following\dots{}
+in the third grade when you learned how to divide.
+It simply states the following\dots{}
 
 \section*{Euclidean Division Theorem}
 \begin{jprIn}
@@ -1476,7 +1474,7 @@ r is the \emph{remainder} & (``the leftover'')
 \end{jprIn}
 \end{jprIn}
 This is how you first learned to divide.
-For example, if someone asks you ``What is nineteen divided by three?'', you’d
+For example, if someone asks you ``What is nineteen divided by three?'', you'd
 answer ``six with one remaining''. Here 19 is the \emph{dividend},  3 is the \emph{divisor},
 6 is the \emph{quotient} and 1 is the \emph{remainder}. Written in the form of the theorem:
 \[19=6\cdot3+1\]
@@ -1508,9 +1506,14 @@ Let $b, q$ and $r$ be integers such that $b>0$ and $0\le{}r<b$.
 If $q=0$ and $r=0$, then \\
 \hphantom{2em}$qb+r=0\cdot{}b+0=0$
 
-\dots{}and if $0=qb+r$ then \\
-\hphantom{2em}because the Euclidean Division Theorem says that $q$ and $r$ are unique, therefore\\
-\hphantom{2em}$q=0$ and $r=0$ must be true otherwise they would not be unique.
+\break
+Also if $0=qb+r$, then
+clearly
+$q=0$ and $r=0$ satisfy the equation,
+but by the constraints
+placed on the values for $b$ and $r$, then the Euclidean Division Theorem tells us
+that $q$ and $r$ are unique, therefore 
+$q=0$ and $r=0$ is the only solution to this equation.
 
 QED
 \end{jprIn}
@@ -1546,7 +1549,7 @@ if and only if,
 {\small
 \begin{alignat*}{3}
   &&0
-  &= (d_k-c_k)b^k+\dots+(d_j-c_j)b^j&&\quad\text{(Subtract LHS from both sides)}\\
+  &= (d_k-c_k)b^k+\dots+(d_j-c_j)b^j&&\quad\text{(Subtract left-side from both-sides)}\\
   &\Leftrightarrow\quad
   &\frac{0}{b^j}
   &= \frac{(d_k-c_k)b^k+\dots+(d_j-c_j)b^j}{b^j} &&\quad\text{(Divide by }b^j\text{, since }b>0\text{)}\\
@@ -1587,7 +1590,7 @@ it - and yet they use tools on a daily basis that are essentially high-level mat
 
 If that describes you, then
 my hope with the paper is that by
-taking a familiar and simple subject like counting \`a la Sesame Street and applying rigorous mathematical reasoning,
+taking a familiar and simple subject, like counting, and applying rigorous mathematical reasoning,
 that you will become familiar with its ``language'' and get a taste for the
 sharpness of the thought process. Most importantly I hope
 you found some amusement in and among the mathematical tidbits sprinkled here
