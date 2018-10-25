@@ -259,7 +259,7 @@ to find out, go ahead and read the rest of the paper!
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
 \begin{center}
 \begin{equation*}
-\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-1}{k!} = \frac{k!-1}{k!}
+\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-1}{k!} = \frac{k!-1}{k!},\quad \text{for integer } k \ge{} 2
 \end{equation*}
 \end{center}
 \egroup
@@ -276,7 +276,7 @@ This equality is fairly trivial to demonstrate by induction, since \(\frac{1}{2!
   =\  &\frac{k!-1}{k!}
 \end{alignat*}
 }
-\dots{}thus establishing lemma-1 for all values of k. QED
+\dots{}thus establishing lemma-1 for all values of \(k \ge 2\). QED
 
 \section*{Lemma-2}
 
@@ -373,7 +373,7 @@ that the set \(\mathcal{S}_k\) is the same
 as \(\mathcal{F}_k\), it suffices to show that if \(\frac{a}{b} \in \mathcal{S}_k\)
 then
 \(0\le{}\frac{a}{b}<1\) and \(\frac{a}{b} = \frac{p}{k!}\) for some \(p\),
-and that the size of \(\mathcal{S}_k\) is \(k!\, \).
+and that the size of \(\mathcal{S}_k\) is the same as \(\mathcal{F}_k\).
 
 It's clear that the set \(\mathcal{F}_k\) contains every rational number with denominator \(k!\)
 where \(p\) is an integer and \mbox{\(0\le{}\frac{p}{k!}<1\)} and
@@ -455,7 +455,7 @@ on the right side of the inequality\footnote{Letting all the \(b\)'s be their ma
 and all the \(a\)'s be zero will produce the largest numerators in each term of the sum, any other possibility will result in a smaller term for the sum.}.
 
 Because lemma-2 tells us that \(\frac{1}{i!} > \frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!}\) then
-we can string all our inequalities together to get the following.
+we can string all our inequalities together like so,
 
 \begin{center}
 \(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!} > \frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!} \ge{} \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\),
@@ -463,7 +463,8 @@ we can string all our inequalities together to get the following.
 
 But we had also deduced
 that \(\frac{a_i - b_i}{i!} = \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\)
-which is in contradiction with the above strict inequality.
+which contradicts the strict inequality above.
+
 Therefore our assumption that there can be a second set
 of coefficients to produce the same rational number \(\frac{p}{k!}\) must be false.
 Therefore any assignment of values to the coefficients of
@@ -614,7 +615,7 @@ expression for \(\frac{p}{q} \in \mathcal{S}_k\) when we let \(\mathcal{S}_k\) i
 Therefore, \(\frac{p}{q} \in{} \mathcal{S}_n\) for all \(n \ge{} k\).
 
 \break
-\section*{Theorem (restated)}
+\section*{Factorial Representation Theorem (restated)}
 
 Any positive rational number can be expressed in one and only one way in the form
 
@@ -642,19 +643,19 @@ where \(a_1, a_2, \dots{}, a_k\) are integers, and
 
 \section*{Proof of Theorem}
 
-Thanks to Euclid we know that for all integers \(h\ge{}0\) and \(q>0\),
+Thanks to Euclid we know that for all integers \(j\ge{}0\) and \(q>0\),
 there exist unique integers \(i\) and \(p\) such that,
 
 {\normalsize
 \bgroup                                  %% open the group
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group
 \begin{alignat*}{3}
-&&h = i\cdot{}q + p\ &;\quad 0\le{}p<q \\
-&\Leftrightarrow\quad &\frac{h}{q} = i + \frac{p}{q}\ &;\quad 0\le{}\frac{p}{q}<1
+&&j = i\cdot{}q + p\ &;\quad 0\le{}p<q \\
+&\Leftrightarrow\quad &\frac{j}{q} = i + \frac{p}{q}\ &;\quad 0\le{}\frac{p}{q}<1
 \end{alignat*}
 \egroup
 }\par
-Which tells us that all rational numbers \(\frac{h}{q}\) can be written as
+Which tells us that all rational numbers \(\frac{j}{q}\) can be written as
 an integer part, \(i\), plus a fractional part \(\frac{p}{q}\), where \(0\le{}\frac{p}{q}<1\).
 
 In our theorem, the \(a_1\) coefficient plays the role of the integer part \(i\),
@@ -662,21 +663,20 @@ and the rest of the expression, \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \f
 plays the role of the fractional part \(\frac{p}{q}\), where \(0\le{}\frac{p}{q}<1\).
 
 Therefore to express any rational number in the form of the theorem, first apply the
-Euclidean Division Theorem to \(\frac{h}{q}\) and let \(a_1 = i\). If there is no fractional remainder, then
+Euclidean Division Theorem to \(\frac{j}{q}\) and let \(a_1 = i\). If there is no fractional remainder, then
 the theorem is trivially true,
-however if there is a fractional remainder \(\frac{p}{q}\), then it is a member of all sets \(\mathcal{S}_n\)
-where \(n \ge{} q\).
-
-By lemma-4 we know that the sum \(\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) is
+however if there is a fractional remainder \(\frac{p}{q}\), then 
+by lemma-4 we know that the sum \(\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) is
 uniquely associated
 with \(\frac{p}{q}\)
-then clearly \(\frac{h}{q} = a_1 + \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-is uniquely associated with all rational numbers \(\frac{h}{q}\).
+so clearly \(\frac{j}{q} = a_1 + \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
+is uniquely associated with all rational numbers \(\frac{j}{q}\).
 
-To exactly meet the requirements of the theorem, we throw away that fact that we can
-represent zero, and we take
-for the coefficients \(a_2, a_3, \dots{}, a_j\) in the sum for \(\frac{p}{q} \in{} \mathcal{S}_k\)
-all those for which \(a_j \ne{} 0\) but \(a_{j+1} = a_{j+2} = \dots{} = a_k = 0\).
+To meet the precise requirements of the theorem, we throw away that fact that we can
+represent zero, and suppose that if \(\frac{p}{q} \in{} \mathcal{S}_n\) for some \(n \ge{} q\)
+that we take
+for the coefficients \(a_2, a_3, \dots{}, a_k\) in the sum for \(\frac{p}{q} \in{} \mathcal{S}_n\)
+all those for which \(a_k \ne{} 0\) but \(a_{k+1} = a_{k+2} = \dots{} = a_n = 0\).
 
 QED
 
@@ -687,9 +687,9 @@ While it's true that \(\frac{p}{q} \in{} \mathcal{S}_q\), \(\mathcal{S}_q\) is n
 the smallest such set for which \(\frac{p}{q}\) is a member.
 
 For example,
-the smallest set containing \(0 \le{} \frac{p}{5} < 1\) is \(\mathcal{S}_5\)
+the smallest set containing \(\frac{p}{5}\), where \(0 \le{} \frac{p}{5} < 1\), is \(\mathcal{S}_5\)
 however
-the smallest set containing \(0 \le{} \frac{p}{6} < 1\) is \(\mathcal{S}_3\).
+the smallest set containing \(\frac{p}{6}\), where \(0 \le{} \frac{p}{6} < 1\) is \(\mathcal{S}_3\).
 
 Which is easy to see when we list the contents of a couple of sets,
 %  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 20, 21, 22, 23
@@ -797,9 +797,9 @@ Also, \(
 \frac{ 2}{3},
 \frac{ 5}{6}
 \}
-\), which demonstrates the claim above that \(\mathcal{S}_3\) contains \(0 \le{} \frac{p}{6} < 1\).
+\), which demonstrates the claim above that \(\mathcal{S}_3\) contains \(\frac{p}{6}\), where \(0 \le{} \frac{p}{6} < 1\).
 
-I believe that for a given \(q \ge 2\) then the smallest set for which rational number
+I believe that for a given \(q \ge 2\) then the smallest set for which the rational number
 \(\frac{p}{q} \in \mathcal{S}_k\),
 is to pick
 \(k\) such that it is the smallest value for which
