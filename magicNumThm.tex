@@ -72,6 +72,7 @@
 \usepackage{lipsum}
 
 \newenvironment{jprIn}{\begin{adjustwidth}{2em}{}}{\end{adjustwidth}}
+
 \addtolength{\skip\footins}{6pt}
 
 \usepackage{alphalph}
@@ -129,17 +130,27 @@ for a number where you take its ``digital sum''. 9
 plays a similar role in all these processes - so within these contexts sometimes 9
 is referred to as a magic-number.
 
-So Mr. S's musical-math-lesson is legit, if indeed he is referring to this fact about 9:
-\begin{enumerate}[i)]
-\item
-If you add up the digits of
-any number then if that sum is divisible by 9, then the original number
-must be divisible by 9.
-\item
-Conversely, if we know
-that a number is divisible by 9 then the sum of its digits must also be
-divisible by 9.
-\end{enumerate}
+So Mr. S's musical-math-lesson is legit, if he is referring to this fact about 9:
+% \begin{enumerate}[i)]
+% \item
+% If you add up the digits of
+% any number then if that sum is divisible by 9, then the original number
+% must be divisible by 9.
+% \item
+% Conversely, if we know
+% that a number is divisible by 9 then the sum of its digits must also be
+% divisible by 9.
+% \end{enumerate}
+% \begin{enumerate}[i)]
+% \item
+\begin{center}
+The sum of the digits of a number divisible by 9,
+\break
+if and only if,
+\break
+the original number
+is divisible by 9.
+\end{center}
 
 For example:
 \begin{jprIn}
@@ -161,20 +172,21 @@ So given that the term ``magic number'' hasn't got
 a formal definition in the math world, I think it's time to give it one.
 How about if we call ANY number that has this
 divisibility property with respect to adding up the digits etc.\ (like 3 and 9) a magic-number?
-After all, the cultural touchstones
-``Schoolhouse Rock'' \emph{and} ``The School of Rock''
-have set precedent for using
-``magic number'' to describe 3 and 9, so we may be on to something big here!
+% After all, the cultural touchstones
+% ``Schoolhouse Rock'' \emph{and} ``The School of Rock''
+% have set precedent for using
+% ``magic number'' to describe 3 and 9, so we may be on to something big here!
 
-Too bad 3 and 9 are the only magic-numbers in base-10.
-Darn - perhaps our new term won't catch on and sweep the nation after all, \dots{} or 
-maybe it will!
-We happen to use base-10 because we have ten fingers\footnote{To be honest, base-10 is
-not ``universal'' among humans, there are plenty of
-\href{https://www.youtube.com/watch?v=l4bmZ1gRqCc}{other bases} in use, albeit not
-as widely used nor as mathematically useful as base-10. This doesn't count
-octal, hexadecimal and binary which are used in the computer world
-so by necessity are, mathematically speaking, \emph{incredibly} useful.} but what about other bases?
+Too bad 3 and 9 are the only magic-numbers in base-10,
+%Darn - perhaps our new term won't catch on and sweep the nation after all, \dots{} or 
+%maybe it will!
+% We happen to use base-10 because we have ten fingers\footnote{To be honest, base-10 is
+% not ``universal'' among humans, there are plenty of
+% \href{https://www.youtube.com/watch?v=l4bmZ1gRqCc}{other bases} in use, albeit not
+% as widely used nor as mathematically useful as base-10. This doesn't count
+% octal, hexadecimal and binary which are used in the computer world
+% so by necessity are, mathematically speaking, \emph{incredibly} useful.}
+but what about other bases?
 The heptapods in the film ``Arrival'' have 7 limbs, 3 arms and 4 legs, with 7 fingers/toes each.
 I'm going to guess that at least at some point in their history they used positional
 notation, like our base-10, but instead of 10 they probably base-7 or base-21,
@@ -184,16 +196,16 @@ bases might come in handy when we're called upon to do alien arithmetic.
 Let's examine some magic-numbers
 %(according to our proposed usage of the term)
 in other bases.
-In the way that 9 is a magic-number in base-10,
-then 4 is a magic-number in base-5;
-Also 7 is a magic-number in base-8;
-15 is a magic-number in base-16;
-\dots{}and 30 is a magic-number in base-31, as you can see with these
-examples\footnote{We are going to use the conventions for specifying
-numbers in alternate bases as outlined in the paper
-``\href
-{https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf}
-{SesameStreet++}''}:
+% In the way that 9 is a magic-number in base-10,
+% then 4 is a magic-number in base-5;
+% Also 7 is a magic-number in base-8;
+% 15 is a magic-number in base-16;
+% \dots{}and 30 is a magic-number in base-31, as you can see with these
+% examples\footnote{We are going to use the conventions for specifying
+% numbers in alternate bases as outlined in the paper
+% ``\href
+% {https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf}
+% {Counting}''}:
 \begin{itemize}
 \item $4\times{}67=268$ written in base-5 is $(2033)_5$ and $2+0+3+3=8$ (4 divides 8).
 \item $7\times{}181=1267$ written in base-8 is $(2363)_8$ and $2+3+6+3=14$ (7 divides 14).
@@ -201,17 +213,10 @@ numbers in alternate bases as outlined in the paper
 \item $30\times{}35951=1078530$ written in base-31 is $(15699)_{31}$ and $1+5+6+9+9=30$
 \end{itemize}
 
-Notice the pattern: the biggest base-$b$ digit
-(which is always one less than the base) seems to
-qualify as a magic-number. For example,
-4 is the biggest digit in base-5,
-7 is the biggest digit in base-8,
-and 9 is the biggest digit in base-10;
-To state this in a general way
-we could say that if $b$ is our base, then $(b-1)$ is a magic-number in base-$b$.
+Notice the pattern:
+If $b$ is our base, then $(b-1)$ is a magic-number in base-$b$.
 
-So what about 3 also being a magic-number in base-10?
-Let's take a look at the interesting (but probably never used outside this paper) base-31.
+Let's take a look at some other examples in base-31.
 It appears that 2, 3, 5, 6, 10, 15 (along with 30)
 are \emph{all} magic-numbers in base-31, as we we can see
 with the following examples:
@@ -232,12 +237,12 @@ Since we already know that all numbers are divisible by 1,
 then we don't need to go to any trouble of adding up digits to find this out.
 So let's exclude 1 from being considered as a magic-number - it's not helpful.
 
-\break
 Let's quickly review what it means for a number to be divisible 
 by another number.  Recall from the paper ``\href
 {https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf}
-{SesameStreet++}'':
+{Counting}''\dots
 
+\break
 \section*{Euclidean Division Theorem}
 \begin{jprIn}
 For all integers $a$ and $b$ such that $b\ne0$,
@@ -286,7 +291,7 @@ we need to remind ourselves
 what it means to write a number in a given base\footnote{Also from
 ``\href
 {https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf}
-{SesameStreet++}''}:
+{Counting}''}:
 
 \section*{Basis Representation Theorem}
 \begin{jprIn}
