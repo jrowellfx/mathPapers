@@ -282,7 +282,7 @@ This equality is straightforward to demonstrate by induction, since \(\frac{1}{2
   =\  &\frac{k!-1}{k!}
 \end{alignat*}
 }
-\dots{}thus establishing Lemma 1 for all values of \(k \ge 2\).\quad QED.
+\dots{}thus establishing Lemma 1 for all values of \(k \ge 2\).\qquad QED.
 
 \bigskip
 The following Lemma 2 captures an idea that is best described by analogy to the basis representation
@@ -301,7 +301,7 @@ theorem for integers. For base-ten numbers we can say,
 
 The above inequality 
 is merely stating that any single power of ten is bigger than the sum of
-9 times each lower power of ten.  For example, 1000 is bigger than 999.
+every lower power of ten each times 9.  For example, 1000 is bigger than 999.
 Read the statement of the inequality in Lemma 2 with this idea in mind.
 
 \section*{Lemma 2}
@@ -341,7 +341,7 @@ For integers \(i,k\) where \(2\le{}i<k\),
 }
 %}\vspace{-4mm}
 \begin{center}
-QED
+QED.
 \end{center}
 
 \section*{Definitions}
@@ -438,8 +438,10 @@ For if this weren't true and both
 for different variables \(a_2, a_3, \dots{}, a_k\)
 and \(b_2, b_3, \dots{}, b_k\), then we can arrive at a contradiction as follows.
 
-First suppose that \(a_i\ne{}b_i\) is the first such pair of variables
-that differ. In other words, \newline \(a_2=b_2, a_3=b_3, \dots{}, a_{i-1}=b_{i-1}, a_i\ne{}b_i\).
+\break
+First suppose that \(a_i\ne{}b_i\), where \(i \le{} k\), is the first such pair of variables
+that differ. In other words,
+\(a_2\!=\!b_2,\ a_3\!=\!b_3, \dots{},\ a_{i-1}\!=\!b_{i-1},\ a_i\!\ne{}\!b_i\).
 Without loss of generality, further suppose that \(a_i > b_i\). Because
 of the equality of the two different representations for \(\frac{p}{q}\) we can now write,
 
@@ -465,36 +467,62 @@ of the equality of the two different representations for \(\frac{p}{q}\) we can 
   + \frac{b_{i+2} - a_{i+2}}{(i+2)!}
   + \dots{}
   % + \frac{b_{k-1} - a_{k-1}}{(k-1)!}
-  + \frac{b_k - a_k}{k!}
+  + \frac{b_k - a_k}{k!} \label{eqn1}
 \end{alignat}
 \egroup
 }%\vspace{-4mm}
 
-But \(a_i - b_i \ge{} 1\), so \(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!}\).
+But \(a_i - b_i \ge{} 1\), so
 
-Also, (Rewrite by starting out with footnote "hence" etc.)
-\(\frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!} \ge{} \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\)
-regardless of the values of the variables
-on the right side of the inequality\footnote{Letting all the \(b\)'s be their maximum value,
-and all the \(a\)'s be zero will produce the largest numerators in each
-term of the sum; any other possibility will result in a smaller term for the sum.}.
+\begin{center}
+\(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!}\).
+\end{center}
 
-Because Lemma 2 tells us that \(\frac{1}{i!} > \frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!}\)
+Furthermore, examining any single term on the right-side of \eqref{eqn1}, say
+the first one \(\frac{b_{i+1} - a_{i+1}}{(i+1)!}\), we can see that since
+\(0 \le b_{i+1} \le{} i\) and \(0 \le a_{i+1} \le{} i\) that,
+
+\begin{center}
+\(\frac{i - 0}{(i+1)!} \ge{} \frac{b_{i+1} - a_{i+1}}{(i+1)!}\),
+\end{center}
+
+and hence,
+
+\begin{center}
+\(
+\frac{i}{(i+1)!}
++ \frac{i+1}{(i+2)!}
++ \dots{} + \frac{k-1}{k!} \ge{}
+\frac{b_{i+1} - a_{i+1}}{(i+1)!}
++ \frac{b_{i+2} - a_{i+2}}{(i+2)!}
++ \dots{} + \frac{b_k - a_k}{k!}\).
+\end{center}
+
+Furthermore, Lemma 2 tells us that \(\frac{1}{i!} > 
+\frac{i}{(i+1)!}
++ \frac{i+1}{(i+2)!}
++ \dots{} + \frac{k-1}{k!}\), so
 we can string all our inequalities together as follows,
 
 \begin{center}
 \(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!} > \frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!} \ge{} \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\),
 \end{center}
 
-But we had also deduced
+and hence,
+
+\begin{center}
+\(\frac{a_i - b_i}{i!} > \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\),
+\end{center}
+
+But in equation \eqref{eqn1} we had deduced
 that \(\frac{a_i - b_i}{i!} = \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\)
-which contradicts the strict inequality above. (Rewrite using label to above equality).
+which contradicts the strict inequality above.
 
 Therefore our assumption that there can be a second set
 of variables representing the same rational number \(\frac{p}{k!}\) must be false.
-Therefore any assignment of values to the variables of
+Therefore any assignment of values to the variables of the sum
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-is unique.
+produces a \emph{unique} number.
 
 Now we can count the number of members of \(\mathcal{S}_k\), by looking at all the
 possible combinations of values for the variables \(a_2, a_3, \dots{}, a_k\).
@@ -509,13 +537,13 @@ that can be assigned to all the variables of \(\frac{a_2}{2!} + \frac{a_3}{3!} +
 is \(2\cdot{}3\cdot{}4\cdot\cdot{}\cdot{}k = k!\,\), and since each set of assignments 
 creates a \emph{unique} member of the set, then the size of \(\mathcal{S}_k\) is \(k!\,\), which
 is the same size as \(\mathcal{F}_k\).
-Since any 
+Recalling from above that any 
 member of the set \(\mathcal{S}_k\), say \(\frac{a}{b}\),
 can be written as \(\frac{a}{b} = \frac{p}{k!}\), for some \(p\) where 
 \(0\le{}\frac{p}{k!}<1\) then
 \(\mathcal{S}_k = \mathcal{F}_k\).
 
-QED
+QED.
 
 % \section*{Corollary to Lemma 3}
 % 
@@ -559,25 +587,51 @@ QED
 \egroup
 }
 
+\(a \in \mathcal{F}_\infty\) means that there exists an integer \(k \ge 2\) such that
+\(a \in \mathcal{F}_k\). Similarly for \(a \in \mathcal{S}_\infty\).
+
 \section*{Lemma 4}
 
-The set \(\mathcal{F}_\infty\) contains all the non-negative rational numbers less than one.
+The set \(\mathcal{F}_\infty\) contains all non-negative rational numbers less than one.
 
 \subsubsection*{Proof}
 
 For all integers \(k \ge{} 2, \mathcal{F}_k \subset \mathcal{F}_{k+1}\) because if
 \(\frac{p}{k!} \in \mathcal{F}_k\)
 then \(\frac{(k+1)\cdot{}p}{(k+1)\cdot{}k!} = \frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1}\).
-By induction is simple to conclude that
+By induction it is simple to conclude that
 \(\mathcal{F}_k
 \subset \mathcal{F}_{k+1}
 \subset \mathcal{F}_{k+2}
 \subset \dots{}
 \subset \mathcal{F}_n
 \), for all \(n > k\),
-and ultimately \(\mathcal{F}_k \subset \mathcal{F}_{\infty}\) for all \(k\).
+and ultimately \(\mathcal{F}_k \subset \mathcal{F}_{\infty}\) for all \(k \ge{} 2\).
 
 % p/k is in Fk - therefor p/k is in Finf for all k. Therefor all rational numbers are in Finf.
+
+If \(\frac{p}{k}\) is a rational number where
+\(0\le{}\frac{p}{k}<1\)
+then \(\frac{p}{k} \in{} \mathcal{S}_k\) because,
+
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
+\begin{equation*}
+\frac{p}{k}
+= \frac{2\cdot{}3\cdot{}\cdot{}\cdot{}(k-1)}{2\cdot{}3\cdot{}\cdot{}\cdot{}(k-1)} \cdot{} \frac{p}{k}
+= \frac{2\cdot{}3\cdot{}\cdot{}\cdot{}(k-1)\cdot{}p}{k!}
+\end{equation*}
+\egroup
+}
+
+Therefore \(\frac{p}{k}\) is an element of \(\mathcal{F}_k\), hence an element of \(\mathcal{F}_\infty\)
+for all integers \(k \ge{} 2\).
+
+To summarize; All rational numbers \(\frac{p}{k}\) where \(k \ge{} 2\) and \(0 \le{} \frac{p}{k} < 1\) are in
+the set \(\mathcal{F}_{\infty}\)
+
+QED.
 
 \section*{Lemma 5}
 
@@ -608,99 +662,14 @@ where \(a_2, \dots{}, a_k\) are integers, and
 
 \subsubsection*{Proof}
 
-If \(\frac{p}{q}\) is a rational number where
-\(0\le{}\frac{p}{q}<1\) and \(2\le{}q\le{k}\)
-\footnote{The list of
-rational numbers being \(
-\frac{0}{2},
-\frac{1}{2},
-\frac{0}{3},
-\frac{1}{3},
-\frac{2}{3},
-\frac{0}{4},
-\frac{1}{4},
-\frac{2}{4},
-\frac{3}{4},
-\frac{0}{5},
-\frac{1}{5},
-\frac{2}{5},
-\frac{3}{5},
-\frac{4}{5},
-\dots{},
-\frac{0}{k},
-\frac{1}{k},
-\frac{2}{k},
-\dots{},
-\frac{k-2}{k},
-\frac{k-1}{k}\).}, then \(\frac{p}{q} \in{} \mathcal{S}_k\) because,
+Suppose \(\frac{p}{q}\) is a positive rational number less than one. We note that its 
+denominator is at least 2, so by Lemma 4 we can say that
+\(\frac{p}{q} \in \mathcal{F}_\infty\), and Lemma 3 tells us that
+\(\mathcal{S}_k = \mathcal{F}_k\) for all \(k \ge 2\), then \(\frac{p}{q} \in \mathcal{S}_\infty\).
 
-{\normalsize
-\bgroup                                  %% open the group
-\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
-\begin{alignat*}{1}
-\frac{p}{q}\quad =\quad &\frac
-{2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}
-{2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k} \cdot{} \frac{p}{q}\\
-=\quad &\frac
-{2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}p\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}
-{2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}q\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}\\
-=\quad &\frac
-{2\cdot{}3\cdot{}\cdot{}\cdot{}(q-1)\cdot{}p\cdot{}(q+1)\cdot{}\cdot{}\cdot{}k}
-{k!}
-\end{alignat*}
-\egroup
-}
+From this we can conclude that there is a unique sequence of variables 
 
-Therefore \(\frac{p}{q}\) is an element of \(\mathcal{F}_k\), hence an element of \(\mathcal{S}_k\).
-In other words, all non-negative rational numbers \(\frac{p}{q}\) with denominators \(q\) from 2 up to \(k\)
-where \(0\le{}\frac{p}{q}<1\) 
-are uniquely represented by the expression,
-
-{\small
-\bgroup                                  %% open the group
-\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
-\begin{center}
-\begin{equation*}
-\frac{p}{q} = \frac{a_2}{2!}
-+ \frac{a_3}{3!}
-+ \dots{}
-+ \frac{a_k}{k!},
-\end{equation*}
-\end{center}
-\egroup
-}
-
-where \(a_2, a_3, \dots{}, a_k\) are integers, and
-\(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0\le{}a_k<k\)
-
-If we fix \(q\) and let \(k\) go to infinity then it's clear that we can make a set \(\mathcal{S}_\infty\) that contains
-all rational numbers between zero and one.
-For example \(\mathcal{S}_{k+1}\) would ALSO contain all rational numbers with denominator \((k+1)\) that
-are between zero and one, 
-and \(\mathcal{S}_{k+2}\) would ALSO contain all fractions with denominator \((k+2)\), 
-that are between zero and one, etc. until you get them all.
-Since \(\frac{p}{q}\) is uniquely represented by
-our expression within \(\mathcal{S}_n\) for ALL values of \(n\ge{}k\)
-then it is unique for all rational numbers between zero and one.
-
-QED
-
-Alternate observation: Another way to see this is to look at what happens to the 
-expression for \(\frac{p}{q} \in \mathcal{S}_k\) when we let \(\mathcal{S}_k\) increase in size.
-
-{\small
-\bgroup                                  %% open the group
-\setlength{\abovedisplayskip}{0pt}
-\begin{alignat*}{1}
-\frac{p}{q} &= \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\\
-\frac{p}{q} &= \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} + \frac{0}{(k+1)!} + \dots{} + \frac{0}{n!}\\
-\frac{p}{q} &= \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} + \frac{a_{k+1}}{(k+1)!} + \dots{} + \frac{a_n}{n!}\\
-0 &\le{} a_2 < 2,\enspace 0 \le{} a_3 < 3, \dots{}, 0 \le{} a_k < k, a_{k+1} = 0, \dots{}, a_n = 0.
-\end{alignat*}
-\egroup
-}
-
-Therefore, \(\frac{p}{q} \in{} \mathcal{S}_n\) for all \(n \ge{} k\).
+QED.
 
 \section*{Factorial Representation Theorem (restated)}
 
@@ -767,7 +736,7 @@ that we take
 for the variables \(a_2, a_3, \dots{}, a_k\) in the sum for \(\frac{p}{q} \in{} \mathcal{S}_n\)
 all those for which \(a_k \ne{} 0\) but \(a_{k+1} = a_{k+2} = \dots{} = a_n = 0\).
 
-QED
+QED.
 
 \section*{Additional Observations}
 
