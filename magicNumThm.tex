@@ -101,11 +101,11 @@ of Rock}'' Jack Black's character Dewey Finn,
 pretending to be substitute teacher Ned Schneebly, is put on the spot when
 Miss. Mullins, the school principle, comes into class and demands that he show
 her his teaching methods which apparently involve an electric guitar.
-So ``Mr. S'' sings ``\href{https://www.youtube.com/watch?v=aa8U0nL-KXg}{The
+So Mr. S sings ``\href{https://www.youtube.com/watch?v=aa8U0nL-KXg}{The
 Math Song}'' wherein the final line of his
-improvised tune he sings ``...yes it's 9, and that's a magic-number...''
+improvised tune he sings ``\dots{}yes it's 9, and that's a magic-number\dots{}''
 
-It seems that Jack Black was making a clever
+It seems that Jack Black was making a
 tip-of-the-hat to the ``Schoolhouse Rock'' song ``\href{https://youtu.be/aU4pyiB-kq0}{3
 Is A Magic Number}''
 which most kids from the 70's/80's know.
@@ -182,39 +182,45 @@ described above) a magic-number?
 After all both ``Schoolhouse Rock'' AND ``The School of Rock'' sanction using
 ``magic number'' for 3 and 9, so we may be on to something big here!
 
-Too bad 3 and 9 are the only magic-numbers\dots{} wait for it \dots{}in base-10.
+Too bad 3 and 9 are the only magic-numbers in base-10.
+Darn - perhaps our new term isn't going to be all that useful after all, \dots{} or 
+maybe it will!
 We happen to use base-10 because we have ten fingers\footnote{To be honest, base-10 is
 not ``universal'' among humans, there are plenty of
-\href{https://www.youtube.com/watch?v=l4bmZ1gRqCc}{other bases} in use, albeit not nearly
-as widely used nor well defined in the modern world as base-10. This doesn't count
+\href{https://www.youtube.com/watch?v=l4bmZ1gRqCc}{other bases} in use, albeit not
+as widely used nor as mathematically useful as base-10. This doesn't count
 octal, hexadecimal and binary which are used in the computer world
-so by necessity are, mathematically speaking, very well defined.} but what about other bases?
+so by necessity are, mathematically speaking, useful.} but what about other bases?
 The heptapods in ``Arrival'' have seven arms/legs with seven fingers each,
 so I'll be dollars to donuts they use base-49.
 
-Let's examine some magic-numbers in other bases.
-
-In the way that 9 is a magic-number in base-10, then 7 is a magic-number in base-8.
-Also 4 is a magic-number in base-5;
+Let's examine some magic-numbers (according to our proposed
+usage of the term) in other bases.
+In the way that 9 is a magic-number in base-10,
+then 4 is a magic-number in base-5;
+Also 7 is a magic-number in base-8;
 15 is a magic-number in base-16;
 \dots{}and 30 is a magic-number in base-31, as you can see with these
 examples\footnote{We are going to use the conventions for specifying
-numbers in alternate bases as outlined in the paper ``Sesame~Street++''.}:
+numbers in alternate bases as outlined in the paper
+``\href
+{https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf}
+{Sesame~Street++}''}:
 \begin{itemize}
-\item $7\times{}7=49$ written in base-8 is $(61)_8$ and $6+1=7$.
-\item $7^3\times{}5=1715$ written in base-8 is $(3263)_8$ and $3+2+6+3=14$ (7 divides 14).
 \item $4\times{}67=268$ written in base-5 is $(2033)_5$ and $2+0+3+3=8$ (4 divides 8).
+\item $7\times{}181=1267$ written in base-8 is $(2363)_8$ and $2+3+6+3=14$ (7 divides 14).
 \item $15\times{}23=345$ written in base-16 is $(159)_{16}$ and $1+5+9=15$.
 \item $30\times{}35951=1078530$ written in base-31 is $(15699)_{31}$ and $1+5+6+9+9=30$
 \end{itemize}
 
-You may notice a pattern: the biggest ``digit'' in any base
+Notice the pattern: the biggest single-digit in any base
 (which is always one less than the base) seems to
-qualify as a magic-number.
-Using our examples, 9 is the biggest
-digit in base-10; 7 is the biggest digit in base-8; and 4 is the biggest digit in base-5.
-To write this out in a general way
-we would say that if $b$ is our base, then $(b-1)$ is a magic-number in base-$b$.
+qualify as a magic-number. For example,
+4 is the biggest digit in base-5,
+7 is the biggest digit in base-8,
+and 9 is the biggest digit in base-10;
+To state this in a general way
+we could say that if $b$ is our base, then $(b-1)$ is a magic-number in base-$b$.
 
 So what about 3 also being a magic-number in base-10?
 Let's take a look at the interesting (but probably never used outside this paper) base-31.
@@ -222,7 +228,7 @@ It appears that 2, 3, 5, 6, 10, 15 (along with 30)
 are \emph{all} magic-numbers in base-31, as we we can see
 with the following examples:
 \begin{itemize}
-\item $2\times{}13\times{}37=962$ written in base-31 is $(101)_{31}$ and $1+0+1=2$.
+\item $2\times{}409\times{}1129=923522$ written in base-31 is $(10001)_{31}$ and $1+0+0+0+1=2$.
 \item $3\times{}641=1923$ written in base-31 is $(201)_{31}$ and $2+0+1=3$.
 \item $5\times{}139\times{}2659=1848005$ written in base-31 is $(20102)_{31}$ and $2+0+1+0+2=5$.
 \item $6\times{}10091=60546$ written in base-31 is $(2103)_{31}$ and $2+1+0+3=6$.
@@ -261,8 +267,9 @@ of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
 
 Let's also add some useful notation to our discussion.
 In general, to say an integer $a$ is divisible by another integer $b$
-(not zero) means there is a third integer $c$ such that\footnote{``An
-Introduction to the Theory of Numbers" by G. H. Hardy and E. M. Wright. Pg 1.}:
+(not zero) means there is a third integer $c$ such that\footnote{Paraphrased
+from ``An Introduction to the Theory of Numbers" by G. H. Hardy
+and E. M. Wright. Pg 1.}:
 \[a=b\cdot{}c\]
 We express the fact that $a$ is divisible by $b$, and say
 ``$b$ divides $a$'' using this notation:
@@ -277,15 +284,17 @@ also
 %
 So given the Basis-Representation-Theorem and our new notation for divisability
 then here's our
-proposed theorem and definition for ``magic number''\footnote{Recall that
-the double-arrow, that is $\Leftrightarrow$, should be read as ``if and only if''.}:
+proposed theorem and definition for ``magic number'':
+%\footnote{Recall that the double-arrow, that
+%is $\Leftrightarrow$, should be read as ``if and only if''.}
 
 \section*{Magic Number Theorem}
 \begin{jprIn}
 Let $n$ be a positive integer represented in base-$b$.
 
-If $m$ is an integer such that $m\mid{}(b-1)$ then,
-\[m\mid{}n \Leftrightarrow m\mid{}(d_k+\dots+d_2+d_1+d_0)\]
+If $m$ is a positive integer such that $m\mid{}(b-1)$ then,
+%\[m\mid{}n \Leftrightarrow m\mid{}(d_k+\dots+d_2+d_1+d_0)\]
+\[m\mid{}n \text{\hspace{2.5em}if and only if\hspace{2.5em}}m\mid{}(d_k+\dots+d_2+d_1+d_0)\]
 Definition: We call $m\ne1$ a ``magic-number'' in base-$b$.
 \end{jprIn}
 \bigskip
@@ -294,10 +303,41 @@ As an interesting side note - according to our definition, binary,
 or base-2, doesn't have a magic-number.
 No great loss, as we said above 1 isn't helpful to consider as a magic-number. 
 
-Let's prove the theorem. The proof is quite easy when we introduce 
-the powerful tool of modular arithmetic.
+Let's prove the theorem. The proof is quite simple when using 
+modular arithmetic. However if you aren't familiar with modular arithmetic
+then I recommend that you check out Khan Academy's
+``\href{https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic}{What is modular arithmetic?}'' to
+get a clear-cut-crash-course in the subject, it's excellent, as is the 
+entire Khan Academy site in case you've never checked it out.
 
-We assume the following properties of modular arithmetic where $a,b$ and $c$ are
+In summary, modular arithmetic is the kind of arithmetic you use when
+you tell time with a 12 hour clock.
+
+For example, if it's 7 o'clock and I ask you to ``meet me in 7 hours"
+then you know I mean ``meet me at 2 o'clock".  Suppose instead I said ``meet me in 31 hours"
+then you would know that our meeting time
+is also going to be 2 o'clock (albeit 1 day hence) because:
+\[7\text{ o'clock}+ 31\text{ hours}= 7\text{ o'clock}+ (7 + 24)\text{ hours}= 2\text{ o'clock}\]
+When we do ``clock arithmetic" we add some
+number of hours to the current time then divide that sum by 12;
+The remainder of the division then
+tells us the clock time.
+
+Any time on the clock, say $T$ o'clock, plus 12 hours is also $T$ o'clock.  Furthermore,
+adding ANY multiple of 12 hours (eg 24, 36, 48, \dots{}) to $T$ o'clock gets us back to $T$ o'clock.
+We can say that $T, T{+}12, T{+}24, T{+}36, T{+}48, \dots{}$ are all equivalent times
+on the clock, or that these numbers are all equivalent modulo 12. It just means the hour hand
+has spun around the clock exactly 1, 2, or 3, etc.\ more times.
+
+So numbers being equivalent modulo 12, means that they have the same
+remainder when divided by 12. For example 1 is equivalent to 13 modulo 12.
+If your drill sargent barks an order at you to meet him at 13:00 hours,
+you'd better show up at 1 o'clock in the afternoon!
+
+So to say that $a$ is equivalent to $b$ modulo $c$ (where $c>1$) mean
+
+
+where $a,b$ and $c$ are
 integers such that $c>1$.
 
 (a+b) mod c=(a mod c+b mod c) mod c
