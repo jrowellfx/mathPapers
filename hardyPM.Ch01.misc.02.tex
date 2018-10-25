@@ -363,11 +363,17 @@ For integer \(k \ge 2\), and integers \(a_2, a_3, \dots{}, a_k\), we define the 
 0\! \le{}\! a_2\! <\! 2,\enspace 
 0\! \le{}\! a_3\! <\! 3,\enspace 
 \dots{},\enspace 0\! \le{}\! a_k\! <\! k\},\\
-\mathcal{F}_k = \{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}\\
+\mathcal{F}_k = \{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}
 \end{gather*}
 \end{center}
 \egroup
 }
+
+If \(a \in \mathcal{S}_k\), then the sum \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\),
+where
+\(k \ge{} 2\), and \(0\! \le{}\! a_2\! <\! 2,\enspace
+0\! \le{}\! a_3\! <\! 3,\enspace
+\dots{},\enspace 0\! \le{}\! a_k\! <\! k\), is called the ``factorial-representation'' of \(a\).
 
 \section*{Lemma 3}
 
@@ -437,8 +443,9 @@ Therefore any member of the set \(\mathcal{S}_k\) can be written as
 }
 
 Furthermore, each possible assignment of values to the variables of
-\(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-produces a \emph{unique} member of the set \(\mathcal{S}_k\).
+the factorial-representation of \(\frac{p}{k!}\)
+produces a \emph{unique} member of the set \(\mathcal{S}_k\)\footnote{\dots{} and a good thing too
+otherwise the set wouldn't be well defined!}.
 
 For if this weren't true and both
 \(\frac{p}{k!} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) and
@@ -451,7 +458,7 @@ First suppose that \(a_i\ne{}b_i\), where \(i \le{} k\), is the first such pair 
 that differ. In other words,
 \(a_2\!=\!b_2,\ a_3\!=\!b_3, \dots{},\ a_{i-1}\!=\!b_{i-1},\ a_i\!\ne{}\!b_i\).
 Without loss of generality, further suppose that \(a_i > b_i\). Because
-of the equality of the two different representations for \(\frac{p}{q}\) we can now write,
+of the equality of the two different representations for \(\frac{p}{k!}\) we can now write,
 
 {\footnotesize
 \bgroup
@@ -565,27 +572,13 @@ QED.
 
 \section*{Corollary to Lemma 3}
 
-Every non-negative rational number \(\frac{p}{k!}\), where \(k \ge{} 2\),
-can be written as a sum using a \emph{unique} sequence of integers \(a_2, a_3, \dots{} a_k\) such that,
+The factorial-representation for every non-negative rational number \(\frac{p}{k!} \in \mathcal{F}_k\) is 
+\emph{unique}.
 
-{\small
-\bgroup                                  %% open the group
-\setlength{\abovedisplayskip}{0pt}
-\begin{center}
-\begin{equation*}
-\frac{p}{k!} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!},
-\end{equation*}
-\end{center}
-\egroup
-}
-
-where \(0\! \le{}\! a_2\! <\! 2,\enspace 0\! \le{}\! a_3\! <\! 3,\enspace
-\dots{},\enspace 0\! \le{}\! a_k\! <\! k\).
-
-The corollary is a direct result of the fact that there is a one-to-one and onto mapping
-between the sets
+The corollary is a direct result of the fact that
+the sets
 \(\mathcal{F}_k\) and
-\(\mathcal{S}_k\).
+\(\mathcal{S}_k\) are equal, which you may recall means \(a \in \mathcal{F}_k \Leftrightarrow a \in \mathcal{S}_k\).
 
 \section*{Definitions}
 
@@ -602,13 +595,13 @@ between the sets
 all possible factorials as the denominator.
 
 \(\mathcal{S}\) is the set of ALL non-negative rational numbers, less than one,
-formed by every possible sum of the form we've been examining.
+formed by every factorial-representation possible.
 
 Finally,
-\(\mathbb{Q}_{01}\) is just the set of ALL non-negative rational numbers less than one, 
+\(\mathbb{Q}_{01}\) is the set of ALL non-negative rational numbers less than one, 
 where \(p\) and \(q\) are co-prime. We specify the co-prime condition
-to get unique members of the set, otherwise the set isn't well defined (i.e.; by definition sets
-must contain unique members). 
+to get unique members of the set, otherwise the set isn't well defined\footnote{By definition sets
+must contain unique members.}.
 
 Recall that two sets, \(X\) and \(Y\) are equal if and only if, for all \(a\),
 
@@ -706,41 +699,18 @@ we build up either master-set by including each successive
 \(\mathcal{F}_i\) or \(\mathcal{S}_i\), that either we're only adding
 new elements to the ones that we've already gathered up, or we're simply tossing
 the whole previous collection out, then using the entire contents of
-the new largest set in its place. Either way of thinking about the
-master-set gives the same result.
+the new largest set in its place. Either way of thinking about
+building up our infinite union of sets is valid.
 
-I claim that for \(a \in \mathcal{S}\) that it's representation 
-using a sequence of \(a_2, a_3, \dots{}, a_k, 0, 0, \dots{}\)'s is unique. We know that it's representation
-is unique within any given set, for example say \(a \in \mathcal{S}_k\)
+For all \(a \in \mathcal{S}\), the factorial-representation for \(a\) is unique.
+This is fairly trivial to see, because by definition an element of a set is unique,
+and since no elements ever disappear from a union of sets, then it must be true.
+However to shed more light on the matter, once a particular rational number \(\frac{p}{k!}\)
+finds it's way into one of the sets \(\mathcal{S}_i\) for some \(i\), then it will forever
+be in all successive sets \(\mathcal{S}_n\) for \(n > i\), and it's factorial-representation is
+unique within each of those successively larger sets.
 
-\break
 
-We're going to prove the lemma through a series of equalities as follows:
-
-{\normalsize
-\bgroup                                  %% open the group
-\setlength{\abovedisplayskip}{0pt}
-\begin{center}
-\begin{alignat}{1}
-\lim_{n \to \infty}\mathcal{F}_n &= \mathcal{F} \label{eqn2}\\
-\mathcal{F} &= \mathbb{Q}_{01} \label{eqn3}\\
-\lim_{n \to \infty}\mathcal{S}_n &= \mathcal{S} \label{eqn4}\\
-\mathcal{S} &= \mathcal{F} \label{eqn5}
-\end{alignat}
-\end{center}
-\egroup
-}
-
-By definition, \(\frac{p}{k!} \in \mathcal{F}\),
-therefore, \(\frac{p}{k!} \in \mathcal{F} \Leftrightarrow \frac{p}{k!}
-\in \mathcal{F}_n\), for all \(n \ge k\);
-hence,
-\begin{center}
-\(\displaystyle{\mathcal{F} = \lim_{n \to \infty}\mathcal{F}_n}\).
-\end{center}
-
-\bigskip
-\eqref{eqn3}:
 If \(\frac{p}{k} \in \mathbb{Q}_{01}\)
 then \(\frac{p}{k} \in{} \mathcal{F}_k\) because,
 
@@ -755,61 +725,48 @@ then \(\frac{p}{k} \in{} \mathcal{F}_k\) because,
 \egroup
 }
 
-so by \eqref{eqn2} \(\frac{p}{k} \in \mathcal{F}\)
-for all \(\frac{p}{k} \in \mathbb{Q}_{01}\). Clearly the converse is also
-true, since if \(a \in \mathcal{F}\), then clearly \(a \in \mathbb{Q}_{01}\)
-because \(\mathbb{Q}_{01}\) contains all non-negative rational numbers less than one;
-hence,
+ergo \(\frac{p}{k} \in \mathcal{F}\).
+
+
+The converse is also true; That is; \(a \in \mathcal{F}\), implies \(a \in \mathbb{Q}_{01}\).
+...why? - need to show m/n! = a/b s.t. gcd(a, b) = 1
+
+hence, a in F iff a in Q01, hence
+
 \begin{center}
 \(\mathcal{F} = \mathbb{Q}_{01}\).
 \end{center}
 
-\bigskip
+% For all \(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!} \in \mathcal{S}_k\),
+% since
+% \(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!} =
+% \frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}\!+\!\frac{0}{(k+1)!}\)
+% and
+% \(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}\!+\!\frac{0}{(k+1)!}
+% \in \mathcal{S}_{k+1}\) then 
+% \(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}
+% \in \mathcal{S}_{k+1}\). Hence 
+% \(\mathcal{S}_k \subset \mathcal{S}_{k+1}\).
+% 
+% By induction it is straightforward to conclude that
+% \(\mathcal{S}_2
+% \subset \mathcal{S}_3
+% \subset \mathcal{S}_4
+% \subset \dots{}
+% \), for all \(\mathcal{S}_i\), \(i \ge{} 2\).
+% Therefore when
+% \(a \in \mathcal{S}_k\), then \(a \in \mathcal{S}_n, \forall\ n \ge{} k\).
+% 
+% Let \(a \in \mathcal{S}\), such that the smallest non-zero term in its sum
+% is \(\frac{a_k}{k!}\), then it's simple to see that \(a \in \mathcal{S}_k\),
+% therefore, \(a \in \mathcal{S} \Leftrightarrow a \in \mathcal{S}_n\), for all \(n \ge k\);
+% hence,
+% \begin{center}
+% \(\displaystyle{\mathcal{S} = \lim_{n \to \infty}\mathcal{S}_n}\).
+% \end{center}
 
-\eqref{eqn4}:
-For all \(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!} \in \mathcal{S}_k\),
-since
-\(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!} =
-\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}\!+\!\frac{0}{(k+1)!}\)
-and
-\(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}\!+\!\frac{0}{(k+1)!}
-\in \mathcal{S}_{k+1}\) then 
-\(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}
-\in \mathcal{S}_{k+1}\). Hence 
-\(\mathcal{S}_k \subset \mathcal{S}_{k+1}\).
-
-By induction it is straightforward to conclude that
-\(\mathcal{S}_2
-\subset \mathcal{S}_3
-\subset \mathcal{S}_4
-\subset \dots{}
-\), for all \(\mathcal{S}_i\), \(i \ge{} 2\).
-Therefore when
-\(a \in \mathcal{S}_k\), then \(a \in \mathcal{S}_n, \forall\ n \ge{} k\).
-
-Let \(a \in \mathcal{S}\), such that the smallest non-zero term in its sum
-is \(\frac{a_k}{k!}\), then it's simple to see that \(a \in \mathcal{S}_k\),
-therefore, \(a \in \mathcal{S} \Leftrightarrow a \in \mathcal{S}_n\), for all \(n \ge k\);
-hence,
-\begin{center}
-\(\displaystyle{\mathcal{S} = \lim_{n \to \infty}\mathcal{S}_n}\).
-\end{center}
-
-\break
-\eqref{eqn5}: Because of Lemma 3 we know that the sets
-\(\mathcal{F}_k\) and \(\mathcal{S}_k\) are equal and interchangeable, so clearly
-\(\displaystyle{\lim_{n \to \infty}\mathcal{F}_n = \lim_{n \to \infty}\mathcal{S}_n}\).
-
-\bigskip
-By the
-equalities
-\eqref{eqn2},
-\eqref{eqn3},
-\eqref{eqn4} and
-\eqref{eqn5}
-established above,
-\(\displaystyle{\mathcal{S} = \lim_{n \to \infty}\mathcal{S}_n = \lim_{n \to \infty}\mathcal{F}_n
-= \mathcal{F} = \mathbb{Q}_{01}}\), therefore,
+Because of Lemma 3 we know that the sets
+\(\mathcal{F}_k\) and \(\mathcal{S}_k\) are equal and interchangeable, so clearly S = F = Q, hence
 
 \begin{center}
 \(\mathcal{S} = \mathbb{Q}_{01}\).
