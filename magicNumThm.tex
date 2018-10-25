@@ -162,14 +162,13 @@ divisibility property (with respect to adding up the digits of some other number
 Too bad 3 and 9 are the only magic-numbers in base-10,
 but what about other bases?
 The Heptapods in the film ``Arrival'' have 7 limbs, 3 arms and 4 legs, with 7 fingers/toes each.
-I'm guessing that they probably use some form of positional
-notation, but instead of base-ten they probably use base-7, base-21,
+I'm guessing that they probably use some form of positional-notation,
+but instead of base-ten they probably use base-7, base-21,
 maybe even base-49\footnote{For an understanding of alternate bases please see
 the paper ``\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0}
-{Counting}'' by James Philip Rowell}. What might the magic-numbers be in the Heptapod's
-counting-system?
+{Counting}'' by James Philip Rowell}. What might the Heptapod's magic-numbers be?
 
-Let's examine some magic-numbers
+Let's examine some numbers
 in other bases.
 \begin{itemize}
 \item $4\times{}67=268$ written in base-5 is $(2033)_5$ and $2+0+3+3=8$ (4 divides 8).
@@ -197,7 +196,7 @@ with the following examples:
 
 See the pattern? All the divisors of 30 seem to be magic-numbers in base-31.
 It turns out that in base-$b$, then any divisor of $(b-1)$ is a magic-number in base-$b$;
-however, since we've only looked at some examples, we can't really make that claim unless we prove it for ALL
+however, since we've only looked at some examples, we can't make that claim unless we prove it for ALL
 such situations.
 
 What about 1? Wouldn't 1 a magic-number in all bases? Of course it would because
@@ -228,10 +227,10 @@ r is the \emph{remainder} & (``the leftover'')
 \end{jprIn}
 \end{jprIn}
 
-Which is how you learned to divide in primary school, a more familiar way of writing it is:
-\[\frac{a}{b}=q+r\]
+Which is how you learned to divide in primary school with ``long-division'', that is;
+\[\frac{a}{b}=q\text{, with remainder }r\]
 So for example.
-\[\frac{19}{6}=3+1\]
+\[\frac{19}{6}=3\text{, with remainder }1\]
 
 So to say that $a$ is divisible by $b$ simply means\footnote{Paraphrased
 from ``An Introduction to the Theory of Numbers" by G. H. Hardy
@@ -291,9 +290,9 @@ or base-2, doesn't have a magic-number.
 No great loss, as we said above 1 isn't helpful to consider as a magic-number. 
 
 Let's prove the magic-number-theorem using 
-modular arithmetic. If you aren't familiar with modular arithmetic
+modular-arithmetic. If you aren't familiar with modular-arithmetic
 then check out Khan Academy's
-``\href{https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic}{What is modular arithmetic?}''.
+``\href{https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic}{What is modular-arithmetic?}''.
 Khan's introductory explanation is excellent, simple and clear,
 as is the entire Khan Academy site in case you've never checked it out.
 
@@ -309,7 +308,7 @@ Restated in terms of
 modular-arithmetic, we need to prove:
 \[n\bmod{m} = 0\text{\hspace{2.5em}}\Leftrightarrow\text{\hspace{2.5em}}(d_k+\dots+d_1+d_0)\bmod{m} = 0\]
 
-I'm going to assume that you are familiar with how to use modular arithmetic from this point forward,
+I'm going to assume that you are familiar with how to use modular-arithmetic from this point forward;
 if not, make a quick detour to Khan Academy.
 
 \section*{Lemma}
@@ -327,7 +326,7 @@ Let $k$, $b$ and $m$ be integers as described in the lemma, then there exists an
 &\Leftrightarrow\quad
 &m\cdot{}q+1
 &= b && &&\quad\text{(Add 1 to both sides)}
-\intertext{Given this equality we can state the following modular congruence:}
+\intertext{Given this equality we can state the following modular-congruence:}
 &&m\cdot{}q+1
 &\equiv b &&\pmod{m}\\
 &\Leftrightarrow\quad
