@@ -110,22 +110,35 @@ a kind of basis-representation-theorem, but for rational numbers, \dots{} beauti
 Here it is, followed by my proof which starts out with some lemmas to get us rolling.
 
 \section*{Theorem}
-Any positive rational number can be expressed in one and only one way in the form\par
+
+Any positive rational number can be expressed in one and only one way in the form
+
 \begin{center}
 \(a_1 + \frac{a_2}{1\cdot{}2}
 + \frac{a_3}{1\cdot{}2\cdot{}3}
 + \dots{}
 + \frac{a_k}{1\cdot{}2\cdot{}3\cdot{}\dots{}\cdot{}k},\)\par
 \end{center}
-where $a_1, a_2, \dots{}, a_k$ are integers, and\par
+
+where $a_1, a_2, \dots{}, a_k$ are integers, and
+
 \begin{center}
 \(0\le{}a_1,\quad 0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0<a_k<k\)
 \end{center}
+
 \section*{Lemma-1}
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
 \begin{center}
-\(\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-1}{k!} = \frac{k!-1}{k!}\)
+\begin{equation*}
+\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-1}{k!} = \frac{k!-1}{k!}
+\end{equation*}
 \end{center}
+\egroup
+}
 \section*{Proof of Lemma-1}
+
 This equality is fairly trivial to demonstrate by induction, since $\frac{1}{2!} = \frac{2!-1}{2!}$ and, 
 {\footnotesize
 \begin{alignat*}{1}
