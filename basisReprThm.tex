@@ -134,14 +134,16 @@ Roman system only effectively allowed counting up to 4999.
 Even though we use different symbols, the ancient Romans and us
 are talking about the same abstract set of numbers underneath,
 which we call integers\footnote{Integers are 
-the set of all the postive whole numbers, as well as zero and all the negative counterparts to each positive number.
+the set of all the positive whole numbers, as well as zero and all the negative counterparts to each positive number.
 %We denote the set of integers with this symbol: $\mathbb{Z}$.
 }.
 Mathematics deals with numbers in this pure sort of way, divorced from the symbols
 used to represent each number.
 When we talk about positive integers in mathematics, it's best to remind yourself
-that we are really talking about the set of numbers 
-that represent successively larger piles of apples, forgetting the symbols.
+that each successive number
+represents the quantity of apples in each successively larger piles of apples - i.e.; try to forget about the 
+specific symbols
+we use like ``9'' and ``10'' or ``IX'' and ``X''.
 
 However we use numbers written out in base-ten all the time in mathematics,
 rarely thinking in terms of piles of apples.
@@ -150,8 +152,8 @@ that we can use base-ten to represent the set of positive integers.
 \emph{Caution}: the only thing modern mathematics takes for granted are axioms
 and the fact that we can use base-ten to represent the integers is NOT among the list of axioms.
 
-Briefly; the axioms describe a few simple properites about addition and multiplication.
-These properites are \emph{so simple} that they can't be expressed in
+Briefly; the axioms describe a few simple properties about addition and multiplication.
+These properties are \emph{so simple} that they can't be expressed in
 yet other even-simpler ideas. The axioms are the minimal set of simple,
 obvious, irrefutable ideas from which
 everything else in mathematics is built\footnote{The axioms:
@@ -214,7 +216,7 @@ this theorem is a good example of the kind of thing mathematicians like to do - 
 
 Why restrict ourselves to ten when the idea applies equally well to two, three, four, five, ... etc.?
 The heptapods in ``Arrival'' have  seven limbs with seven fingers each, perhaps they
-use base-fourty-nine, so our
+use base-forty-nine, so our
 theorem should cover that case too.  By generalizing the idea to a base $b$, where $b$ is any number two or higher,
 we gain deeper understanding about the subject in question.
 
@@ -546,7 +548,7 @@ n =\ &d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0
 & d_3\text{ is an integer such that }0\le{}d_3<10\text{, and}\\
 & d_4\text{ is an integer such that }1\le{}d_4<10.
 \end{align*}
-Ok, hold on a minute - that's getting a little cumbersome. it's clunky and hard to read -
+OK, hold on a minute - that's getting a little cumbersome. it's clunky and hard to read -
 plus did  you notice how we slipped in that different range for $d_4$?
 
 First let's deal with the different range on that $d_4$. To make sure $n$ is a legitimate five-digit number we have to
@@ -647,7 +649,7 @@ of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
 That's a little confusing, so 
 let's solve our problem by defining the 
 two digit number ``10" (i.e., a one followed by a zero) to be the integer ten.
-It's ok - we're not violating any rules by doing this. At this point we're just defining
+It's OK - we're not violating any rules by doing this. At this point we're just defining
 a symbol to stand in for the integer ten. Here's our
 FINAL draft of the theorem:
 \section*{Base-Ten Representation Theorem}
@@ -968,21 +970,55 @@ then what is 185190 expressed in base-twenty-three?
 \item $291480 = (10\text{M}01)_{23}$
 \end{enumerate}
 \end{enumerate}
-
-
-
-
-
-
-
-
-
-
 \break
+
+\section*{Introduction to Proofs}
+
+There are several ways to approach
+proving The Basis Representation Theorem.
+
+The mathematician George E. Andrews (in his book
+``Number Theory") has an interesting proof.
+He asks us to imagine a that we have at our disposal a function that when fed a positive integer $n$,
+returns to us a count of the number of base-$b$ representations of $n$.
+Then with some fairly straightforward reasoning he shows that this counting-function
+MUST produce a count of ``1" for every $n$, both establishing the uniqueness 
+and the existence in one fell swoop.
+
+We could also prove The Basis Representation Theorem by dividing our integer $n$ by $b$, then dividing that
+result by $b$ again, then again, and again, etc. We'd end up with a finite-length series
+of remainders which are the base-$b$-digits of $n$.
+This is an interesting approach to the proof in that it also gives us a technique
+to construct a base-$b$ representation of each integer.
+If we were to go down this road
+we would try to generalize how we solved
+exercise number 2-iii) above, it's worth a try for fun.
+
+However, we're going to follow a much more straightforward approach.
+We'll use the principle of mathematical induction directly on $n$
+to prove that
+a base-$b$ representation of each positive integer exists.
+Then we'll use a different approach to prove that each such representation is unique.
+
 \section*{The Principle of Mathematical Induction}
 
-As we discussed way up at the top of this paper,
-we think about generating the set of positive integers as a process that builds them up one by one.
+Recall that
+when we talk about positive integers in mathematics, we're talking about
+the set of numbers that
+represent successively larger piles of apples starting
+with a pile containing only one apple.
+
+So we start with
+``\faApple{}" to get our very first,
+and smallest pile of apples.
+Then add another apple to get a pile of ``\faApple{}\faApple{}",
+then ``\faApple{}\faApple{}\faApple{}",
+then ``\faApple{}\faApple{}\faApple{}\faApple{}"
+then some big pile of
+``\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\dots{}\faApple{}\faApple{}\faApple{}"
+after we've been adding apples for a while.
+Each successively bigger pile of apples corresponds with each successive positive integer.
+
 That is, each successive integer is one more than the previous one,
 starting at 1, then one more
 taking us to 2,
@@ -1048,7 +1084,6 @@ meaning he could state the result in a heartbeat - tada - ``5050"!
 Gauss is widely regarded as being one of the greatest
 mathematicians who has ever lived - the young eight-year old was just getting started.
 
-\break
 Anyway,
 to generalize young Gauss's insight we can write the expression like this:
 \[1+2+3+\ldots+n=\frac{n(n+1)}{2}\]
@@ -1064,6 +1099,7 @@ we are trying to prove. In this case we are summing
 only one item thus it's ``trivial''.} of the first positive integer 1.
 \bigskip
 
+\break
 Now let's assume the relationship is true for $n$,
 and prove that it must also be true for $n+1$ for our ``induction step":
 \begin{alignat*}{2}
@@ -1078,8 +1114,7 @@ and prove that it must also be true for $n+1$ for our ``induction step":
 Which proves young Gauss's expression is true for
 the positive integer $n+1$ whenever it's true for $n$ (to see this, compare
 our new expression for adding the first $(n+1)$ integers
-to the expression for $n$ at the top
-of the page) - then
+to the expression for $n$ that we're trying to prove) - then
 by the principle of mathematical induction,
 the expression is true for all positive integers. QED\footnote{``QED'' - is
 often used at the conclusion of a proof to state that it's
@@ -1088,10 +1123,11 @@ done - it's an acronym for the Latin phrase
 In other words we've proven what we set out to prove.}
 
 \section*{Extra Exercise: Geometric Series Theorem}
-If $b, n$ are nonnegative integers and $b\ne1$ then prove,
+If $b, n$ are non-negative integers and $b\ne1$ then prove,
 \[1+b+b^2+\dots+b^{n-1} = \frac{b^n-1}{b-1}\]
 Hint: use induction on $n$, the base case being $n=1$.  Before you turn the page, try proving this, you can do it!
 
+\break
 \section*{Proof for Extra Exercise: Geometric Series Theorem}
 Base case: $n=1$
 \[\frac{b^1-1}{b-1}=\frac{b-1}{b-1}=1=b^0=b^{1-1}\]
@@ -1109,61 +1145,33 @@ Then,
 =\ &\frac{b^{n+1}-1}{b-1} &&\text{(Adding then subtracting }b^n\text{ is zero.)}
 \end{alignat*}
 QED
-\section*{Proof of the Basis Representation Theorem}
-How do we prove our theorem? There are several ways to approach it.
-
-The mathematician George E. Andrews (in his book
-``Number Theory") has an interesting proof.
-He asks us to imagine a function that given a positive integer $n$,
-counts the number of base-$b$ representations of $n$.
-Then with some fairly straightforward reasoning he shows that this counting-function
-MUST produce a count of ``1" for every $n$, both establishing the uniqueness 
-and the existence in one fell swoop.
-It's a cool proof - short and sweet, I'll bet G. H. Hardy would approve of
-it from an aesthetic standpoint.
-
-We could also use the Euclidean Division Theorem to prove our theorem.
-We could show that by dividing our integer $n$ by $b$, then dividing that
-result by $b$ again, then again, and again, etc. that we'd get a series
-of remainders which are the base-$b$-digits of $n$.
-This is an interesting approach to the proof in that it also gives us a technique
-to construct a base-$b$ representation of each integer.
-If we were to go down this road
-we would try to generalize how we solved
-exercise number 2-iii) above, it's worth a try for fun.
-
-However, we're going to follow a much more straightforward approach.
-We'll use the principle of mathematical induction directly on $n$
-to prove that
-a base-$b$ representation of each positive integer exists.
-Then we'll use a different approach to prove that each such representation is unique.
-
-\bigskip
+\section*{Induction Proof of the Basis Representation Theorem}
 Using the
 principle of mathematical induction 
 to prove that a base-$b$ number exists for all the positive integers is pretty simple.
 The crux of the approach is to show that if $n$ can be expressed in base-$b$,
 then it necessarily follows that $n+1$ can also be represented in base-$b$.
 
-This is best thought of as a magic
-odometer in your new magic car.
-As you pull it out of the dealership parking lot
-on the first day you notice its odometer is only one digit wide.
-That one and only display-digit shows a ``1", I guess the factory was only one mile away.
+Let's pretend we just bought a brand-new car with one of those physical odometers that
+spin little wheels to show the number of miles driven. However according
+the the brochure our new car has a magic-odometer.
+We notice as we
+pull out of the dealership parking lot that
+the odometer is only one digit wide.
+That one and only digit shows a ``1", I guess the factory was only one mile away.
 
 As you get close to the end of your drive home
 you see you've clocked 9 miles.
 Naturally you're a little curious about how it's going to
-count to 10 since the odometer apparently only has one digit for counting.
+count to 10 since the odometer apparently only has one digit.
 While pondering this curiosity you see the 9 starting to roll
 over back to 0, and a second digit to it's left magically materializes!
 It rolls to a 1 as the 9 settles back to 0.
-Nice new feature - the unlimited odometer!
-Apparently this magic odometer only adds new digits to the left
+Apparently this magic-odometer only adds new digits to the left
 as it needs them.
-The magic odometer should be able to display ANY number of miles, no matter how large.
+The magic-odometer should be able to display ANY number of miles, no matter how large.
 (Good thing too, this
-new line of magic cars from Tesla are guaranteed to last forever.)
+new line of magic-cars from Tesla are guaranteed to last forever.)
 
 Our proof is going to take care of the three cases that happen with
 the magic-odometer. Imagine that we've already driven some arbitrarily large
@@ -1202,7 +1210,7 @@ to a 3 and all the 9's got changed to 0's, while the rest of the digits remained
 leaving us with a legitimate base-ten number.
 \item ALL the digits from the units digit up to the highest digit are 9's,
 so driving one more mile
-engages the magic odometer feature, materializing a new leftmost digit.
+engages the magic-odometer feature, materializing a new leftmost digit.
 The newly materialized digit turns to a 1 and all the 9's spin back to 0.
 In this case the number of digits on the odometer will have been extended by one.
 
@@ -1214,8 +1222,8 @@ Example: We've driven 999999 miles so far, so the next mile driven is:
 &=1000000
 \end{align*}
 Same ``trick" as the previous case, but this time our number grew from a
-six digit number to a seven digit number. Ya, we just drove a million miles
-which is definitely a legitimate base-ten number!
+six digit number to a seven digit number. Yup, we just drove a million miles
+which is definitely a legitimate base-ten number.
 \end{enumerate}
 
 \bigskip
@@ -1245,7 +1253,6 @@ to make a base-$b$ representation for each integer.
 
 Without further adieu, let's get to the actual proof!
 
-\break
 \section*{Existence Proof of the Basis Representation Theorem}
 Let $b$ be a positive integer greater than 1.
 
@@ -1388,7 +1395,6 @@ We note that
 the number of integers in the sequence associated
 with $n+1$ is one longer than for $n$. i.e., $n+1$ is one digit longer that $n$.
 
-\break
 \end{jprIn}
 Case 2b) $d_0=(b-1)$ but at least one other digit is not equal to $(b-1)$
 \begin{jprIn}
@@ -1569,7 +1575,7 @@ QED
 %QED - Uniqueness Proof of the B.R.T.
 
 \bigskip
-Since we have proven that a base-$b$-representation exists for ALL the postive integers, \emph{and}
+Since we have proven that a base-$b$-representation exists for ALL the positive integers, \emph{and}
 that this representation is unique, then we
 have proven the Basis Representation Theorem.
 
