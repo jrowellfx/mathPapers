@@ -150,8 +150,9 @@ integer
 \(\frac{m}{q} = i + \frac{p}{q}\), where \(0 \le{} \frac{p}{q} < 1\) (note that \(i\) can be zero).
 
 So if we're trying to represent any positive rational number \(\frac{m}{q}\) in terms
-of the theorem then the integer part, \(i\), will be the \(a_1\) term,
-and the remainder of the expression should be the rational part, \(\frac{p}{q}\), such that,
+of the theorem then the \(a_1\) term will be the integer part, \(i\),
+and the remainder of the expression \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
+should be the rational part, \(\frac{p}{q}\), such that,
 
 {\small
 \bgroup                                  %% open the group
@@ -159,10 +160,10 @@ and the remainder of the expression should be the rational part, \(\frac{p}{q}\)
 \begin{center}
 \begin{equation*}
 0 \le{} 
-\frac{a_2}{1\cdot{}2}
-+ \frac{a_3}{1\cdot{}2\cdot{}3}
+\frac{a_2}{2!}
++ \frac{a_3}{3!}
 + \dots{}
-+ \frac{a_k}{1\cdot{}2\cdot{}3\cdot{}\dots{}\cdot{}k}
++ \frac{a_k}{k!}
 < 1
 \end{equation*}
 \end{center}
@@ -174,7 +175,9 @@ and just focus on the \(a_1, a_2, a_3, \dots{}, a_k\) terms.
 So I began to only focus on proving the theorem for rational numbers \(\frac{p}{q}\),
 such that \(0 \le{} \frac{p}{q} < 1\), as it would be trivial to extend it to all rational numbers later.
 Also, it started to become clear that including zero (that is, not JUST positive rational numbers) was
-going to simplifiy the task too.
+going to simplify the task too (did you notice how the theorem restricts the last term \(a_k\) to
+be strictly greater than zero, unlike all the other terms? Well - I'm going to loosen up that
+restriction and treat the \(a_k\) like all the other terms.)
 
 At first glance it not even remotely obvious how you'd go about finding such
 an assignment of coefficients \(a_2, a_3, \dots{}, a_k\) for a given rational number
@@ -212,16 +215,34 @@ For starters look at these particular rational numbers,
 \egroup
 }
 This was a pretty strong hint! It seemed to be the case
-that if we assign the biggest possible values to the coefficients,
-from \(a_2\) up to say \(a_k\) we get this rational number, \(\frac{k!-1}{k!}\). This turned out to be
-a pretty useful observation, and it became my `Lemma 1' in the proof below.
+that if we assign the largest possible values to the coefficients,
+from \(a_2\) up to say \(a_k\) we get this rational number, \(\frac{k!-1}{k!}\).
+This number is as close to 1 as you can get with a denominator of \(k!\) without actually
+hitting 1. (Check it out - what happens if you add \(\frac{1}{k!}\) to \(\frac{k!-1}{k!}\)?)
+This turned out to be
+a pretty useful observation, and it became my `Lemma-1' in the proof below.
 
 Also, if we assign zeros to all the coefficients then naturally we get \(\frac{0}{k!}\).
-So for a given sum \(\)
-This seems pretty useful because for a given 
-to cover the range for our \(\frac{p}{q}\) part of our specific rational
-number where \(0 \le{} \frac{p}{q} < 1\).
 
+So we we restrict ourselves to using only \(a_2, a_3, \dots{}, a_k\), then
+can generate the smallest rational number (\(\frac{0}{k!}\)) and the largest
+(\(\frac{k!-1}{k!}\)) such that 
+\(0 \le{} \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} < 1\).
+
+One further observation to help understand the motivation
+behind this proof is that by using combinatorics we can
+count how many possible combinations of \(a_i\)'s there are.
+So, we have two choices for the \(a_2\) term (0, 1), combined with three choices for the \(a_3\) term (0, 1, 2),
+combined with four choices for the \(a_4\) term (0, 1, 2, 3), \dots{} combined with \(k\) choices for
+the \(a_k\) term (0, 1, 2, \dots{}, \(k\!-\!1\)), that
+gives us \(2\cdot{}3\cdot{}4\cdot{}\cdot{}\cdot{}k = k!\) possibly different sums.
+
+Hmmmmm, the following set has \(k!\) members,
+\(\{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},\enspace \dots{},\enspace \frac{k!-1}{k!}\}\).
+So that, plus one or two other thoughts is what lead me to the proof below. I won't spoil the rest of it,
+to find out, go ahead and read the rest of the paper!
+
+\break
 \section*{Lemma-1}
 {\small
 \bgroup                                  %% open the group
@@ -249,23 +270,8 @@ This equality is fairly trivial to demonstrate by induction, since \(\frac{1}{2!
 
 \section*{Lemma-2}
 
-For integers \(i,k\) where \(2\le{}i<k\) such that,
-{\small
-\bgroup                                  %% open the group
-\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
-\begin{center}
-\begin{equation*}
-\frac{1}{2!} + \frac{2}{3!}
-+ \dots{}
-+ \frac{i-1}{i!}
-+ \frac{i}{(i+1)!}
-+ \dots{}
-+ \frac{k-1}{k!},
-\end{equation*}
-\end{center}
-\egroup
-}
-then
+For integers \(i,k\) where \(2\le{}i<k\),
+
 {\small
 \bgroup                                  %% open the group
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
@@ -283,11 +289,11 @@ then
 \bgroup
 \setlength{\abovedisplayskip}{0pt}
 \setlength{\belowdisplayskip}{0pt}
-\begin{alignat*}{1}
+\begin{alignat*}{2}
   &\frac{i}{(i+1)!} + \dots{} + \frac{k-1}{k!}\\
   =\  &(\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-1}{k!})
-  - (\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{i-1}{i!})\\
-  =\  &\frac{k!-1}{k!} - \frac{i!-1}{i!}\\
+  - (\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{i-1}{i!})\quad&\\
+  =\  &\frac{k!-1}{k!} - \frac{i!-1}{i!} &\text{(by lemma-1)}\\
   =\  &\frac{k!}{k!} - \frac{1}{k!} - \frac{i!}{i!} + \frac{1}{i!}\\
   =\  &\frac{1}{i!} - \frac{1}{k!}\\
   <\  &\frac{1}{i!}
@@ -443,7 +449,7 @@ which means the size of the set \(\mathcal{S}_k\) is \(k!\, \). Recalling our pr
 all members of the set \(\mathcal{S}_k\) are of the form \(0\le{}\frac{p}{k!}<1\) we
 can assert that \(\mathcal{S}_k = \mathcal{F}_k\).
 
-Futhermore we've shown above that there is a unique sequence of integers \(a_2, a_3, \dots{} a_k\),
+Furthermore we've shown above that there is a unique sequence of integers \(a_2, a_3, \dots{} a_k\),
 (with the appropriate ranges of values for each integer
 and \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\))
 for each value of \(\frac{p}{k!} \in \mathcal{F}_k\).\qquad QED
@@ -460,7 +466,7 @@ such that
 
 Apart from the fact that this was part of the proof of lemma-3
 The immediately follows from lemma-3 because the sets \(\mathcal{S}_k\) and \(\mathcal{S}_k\) 
-are identicaal and there are k! possible combinations of 
+are identical and there are k! possible combinations of 
 coefficients, one for each of the k! unique members of the set \(\mathcal{F}_k\).
 
 % This fact was used in the proof of lemma-3 to show the one-to-one
