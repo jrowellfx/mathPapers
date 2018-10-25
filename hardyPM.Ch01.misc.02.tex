@@ -142,12 +142,12 @@ non-negative rational numbers which we will always discuss in terms of one integ
 by another integer, like \(\frac{p}{q}\).}, say \(\frac{m}{q}\), can be
 % \emph{uniquely}
 written as an
-integer part, \(i\), plus a fractional part, \(\frac{p}{q}\), such that
+integer part, \(i\), plus a fractional\newline part, \(\frac{p}{q}\), such that
 \(\frac{m}{q} = i + \frac{p}{q}\), where \(0 \le{} \frac{p}{q} < 1\).
 %(note that \(i\) can be zero).
 
 So trying to represent any positive
-rational number \(\frac{m}{q}\) in the form of the theorem then the integer \(a_1\)
+rational number \(\frac{m}{q}\) in the form of the theorem, the integer \(a_1\)
 wants to play the role of the integer part, \(i\),
 and the remainder of the expression \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
 looks to be playing the role of the rational part, \(\frac{p}{q}\), where,
@@ -172,16 +172,15 @@ It seemed a good idea to forget about the integer \(a_1\)
 and just focus on the integers \(a_2, a_3, \dots{}, a_k\).
 In other words,
 first prove a restricted form of the theorem for rational numbers between zero and one,
-then later prove the full theorem by adding back the \(a_1\) to get all positive rational numbers.
+then later prove the full theorem by re-introducing the \(a_1\) to get all positive rational numbers.
 Furthermore, including zero (that is, not just \emph{positive} rational numbers) was also
 going to make things easier with this approach.
 
 At first, it wasn't remotely obvious how I'd go about calculating
 the values of the integers \(a_2, a_3, \dots{}, a_k\) for a given number
 \(\frac{p}{q}\) -
-% (where \(0 \le{} \frac{p}{q} < 1\)) -
-However after playing around for a while, I figured it out,
-it's kinda like doing long-division. A this point
+However, after playing around for a while I figured it out,
+it's kinda like doing long-division. At this point
 a few patterns started to jump out at me.
 For example, look at these numbers,
 
@@ -230,12 +229,12 @@ letting all the variables be zero \emph{except} for \(a_k = 1\).
 Then I considered what happens to the variables by
 adding \(\frac{1}{k!}\) to it, repeatedly, over and over.
 
-So With various assignments of values to
-the variables \(a_2, a_3, \dots{}, a_k\), I could
+So by making various assignments of values to
+the variables \(a_2, a_3, \dots{}, a_k\) I could
 generate the smallest numbers, \(\frac{0}{k!}, \frac{1}{k!}, \frac{2}{k!}\), etc.
 as well as the largest,
 \(\frac{k!-1}{k!}\).
-Then I realized that I could count the number of possible sums that could be formed 
+Then I realized that I could count the number of possible sums that might be formed 
 with the expression.
 
 There are two choices for the \(a_2\) variable (0 and 1),
@@ -248,8 +247,8 @@ gives us \(2\cdot{}3\cdot{}4\cdot{}\cdot{}\cdot{}k = k!\) possibly different sum
 Hmmm, the following set has \(k!\) members,
 \(\{\frac{0}{k!},\enspace \frac{1}{k!},\enspace \frac{2}{k!},
 \enspace \dots{},\enspace \frac{k!-1}{k!}\}\).
-By forming a set out of all possible assignments of values to the variables in the expression
-it seemed like it would be easy to show that the two sets are identical.
+By forming another set out of all possible sums from the expression
+it seemed like it would be fairly easy to show that the two sets are identical.
 
 Another clue was the insight that in order to be able to represent
 any fraction with a prime-number denominator, say the prime is \(P\) and
@@ -272,7 +271,7 @@ also be guaranteed to be able to represent \(\frac{b}{k-1},
 So by using set notation to collect all the numbers generated
 by our expression, then letting \(k\) grow without bound
 I should get a set that contains \emph{all} the rational numbers between zero and one!
-That in essense is how I arrived at the proof that follows.
+Those are the ideas behind the proof that follows.
 
 \break
 \section*{Lemma 1}
@@ -292,7 +291,7 @@ Induction: When \(k = 2\) it's clear that \(\frac{1}{2!} = \frac{2!-1}{2!}\), an
 \(\frac{2-2}{1!} = \frac{0}{1!} = \frac{1!-1}{1!}\) then
 {\scriptsize
 \begin{alignat*}{1}
-  &\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-2}{(k-1)!} + \frac{k-1}{k!}\\
+\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-2}{(k-1)!} + \frac{k-1}{k!}
   =\  &\frac{(k-1)!-1}{(k-1)!} + \frac{k-1}{k!}\\
   =\  &\frac{k((k-1)!-1)}{k(k-1)!} + \frac{k-1}{k!}\\
   =\  &\frac{k!-k+k-1}{k!}\\
@@ -301,7 +300,8 @@ Induction: When \(k = 2\) it's clear that \(\frac{1}{2!} = \frac{2!-1}{2!}\), an
 }
 \dots{}thus establishing Lemma 1 for all values of \(k \ge 2\).\qquad QED.
 
-\bigskip
+% \bigskip % Need bigger skip this time.
+\vspace{18pt}
 The following lemma captures an idea that is perhaps most easily grasped by analogy to the basis representation
 theorem for integers. For base-ten numbers we can say,
 
@@ -320,7 +320,6 @@ The above inequality
 is merely stating that any single power of ten is bigger than the sum of
 every smaller power of ten, each times 9.  For example, 1000 is bigger than 999.
 Read the statement of the inequality in Lemma 2 with this idea in mind.
-
 
 \section*{Lemma 2}
 
@@ -342,11 +341,11 @@ For integers \(i,k\) where \(2\le{}i<k\),
 \egroup
 }
 \subsubsection*{Proof}
-{\footnotesize
+{\scriptsize
 \bgroup
 \setlength{\abovedisplayskip}{0pt}
 \begin{align*}
-  &\frac{i}{(i+1)!} + \frac{i+1}{(i+2)!} + \dots{} + \frac{k-2}{(k-1)!} + \frac{k-1}{k!}\\
+\frac{i}{(i+1)!} + \frac{i+1}{(i+2)!} + \dots{} + \frac{k-2}{(k-1)!} + \frac{k-1}{k!}
   =\  &(\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-1}{k!})
   - (\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{i-1}{i!})\\
   =\  &\frac{k!-1}{k!} - \frac{i!-1}{i!}\qquad \qquad \text{(by Lemma 1)}\\
@@ -376,11 +375,14 @@ For integer \(k \ge 2\), and integers \(a_2, a_3, \dots{}, a_k\), we define the 
 \egroup
 }
 
-Suppose \(a \in \mathcal{S}_k\). Then \(a = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\),
-for some a2, a3, ... ak where
-\(k \ge{} 2\), and \(0\! \le{}\! a_2\! <\! 2,\enspace
-0\! \le{}\! a_3\! <\! 3,\enspace
-\dots{},\enspace 0\! \le{}\! a_k\! <\! k\). This is called the ``factorial-representation of \(a\)''.
+Let \(a \in \mathcal{S}_k\) such that \(a = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\),
+for some \(a_2, a_3, \dots{}, a_k\), 
+where
+\(k \ge{} 2\), and {\footnotesize\(0\!\le{}\!a_2\!<\!2,\enspace
+0\!\le{}\!a_3\!<\!3,\enspace
+\dots{},\enspace 0\!\le{}\!a_k\!<\!k\)}.
+The expression \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) is called
+``the factorial-representation of \(a\)''.
 
 \section*{Lemma 3}
 
@@ -397,14 +399,29 @@ for some a2, a3, ... ak where
 
 \subsubsection*{Proof}
 
-To show
-that the set \(\mathcal{S}_k\ = \mathcal{F}_k\), it suffices to show that if \(a \in \mathcal{S}_k\)
-then a is in  Sk
-% \(0\le{}a<1\) and 
-\(\frac{a}{b} = \frac{p}{k!}\) for some \(p\),
-and that the size of \(\mathcal{S}_k\) is the same as \(\mathcal{F}_k\).
+Two sets are equal if and only if they have the same elements.
 
-JPR NOTE: Magnitude and subset - that's all.
+% Two sets 
+% \(\mathcal{X}\) and
+% \(\mathcal{Y}\) are equal if and only if,
+% \(a \in \mathcal{X} \Leftrightarrow a \in \mathcal{Y}\).
+
+We're going to establish equality by showing three properities
+of the two sets \(\mathcal{S}_k\) and \(\mathcal{F}_k\).
+
+First, they are the same size.
+Sets can contain anything,
+so obviously
+that's not enough to show equality.
+
+Secondly, all the elements of 
+\(\mathcal{S}_k\) can be written in the exact same form as the elements of \(\mathcal{F}_k\).
+That's getting us closer, but still isn't sufficient because the numbers in \(\mathcal{S}_k\)
+could be anywhere on the numberline
+so they might not be the same as those in \(\mathcal{F}_k\).
+
+Third, by showing that the smallest and largest elements are the same, then this pins down exactly where
+the numbers in \(\mathcal{S}_k\) sit on the numberline, and thus establish equality between the two sets.
 
 It's clear that the set \(\mathcal{F}_k\) contains every rational number with denominator \(k!\)
 where \(p\) is an integer and \mbox{\(0\le{}\frac{p}{k!}<1\)} and
@@ -453,8 +470,9 @@ Therefore any member of the set \(\mathcal{S}_k\) can be written as
 
 Furthermore, each possible assignment of values to the variables of
 the factorial-representation of \(\frac{p}{k!}\)
-produces a \emph{unique} member of the set \(\mathcal{S}_k\)\footnote{\dots{} and a good thing too
-otherwise the set wouldn't be well defined!}.
+produces a \emph{unique} member of the set \(\mathcal{S}_k\).
+% \footnote{\dots{} and a good thing too
+% otherwise the set wouldn't be well defined!}.
 
 For if this weren't true and both
 \(\frac{p}{k!} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) and
@@ -462,7 +480,6 @@ For if this weren't true and both
 for different variables \(a_2, a_3, \dots{}, a_k\)
 and \(b_2, b_3, \dots{}, b_k\), then we can arrive at a contradiction as follows.
 
-\break
 First suppose that \(a_i\ne{}b_i\), where \(i \le{} k\), is the first such pair of variables
 that differ. In other words,
 \(a_2\!=\!b_2,\ a_3\!=\!b_3, \dots{},\ a_{i-1}\!=\!b_{i-1},\ a_i\!\ne{}\!b_i\).
@@ -592,7 +609,6 @@ The corollary is a direct result of the fact that
 the sets
 \(\mathcal{F}_k\) and
 \(\mathcal{S}_k\) are equal.
-% which you may recall means \(a \in \mathcal{F}_k \Leftrightarrow a \in \mathcal{S}_k\).
 
 \section*{Definitions}
 
@@ -614,24 +630,22 @@ formed by every factorial-representation possible.
 Finally,
 \(\mathbb{Q}_{01}\) is the set of ALL non-negative rational numbers less than one, 
 where \(p\) and \(q\) are co-prime. We specify the co-prime condition
-to insure uniqueness members of the set (otherwise the set isn't well defined).
-Also we want zero, so we have to toss it back into the set.
-% \footnote{By definition sets must contain unique members.}.
-I'm not going to prove it here, but \(\mathbb{Q}_{01}\) contains ALL the
-rational numbers between zero and one; I'm taking this as established.
+so that our description
+generates unique members of the set - This constraint will come in handy later in the proof.
+Also, we want zero to be included so we toss it back into the set with the union.
+We are not going to prove it here, but \(\mathbb{Q}_{01}\) contains ALL the
+rational numbers between zero and one; we will take this as established.
 
-Recall that two sets, \(X\) and \(Y\) are equal if and only if, for all \(a\),
+Recall that two sets,
+\(\mathcal{X}\) and \(\mathcal{Y}\)
+are equal if and only if, for all \(a\),
 
 {\normalsize
 \bgroup                                  %% open the group
 \setlength{\abovedisplayskip}{0pt}
 \begin{center}
 \begin{equation*}
-a \in X
-% \mathbb{Q}_{01}
-\Leftrightarrow
-a \in Y.
-% \mathcal{S}
+a \in \mathcal{X} \Leftrightarrow a \in \mathcal{Y}.
 \end{equation*}
 \end{center}
 \egroup
@@ -694,7 +708,7 @@ and \(n = \frac{k!}{\gcd(p,k!)}\).
 \frac{p}{k!} = \frac{p*\frac{1}{\gcd(p,k!)}}{k!*\frac{1}{\gcd(p,k!)}} = \frac{m}{n},
 \end{equation*}
 \egroup
-}
+}\newline
 and since \(\gcd(m,n) = 1\) then \(\frac{m}{n} \in \mathbb{Q}_{01}\), that is; \(\frac{p}{k!} \in \mathbb{Q}_{01}\).
 
 Therefore, for all \(a;\ a \in \mathcal{F} \Leftrightarrow a \in \mathbb{Q}_{01}\), which means,
@@ -988,6 +1002,6 @@ A final thought is that the number
 \(2\!+\!\frac{1}{2!}\!+\!\frac{1}{3!}\!+\!\frac{1}{4!}\!+\!\frac{1}{5!}\!+\!\dots{}\) can't
 be a rational number, as it's fractional-part is not in \(\mathcal{S}\)
 because we can't point to any particular \(\mathcal{S}_k\) that the fractional-part would be a member of.
-Not surprising really this number is \(e\).
+Not surprising really, this number is \(e\). Furthermore I think we just proved that \(e\) is irrational!!
 
 \end{document}
