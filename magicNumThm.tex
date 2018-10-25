@@ -134,7 +134,7 @@ The sum of the digits of a number divisible by 9,
 \break
 if and only if,
 \break
-the original number
+the number
 is divisible by 9.
 \end{center}
 
@@ -162,7 +162,7 @@ divisibility property (with respect to adding up the digits of some other number
 Too bad 3 and 9 are the only magic-numbers in base-10,
 but what about other bases?
 The Heptapods in the film ``Arrival'' have 7 limbs, 3 arms and 4 legs, with 7 fingers/toes each.
-I'm going to guess that they probably use some form of positional
+I'm guessing that they probably use some form of positional
 notation, but instead of base-ten they probably use base-7, base-21,
 maybe even base-49\footnote{For an understanding of alternate bases please see
 the paper ``\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0}
@@ -275,11 +275,13 @@ express an arbitrary number in a given base we can state our new theorem as foll
 \section*{Magic-Number Theorem}
 \begin{jprIn}
 Let
-$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
-be the base-$b$-representation of the positive integer $n$.
+$n=d_kb^k+\dots+d_2b^2+d_1b^1+d_0b^0$
+be the base-$b$-representation of $n$.
 
-If $m$ is a positive integer such that $m\mid{}(b-1)$ then,
-\[m\mid{}n \text{\hspace{2.5em}if and only if\hspace{2.5em}}m\mid{}(d_k+\dots+d_2+d_1+d_0)\]
+If $m$ is a positive integer such that $m\mid{}(b-1)$ then\footnote{Recall that the 
+bidirectional arrow symbol $\Leftrightarrow$
+means ``if and only if'' - it's like a logical ``equals'' sign},
+\[m\mid{}n \text{\hspace{2.5em}} \Leftrightarrow \text{\hspace{2.5em}}m\mid{}(d_k+\dots+d_2+d_1+d_0)\]
 Definition: We call $m\ne1$ a ``magic-number'' in base-$b$.
 \end{jprIn}
 \bigskip
@@ -305,40 +307,41 @@ the remainder of $d_k+\dots+d_1+d_0$ divided by $m$
 is also zero.
 Restated in terms of
 modular-arithmetic, we need to prove:
-\[n\bmod{m} = 0\text{\hspace{2.5em}if and only if\hspace{2.5em}}(d_k+\dots+d_1+d_0)\bmod{m} = 0\]
+\[n\bmod{m} = 0\text{\hspace{2.5em}}\Leftrightarrow\text{\hspace{2.5em}}(d_k+\dots+d_1+d_0)\bmod{m} = 0\]
 
-I'm going to assume that you are familiar with how to use modular arithmetic from this point forward.
+I'm going to assume that you are familiar with how to use modular arithmetic from this point forward,
+if not, make a quick detour to Khan Academy.
 
 \section*{Lemma}
-Let $b$ be a positive integer greater than 1, and let $m$ be a positive integer such that 
+Let $b>1$ and $m$ be positive integers such that 
 $m\mid{}(b-1)$ then,
 \[b^k\equiv1\pmod{m}\text{, for all integers }k\ge0\]
 
 \break
 Proof of Lemma:
 \begin{jprIn}
-Let $k$ be an integer such that $k\ge0$, and the $b$ and $m$ be integers as described above.
-\begin{alignat*}{3}
+Let $k$, $b$ and $m$ be integers as described in the lemma, then there exists an integer $q$ such that,
+\begin{alignat*}{4}
 &&m\cdot{}q
-&= b-1 &&\quad\text{(Definition of }m\text{)}\\
+&= b-1 && &&\quad\text{(Definition of }m\mid{}(b-1)\text{)}\\
 &\Leftrightarrow\quad
 &m\cdot{}q+1
-&= b &&\quad\text{(Add 1 to both sides)}
+&= b && &&\quad\text{(Add 1 to both sides)}
 \intertext{Given this equality we can state the following modular congruence:}
 &&m\cdot{}q+1
-&\equiv b\pmod{m}\\
+&\equiv b &&\pmod{m}\\
 &\Leftrightarrow\quad
 &0\cdot{}q+1
-&\equiv b\pmod{m} &&\quad\text{(Since }m\bmod{m}=0\text{)}\\
+&\equiv b &&\pmod{m} &&\quad\text{(Since }m\bmod{m}=0\text{)}\\
 &\Leftrightarrow\quad
 &1
-&\equiv b\pmod{m}% &&\quad\text{(1 is congruent to }b\text{)}
+&\equiv b &&\pmod{m}% &&\quad\text{(1 is congruent to }b\text{)}
 \intertext{Furthermore,}
 &&1
-&\equiv 1^k\pmod{m} &&\quad\text{(For all }k>=0\text{)}\\
+&\equiv 1^k &&\pmod{m} &&\quad\text{(For all }k>=0\text{)}\\
 &\Leftrightarrow\quad
 &1
-&\equiv b^k\pmod{m} &&\quad\text{(Substitute }b\text{ for 1 since they are congruent)}
+&\equiv b^k &&\pmod{m} &&\quad\text{(Substitute }b\text{ for 1 since they are congruent)}
 \end{alignat*}
 QED - Lemma.
 \end{jprIn}
@@ -347,33 +350,29 @@ QED - Lemma.
 
 Let $b$ be a positive integer greater than 1.
 
-Let $n$ be represented in base-$b$ with the sequence
-of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
-
-\hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
-
-where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
-
-Also let $m$ be a positive integer such that $m\mid{}(b-1)$. So,
+Let
+$n=d_kb^k+\dots+d_2b^2+d_1b^1+d_0b^0$
+be the base-$b$-representation of $n$.
+Also let $m$ be a positive integer such that $m\mid{}(b-1)$. Therefore,
 {\small
-\begin{alignat*}{3}
+\begin{alignat*}{4}
 &&n
 &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 \\
 &\Rightarrow\quad
 &n
-&\equiv d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 \pmod{m}\\
+&\equiv d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 &&\pmod{m}\\
 &\Leftrightarrow\quad
 &n
-&\equiv d_k\cdot{}1+d_{k-1}\cdot{}1+\dots+d_2\cdot{}1+d_1\cdot{}1+d_0\cdot{}1 \pmod{m}\\
+&\equiv d_k\cdot{}1+d_{k-1}\cdot{}1+\dots+d_2\cdot{}1+d_1\cdot{}1+d_0\cdot{}1 &&\pmod{m} &&\quad\text{(By lemma)}\\
 &\Leftrightarrow\quad
 &n
-&\equiv d_k+d_{k-1}+\dots+d_2+d_1+d_0 \pmod{m}\text{\hspace{1em}(Note equivalence of sum of digits and }n\text{)}
-\intertext{$m$ divides $n$ if and only if:}
+&\equiv d_k+d_{k-1}+\dots+d_2+d_1+d_0 &&\pmod{m}
+\intertext{Therefore $n$ is congruent to the sum of its digits mod $m$, furthermore $m\mid{}n$ if and only if:}
 &&0
-&\equiv n \pmod{m}\\
+&\equiv n &&\pmod{m} &&\quad\text{(Definition of }m\mid{}n\text{)}\\
 &\Leftrightarrow\quad
 &0
-&\equiv d_k+d_{k-1}+\dots+d_2+d_1+d_0 \pmod{m}\text{\hspace{1em}(Sum of digits and }n\text{ are equivalent)}
+&\equiv d_k+d_{k-1}+\dots+d_2+d_1+d_0 &&\pmod{m} &&\quad\text{(Substitute sum of digits for }n\text{)}
 \end{alignat*}
 }
 QED
