@@ -139,8 +139,8 @@ where \(a_1, a_2, \dots{}, a_k\) are integers, and
 
 % The first one, \(a_1\), is just a plain-old non-negative integer.
 
-The crux of the problem seems to be showing that every rational number has such a representation.
-Proving the uniqueness part doesn't seem as daunting. Here are some thoughts that pointed me in
+The crux of the problem seems to be showing that every rational number has such a representation -
+Proving uniqueness doesn't seem as daunting. Here are some thoughts that pointed me in
 a certain direction that led me to the proof below.
 
 We know that any rational number\footnote{Every variable,
@@ -473,7 +473,7 @@ of the equality of the two different representations for \(\frac{p}{q}\) we can 
   + \frac{b_{i+2} - a_{i+2}}{(i+2)!}
   + \dots{}
   % + \frac{b_{k-1} - a_{k-1}}{(k-1)!}
-  + \frac{b_k - a_k}{k!} \label{eqn01}
+  + \frac{b_k - a_k}{k!} \label{eqn1}
 \end{alignat}
 \egroup
 }%\vspace{-4mm}
@@ -485,12 +485,12 @@ But \(a_i - b_i \ge{} 1\), so
 \end{center}
 
 In the case that \(i = k\) we get an immediate contradiction because 
-equation \eqref{eqn01} tells us that \(\frac{a_i - b_i}{i!} = 0\) which is
+equation \eqref{eqn1} tells us that \(\frac{a_i - b_i}{i!} = 0\) which is
 clearly false.
 
 So let's carry on assuming that \(i < k\) and examine
 one of the terms
-on the right-side of \eqref{eqn01}, say
+on the right-side of \eqref{eqn1}, say
 the first one \(\frac{b_{i+1} - a_{i+1}}{(i+1)!}\). We can see that since
 \(0 \le b_{i+1} \le{} i\) and \(0 \le a_{i+1} \le{} i\) that,
 
@@ -526,7 +526,7 @@ and hence,
 \(\frac{a_i - b_i}{i!} > \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\),
 \end{center}
 
-But in equation \eqref{eqn01} we had deduced
+But in equation \eqref{eqn1} we had deduced
 that \(\frac{a_i - b_i}{i!} = \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\)
 which contradicts the strict inequality above.
 
@@ -557,48 +557,50 @@ can be written as \(\frac{a}{b} = \frac{p}{k!}\), for some \(p\) where
 
 QED.
 
-% \section*{Corollary to Lemma 3}
-% 
-% For every
-% rational number \(\frac{p}{k!}\), where
-% \(k \ge{} 2\) and
-% \(0 \le{} \frac{p}{k!} < 1\), then
-% there is a \emph{unique} sequence of integers \(a_2, a_3, \dots{} a_k\) such that,
-% 
-% {\small
-% \bgroup                                  %% open the group
-% \setlength{\abovedisplayskip}{0pt}
-% \begin{center}
-% \begin{equation*}
-% \frac{p}{k!} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!},
-% \end{equation*}
-% \end{center}
-% \egroup
-% }
-% 
-% % where \(0\! \le{}\! a_2\! <\! 2,\enspace 0\! \le{}\! a_3\! <\! 3,\enspace
-% \dots{},\enspace 0\! \le{}\! a_k\! <\! k\).
-%
-% \subsubsection*{Proof}
-% 
-% The corollary is a direct result of the fact that there is a one-to-one mapping
-% between the two sets.
+\section*{Corollary to Lemma 3}
+
+Every non-negative rational number \(\frac{p}{k!}\), where \(k \ge{} 2\),
+can be written as a sum using a \emph{unique} sequence of integers \(a_2, a_3, \dots{} a_k\) such that,
+
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}
+\begin{center}
+\begin{equation*}
+\frac{p}{k!} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!},
+\end{equation*}
+\end{center}
+\egroup
+}
+
+where \(0\! \le{}\! a_2\! <\! 2,\enspace 0\! \le{}\! a_3\! <\! 3,\enspace
+\dots{},\enspace 0\! \le{}\! a_k\! <\! k\).
+
+The corollary is a direct result of the fact that there is a one-to-one mapping
+between the sets
+\(\mathcal{F}_k\) and
+\(\mathcal{S}_k\).
 
 \section*{Definitions}
 
+{\small
 \begin{gather*}
-\mathcal{F}
-= \{\frac{p}{k!} \mid
-% \forall\ 
+\mathcal{F} = \{\frac{p}{k!} \mid
 p,k \in \mathbb{Z}, k \ge{} 2, 0 \le{} p < k!\}\\
-\mathcal{S} = \{0\} \cup \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} \mid
+\mathcal{S} = \{0\} \cup \{\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{}
++ \frac{a_{k-1}}{(k\!-\!1)!}
++ \frac{a_k}{k!}
+\mid
 k\!\ge{}\!2,\ 
 0\!\le{}\!a_2\!<\!2,\ 
 0\!\le{}\!a_3\!<\!3,\ 
 \dots{},\ 
+0\!\le{}\!a_{k-1}\!<\!k\!-\!1,\ 
 1\!\le{}\!a_k\!<\!k\}\\
-\mathbb{Q}_{p<q} = \{\frac{p}{q} \mid p, q \in \mathbb{Z},\text{ where } q \ge{} 2,\ 0 \le{} p < q\}
+\mathbb{Q}_{01} = \{\frac{p}{q} \mid p, q \in \mathbb{Z},\text{ where } q \ge{} 2,\ 0 \le{} p < q,
+\text{ and } \gcd(p,q) = 1\}
 \end{gather*}
+}
 
 \(\mathcal{F}\) is the set of ALL non-negative rational numbers, less than one, with
 all possible factorials as the denominator.
@@ -608,10 +610,10 @@ formed by every possible sum of the form we've been examining,
 whose smallest term
 % (eg. \(\frac{a_k}{k!}\))
 is non-zero.
-The definition adds back \(\{0\}\) for consistency, since otherwise it would be excluded.
+The definition adds back \(\{0\}\), since otherwise it would be excluded.
 
 Finally,
-\(\mathbb{Q}_{p<q}\) is just the set of ALL non-negative rational numbers less than one.
+\(\mathbb{Q}_{01}\) is just the set of ALL non-negative rational numbers less than one.
 
 Here's what it means for a set to be the limit of a sequence of sets, using \(\mathcal{F}\) as an example:
 
@@ -621,9 +623,10 @@ a \in \mathcal{F}\ \Leftrightarrow\
 \exists N, \text{ such that }
 \forall n \ge N, a \in \mathcal{F}_n.\)
 
-In plain english that means every element of \(\mathcal{F}\)
+In plain English that means every element of \(\mathcal{F}\)
 is in all but finitely many \(\mathcal{F}_i\).
 
+\break
 \section*{Lemma 4}
 
 {\normalsize
@@ -631,7 +634,7 @@ is in all but finitely many \(\mathcal{F}_i\).
 \setlength{\abovedisplayskip}{0pt}
 \begin{center}
 \begin{equation*}
-\mathbb{Q}_{p<q}
+\mathbb{Q}_{01}
 = \mathcal{S}
 \end{equation*}
 \end{center}
@@ -647,18 +650,16 @@ We're going to prove the lemma through a series of equalities as follows:
 \setlength{\abovedisplayskip}{0pt}
 \begin{center}
 \begin{alignat}{1}
-\lim_{n \to \infty}\mathcal{F}_n &= \mathcal{F} \label{eqn02}\\
-\mathcal{F} &= \mathbb{Q}_{p<q} \label{eqn03}\\
-\lim_{n \to \infty}\mathcal{S}_n &= \mathcal{S} \label{eqn04}\\
-\mathcal{S} &= \mathcal{F} \label{eqn05}\\
-\mathcal{S} &= \mathbb{Q}_{p<q} \label{eqn06}
+\lim_{n \to \infty}\mathcal{F}_n &= \mathcal{F} \label{eqn2}\\
+\mathcal{F} &= \mathbb{Q}_{01} \label{eqn3}\\
+\lim_{n \to \infty}\mathcal{S}_n &= \mathcal{S} \label{eqn4}\\
+\mathcal{S} &= \mathcal{F} \label{eqn5}
 \end{alignat}
 \end{center}
 \egroup
 }
 
-\break
-\eqref{eqn02}:
+\eqref{eqn2}:
 For all \(\frac{p}{k!} \in \mathcal{F}_k\),
 since \(\frac{p}{k!} = \frac{(k+1)\cdot{}p}{(k+1)\cdot{}k!} = \frac{(k+1)\cdot{}p}{(k+1)!}\),
 and \(\frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1}\),
@@ -682,8 +683,8 @@ hence,
 \end{center}
 
 \bigskip
-\eqref{eqn03}:
-If \(\frac{p}{k} \in \mathbb{Q}_{p<q}\)
+\eqref{eqn3}:
+If \(\frac{p}{k} \in \mathbb{Q}_{01}\)
 then \(\frac{p}{k} \in{} \mathcal{F}_k\) because,
 
 {\small
@@ -697,25 +698,25 @@ then \(\frac{p}{k} \in{} \mathcal{F}_k\) because,
 \egroup
 }
 
-so by \eqref{eqn02} \(\frac{p}{k} \in \mathcal{F}\)
-for all \(\frac{p}{k} \in \mathbb{Q}_{p<q}\). Clearly the converse is also
-true, since if \(a \in \mathcal{F}\), then clearly \(a \in \mathbb{Q}_{p<q}\)
-because \(\mathbb{Q}_{p<q}\) contains all nonnegative rational numbers less than one;
+so by \eqref{eqn2} \(\frac{p}{k} \in \mathcal{F}\)
+for all \(\frac{p}{k} \in \mathbb{Q}_{01}\). Clearly the converse is also
+true, since if \(a \in \mathcal{F}\), then clearly \(a \in \mathbb{Q}_{01}\)
+because \(\mathbb{Q}_{01}\) contains all non-negative rational numbers less than one;
 hence,
 \begin{center}
-\(\mathcal{F} = \mathbb{Q}_{p<q}\).
+\(\mathcal{F} = \mathbb{Q}_{01}\).
 \end{center}
 
 \bigskip
-\eqref{eqn04}:
-For all \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} \in \mathcal{S}_k\),
+\eqref{eqn4}:
+For all \(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!} \in \mathcal{S}_k\),
 since
-\(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} =
-\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} + \frac{0}{(k+1)!}\)
+\(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!} =
+\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}\!+\!\frac{0}{(k+1)!}\)
 and
-\(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} + \frac{0}{(k+1)!}
+\(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}\!+\!\frac{0}{(k+1)!}
 \in \mathcal{S}_{k+1}\) then 
-\(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}
+\(\frac{a_2}{2!}\!+\!\frac{a_3}{3!}\!+\!\dots{}\!+\!\frac{a_k}{k!}
 \in \mathcal{S}_{k+1}\). Hence 
 \(\mathcal{S}_k \subset \mathcal{S}_{k+1}\).
 
@@ -728,7 +729,7 @@ By induction it is straightforward to conclude that
 Therefore when
 \(a \in \mathcal{S}_k\), then \(a \in \mathcal{S}_n, \forall\ n \ge{} k\).
 
-Let \(a \in \mathcal{S}\), such that its smallest non-zero term in the sum
+Let \(a \in \mathcal{S}\), such that the smallest non-zero term in its sum
 is \(\frac{a_k}{k!}\), then it's simple to see that \(a \in \mathcal{S}_k\),
 therefore, \(a \in \mathcal{S} \Leftrightarrow a \in \mathcal{S}_n\), for all \(n \ge k\);
 hence,
@@ -736,112 +737,29 @@ hence,
 \(\displaystyle{\mathcal{S} = \lim_{n \to \infty}\mathcal{S}_n}\).
 \end{center}
 
-\bigskip
-\eqref{eqn05}: Because of Lemma 3 we know that the sets
-\(\mathcal{F}_k\) and \(\mathcal{S}_k\) are equal, so clearly
+\break
+\eqref{eqn5}: Because of Lemma 3 we know that the sets
+\(\mathcal{F}_k\) and \(\mathcal{S}_k\) are equal and interchangeable, so clearly
 \(\displaystyle{\lim_{n \to \infty}\mathcal{F}_n = \lim_{n \to \infty}\mathcal{S}_n}\).
 
 \bigskip
 By the
 equalities
-\eqref{eqn02},
-\eqref{eqn03},
-\eqref{eqn04} and
-\eqref{eqn05}
+\eqref{eqn2},
+\eqref{eqn3},
+\eqref{eqn4} and
+\eqref{eqn5}
 established above,
 \(\displaystyle{\mathcal{S} = \lim_{n \to \infty}\mathcal{S}_n = \lim_{n \to \infty}\mathcal{F}_n
-= \mathcal{F} = \mathbb{Q}_{p<q}}\), therefore,
+= \mathcal{F} = \mathbb{Q}_{01}}\), therefore,
 
 \begin{center}
-\(\mathcal{S} = \mathbb{Q}_{p<q}\).
+\(\mathcal{S} = \mathbb{Q}_{01}\).
 \end{center}
 
 QED.
 
-\section*{Lemma 5}
-
-Any positive rational number \emph{less than one},
-%, \(\frac{p}{q}\), where \(0 \le{} \frac{p}{q} < 1\)
-can be expressed in one and only one way in the form
-{\small
-\bgroup                                  %% open the group
-\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
-\begin{center}
-\begin{equation*}
-\frac{a_2}{2!}
-+ \frac{a_3}{3!}
-+ \dots{}
-+ \frac{a_k}{k!}
-\end{equation*}
-\end{center}
-\egroup
-}
-
-where \(a_2, \dots{}, a_k\) are integers, and
-
-{\small
-\begin{center}
-\(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0<a_k<k\)
-\end{center}
-}
-
-\subsubsection*{Proof}
-
-The following can be greatly similified.  JPR
-
-Suppose \(\frac{p}{q}\) is a positive rational number less than one. We note that its 
-denominator is at least 2, so by Lemma 4 we can say that
-\(\frac{p}{q} \in \mathcal{F}\), and Lemma 3 tells us that
-\(\mathcal{S}_k = \mathcal{F}_k\) for all \(k \ge 2\), therefore \(\frac{p}{q} \in \mathcal{S}\).
-
-So \(\frac{p}{q} \in \mathcal{S}_n\) for some \(n \ge 2\) and the following
-expression is \emph{unique} to \(\frac{p}{q}\) among all positive rational numbers less than one,
-
-{\small
-\bgroup                                  %% open the group
-\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
-\begin{center}
-\begin{equation}\label{eqn07}
-\frac{p}{q} = \frac{a_2}{2!}
-+ \frac{a_3}{3!}
-+ \dots{}
-+ \frac{a_n}{n!},
-\end{equation}
-\end{center}
-\egroup
-}
-
-where \(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0 \le{} a_n < n\).
-
-We note that there must be at least one non-zero term in equation \eqref{eqn07} otherwise
-the sum would be zero, and we've specified that \(\frac{p}{q}\) is positive.
-
-Choose \(k\) such that \(a_k \ne{} 0 \) but \(a_{k+1} =
-a_{k+2} =
-a_{k+3} =
-\dots{} = 
-a_{n-1} =
-a_{n} = 0\). Therefore we can rewrite equation \eqref{eqn07},
-
-{\small
-\bgroup                                  %% open the group
-\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
-\begin{center}
-\begin{equation*}
-\frac{p}{q} = \frac{a_2}{2!}
-+ \frac{a_3}{3!}
-+ \dots{}
-+ \frac{a_k}{k!},
-\end{equation*}
-\end{center}
-\egroup
-}
-
-where \(0\le{}a_2<2,\quad 0\le{}a_3<3,\quad \dots{},\quad 0 < a_k < n\).
-
-QED.
-
-\section*{Factorial Representation Theorem (finally!)}
+\section*{Factorial Representation Theorem}
 
 Any positive rational number can be expressed in one and only one way in the form
 
@@ -893,15 +811,21 @@ an integer part, \(i\), plus a fractional part \(\frac{p}{q}\), where \(0\le{}\f
 Apply the Euclidean Division Theorem to \(\frac{j}{q}\) and let \(a_1 = i\). If there is no fractional remainder, then
 the theorem has been proven.
 
-However if there is a fractional remainder \(\frac{p}{q}\), then 
-by Lemma 5 we know that the sum \(\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) is
-uniquely associated
-with \(\frac{p}{q}\)
-so clearly \(\frac{j}{q} = a_1 + \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
+When there is a non-zero fractional remainder \(\frac{p}{q}\), then 
+by Lemma 4 we know that \(\frac{p}{q} \in \mathcal{S}\).
+
+So \(\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\), for some
+\(k \ge{} 2\), and this sum is uniquely associated
+with \(\frac{p}{q}\) (because \(\mathcal{S}\) and \(\mathbb{Q}_{01}\) are equal, and
+all the elements of \(\mathbb{Q}_{01}\) are unique ((( ** BULLSHIT WARNING ** - need to go 
+back, my defn for Q01 did not account for eg 1/2, 2/4, 3,6 etc all are mapped to 1/2! )))
+therefore
+\(\frac{j}{q} = a_1 + \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
 is uniquely associated with all positive rational numbers \(\frac{j}{q}\).
 
 QED.
 
+\break
 \section*{Additional Observations}
 
 We're guaranteed that \(\frac{p}{q} \in{} \mathcal{S}_q\), but \(\mathcal{S}_q\) is not necessarily 
