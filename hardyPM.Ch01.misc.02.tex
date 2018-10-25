@@ -390,7 +390,7 @@ QED
 
 \section*{Lemma-5}
 
-if \(\frac{p}{q} \in{} \mathcal{S}_k\) then \(\frac{p}{q} \in{} \mathcal{S}_N\) for all \(N > k\).
+if \(\frac{p}{q} \in{} \mathcal{S}_k\) then \(\frac{p}{q} \in{} \mathcal{S}_n\) for all \(n > k\).
 
 \section*{Proof of Lemma-5}
 
@@ -399,32 +399,18 @@ if \(\frac{p}{q} \in{} \mathcal{S}_k\) then,
 {\small
 \bgroup                                  %% open the group
 \setlength{\abovedisplayskip}{0pt}
-\begin{center}
-\begin{equation*}
-\frac{p}{q}
-= \frac{a_2}{2!}
-+ \frac{a_3}{3!}
-+ \dots{}
-+ \frac{a_k}{k!}
-+ \frac{a_{k+1}}{(k+1)!}
-+ \dots{}
-+ \frac{a_N}{N!}, \text{\ such that,}
-\end{equation*}
-\begin{equation*}
-0\! \le{}\! a_2\! <\! 2,\enspace 
-0\! \le{}\! a_3\! <\! 3,\enspace 
-\dots{},\enspace
-0\! \le{}\! a_k\! <\! k,\enspace
-a_{k+1} = 0,\enspace
-\dots{},\enspace
-a_N = 0.
-\end{equation*}
-\end{center}
+\begin{alignat*}{1}
+\frac{p}{q} &= \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\\
+\frac{p}{q} &= \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} + \frac{0}{(k+1)!} + \dots{} + \frac{0}{n!}\\
+\frac{p}{q} &= \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!} + \frac{a_{k+1}}{(k+1)!} + \dots{} + \frac{a_n}{n!}\\
+0 &\le{} a_2 < 2,\enspace 0 \le{} a_3 < 3, \dots{}, 0 \le{} a_k < k, a_{k+1} = 0, \dots{}, a_n = 0.
+\end{alignat*}
 \egroup
 }
 
-\(\frac{p}{q} \in{} \mathcal{S}_N\) for all \(N > k\).
+Therefore, \(\frac{p}{q} \in{} \mathcal{S}_n\) for all \(n > k\).
 
+\break
 \section*{Theorem (restated)}
 
 Any positive rational number can be expressed in one and only one way in the form
@@ -473,9 +459,13 @@ In our theorem, the \(a_1\) coefficient plays the role of the integer part \(n\)
 and the rest of the expression, \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
 plays the role of the fractional part \(0\le{}\frac{p}{q}<1\).
 
-Therefore to express ANY rational number in the form of the theorem, first apply the
+Therefore to express any rational number in the form of the theorem, first apply the
 Euclidean Division Theorem and let \(a_1 = n\). If there is no fractional remainder, then
-we are done, however if there is a fractional remainder \(\frac{p}{q}\) (expressed such that
-\(p\) and \(q\) are co-prime) then there exists as a unique representation in the set
+we are done, however if there is a fractional remainder \(\frac{p}{q}\) (such that
+\(p\) and \(q\) are co-prime) then \(\frac{p}{q}\) is a member of all sets \(\mathcal{S}_n\)
+such that \(n \ge{} q\).
+
+
+Given Lemma-5 
 
 \end{document}
