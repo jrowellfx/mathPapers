@@ -51,7 +51,7 @@
 %\usepackage{romannum}
  
 \usepackage[pdftex,
-            pdfauthor={James Rowell},
+            pdfauthor={James Philip Rowell},
             pdftitle={\jobname},
             pdfsubject={Magic Numbers},
             pdfkeywords={decimal, base-ten, binary, base-two, integers,
@@ -66,7 +66,7 @@
 }
 \usepackage{hyperxmp}
 \hypersetup{
-    pdfauthor={James Philip Rowell},
+    pdfauthor={James Philip Philip Rowell},
     pdfcopyright={Copyright  2017 by James Philip Rowell. All rights reserved.}
 }
 \usepackage{lipsum}
@@ -89,7 +89,7 @@
 %%% END Article customizations
 
 \title{Magic Numbers}
-\author{James Rowell}
+\author{James Philip Rowell}
 %\date{} % Activate to display a given date or no date (if empty),
 % otherwise the current date is printed 
 
@@ -98,15 +98,15 @@
 %\bigskip
 
 In the delightful film ``\href{https://en.wikipedia.org/wiki/School_of_Rock}{School
-of Rock}'' Jack Black's character Dewey Finn,
-pretending to be substitute teacher Ned Schneebly, is put on the spot when
-Miss. Mullins, the school principle, comes into class and demands that he show
-her his teaching methods which apparently involve an electric guitar.
-So Mr. S sings ``\href{https://www.youtube.com/watch?v=aa8U0nL-KXg}{The
+of Rock}'' Jack Black's character
+(pretending to be a substitute teacher) is put on the spot when
+the school principle comes into class and demands that he show
+her his teaching methods which involve an electric guitar.
+So he sings ``\href{https://www.youtube.com/watch?v=aa8U0nL-KXg}{The
 Math Song}'' wherein the final line of his
-improvised tune he sings ``\dots{}yes it's 9, and that's a magic-number\dots{}''
+improvised tune is ``\dots{}yes it's 9, and that's a magic-number\dots{}''
 
-It seems that Jack Black was tipping his hat
+It seems that Jack was tipping his hat
 to the ``Schoolhouse Rock'' song ``\href{https://youtu.be/aU4pyiB-kq0}{3
 Is A Magic Number}''
 which most kids from the 70's/80's know -
@@ -130,7 +130,7 @@ for a number where you take its ``digital sum''. 9
 plays a similar role in all these processes - so within these contexts sometimes 9
 is referred to as a magic-number.
 
-So Mr. S's musical-math-lesson is legit, if he is referring to this fact about 9:
+So the musical-math-lesson is legit, if Jack is referring to this fact about 9:
 % \begin{enumerate}[i)]
 % \item
 % If you add up the digits of
@@ -166,7 +166,7 @@ Check the ``\href{https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmeti
 Theorem of Arithmetic}'' wiki page for further insight.}
 but 3 does (67 times).
 We can see that adding up the digits of 201 gives us 3,
-which of course is divisible by 3 (but not by 9).
+which of course is divisible by 3, but not by 9.
 
 So given that the term ``magic number'' hasn't got
 a formal definition in the math world, I think it's time to give it one.
@@ -238,11 +238,11 @@ then we don't need to go to any trouble of adding up digits to find this out.
 So let's exclude 1 from being considered as a magic-number - it's not helpful.
 
 Let's quickly review what it means for a number to be divisible 
-by another number.  Recall from the paper ``\href
-{https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf}
-{Counting}''\dots
+by another number
+\footnote{See ``\href {https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf} {Counting}'', also written by Rowell}.
+%Recall from the paper ``\href
+%{https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf} {Counting}''\dots
 
-\break
 \section*{Euclidean Division Theorem}
 \begin{jprIn}
 For all integers $a$ and $b$ such that $b\ne0$,
@@ -288,10 +288,8 @@ also
 In order to create our theorem with a 
 nice definition for ``magic number''
 we need to remind ourselves 
-what it means to write a number in a given base\footnote{Also from
-``\href
-{https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf}
-{Counting}''}:
+what it means to write a number in a given base
+\footnote{Also from ``\href {https://dl.dropboxusercontent.com/u/2157321/basisReprThm.pdf} {Counting}''}:
 
 \section*{Basis Representation Theorem}
 \begin{jprIn}
@@ -316,7 +314,10 @@ of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
 %
 \section*{Magic Number Theorem}
 \begin{jprIn}
-Let $n$ be a positive integer represented in base-$b$.
+Let
+% $n$
+$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
+be the base-$b$-representation of $n$.
 
 If $m$ is a positive integer such that $m\mid{}(b-1)$ then,
 %\[m\mid{}n \Leftrightarrow m\mid{}(d_k+\dots+d_2+d_1+d_0)\]
@@ -369,9 +370,9 @@ Then the ``mod'' operator is defined like this:
 To prove our theorem we need to prove that 
 the remainder of $n$ divided by $m$ is zero if and only if
 the remainder of $d_k+\dots+d_1+d_0$ divided by $m$ 
-is also zero. Those two desired results can be
-can be restated 
-with modular-arithmetic by showing:
+is also zero.
+Restated in terms of
+modular-arithmetic:
 \[n\bmod{m} = 0\text{\hspace{2.5em}if and only if\hspace{2.5em}}(d_k+\dots+d_1+d_0)\bmod{m} = 0\]
 
 SKIP FURTHER EXPLANATION OF MOD UNTIL PROOF COMPLETED.
@@ -391,7 +392,7 @@ Also let $m$ be a positive integer such that $m\mid{}(b-1)$, in other words
 there exists some integer $q$ such that:
 \[m\cdot{}q=b-1\]
 
-\break
+%\break
 Lemma:
 \[b^k\equiv1\pmod{m}\text{, for all integers }k\ge0\]
 Proof of Lemma:
