@@ -92,38 +92,74 @@
 \date{} % Activate to display a given date or no date (if empty), otherwise the current date is printed 
 \begin{document}
 \maketitle
-\begin{em}
-\centerline{\small{}From `A Course in Pure Mathematics' by G. H. Hardy. Chapter 1, Section 5, Examples III.}
-%\par
-%\setlength{\parskip}{0pt}
-\end{em}
-%\normalsize
-\bigskip
 
-In `Example 2'\footnote{Hardy doesn't call them `Exercises' or `Questions', but that's what they
-are, i.e.; the problems for the student to sink their teeth into.} from
-Hardy's `Pure Mathematics', chapter 1, section 5, examples III, he has
-us examine a sequence of rational approximations to $\sqrt{2}$, that is:\newline
+In Chapter 1, Examples\footnote{Hardy doesn't call them `Exercises'
+or `Questions', but that's what they are, exercises for the student.}
+III, no.\,2, from
+G. H. Hardy's `A Course of Pure Mathematics',
+Hardy has
+us examine a sequence of rational approximations to $\sqrt{2}$, which are:
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group
+\begin{center}
+\begin{equation*}
+\frac{1}{1},
+\enspace\frac{3}{2},
+\enspace\frac{7}{5},
+\enspace\frac{17}{12},
+\enspace\frac{41}{29},
+\enspace\frac{99}{70}
+\end{equation*}
+\end{center}
+\egroup
+}
 
-\centerline{$\frac{1}{1}, \enspace\frac{3}{2}, \enspace\frac{7}{5}, \enspace\frac{17}{12}, \enspace\frac{41}{29}, \enspace\frac{99}{70}$}
+These numbers squared are:
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group
+\begin{center}
+\begin{equation*}
+\frac{1}{1},
+\enspace\frac{9}{4},
+\enspace\frac{49}{25},
+\enspace\frac{289}{144},
+\enspace\frac{1681}{841},
+\enspace\frac{9801}{4900}
+\end{equation*}
+\end{center}
+\egroup
+}
 
-So these numbers squared are:\newline
+And we discover that their differences from 2 are:
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group
+\begin{center}
+\begin{equation*}
+-1,
+\enspace\frac{1}{4},
+\enspace-\frac{1}{25},
+\enspace\frac{1}{144},
+\enspace-\frac{1}{841},
+\enspace\frac{1}{4900}
+\end{equation*}
+\end{center}
+\egroup
+}
 
-\centerline{$\frac{1}{1}, \enspace\frac{9}{4}, \enspace\frac{49}{25}, \enspace\frac{289}{144}, \enspace\frac{1681}{841}, \enspace\frac{9801}{4900}$}
-
-And we discover that their differences from 2 are:\newline
-
-\centerline{$-1, \enspace\frac{1}{4}, \enspace-\frac{1}{25}, \enspace\frac{1}{144}, \enspace-\frac{1}{841}, \enspace\frac{1}{4900}$}
-
-\bigskip
-In the next `Example 3' we are asked to prove a theorem, which I do
-directly following its statement below, starting with the lemma.
+In the next `Example no.\,3' we are asked to prove a theorem relating to the above sequence, noting
+it is only an \emph{example} of an application of the theorem below.
 
 \section*{Theorem}
 
 Show that if $\frac{m}{m}$ is a good approximation to $\sqrt{2}$, then 
 $\frac{(m+2n)}{(m+n)}$ is a better one, and that the errors in the 
 two cases are in opposite directions.
+
+\bigskip
+The proof follows.
 
 \section*{Lemma}
 
@@ -188,19 +224,3 @@ If $\frac{m^2}{n^2} > 2$ then $a$ is negative therefore $\frac{(m+2n)}{(m+n)} < 
 \centerline{QED}
 
 \end{document}
-
-JPR - Note: I was going to flesh the following out, but it's not clear that I have
-a valid observation. Need to check longer sequence of numbers in each set of approximations
-to see how fast each one converges compared to each other... TBD
-\bigskip
-Our proof above shows us that this is the best such sequence of approximations
-to $\sqrt{2}$ possible, since $a$ in this case is 1, which is the smallest it can be, meaning that the
-error in each step is the smallest it can be.
-
-For example let's start the sequence with 
-$\frac{71}{50}$, which is $\sqrt{2}$ rounded UP to the nearest one-hundredth, i.e.;
-the error is already less than $\frac{1}{100}$. So
-$\frac{71^2}{50^2} = \frac{5041}{2500}$, therefore $\abs*{2 - \frac{5041}{2500}} = \frac{41}{2500}$.
-
-The next number in the sequence is therefore $\frac{71+2\cdot{}50}{71+50} = \frac{171}{121}$, and
-$\frac{171^2}{121^2} = \frac{29241}{14641}$ therefore, $\abs*{2 - \frac{29241}{14641}} = \frac{4}{14641}$.
