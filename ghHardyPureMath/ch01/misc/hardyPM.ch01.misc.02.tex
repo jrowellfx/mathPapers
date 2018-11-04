@@ -290,10 +290,12 @@ should be
 representable with the expression 
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\). 
 
-So by using sets to collect all the numbers generated
-by our expression, then letting \(k\) grow without bound
+So by using a set to collect all the numbers generated
+by the expression \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\),
+then letting \(k\) grow without bound
 I should get a set that contains \emph{all} the rational numbers between zero and one!
-Those are the ideas behind the proof that follows.
+
+The ideas above are behind the proof that follows.
 
 \break
 \section*{Lemma 1}
@@ -309,15 +311,17 @@ Those are the ideas behind the proof that follows.
 }
 \subsubsection*{Proof}
 
-Induction: When \(k = 2\) it's clear that \(\frac{1}{2!} = \frac{2!-1}{2!}\), and noting that
-\(\frac{2-2}{1!} = \frac{0}{1!} = \frac{1!-1}{1!}\) then
+By induction: When \(k = 2\) it's clear that \(\frac{1}{2!} = \frac{2!-1}{2!}\).
+
+So assuming the lemma is true for \(k = n\), we show that it must be true for \(k = n + 1\):
+
 {\scriptsize
 \begin{alignat*}{1}
-\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{k-2}{(k-1)!} + \frac{k-1}{k!}
-  =\  &\frac{(k-1)!-1}{(k-1)!} + \frac{k-1}{k!}\\
-  =\  &\frac{k((k-1)!-1)}{k(k-1)!} + \frac{k-1}{k!}\\
-  =\  &\frac{k!-k+k-1}{k!}\\
-  =\  &\frac{k!-1}{k!}
+\frac{1}{2!} + \frac{2}{3!} + \dots{} + \frac{n-1}{n!} + \frac{n}{(n+1)!}
+  =\  &\frac{n!-1}{n!} + \frac{n}{(n+1)!}\\
+  =\  &\frac{(n+1)(n!-1)}{(n+1)\cdot{}n!} + \frac{n}{(n+1)!}\\
+  =\  &\frac{(n+1)!-(n+1)+n}{(n+1)!}\\
+  =\  &\frac{(n+1)!-1}{(n+1)!}
 \end{alignat*}
 }
 \dots{}thus establishing Lemma 1 for all values of \(k \ge 2\).\qquad QED.
