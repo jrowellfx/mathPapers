@@ -131,9 +131,9 @@ where \(a_1, a_2, \dots{}, a_k\) are integers, and
 
 \section*{Observations that led me to the proof.}
 
-Any positive rational number\footnote{Amost every variable,
+Any positive rational number\footnote{Almost every variable,
 or constant (eg. \(a_1, a_k, m, n, i, p, q\)) in this
-paper is going to represent a non-negative integer, or \emph{very} occasionally a rational-number directly.
+paper is going to represent a non-negative integer, or \emph{very} occasionally a rational-number.
 However, we will almost always describe a rational-number in terms of one integer divided
 by another integer, like \(\frac{p}{q}\).}, say \(\frac{m}{q}\), can be
 % \emph{uniquely}
@@ -411,7 +411,7 @@ where
 0\!\le{}\!a_3\!<\!3,\enspace
 \dots{},\enspace 0\!\le{}\!a_k\!<\!k\)}.
 The expression \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) is called
-``the factorial-representation of \(s\)''.}
+``The Factorial-Representation of \(s\)''.}
 \end{jprIn}
 
 \section*{Lemma 3}
@@ -439,7 +439,7 @@ of \(\mathcal{S}_k\) and \(\mathcal{F}_k\) by showing that some key properties
 of the two sets are the same. The approach
 taken will establish that each element in one set must be equal to exactly one element in the other set.
 Note that we will not describe how to equate one specific element
-to the other, just that it must be true.
+to the other, just that it must be true that there is a one-to-one equality between such pairs.
 
 To begin with, it's clear that the set \(\mathcal{F}_k\) contains \emph{every} rational number
 of the form \(\frac{p}{k!}\)
@@ -494,14 +494,12 @@ Therefore any member \(s \in \mathcal{S}_k\) can be written as
 }
 
 We now show that each possible assignment of values to the variables of
-the factorial-representation of \(\frac{p}{k!}\)
+the factorial-representation of \(s \in \mathcal{S}_k\)
 produces a \emph{unique} member of the set \(\mathcal{S}_k\).
-% \footnote{\dots{} and a good thing too
-% otherwise the set wouldn't be well defined!}.
 
 For if this weren't true and both
-\(\frac{p}{k!} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) and
-\(\frac{p}{k!} = \frac{b_2}{2!} + \frac{b_3}{3!} + \dots{} + \frac{b_k}{k!}\)
+\(s = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\) and
+\(s = \frac{b_2}{2!} + \frac{b_3}{3!} + \dots{} + \frac{b_k}{k!}\)
 for different variables \(a_2, a_3, \dots{}, a_k\)
 and \(b_2, b_3, \dots{}, b_k\), then we can arrive at a contradiction as follows.
 
@@ -595,9 +593,8 @@ But in equation \eqref{eqn1},
 which provides the desired contradiction.
 
 Therefore our assumption that there can be a different list
-of variables representing the same rational number \(\frac{p}{k!}\) must be false.
-Therefore any assignment of values to the variables of the sum
-\(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
+of variables representing the same rational number \(s \in \mathcal{S}_k\) must be false.
+Therefore any assignment of values to the variables of the factorial-representation of \(s\)
 produces a \emph{unique} member of the set \(\mathcal{S}_k\).
 
 Now we can count the number of members of \(\mathcal{S}_k\), by looking at all the
@@ -610,10 +607,7 @@ combined with \(k\) choices for \(a_k\).
 
 Therefore the total number of combinations of values
 that can be assigned to the variables of
-\(\frac{a_2}{2!}
-+ \frac{a_3}{3!}
-+ \frac{a_4}{4!}
-+ \dots{} + \frac{a_k}{k!}\)
+the factorial-representation of \(s\)
 is \(2\cdot{}3\cdot{}4\cdot\cdot{}\cdot{}k = k!\). Since each possible assignment of values
 to the variables
 creates a \emph{unique} member of \(\mathcal{S}_k\),
@@ -1022,13 +1016,24 @@ is a member
 will be found by choosing the smallest
 \(k\) such that \(q\) divides \(k!\)\! .
 
-However, I'll leave that proof for another day.
+However, I'll leave that examination for another day.
 
-A final thought is that the number 
+The number 
 \(2\!+\!\frac{1}{2!}\!+\!\frac{1}{3!}\!+\!\frac{1}{4!}\!+\!\frac{1}{5!}\!+\!\dots{}\) can't
 be a rational number, as its fractional-part is not in \(\mathcal{S}\)
 because we can't point to any particular \(\mathcal{S}_k\) that the fractional-part would be a member of.
 Not surprising really, since this number is the well known constant \(e\).
-Furthermore I think we just proved that \(e\) is irrational!!
+Is this a proof that \(e\) is irrational?
+
+Also, I think it is easy to demonstrate the following,
+where \(\mathbb{Q}^+\) is the set of all non-negative rational numbers:
+
+{\small
+\begin{gather*}
+\mathbb{Q}^+ = \{1\} \cup \bigcup\limits_{k=2}^{\infty} \{k\} \cup \mathcal{S}_k,
+\end{gather*}
+}
+
+which suggests an easy way to show that \(\mathbb{Q}^+\) is countably infinite.
 
 \end{document}
