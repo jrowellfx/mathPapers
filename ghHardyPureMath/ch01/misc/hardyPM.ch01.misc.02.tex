@@ -295,7 +295,7 @@ by the expression \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
 then letting \(k\) grow without bound
 I should get a set that contains \emph{all} the rational numbers between zero and one!
 
-The ideas above are behind the proof that follows.
+Those ideas are behind the proof that follows.
 
 \break
 \section*{Lemma 1}
@@ -328,8 +328,8 @@ So assuming the lemma is true for \(k = n\), we show that it must be true for \(
 
 % \bigskip % Need bigger skip this time.
 \vspace{18pt}
-The following lemma captures an idea that is perhaps most easily grasped by analogy to the basis representation
-theorem for integers. For base-ten numbers we can say,
+The following lemma captures an idea that is perhaps most easily grasped by analogy to the
+basis-representation-theorem for integers. For base-ten numbers we can say,
 
 \begin{center}
 {\footnotesize\(1\cdot{}10^k >
@@ -343,8 +343,9 @@ theorem for integers. For base-ten numbers we can say,
 \end{center}
 
 The above inequality 
-is merely stating that any single power of ten is bigger than the sum of
-every smaller power of ten, each times 9.  For example, 1000 is bigger than 999.
+is merely stating that any single power of ten is bigger than nine (the largest `digit')
+times the sum of
+every smaller power of ten.  For example, 1000 is bigger than 999.
 Read the statement of the inequality in Lemma 2 with this idea in mind.
 
 \section*{Lemma 2}
@@ -433,30 +434,19 @@ that isn't clear:
 \((\mathcal{X} = \mathcal{Y}) \Leftrightarrow (\forall a;
 a \in \mathcal{X} \Leftrightarrow a \in \mathcal{Y})\).}.
 
-We're going to establish equality by showing three properties
-of the two sets \(\mathcal{S}_k\) and \(\mathcal{F}_k\).
-
-First, they are the same size.
-Sets can contain anything,
-so obviously
-that's not enough to show equality.
-
-Secondly, all the elements of 
-\(\mathcal{S}_k\) can be written in the exact same form as the elements of \(\mathcal{F}_k\).
-That's getting us closer, but still isn't sufficient because the numbers in \(\mathcal{S}_k\)
-could be anywhere on the number-line
-so they might not be the same as those in \(\mathcal{F}_k\).
-
-By showing that the smallest and largest numbers in \(\mathcal{S}_k\)
-are the same as those in \(\mathcal{F}_k\), then because each element of \(\mathcal{S}_k\)
-is forced to be one of the elements in \(\mathcal{F}_k\) (because there are no other
-possibilities) then this establishes equality between the two sets.
+We're going to establish the equality
+of \(\mathcal{S}_k\) and \(\mathcal{F}_k\) by showing that some key properties
+of the two sets are the same. The approach
+taken will establish that each element in one set must be equal to exactly one element in the other set.
+Note that we will not describe how to equate one specific element
+to the other, just that it must be true.
 
 To begin with, it's clear that the set \(\mathcal{F}_k\) contains \emph{every} rational number
 of the form \(\frac{p}{k!}\)
-% with denominator \(k!\)
 where \(p\) is an integer and \mbox{\(0\le{}\frac{p}{k!}<1\)} and
-that the size of \(\mathcal{F}_k\) is \(k!\, \). That takes care of everything we need to know
+that the size of \(\mathcal{F}_k\) is \(k!\) (i.e.; \(\left|\mathcal{F}_k\right| = k!\)).
+
+That takes care of everything we need to know
 about \(\mathcal{F}_k\); now on to show that \(\mathcal{S}_k\) has these same qualities.
 
 The smallest member of the set \(\mathcal{S}_k\) 
@@ -465,7 +455,7 @@ occurs when all the variables are set to zero.
 Furthermore, the largest member of the set occurs when all the variables are set to
 their maximum value, which sums to \(\frac{k!-1}{k!}\) as shown in Lemma 1.
 
-We also note that every member of \(\mathcal{S}_k\) can be written as a rational number
+We also note that every member \(s \in \mathcal{S}_k\) can be written as a rational number
 with \(k!\) as the denominator, like so,
 
 {\footnotesize
@@ -473,7 +463,7 @@ with \(k!\) as the denominator, like so,
 \setlength{\abovedisplayskip}{0pt}
 \begin{center}
 \begin{equation*}
-\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_{k-1}}{(k-1)!} + \frac{a_k}{k!}
+s = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_{k-1}}{(k-1)!} + \frac{a_k}{k!}
 = \frac{k\cdot{}(k-1)\cdot{}\cdot{}\cdot{}3\cdot{}a_2}{k!}
 + \frac{k\cdot{}(k-1)\cdot{}\cdot{}\cdot{}4\cdot{}a_2}{k!}
 + \dots{}
@@ -485,8 +475,8 @@ with \(k!\) as the denominator, like so,
 }
 
 \break
-Therefore any member of the set \(\mathcal{S}_k\) can be written as
-\(\frac{p}{k!}\) for some integer \(p\), where
+Therefore any member \(s \in \mathcal{S}_k\) can be written as
+\(s = \frac{p}{k!}\) for some integer \(p\), where
 
 {\footnotesize
 \bgroup                                  %% open the group
@@ -496,6 +486,8 @@ Therefore any member of the set \(\mathcal{S}_k\) can be written as
 0 = \frac{0}{k!} \le{} \frac{p}{k!} \le{} \frac{k!-1}{k!} < \frac{k!}{k!} = 1,
 \text{\quad hence,\quad}
 0 \le{} \frac{p}{k!} < 1
+\text{\quad i.e.;\quad}
+0 \le{} s < 1.
 \end{equation*}
 \end{center}
 \egroup
@@ -602,11 +594,11 @@ But in equation \eqref{eqn1},
 \(\frac{a_i - b_i}{i!} = \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\)
 which provides the desired contradiction.
 
-Therefore our assumption that there can be a different set
+Therefore our assumption that there can be a different list
 of variables representing the same rational number \(\frac{p}{k!}\) must be false.
 Therefore any assignment of values to the variables of the sum
 \(\frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
-produces a \emph{unique} number in the set \(\mathcal{S}_k\).
+produces a \emph{unique} member of the set \(\mathcal{S}_k\).
 
 Now we can count the number of members of \(\mathcal{S}_k\), by looking at all the
 possible combinations of values for the variables \(a_2, a_3, \dots{}, a_k\).
@@ -622,12 +614,14 @@ that can be assigned to the variables of
 + \frac{a_3}{3!}
 + \frac{a_4}{4!}
 + \dots{} + \frac{a_k}{k!}\)
-is \(2\cdot{}3\cdot{}4\cdot\cdot{}\cdot{}k = k!\,\). Since each set of assignments 
-creates a \emph{unique} member of the set, then the size of the set \(\mathcal{S}_k\) is \(k!\)
-which is also the size of the set \(\mathcal{F}_k\).
+is \(2\cdot{}3\cdot{}4\cdot\cdot{}\cdot{}k = k!\). Since each possible assignment of values
+to the variables
+creates a \emph{unique} member of \(\mathcal{S}_k\),
+then \(\left|\mathcal{S}_k\right| = k! = \left|\mathcal{F}_k\right|\).
+
 Recalling from above that any 
-member of the set \(\mathcal{S}_k\), say \(\frac{a}{b}\),
-can be written as \(\frac{a}{b} = \frac{p}{k!}\), for some \(p\) where 
+member \(s \in \mathcal{S}_k\),
+can be written as \(s = \frac{p}{k!}\), for some \(p\) where 
 \(0\le{}\frac{p}{k!}<1\), and that \(\mathcal{F}_k\) contains \emph{every} such number,
 then it follows that \(\mathcal{S}_k = \mathcal{F}_k\).
 
@@ -661,11 +655,10 @@ formed with any factorial as the denominator.
 formed by every factorial-representation possible.
 
 Finally,
-\(\mathbb{Q}_{01}\) is the set of ALL non-negative rational numbers \(\frac{p}{q} < 1\),
-where \(p\) and \(q\) are co-prime. We specify the co-prime condition
-so that our description
-generates unique members of the set. This constraint will come in handy later in the proof.
-Also, we want zero to be included so we toss it back into the set with the union.
+\(\mathbb{Q}_{01}\) is the set of ALL non-negative rational numbers \(0 \le{} \frac{p}{q} < 1\),
+where \(p\) and \(q\) are co-prime. It is convenient to specify the co-prime condition
+so that our \emph{description} of the contents uniquely identifies each member of the set.
+Also, we want zero to be included so we toss it back into the set with the union operator.
 We are not going to prove it here, but it is straightforward to show that \(\mathbb{Q}_{01}\) contains ALL the
 rational numbers between zero and one, and we will take this as established.
 
@@ -684,6 +677,7 @@ a \in \mathcal{X} \Leftrightarrow a \in \mathcal{Y}.
 \egroup
 }
 
+\break
 \section*{Lemma 4}
 
 {\normalsize
@@ -698,7 +692,6 @@ a \in \mathcal{X} \Leftrightarrow a \in \mathcal{Y}.
 \egroup
 }
 
-\break
 \subsubsection*{Proof}
 
 Lemma 3 tells us that the sets
