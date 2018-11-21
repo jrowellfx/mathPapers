@@ -49,7 +49,7 @@
 \usepackage{wasysym}
 %\usepackage{romannum}
 
-\newcommand{\jprVersion}{v58}
+\newcommand{\jprVersion}{v59} % version
  
 \usepackage[pdftex,
             pdfauthor={James Philip Rowell},
@@ -99,7 +99,7 @@
 Miscellaneous example-2\footnote{`Examples' is the term Hardy uses for `Exercises'
 or `Questions' in his textbook.} at the end
 of chapter 1 in G. H. Hardy's `A Course of Pure Mathematics'
-presents us with a fascinating result.
+presents us with, and asks us to prove, a fascinating result.
 The theorem feels like what the `\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0}
 {basis-representation-theorem}'
 is for integers, but for rational numbers \dots{} beautiful!
@@ -436,8 +436,9 @@ a \in \mathcal{X} \Leftrightarrow a \in \mathcal{Y})\).}.
 
 We're going to establish the equality
 of \(\mathcal{S}_k\) and \(\mathcal{F}_k\) by showing that some key properties
-of the two sets are the same. The approach
-taken will establish that each element in one set must be equal to exactly one element in the other set.
+of the two sets are the same; then by the
+pigeon-hole principle
+each element from one set must be equal to exactly one element from the other set
 Note that we will not describe how to equate one specific element
 to the other, just that it must be true that there is a one-to-one equality between such pairs.
 
@@ -550,7 +551,7 @@ But \(a_i - b_i \ge{} 1\), so
 % clearly false.
 % 
 % So let's carry on assuming that \(i < k\)
-Let's examine
+Furthermore, let's examine
 one of the terms
 on the right-side of \eqref{eqn1}, say
 the first one \(\frac{b_{i+1} - a_{i+1}}{(i+1)!}\). We can see that since
@@ -572,7 +573,7 @@ Similarly by extending this idea to the other terms,
 + \dots{} + \frac{b_k - a_k}{k!}\).
 \end{center}
 
-Furthermore, Lemma 2 tells us that \(\frac{1}{i!} > 
+Lastly, Lemma 2 tells us that \(\frac{1}{i!} > 
 \frac{i}{(i+1)!}
 + \frac{i+1}{(i+2)!}
 + \dots{} + \frac{k-1}{k!}\), so
@@ -589,7 +590,7 @@ and hence,
 \end{center}
 
 But in equation \eqref{eqn1},
-\(\frac{a_i - b_i}{i!} = \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\)
+\(\frac{a_i - b_i}{i!} = \frac{b_{i+1} - a_{i+1}}{(i+1)!} + \dots{} + \frac{b_k - a_k}{k!}\),
 which provides the desired contradiction.
 
 Therefore our assumption that there can be a different list
@@ -617,7 +618,7 @@ Recalling from above that any
 member \(s \in \mathcal{S}_k\),
 can be written as \(s = \frac{p}{k!}\), for some \(p\) where 
 \(0\le{}\frac{p}{k!}<1\), and that \(\mathcal{F}_k\) contains \emph{every} such number,
-then it follows that \(\mathcal{S}_k = \mathcal{F}_k\).
+then by the pigeon-hole principle it follows that \(\mathcal{S}_k = \mathcal{F}_k\).
 
 QED.
 
