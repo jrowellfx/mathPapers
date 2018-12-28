@@ -175,11 +175,10 @@ Note: in general integers do NOT have multiplicative inverses
 that are also integers. (eg. $\frac{1}{2}$ is the multiplicative
 inverse of 2 because $\frac{1}{2}\cdot{}2=1$ but $\frac{1}{2}$ is not an integer.)}.
 
-Since our ability to count in decimal is not axiomatic, then to properly ground
-it in modern-mathematics we should
+Since our ability to count in decimal is not axiomatic, then to properly ground it we should
 define what it means to write out a number in decimal,
 state its properties in a theorem,
-then provide a proof of that theorem -
+then provide a proof of that theorem;
 The proof being
 a series of arguments that logically connects it
 directly\footnote{directly \dots{}or indirectly
@@ -227,15 +226,15 @@ where $b$ is any number two or higher (base-one doesn't really make sense
 - think about it for a while\footnote{Is base-one essentially a pile of apples?}),
 we gain a deeper understanding of the subject in question.
 
-Even though doing arithmetic in base-ten
-has been going on for almost two-thousand
-years, formalizing it and generalizing it into a theorem is fairly modern.
-The earliest reference I've found to our theorem
-is in ``Elementary Number Theory'' by E. Landau in 1958.
-We probably don't need to look further back than
-Leibniz time when he introduced the idea of binary
-arithmetic in 1679. So our theorem is fairly recent 
-on the world stage.
+%Even though doing arithmetic in base-ten
+%has been going on for almost two-thousand
+%years, formalizing it and generalizing it into a theorem is fairly modern.
+%The earliest reference I've found to our theorem
+%is in ``Elementary Number Theory'' by E. Landau in 1958.
+%We probably don't need to look further back than
+%Leibniz time when he introduced the idea of binary
+%arithmetic in 1679. So our theorem is fairly recent 
+%on the world stage.
 
 %Anyway, if you're not a ``math-person'' don't fear, by the end of this paper you will know
 %how to read the ``Basis Representation Theorem'' above so that it makes sense
@@ -252,12 +251,11 @@ digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9.
 
 Base-ten strings a series of these digits together
 one after the other to be able to represent each positive integer.
-Let's look at the first two-digit-number, that is, ten,
-which as you well know looks like this: ``10''.
+Let's look at the first two-digit-number: ``10'' (ten).
 This extra digit on the left tells us how many tens we have and the last,
 or rightmost digit says how many additional units to add to it.
 
-So our very first two-digit-number 10 means ``one lot of ten - plus zero units''.
+So our very first two-digit-number ``10'' means ``one lot of ten - plus zero units''.
 When we see ``11'' - we interpret it to mean ``one lot of ten - plus one unit'',
 and ``12'' is ``one lot of ten - plus two units'', etc.
 
@@ -316,6 +314,7 @@ as ``ten-to-the-one''.} that there is only one ten multiplied together,
 or one ``0'' following the ``1'',
 in other words, just the number ten itself.
 
+\break
 How about when $k=0$?
 Examining the pattern of how the power $k$ relates to how many zeros follow the ``1''
 (eg, $10^1=10$, $10^2=100$, $10^3=1000$,
@@ -420,24 +419,27 @@ Every integer has a representation in base-ten.
 
 %\bigskip
 Something else we know intuitively is that each number written
-in base-ten represents only ONE integer.
-It almost feels silly to spell it out, but if we were to count out
-4 piles of 100-apples-each-pile, then 7 piles of 10-apples-each-pile,
-then count out 9 additional apples, \emph{then}
-scoop them all into a big pile that
-we'd always get the exact same size big-pile-of-apples.
+in base-ten represents only ONE integer. That is, there aren't two different
+sized piles of apples represented by the same decimal-number. Similarly there
+isn't one pile of apples that's represented by two \emph{different} decimal-numbers.
 
-It goes the other way too. If we were handed the aforementioned
-big-pile-of-apples we could start counting out
-piles of 100. We'd try to make as many piles of 100 as we could,
-and we'd find that we'd have 4 piles of 100 before
-we couldn't make another such pile.
-Then we would start counting out piles of 10 with the remaining apples finding
-that we could only make seven such piles-of-ten, leaving nine single apples remaining,
-in other words, 479 apples! There is NO other
-way to divvy up this big-pile-of-apples
-if we follow this procedure.  In other words, each integer is
-represented by only ONE base-ten number.
+% It almost feels silly to spell it out, but if we were to count out
+% 4 piles of 100-apples-each-pile, then 7 piles of 10-apples-each-pile,
+% then count out 9 additional apples, \emph{then}
+% scoop them all into a big pile that
+% we'd always get the exact same size big-pile-of-apples.
+% 
+% It goes the other way too. If we were handed the aforementioned
+% big-pile-of-apples we could start counting out
+% piles of 100. We'd try to make as many piles of 100 as we could,
+% and we'd find that we'd have 4 piles of 100 before
+% we couldn't make another such pile.
+% Then we would start counting out piles of 10 with the remaining apples finding
+% that we could only make seven such piles-of-ten, leaving nine single apples remaining,
+% in other words, 479 apples! There is NO other
+% way to divvy up this big-pile-of-apples
+% if we follow this procedure.  In other words, each integer is
+% represented by only ONE base-ten number.
 
 Let's strengthen our theorem based on the last two observations.
 
