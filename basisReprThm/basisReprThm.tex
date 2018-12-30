@@ -48,6 +48,8 @@
 \usepackage{relsize}
 \usepackage{wasysym}
 %\usepackage{romannum}
+
+\newcommand{\jprVersion}{v16} % version
  
 \usepackage[pdftex,
             pdfauthor={James Philip Rowell},
@@ -86,10 +88,10 @@
 
 %%% END Article customizations
 
-\title{Counting}
+\title{\vspace{-1.5cm}Counting}
 \author{James Philip Rowell}
-\date{} % Activate to display a given date or no date (if empty),
-% otherwise the current date is printed 
+\date{\vspace{-0.5cm}\footnotesize\today\ (\jprVersion)} % Activate to display a given date or no date (if empty),
+% otherwise the current date is printed
 
 \begin{document}
 \maketitle
@@ -110,7 +112,7 @@ which is this many apples
 or the number of fingers on a typical person's two hands.
 
 Once we are trained to think
-of ``10'' as representing ten things, we quickly move past it to learn the meaning of ``100'' and ``1000''
+of ``10'' as representing ten things, we quickly move on to learn the meaning of ``100'' and ``1000''
 and how to interpret a string of decimal-digits 
 like ``92507''.
 Even as youngsters we'd
@@ -138,8 +140,8 @@ Even though we
 use different symbols
 than
 the ancient Romans, we are all
-talking about the same abstract set of numbers underneath,
-which are called integers\footnote{Integers are 
+talking about the same set of numbers underneath,
+called integers\footnote{Integers are 
 the set of all the positive whole numbers, as well as zero and all the negative counterparts to each positive number.
 %We denote the set of integers with this symbol: $\mathbb{Z}$.
 }.
@@ -148,10 +150,11 @@ used to represent a given number.
 When we talk about positive integers in mathematics
 we're really talking about different sized piles of apples.
 Each successive integer
-represents a successively larger piles of apples. In fact sometimes (when thinking about mathy-stuff)
-it's helpful to try to forget about the specific symbols
-we use like ``9'' and ``10'' or ``IX'' and ``X'' and think about each integer as a specific sized pile
-of apples.
+represents a successively larger piles of apples.
+% In fact sometimes (when thinking about mathy-stuff)
+% it's helpful to try to forget about the specific symbols
+% we use like ``9'' and ``10'' or ``IX'' and ``X'' and think about each integer as a specific sized pile
+% of apples.
 
 \emph{However}, we use decimal-numbers all the time in mathematics,
 rarely thinking in terms of piles of apples.
@@ -213,7 +216,7 @@ like nonsense.
 
 Try this: imagine that the above was 
 written such that
-we replace the $b$ with ``ten''. Does it make any more sense?
+we replace the $b$ with ``10''. Does it make any more sense?
 At least then we'd have the ``Base-Ten Representation Theorem''. We could also let $b=2$,
 which would give us the 
 ``Base-Two Representation Theorem'' stating how we count in \emph{binary}.
@@ -229,23 +232,9 @@ where $b$ is any number two or higher (base-one doesn't really make sense
 - think about it for a while\footnote{Is base-one essentially a pile of apples?}),
 we gain a deeper understanding of the subject in question.
 
-%Even though doing arithmetic in base-ten
-%has been going on for almost two-thousand
-%years, formalizing it and generalizing it into a theorem is fairly modern.
-%The earliest reference I've found to our theorem
-%is in ``Elementary Number Theory'' by E. Landau in 1958.
-%We probably don't need to look further back than
-%Leibniz time when he introduced the idea of binary
-%arithmetic in 1679. So our theorem is fairly recent 
-%on the world stage.
-
-%Anyway, if you're not a ``math-person'' don't fear, by the end of this paper you will know
-%how to read the ``Basis Representation Theorem'' above so that it makes sense
-%plus you'll know how to prove it.
-
 Assuming you want to be able to make sense of and read our theorem, then let's take a step
 back and work up to its statement,
-using our familiar base-ten for discussion.
+using our familiar decimal, or base-ten, for discussion.
 
 When using an arbitrary base (i.e.; base-$b$) to count with,
 it's useful to have simple symbols to represent each of the integers from zero to up to $(b-1)$.
@@ -317,7 +306,6 @@ as ``ten-to-the-one''.} that there is only one ten multiplied together,
 or one ``0'' following the ``1'',
 in other words, just the number ten itself.
 
-\break
 How about when $k=0$?
 Examining the pattern of how the power $k$ relates to how many zeros follow the ``1''
 (eg, $10^1=10$, $10^2=100$, $10^3=1000$,
@@ -399,12 +387,11 @@ followed by 9999 more zeros, then a ``5'', which means this:
 +\cdots{}
 +0{\times{}}10^{1}
 +5{\times{}}10^{0}\]
-Clearly we can keep going as high as we like.
 
 Let's use our understanding of counting in base-ten to build up to the
 ``Basis Representation Theorem'' introduced above.
 
-We intuitively know that counting with
+Intuitively we know that counting with
 base-ten covers all the positive integers.
 For example, the odometer in your car that keeps churning out
 new numbers for each mile you drive, starting from zero when it rolls
@@ -426,24 +413,6 @@ in base-ten represents only ONE integer. That is, there aren't two different
 sized piles of apples represented by the same decimal-number. Similarly there
 isn't one pile of apples that's represented by two \emph{different} decimal-numbers.
 
-% It almost feels silly to spell it out, but if we were to count out
-% 4 piles of 100-apples-each-pile, then 7 piles of 10-apples-each-pile,
-% then count out 9 additional apples, \emph{then}
-% scoop them all into a big pile that
-% we'd always get the exact same size big-pile-of-apples.
-% 
-% It goes the other way too. If we were handed the aforementioned
-% big-pile-of-apples we could start counting out
-% piles of 100. We'd try to make as many piles of 100 as we could,
-% and we'd find that we'd have 4 piles of 100 before
-% we couldn't make another such pile.
-% Then we would start counting out piles of 10 with the remaining apples finding
-% that we could only make seven such piles-of-ten, leaving nine single apples remaining,
-% in other words, 479 apples! There is NO other
-% way to divvy up this big-pile-of-apples
-% if we follow this procedure.  In other words, each integer is
-% represented by only ONE base-ten number.
-
 Let's strengthen our theorem based on the last two observations.
 
 \emph{Base-Ten Representation Theorem (second draft)}
@@ -451,24 +420,7 @@ Let's strengthen our theorem based on the last two observations.
 Every integer has a \emph{unique} representation in base-ten.
 \end{jprIn}
 
-%\bigskip
-%We can also restrict our theorem to positive integers, because
-%we know that for every positive integer
-%there exists a unique negative integer
-%(such that if you add them together you get zero).
-%So if we can prove the
-%Base-Ten Representation Theorem for the positive integers then we
-%can easily extend it to the negative integers (and zero) with a corollary.
-%Our corollary could say something like ``Slap a `-' (minus)
-%sign in front of the positive base-ten representation to 
-%get a unique representation for
-%it's negative counterpart'' \dots{}or some such words.
-
-Let's not worry about negative integers for now,
-they're easy to represent once you have a way to represent
-positive integers, just slap a minus sign on the front to get the negatives.
-%So let's make our lives easier and forget about them for the time being.
-Also, moving forward it would be helpful to have a name for our 
+It would be helpful to have a name for our 
 positive integer so that we can refer to it directly - how about $n$ for ``number'':
 
 \emph{Base-Ten Representation Theorem (third draft)}
@@ -514,7 +466,7 @@ which we can write as ``$0\le{}d\le{}9$'' however, I suggest that ``$0\le{}d<10$
 $0\le{}d\le{}9$ as ``zero is less-than-or-equal-to dee which is less-than-or-equal-to nine''
 and $0\le{}d<10$ as ``zero is less-than-or-equal-to dee which is (strictly) less-than ten''.}.
 It's logically equivalent to ``$0\le{}d\le{}9$''  but conveys more important information
-to the reader. Why even talk about nine when the theorem is about base TEN?
+to the reader. Why even talk about nine when the theorem is about base-TEN?
 \begin{align*}
 n =\ &9{\cdot}10^4+2{\cdot}10^3+d{\cdot}10^2+0{\cdot}10^1+7{\cdot}10^0,\text{ where}\\
 &d\text{ is an integer such that }0\le{}d<10
@@ -544,7 +496,6 @@ n =\ &9{\cdot}10^4+2{\cdot}10^3+d_2{\cdot}10^2+0{\cdot}10^1+7{\cdot}10^0,\text{ 
 If we define $d_2$ like this, then we know that when we refer to the digit $d_2$
 that we are talking about the digit that is multiplied with $10^2$.
 
-% \break
 Let our five-digit-number $n$ use $d_0,d_1,d_2,d_3$ and $d_4$ for its digits. Then
 the general expression for $n$ looks like this\footnote{That expression looks like
 hard-core math, so let's take a moment
@@ -569,7 +520,6 @@ call out the exception that $d_4$ can NOT be zero - it has to be at least 1.
 Why? Because if $d_4$ were zero then $n$ would only be a
 four-digit-number, or perhaps a three-digit-number, or only two-digits etc.
 
-\break
 Secondly, to clean up the presentation
 a common convention
 is to let another term like $i$, for perhaps ``index'', stand in for the subscript
@@ -592,6 +542,7 @@ where $0\le{}d_i<10$ for all $i$ in $\{0,1,2,3,4\}$ and $d_4\ne0$.
 \end{jprIn}
 That's it! Those statements and the expression for $n$ describe EVERY five-digit-number.
 
+\break
 Now let's extend
 our five-digit-expression for $n$ to an arbitrary
 number of digits.
@@ -615,7 +566,6 @@ or we could let $k$ be a twenty-thousand, which would allow
 us to specify an integer that has a twenty-thousand-and-one
 digits in it.
 
-%\break
 So there we have it, we found our expression for being able to
 express each positive integer, let's use
 it in the final draft of our base-ten-theorem.
@@ -748,7 +698,7 @@ four! What is ``11'' in base-two? Using our technique to
 describe the digits we see that it's ``One set of two, plus one unit'',
 in other words, three.
 
-\break
+% \break
 Here's how they count on Planet-Claire using base-two:
 \begin{center}
 \begin{tabular}{r l c r l}
@@ -807,7 +757,7 @@ to be zero or one.
 Following our line of reasoning this is what the Planet-Claire mathematicians would have
 come up with\dots
 
-\break
+% \break
 \section*{Base-Two Representation Theorem}
 \begin{jprIn}
 For every positive integer $n$ there is a unique
@@ -848,7 +798,7 @@ C\textsubscript{16}=(12)\textsubscript{10},
 D\textsubscript{16}=(13)\textsubscript{10},
 E\textsubscript{16}=(14)\textsubscript{10},
 F\textsubscript{16}=(15)\textsubscript{10}.
-For example, (97A3F2)\textsubscript{16} is a four-digit-number in base-sixteen
+For example, (97A3F2)\textsubscript{16} is a number in base-sixteen
 (which means (9,937,906)\textsubscript{10} in base-ten.)
 
 Note that if we omit the parentheses and subscript from a number,
@@ -915,6 +865,7 @@ company - this is a common feeling among mathematicians, you'll get used to it.
 But like any exercise in a workout if you push on through you will get stronger.
 (Hint: A pocket calculator will be helpful.)
 
+\break
 \section*{Exercises}
 \begin{enumerate}
 \item What are the following numbers expressed in base-ten?
@@ -1107,15 +1058,15 @@ only one item thus it's ``trivial''.} of the first positive integer 1.
 
 Now for our ``induction step'': We assume the relationship is true for $n=k$; that is,
 \[1+2+3+\ldots+k=\frac{k(k+1)}{2}\]
-and prove that it must also be true
+and then we prove that it must also be true
 for $n=k+1$; that is, we need to show that,
 \[1+2+3+\ldots+k+(k+1)=\frac{(k+1)((k+1)+1)}{2}\]
 Which we do on the next page by simply out by writing out the sum from 1 to \(k+1\), then
-start to work with what we've got and see where it leads.
+start to work with our induction-assumption and see where it leads.
 
 \begin{alignat*}{2}
 &(1+2+3+\ldots+k) + (k+1) \;\;  &&\text{(Add together 1 through }k+1\text{.)}\\
-=\ &\frac{k(k+1)}{2} + (k+1) &&\text{(Substitute induction assumption for 1 through }k\text{.)}\\
+=\ &\frac{k(k+1)}{2} + (k+1) &&\text{(Substitute induction-assumption for 1 through }k\text{.)}\\
 =\ &\frac{k(k+1)}{2} + \frac{2(k+1)}{2} &&\text{(Common denominator of 2.)}\\
 =\ &\frac{k^2+k+2k+2}{2} &&\text{(Multiply out numerator.)}\\
 =\ &\frac{k^2+3k+2}{2} &&\text{(Add like terms.)}\\
@@ -1144,11 +1095,11 @@ Base case: $n=1$
 Induction step:
 Assume the following when \(n = k\),
 \[1+b+b^2+\dots+b^{k-1} = \frac{b^k-1}{b-1}\]
-Then prove the following when \(n = k + 1\),
+Then we prove the following when \(n = k + 1\),
 \[1+b+b^2+\dots+b^{k-1}+b^k = \frac{b^{k+1}-1}{b-1}\]
 \begin{alignat*}{2}
 &(1+b+b^2+\dots+b^{k-1}) + b^k  \;\;  &&\text{(Add }k+1\text{ terms of series together.)}\\
-=\ &\frac{b^k-1}{b-1}+b^k &&\text{(Substitute induction assumption for first }k\text{ terms.)}\\
+=\ &\frac{b^k-1}{b-1}+b^k &&\text{(Substitute induction-assumption for first }k\text{ terms.)}\\
 =\ &\frac{b^k-1}{b-1}+\frac{b^k(b-1)}{b-1}  &&\text{(Common denominator of }b-1\text{.)}\\
 =\ &\frac{b^k-1+b^{k+1}-b^k}{b-1} &&\text{(Multiply out numerator.)}\\
 =\ &\frac{b^{k+1}+b^k-b^k-1}{b-1} &&\text{(Reorder terms (Associativity).)}\\
@@ -1293,7 +1244,7 @@ as ``if and only if'' - it's like a logical ``equals'' sign}
 {\small
 \begin{alignat*}{3}
   &&n
-  &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 &&\quad\text{(Induction Assumption)}\\
+  &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 &&\quad\text{(Induction-Assumption)}\\
   &\Leftrightarrow\quad
   &n+1
   &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + 1 &&\quad\text{(Add 1 to both sides)}\\  
@@ -1342,7 +1293,7 @@ Case 2a) ALL of the digits of $n$ are equal to $(b-1)$.
 So $n$ can be expressed like this:
 \begin{alignat*}{3}
   &\quad&n
-  &= (b{-}1)b^k+\dots{}+(b{-}1)b^2+(b{-}1)b^1+(b{-}1)b^0 &&\quad\text{(Induction Assumption)}
+  &= (b{-}1)b^k+\dots{}+(b{-}1)b^2+(b{-}1)b^1+(b{-}1)b^0 &&\quad\text{(Induction-Assumption)}
 \end{alignat*}
 Recall in the ``Extra Exercise: Geometric Series Theorem''
 we showed that:
