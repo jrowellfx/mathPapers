@@ -5,12 +5,12 @@ Most of us think about “whole numbers” not too differently from the way we l
 If I say “I owe you 13 cents” and I give you one dime and three pennies then after thanking me profusely for repaying this staggering debt, we’ll agree that it’s settled with those coins equaling 13 pennies. We identify the symbol “13” very strongly with this particular number - it would be tough to get through life in the modern world without such an automatic process running in our brains. This example highlights what this particular symbol “13” actually means - one dime () plus three pennies ().
 Let’s look at the number 13 in some alternative ways - it’s the number of months in a year plus one month; what I’m suggesting is that there is no need for the symbol “13” in order to think about this particular number of months. Better yet, 13 is this many apples 🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏 ; or 13 is the sixth prime number (i.e., <1st: 2>, <2nd: 3>, <3rd: 5>, <4th: 7>, <5th: 11>, <6th: 13>); or perhaps 13 is “the number that follows the 2nd prime-number multiplied by the 1st prime-number squared”, also written as. None of these ways of thinking about the number 13 require that we represent it using the digits 1 and 3 butted up next to each other.
 Each number exists independently from any symbol or word that might represent it. Numbers are an idea - perhaps such a strong idea that the universe wouldn’t exist without it! Anyway, for our purposes whole numbers exist in some abstract realm - Each number is one whole unit more than the previous number, starting at nothing, that is “zero”, and jumping to something, that is “one”, then one more, which gets us to “two”, then “three”, etc. Continuing in this way… then we get them all.
-To get back to the idea of what a whole number really is, try to forget about the symbols or words we use and picture a pile of apples. There’s zero apples (it’s hard to show no-apples, maybe “”?), then we introduce an “🍏” to get our very first, and smallest, non-empty pile of apples. Then add another apple to get a pile of “🍏🍏”, then “🍏🍏🍏”, then “🍏🍏🍏🍏” then some big pile of “🍏🍏🍏🍏🍏⋯🍏🍏🍏” after we’ve been adding apples for a while. Each successively bigger pile of apples corresponds with each successive whole number.
+To get back to the idea of what a whole number really is, try to forget about the symbols or words we use and picture a pile of apples. There’s zero apples (it’s hard to show no-apples), then we introduce an “🍏” to get our very first, and smallest, non-empty pile of apples. Then add another apple to get a pile of “🍏🍏”, then “🍏🍏🍏”, then “🍏🍏🍏🍏” then some big pile of “🍏🍏🍏🍏🍏⋯🍏🍏🍏” after we’ve been adding apples for a while. Each successively bigger pile of apples corresponds with each successive whole number.
 We expand this entire set of whole numbers to include their negative-counterparts and call this larger set “integers”. We denote the set of integers with this symbol: . If we only want to talk about positive integers along with zero, we use this symbol: . When we talk about numbers in mathematics we always treat them as belonging to some kind of set (like the integers) in this pure, abstract sort of way.
 However... using a “1” followed by a “3” to represent “🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏” is VERY handy. So we use Hindu-Arabic numbers and the positional notation of “base-ten”, more commonly known as “decimal”, to represent each specific integer. We slap a “-” on the front if we need to talk about a negative integer.
 Base-ten representation of an integer is far superior to ancient Roman numerals for example. Try adding two numbers together in ancient Rome, or worse, multiplying or dividing them. What’s XI times IX? Would you believe me if I told you it’s XCIX? Unless you convert those to Hindu-Arabic numerals to check, you’re just gonna have to trust me. Truth is - I don’t know how to multiply using Roman numerals - nor did most Romans! Not only that, but I’ll bet that most kids who graduated from Sesame Street can count higher than any Roman could - as the Roman system only effectively allowed counting up to 4999. 
 Using base-ten for us is automatic, we barely think about it when we’re adding numbers or multiplying them - but it’s worth looking carefully at how base-ten works - so let’s examine it from the ground up.
-It’s useful to have simple symbols to represent each of the integers from one to nine, namely our familiar 1, 2, 3, 4, 5, 6, 7, 8 and 9 which have an interesting history  and predate their use in base-ten.
+It’s useful to have simple symbols to represent each of the integers from one to nine, namely our familiar 1, 2, 3, 4, 5, 6, 7, 8 and 9 which have an interesting history and predate their use in base-ten.
 Slightly more modern, but still quite ancient, is the symbol “0” for “zero”, meaning “nothing”. Zero also predates its use in base-ten but without zero, base-ten wouldn’t be possible.
 Base-ten uses the idea of stringing a series of digits together (a digit being one of the numbers 0, 1, 2, … 9), one after the other to be able to represent any whole number. Let’s look at the first two-digit number, that is, ten, which as you well know looks like this: “10”. This extra digit on the left tells us how many tens we have and the last, or rightmost digit says how many additional units to add to it.
 So our very first two-digit number 10 means “one lot of ten - plus zero units”. When we see “11” - we interpret it to mean “one lot of ten - plus one unit”, and “12” is “one lot of ten - plus two units”, etc. Continuing on; “20” - we interpret to mean “two lots of ten, plus zero units”, etc. up to “90” meaning “nine lots of ten, plus zero units”.
@@ -109,7 +109,7 @@ Let :  Then every n can be uniquely expressed as follows:
 for some  k  such that  where ,.
 Furthermore except when .
 Definition: n is represented in base-two as 
-Before we go on, I want to introduce a little notation to help avoid confusion. How do you know what I’m talking about if I just write “1000”?  Do I mean or ? If there is any possibility for confusion we write the number like this for the base-ten version of 1000, and to mean the binary version.
+Before we go on, I want to introduce a little notation to help avoid confusion. How do you know what I’m talking about if I just write “1000”?  Do I mean or ? If there is any possibility for confusion we write the number like this for the base-ten version of 1000 and to mean the binary version.
 As is hinted by the habits of our various alien friends above it seems that we can use ANY integer greater than or equal to 2 as a base. In fact computer graphics artists are known to stumble upon numbers written in hexadecimal, which is base 16 (usually relating to specifying a color-channel). Base 16 introduces some new symbols to the usual numbers 1, 2, 3, 4, 5, 6, 7, 8 and 9, to represent the base-ten integers 10, 11, 12, 13, 14 and 15, namely: A, B, C, D, E and F. So if you see this number (80FB)16 then I bet at this point you can figure out that it’s (33019)10. Note that if we omit the parentheses and subscript from a number, it means we’re talking about it in base-ten - our “default” base. Case in point… the subscripts that we use to denote the base (like the “16” in (80FB)16) are written in base-ten!
 We really need to get on with proving our two theorems above. But what about proving the “base-nine” version of the theorem for the aliens on Planet-Nova, or the “base-eight” version for the inhabitants of Planet-Ocho?
 To cover all bases (pun intended) let’s restate our theorem for the general case, call it “base b”, where b is any number greater than one. If we can prove that theorem, then we’ll automatically get all the individual cases of specific bases for free.
@@ -126,55 +126,68 @@ Definition:
 Apart from substituting “b” for “ten” and “two” in the previous theorems, we did away with the “×” symbol for multiplication. It’s a notational convention that when two terms are written next to each other (a term is a number, constant, or a variable, e.g., 7, 13, n, k or b) that multiplication is the implied operation E.g., means  andmeans . Naturally, this notational convenience doesn’t work for terms that are only numbers like 73 which of course doesn’t mean . 
 The motivation for our proof is to spell out the technique for actually constructing the base-b representation of any integer and show that this can ALWAYS be done, and each step is unique.
 This technique makes use of a well established theorem which is called the “Euclidean Division Theorem” -  It sounds heavy, but you all learned it in the third grade, but perhaps not so formally. It simply states the following:
-
-
-________________
-
-
 Euclidean Division Theorem
 For all where b ≠ 0, there exists unique integers q, r such that:
   and  
-In the above equation:
+Definition: In the above equation:
 a is the dividend
 b is the divisor
 q is the quotient
 r is the remainder
-This is simply stating the idea you learned when you first learned to divide.  For example if someone asked you “how many times does six go into eighty?” - you’d answer “thirteen with two remaining”, or written in the form of our theorem:
+This is how you first learned to divide.  For example if someone asks you “What is nineteen divided by three?” - you’d answer “six with one remaining”. Here 19 is the dividend,  3 is the divisor, 6 is the quotient and 1 is the remainder. Written in the form of our theorem:
 
-...or “how many times does sixteen go into one-hundred-and-twenty-one?” - you’d answer “seven, with nine remaining.”, in other words…
-
-An important thing to note here is that the quotient and the remainder are unique for each pair of dividend and divisors.
+An important thing to note here is that the quotient and the remainder are unique for each pair of dividend and divisors as long as b is not equal to zero. We won’t prove this theorem - we’ll take it as already proven and use it.
 Proof of “Unique Representation of Integers in an Arbitrary Base”
 Let such that .
+We are going to construct a “base b” representation of .
 Since b ≠ 0 then by the “Euclidean Division Theorem” there exists unique nonnegative integers such that:
 where 
-Suppose , then
+Similarly there exist unique nonnegative integers for the quotient above such that:
+where 
+Repeating this process for the new quotient and continuing ad infinitum we can say that there exist unique nonnegative integer quotients   and remainders   such that:
+where 
+where 
 
-Showing that the unique representation for “zero” in any base is simply the digit 0.
+where 
 
+[We will henceforth call all the terms “quotients” - including our original number .]
+We first note that IF one of our quotients is zero, say , then all subsequent quotients,  must also be zero because:
 
-________________
-
-
-Now suppose , 
-We note that  n  is always strictly greater than our quotient n1,
-i.e., because either,
-and we specified that , or
-                (by Eucl. Div. Thm above)
+since then both and must be zero since by definition neither of them can take on negative values (which would allow for something like ).
+This same argument can be repeated to show that , must also be zero.
+Now we’ll show that there MUST be a quotient in the list that is zero.
+We start by noting that for any quotient  that because:
+                (by definition)
 
         (since )
-        (strict inequality since and )
-In all cases we apply the “Euclidean Division Theorem” to our quotient we know there exists unique nonnegative integers such that:
-where 
-Similarly, applying the Eucl. Div. Theorem to the new quotient then there exists unique nonnegative integers such that:
-where 
-Repeating this process we can say that there exist non-negative integer quotients and remainders  such that:
-where 
-where 
-where 
+        (*)
 
-And we note that 
-with the strict inequalities holding until  some k such that --- wip jpr ---
+Suppose then the inequality can be rewritten as a strict inequality thusly:
+
+because at (*), has equality if and only if 
+As long as no quotient is zero then:
+
+Which implies that one of the quotients must eventually be zero, for even if each quotient was only one unit smaller than the previous quotient then we are guaranteed that the n0th quotient must be zero.  In other words:
+
+[Aside: The series of quotients will ultimately reach the value zero much faster than the previous statement implies - indeed it will only take at most steps which is WAY faster than steps. Eg.  which is a considerably smaller number than 789,456,123 !]
+
+
+If , then we can construct the base-b representation as such
+________________
+Let be the number of nonzero quotients in our list above.  Then  and our complete list of quotients is as follows:
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ---wip jpr ---
