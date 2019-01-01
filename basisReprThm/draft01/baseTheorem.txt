@@ -8,7 +8,7 @@ We expand this entire set of whole numbers to include their negative-counterpart
 However... using a “1” followed by a “3” to represent “🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏” is VERY handy. So we use Hindu-Arabic numbers and the positional notation of “base-ten”, more commonly known as “decimal”, to represent each specific integer. We slap a “-” on the front if we need to talk about a negative integer.
 Base-ten representation of an integer is far superior to ancient Roman numerals for example. Try adding two numbers together in ancient Rome, or worse, multiplying or dividing them. What’s XI times IX? Would you believe me if I told you it’s XCIX? Unless you convert those to Hindu-Arabic numerals to check, you’re just gonna have to trust me. Truth is - I don’t know how to multiply using Roman numerals - nor did most Romans! Not only that, but I’ll bet that most kids who graduated from Sesame Street can count higher than any Roman could - as the Roman system only effectively allowed counting up to 4999. 
 Using base-ten for us is automatic, we barely think about it when we’re adding numbers or multiplying them - but it’s worth looking carefully at how base-ten works - so let’s examine it from the ground up.
-The symbols to represent each of the integers from one to nine, namely our familiar numbers 1, 2, 3, 4, 5, 6, 7, 8 and 9 have an interesting history - and predate their use in base-ten, however it’s useful to have simple symbols like this to represent those particular integers.
+It’s useful to have simple symbols to represent each of the integers from one to nine, namely our familiar numbers 1, 2, 3, 4, 5, 6, 7, 8 and 9 which have an interesting history - and predate their use in base-ten.
 Slightly more modern, but still quite ancient, is the symbol “0” for “zero”, meaning “nothing”. Zero also predates its use in base-ten but without zero, base-ten wouldn’t be possible.
 Base-ten uses the idea of stringing a series of digits together (a digit being one of the numbers 0, 1, 2, … 9), one after the other to be able to represent any whole number. Let’s look at the first two-digit number, that is, ten, which as you know looks like this: “10”. This extra digit on the left tells us how many tens we have and the last, or rightmost digit says how many additional units are needed to get the desired number.
 So our very first two-digit number 10 means “one lot of ten - plus zero units”. When we see “11” - we interpret it to mean “one lot of ten - plus one unit”, and “12” is “one lot of ten - plus two units”, etc. Continuing on; “20” - we interpret to mean “two lots of ten, plus zero units”, etc. up to “90” meaning “nine lots of ten, plus zero units”.
@@ -20,8 +20,8 @@ It get’s a little tedious to be so specific when reading out a number so our l
         10000        = ,
         ⋯
         10⋯000        = 
-The last line,, means there are  k  10’s multiplied together - also written as a 1 followed by  k  zeros. The above list explicitly shows the cases for k = 2, 3 and 4. Using the k  like that is just a way to show that we can pick ANY nonnegative whole number, i.e., there is no limit on how big k can be.
-The notation of is very handy, in fact it extends to the case when and . So means that there is only one 10 multiplied together, in other words just the number 10. That  also tells us how many zero’s follow the “1”, so in this case there is one “0” following the “1” - again just 10.
+The last line,, means there are  k  10’s multiplied together - also written as a 1 followed by  k  zeros. The above list explicitly shows the cases for k = 2, 3 and 4. Using the k  like that is just a way to show that we can pick ANY whole number, i.e., there is no limit on how big k can be.
+The notation of is very handy, in fact it extends to the case when and . So means that there is only one 10 multiplied together, in other words just the number 10. That  also tells us how many zero’s follow the “1”, so in this case there is one “0” following the “1” - again, our familiar 10.
 How about when . Examining the pattern of how the power k relates to how many zeros follow the “1” (eg, 10, 100, 1000, etc.) it makes sense that , i.e., no zeros follow the “1”, which is exactly correct. Actually any number raised to the 0th power is 1, but we’ll leave that discussion for another time.
 Let’s look at an example. Reading the number 46307 out according to our technique we can see that it’s “four lots of ten-thousand, plus six lots of a thousand, plus three lots of a hundred, plus zero lots of ten, plus seven units”:
         4        ×        10000                        40000
@@ -33,8 +33,8 @@ ________________
 
         =        46307
 Written in terms of powers of ten: .
-You can think of each digit as being a little dial that controls how many lots of its corresponding power of ten will contribute to the value of the integer. Given that we can use as high as power of ten as we like and we can string together as LONG A LIST of digits as pleases us, that means that we can create ANY INTEGER WE WANT no matter how big it is.
-That’s a pretty tall claim. How do we know that we can create ALL the nonnegative integers with this scheme?
+You can think of each digit as being a little dial that controls how many lots of its corresponding power of ten will contribute to the value of the integer. Claim: Given that we can use as high as power of ten as we like and we can string together as LONG A LIST of digits as pleases us, that means that we can create ANY INTEGER WE WANT no matter how big it is.
+That’s a pretty tall claim. How do we know that we can create ALL the nonnegative integers with this scheme? For example, how do we know that we didn’t miss one? Or how do we know that some string of digits doesn’t represent two different integers?  I know it seems silly to ask that, but attention to these kinds of details is what is referred to as “rigor” in Mathematics - it’s necessary so we don’t end up fooling ourselves or spouting bullshit - or if we are “full of it” - then it’s easy for other Mathematicians to call us on it!
 We’re going to jump into the deep end and make our claim in a careful “mathy” kind of way. Such a careful statement is called a theorem - stay tuned - theorems require proof, which we’re going to supply!
 Theorem:  Unique Representation of Nonnegative Integers in Base-Ten
 Let :  Then every n can be uniquely expressed as follows:
@@ -46,7 +46,7 @@ A difficulty many folks have with math is the notation - it’s kind of a langua
 i)        “Let  ”
 This means we are going to talk about two distinct numbers that we are labelling  n  and k . That strange looking  ∈  means “is an element of” (or “is a member of”) and is always followed by something that is a “set”. We talked above about the symbol which we defined as being the set of nonnegative integers. So, in other words, n can be one of 0 or 1 or 2 or 3 or ... any number - no matter how large -  and the same goes for k.
 ii)        “Then every n can be uniquely expressed as follows”
-We mean that what we are about to say applies to ALL nonnegative integers and furthermore the statement is going to be unique for each integer.
+⋯what we are about to say applies to ALL nonnegative integers and furthermore the statement is going to be unique for each integer.
 iii)        “”
 This is the expression in question. It equates n with a series of multiplications of some numbers times descending powers of 10, and adds them all together. Some important clarification of what those “d” symbols mean follows in the next statement and is critical to the theorem.
 
@@ -99,7 +99,7 @@ ________________
 
         =        11010        (26)
 Written in terms of powers of two:,
-Each digit in base-two can be thought of as a little switch that turns on or off the contribution of its corresponding power of two. Given that the inhabitants of Planet-Claire can use as high a power of two as they like, and that they can string together as LONG A LIST of binary-digits as pleases them, that means that they can create ANY INTEGER THEY WANT no matter how big it is.
+Each digit in base-two can be thought of as a little switch that turns on or off the contribution of its corresponding power of two. Claim: Given that the inhabitants of Planet-Claire can use as high a power of two as they like, and that they can string together as LONG A LIST of binary-digits as pleases them, that means that they can create ANY INTEGER THEY WANT no matter how big it is.
 Sound familiar? Let’s restate our theorem for base-ten but rewritten for base-two.
 Theorem:  Unique Representation of Integers in Base-Two
 Let :  Then every n can be uniquely expressed as follows:
@@ -130,21 +130,19 @@ Some people picture an infinite row of dominoes. Step 1 is like being able to kn
 Often proofs make use of little mini-theorems of their own. Creating these mini-theorems is way to simplify a step in the main proof by establishing a useful non-trivial intermediary result. It makes reading the main proof easier to follow by not having us get side tracked by technicalities. These mini-proofs are called “Lemmas” and we’re going to make one right now because we’re going to need it later.
 Lemma
 Let , and
+
+
 , and
 , and
 ⋯ 
+, and
 
 then:
         
 Our lemma defines a list of expressions each one referring to the next expression. Each expression is labeled with the name for the ith expression which would look like this: 
 To explain the motivation for this lemma, imagine starting at the last expression that is called and substituting it into the previous expression for , then take the new expression for and substitute it into the expression for , etc. After continuing that process of substitution all the way back to  hopefully you can see that you’ll end up with this nested expression:
 
-It’s a bit of a stretch to just claim that expanding this nested expression gives us the result we’re after, i.e. , and we will need to do that later! So just to make things nice and sparkling clear, we spell it out formally and prove it.  Thus our Lemma.
-
-
-________________
-
-
+It’s a bit of a stretch of the imagination to ask you to just accept that expanding this nested expression gives us , so since we are going to need to make just such a logical leap later on in our Proof of the “Unique Representation of Integers in an Arbitrary Base” theorem, then to make things nice and sparkling clear, we create our lemma and prove it.
 Proof of lemma
 This proof will make use of induction on  k  (which is the subscript on the names of each expression, i.e., “” ).
 Prove for         
@@ -152,6 +150,8 @@ Prove for
 which is trivially true by the definition of and a valid expression even when , which means we’d have a in there. Mathematicians define to be 1 to simplify annoying cases exactly like this one!  (Google it - it’s legit!)
 Now we assume the lemma is true for 
 That is, we assume that if we have a list of expressions:
+
+
 ,
 ⋯ 
 
@@ -159,16 +159,18 @@ for some
 then the following is true:
         
 and we will show that the lemma is true for 
-In other words, if we extend our list of expressions by one more item, that our new expanded expression for will similarly extend out one more term.
+In other words, if we extend our list of expressions by one more item, that our new expanded expression for  will similarly extend out one more term.
 Let , then can always be written out as:
 
-For some and , for example it’s always possible if we let and , then
+For some choice of and , for example it’s always possible if we let and , because
 
-but there are other possibilities for the choices of and when . Therefore,
+but there are other possibilities for the choices of and when . 
+The important point is that it is always possible express the numberwith an expression using newly defined terms such that it takes the form of all the other expressions in our list. Therefore,
         
         
         
-which proves the lemma.  QED
+which extends our resulting expression by one extra term proving the lemma.
+QED
 We are also going to make use of a well established theorem in our proof, it’s frequently called the “Euclidean Division Theorem” - which you all learned in the third grade, but perhaps not so formally. It simply states the following:
 Euclidean Division Theorem
 For all where b ≠ 0, there exists unique integers q, r such that:
