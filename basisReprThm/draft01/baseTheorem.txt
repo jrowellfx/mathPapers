@@ -44,7 +44,7 @@ Let :  Then every  n  can be uniquely expressed as follows:
 for some  k  such that  where ,.
 Furthermore except when .
 Definition:  n is represented in base-ten as 
-A difficulty many folks have with math is the notation - it’s kind of a language unto itself - like a computer program is a language. Let’s take our theorem statement by statement and turn it into English.
+A difficulty many folks have with math is the notation - it’s kind of a language unto itself - like a computer program is a language. Let’s take our theorem statement by statement and turn it into english.
 i)        “Let  ”
 This means we are going to talk about two distinct numbers that we are labelling  n  and k . That strange looking  ∈  means “is an element of” (or “is a member of”) and is always followed by something that is a “set”. We talked above about the symbol which we defined as being the set of nonnegative integers. So, in other words, n can be one of 0 or 1 or 2 or 3 or ... any number - no matter how large -  and the same goes for k.
 
@@ -123,7 +123,7 @@ Let :  Then every n can be uniquely expressed as follows:
 for some  k  such that  where ,.
 Furthermore except when .
 Definition: n is represented in base-two as 
-Try reading the above out loud in your head, line by line, item by item, like we did above when we “sounded it out” for the base-ten theorem - it’s helpful to turn the “code” into understandable English and a useful habit to get into when reading mathematical statements.
+Try reading the above out loud in your head, line by line, item by item, like we did above when we “sounded it out” for the base-ten theorem - it’s helpful to turn the “code” into understandable english and a useful habit to get into when reading mathematical statements.
 Before we go on, I want to introduce a little notation to help avoid confusion. How do you know what I’m talking about if I just write “1000”?  Do I mean or ? If there is any possibility for confusion we write the number like this for the base-ten version of 1000 and to mean the binary version.
 As is hinted by the habits of our various alien friends above it seems that we can use ANY integer greater than or equal to 2 as a base (base-one doesn’t really make sense - think about it for a while). In fact computer graphics artists are known to stumble upon numbers written in hexadecimal, which is base 16 (usually relating to specifying a color-channel). Base 16 introduces some new single-character symbols to the usual numbers 1, 2, 3, 4, 5, 6, 7, 8 and 9, to represent each number 10, 11, 12, 13, 14 and 15, namely: A, B, C, D, E and F where A16=(10)10, B16=(11)10, C16=(12)10, D16=(13)10, E16=(14)10, F16=(15)10. So if you see this number (80FB)16 then I bet at this point (if you take a little time with a calculator and a pad of paper and pencil) then you can figure out that it’s (33019)10. Note that if we omit the parentheses and subscript from a number, it means we’re talking about it in base-ten - our “default” base. Case in point… the subscripts that we use to denote the base (like the “16” in (80FB)16) are written in base-ten!
 We really need to get on with proving our two theorems above. But what about proving the “base-nine” version of the theorem for the aliens on Planet-Nova, or the “base-eight” version for the inhabitants of Planet-Ocho?
@@ -153,12 +153,13 @@ q is the quotient         (“the result of the division”)
 r is the remainder         (“the leftover”)
 This is how you first learned to divide.  For example if someone asks you “What is nineteen divided by three?” - you’d answer “six with one remaining”. Here 19 is the dividend,  3 is the divisor, 6 is the quotient and 1 is the remainder. Written in the form of our theorem:
 
-An important thing to note here is that the quotient and the remainder are always unique. We won’t prove the Euclidean Division Theorem - we’ll take it as already proven and use it.
-
-
-________________
-
-
+Let’s look at what will seem to be a silly example of using the Euclidean Division Theorem to dissect a number and extract its digits. Let’s say we’re trying to generate the digits for a base-ten representation of the number 7654.  For a moment, pretend that we aren’t actually using base-ten to write our number down, instead picture a pile of apples.  Can you picture 7654 apples?  Yes?  Good! Let’s get on with it.  So by applying the Euclidean Division Theorem to 7654 using 10 as a divisor we get the following:
+                
+Notice the remainder 4 is the least significant digit! So we’ve isolated it. How do we get the next digit? It’s kind of cheating, but since we happen to be looking at the numbers written in base-ten we can see it sitting right there in at the end of the quotient 765, so…
+                , and
+                , and
+                
+So, our series of remainders happens to be the digits of the number in base 10.  Note that the remainders for a given divisor will always be between zero, and one less-than the divisor, which is exactly what’s required by the Basis Representation Theorem.  With that in mind let’s tackle the general case more formally.
 Proof of “Basis Representation Theorem”
 Let such that .
 We are going to construct a “base-b” representation of .
@@ -202,7 +203,7 @@ Continuing with the supposition that some  then hopefully it’s clear that (hin
 Which implies that one of the quotients must eventually be zero, for even if each quotient was only one unit smaller than the previous quotient then we are guaranteed that the nth quotient must be zero.  In other words:
 
 P3)        There exists an such that 
-[Aside: The series of quotients will reach the value zero much! faster than the previous string of inequalities implies - indeed it will only take at most steps which is staggeringly faster than  steps. Eg.  which is a considerably smaller number than 789,456,123 ]
+[Aside: The series of quotients will reach the value zero much! faster than the previous string of inequalities suggests - indeed it will only take at most steps which is staggeringly faster than  steps. Eg.  which is a considerably smaller number than 789,456,123 ]
 So both P1 and P3 together proves our *Claim, meaning our list of quotients can be treated as finite in length by terminating the process when we reach the first zero quotient.
 Let  k  be the index of the last nonzero quotient in our list of quotients.  Then  and our complete list of nonzero quotients appear as follows:
 
@@ -229,8 +230,6 @@ Since each quotient refers to the next one, let’s “back substitute” them, 
         
         
 
-
-
         
         
         
@@ -242,15 +241,10 @@ Since each quotient refers to the next one, let’s “back substitute” them, 
         
         
         
-Since , then we have proven our theorem since each step is unique and this process can always be done for all integers n.
-However, I think it’s asking a bit much of the reader to make that leap between and  above. If you follow the pattern of how the subscripts on the d’s and powers of b work from line to line then you can convince yourself that the logic is sound, but it’s a little tedious and difficult and the truth of the statements doesn’t jump out at you.
+Since , then we have proved our theorem since each step is unique and this process can always be performed for all nonnegative integers n.
+However, I think it’s asking a bit much of the reader to make that leap between and  above. If you carefully follow the pattern of how the subscripts on the d’s and powers of b work from line to line then you can convince yourself that the logic is sound, but it’s a little tedious and difficult and the truth of the statements don’t jump out at you.
 There’s another way to unravel our quotients, which avoids making you have to perform mental contortions with subscripts and powers but it involves us introducing a few more mathematical ideas.
-Often proofs make use of little mini-theorems of their own. Creating these mini-theorems is way to simplify a step in the main proof by establishing a useful non-trivial intermediary result. It makes reading the main proof easier to follow by not having us get side tracked by technicalities. These mini-theorems are called “Lemmas” and we’re going to make one to help unravel our list of quotients above.  We’ll state the lemma (and prove it below) then we’ll use it the way we made use of the already-proven Euclidean Division Theorem to help with our proof above.
-
-
-________________
-
-
+Often proofs make use of little mini-theorems of their own. Creating these mini-theorems is way to simplify a step in the main proof by establishing a useful non-trivial intermediary result. It makes reading the main proof easier to follow by not having us get side tracked by technicalities. These mini-theorems are called “Lemmas” and we’re going to make one to help unravel our list of quotients above.  We’ll state the lemma (and prove it below) then we’ll use it the way we made use of the already-proven Euclidean Division Theorem above.
 Lemma
 Let such that 
 Also let where such that
@@ -286,19 +280,20 @@ Why do these two conditions show that is true for all positive integers? Note th
 Some people picture an infinite row of dominoes. Having condition (1) is like being able to knock over the first domino. Then knowing condition (2) is also true is like the fact that any one domino has the ability to knock over the next. Once you’ve knocked over the first domino, they all fall.
 Let’s restate the lemma.
 Lemma
-Let such that 
-Also let where such that
-        , and
-        , and
-⋯ 
-        , and
-        
-then:
-        
+Let 
+And let there be an such that:
 
+and
 
-________________
-
+Furthermore let 
+Define the following chain of expressions for  
+,
+,
+,
+⋯
+,
+⋯
+then for any , where  is the kth expression for  in our list, then:
 
 Proof of lemma
 This proof will make use of induction on k which represents the largest 
