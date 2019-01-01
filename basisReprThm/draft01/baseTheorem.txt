@@ -141,210 +141,43 @@ Furthermore except when .
 Definition:
         n is represented in base-b as 
         and each is a base-b-digit of n.
-The motivation for our proof is to spell out the technique for actually constructing the base-b representation of any integer and show that this can ALWAYS be done, and each step is unique.
-This technique makes repeated use of a well established theorem which is called the “Euclidean Division Theorem” -  It sounds onerous, but don’t worry, you all learned it in the third grade but perhaps not so formally. It simply states the following:
-Euclidean Division Theorem
-For all where b ≠ 0, there exists unique integers q, r such that:
-  and  
-Definition: In the above equation:
-a is the dividend        (“the number being divided”)
-b is the divisor                (“the number doing the dividing”)
-q is the quotient         (“the result of the division”)
-r is the remainder         (“the leftover”)
-This is how you first learned to divide.  For example if someone asks you “What is nineteen divided by three?” - you’d answer “six with one remaining”. Here 19 is the dividend,  3 is the divisor, 6 is the quotient and 1 is the remainder. Written in the form of our theorem:
-
-Let’s look at what will seem to be a silly example of using the Euclidean Division Theorem to dissect a number and extract its digits. Let’s say we’re trying to generate the digits for a base-ten representation of the number 7654.  For a moment, pretend that we aren’t actually using base-ten to write our number down, instead picture a pile of apples.  Can you picture 7654 apples?  Yes?  Good! Let’s get on with it.  So by applying the Euclidean Division Theorem to 7654 using 10 as a divisor we get the following:
-                
-Notice the remainder 4 is the least significant digit! So we’ve isolated it. How do we get the next digit? It’s kind of cheating, but since we happen to be looking at the numbers written in base-ten we can see it sitting right there in at the end of the quotient 765, so…
-                , and
-                , and
-                
-So, our series of remainders happens to be the digits of the number in base 10.  Note that the remainders for a given divisor will always be between zero, and one less-than the divisor, which is exactly what’s required by the Basis Representation Theorem.  With that in mind let’s tackle the general case more formally.
-Proof of “Basis Representation Theorem”
-Let such that .
-We are going to construct a “base-b” representation of .
-Let  n  be a dividend. Since b ≠ 0 we can use b as a divisor. So, by the Euclidean Division Theorem, there exists a unique nonnegative integer quotient and remainder  such that:
-        where 
-Now consideras a new dividend, keeping b as the same divisor: by the Euclidean Division Theorem, there exists a unique nonnegative integer quotient and remainder  such that:
-        where 
-Similarly, by applying the Euclidean Division Theorem to the new quotient and continuing ad infinitum we can say that there exist unique nonnegative integer quotients   and remainders   such that:
-        where 
-        where 
-        where 
-
-Let  and let’s also call a quotient for simplicity’s sake (even though it’s really ‘n’) so the general form for any quotient in our list can be defined to be:
-Definition:
-        ,        where  for all 
-Hopefully you can see where this is going - all the values that the remainders can take are precisely within the same bounds as required by the “Basis Representation Theorem” for its “digits”. (Eg. if then .) Somehow, these remainders are going to end up being our base-b digits.
-The problem we face at this juncture is that our list of quotients looks to be never-ending. Luckily there always comes a point in the list where a quotient becomes zero and then they are all zero from that point on.  In other words, this process of generating quotients needn’t go on forever, we can stop listing them once one becomes zero since none of the subsequent zero-valued quotients will contribute anything more to the value of n, so we can ignore them!
-All of that is fine and dandy but this is a proof. We need rigor and none of this hand-waving stuff, so let’s proceed by restating our claim more carefully - then prove it:
-*Claim: There exists an integer j such that , for all.
-Suppose  for some :
-Then all subsequent quotients,  must also be zero because:
-                (by definition of above)
-if and only if 
-                (since )
-showing that both (and ) must be zero since by definition neither of them can take on negative values (which would allow for something like ).
-This same argument can be repeated to show that , must also be zero. Let’s restate this conclusion and give it a name.
-P1)        If    then   ad infinitum.
-If , then by P1 we’ve proven our *Claim - the entire list of quotients is zero. 
-Now suppose  for some :
-Then because
-Either         and the previous inequality is trivially true,
-  or         and we have the following:
-                (by definition)
-
-        (since )
-        (since 2>1 and )
-Let’s summarize this conclusion.
-P2)        If    then   
-Continuing with the supposition that some  then hopefully it’s clear that (hint: P1). Therefore as long as no subsequent  is zero then by P2 we can write
-
-Which implies that one of the quotients must eventually be zero, for even if each quotient was only one unit smaller than the previous quotient then we are guaranteed that the nth quotient must be zero.  In other words:
-
-P3)        There exists an such that 
-[Aside: The series of quotients will reach the value zero much! faster than the previous string of inequalities suggests - indeed it will only take at most steps which is staggeringly faster than  steps. Eg.  which is a considerably smaller number than 789,456,123 ]
-So both P1 and P3 together proves our *Claim, meaning our list of quotients can be treated as finite in length by terminating the process when we reach the first zero quotient.
-Let  k  be the index of the last nonzero quotient in our list of quotients.  Then  and our complete list of nonzero quotients appear as follows:
-
-
-
-
-
-
-
-
-
-
-
-
-
-Since each quotient refers to the next one, let’s “back substitute” them, starting at the last quotient and substitute it into the second-to-last expression for and continuing in this manner all the way back to .
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-Since , then we have proved our theorem since each step is unique and this process can always be performed for all nonnegative integers n.
-However, I think it’s asking a bit much of the reader to make that leap between and  above. If you carefully follow the pattern of how the subscripts on the d’s and powers of b work from line to line then you can convince yourself that the logic is sound, but it’s a little tedious and difficult and the truth of the statements don’t jump out at you.
-There’s another way to unravel our quotients, which avoids making you have to perform mental contortions with subscripts and powers but it involves us introducing a few more mathematical ideas.
-Often proofs make use of little mini-theorems of their own. Creating these mini-theorems is way to simplify a step in the main proof by establishing a useful non-trivial intermediary result. It makes reading the main proof easier to follow by not having us get side tracked by technicalities. These mini-theorems are called “Lemmas” and we’re going to make one to help unravel our list of quotients above.  We’ll state the lemma (and prove it below) then we’ll use it the way we made use of the already-proven Euclidean Division Theorem above.
-Lemma
-Let such that 
-Also let where such that
-        , and
-        , and
-⋯ 
-        , and
-        
-then:
-        
-Note that our lemma is similar to, but more general than what we have going on in our list of quotients. For example, in our lemma it’s only required that the  terms be integers (positive or negative) and only restricts b to be non-zero.
-The proof of the lemma is below, so let’s take it as proven and proceed with our main proof. 
-Let for each of our quotients, and let the ‘b’ of the lemma be our theorem’s base-b and our remainders be the terms in the lemma. Note that since  (as defined above) then by applying the results of the lemma we can immediately conclude our desired result:
-
-Furthermore, since our process of generating the list of quotients lead to a string of unique quotients and remainders then we’ve also proved the uniqueness of the expression above.
-QED
-________________
-
-
-QED - is often used at the conclusion of a proof to state that it’s done - it’s really an acronym for the latin phrase "quod erat demonstrandum" which means"that which was to be demonstrated".  So… we’ve proven the Basis Representation Theorem!
-
-
-________________
-
-
-If I still have your attention let’s go ahead and prove our lemma.
-As we discussed way up at the top of this essay, the purest way to think about how the set of positive integers is generated is to start with 1, then each successive integer is just one more than the previous one, keeping this process going forever gets us the set.
-This idea of stepping one after the other, beginning at 1 and going forever is called the “Principle of Mathematical Induction” and is a basic property of the positive integers.
+As we discussed way up at the top of this essay, the purest way to think about the set of positive integers is that each successive integer is one more than the previous one. starting at 1, taking us to 2, then 3, etc., keeping this process going forever gets us the set.
+This idea of stepping one after the other, beginning at 1 and going forever is called the “Principle of Mathematical Induction” and is a basic property of the positive integers. This principle is more than just a way to generate the set of integers, it’s a way of thinking about properties of the integers.
 Suppose that  means that the property holds for the number ; where  is a positive integer. Then the principle of mathematical induction states that  is true for ALL positive integers n provided that:
 (i)         is true
 (ii)        Whenever  is true, is true.
-Why do these two conditions show that is true for all positive integers? Note that condition (ii) only asserts the truth of under the assumption that is true.  However if we also know that condition (i) holds, then because  is true then condition (ii) implies that  is true, which again implies that  is true, which in turn leads to the truth of , etc., over and over for all positive integers.
-Some people picture an infinite row of dominoes. Having condition (1) is like being able to knock over the first domino. Then knowing condition (2) is also true is like the fact that any one domino has the ability to knock over the next. Once you’ve knocked over the first domino, they all fall.
-Let’s restate the lemma.
-Lemma
-Let 
-And let there be an such that:
-
-and
-
-Furthermore let 
-Define the following chain of expressions for  
-,
-,
-,
-⋯
-,
-⋯
-then for any , where  is the kth expression for  in our list, then:
-
-Proof of lemma
-This proof will make use of induction on k which represents the largest 
-Prove for         
-
-which is trivially true by the definition of  and a valid expression even when , which means we’d have a in there. Mathematicians define to be 1 to simplify annoying cases exactly like this one!  (Google it - it’s legit!)
-Now we assume the lemma is true for 
-Then if we have a list of expressions:
-,
-⋯ 
-
-for some 
-then the following is true:
-        
-and we will show that the lemma is true for 
-In other words, if we extend our list of expressions by one more item, that our new expanded expression for  will similarly extend out one more term.
-Let , then can always be written out as:
-
-For some choice of and , for example it’s always possible if we let and , because
-
-but there are other possibilities for the choices of and when . 
-The important point is that it is always possible express the numberwith an expression using newly defined terms such that it takes the form of all the other expressions in our list. Therefore,
-        
-        
-        
-which extends our resulting expression by one extra term proving the lemma.
-QED
-
-
-
-
-
-
-----old ending follows---
-Ok we’re ready to finally jump in. In order to prove our theorem - first we will prove that there is such a representation for all integers n (existence). Meaning that every integer has a way of being written in the form described by the theorem - especially as relates to the restrictions on the values that the “digits” can take on. After that has been established we will use another technique to prove that each such representation is unique - in other words there aren’t two (or more) ways to represent the same integer in our base.
-Existence Proof (by induction on n):
+Why would these two conditions show that is true for all positive integers? Note that condition (ii) only asserts the truth of under the assumption that is true.  However if we also know that condition (i) holds, then because  is true then condition (ii) implies that  is true, which again implies that  is true, which in turn leads to the truth of , etc., over and over for all positive integers.
+Some people picture an infinite row of dominoes. Having condition (1) (called the “base case”) is like being able to knock over the first domino. Then knowing condition (2) is also true is like the fact that any one domino has the ability to knock over the next. Once you’ve knocked over the first domino, they all fall.
+Let’s look at a simple example:
+Perhaps you’ve heard the story of a young Carl Friedrich Gauss who in attending his elementary school as a young boy in the 1780s was assigned, along with all his classmates, the tedious task of summing the first 100 integers. Presumably to keep them quiet and busy while the teacher corrected some papers.  Anyway, young Gauss immediately produced the answer, 5050, before most of the boys had summed the first couple of numbers.  It wasn’t young Gauss’s extraordinary speed which allowed him to perform this dazzling task, but he had the deeper insight that instead of adding 1 plus 2, then adding 3, then 4, etc. he saw that if you paired 1 with 100, and 2 with 99, and 3 with 98, etc.. that each of those pairs added up to 101, furthermore he knew he’d have 50 such sums, meaning he could state the result in a heartbeat “5050”. Gauss is widely regarded as being one of the greatest mathematicians who has ever lived - the young eight-year old was just getting started.
+Anyway, to generalize Gauss’s insight we can write the expression like this:
+$$1+2+3+\ldots+n=\frac{n(n+1)}{2}$$
+So let’s prove this relationship using the principle of mathematical induction.
 Base case:
-For clarity, let’s prove both  and . (This is like showing that we can knock over both the 1st and the 2nd dominoes.)
-Let . We can choose and . (This is the one exception spelled out in the theorem in which the most significant digit of n is allowed to be zero.) Then,
+Let , then
+$$\frac{1(1+1)}{2}=\frac{2}{2}=1$$
+Assume the relationship is true for , and prove that it is also true for :
+$$$$
+We are going to use this principle to prove the Basis Representation Theorem.
+First we will prove that there is such a representation for all integers n (existence proof). Meaning that every integer has a way of being written in the form described by the theorem - especially as relates to the restrictions on the values that the “digits” can take on. After that has been established we will use another technique to prove that each such representation is unique - in other words there aren’t two (or more) ways to represent the same integer in base-b.
+Existence Proof of the Basis Representation Theorem
+Base case:
+Let’s prove both  and to start us off.
+Let .
+We can choose and . (This is the one exception spelled out in the theorem in which the most significant digit of n is allowed to be zero.) Then,
 ,
-showing that we have a valid representation for 0 in base b since our only digit .         (The “” symbol is shorthand for “for all”.)
-Now Let . In this case, we can choose  and . Then,
+showing that we have a valid representation for 0 in base-b since our only digit .         (The “” symbol is shorthand for “for all”.)
+Now Let .
+In this case, we can choose  and . Then,
 ,
-showing that we have a valid representation for 1 in base b since .
-n+1st step:
-Assume that n has a valid representation in base b. That is, we assume that n can be written thusly: 
+showing that we have a valid representation for 1 in base-b since .
+Assuming Theorem is true for n, prove it must also be true for n+1:
+Assume that n has a valid representation in base-b. That is, we assume that n can be written thusly: 
 
-with all the appropriate conditions holding for the values of and b and k; and we will prove thatalso has a valid representation in base b.
+with all the appropriate conditions holding for the values of and b and k; and we will prove thatalso has a valid representation in base-b.
 We’re going to break this step into two cases which between the two covers all possibilities.
 Case 1) 
-This case looks at the situation where the least significant digit of n is strictly-less-than the LARGEST value it can take in base b.
+This case looks at the situation where the least significant digit of n is strictly-less-than the LARGEST value it can take in base-b.
 For example, in base-two, can only be 0. In base-five, can be at most 3. In base-ten, can be at most 8, etc.
 So we can express as follows: 
         =
@@ -353,24 +186,21 @@ So we can express as follows:
         = 
 and since (our assumption for “case 1”), then 
 ,
-therefore the “least significant digit” (i.e. which corresponds the lowest power) of  is less than or equal to, which means it is a valid digit in base b.
-Since all other terms (i.e. ) for are unchanged from their representations for n and n is assumed to be a valid representation in base b then all the digits of are valid in base b.
+therefore the “least significant digit” (i.e. which corresponds the lowest power) of  is less than or equal to, which means it is a valid digit in base-b.
+Since all other terms (i.e. ) for are unchanged from their representations for n and n is assumed to be a valid representation in base-b then all the digits of are valid in base-b.
 Therefore we’ve established the truth of “Case 1” for the integer .
 Case 2) 
-Now we’ll look at the case when the least significant digit of n is equal to the largest value it can take in base b, that is, . (Note that between “Case 2” here and “Case 1” above, we’re covering all the possibilities for what can be. )
+Now we’ll look at the case when the least significant digit of n is equal to the largest value it can take in base-b, that is, . (Note that between “Case 2” here and “Case 1” above, we’re covering all the possibilities for what can be. )
 For example in base-two, ; in base 5, ; in base-ten , etc.
-Let’s temporarily introduce a new digit, to our representation of n. The motivation being that in the situation where we’re adding 1 to 999, that we need another “digit” to “carry” the 1 over into so that we can get 1000.
-n        =
-        =
-        =
-        =
-Also, let be the lowest power of b such that , meaning we write n as follows for some j.
+Let’s temporarily introduce a new digit, to our representation of n. The motivation being that in the situation where we’re adding 1 to 999, that we need another “digit” to “carry” the 1 over into so that we can get 1000. 
+n        =                (definition of n)
+        =        (add zero)
+        =        (multiply by zero)
+        =        (subst for zero)
+Also, let be the lowest power of b such that , meaning we can write n as follows:
 n        =
 For example, if , then , since is the lowest power of 10 such that its digit  is less than 9.
        n        =
-        = 
-        = 
-        = 
         = 
         = 
         = 
@@ -380,21 +210,24 @@ Therefore
         = 
 Since we picked j such that  , less restate the inequality as therefore,
 ,
-meaning the digit  for the base b representation of is valid in base b.
-All digits and higher remain unchanged from what they were for the base b representation of n, and all digits and lower are 0. Therefore all the digits of the base b representation of  are valid in base b.
+meaning the digit  for the base-b representation of is valid for base-b.
+All digits and higher remain unchanged from what they were for the base-b representation of n, and all digits and lower are 0. Therefore all the digits of the base-b representation of  are valid in base-b.
 To cleanly button this up we note that if we were dealing with the case that , (eg. n was something like 99999) then we can see that because:
         =
         =
         =
         =
 Meaning that has a (k+1)st digit and it’s equal to 1, with all the rest of the digits following being 0.
-In all other cases (i.e.; ) we discard the extra “temporary” digit  that we created from our expression, and are left with an expression for  that valid for base b.
+In all other cases (i.e.; ) we discard the extra “temporary” digit  that we created from our expression, and are left with an expression for  that valid for base-b.
 QED - existence proof
-Uniqueness Proof for n:
-Let’s assume that our base b representation for n is not unique, Showing that this assumption leads to a logical contradiction, then the only possibility remains is that our assumption was wrong, thereby proving uniqueness.
+
+
+Uniqueness Proof:
 Suppose n is not unique and that,
         , 
 also suppose,
         
 Let’s further suppose that the index j is the first power such that the digits and without any loss of generality, let’s assume that .
-Therefore
+Therefore:
+
+if and only if,
