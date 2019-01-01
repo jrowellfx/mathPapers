@@ -1,0 +1,145 @@
+SesameStreet++
+Most of us think about whole-numbers not too differently from the way we learned to count watching Sesame Street - except for the benefit of being able to count MUCH higher. The way we’ve trained ourselves, it’s hard not to imagine that how we write a number or say a number IS the number.
+If I say “I owe you 13 cents” and I give you one dime and three pennies then we would agree those coins are equal to 13 cents. We identify the symbol ‘13’ very strongly with this particular number - it would be tough to get through life in the modern world without such an automatic process running in our brains. This example highlights what this particular symbol “13” actually means - one dime (10) plus three pennies ().
+Let’s look at the number 13 in some alternative ways - it’s the number of months in a year plus one month; what I’m suggesting is that there is no need for the symbol ‘13’ to think about this particular number of months. Better yet, 13 is this many dots ∘∘∘∘∘∘∘∘∘∘∘∘∘ ; or 13 is the sixth prime number {2, 3, 5, 7, 11, 13}; or perhaps 13 is the number that follows the 2nd prime-number multiplied by the 1st prime-number squared or. None of those ways of thinking about the number 13 require that we represent it using the digits 1 and 3 butted up next to each other.
+Each number exists independently from any symbol that might represent it. Numbers are an idea - perhaps such a strong idea that the universe wouldn’t exist without it! Anyway, for our purposes whole-numbers exist in some abstract realm - Each number is 1 whole unit more than the previous number, starting at nothing, that is “0”, and jumping to something, that is “1”, then one more, which gets us to 2, then 3 etc. Continuing forever… then we get them all.
+To get the idea of what a whole-number really is, try to forget about the symbols we use and picture a pile of jelly-beans. There’s zero jelly-beans, then one, then add another one to get a pile of two, then three, …, then some big pile after we’ve been adding them for a while.  Each successively bigger pile of jelly-beans is each successive whole-number. 
+We also want the idea of a “negative-number”, which can be thought as “missing something” or “owed something” (in the sense of a debt). Each whole-number (except zero) has a corresponding negative-number, such that adding the positive-number together with its corresponding negative-number results in zero. We expand the above set of whole-numbers (including zero) to include their negative-counterparts and call this larger set “integers”. We denote the set of integers with this symbol: .  If we only want to talk about positive integers along with zero, we use this symbol: . When we talk about numbers in mathematics we always treat them as belonging to some kind of set (like the integers) in this pure, abstract, sort of way.
+However... using a ‘1’ followed by a ‘3’ to represent the specific integer “∘∘∘∘∘∘∘∘∘∘∘∘∘” is VERY handy. So we use Arabic Numerals and “base 10” (being how many fingers most of us have on our two hands) to represent each specific integer. We slap a “-” on the front if we need to talk about a negative integer. This “base 10” way to represent an integer is far superior to say, the ancient Roman technique.  Try adding two numbers together in ancient Rome, or worse, multiplying or dividing them.  What’s XI times IX? Would you believe me if I told you it’s XCIX? When we translate to base 10 we can see it’s. In fact, the way I worked out my answer above was simply to do the math in base 10 and convert the answer to Roman Numerals - I don’t even know how multiply using Roman numerals, nor did most Romans. Not only that but I’ll bet that any kid who graduates from Sesame Street can count higher than any Roman could - as Romans only really counted up to 4999 - the number system didn’t really work for higher numbers. 
+Here’s how base 10 works. Let’s introduce the symbol ‘10’ to our list of numerals 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 that represent the integers representing no jelly-beans, one-jelly-bean, two-jelly-beans,... up to nine-jelly-bean, and define ‘10’ to be the symbol represents  jelly-beans. Now let’s introduce “powers” of this new symbol ‘10’.
+        1        is ,
+        10        is ,
+        100        is ,
+        1000        is ,
+        10000        is ,
+        ⋯
+        10⋯00        is 
+The last line,, means there are k  10’s multiplied together - also written as a 1 followed by k  zeros, where k can be any nonnegative integer. The above list explicitly shows the cases for k = 0, 1, 2, 3 and 4. Examining the pattern of how the power k relates to how many zeros follow the 1 (eg, 10, 100, 1000, etc.) it makes sense that . There are better (i.e.; rigorous) ways to show that any number raised to the power must be equal to 1, but we’ll save that for another time.
+So, what happens when we take one of our powers of 10, let’s say the 4th power, and add it to itself some number of times. Let’s add it to itself 5 times. That is;
+
+Now we can say something meaningful about what it means when we write out an integer in base 10. We’re going to jump into the deep end and make our statement very carefully, in a “mathy” kind of way. Such a careful statement is called a theorem - stay tuned - theorems require proof which we’re going to do!
+
+
+________________
+
+
+Theorem:  Unique Representation of Integers in Base 10
+Let , then every n can be uniquely expressed as follows:
+
+such that  for each ,.
+Furthermore unless  and .
+and we represent n thusly:  and call the ’s the “digits” of n.
+A difficulty many folks have with math is the notation - it’s kind of a language unto itself - like a computer program is a language. Let’s take our theorem statement by statement and turn it into english.
+i)        “Let ”
+This means we are going to talk about two numbers that we are labelling n and k. That strange looking ∈ means “is an element of” and is always followed by something that is a “set”.  We talked above about the symbol which we defined as being the set of nonnegative integers.  So, in other words, n can be 0, 1, 2, 3,... up to any number no matter how large, and the same goes for k.
+
+n and k could be the same number, but probably aren’t. Actually, there’s only one case where they are the same.  Any guesses?  Yes - it’s when , but I digress.
+ii)        “Every n can be uniquely expressed as follows”
+We mean that what we are about to say applies to ALL nonnegative integers and furthermore the statement is going to be unique for each number.
+iii)        “”
+This is the expression in question. It equates n with a series of multiplications of some numbers times descending powers of 10, and adds them all together. Some important clarification of what those ‘d’ symbols mean follows in the next statement and is critical to the theorem.
+iv)        “such that  for each ,”
+This means that those ‘d’s are nonnegative integers, and specifically can ONLY take on the values 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9.  It also is very fastidiously pointing out that the little ‘i’ we just introduced in the subscript of the ‘d’s is also an integer and can be as small as zero but only as large as our k - whatever it might be. This is very picky stuff - like a computer program spelling things out very precisely so the computer knows exactly what you mean. Think of the ‘i’s as an index into our array called ‘d’.
+v)        “Furthermore ...”
+This is spelling out one more important (fastidious!) detail. We want to make sure that the “most significant d”, that is, our that goes along with the highest poweris not zero, in other words it must be one of 1, 2, 3, 4, 5, 6, 7, 8 or 9. This is necessary so that we can get our uniqueness property, otherwise we could say 13 = 013 = 0000013 which are all the integer 13, so let’s outlaw this uninteresting possibility.
+vi)        “... unless  and ”
+completing that last statement which allows for one exception to the case where the “most significant digit” could be zero, and that’s exactly when the integer n in question IS zero.
+vii)        “and we represent n thusly:  and call the ’s the “digits” of n.”
+This is introducing what it means to write the number out in base 10, that is, we toss out all the extraneous stuff from our expression in (iii) above, and string all the “digits” one after another, from most significant digit on the left down to least significant digit on the right.
+We’re not going to prove our theorem yet. First - let’s look at the integer 46307 for example. We can see that it’s represented by 5 digits and they are , , ,  and , so according to our theorem... 
+, 
+        4        ×        10000                        40000
++        6        ×        1000                +        6000
++        3        ×        100        =        +        300
++        0        ×        10                +        00
++        7        ×        1                +        7
+________________
+
+        =        46307
+This is so natural to us, that we barely think about it. This powerful approach has been in use since about 1000 AD, and even though the choice of ten for the base was likely historical (we have 10 fingers) still... 10 is a nice base! It’s fairly easy to remember our times-tables for the single digit numbers (the list isn’t too long). It’s easy to spot even-numbers and multiples of 5 or 10.  Also you can do a nifty trick by adding up the digits of the number to see if it’s divisible by 3 or 9.
+However base 10 is not the only base we use these days. Since the EDVAC computer was introduced in ~1950 there have been many orders of magnitude more calculations done in base 2 (otherwise known as binary) by computers than have EVER been done by people in base 10 for the entirety of human history.
+These binary-computer logic gates (the building block of the modern computer) can only take one of two states, that is; “off” or “on”. We interpret these two states to represent these two numerals: {0, 1}.  By doing so, in the same way that base 10 uses ten numerals {0, 1, 2, 3, 4, 5, 6, 7, 8, 9},  we can represent integers in base 2 with just these two numerals.
+Let’s build up some numbers by counting up from zero in base 2. But first let’s think about how we defined 10 to be 9+1, above. The symbol “10” encapsulated the idea of a “carry”. When we added 1 to the number 9, we carried 1 over into the tens column and looped our 9 back down to zero - like when the odometer in your car rolls over. So if we have the number 999 and we add 1 to it, the one carries over three times, resulting in 1000.
+It’s the same for binary, but the carry happens more frequently. Let’s get there in a minute, first consider Planet-X on which the emergent intelligent species only have 9 fingers. Maybe they have three hands with three fingers each - anyway, they probably use base 9, in which case they’d only use the numerals {0, 1, 2, 3, 4, 5, 6, 7, 8}.  So if they wanted to represent 9 in base-9, they would define their “10” to be 8+1. Similarly on Planet-Y, since they only have 8 fingers, they only use numerals {0, 1, 2, 3, 4, 5, 6, 7} so they’d define their “10” to be 7+1. ...on down through the universe until we find Planet-Z and they only have two fingers so only use the numerals {0, 1} in which case they’d define their “10” to be 1+1. Here’s how they count on Planet-Z using base 2:
+
+                base-2        base-10        base-2        base-10
+                0        0        (...cont)
+                1        1        1001        9
+        +        1                1010        10
+        =        10        2        1011        11
+        +        1                1100        12
+        =        11        3        1101        13
+        +        1                1110        14
+        =        100        4        1111        15
+        +        1                10000        16
+        =        101        5        10001        17
+        +        1                ...
+        =        110        6        11111        31
+        +        1                100000        32
+        =        111        7        ...
+        +        1                1000000        64
+        =        1000        8        10000000        128
+                (cont…)                100000000        256 (...etc.)
+Note something interesting in the list above - the powers of two, written in base 2, resemble our powers of 10 in base 10!  That is: , ,,,,,,,, etc.
+Think about it - when we add different powers of two together (such that the powers of 2 are written in base 2) then those powers of 2 never interfere with each other resulting in a carry operation having to be performed.  This wonderful property allows us to restate our theorem that we wrote up for base 10, but rewritten it for base 2.
+Theorem:  Unique Representation of Integers in Base 2
+Let , then every n can be uniquely expressed as follows:
+
+such that  for each ,.
+Furthermore unless  and .
+and we represent n thusly:  and call the ’s the “binary-digits” of n.
+Let’s look at the binary number 11010 for example. We can see that it’s represented by 5 binary-digits and they are , , ,  and , so according to our theorem... 
+,
+        1        ×        10000                        10000         (16)
++        1        ×        1000                +        1000        (8)
++        0        ×        100        =        +        000
++        1        ×        10                +        10        (2)
++        0        ×        1                +        0
+________________
+
+        =        11010        (26)
+Before we go on, I want to introduce a little notation to help avoid confusion.  How do you know what I’m talking about if I write 1000?  Do I mean or ? If there is any possibility for confusion we write the number like this for the base 10 version of 1000, and to mean the binary version. That goes for any other base we might care to delve into like which would mean or .
+We can use ANY positive integer for a base. In fact computer graphics artists will often stumble upon numbers written in hexadecimal, which is base 16.  Base 16 introduces some new symbols to our numerals 1, 2, 3, 4, 5, 6, 7, 8 and 9 to stand in for the numerals needed to represent the integers 10, 11, 12, 13, 14 and 15, namely hexadecimal adds the letters A, B, C, D, E and F so if you see this number (80FB)16 then I bet you can figure out that it’s (33019)10 .  If we omit the parenthesis and subscript from our number, it means we’re talking about a number in base 10 - our default base.  Case in point… the subscripts that we use to denote the base (like (80FB)16) ARE written in base 10!
+We still need to prove our two theorems above. What about proving the “base 9” version of the theorem for the aliens on Planet-X, or the “base 8” version for the inhabitants of Planet-Y? In fact since we can use ANY integer greater than or equal to 2 as a base, then let’s restate the theorems for the most general case, call it ‘base b’, where b is any number, two or higher - then prove that theorem to get all the individual cases of specific bases essentially for free.
+Theorem:  Unique Representation of Integers in an Arbitrary Base
+Let such that , then every integer n can be uniquely expressed as follows:
+
+such that  for each ,.
+Furthermore unless  and .
+and we represent n thusly: and call the ’s the “base b digits” of n.
+The only difference from the way this theorem is written out (apart from substituting the ‘b’ for our ‘2’ or ‘10’) is that we did away with the × symbol. It’s convention that when two variable are written next to each other that multiplication is the implied operation.
+Before we get into it, let’s quickly discuss what a proof is. A proof is basically a series of statements or arguments, each argument being simple to understand and see the truth of. The truth of each argument connects logically to the prior statement such that by the end of the series of arguments, the truth of the theorem being proven is indisputable and everyone who reads (or hears?) the proof (and understands it) will agree that it’s correct and true.
+It’s highly desireable to make a proof clear and easy to follow, since it’s really just a form of communication between one person and another - albeit a logical and precise form of communication. One of the beauties of mathematics is that it is a language created to be precise so that there is no room for ambiguity. That is its strength - once you’ve established a theorem as true - it enters the arena of true-statements for ALL people to use in future discussions or proofs of other theorems.
+We are going to make use of a powerful technique to do our proof - namely “induction”, which means that we prove the theorem for the most simple case or base case of the theorem, then we assume that it’s true for some arbitrary number n, and using this fact (as well as other established properties of numbers etc.) IF we can prove it for the next number after n (that is ) then that means we’ve proven it FOR ALL numbers n.
+Why does this prove it for all numbers!? Here’s how: we imagine applying the proof - showing that is true given that n is true - to the first or base case which has also been proven, we thus establish the truth of the second case. We can apply that same technique to the second case, thus establishing the truth of the third case, etc. It’s axiomatic that we can repeatedly apply this technique over and over to prove the theorem true for ANY number n we want, thus we say that it’s true for ALL numbers..
+Ok we’re ready to jump in. In order to prove our theorem. first we will prove that there is such a representation for all integers n, then we will prove that each such representation is unique. This approach was taken by me because it seemed simpler to follow than jamming the two ideas together and proving them together… the goal being clarity and simplicity.
+Proof by induction on n:
+Base case:
+For simplicity let’s prove bothandfor our base case.
+When then let and . This is the one exception spelled out in the theorem in which the most significant digit of n is allowed to be zero. Then,
+, showing that we have the desired representation for 0 in base b.
+When then let and . Then,
+, thus showing that we have the desired representation for 1in base b.
+n+1st case:
+Assume the theorem is true for n. That is, 
+
+and prove that the theorem is also true for 
+Case 1) 
+This case looks at the situation where the “least significant digit” of n is strictly less than the LARGEST value it can take in base b.
+For example in base 2, can be at most 0. Base 5, can be at most 3. Base 10, can be at most 8 etc.
+Therefore, 
+        =
+        = 
+        = 
+        = 
+and since , then , therefore the “least significant digit” of is less than or equal to, and since the remainder of the other terms are unchanged from their representations for n then all the digits of are of the form described by the theorem. So in this case the theorem is true for the integer .
+Case 2) 
+Now we’ll look at the case when “least significant digit” of n is equal to the largest value it can take in our base. This is the value for that was excluded from our examinations above in “Case 1”.
+So for example in base 2 then and . For base 5 ; in base 10 , etc.
+Let a new digit be equal to zero, i.e.; . Therefore
+n        =
+        =
+        =
+        =
+Also, let be the highest power of b such that , meaning we can write n as follows.
+n        =
