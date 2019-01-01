@@ -1,6 +1,15 @@
-Copyright (c) 2017-2018, James Philip Rowell,
+Copyright (c) 2017-2019, James Philip Rowell,
 All rights reserved.
 
-Permission for redistribution or use of the latex source herein is
-only given for the purpose of recreating formatted typset output. (Eg.
-pdf files) No permission is given to modify the body of the writing.
+Permission for use of the latex source herein is ONLY given for the purpose
+of examining the TeX code. Permission for ANY OTHER USE of the TeX source
+herein must be obtained in writing from the copyright holder.
+
+Typeset copies of each paper herein are available as pdf files and 
+permission for their use is ONLY given for personal purposes such as 
+entertainment or study. ANY OTHER USE of any of the contents must be
+obtained in writing from the copyright holder.
+
+The papers herein are copyrighted and should NOT be TeXed or modified
+in any way. Please use the the corresponding .pdf file which will always
+be current and up-to-date corresponding to the .tex file of the same name.
