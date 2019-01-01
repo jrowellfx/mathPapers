@@ -3,7 +3,7 @@ There are 10 sorts of people in the world: those who understand binary and those
 ~ From “Proof Wiki” jokes page ~
 Most of us think about “whole numbers” not too differently from the way we learned to count by watching Sesame Street, the difference being that now we can count a little higher. How we’ve trained ourselves it’s automatic to think that the way we write a number or say a number IS the number.
 If I say “I owe you 13 cents” and I give you one dime and three pennies then after thanking me profusely for repaying this staggering debt, we’ll agree that it’s settled with those coins equaling 13 pennies. We identify the symbol “13” very strongly with this particular number - it would be tough to get through life in the modern world without such an automatic process running in our brains. This example highlights what this particular symbol “13” actually means - one dime () plus three pennies ().
-Let’s look at the number 13 in some alternative ways - it’s the number of months in a year plus one month; what I’m suggesting is that there is no need for the symbol “13” in order to think about this particular number of months. Similarly, 13 is this many apples 🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏 ; or 13 is the sixth prime number (i.e., <1st: 2>, <2nd: 3>, <3rd: 5>, <4th: 7>, <5th: 11>, <6th: 13>); or perhaps 13 is “the number that follows the 2nd prime-number multiplied by the 1st prime-number squared”, also written as. None of these ways of thinking about the number 13 require that we represent it using the digits 1 and 3 butted up next to each other.
+Let’s look at the number 13 in some alternative ways - it’s the number of months in a year plus one month; what I’m suggesting is that there is no need for the symbol “13” in order to think about this particular number of months. Similarly, 13 is this many apples 🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏 ; or 13 is the sixth prime number (i.e., <1st: 2>, <2nd: 3>, <3rd: 5>, <4th: 7>, <5th: 11>, <6th: 13>). None of these ways of thinking about the number 13 require that we represent it using the digits 1 and 3 butted up next to each other.
 Each number exists independently from any symbol or word that might represent it. Numbers are an idea - perhaps such a strong idea that the universe wouldn’t exist without it! Anyway, for our purposes whole numbers exist in some abstract realm - Each number is one whole unit more than the previous number, starting at nothing, that is “zero”, and jumping to something, that is “one”, then “one” more, which gets us to “two”, then again to “three”, etc. Continuing in this way forever… we get them all.
 To get back to the idea of what a whole number really is, try to forget about the symbols or words we use and picture a pile of apples. There’s zero apples (it’s hard to show no-apples), then we introduce an “🍏” to get our very first, and smallest, non-empty pile of apples. Then add another apple to get a pile of “🍏🍏”, then “🍏🍏🍏”, then “🍏🍏🍏🍏” then some big pile of “🍏🍏🍏🍏🍏⋯🍏🍏🍏” after we’ve been adding apples for a while. Each successively bigger pile of apples corresponds with each successive whole number.
 We expand this entire set of whole numbers to include their negative-counterparts and call this larger set “integers”. We denote the set of integers with this symbol: . If we only want to talk about positive integers along with zero, we use this symbol: . When we talk about numbers in mathematics we always treat them as belonging to some kind of set (like the integers) in this pure, abstract sort of way.
@@ -39,7 +39,7 @@ You can think of each digit as being a little dial that controls how many lots o
 That’s a pretty tall claim. How do we know that we can create ALL the nonnegative integers with this scheme? For example, how do we know that we didn’t miss one? Or how do we know that some string of digits doesn’t represent two different integers?  I know it seems silly to ask that, but attention to these kinds of details is what is referred to as “rigor” in Mathematics - it’s necessary so we don’t end up fooling ourselves or spouting bullshit - or if we are actually “full of it” then it’s easy for other Mathematicians to call us on our nonsense.
 We’re going to jump into the deep end and make our claim in a careful mathy kind of way. Such a careful statement is called a theorem - stay tuned - theorems require proof, which we’re going to supply!
 Base-Ten Representation Theorem
-Let :  Then every n can be uniquely expressed as follows:
+Let :  Then every  n  can be uniquely expressed as follows:
 
 for some  k  such that  where ,.
 Furthermore except when .
@@ -47,10 +47,16 @@ Definition:  n is represented in base-ten as
 A difficulty many folks have with math is the notation - it’s kind of a language unto itself - like a computer program is a language. Let’s take our theorem statement by statement and turn it into English.
 i)        “Let  ”
 This means we are going to talk about two distinct numbers that we are labelling  n  and k . That strange looking  ∈  means “is an element of” (or “is a member of”) and is always followed by something that is a “set”. We talked above about the symbol which we defined as being the set of nonnegative integers. So, in other words, n can be one of 0 or 1 or 2 or 3 or ... any number - no matter how large -  and the same goes for k.
-ii)        “Then every n can be uniquely expressed as follows”
+
+So this is what it would sound like to read that line out loud:
+“Let  n  and  k  be elements of the set of nonnegative Integers.”
+ii)        “Then every  n  can be uniquely expressed as follows”
 ⋯what we are about to say applies to ALL nonnegative integers and furthermore the statement is going to be unique for each integer.
 iii)        “”
-This is the expression in question. It equates n with a series of multiplications of some numbers (the terms where i can stand in for any of numbers from 0 to k) times descending powers of 10, and adds them all together.
+This is the expression in question. It equates n with a series of multiplications of some numbers (the terms where i can be any number from 0 to k) times descending powers of 10, and adds them all together.
+
+If we had to read it out loud it might sound something like this:
+“n  is equal to...  dee-k times ten-to-the-k;  plus dee-kay-minus-one times ten-to-the-k-minus-one;  plus blah-blah-blah, down to... dee-two times ten-squared;  plus dee-one time ten;  plus dee-zero”.
 
 It’s useful to point out the meaning of our etc.  notation. Mathematical formulas such as this make judicious use of “subscripts” when coming up with names for lists of variables or constants. Subscripts following a letter or symbol, such as  are a handy way to get a list of variable or constant names that are similar looking to each other, and is meant to imply that they each fulfil a similar role to each other. Note here how the value of the subscript on each “d” corresponds to its power of ten, even in the single digit case when the subscript is 0, or the highest power case when the subscript is k.
 iv)        “for some  k  such that  for each ,”
@@ -59,6 +65,8 @@ The “for some k” means that each integer  n  has one specific  k  associated
 It then states that those terms are nonnegative integers, and can ONLY take on the values 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9. Note that our uniqueness claim above means that each integer  n  has it’s own unique list of d’s.
 
 It also is very fastidiously pointing out that the little ‘i’ we just introduced in the subscript of the d’s is also an integer and can be as small as zero but only as large as our highest power  k  - whatever  k  might be. This is very picky stuff - like a computer program spelling things out very precisely so the computer knows exactly what you mean. (That’s right - you are the computer).
+
+Sounding it out: “for some  k  such that zero is less-than-or-equal-to dee-i which is also less-than-or-equal-to-nine, for each dee-i and i, which are nonnegative integers; also  i  is between zero and  k  inclusive”
 v)        “Furthermore ...”
 This is spelling out one more important fastidious detail. We want to make sure that the “most significant d”, that is, our that goes along with the highest poweris not 0, in other words it must be one of 1, 2, 3, 4, 5, 6, 7, 8 or 9. This is necessary so that we can get our uniqueness property, otherwise we could say 13 = 013 = 0000013 which are all the integer 13, so let’s outlaw this uninteresting and annoying possibility.
 vi)        “...except when ”
@@ -70,6 +78,11 @@ These binary-computer logic gates (the building blocks of the modern computer) c
 Consider distant Planet-Nova on which the emergent intelligent species only have nine fingers. They have three hands with three fingers each - anyway, they use base-nine, so they only use the numbers 0, 1, 2, 3, 4, 5, 6, 7 and 8 for their digits. So like we Earthlings do for the integer ten, instead of making up a new symbol for nine, they use “10” to represent the integer nine - which for them means “One lot of nine, plus zero units”.
 Similarly on Planet-Ocho, since they only have eight fingers, then they use base-eight and only use numbers 0, 1, 2, 3, 4, 5, 6 and 7 for their digits. For them “10” means “One lot of eight, plus zero units”.
 Finally we come upon Planet-Claire, where the poor bastards only have two fingers so they only use the digits 0 and 1 and base-two, so for them “10” means “one lot of two and zero units”. So on Planet-Claire “10” means two. Recall above how we arrived at our 100 in base-ten, being “ten lots of ten, plus zero units” - similarly on Planet-Claire “100” in base-two for them means “Two lots of two plus zero units” in other words, four! What is “11” in base-two? Using our technique to describe the digits we see that it’s “One lot of two, plus one unit”, in other words three.
+
+
+________________
+
+
 Here’s how they count on Planet-Claire using base-two:
 
                 base-two        base-ten        base-two        base-ten
@@ -109,10 +122,16 @@ Let :  Then every n can be uniquely expressed as follows:
 for some  k  such that  where ,.
 Furthermore except when .
 Definition: n is represented in base-two as 
+Try reading the above out loud in your head, line by line, item by item, like we did above when we “sounded it out” - it’s helpful to turn the “code” into understandable English and a useful habit to get into when reading “mathy” statements.
 Before we go on, I want to introduce a little notation to help avoid confusion. How do you know what I’m talking about if I just write “1000”?  Do I mean or ? If there is any possibility for confusion we write the number like this for the base-ten version of 1000 and to mean the binary version.
 As is hinted by the habits of our various alien friends above it seems that we can use ANY integer greater than or equal to 2 as a base. In fact computer graphics artists are known to stumble upon numbers written in hexadecimal, which is base 16 (usually relating to specifying a color-channel). Base 16 introduces some new single-character symbols to the usual numbers 1, 2, 3, 4, 5, 6, 7, 8 and 9, to represent each number 10, 11, 12, 13, 14 and 15, namely: A, B, C, D, E and F where A16=(10)10, B16=(11)10, C16=(12)10, D16=(13)10, E16=(14)10, F16=(15)10. So if you see this number (80FB)16 then I bet at this point (if you take a little time with a calculator and a pad of paper and pencil) then you can figure out that it’s (33019)10. Note that if we omit the parentheses and subscript from a number, it means we’re talking about it in base-ten - our “default” base. Case in point… the subscripts that we use to denote the base (like the “16” in (80FB)16) are written in base-ten!
 We really need to get on with proving our two theorems above. But what about proving the “base-nine” version of the theorem for the aliens on Planet-Nova, or the “base-eight” version for the inhabitants of Planet-Ocho?
-To cover all bases (pun intended) let’s restate our theorem for the general case, call it “base b”, where b is any number greater than one. If we can prove that theorem, then we’ll automatically get all the cases of specific bases for free.
+To cover all bases (pun intended) let’s restate our theorem for the general case, call it “base-b”, where b is any number greater than one. If we can prove that theorem, then we’ll automatically get all the cases of specific bases for free.
+
+
+________________
+
+
 Basis Representation Theorem
 Let such that :  Then every integer n can be uniquely expressed as follows:
 
@@ -127,55 +146,91 @@ Euclidean Division Theorem
 For all where b ≠ 0, there exists unique integers q, r such that:
   and  
 Definition: In the above equation:
-a is the dividend
-b is the divisor
-q is the quotient
-r is the remainder
+a is the dividend        (“the number being divided”)
+b is the divisor                (“the number doing the dividing”)
+q is the quotient         (“the result of the division”)
+r is the remainder         (“the leftover”)
 This is how you first learned to divide.  For example if someone asks you “What is nineteen divided by three?” - you’d answer “six with one remaining”. Here 19 is the dividend,  3 is the divisor, 6 is the quotient and 1 is the remainder. Written in the form of our theorem:
 
-An important thing to note here is that the quotient and the remainder are unique for each pair of dividend and divisors as long as the divisor b is not equal to zero. We won’t prove the Euclidean Division Theorem - we’ll take it as already proven and use it.
+An important thing to note here is that the quotient and the remainder are always unique. We won’t prove the Euclidean Division Theorem - we’ll take it as already proven and use it.
+
+
+________________
+
+
 Proof of “Basis Representation Theorem”
 Let such that .
-We are going to construct a “base b” representation of .
-Let n be a dividend and since b ≠ 0 we can use b as a divisor, then by the Euclidean Division Theorem there exists a unique quotient and remainder  such that:
+We are going to construct a “base-b” representation of .
+Let  n  be a dividend. Since b ≠ 0 we can use b as a divisor. So, by the Euclidean Division Theorem, there exists a unique quotient and remainder  such that:
         where 
-Suppose 
- is true if and only if and  in which case:
-                (Eucl. Div. Thm.)
-        (Axiomatic: multiply by “identity” 1)
-        (Rewrite 1 as power of b)
-        (Substitute for n and note: )
-Therefore since n itself satisfies the criteria for a single digit in a base-b representation of n, then we’ve proven the “Basis Representation Theorem” when n is less than b.
-Suppose 
-Now consideras the dividend keeping b as the divisor, then by the Euclidean Division Theorem there exist unique quotient and remainder  such that:
+Now consideras a new dividend, keeping b as the same divisor: by the Euclidean Division Theorem, there exists a unique quotient and remainder  such that:
         where 
-Similarly by applying the Euclidean Division Theorem to the new quotient and continuing ad infinitum we can say that there exist unique nonnegative integer quotients   and remainders   such that:
+Similarly, by applying the Euclidean Division Theorem to the new quotient and continuing ad infinitum we can say that there exist unique nonnegative integer quotients   and remainders   such that:
+        where 
         where 
         where 
 
-        where 
-
-We know that is non-zero (otherwise we’d be in the case that ) but suppose that one of our quotients in the list is zero, say , then all subsequent quotients,  must also be zero because:
-
-since then both and must be zero since by definition neither of them can take on negative values (which would allow for something like ).
-This same argument can be repeated to show that , must also be zero.
-Now we’ll show that there MUST be a quotient in the list that is zero.
-We start by noting that for any quotient  that because:
+Let  and let’s also call a quotient for simplicity’s sake (even though it’s really ‘n’) so the general form for any quotient in our list can be defined to be:
+,        where  for all 
+Hopefully you can see where this is going - all the values that the terms can take (the “remainders”) are precisely within the bounds for the digits required by the “Basis Representation Theorem”. Somehow, they are going to end up being our base-b digits.
+The problem we face at this juncture is that our list of quotients is infinitely long. Luckily there is always a point in the list where they are all zero from that point on.  In other words, this process of generating quotients needn’t go on forever, we can stop once one becomes zero since then we know that all the rest will be zero, and none of them will contribute anything to the value of n, so we can ignore them!
+All of that is fine and dandy, but his is a proof, so we have to show it with iron-clad logic.
+Let’s start by getting rid of one slightly special case. Recall there is one exception to the requirement that the “most significant digit is nonzero” - and that is exactly when  n  IS zero. So, to simplify the rest of the proof, we’re going to go ahead and prove the theorem for the case when  since it’s a slightly special case - not to mention trivial!
+Suppose , then
+        
+        (uniquely represented as such, by Euclidean Division Theorem)
+        (Rewrite b and 1 as powers of b)
+        (n is in the form of the Basis Representation Theorem)
+This shows that the unique representation for the integer 0 in any base is simply the single digit “0” - thus proving the theorem for the special case where . 
+Suppose  for the remainder of the proof.
+Now let’s deal with the above-mentioned infinite list of zero quotients
+Suppose  for some :
+Then all subsequent quotients,  must also be zero because:
+        (by definition of )
+if and only if 
+        (since )
+showing that both (and ) must be zero since by definition neither of them can take on negative values (which would allow for something like ).
+This same argument can be repeated to show that , must also be zero. Let’s restate this conclusion and give it a name.
+P1)        If    then   ad infinitum.
+Now suppose  for some :
+Then because
+Either         and the inequality is trivially true,
+  or         and we have the following:
                 (by definition)
 
         (since )
-        (*)
+        (since 2>1 and )
+Let’s summarize this conclusion.
+P2)        If    then   
+Since  then as long as no subsequent is zero then by P2 we can write
 
-Suppose then the inequality can be rewritten as a strict inequality thusly:
+Which implies that one of the quotients must eventually be zero, for even if each quotient was only one unit smaller than the previous quotient then we are guaranteed that the nth quotient must be zero.  In other words:
 
-because at (*), has equality if and only if 
-Furthermore when and  then is trivially true.
-We know that so as long as no subsequent is zero we can write
+P3)        There exists an such that 
+[Aside: The series of quotients will ultimately reach the value zero much faster than the previous string of inequalities implies - indeed it will only take at most steps which is staggeringly faster than  steps. Eg.  which is a considerably smaller number than 789,456,123 !]
 
-Which implies that one of the quotients must eventually be zero, for even if each quotient was only one unit smaller than the previous quotient then we are guaranteed that the q1th quotient must be zero.  In other words:
 
-[Aside: The series of quotients will ultimately reach the value zero much faster than the previous statement implies - indeed it will only take at most steps which is staggeringly faster than steps. Eg.  which is a considerably smaller number than 789,456,123 !]
-Let k be the number of nonzero quotients in our list above.  Then  and our complete list of quotients is as follows:
+________________
+
+
+So both P1 and P3 together imply that our list of quotients is finite.
+Let  k  be the index of the last nonzero quotient in our list above.  Then  and our complete list of nonzero quotients is as follows:
+
+
+
+
+
+
+
+
+
+
+
+
+
+Since each q refers to the next one, let’s “back substitute” all of them, starting at substituting into the expression for and continuing all the way back to .
+
+
 
 
 
@@ -190,7 +245,7 @@ Let k be the number of nonzero quotients in our list above.  Then  and our compl
 
 
 ---wip jpr ---
-Part of our proof is going to make use of a powerful 2-step technique - namely “induction”. We start by making some assertion about a number n. This assertion could be anything including the theorem itself. Then,
+Part of our proof is going to make use of a powerful 2-step technique - namely “induction”. ***NEEDS WORK*** We start by making some assertion about a number n. Then,
 1. We show that the assertion is true for the “base case”, when ;
 2. We then we assume that the proposed assertion is true for some arbitrary number n, and using this fact (as well as other established properties of numbers like the axioms, or other previously proven theorems etc.) we show that the proposed assertion must also be true for the next larger whole number .
 If we can do those two things, then we’ve proven the assertion FOR ALL whole numbers.
