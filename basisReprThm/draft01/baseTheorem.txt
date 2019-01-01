@@ -1,30 +1,29 @@
 SesameStreet++
-Most of us think about “whole numbers” not too differently from the way we learned to count by watching Sesame Street. The way we’ve trained ourselves, it’s automatic to think that how we write a number or say a number IS the number.
-If I say “I owe you 13 cents” and I give you one dime and three pennies then we agree those coins are equal to 13 pennies. We identify the symbol “13” very strongly with this particular number - it would be tough to get through life in the modern world without such an automatic process running in our brains. This example highlights what this particular symbol “13” actually means - one dime () plus three pennies ().
+Most of us think about “whole numbers” not too differently from the way we learned to count by watching Sesame Street, the difference being that now we can count a little higher. How we’ve trained ourselves it’s automatic to think that the way we write a number or say a number IS the number.
+If I say “I owe you 13 cents” and I give you one dime and three pennies then after thanking me profusely for repaying this staggering debt, we’ll agree that it’s settled with those coins equaling 13 pennies. We identify the symbol “13” very strongly with this particular number - it would be tough to get through life in the modern world without such an automatic process running in our brains. This example highlights what this particular symbol “13” actually means - one dime () plus three pennies ().
 Let’s look at the number 13 in some alternative ways - it’s the number of months in a year plus one month; what I’m suggesting is that there is no need for the symbol “13” in order to think about this particular number of months. Better yet, 13 is this many apples 🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏 ; or 13 is the sixth prime number (i.e., <1st: 2>, <2nd: 3>, <3rd: 5>, <4th: 7>, <5th: 11>, <6th: 13>); or perhaps 13 is “the number that follows the 2nd prime-number multiplied by the 1st prime-number squared”, also written as. None of these ways of thinking about the number 13 require that we represent it using the digits 1 and 3 butted up next to each other.
 Each number exists independently from any symbol or word that might represent it. Numbers are an idea - perhaps such a strong idea that the universe wouldn’t exist without it! Anyway, for our purposes whole numbers exist in some abstract realm - Each number is one whole unit more than the previous number, starting at nothing, that is “zero”, and jumping to something, that is “one”, then one more, which gets us to “two”, then “three”, etc. Continuing in this way… then we get them all.
-To get the idea of what a whole number really is, try to forget about the symbols or words we use and picture a pile of apples. There’s zero apples (it’s hard to show no-apples), then we introduce an “🍏” to get our very first, and smallest, non-empty pile of apples. Then add another apple to get a pile of “🍏🍏”, then “🍏🍏🍏”, then “🍏🍏🍏🍏” then some big pile of “🍏🍏🍏🍏🍏⋯🍏🍏🍏” after we’ve been adding apples for a while.  Each successively bigger pile of apples corresponds with each successive whole number.
-We also want the idea of a “negative number”, which can be thought as “missing something” or “owed apples” (in the sense of a debt). Each whole number (except zero) has a corresponding negative number, such that adding the positive number to its corresponding negative number results in a sum of zero. We expand the above set of whole numbers to include their negative-counterparts and call this larger set “integers”. We denote the set of integers with this symbol: .  If we only want to talk about positive integers along with zero, we use this symbol: . When we talk about numbers in mathematics we always treat them as belonging to some kind of set (like the integers) in this pure, abstract sort of way.
-However... using a “1” followed by a “3” to represent “🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏” is VERY handy. So we use Hindu-Arabic numberss and the positional notation of “base-ten” or “decimal” to represent each specific integer. We slap a “-” on the front if we need to talk about a negative integer.
-Base-ten representation of an integer is far superior to ancient Roman numerals.  Try adding two numbers together in ancient Rome, or worse, multiplying or dividing them.  What’s XI times IX? Would you believe me if I told you it’s XCIX? Unless you convert those to Hindu-Arabic numerals, you’re just gonna have to trust me. Truth is - I don’t know how to multiply using Roman numerals - nor did most Romans! Not only that, but I’ll bet that any kid who graduates from Sesame Street can count higher than any Roman could - as Romans only really counted up to 4999. 
-As we discussed above, using base-ten for us is pretty automatic, we barely think about it when we’re adding numbers or multiplying them - but it’s worth looking very carefully at how base-ten works - so let’s examine it from the ground up.
-The Hindus and Arabs created beautiful and simple symbols to represent each of the numbers from one to nine, namely our familiar numbers 1, 2, 3, 4, 5, 6, 7, 8 and 9.
-They also introduced a tenth relatively modern number “zero”, or “0”, standing for no-thing.  Zero allows for the creation of our base-ten positional numbering system, without zero base-ten wouldn’t work
-We all know what the word “ten” stands for, it means the next integer after nine, or your last finger when you’re using your fingers to count. Instead of making up a new symbol for this integer, the base-ten approach strings two digits together (a digit being one of 0, 1, 2, ..., 9), one after the other. The first digit tells us how many tens we have and the last digit says how many additional units are needed to get the desired integer.
-So our very first two digit (digit means finger!) number “10” means “one set of ten - plus zero units” (that zero is pretty handy!) When we see “11” - we interpret it to mean “one set of ten - plus one unit”, and “12” is “one set of ten - plus two units”, etc.
-Continuing on; “20” - we interpret it to mean “two sets of ten, plus zero units”, etc. up to “90” meaning “nine sets of ten, plus zero units”.
-Following this line of reasoning then “100” must mean “ten sets of ten, plus zero units” - which is exactly what it means. We have a special word for this number we call it “one hundred” or “one set of a hundred, plus zero sets of tens, plus zero units”.  Similarly “200” means “two sets of a hundred, plus zero sets of ten, plus zero units”, etc., etc.
-We can keep going by one-hundred until we similarly get to “1000” or “ten hundred, plus zero sets of ten, plus zero units” otherwise knows as “a thousand” or more specifically “one set of a thousand, plus zero sets of a hundred, plus zero sets of ten, plus zero units”.
+To get back to the idea of what a whole number really is, try to forget about the symbols or words we use and picture a pile of apples. There’s zero apples (it’s hard to show no-apples, maybe “”?), then we introduce an “🍏” to get our very first, and smallest, non-empty pile of apples. Then add another apple to get a pile of “🍏🍏”, then “🍏🍏🍏”, then “🍏🍏🍏🍏” then some big pile of “🍏🍏🍏🍏🍏⋯🍏🍏🍏” after we’ve been adding apples for a while. Each successively bigger pile of apples corresponds with each successive whole number.
+We expand this entire set of whole numbers to include their negative-counterparts and call this larger set “integers”. We denote the set of integers with this symbol: . If we only want to talk about positive integers along with zero, we use this symbol: . When we talk about numbers in mathematics we always treat them as belonging to some kind of set (like the integers) in this pure, abstract sort of way.
+However... using a “1” followed by a “3” to represent “🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏” is VERY handy. So we use Hindu-Arabic numbers and the positional notation of “base-ten”, more commonly known as “decimal”, to represent each specific integer. We slap a “-” on the front if we need to talk about a negative integer.
+Base-ten representation of an integer is far superior to ancient Roman numerals for example. Try adding two numbers together in ancient Rome, or worse, multiplying or dividing them. What’s XI times IX? Would you believe me if I told you it’s XCIX? Unless you convert those to Hindu-Arabic numerals to check, you’re just gonna have to trust me. Truth is - I don’t know how to multiply using Roman numerals - nor did most Romans! Not only that, but I’ll bet that most kids who graduated from Sesame Street can count higher than any Roman could - as the Roman system only effectively allowed counting up to 4999. 
+Using base-ten for us is automatic, we barely think about it when we’re adding numbers or multiplying them - but it’s worth looking carefully at how base-ten works - so let’s examine it from the ground up.
+The symbols to represent each of the integers from one to nine, namely our familiar numbers 1, 2, 3, 4, 5, 6, 7, 8 and 9 have an interesting history - and predate their use in base-ten, however it’s useful to have simple symbols like this to represent those particular integers.
+Slightly more modern, but still quite ancient, is the symbol “0” for “zero”, meaning “nothing”. Zero also predates its use in base-ten but without zero, base-ten wouldn’t be possible.
+Base-ten uses the idea of stringing a series of digits together (a digit being one of the numbers 0, 1, 2, … 9), one after the other to be able to represent any whole number. Let’s look at the first two-digit number, that is, ten, which as you know looks like this: “10”. This extra digit on the left tells us how many tens we have and the last, or rightmost digit says how many additional units are needed to get the desired number.
+So our very first two-digit number 10 means “one lot of ten - plus zero units”. When we see “11” - we interpret it to mean “one lot of ten - plus one unit”, and “12” is “one lot of ten - plus two units”, etc. Continuing on; “20” - we interpret to mean “two lots of ten, plus zero units”, etc. up to “90” meaning “nine lots of ten, plus zero units”.
+Following this line of reasoning since “10” now means the integer ten, then “100” must mean “ten lots of ten, plus zero units”- which is exactly what it means. We have a special word for this number we call it “one hundred” or “one lot of a hundred, plus zero lots of tens, plus zero units”. Similarly “200” means “two lots of a hundred, plus zero lots of ten, plus zero units”, etc., etc.
+We can keep going by one-hundred until we similarly get to “1000” or “ten lots of a hundred, plus zero lots of ten, plus zero units” otherwise knows as “a thousand” or more specifically “one lot of a thousand, plus zero lots of a hundred, plus zero lots of ten, plus zero units”.
 It get’s a little tedious to be so specific when reading out a number so our language has developed quite a few verbal shortcuts. Furthermore it doesn’t take long before we run out of fancy names for these “powers of ten” like, million, billion, trillion, zillion etc.. So let’s introduce some nice clean mathematical notation to describe these powers of ten and let’s forget the fancy words.
         100        = ,
         1000        = ,
         10000        = ,
         ⋯
         10⋯000        = 
-The last line,, means there are  k  10’s multiplied together - also written as a 1 followed by  k  zeros. The above list explicitly shows the cases for k = 2, 3 and 4. Using the k like that is just a way to show that we can pick ANY nonnegative number, i.e., there is no limit on how big k can be.
-The notation of is very handy, in fact it extends to the case when and . So means that there is only one 10 multiplied together, in other words just the number 10. That  also tells us how many zero’s follow the “1”, so in this case there is one zero following the “1” - again just 10.
-How about when . Examining the pattern of how the power k relates to how many zeros follow the “1” (eg, 10, 100, 1000, etc.) it makes sense that , which is exactly correct. Actually any number raised to the 0th power is 1, but we’ll leave that discussion for another time.
-Let’s look at an example. Reading the number 46307 out according to our technique we can see that it’s “four sets of ten-thousand, plus six sets of a thousand, plus three sets of a hundred, plus zero sets of ten, plus seven units”:
+The last line,, means there are  k  10’s multiplied together - also written as a 1 followed by  k  zeros. The above list explicitly shows the cases for k = 2, 3 and 4. Using the k  like that is just a way to show that we can pick ANY nonnegative whole number, i.e., there is no limit on how big k can be.
+The notation of is very handy, in fact it extends to the case when and . So means that there is only one 10 multiplied together, in other words just the number 10. That  also tells us how many zero’s follow the “1”, so in this case there is one “0” following the “1” - again just 10.
+How about when . Examining the pattern of how the power k relates to how many zeros follow the “1” (eg, 10, 100, 1000, etc.) it makes sense that , i.e., no zeros follow the “1”, which is exactly correct. Actually any number raised to the 0th power is 1, but we’ll leave that discussion for another time.
+Let’s look at an example. Reading the number 46307 out according to our technique we can see that it’s “four lots of ten-thousand, plus six lots of a thousand, plus three lots of a hundred, plus zero lots of ten, plus seven units”:
         4        ×        10000                        40000
 +        6        ×        1000                +        6000
 +        3        ×        100        =        +        300
@@ -34,35 +33,41 @@ ________________
 
         =        46307
 Written in terms of powers of ten: .
-You can think of each digit as being a little dial that controls how much of a specific power of ten will contribute to the value of the integer. Given that we can use as high as power of ten as we like and we can string together as LONG A LIST of digits as pleases us, that means that we can create ANY INTEGER WE WANT no matter how big it is.
-That’s a pretty tall claim.  How do we know that we can create ALL the integers with this scheme?
+You can think of each digit as being a little dial that controls how many lots of its corresponding power of ten will contribute to the value of the integer. Given that we can use as high as power of ten as we like and we can string together as LONG A LIST of digits as pleases us, that means that we can create ANY INTEGER WE WANT no matter how big it is.
+That’s a pretty tall claim. How do we know that we can create ALL the nonnegative integers with this scheme?
 We’re going to jump into the deep end and make our claim in a careful “mathy” kind of way. Such a careful statement is called a theorem - stay tuned - theorems require proof, which we’re going to supply!
 Theorem:  Unique Representation of Nonnegative Integers in Base-Ten
-Suppose  Then every n can be uniquely expressed as follows:
+Let :  Then every n can be uniquely expressed as follows:
 
-such that  for each ,.
+for some  k  such that  where ,.
 Furthermore except when .
-and we represent n thusly:  and call the ’s the “digits” of n.
+Definition:  n is represented in base-ten as 
 A difficulty many folks have with math is the notation - it’s kind of a language unto itself - like a computer program is a language. Let’s take our theorem statement by statement and turn it into English.
-i)        “Suppose  ”
-This means we are going to talk about two distinct numbers that we are labelling n and k. That strange looking ∈ means “is an element of” (or “is a member of”) and is always followed by something that is a “set”.  We talked above about the symbol which we defined as being the set of nonnegative integers.  So, in other words, n can be one of 0 or 1 or 2 or 3 or ... any number - no matter how large -  and the same goes for k.
+i)        “Let  ”
+This means we are going to talk about two distinct numbers that we are labelling  n  and k . That strange looking  ∈  means “is an element of” (or “is a member of”) and is always followed by something that is a “set”. We talked above about the symbol which we defined as being the set of nonnegative integers. So, in other words, n can be one of 0 or 1 or 2 or 3 or ... any number - no matter how large -  and the same goes for k.
 ii)        “Then every n can be uniquely expressed as follows”
 We mean that what we are about to say applies to ALL nonnegative integers and furthermore the statement is going to be unique for each integer.
 iii)        “”
 This is the expression in question. It equates n with a series of multiplications of some numbers times descending powers of 10, and adds them all together. Some important clarification of what those “d” symbols mean follows in the next statement and is critical to the theorem.
-iv)        “such that  for each ,”
-This means that those d’s are nonnegative integers, and specifically can ONLY take on the values 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9.  It also is very fastidiously pointing out that the little ‘i’ we just introduced in the subscript of the d’s is also an integer and can be as small as zero but only as large as our k - whatever it might be. This is very picky stuff - like a computer program spelling things out very precisely so the computer knows exactly what you mean. Think of the subscript i’s as indices into our array called “d”.
+
+It’s useful to point out the meaning of our d0, d1, d2, etc. notation. Mathematical formulas such as this make judicious use of “subscripts” when coming up with names for variable and constants. Subscripts following a letter or symbol, such as our d0, d1, d2, etc. is just a handy way to get a list of variable or constant names that are similar looking to each other, and is meant to imply that they each fulfil a similar role to each other. Note here how the value of the subscript on each “d” corresponds to its power of ten.
+iv)        “for some  k  such that  for each ,”
+The “for some k” means that each integer  n  has one specific  k  associated with it. 
+
+It then states that those d’s are nonnegative integers, and can ONLY take on the values 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9. Note that our uniqueness claim above means that each  n  has it’s own unique list of d’s.
+
+It also is very fastidiously pointing out that the little ‘i’ we just introduced in the subscript of the d’s is also an integer and can be as small as zero but only as large as our highest power  k  - whatever  k  might be. This is very picky stuff - like a computer program spelling things out very precisely so the computer knows exactly what you mean. (That’s right - you are the computer).
 v)        “Furthermore ...”
-This is spelling out one more important (fastidious!) detail. We want to make sure that the “most significant d”, that is, our that goes along with the highest poweris not 0, in other words it must be one of 1, 2, 3, 4, 5, 6, 7, 8 or 9. This is necessary so that we can get our uniqueness property, otherwise we could say 13 = 013 = 0000013 which are all the integer 13, so let’s outlaw this uninteresting and annoying possibility.
+This is spelling out one more important fastidious detail. We want to make sure that the “most significant d”, that is, our that goes along with the highest poweris not 0, in other words it must be one of 1, 2, 3, 4, 5, 6, 7, 8 or 9. This is necessary so that we can get our uniqueness property, otherwise we could say 13 = 013 = 0000013 which are all the integer 13, so let’s outlaw this uninteresting and annoying possibility.
 vi)        “...except when ”
 completing that last statement which allows for one exception to the case where the “most significant digit” could be zero, and that’s exactly when the integer n in question IS zero.
-vii)        “and we represent n thusly:  and call the ’s the “digits” of n.”
+vii)        “Definition:  n is represented in base-ten as ”
 This is introducing what it means to write the number out in base-ten; that is, we toss out all the extraneous stuff from our expression in (iii) above, and string all the “digits” one after another, from most significant digit on the left down to least significant digit on the right.
-Before we prove our theorem, consider that base-ten is not the only base in use these days. Since the introduction of the EDVAC computer, around 1950, there have been many orders of magnitude more calculations done in base-two (otherwise known as binary) by computers than have EVER been done by people in base-ten for the entirety of human history.
-These binary-computer logic gates (the building blocks of the modern computer) can only take one of two states, that is; “off” or “on”. We interpret these two states to represent these two numerals: “0” and “1”.  By doing so, in the same way that base-ten uses ten numerals 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9;  we can represent integers in base-two with just “0” and “1”. How is this possible? … first let’s take a trip into deep space.
-Consider distant Planet-Nova on which the emergent intelligent species only have nine fingers. They have three hands with three fingers each - anyway, they use base-nine, so they only use the numerals 0, 1, 2, 3, 4, 5, 6, 7 and 8. So like we Earthlings did for the integer ten, instead of making up a new numeral for nine, they use “10” to represent the integer nine - which for them means “One set of nine, plus zero units”.
-Similarly on Planet-Ocho, since they only have eight fingers, then they use base-eight and only use numerals 0, 1, 2, 3, 4, 5, 6 and 7. For them “10” means “1 set of eight, plus zero units”.
-Finally we come upon Planet-Claire, where the poor bastards only have two fingers so they only use the numerals 0 and 1 and base-two, so for them “10” means “one set of two and zero units”.  So on Planet-Claire 10 means two. Recall above how we arrived at our 100 in base-ten, being “ten sets of ten, plus zero units” - similarly on Planet-Claire 100 in base-two for them means “Two sets of two plus zero units” in other words four! What is 11 in base-two? Using our technique to describe the digits we see that it’s “One set of two, plus one unit”, in other words three.
+Before we prove our theorem, consider that base-ten is not the only base in use these days. Since the introduction of the EDVAC computer, around 1950, there have been many orders of magnitude more calculations done in base-two (otherwise known as binary) by computers than have EVER been done by people in base-ten for the entirety of human history. (This might even be true if we only count one-day’s worth of binary computer calculations - someone needs to check this!)
+These binary-computer logic gates (the building blocks of the modern computer) can only take one of two states, that is; “off” or “on”. We interpret these two states to represent these two numbers: 0 and 1. By doing so, in the same way that base-ten uses ten numbers 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9 for its digits;  we can represent integers in base-two with just the digits 0 and 1. How is this possible? … first let’s take an imaginary trip into deep space.
+Consider distant Planet-Nova on which the emergent intelligent species only have nine fingers. They have three hands with three fingers each - anyway, they use base-nine, so they only use the numbers 0, 1, 2, 3, 4, 5, 6, 7 and 8 for their digits. So like we Earthlings do for the integer ten, instead of making up a new symbol for nine, they use “10” to represent the integer nine - which for them means “One lot of nine, plus zero units”.
+Similarly on Planet-Ocho, since they only have eight fingers, then they use base-eight and only use numbers 0, 1, 2, 3, 4, 5, 6 and 7 for their digits. For them “10” means “One lot of eight, plus zero units”.
+Finally we come upon Planet-Claire, where the poor bastards only have two fingers so they only use the digits 0 and 1 and base-two, so for them “10” means “one lot of two and zero units”. So on Planet-Claire “10” means two. Recall above how we arrived at our 100 in base-ten, being “ten lots of ten, plus zero units” - similarly on Planet-Claire “100” in base-two for them means “Two lots of two plus zero units” in other words, four! What is “11” in base-two? Using our technique to describe the digits we see that it’s “One lot of two, plus one unit”, in other words three.
 Here’s how they count on Planet-Claire using base-two:
 
                 base-two        base-ten        base-two        base-ten
@@ -84,7 +89,7 @@ Here’s how they count on Planet-Claire using base-two:
         =        1000        8        10000000        128
                 (cont…)                100000000        256 (...etc.)
 Note something interesting in the list above - the powers of two, written in base-two, resemble our powers of 10 in base-ten!  That is: , , , , ,, ,,, etc.
-Let’s look at the binary number 11010 for example. Using our wordy technique to describe the number we can see that it’s “One set of sixteen, plus one set of eight, plus zero sets of four, plus one set of two, plus zero units”: 
+Let’s look at the binary number 11010 for example. Using our wordy technique to describe the number we can see that it’s “One lot of sixteen, plus one lot of eight, plus zero lots of four, plus one lot of two, plus zero units”: 
         1        ×        10000                        10000         (16)
 +        1        ×        1000                +        1000        (8)
 +        0        ×        100        =        +        000
@@ -94,46 +99,119 @@ ________________
 
         =        11010        (26)
 Written in terms of powers of two:,
-Each digit in base-two can be thought of as a little switch that turns on or off the contribution of it’s corresponding power of two.  Given that we can use as high a power of two as we like, and that we can string together as LONG A LIST of binary-digits as pleases us, that means that we can create ANY INTEGER WE WANT no matter how big it is.
+Each digit in base-two can be thought of as a little switch that turns on or off the contribution of its corresponding power of two. Given that the inhabitants of Planet-Claire can use as high a power of two as they like, and that they can string together as LONG A LIST of binary-digits as pleases them, that means that they can create ANY INTEGER THEY WANT no matter how big it is.
 Sound familiar? Let’s restate our theorem for base-ten but rewritten for base-two.
 Theorem:  Unique Representation of Integers in Base-Two
-Suppose, . Then every n can be uniquely expressed as follows:
+Let :  Then every n can be uniquely expressed as follows:
 
-such that  for each ,.
+for some  k  such that  where ,.
 Furthermore except when .
-and we represent n thusly:  and call the ’s the “binary-digits” of n.
-Before we go on, I want to introduce a little notation to help avoid confusion.  How do you know what I’m talking about if I just write “1000”?  Do I mean or ? If there is any possibility for confusion we write the number like this for the base-ten version of 1000, and to mean the binary version. That goes for any other base we might care to delve into like which would mean or .
-We can use ANY positive integer greater than 1 for a base. In fact computer graphics artists are known to stumble upon numbers written in hexadecimal, which is base 16 (usually relating to specifying a color-channel).  Base 16 introduces some new symbols to the usual numbers 1, 2, 3, 4, 5, 6, 7, 8 and 9, to represent the base-ten integers 10, 11, 12, 13, 14 and 15, namely: A, B, C, D, E and F.  So if you see this number (80FB)16 then I bet you can figure out that it’s (33019)10 .  If we omit the parentheses and subscript from our number, it means we’re talking about a number in base-ten - our “default” base.  Case in point… the subscripts that we use to denote the base (like the “16” in (80FB)16) ARE written in base-ten!
-We still need to prove our two theorems above. What about proving the “base 9” version of the theorem for the aliens on Planet-Nova, or the “base 8” version for the inhabitants of Planet-Ocho? In fact, since we can use ANY integer greater than or equal to 2 as a base, then let’s restate our theorem for the general case, call it “base b”, where b is any number, two or higher.   If we can prove that theorem, then we’ll automatically get all the individual cases of specific bases essentially for free.
+Definition: n is represented in base-two as 
+Before we go on, I want to introduce a little notation to help avoid confusion. How do you know what I’m talking about if I just write “1000”?  Do I mean or ? If there is any possibility for confusion we write the number like this for the base-ten version of 1000, and to mean the binary version. That goes for any other base we might care to delve into like which would mean   or .
+We can use ANY positive integer greater than 1 for a base. In fact computer graphics artists are known to stumble upon numbers written in hexadecimal, which is base 16 (usually relating to specifying a color-channel). Base 16 introduces some new symbols to the usual numbers 1, 2, 3, 4, 5, 6, 7, 8 and 9, to represent the base-ten integers 10, 11, 12, 13, 14 and 15, namely: A, B, C, D, E and F. So if you see this number (80FB)16 then I bet you can figure out that it’s (33019)10 - If we omit the parentheses and subscript from our number, it means we’re talking about a number in base-ten - our “default” base. Case in point… the subscripts that we use to denote the base (like the “16” in (80FB)16) are written in base-ten!
+We still need to prove our two theorems above. What about proving the “base-nine” version of the theorem for the aliens on Planet-Nova, or the “base-eight” version for the inhabitants of Planet-Ocho? In fact, since we can use ANY integer greater than or equal to 2 as a base, then let’s restate our theorem for the general case, call it “base b”, where b is any number, two or higher. If we can prove that theorem, then we’ll automatically get all the individual cases of specific bases essentially for free.
+Theorem:  Unique Representation of Integers in an Arbitrary Base
+Let such that :  Then every integer n can be uniquely expressed as follows:
+
+for some  k  such that  where ,.
+Furthermore except when .
+Definition:
+        n is represented in base-b as 
+        and each is a base-b-digit of n, and
+        is called the “most significant digit of n”, and 
+        is called the “least significant digit of n”.
+Apart from substituting “b” for “ten” and “two” in the previous theorems, we did away with the “×” symbol for multiplication. It’s a notational convention that when two terms are written next to each other (a term being a number, constant, or a variable, e.g., 7 or 13, or n, k or b) that multiplication is the implied operation E.g., means  andmeans . Naturally, this notational convenience doesn’t work for terms that are only numbers like 73 which of course doesn’t mean . 
+Part of our proof is going to make use of a powerful 2-step technique - namely “induction”. We start by making some assertion about a number n. This assertion could be anything including the theorem itself. Then,
+1. We show that the assertion is true for the “base case”, when ;
+2. We then we assume that the proposed assertion is true for some arbitrary number n, and using this fact (as well as other established properties of numbers like the axioms, or other previously proven theorems etc.) we show that the proposed assertion must also be true for the next larger whole number .
+If we can do those two things, then we’ve proven the assertion FOR ALL whole numbers.
+Why would this approach actually prove an assertion for all whole numbers? Suppose P(n) - means “some property of the whole number n”. If we accept the following statement as true: “If P(n) is true, then P(n+1) is true” then if we also know that “P(1) is true” - those two statements together imply that P(2) is true, which implies that P(3) is true, which in turn leads to the truth of P(4), etc., over and over so that we eventually reach ANY number.
+Some people picture an infinite row of dominoes. Step 1 is like being able to knock over the first domino. Step 2 is like the fact that any one domino has the ability to knock over the next. Once you’ve knocked over the first domino, they all fall.
+Often proofs make use of little mini-theorems of their own. Creating these mini-theorems is way to simplify a step in the main proof by establishing a useful non-trivial intermediary result. It makes reading the main proof easier to follow by not having us get side tracked by technicalities. These mini-proofs are called “Lemmas” and we’re going to make one right now because we’re going to need it later.
+Lemma
+Let , and
+, and
+, and
+⋯ 
+
+then:
+        
+Our lemma defines a list of expressions each one referring to the next expression. Each expression is labeled with the name for the ith expression which would look like this: 
+To explain the motivation for this lemma, imagine starting at the last expression that is called and substituting it into the previous expression for , then take the new expression for and substitute it into the expression for , etc. After continuing that process of substitution all the way back to  hopefully you can see that you’ll end up with this nested expression:
+
+It’s a bit of a stretch to just claim that expanding this nested expression gives us the result we’re after, i.e. , and we will need to do that later! So just to make things nice and sparkling clear, we spell it out formally and prove it.  Thus our Lemma.
 
 
 ________________
 
 
-Theorem:  Unique Representation of Integers in an Arbitrary Base
-Suppose, s.t. . Then every integer n can be uniquely expressed as follows:
+Proof of lemma
+This proof will make use of induction on  k  (which is the subscript on the names of each expression, i.e., “” ).
+Prove for         
 
-such that  for each ,.
-Furthermore except when .
-and we represent n thusly: and call the ’s the “digits” of n.
-Definition: 
-        is called the “most significant digit of n” and 
-        is called the “least significant digit of n”.
-There are a some subtle changes in the way this theorem is stated, compared to the previous two theorems. The first and most important is that we substituted “b” for “10” and “2” above. Secondly, we did away with the “×” symbol for multiplication. It’s a notational convention that when two “terms” are written next to each other (a “term” being a number, constant, or a variable, e.g., 7 or 13, or n, k or b) that multiplication is the implied operation (E.g., means  andmeans . Naturally, this notational convenience doesn’t work for “terms” that are only numbers like 73 which of course doesn’t mean ). Also, we introduced another common abbreviation in math-speak - the “s.t.” which is just a short form for “such that”.
-We are going to make use of a powerful 2-step technique to do our proof - namely “induction”:
-1. We begin by showing that the theorem is true for the “base case”, when ;
-2. We then we assume that the proposed theorem is true for some arbitrary number n, and using this fact (as well as other established properties of numbers, axioms, etc.) we show that the proposed theorem is also true for the next larger number (i.e., ).
-If we can do those two things, then we’ve proven it FOR ALL numbers n.
-Why would this approach actually prove the theorem for all numbers? Suppose P(n) - means “some property of n”.  If we establish the following statement as true: “If P(n) is true, then P(n+1) is true” and we also show that P(1) is true - that implies that P(2) is true, which implies that P(3) is true, which in turn leads to the truth of P(4), etc., over and over so that we eventually reach ANY number.
-Some people picture an infinite row of dominoes.  Step 1 is like being able to knock over the first domino.  Step 2 is like the fact that any one domino has the ability to knock over the next.  Once you’ve knocked over the first domino, they all fall!
+which is trivially true by the definition of and a valid expression even when , which means we’d have a in there. Mathematicians define to be 1 to simplify annoying cases exactly like this one!  (Google it - it’s legit!)
+Now we assume the lemma is true for 
+That is, we assume that if we have a list of expressions:
+,
+⋯ 
+
+for some 
+then the following is true:
+        
+and we will show that the lemma is true for 
+In other words, if we extend our list of expressions by one more item, that our new expanded expression for will similarly extend out one more term.
+Let , then can always be written out as:
+
+For some and , for example it’s always possible if we let and , then
+
+but there are other possibilities for the choices of and when . Therefore,
+        
+        
+        
+which proves the lemma.  QED
+We are also going to make use of a well established theorem in our proof, it’s frequently called the “Euclidean Division Theorem” - which you all learned in the third grade, but perhaps not so formally. It simply states the following:
+Euclidean Division Theorem
+For all where b ≠ 0, there exists unique integers q, r such that:
+  and  
+In the above equation:
+a is the dividend
+b is the divisor
+q is the quotient
+r is the remainder
+This is simply stating the idea you learned when you first learned to divide.  For example if someone asked you “how many times does six go into eighty?” - you’d answer “thirteen with two remaining”, or written in the form of our theorem:
+        
+...another quick example being “how many times does sixteen go into one-hundred -and-twenty-one?” - you’d answer “seven, with nine remaining.”, or...
+        
+An important thing to note here is that the quotient and the remainder are unique for each pair of dividends and divisors.
+Our motivation in our proof below is to actually construct the base-b representation of the integer and show that this can ALWAYS be done, and each step is unique for that integer.
+Proof of “Unique Representation of Integers in an Arbitrary Base”
+Let such that 
+Since and are both trivially expressible in base-b for all b, then…
+Suppose,  
+Since b ≠ 0 then by the “Euclidean Division Theorem” there exists nonnegative integers such that:
+where 
+Note that , because either    or,
+, with the strict inequality because 
+Similarly, there exists non-negative integer quotients and remainders  such that:
+where 
+where 
+where 
+
+And we note that 
+with the strict inequalities holding until  some k such that --- wip jpr ---
+
+
+
+
+----old ending follows---
 Ok we’re ready to finally jump in. In order to prove our theorem - first we will prove that there is such a representation for all integers n (existence). Meaning that every integer has a way of being written in the form described by the theorem - especially as relates to the restrictions on the values that the “digits” can take on. After that has been established we will use another technique to prove that each such representation is unique - in other words there aren’t two (or more) ways to represent the same integer in our base.
 Existence Proof (by induction on n):
 Base case:
 For clarity, let’s prove both  and . (This is like showing that we can knock over both the 1st and the 2nd dominoes.)
-Suppose .  We can choose and . (This is the one exception spelled out in the theorem in which the most significant digit of n is allowed to be zero.) Then,
+Let . We can choose and . (This is the one exception spelled out in the theorem in which the most significant digit of n is allowed to be zero.) Then,
 ,
 showing that we have a valid representation for 0 in base b since our only digit .         (The “” symbol is shorthand for “for all”.)
-Now suppose .  In this case, we can choose  and . Then,
+Now Let . In this case, we can choose  and . Then,
 ,
 showing that we have a valid representation for 1 in base b since .
 n+1st step:
@@ -155,7 +233,7 @@ therefore the “least significant digit” (i.e. which corresponds the lowest p
 Since all other terms (i.e. ) for are unchanged from their representations for n and n is assumed to be a valid representation in base b then all the digits of are valid in base b.
 Therefore we’ve established the truth of “Case 1” for the integer .
 Case 2) 
-Now we’ll look at the case when the least significant digit of n is equal to the largest value it can take in base b, that is, .  (Note that between “Case 2” here and “Case 1” above, we’re covering all the possibilities for what can be. )
+Now we’ll look at the case when the least significant digit of n is equal to the largest value it can take in base b, that is, . (Note that between “Case 2” here and “Case 1” above, we’re covering all the possibilities for what can be. )
 For example in base-two, ; in base 5, ; in base-ten , etc.
 Let’s temporarily introduce a new digit, to our representation of n. The motivation being that in the situation where we’re adding 1 to 999, that we need another “digit” to “carry” the 1 over into so that we can get 1000.
 n        =
@@ -166,7 +244,7 @@ Also, let be the lowest power of b such that , meaning we write n as follows for
 n        =
 For example, if , then , since is the lowest power of 10 such that its digit  is less than 9.
 Let’s get picky for a minute and think carefully about some boundary conditions, to make sure that our new expression for n is always possible to write this way.
-What about when meaning that n is only one digit long? Since we specified that or substituting zero for k then , which means that j must be 1.  Note that we tacked on the extra digit  above, and by substituting we see that . Recall that we are in “Case 2” of our proof, so we know that so it’s true that is the lowest power of b such that . So we’re OK here!
+What about when meaning that n is only one digit long? Since we specified that or substituting zero for k then , which means that j must be 1. Note that we tacked on the extra digit  above, and by substituting we see that . Recall that we are in “Case 2” of our proof, so we know that so it’s true that is the lowest power of b such that . So we’re OK here!
 What about the case when ALL the digits of n, namely are equal to? (For example ) Then , and .
 Good! We’re covered in terms of our new expression for n being valid for all possible values of  j  i.e.;. So let’s do some algebraic manipulations on n.
        n        =
