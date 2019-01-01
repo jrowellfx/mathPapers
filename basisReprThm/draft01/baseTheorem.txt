@@ -4,7 +4,7 @@ There are 10 sorts of people in the world: those who understand binary and those
 Most of us think about “whole numbers” not too differently from the way we learned to count by watching Sesame Street, the difference being that now we can count a little higher. How we’ve trained ourselves it’s automatic to think that the way we write a number or say a number IS the number.
 If I say “I owe you 13 cents” and I give you one dime and three pennies then after thanking me profusely for repaying this staggering debt, we’ll agree that it’s settled with those coins equaling 13 pennies. We identify the symbol “13” very strongly with this particular number - it would be tough to get through life in the modern world without such an automatic process running in our brains. This example highlights what this particular symbol “13” actually means - one dime () plus three pennies ().
 Let’s look at the number 13 in some alternative ways - it’s the number of months in a year plus one month; what I’m suggesting is that there is no need for the symbol “13” in order to think about this particular number of months. Similarly, 13 is this many apples 🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏 ; or 13 is the sixth prime number (i.e., <1st: 2>, <2nd: 3>, <3rd: 5>, <4th: 7>, <5th: 11>, <6th: 13>). None of these ways of thinking about the number 13 require that we represent it using the digits 1 and 3 butted up next to each other.
-Each number exists independently from any symbol or word that might represent it. Numbers are an idea - perhaps such a strong idea that the universe wouldn’t exist without it! Anyway, for our purposes whole numbers exist in some abstract realm - Each number is one whole unit more than the previous number, starting at nothing, that is “zero”, and jumping to something, that is “one”, then “one” more, which gets us to “two”, then again to “three”, etc. Continuing in this way forever… we get them all.
+Each number exists independently from any symbol or word that might represent it. Numbers are an idea - perhaps such a strong idea that the universe wouldn’t exist without them! Anyway, for our purposes whole numbers exist in some abstract realm - Each number is one whole unit more than the previous number, starting at nothing, that is “zero”, and jumping to something, that is “one”, then “one” more, which gets us to “two”, then again to “three”, etc. Continuing in this way forever… we get them all.
 To get back to the idea of what a whole number really is, try to forget about the symbols or words we use and picture a pile of apples. There’s zero apples (it’s hard to show no-apples), then we introduce an “🍏” to get our very first, and smallest, non-empty pile of apples. Then add another apple to get a pile of “🍏🍏”, then “🍏🍏🍏”, then “🍏🍏🍏🍏” then some big pile of “🍏🍏🍏🍏🍏⋯🍏🍏🍏” after we’ve been adding apples for a while. Each successively bigger pile of apples corresponds with each successive whole number.
 We expand this entire set of whole numbers to include their negative-counterparts and call this larger set “integers”. We denote the set of integers with this symbol: . If we only want to talk about positive integers along with zero, we use this symbol: . When we talk about numbers in mathematics we always treat them as belonging to some kind of set (like the integers) in this pure, abstract sort of way.
 However... using a “1” followed by a “3” to represent “🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏🍏” is VERY handy. So we use Hindu-Arabic numbers and the positional notation of “base-ten”, more commonly known as “decimal”, to represent each specific integer. We slap a “-” on the front if we need to talk about a negative integer.
@@ -22,9 +22,9 @@ It get’s a little tedious to be so specific when reading out a number so our l
         10000        = ,
         ⋯
         10⋯000        = 
-The last line,, means there are  k  10’s multiplied together - also written as a 1 followed by  k  zeros. The above list explicitly shows the cases for k = 2, 3 and 4. Using the k  like that is just a way to show that we can pick ANY whole number, i.e., there is no limit on how big k can be.
+The last line,, means there are  k  10’s multiplied together - also written as a 1 followed by  k  zeros. The above list shows the cases for k = 2, 3 and 4. Using the k  like that is just a way to show that we can pick ANY whole number, i.e., there is no limit on how big k can be.
 The notation of is very handy, in fact it extends to the case when and . So means that there is only one 10 multiplied together, in other words just the number 10. That  also tells us how many zero’s follow the “1”, so in this case there is one “0” following the “1” - again, our familiar 10.
-How about when . Examining the pattern of how the power k relates to how many zeros follow the “1” (eg, 10, 100, 1000, etc.) it makes sense that , i.e., no zeros follow the “1”, which is exactly correct. Actually any number raised to the 0th power is 1, but we’ll leave that discussion for another time.
+How about when . Examining the pattern of how the power k relates to how many zeros follow the “1” (eg, 10, 100, 1000, etc.) then, i.e., no zeros follow the “1”, which is exactly correct. Actually any number raised to the 0th power is 1, but we’ll leave that explanation for another time.
 Let’s look at an example. Reading the number 46307 out according to our technique we can see that it’s “four lots of ten-thousand, plus six lots of a thousand, plus three lots of a hundred, plus zero lots of ten, plus seven units”:
         4        ×        10000                        40000
 +        6        ×        1000                +        6000
@@ -36,7 +36,7 @@ ________________
         =        46307
 Written in terms of powers of ten: .
 You can think of each digit as being a little dial that controls how many lots of its corresponding power of ten will contribute to the value of the integer. Claim: Given that we can use as high as power of ten as we like and we can string together as LONG A LIST of digits as pleases us, that means that we can create ANY INTEGER WE WANT no matter how big it is.
-That’s a pretty tall claim. How do we know that we can create ALL the nonnegative integers with this scheme? For example, how do we know that we didn’t miss one? Or how do we know that some string of digits doesn’t represent two different integers?  I know it seems silly to ask that, but attention to these kinds of details is what is referred to as “rigor” in Mathematics - it’s necessary so we don’t end up fooling ourselves or spouting bullshit - or if we are actually “full of it” then it’s easy for other Mathematicians to call us on our nonsense.
+That’s a pretty tall claim. How do we know that we can create ALL the nonnegative integers with this scheme? For example, how do we know that we didn’t miss one? Or how do we know that some string of digits doesn’t represent two different integers?  I know it seems silly to ask that, but attention to these kinds of details is what is referred to as “rigor” in Mathematics - it’s necessary so we don’t end up fooling ourselves or spouting bullshit - or if we are full of it then it’s easy for other Mathematicians to call us on our nonsense.
 We’re going to jump into the deep end and make our claim in a careful mathy kind of way. Such a careful statement is called a theorem - stay tuned - theorems require proof, which we’re going to supply!
 Base-Ten Representation Theorem
 Let :  Then every  n  can be uniquely expressed as follows:
@@ -56,7 +56,7 @@ iii)        “”
 This is the expression in question. It equates n with a series of multiplications of some numbers (the terms where i can be any number from 0 to k) times descending powers of 10, and adds them all together.
 
 If we had to read it out loud it might sound something like this:
-“n  is equal to...  dee-k times ten-to-the-k;  plus dee-kay-minus-one times ten-to-the-k-minus-one;  plus blah-blah-blah, down to... dee-two times ten-squared;  plus dee-one time ten;  plus dee-zero”.
+“n  is equal to...  dee-k times ten-to-the-k,  plus dee-kay-minus-one times ten-to-the-k-minus-one,  plus etc etc, down to... dee-two times ten-squared,  plus dee-one time ten,  plus dee-zero”.
 
 It’s useful to point out the meaning of our etc.  notation. Mathematical formulas such as this make judicious use of “subscripts” when coming up with names for lists of variables or constants. Subscripts following a letter or symbol, such as  are a handy way to get a list of variable or constant names that are similar looking to each other, and is meant to imply that they each fulfil a similar role to each other. Note here how the value of the subscript on each “d” corresponds to its power of ten, even in the single digit case when the subscript is 0, or the highest power case when the subscript is k.
 iv)        “for some  k  such that  for each ,”
@@ -66,18 +66,19 @@ It then states that those terms are nonnegative integers, and can ONLY take on t
 
 It also is very fastidiously pointing out that the little ‘i’ we just introduced in the subscript of the d’s is also an integer and can be as small as zero but only as large as our highest power  k  - whatever  k  might be. This is very picky stuff - like a computer program spelling things out very precisely so the computer knows exactly what you mean. (That’s right - you are the computer).
 
-Sounding it out: “for some  k  such that zero is less-than-or-equal-to dee-i which is also less-than-or-equal-to-nine, for each dee-i and i, which are nonnegative integers; also  i  is between zero and  k  inclusive”
+Sounding it out may sound like this: “for some  k  such that zero is less-than-or-equal-to dee-i which is less-than-or-equal-to nine, for each dee-i and i, which are nonnegative integers; also  i  is between zero and  k  inclusive”
 v)        “Furthermore ...”
 This is spelling out one more important fastidious detail. We want to make sure that the “most significant d”, that is, our that goes along with the highest poweris not 0, in other words it must be one of 1, 2, 3, 4, 5, 6, 7, 8 or 9. This is necessary so that we can get our uniqueness property, otherwise we could say 13 = 013 = 0000013 which are all the integer 13, so let’s outlaw this uninteresting and annoying possibility.
 vi)        “...except when ”
 completing that last statement which allows for one exception to the case where the “most significant digit” could be zero, and that’s exactly when the integer n in question IS zero.
 vii)        “Definition:  n is represented in base-ten as ”
 This is introducing what it means to write the number out in base-ten; that is, we toss out all the extraneous stuff from our expression in (iii) above, and string all the “digits” one after another, from most significant digit on the left down to least significant digit on the right.
-Before we prove our theorem, consider that base-ten is not the only base in use these days. Since the introduction of the EDVAC computer, around 1950, there have been many orders of magnitude more calculations done in base-two (otherwise known as binary) by computers than have EVER been done by people in base-ten for the entirety of human history. (This might even be true if we only count one-day’s worth of binary computer calculations - someone needs to check this!)
-These binary-computer logic gates (the building blocks of the modern computer) can only take one of two states, that is; “off” or “on”. We interpret these two states to represent these two numbers: 0 and 1. By doing so, in the same way that base-ten uses ten numbers 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9 for its digits;  we can represent integers in base-two with just the digits 0 and 1. How is this possible? … first let’s take an imaginary trip into deep space.
+Before we prove our theorem, consider that base-ten is not the only base in use these days. Since the introduction of the EDVAC computer, around 1950, there have been many orders of magnitude more calculations done in base-two (otherwise known as binary) by computers than have EVER been done by people in base-ten for the entirety of human history. (This might even be true if we only count one-day’s worth of binary computer calculations - someone needs to check this.)
+These binary-computer logic gates (the building blocks of the modern computer) can only take one of two states, that is; “off” or “on”. We interpret these two states to represent these two numbers: 0 and 1. By doing so, in the same way that base-ten uses ten numbers 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9 for its digits;  we can represent integers in base-two with just the digits 0 and 1. How is this possible? … first let’s take an imaginary trip into space.
 Consider distant Planet-Nova on which the emergent intelligent species only have nine fingers. They have three hands with three fingers each - anyway, they use base-nine, so they only use the numbers 0, 1, 2, 3, 4, 5, 6, 7 and 8 for their digits. So like we Earthlings do for the integer ten, instead of making up a new symbol for nine, they use “10” to represent the integer nine - which for them means “One lot of nine, plus zero units”.
 Similarly on Planet-Ocho, since they only have eight fingers, then they use base-eight and only use numbers 0, 1, 2, 3, 4, 5, 6 and 7 for their digits. For them “10” means “One lot of eight, plus zero units”.
-Finally we come upon Planet-Claire, where the poor bastards only have two fingers so they only use the digits 0 and 1 and base-two, so for them “10” means “one lot of two and zero units”. So on Planet-Claire “10” means two. Recall above how we arrived at our 100 in base-ten, being “ten lots of ten, plus zero units” - similarly on Planet-Claire “100” in base-two for them means “Two lots of two plus zero units” in other words, four! What is “11” in base-two? Using our technique to describe the digits we see that it’s “One lot of two, plus one unit”, in other words three.
+On and on past Planet-Gary-Seven, and Planet-Secks, Planet-Penta, …
+Finally we come upon Planet-Claire (well someone has to come from Planet-Claire, I know she came from there), where the poor blighters only have two fingers so they only use the digits 0 and 1 and base-two, so for them “10” means “one lot of two and zero units”. So on Planet-Claire “10” means two. Recall above how we arrived at our 100 in base-ten, being “ten lots of ten, plus zero units” - similarly on Planet-Claire “100” in base-two for them means “Two lots of two plus zero units” in other words, four! What is “11” in base-two? Using our technique to describe the digits we see that it’s “One lot of two, plus one unit”, in other words three.
 
 
 ________________
@@ -122,9 +123,9 @@ Let :  Then every n can be uniquely expressed as follows:
 for some  k  such that  where ,.
 Furthermore except when .
 Definition: n is represented in base-two as 
-Try reading the above out loud in your head, line by line, item by item, like we did above when we “sounded it out” - it’s helpful to turn the “code” into understandable English and a useful habit to get into when reading “mathy” statements.
+Try reading the above out loud in your head, line by line, item by item, like we did above when we “sounded it out” for the base-ten theorem - it’s helpful to turn the “code” into understandable English and a useful habit to get into when reading “mathy” statements.
 Before we go on, I want to introduce a little notation to help avoid confusion. How do you know what I’m talking about if I just write “1000”?  Do I mean or ? If there is any possibility for confusion we write the number like this for the base-ten version of 1000 and to mean the binary version.
-As is hinted by the habits of our various alien friends above it seems that we can use ANY integer greater than or equal to 2 as a base. In fact computer graphics artists are known to stumble upon numbers written in hexadecimal, which is base 16 (usually relating to specifying a color-channel). Base 16 introduces some new single-character symbols to the usual numbers 1, 2, 3, 4, 5, 6, 7, 8 and 9, to represent each number 10, 11, 12, 13, 14 and 15, namely: A, B, C, D, E and F where A16=(10)10, B16=(11)10, C16=(12)10, D16=(13)10, E16=(14)10, F16=(15)10. So if you see this number (80FB)16 then I bet at this point (if you take a little time with a calculator and a pad of paper and pencil) then you can figure out that it’s (33019)10. Note that if we omit the parentheses and subscript from a number, it means we’re talking about it in base-ten - our “default” base. Case in point… the subscripts that we use to denote the base (like the “16” in (80FB)16) are written in base-ten!
+As is hinted by the habits of our various alien friends above it seems that we can use ANY integer greater than or equal to 2 as a base (base-one doesn’t really make sense - think about it for a while). In fact computer graphics artists are known to stumble upon numbers written in hexadecimal, which is base 16 (usually relating to specifying a color-channel). Base 16 introduces some new single-character symbols to the usual numbers 1, 2, 3, 4, 5, 6, 7, 8 and 9, to represent each number 10, 11, 12, 13, 14 and 15, namely: A, B, C, D, E and F where A16=(10)10, B16=(11)10, C16=(12)10, D16=(13)10, E16=(14)10, F16=(15)10. So if you see this number (80FB)16 then I bet at this point (if you take a little time with a calculator and a pad of paper and pencil) then you can figure out that it’s (33019)10. Note that if we omit the parentheses and subscript from a number, it means we’re talking about it in base-ten - our “default” base. Case in point… the subscripts that we use to denote the base (like the “16” in (80FB)16) are written in base-ten!
 We really need to get on with proving our two theorems above. But what about proving the “base-nine” version of the theorem for the aliens on Planet-Nova, or the “base-eight” version for the inhabitants of Planet-Ocho?
 To cover all bases (pun intended) let’s restate our theorem for the general case, call it “base-b”, where b is any number greater than one. If we can prove that theorem, then we’ll automatically get all the cases of specific bases for free.
 
@@ -172,29 +173,24 @@ Similarly, by applying the Euclidean Division Theorem to the new quotient and co
 
 Let  and let’s also call a quotient for simplicity’s sake (even though it’s really ‘n’) so the general form for any quotient in our list can be defined to be:
 ,        where  for all 
-Hopefully you can see where this is going - all the values that the terms can take (the “remainders”) are precisely within the bounds for the digits required by the “Basis Representation Theorem”. Somehow, they are going to end up being our base-b digits.
-The problem we face at this juncture is that our list of quotients is infinitely long. Luckily there is always a point in the list where they are all zero from that point on.  In other words, this process of generating quotients needn’t go on forever, we can stop once one becomes zero since then we know that all the rest will be zero, and none of them will contribute anything to the value of n, so we can ignore them!
-All of that is fine and dandy, but his is a proof, so we have to show it with iron-clad logic.
-Let’s start by getting rid of one slightly special case. Recall there is one exception to the requirement that the “most significant digit is nonzero” - and that is exactly when  n  IS zero. So, to simplify the rest of the proof, we’re going to go ahead and prove the theorem for the case when  since it’s a slightly special case - not to mention trivial!
-Suppose , then
-        
-        (uniquely represented as such, by Euclidean Division Theorem)
-        (Rewrite b and 1 as powers of b)
-        (n is in the form of the Basis Representation Theorem)
-This shows that the unique representation for the integer 0 in any base is simply the single digit “0” - thus proving the theorem for the special case where . 
-Suppose  for the remainder of the proof.
-Now let’s deal with the above-mentioned infinite list of zero quotients
+Hopefully you can see where this is going - all the values that the terms can take (the “remainders”) are precisely within the bounds for the digits required by the “Basis Representation Theorem”. Somehow, these remainders are going to end up being our base-b digits.
+The problem we face at this juncture is that our list of quotients is infinitely long. Luckily there is always a point in the list where they are all zero from that point on.  In other words, this process of generating quotients needn’t go on forever, we can stop listing them once one becomes zero since then we know that all the rest will be zero, and since none of these zero-valued quotients will contribute anything to the value of n, so we can ignore them!
+All of that is fine and dandy but this is a proof. We need iron-clad logic and none of this hand-waving stuff, so let’s proceed by restating our claim more carefully then prove it:
+Claim: There exists an integer j such that , for all indices .
+
+
 Suppose  for some :
 Then all subsequent quotients,  must also be zero because:
-        (by definition of )
+                (by definition of above)
 if and only if 
-        (since )
+                (since )
 showing that both (and ) must be zero since by definition neither of them can take on negative values (which would allow for something like ).
 This same argument can be repeated to show that , must also be zero. Let’s restate this conclusion and give it a name.
 P1)        If    then   ad infinitum.
+If , then by P1 we’ve proven our “Claim” - the entire list of quotients is zero. 
 Now suppose  for some :
 Then because
-Either         and the inequality is trivially true,
+Either         and the previous inequality is trivially true,
   or         and we have the following:
                 (by definition)
 
@@ -202,46 +198,68 @@ Either         and the inequality is trivially true,
         (since 2>1 and )
 Let’s summarize this conclusion.
 P2)        If    then   
-Since  then as long as no subsequent is zero then by P2 we can write
+Continuing with the supposition that some  then hopefully it’s clear that (hint: P1). Therefore as long as no subsequent  is zero then by P2 we can write
 
 Which implies that one of the quotients must eventually be zero, for even if each quotient was only one unit smaller than the previous quotient then we are guaranteed that the nth quotient must be zero.  In other words:
 
 P3)        There exists an such that 
-[Aside: The series of quotients will ultimately reach the value zero much faster than the previous string of inequalities implies - indeed it will only take at most steps which is staggeringly faster than  steps. Eg.  which is a considerably smaller number than 789,456,123 !]
+[Aside: The series of quotients will reach the value zero much faster than the previous string of inequalities implies - indeed it will only take at most steps which is staggeringly faster than  steps. Eg.  which is a considerably smaller number than 789,456,123 ]
+So both P1 and P3 together proves our “Claim”, meaning our list of quotients can be treated as finite in length by terminating it at the first zero quotient.
+Let  k  be the index of the last nonzero quotient in our list above.  Then  and our complete list of nonzero quotients appear as follows:
+
+
+
+
+
+
+
+
+
+
+
+
+
+Since each quotient refers to the next one, let’s “back substitute” all of them, starting at the last quotient and substitute it into the second-to-last expression for and continuing in this manner all the way back to .
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
 
 ________________
 
 
-So both P1 and P3 together imply that our list of quotients is finite.
-Let  k  be the index of the last nonzero quotient in our list above.  Then  and our complete list of nonzero quotients is as follows:
 
 
-
-
-
-
-
-
-
-
-
-
-
-Since each q refers to the next one, let’s “back substitute” all of them, starting at substituting into the expression for and continuing all the way back to .
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+Since , then if you accept that leap between and in our substitutions above, then we have proven our theorem since each step is unique and this process can always be done for all integers n.
+However, I think it’s asking a bit much of the reader to make that leap between and  above. If you follow the pattern of how the subscripts on the d’s and powers of b work from line to line then you can probably convince yourself that the logic is sound, but it’s tedious and difficult and doesn’t leave you feeling all that confident in the conclusion.
+There’s a better/clearer way to unravel our quotients, which avoids making you have to perform mental contortions but it involves us introducing a few more “mathy” ideas.
+Often proofs make use of little mini-theorems of their own. Creating these mini-theorems is way to simplify a step in the main proof by establishing a useful non-trivial intermediary result. It makes reading the main proof easier to follow by not having us get side tracked by technicalities. These mini-theorems are called “Lemmas” and we’re going to make one to help unravel our list of quotients above.  We’ll state the lemma (and prove it below) then we’ll use it the way we made use of the already-proven Euclidean Division Theorem to help with our proof above.
+Lemma
+Let such that 
+Also let where and such that
+        , and
+        , and
+⋯ 
+        , and
+        
+then:
+        
 
 
 ---wip jpr ---
@@ -251,17 +269,8 @@ Part of our proof is going to make use of a powerful 2-step technique - namely �
 If we can do those two things, then we’ve proven the assertion FOR ALL whole numbers.
 Why would this approach actually prove an assertion for all whole numbers? Suppose P(n) - means “some property of the whole number n”. If we accept the following statement as true: “If P(n) is true, then P(n+1) is true” then if we also know that “P(1) is true” - those two statements together imply that P(2) is true, which implies that P(3) is true, which in turn leads to the truth of P(4), etc., over and over so that we eventually reach ANY number.
 Some people picture an infinite row of dominoes. Step 1 is like being able to knock over the first domino. Step 2 is like the fact that any one domino has the ability to knock over the next. Once you’ve knocked over the first domino, they all fall.
-Often proofs make use of little mini-theorems of their own. Creating these mini-theorems is way to simplify a step in the main proof by establishing a useful non-trivial intermediary result. It makes reading the main proof easier to follow by not having us get side tracked by technicalities. These mini-proofs are called “Lemmas” and we’re going to make one right now because we’re going to need it later.
-Lemma
-Let such that 
-Also let , such that
-, and
-, and
-⋯ 
-, and
 
-then:
-        
+
 Our lemma defines a list of expressions each one referring to the next expression. Each expression is labeled with the name for the ith expression which would look like this: 
 To explain the motivation for this lemma, imagine starting at the last expression that is called and substituting it into the previous expression for , then take the new expression for and substitute it into the expression for , etc. After continuing that process of substitution all the way back to  hopefully you can see that you’ll end up with this nested expression:
 
@@ -338,10 +347,6 @@ n        =
 Also, let be the lowest power of b such that , meaning we write n as follows for some j.
 n        =
 For example, if , then , since is the lowest power of 10 such that its digit  is less than 9.
-Let’s get picky for a minute and think carefully about some boundary conditions, to make sure that our new expression for n is always possible to write this way.
-What about when meaning that n is only one digit long? Since we specified that or substituting zero for k then , which means that j must be 1. Note that we tacked on the extra digit  above, and by substituting we see that . Recall that we are in “Case 2” of our proof, so we know that so it’s true that is the lowest power of b such that . So we’re OK here!
-What about the case when ALL the digits of n, namely are equal to? (For example ) Then , and .
-Good! We’re covered in terms of our new expression for n being valid for all possible values of  j  i.e.;. So let’s do some algebraic manipulations on n.
        n        =
         = 
         = 
