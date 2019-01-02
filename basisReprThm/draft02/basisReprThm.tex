@@ -339,7 +339,7 @@ getting us to the very next integer which is 500.  We know this always works no 
 Our intuition is good - Let's write it down as something that has to be
 in our theorem. We might say something like:
 
-\emph{Base-Ten Theorem (initial draft)}
+\emph{Base-Ten Representation Theorem (initial draft)}
 \begin{jprIn}
 Every integer is representable in base-ten.
 \end{jprIn}
@@ -359,7 +359,7 @@ if we follow this kind of procedure.  In other words, each integer is representa
 
 Let's strengthen our theorem based on the last two observations.
 
-\emph{Base-Ten Theorem (second draft)}
+\emph{Base-Ten Representation Theorem (second draft)}
 \begin{jprIn}
 Every integer is \emph{uniquely} representable in base-ten.
 \end{jprIn}
@@ -369,19 +369,19 @@ there exists another unique integer
 such that if you add them together you get zero, or algebraically:
 \[\text{For all integers }a\ne0\text{ there exists a unique integer }{-}a\text{ such that }a+(-a)=0\]
 This means that EVERY positive integer has a unique negative counterpart.
-Which means that if we can prove the
-Base-Ten Theorem for ALL the positive integers, then we
+So if we can prove the
+Base-Ten Representation Theorem for the positive integers then we
 can easily extend it to the negative integers with a corollary.
-We just need to slap a ``-'' (minus) sign in front of the positive base-ten representation to 
+Our corollary will say something like ``slap a `-' (minus) sign in front of the positive base-ten representation to 
 get a unique representation for
-it's negative counterpart.  Also zero is easy to deal with later too, so to keep our lives
-simple, let's restrict our attention to only proving the theorem for positive integers.
+it's negative counterpart''.  Also zero is easy to deal separately, so to keep our lives
+simple and restrict our attention to only proving the theorem for positive integers.
 
 Furthermore, moving forward it would be helpful to have a name, or label, to stand in for any 
 positive integer so that we can refer to it directly -
 So let's give it a name, how about $n$ for ``number'':
 
-\emph{Base-Ten Theorem (third draft)}
+\emph{Base-Ten Representation Theorem (third draft)}
 \begin{jprIn}
 Let $n$ be a positive integer, then $n$ is \emph{uniquely} representable in base-ten.
 \end{jprIn}
@@ -394,14 +394,14 @@ because ``$\times{}$'' might get confused for an ``$x$'' in an expression,
 whereas ``$\cdot{}$'' never will be. Eg. $x\times{}2$ vs. $x\cdot{}2$, additionally ending up with something that is more aesthetically pleasing.
 You may also see the ``$\cdot$'' omitted entirely as in $ab$ - which means $a\cdot{}b$ as you have seen in earlier footnotes.}:
 \[92507=9{\cdot}10^4+2{\cdot}10^3+5{\cdot}10^2+0{\cdot}10^1+7{\cdot}10^0\]
-\emph{EVERY} base-ten number implicitly describes an algebraic expression like this, so
-we need to come up
+\emph{Every} base-ten number implicitly describes an algebraic expression like this, so
+let's come up
 with a general expression of this form that can describe ANY positive integer $n$.
 
 It's important to remember that we only allow $n$'s digits to take on the values 0 through 9, no other values are allowed.
 Most noteworthy is there can be at most 9 lots of any given
 power-of-ten in our base-ten-representation of $n$.
-For example, if we had 9 piles of ten-apples, but still ten more apples, we would simply add that extra pile of ten-apples
+For example, if we counted out 9 piles of ten-apples each, but still ten more apples to count, we would simply add that extra pile of ten-apples
 to the other 9 piles of ten-apples and count it as 1 pile of a hundred-apples.  That's the rule - we are only allowed
 at most 9 lots of a certain power-of-ten sized pile-of-apples.
 
@@ -413,7 +413,7 @@ or equal to 9), so the contribution of the digit $d$ to the value of $n$ would b
 In other words, for some power-of-ten
 (that's the $i$ which can be anything, like 0, 1, 2, 3, etc.) we have $d$ lots of it. Note that $d$
 could be 0, which means that it doesn't contribute ANY lots of $10^i$ to the value of $n$, all the way up to the maximum
-contribution of $9{\cdot}10^i$ to the value of $n$.
+contribution of $9\cdot{}10^i$.
 
 Our general expression for $n$ should only have one digit associated with each power-of-ten, in other words our expression should never allow this:
 \[4\cdot10^2+7\cdot10^2\]
@@ -425,7 +425,7 @@ $n$ is likely composed of \emph{many} digits, each of which is multiplied by a d
 Suppose $n$ is a five digit number. We've been using the specific five-digit number 92507 in our examples above,
 but now suppose $n$ is any number from 10000 all
 the way up to 99999 (which is a complete list of all the five-digit numbers possible). If we were to describe
-this general five digit number, then we would need five different $d$s for each of the five digits.
+this general five digit number, then we would need five different `$d$'s for each of the five digits.
 Somehow we need to associate a different digit $d$ with each of the powers
 $10^4$, $10^3$, $10^2$, $10^1$ and $10^0$.
 
@@ -434,9 +434,9 @@ Mathematics has a convention for coming up with
 a list of variables or constants for situations just like this -
 we tack a subscript onto the variable-name like this: $d_2$ which you read as ``dee-two''\footnote{\dots{}yes like artoo-detoo, which perhaps
 George should have writen like ``$R_2D_2$'' and not ``R2-D2''!}.
-$d_2$ is a digit just like the $d$ we used above.  But now we can use that little subscript as a way to
-associate it to one specific power-of-ten. It's natural for us to have $d_2$ be the digit that is 
-multiplied by $10^2$ (ten squared), as follows.
+$d_2$ is a term to represent a digit just like the $d$ we used above.  But now we can use that little subscript as a way to
+associate it to a specific power-of-ten. Naturally we'll associate $d_2$ with $10^2$ (ten squared) as follows; $d_2$ contributes to
+the value of $n$ by this amount:
 \[d_2\cdot10^2\text{, where }0\le{}d_2\le{}9\]
 If we define $d_2$ like this, then we know that when we refer to the digit $d_2$
 that we are talking about the digit that is multiplied with $10^2$.
@@ -471,7 +471,9 @@ $d_k{\cdot}10^k+\dots{}+d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}1
 \end{tabular}
 \end{center}
 
-\emph{Base-Ten Theorem (wordy)}
+--jpr edit to here--
+
+\emph{Base-Ten Representation Theorem (wordy)}
 \begin{jprIn}
 Every positive integer can be uniquely written as a
 cumulative sum of multiples of increasing powers of \emph{ten}.
@@ -515,10 +517,10 @@ we could cheat a little, and define the symbol for \emph{ten} to be ``$1\hspace{
 and say ``Let `$1\hspace{-0.2em}0$' represent the integer ten.''
 
 We want to be able to say that $n$ can be represented by a string of digits, and we know
-each digit has to be less than the value of ten, but any number less than ten (including zero).  So now the Base-Ten Theorem
+each digit has to be less than the value of ten, but any number less than ten (including zero).  So now the Base-Ten Representation Theorem
 might look like this:
 
-\emph{Base-Ten Theorem}: Let $n$ be a positive integer, then $n$ can be uniquely written in base-ten
+\emph{Base-Ten Representation Theorem}: Let $n$ be a positive integer, then $n$ can be uniquely written in base-ten
 by a string of digits drawn each of which can take on one value from \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}.
 
 The way we are using $n$ (for number)
@@ -790,7 +792,7 @@ Definition: $n$ is represented in base-two as $(d_kd_{k-1}\dots{}d_2d_1d_0)_2$
 
 Try reading the above out loud in your head,
 line by line, item by item, like we did above when
-we sounded it out for the Base-Ten Theorem - it's
+we sounded it out for the Base-Ten Representation Theorem - it's
 helpful to turn the ``math-code" into understandable
 English and a useful habit to get into when reading mathematical statements.
 
