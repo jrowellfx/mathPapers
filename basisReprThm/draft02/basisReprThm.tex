@@ -285,7 +285,7 @@ are the axioms - those are the mathematical ideas that are so simple that they c
 yet other even simpler ideas. The axioms are the minimal set of simple, obvious, irrefutable ideas from which
 everything else in mathematics is built.
 
-However, the fact that
+The fact that
 we can use base-ten to represent the integers is NOT among the list of axioms.
 
 As discussed in the opening paragraph, we think that the way
@@ -307,18 +307,15 @@ So let's formulate our ideas about the wonders of base-ten
 in a careful kind of way that says everything we come to expect from it,
 so that we may use it with impunity in talking about the more abstract set of integers.
 
-You are about to jump into the deep end read something that's probably unlike most
-things you come across in your day-to-day activities.
+You are about to jump into the deep end and read something that's probably unlike anything that you come across in your day-to-day activities.
 If you're not familiar with reading mathematical statements it's kind of like a new language. It sometimes uses
 weird symbols like $\in$ which means ``is an element of" (or ``is a member of")
-and is always followed by something that is a ``set", one of which we've talked about above,
-namely the symbol $\mathbb{Z}_{\ge 0}$ which
+and is always followed by something that is a ``set", like the symbol $\mathbb{Z}_{\ge 0}$ which
 we defined as being the set of nonnegative integers.
 
 So here goes, try reading through the theorem below, but if you get stuck, keep
-going, a detailed explanation follows to guide you through the unfamiliar territory.
+going, a detailed step-by-step explanation follows to guide you through the unfamiliar territory.
 
-\break
 \section*{Base-Ten Representation Theorem}
 
 \begin{jprIn}
@@ -338,6 +335,7 @@ A difficulty many folks have with math is the notation - it's
 a kind of a language unto itself - like a computer program is a language.
 Let's take our theorem statement by statement and turn it into English.
 
+\filbreak
 \begin{enumerate}[i)]
 \item ``Let $n,k\in \mathbb{Z}_{\ge 0}$"
 
@@ -404,6 +402,7 @@ Sounding it out might sound like this:\\
 which is less-than-or-equal-to nine, for each $dee$-$i$ and $i$,
 which are integers; also $i$ is between zero and $k$ inclusive"
 
+\filbreak
 \item ``Furthermore $d_k\ne0\dots{}$"
 
 This is spelling out one more important fastidious detail.
@@ -430,8 +429,8 @@ from most significant digit $d_k$ on the left down to least
 significant digit $d_0$ on the right.
 \end{enumerate}
 
-Before we prove our theorem,
-consider that base-ten is not the only base in use these days.
+\bigskip
+Consider that base-ten is not the only base in use these days.
 Since the introduction of the EDVAC\footnote{You might be thinking, don't you
 mean ENIAC which was earlier? Actually no - the ENIAC
 used base-ten accumulators, not binary!} computer, around 1950,
@@ -518,7 +517,7 @@ resemble our powers of 10 in base-ten! That is:
 \end{spreadlines}
 \end{center}
 \end{small}
-\break
+
 Let's look at the binary number 11010 for example.
 Using our wordy technique to describe the number
 we can see that it's ``One lot of sixteen,
@@ -594,17 +593,14 @@ C\textsubscript{16}=(12)\textsubscript{10},
 D\textsubscript{16}=(13)\textsubscript{10},
 E\textsubscript{16}=(14)\textsubscript{10},
 F\textsubscript{16}=(15)\textsubscript{10}.
-So if you see this number (80FB)\textsubscript{16} then
-I bet at this point (if you take a little time with a
-calculator and a pad of paper and pencil) then you can
-figure out that it's (33019)\textsubscript{10}.
+So (80FB)\textsubscript{16} is a four digit number in base-sixteen. (As we'll see shortly it means (33019)\textsubscript{10} in base-ten).
 
 Note that if we omit the parentheses and subscript from a number,
 it means we're talking about it in base-ten; our ``default" base.
 Case in point: the subscripts that we use to denote the base
 (like the ``16" in (80FB)\textsubscript{16}) are written in base-ten!
 
-We should probably prove our two theorems above.
+It would be nice to prove our two theorems above.
 But what about proving the ``base-nine" version of the theorem for the aliens on Planet-Nova,
 or the ``base-eight" version for the inhabitants of Planet-Ocho?
 
@@ -629,6 +625,15 @@ Furthermore $d_k\ne0$ except when $n=0$.
 Definition: $n$ is represented in base-$b$ as $(d_kd_{k-1}\dots{}d_2d_1d_0)_b$
 \end{jprIn}
 \bigskip
+
+So, to get the ``Base-Ten Representation Theorem'', let $b=10$.
+To get the ``Base-Two Representation Theorem'', let $b=2$''; or the ``Base-Nine Representation Theorem'',
+let $b=9$; ``Base-Eight\dots{}'' let $b=8$''; ``Base-Sixteen\dots{}'' let $b=16$''; etc.
+
+Bonus: Because of the general nature of the ``Basis Representation Theorem'' we also know that we can safely convert between
+different bases. (Why? \dots{}exercise left for the student).  Recall how we defined $(\text{A})_{16}=10$
+and $(\text{F})_{16}=15$ as base-sixteen digits, then:
+\[9,937,906=9\cdot{}16^5+7\cdot{}16^4+10\cdot{}16^3+3\cdot{}16^2+15\cdot{}16^1+2\cdot{}16^0=(\text{97A3F2})_{16}\]
 
 As we discussed way up at the top of this essay,
 we think about generating the set of positive integers as a process that builds them up one by one.
@@ -695,6 +700,7 @@ meaning he could state the result in a heartbeat - tada - ``5050"!
 Gauss is widely regarded as being one of the greatest
 mathematicians who has ever lived - the young eight-year old was just getting started.
 
+\break
 Anyway,
 to generalize Gauss's insight we can write the expression like this:
 \[1+2+3+\ldots+n=\frac{n(n+1)}{2}\]
@@ -726,297 +732,15 @@ done - it’s an acronym for the Latin phrase ``quod erat demonstrandum'' which 
 In other words we’ve proven what we set out to prove.}
 
 \break
-We are going to use two techniques to prove the Basis Representation Theorem.
+\section*{Intermission}
+So far in this paper we've set up everything you need to know to follow a proof of the Basis Representation Theorem.
 
-First we will prove that there is such a representation for all
-integers $n$ (existence proof) using the principle of mathematical induction.
-Meaning that every integer has a way of being written
-in the form described by the theorem - especially as
-relates to the restrictions on the values that the ``digits" can take on.
-
-Here's a little insight into how the existence proof works, but applied to a specific number in base-ten:
-All we want to show is that for any number, if you add 1 to it, that it's also possible to express it as a valid number in base-ten.
-
-For example, adding 1 to 69412995 gives us 69412996, which is pretty trivial to show that it's valid in base-ten, only the least-significant digit was
-changed, and it's clearlly within the range of 0\dots{}9.
-
-But what about dealing with a ``carry'', for example 
-if we were adding 1 to 69412999? We'd need to algebraically capture the idea of the carry.  The way
-we do it in the proof is essentially to say that $69412999 = 69410000 + 2999 = 69410000 + (3000-1)$ so that when we add one to it, then
-it's clear that the answer is just:
-\[69412999 + 1 = 69410000 + (3000-1) + 1 = 69410000 + 3000 + (-1 + 1) = 69413000\]
-Secondly, we will use another technique, called proof by contradiction,
-to prove that each such representation is unique - in other
-words there aren't two (or more) ways to represent the same integer in base-$b$.
-
-After all that - I invite you to skip all the way to the Epilogue and Exercises section of this
-paper. Truth be told, the proof is kind of tedious, and heavy going following subscripts and such.
-Take a breather, try the exercises, and then perhaps come back to the proof later.
-
-\section*{Existence Proof of the Basis Representation Theorem}
-
-Base case:
-\begin{jprIn}
-The Principle of Mathematical Induction always starts with 1\footnote{The Principle of Mathematical induction only talks about positive integers, not zero}, but we also need to take
-care of the slightly special case of $n=0$; so let's take care of $n=0$ AND $n=1$ which will serve as our base induction step.
-
-Let $n=0$.
-
-\begin{jprIn}
-We can choose $k=0$ and $d_0=0$.
-(This is the one exception spelled out in the theorem in
-which the most significant digit of n is allowed to be zero.) Then,
-\[n=d_0b^0=0\times{}b^0=0\]
-showing that we have a valid representation for 0 in base-$b$ since our only digit\\
-$d_0=0\le(b-1)$, for all $b\ge2$.
-\end{jprIn}
-
-Now let $n=1$.
-
-\begin{jprIn}
-In this case, we can choose $k=0$ and $d_0=1$.  Then,
-\[n=d_0b^0=1\times{}b^0=1\times{}1=1\]
-showing that we have a valid representation for 1 in base-$b$ since\\
-$d_0=1\le(b-1)$, for all $b\ge2$.
-\end{jprIn}
-\end{jprIn}
-\bigskip
-
-\break
-Induction Case:
-
-\begin{jprIn}
-Assume that $n$ has a valid representation in base-$b$,
-that is, $n$ can be written thus: 
-\[n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\]
-with all the appropriate conditions holding for the
-values of $d_i$, $b$ and $k$;
-and we will prove that $n+1$ also has a valid representation in base-$b$.
-
-We're going to break this step into two cases which cover all possibilities.
-
-Case 1) $d_0\le(b-2)$
-
-\begin{jprIn}
-This case examines when the least significant
-digit of $n$ is \emph{strictly-less-than} the largest value it can take in base-$b$.
-For example, in base-two $d_0$ can only be zero;
-In base-five $d_0$ can be at most three;
-In base-ten $d_0$ can be at most eight, etc.
-This case is
-quite easy to deal with, so let's quickly dispense with it\footnote{It will be helpful at this point to recall the axiom of ``Distribution'' that is $a(b+c)=ab+ac$;
-In fact, it might not hurt to do a quick refresh of some of the others as well, ``Associativity''': $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$, ``Commutativity'': $a+b=b+a$ and $ab=ba$, ``Existence of inverses and identities'': $a+0=a$ and $a\times1=a$ and $a+(-a)=0$. Note: in general integers do NOT have multiplicative inverses.}.
-\begin{align*}
-n &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\\
-&\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\text{if and only if,}\\
-n+1 &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + 1\\
-&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + b^0\\
-&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1 + (d_0+1)b^0
-\end{align*}
-and our by assumption that $d_0\le(b-2)$, then
-\[(d_0+1)\le(b-2)+1=(b-1)\]
-showing us that the ``least significant digit"
-of $n+1$, being $(d_0+1)$, is less than or equal to $(b-1)$ which means that
-$(d_0+1)$ is a valid digit in base-$b$.
-
-Since all the other $d_i$ terms ($d_1,d_2,\dots,d_k$)
-for $n+1$ are unchanged from their values for
-$n$ then all the digits of $n+1$ are valid in base-$b$.
-
-Therefore we've established the truth of ``Case 1" for the integer $n+1$.
-\end{jprIn}
-\bigskip
-
-Case 2) $d_0=(b-1)$
-\begin{jprIn}
-Now we'll look at the case when the least significant digit of $n$ is equal
-to the largest value it can take in base-$b$, that is,
-$d_0=(b-1)$.
-(Note that  ``Case 1" and ``Case 2" cover all the possibilities for what $d_0$ can be.)
-For example in base-two
-$d_0=1$; in base-five
-$d_0=4$; in base-ten $d_0=9$, etc.
-
-%\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
-
-Let $j\in \mathbb{Z}_{\ge 0}$ be the lowest power of $b$ such that $d_j<(b-1)$,
-meaning we can write $n$ as follows (\dots{}in other words all the digits to the right of $d_j$ are equal to $(b-1)$):
-\[n = d_kb^k+d_{k-1}b^{k-1}+\dots+d_jb^j+(b-1)b^{j-1}+\dots+(b-1)b^1+(b-1)b^0\]
-For example,
-if $n=69412999$,
-then $j=3$,
-since $10^3$ is the lowest power of 10 such that its digit $d_3$ is less than 9 (it's 2).\footnote{It will
-be helpful at this point to recall some rules of exponents, that is $a^ba^c=a^{b+c}$.}
-\begin{align*}
-n &=d_kb^k+\dots+d_jb^j+(b-1)b^{j-1}+\dots+(b-1)b^1+(b-1)b^0\\
-&= d_kb^k+\dots+d_jb^j+(b^j-b^{j-1})+(b^{j-1}-b^{j-2})+\dots+(b^2-b^1)+(b^1-b^0)\\
-&= d_kb^k+\dots+(d_jb^j+b^j)+(-b^{j-1}+b^{j-1})+\dots+(-b^2+b^2)+(-b^1+b^1)-b^0\\
-&= d_kb^k+\dots+(d_j+1)b^j-b^0\\
-&= d_kb^k+\dots+(d_j+1)b^j-1
-\end{align*}
-Therefore,
-\begin{align}
-n+1 &=d_kb^k+\dots+(d_j+1)b^j-1+1 \nonumber \\
-&= d_kb^k+\dots+(d_j+1)b^j \label{eqnA}
-\end{align}
-Since we picked $j$ such that $d_j<(b-1)$,
-we can restate the inequality as\\
-$d_j\le(b-2)$ therefore,
-\[(d_j+1)\le(b-2)+1=(b-1)\]
-meaning the $j$\textsuperscript{th} digit of $n+1$ is a valid base-$b$ digit.
-
-All digits $d_k,\dots,{}d_{j+1}$ remain unchanged from the base-$b$ representation of $n$,
-and all digits $d_{j-1},\dots{},d_0$ are 0.
-
-Therefore all the digits of the base-$b$ representation of $n+1$ are valid in base-$b$.
-\bigskip
-
-If you've been fastidiously following the conditions on our subscript $j$ above, then
-you may notice that
-our proof doesn't leave room for the case that \emph{all} the digits are equal to $(b-1)$ because of
-how we defined $j$. For example when $n=99999$.
-
-Let's attend to this remaining detail.
-
-Suppose $d_i=(b-1)$ for all $0\le{}i\le{}k$, then let $d_{k+1}=0$ and $j=k+1$.
-
-All the arguments we just made are essentially the same so picking up at equation (1) above, with our new terms, we have:
-\begin{align*}
-n+1 &=(d_j+1)b^j\\
-&=(d_{k+1}+1)b^{k+1}\\
-&=(0+1)b^{k+1}\\
-&=b^{k+1}
-\end{align*}
-Meaning that $n+1$ now has a $(k+1)$\textsuperscript{st} digit and it's equal to 1,
-with all the rest of the digits being 0 - which is a valid representation for $n+1$ in base-$b$ for all $b\ge2$.
-\end{jprIn}
-Therefore 
-by the principle of mathematical induction,
-we have proven that there is a base-$b$ representation for all nonnegative integers.
-\end{jprIn}
-\bigskip
-
-\break
-In order to proceed
-with proving the uniqueness aspect of the Basis Representation Theorem, we
-need to make use of a well established theorem
-called the ``Euclidean Division Theorem''.\footnote{I don't want to misrepresent that the proof in
-this paper is the only way to prove the
-Basis Representation Theorem, in fact I know of two others. 
-
-One is more constructive,
-and makes extensive use of the Euclidean Division Theorem but it's just as lengthy as ours here. However it does give
-some nifty insight in how to convert any integer into a specific base.
-
-Another is quite elegant and short, but abstract. It's not particularly illuminating for our purposes.
-However, you can find it in the book ``Number Theory'' by George E. Andrews, and also on
-the website ``ProofWiki'', just search for ``Basis Representation Theorem'' to find the proof.}
-It sounds onerous, but don’t worry, you all learned it
-in the third grade but perhaps not so formally, you called it ``long division''. It simply states the following:
-
-\section*{Euclidean Division Theorem}
-\begin{jprIn}
-For all $a,b\in{}\mathbb{Z}$ where $b>0$, there exists unique integers $q$ and $r$ such
-that
-that\footnote{Actually the theorem is stronger than we have stated here. Specifically, it only requires that $b\ne0$, however
-to keep the remainder positive, the restriction on $r$ is stated like
-this $0 \le r \le (\left|b\right|-1)$ to deal with the possibility that $b$ might be negative.}:
-\[a=qb+r  \text{ and } 0\le{}r\le{}(b-1)\]
-Definition: In the above equation:
-\begin{jprIn}
-\begin{tabular}{l l}
-a is the \emph{dividend} & (``the number being divided'')\\
-b is the \emph{divisor} & (``the number doing the dividing'')\\
-q is the \emph{quotient} & (``the result of the division'')\\
-r is the \emph{remainder} & (``the leftover'')
-\end{tabular}
-\end{jprIn}
-\end{jprIn}
-This is how you first learned to divide.
-For example if someone asks you ``What is nineteen divided by three?'', you’d
-answer ``six with one remaining''. Here 19 is the \emph{dividend},  3 is the \emph{divisor},
-6 is the \emph{quotient} and 1 is the \emph{remainder}. Written in the form of the theorem:
-\[19=6\times3+1\]
-Often proofs make use of little mini-theorems of their own.
-Creating these mini-theorems is a way to simplify a step in
-the main proof by establishing a useful non-trivial
-intermediary result. It makes reading the main proof
-easier to follow by not having us get sidetracked with
-the technicalities of a step we want to make.
-These mini-theorems are called ``Lemmas''
-and we’re going to make one to help with proving the uniqueness part
-of the Basis Representation Theorem. We're going to make use of the
-Euclidean Division Theorem in proving our lemma.
-
-\section*{Lemma}
-\begin{jprIn}
-Let $b, q, r \in{} \mathbb{Z}$ such that $b>0$ and $0\le{}r\le(b-1)$, then
-\[0=qb+r\]
-if and only if $q=0$ and $r=0$.
-\end{jprIn}
-
-\section*{Proof of Lemma}
-\begin{jprIn}
-Let $b, q, r \in{} \mathbb{Z}$ such that $b>0$ and $0\le{}r\le{}(b-1)$.
-
-If $q=0$ and $r=0$, then
-\[qb+r=0\cdot{}b+0=0\]
-but also, by the Euclidean Division Theorem since $q$ and $r$ are unique for every dividend and divisor $b>0$,
-then we can also conclude that if $0=qb+r$ then $q=0$ and $r=0$ must be true, otherwise the quotient and remainder
-would not be unique.
-
-QED
-\end{jprIn}
-
-\section*{Uniqueness Proof of the Basis Representation Theorem}
-
-Assume $n$ is not unique and that,
-\begin{align*}
-n&=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\text{, and}\\
-n&=c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0
-\end{align*}
-Let's further suppose that the index $j$ is the lowest power such that the digits $d_j\ne{}c_j$ and without any loss of generality,
-let's assume that $d_j>c_j$.
-
-Therefore\footnote{Please read the bidirectional arrow symbol $\Leftrightarrow$ as ``if and only if'' - it's like a logical ``equals'' sign}:
-\begin{align*}
-& c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b\\
-\Leftrightarrow\;\;\;\;&0=(d_k-c_k)b^k+(d_{k-1}-c_{k-1})b^{k-1}+\dots+(d_j-c_j)b^j\\
-\Leftrightarrow\;\;\;\;& \frac{0}{b^j}=\frac{(d_k-c_k)b^k+(d_{k-1}-c_{k-1})b^{k-1}+\dots+(d_j-c_j)b^j}{b^j}\text{, since }b\ne0\\
-\Leftrightarrow\;\;\;\;& 0=(d_k-c_k)b^{k-j}+(d_{k-1}-c_{k-1})b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})b+(d_j-c_j)\\
-\Leftrightarrow\;\;\;\;& 0=\big((d_k-c_k)b^{k-j-1}+(d_{k-1}-c_{k-1})b^{k-j-2}+\dots+(d_{j+1}-c_{j+1})\big)b+(d_j-c_j)
-\end{align*}
-Let $q=\big((d_k-c_k)b^{k-j-1}+(d_{k-1}-c_{k-1})b^{k-j-2}+\dots+(d_{j+1}-c_{j+1})\big)$, then
-\[0=qb+(d_j-c_j)\]
-Since $0\le(d_j-c_j)\le(b-1)$ and $b>0$ then by our lemma we know that\\
-$q=0$ and $d_j-c_j = 0$.
-
-But $d_j-c_j = 0$ if and only if $d_j = c_j$
-which contradicts our assumption that $d_j\ne{}c_j$. This implies that the initial assumption that ``$n$
-is not unique'' is \emph{false}, in other words:
-\begin{center}
-The base-$b$ representation of $n$ is unique.
-\end{center}
-Therefore since we have proven that there exists a base-$b$ representation of ALL the nonnegative integers, \emph{and}
-that this representation is unique for ALL such integers, then we have proven the Basis Representation Theorem.
-
-QED
-
-\section*{Epilogue}
-
-Thanks for taking that little ride - if you got this far,
-then I'd love to give you 50 gold stars!
-In addition, being Canadian, I feel compelled to apologize for a couple of things.
-
-First, if I turned you off math more than you were before,
-then I failed miserably!  For that you deserve a HUGE Canadian apology.
-
-Second, if this paper did turn you off
-then I might not blame you as this proof is hardly what one would call elegant.
+However, truth be told, the proof that I provide below is a little on the tedious and heavy going side - not really
+the a great introductory proof for the first time mathematician.
 In fact here's what one of the
 world's greatest Mathematicians\footnote{along with the aforementioned Gauss and Euclid.},
-G.~H.~Hardy, had to say about
-proofs like this\footnote{coincidentally in an essay he wrote called ``A Mathematician's Apology''.}:
+G.~H.~Hardy, had to say about such
+proofs\footnote{in an essay he wrote called ``A Mathematician's Apology''.}:
 
 \begin{jprIn}
 ``We do not want many `variations' in the proof of a mathematical
@@ -1026,15 +750,18 @@ should resemble a simple and clear-cut constellation, not a scattered
 cluster in the Milky Way.''
 \end{jprIn}
 
-I couldn't agree more, however, a more elegant proof along the lines
-of what Hardy argues for is possibly provided by George E. Andrews in his
-introductory book called ``Number Theory''. Andrew's proof is cool,
-and the logic inescapable, but not an obvious way to approach the problem.
-Perhaps it's a little too out there for our Sesame-Street-plus-plus
-approach that this paper is going for. Like I mentioned in a footnote above,
-if you want to check it out, it's easy to find on the web at the site ``ProofWiki''.
+I couldn't agree more which is why I'm pushing the proof to a section at the end of this paper, which you may
+feel entirely free to skip.
+I still invite you to to take a stab at following it, I tried my best to make it clear, but don't feel bad if it
+makes your head hurt. If you do try to follow it - it does have some points of interest - not the least
+of which is that it is correct.
+Yes it works,  perhaps not as elegantly as Mr. Hardy could provide to us - I'm no G.H. Hardy.
 
-I encourage you to try your hands at the following exercises.  Answers are supplied - but don't peek until you try them yourself!
+At any rate, I do thank you for reading this far, and hope you found this to be of some interest.
+
+I encourage you to try your hands at the following exercises, I know at this point
+you have the tools to answer the questions.  Also, the 
+answers are supplied below - but please don't peek until you try the questions yourself!
 
 \break
 \section*{Exercises}
@@ -1119,4 +846,266 @@ Then,
 \end{align*}
 QED
 \end{enumerate}
+
+\break
+\section*{Appendix - The Proof!}
+We are going to use two techniques to prove the Basis Representation Theorem.
+
+First we will prove that there is such a representation for all
+integers $n$ (existence proof) using the principle of mathematical induction.
+Meaning that every integer has a way of being written
+in the form described by the theorem - especially as
+relates to the restrictions on the values that the ``digits" can take on.
+
+Here's a little insight into how the existence proof works, but applied to a specific number in base-ten:
+All we want to show is that for any number, if you add 1 to it, that it's also possible to express it as a valid number in base-ten.
+
+For example, adding 1 to 69412995 gives us 69412996, which is pretty trivial to show that it's valid in base-ten, only the least-significant digit was
+changed, and it's clearlly within the range of 0\dots{}9.
+
+But what about dealing with a ``carry'', for example 
+if we were adding 1 to 69412999? We'd need to algebraically capture the idea of the carry.  The way
+we do it in the proof is essentially to say that $69412999 = 69410000 + 2999 = 69410000 + (3000-1)$ so that when we add one to it, then
+it's clear that the answer is just:
+\[69412999 + 1 = 69410000 + (3000-1) + 1 = 69410000 + 3000 + (-1 + 1) = 69413000\]
+Secondly, we will use another technique, called proof by contradiction,
+to prove that each such representation is unique - in other
+words there aren't two (or more) ways to represent the same integer in base-$b$.
+
+\section*{Existence Proof of the Basis Representation Theorem}
+
+Base case:
+\begin{jprIn}
+The Principle of Mathematical Induction always starts with 1\footnote{The Principle of Mathematical induction only talks about positive integers, not zero}, but we also need to take
+care of the slightly special case of $n=0$; so let's take care of $n=0$ AND $n=1$ which will serve as our base induction step.
+
+Let $n=0$.
+
+\begin{jprIn}
+We can choose $k=0$ and $d_0=0$.
+(This is the one exception spelled out in the theorem in
+which the most significant digit of n is allowed to be zero.) Then,
+\[n=d_0b^0=0\times{}b^0=0\]
+showing that we have a valid representation for 0 in base-$b$ since our only digit\\
+$d_0=0\le(b-1)$, for all $b\ge2$.
+\end{jprIn}
+
+\break
+Now let $n=1$.
+
+\begin{jprIn}
+In this case, we can choose $k=0$ and $d_0=1$.  Then,
+\[n=d_0b^0=1\times{}b^0=1\times{}1=1\]
+showing that we have a valid representation for 1 in base-$b$ since\\
+$d_0=1\le(b-1)$, for all $b\ge2$.
+\end{jprIn}
+\end{jprIn}
+\bigskip
+
+Induction Case:
+
+\begin{jprIn}
+Assume that $n$ has a valid representation in base-$b$,
+that is, $n$ can be written thus: 
+\[n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\]
+with all the appropriate conditions holding for the
+values of $d_i$, $b$ and $k$;
+and we will prove that $n+1$ also has a valid representation in base-$b$.
+
+We're going to break this step into two cases which cover all possibilities.
+
+Case 1) $d_0\le(b-2)$
+
+\begin{jprIn}
+This case examines when the least significant
+digit of $n$ is \emph{strictly-less-than} the largest value it can take in base-$b$.
+For example, in base-two $d_0$ can only be zero;
+In base-five $d_0$ can be at most three;
+In base-ten $d_0$ can be at most eight, etc.
+This case is
+quite easy to deal with, so let's quickly dispense with it\footnote{It will be helpful at this point to recall the axiom of ``Distribution'' that is $a(b+c)=ab+ac$;
+In fact, it might not hurt to do a quick refresh of some of the others as well, ``Associativity''': $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$, ``Commutativity'': $a+b=b+a$ and $ab=ba$, ``Existence of inverses and identities'': $a+0=a$ and $a\times1=a$ and $a+(-a)=0$. Note: in general integers do NOT have multiplicative inverses.}.
+\begin{align*}
+n &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\\
+&\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\text{if and only if,}\\
+n+1 &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + 1\\
+&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + b^0\\
+&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1 + (d_0+1)b^0
+\end{align*}
+and our by assumption that $d_0\le(b-2)$, then
+\[(d_0+1)\le(b-2)+1=(b-1)\]
+showing us that the ``least significant digit"
+of $n+1$, being $(d_0+1)$, is less than or equal to $(b-1)$ which means that
+$(d_0+1)$ is a valid digit in base-$b$.
+
+Since all the other $d_i$ terms ($d_1,d_2,\dots,d_k$)
+for $n+1$ are unchanged from their values for
+$n$ then all the digits of $n+1$ are valid in base-$b$.
+
+Therefore we've established the truth of ``Case 1" for the integer $n+1$.
+\end{jprIn}
+\bigskip
+
+\filbreak
+Case 2) $d_0=(b-1)$
+\begin{jprIn}
+Now we'll look at the case when the least significant digit of $n$ is equal
+to the largest value it can take in base-$b$, that is,
+$d_0=(b-1)$.
+(Note that  ``Case 1" and ``Case 2" cover all the possibilities for what $d_0$ can be.)
+For example in base-two
+$d_0=1$; in base-five
+$d_0=4$; in base-ten $d_0=9$, etc.
+
+%\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+Let $j\in \mathbb{Z}_{\ge 0}$ be the lowest power of $b$ such that $d_j<(b-1)$,
+meaning we can write $n$ as follows (\dots{}in other words all the digits to the right of $d_j$ are equal to $(b-1)$):
+\[n = d_kb^k+d_{k-1}b^{k-1}+\dots+d_jb^j+(b-1)b^{j-1}+\dots+(b-1)b^1+(b-1)b^0\]
+For example,
+if $n=69412999$,
+then $j=3$,
+since $10^3$ is the lowest power of 10 such that its digit $d_3$ is less than 9 (it's 2).\footnote{It will
+be helpful at this point to recall some rules of exponents, that is $a^ba^c=a^{b+c}$.}
+\begin{align*}
+n &=d_kb^k+\dots+d_jb^j+(b-1)b^{j-1}+\dots+(b-1)b^1+(b-1)b^0\\
+&= d_kb^k+\dots+d_jb^j+(b^j-b^{j-1})+(b^{j-1}-b^{j-2})+\dots+(b^2-b^1)+(b^1-b^0)\\
+&= d_kb^k+\dots+(d_jb^j+b^j)+(-b^{j-1}+b^{j-1})+\dots+(-b^2+b^2)+(-b^1+b^1)-b^0\\
+&= d_kb^k+\dots+(d_j+1)b^j-b^0\\
+&= d_kb^k+\dots+(d_j+1)b^j-1
+\end{align*}
+Therefore,
+\begin{align}
+n+1 &=d_kb^k+\dots+(d_j+1)b^j-1+1 \nonumber \\
+&= d_kb^k+\dots+(d_j+1)b^j \label{eqnA}
+\end{align}
+Since we picked $j$ such that $d_j<(b-1)$,
+we can restate the inequality as\\
+$d_j\le(b-2)$ therefore,
+\[(d_j+1)\le(b-2)+1=(b-1)\]
+meaning the $j$\textsuperscript{th} digit of $n+1$ is a valid base-$b$ digit.
+
+All digits $d_k,\dots,{}d_{j+1}$ remain unchanged from the base-$b$ representation of $n$,
+and all digits $d_{j-1},\dots{},d_0$ are 0.
+
+Therefore all the digits of the base-$b$ representation of $n+1$ are valid in base-$b$.
+\bigskip
+
+If you've been fastidiously following the conditions on our subscript $j$ above, then
+you may notice that
+our proof doesn't leave room for the case that \emph{all} the digits are equal to $(b-1)$ because of
+how we defined $j$. For example when $n=99999$.
+
+Let's attend to this remaining detail.
+
+\break
+Suppose $d_i=(b-1)$ for all $0\le{}i\le{}k$, then let $d_{k+1}=0$ and $j=k+1$.
+
+All the arguments we just made are essentially the same so picking up at equation (1) above, with our new terms, we have:
+\begin{align*}
+n+1 &=(d_j+1)b^j\\
+&=(d_{k+1}+1)b^{k+1}\\
+&=(0+1)b^{k+1}\\
+&=b^{k+1}
+\end{align*}
+Meaning that $n+1$ now has a $(k+1)$\textsuperscript{st} digit and it's equal to 1,
+with all the rest of the digits being 0 - which is a valid representation for $n+1$ in base-$b$ for all $b\ge2$.
+\end{jprIn}
+Therefore 
+by the principle of mathematical induction,
+we have proven that there is a base-$b$ representation for all nonnegative integers.
+\end{jprIn}
+\bigskip
+
+In order to proceed
+with proving the uniqueness aspect of the Basis Representation Theorem, we
+need to make use of a well established theorem
+called the ``Euclidean Division Theorem''.
+It sounds onerous, but don’t worry, you all learned it
+in the third grade but perhaps not so formally, you called it ``long division''. It simply states the following:
+
+\section*{Euclidean Division Theorem}
+\begin{jprIn}
+For all $a,b\in{}\mathbb{Z}$ where $b>0$, there exists unique integers $q$ and $r$ such
+that
+that\footnote{Actually the theorem is stronger than we have stated here. Specifically, it only requires that $b\ne0$, however
+to keep the remainder positive, the restriction on $r$ is stated like
+this $0 \le r \le (\left|b\right|-1)$ to deal with the possibility that $b$ might be negative.}:
+\[a=qb+r  \text{ and } 0\le{}r\le{}(b-1)\]
+Definition: In the above equation:
+\begin{jprIn}
+\begin{tabular}{l l}
+a is the \emph{dividend} & (``the number being divided'')\\
+b is the \emph{divisor} & (``the number doing the dividing'')\\
+q is the \emph{quotient} & (``the result of the division'')\\
+r is the \emph{remainder} & (``the leftover'')
+\end{tabular}
+\end{jprIn}
+\end{jprIn}
+This is how you first learned to divide.
+For example if someone asks you ``What is nineteen divided by three?'', you’d
+answer ``six with one remaining''. Here 19 is the \emph{dividend},  3 is the \emph{divisor},
+6 is the \emph{quotient} and 1 is the \emph{remainder}. Written in the form of the theorem:
+\[19=6\times3+1\]
+Often proofs make use of little mini-theorems of their own.
+Creating these mini-theorems is a way to simplify a step in
+the main proof by establishing a useful non-trivial
+intermediary result. It makes reading the main proof
+easier to follow by not having us get sidetracked with
+the technicalities of a step we want to make.
+These mini-theorems are called ``Lemmas''
+and we’re going to make one to help with proving the uniqueness part
+of the Basis Representation Theorem. We're going to make use of the
+Euclidean Division Theorem in proving our lemma.
+
+\section*{Lemma}
+\begin{jprIn}
+Let $b, q, r \in{} \mathbb{Z}$ such that $b>0$ and $0\le{}r\le(b-1)$, then
+\[0=qb+r\]
+if and only if $q=0$ and $r=0$.
+\end{jprIn}
+
+\section*{Proof of Lemma}
+\begin{jprIn}
+Let $b, q, r \in{} \mathbb{Z}$ such that $b>0$ and $0\le{}r\le{}(b-1)$.
+
+If $q=0$ and $r=0$, then
+\[qb+r=0\cdot{}b+0=0\]
+but also, by the Euclidean Division Theorem since $q$ and $r$ are unique for every dividend and divisor $b>0$,
+then we can also conclude that if $0=qb+r$ then $q=0$ and $r=0$ must be true, otherwise the quotient and remainder
+would not be unique. QED
+\end{jprIn}
+
+\section*{Uniqueness Proof of the Basis Representation Theorem}
+
+Assume $n$ is not unique and that,
+\begin{align*}
+n&=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\text{, and}\\
+n&=c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0
+\end{align*}
+Let's further suppose that the index $j$ is the lowest power such that the digits $d_j\ne{}c_j$ and without any loss of generality,
+let's assume that $d_j>c_j$.
+
+Therefore\footnote{Please read the bidirectional arrow symbol $\Leftrightarrow$ as ``if and only if'' - it's like a logical ``equals'' sign}:
+\begin{align*}
+& c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b\\
+\Leftrightarrow\;\;\;\;&0=(d_k-c_k)b^k+(d_{k-1}-c_{k-1})b^{k-1}+\dots+(d_j-c_j)b^j\\
+\Leftrightarrow\;\;\;\;& \frac{0}{b^j}=\frac{(d_k-c_k)b^k+(d_{k-1}-c_{k-1})b^{k-1}+\dots+(d_j-c_j)b^j}{b^j}\text{, since }b\ne0\\
+\Leftrightarrow\;\;\;\;& 0=(d_k-c_k)b^{k-j}+(d_{k-1}-c_{k-1})b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})b+(d_j-c_j)\\
+\Leftrightarrow\;\;\;\;& 0=\big((d_k-c_k)b^{k-j-1}+(d_{k-1}-c_{k-1})b^{k-j-2}+\dots+(d_{j+1}-c_{j+1})\big)b+(d_j-c_j)
+\end{align*}
+Let $q=\big((d_k-c_k)b^{k-j-1}+(d_{k-1}-c_{k-1})b^{k-j-2}+\dots+(d_{j+1}-c_{j+1})\big)$, then
+\[0=qb+(d_j-c_j)\]
+Since $0\le(d_j-c_j)\le(b-1)$ and $b>0$ then by our lemma we know that\\
+$q=0$ and $d_j-c_j = 0$.
+
+But $d_j-c_j = 0$ if and only if $d_j = c_j$
+which contradicts our assumption that $d_j\ne{}c_j$. This implies that the initial assumption that ``$n$
+is not unique'' is \emph{false}, in other words:\\
+\centerline{The base-$b$ representation of $n$ is unique.}
+
+Therefore since we have proven that there exists a base-$b$ representation of ALL the nonnegative integers, \emph{and}
+that this representation is unique for ALL such integers, then we have proven the Basis Representation Theorem.
+
+QED
 \end{document}
