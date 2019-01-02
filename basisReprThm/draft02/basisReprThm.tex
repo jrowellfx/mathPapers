@@ -172,9 +172,11 @@ Roman system only effectively allowed counting up to 4999.
 Using base-ten for us is automatic,
 we barely think about it when we're adding numbers or multiplying
 them - but it's worth looking carefully at how base-ten
-works - so let's examine it from the ground up\footnote{Please forgive the incredibly obvious nature of much
+works - so let's examine it from the ground up\footnote{Please forgive
+the incredibly obvious nature of much
 of the following discussion, but I want to take a good running start
-at some more unfamiliar notions. Perhaps looking at the familiar with fresh eyes will help in seeing the new ideas easier.}.
+at some more unfamiliar notions.
+Perhaps looking at the familiar with fresh eyes will help in seeing the new ideas easier.}.
 
 It's useful to have simple symbols to represent each of the integers from one to nine,
 namely our familiar 1, 2, 3, 4, 5, 6, 7, 8 and 9
@@ -231,19 +233,25 @@ $10^k$ means there are $k$ tens multiplied together -
 also written as a 1 followed by $k$ zeros\footnote{$k$ is called the ``exponent'' and you should
 read the symbol $10^k$ as ``ten-raised-to-the-$k$\textsuperscript{th}-power'' or ``ten-to-the-k'',
 so $10^2$ is ``ten raised to the second power'' or $10^4$ is ``ten-to-the-fourth''.
-You may also see $10^2$ referred to as ``ten squared'', similarly $10^3$ as ``ten cubed'' - but since we 
-don't live in 4 dimensional hyperspace, we don't have a way of saying $10^4$ that has geometric meaning.}.
-The above list explicitly shows the cases for $k = 2$, 3 and 4.
+You may also see $10^2$ referred to as ``ten squared'',
+similarly $10^3$ as ``ten cubed'' - but since we 
+don't live in 4 dimensional hyperspace,
+we don't have a way of saying $10^4$ that has geometric meaning.}.
+The above list explicitly shows the cases for $k = 2, 3$ and $4$.
 Using the $k$ like that is just a way to show that we can pick ANY whole number,
 i.e., there is no limit on how big $k$ can be.
 
 The notation of $10^k$ is very handy, in fact it extends
 to the case when $k=0$ and $k=1$.
 %\footnote{$10^k$ also extends to the cases
-%when $k$ is negative as in $10^{-1}$, or $10^{-2}$, etc. which means $\frac{1}{10}$ and $\frac{1}{100}$ respectively
-%but those are called ``rational numbers''. We aren't concerning ourselves with rational numbers in this paper.}
+%when $k$ is negative as in $10^{-1}$, or $10^{-2}$, etc.
+%which means $\frac{1}{10}$ and $\frac{1}{100}$ respectively
+%but those are called ``rational numbers''. We aren't concerning
+%ourselves with rational numbers in this paper.}
 
-So $10^1$ means\footnote{Don't forget to read $10^1$ as ``ten-to-the-one''.} that there is only one ten multiplied together, or one ``0" following the ``1",
+So $10^1$ means\footnote{Don't forget to read $10^1$
+as ``ten-to-the-one''.} that there is only one ten multiplied together,
+or one ``0" following the ``1",
 in other words just the number ten itself.
 
 How about when $k=0$?
@@ -251,9 +259,11 @@ Examining the pattern of how the power $k$ relates to how many zeros follow the 
 (eg, $10^1=10$, $10^2=100$, $10^3=1000$,
 etc.) then it must be the case that $10^0=1$,
 i.e., no zeros follow the ``1", which is exactly right.
-Furthermore every number raised to the 0\textsuperscript{th} power~is~1.\footnote{Proof: Since $a^{b+c}=a^ba^c$ consider when $c=0$; that is,
- $a^b=a^{b+0}=a^ba^0$ so because of the uniqueness of the multiplicative identity ``1'', then $a^0$ \emph{must} be 1 since it's behaving 
- like a ``1'' in the expression $a^b=a^ba^0$.}
+Furthermore every number raised to the 0\textsuperscript{th}
+power~is~1.\footnote{Proof: Since $a^{b+c}=a^ba^c$ consider when $c=0$; that is,
+$a^b=a^{b+0}=a^ba^0$ so because of the uniqueness
+of the multiplicative identity ``1'', then $a^0$ \emph{must} be 1 since it's behaving 
+like a ``1'' in the expression $a^b=a^ba^0$.}
 
 Let's look at an example.
 Reading the number 92507 out according to our technique we can see
@@ -273,9 +283,12 @@ plus zero lots of ten, plus seven units":
 \end{tabular}
 \end{center}
 
-Written\footnote{Recall the mnemonic ``bedmas'' for the ``\href{https://en.wikipedia.org/wiki/Order_of_operations}{Order of Operations}'' in
-evaluating an expression, which is no different from what we did in our table above the expression.}
-in terms of powers-of-ten: $92507=9{\times{}}10^4+2{\times{}}10^3+5{\times{}}10^2+0{\times{}}10^1+7{\times{}}10^0$.
+Written\footnote{Recall the mnemonic ``bedmas'' for
+the ``\href{https://en.wikipedia.org/wiki/Order_of_operations}{Order of Operations}'' in
+evaluating an expression, which is no different from
+what we did in our table above the expression.}
+in terms of powers-of-ten:
+$92507=9{\times{}}10^4+2{\times{}}10^3+5{\times{}}10^2+0{\times{}}10^1+7{\times{}}10^0$.
 
 You can think of each digit as being a little dial that controls how many lots
 of its corresponding power-of-ten will contribute to the value of the integer. Please note
@@ -342,7 +355,7 @@ in our theorem. We might say something like:
 \begin{jprIn}
 Every integer has a representation in base-ten.
 \end{jprIn}
- 
+
 Something else we know intuitively is that each number written
 in base-ten represents only ONE integer. It's almost feels silly to spell it out, but if we were to count out
 4 piles of 100-apples-each-pile, then 9 piles of 10-apples-each-pile, then count out 9 additional apples, \emph{then}
@@ -547,7 +560,7 @@ The answer is, we can't - at least not without acknowledging it somehow.
 
 We have a couple of choices.  Since we don't have an actual symbol for the integer ten, we have to make one up. The first possibility is:
 \begin{jprIn}
- Let $T$ represent the integer ten.
+Let $T$ represent the integer ten.
 
 For every positive integer $n$ there is a unique sequence of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
 
@@ -564,7 +577,7 @@ it looks so nice!
 \break
 \section*{Base-Ten Representation Theorem}
 \begin{jprIn}
- Let ${1\hspace{-0.12em}0}$ represent the integer ten.
+Let ${1\hspace{-0.12em}0}$ represent the integer ten.
 
 For every positive integer $n$ there is a unique sequence of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
 
@@ -765,10 +778,12 @@ and $(\text{F})_{16}=15$ as base-sixteen digits, then:
 \section*{Epilogue}
 At this point we really ought to get to the proof of the ``Basis Representation Theorem''.
 
-However, truth be told, the proof that I have outlined below is a little heavy going - not difficult,
+However, truth be told, the proof supplied below
+is a little heavy going - not difficult,
 but not really a great introductory proof for the first time mathematician.
 In fact here's what one of the
-world's greatest mathematicians\footnote{along with the Gauss and Euclid mentioned later in this paper.},
+world's greatest mathematicians\footnote{along with the Gauss
+and Euclid mentioned later in this paper.},
 G.~H.~Hardy, had to say about such
 proofs\footnote{in an essay he wrote called ``A Mathematician's Apology''.}:
 
@@ -780,13 +795,19 @@ should resemble a simple and clear-cut constellation, not a scattered
 cluster in the Milky Way.''
 \end{jprIn}
 
-I couldn't agree more which is why I'm pushing the proof to a section at the end of this paper, which you may
+I couldn't agree more which is why I'm pushing the proof to
+a section at the end of this paper, which you may
 feel free to skip.
-I still invite you to to take a stab at following it, I tried my best to make it clear, but don't feel bad if it
-makes your head hurt. If you do try to follow it - it does have some points of interest - not the least
-of which is that it works - perhaps not as elegantly as Mr. Hardy could provide to us, but I'm no G. H. Hardy.
+I still invite you to to take a stab at following it,
+I tried my best to make it clear and interesting,
+but don't feel bad if it
+makes your head hurt. If you do try to follow it - it does
+have some points of interest - not the least
+of which is that it works - perhaps not as elegantly as
+Mr. Hardy could provide to us, but I'm no G. H. Hardy.
 
-I think at this point you are well equipped you to try your hands at a couple of exercises for fun. If you get stuck, or to
+I think at this point you are well equipped you to try
+your hands at a couple of exercises for fun. If you get stuck, or to
 check your work, the
 answers are also supplied below - but please don't peek until you try the questions yourself!
 
@@ -861,7 +882,8 @@ we think about generating the set of positive integers as a process that builds 
 That is, each successive integer is one more than the previous one,
 starting at 1, then one more
 taking us to 2,
-then 3, 4, 5, \dots{}ad~infinitum\footnote{``ad infinitum'' means ``to infinity'', or ``continue forever, without limit''.}\dots
+then 3, 4, 5, \dots{}ad~infinitum\footnote{``ad
+infinitum'' means ``to infinity'', or ``continue forever, without limit''.}.
 
 This idea of being able to step one after the other,
 beginning at 1 and going forever is embodied within the ``Principle of Mathematical
@@ -948,9 +970,11 @@ and prove that it must also be true for $n+1$:
 Which proves young Gauss's expression is true for
 the positive integer $n+1$ whenever it's true for $n$ - then
 by the principle of mathematical induction,
-the expression is true for all positive integers. QED\footnote{``QED'' - is often used at the conclusion of a proof to state that it’s
-done - it’s an acronym for the Latin phrase ``quod erat demonstrandum'' which means ``that which was to be demonstrated''.
-In other words we’ve proven what we set out to prove.}
+the expression is true for all positive integers. QED\footnote{``QED'' - is
+often used at the conclusion of a proof to state that it's
+done - it's an acronym for the Latin phrase
+``quod erat demonstrandum'' which means ``that which was to be demonstrated''.
+In other words we've proven what we set out to prove.}
 
 \section*{Intermission: Extra Exercise}
 If $b, n$ are nonnegative integers and $b\ne1$ then prove,
@@ -975,21 +999,76 @@ Then,
 \end{align*}
 QED
 \section*{Proof of the  Basis Representation Theorem}
-So how to prove the theorem?  We're going to prove the theorem by following our
-experience with and intuition about about base-ten numbers.
-For example, the odometer in your car - as you keep adding one to the 
-miles, it keeps making a new base-ten number, it keeps rolling along, making new base-ten numbers, each a new one
-and each one with well defined meaning in base-ten.
-Each one is a totally valid base-ten number.
-We could have an odometer that rolls off binary digits - same idea.  See binary odometer gif.
+How do we prove our theorem? There are several ways to approach it.
 
-But that odometer trick is only one possible way tthat we could have made a base-ten number -
-there might some magic box that also makes them. Maybe it makes them differently?
-Well - let's assume that this magic box does exist and that it made a different base-ten number for the
-same integer... then we show that this is impossible.  That proves that there is only one way 
-to make them.
+The mathematician George E. Andrews (in his book
+``Number Theory") has an interesting proof.
+He asks us to imagine a function that, given an integer,
+counts the number of base-$b$ representations that the integer has.
+Then with a series of inequalities he shows that this counting function
+MUST produce a count of ``1" for each integer, both establishing the uniqueness 
+and the existence in one fell swoop.
+Cool proof - and it's short and tight, I'll bet G. H. Hardy would approve of
+it from an aesthetic standpoint.
 
-So the odometer idea is captured by Mathematical Induciton.
+We could also use the Euclidean Division Theorem to prove our
+theorem.
+We can show that by repeatedly dividing our integer $n$ by $b$
+that we'd get a series of remainders that we could use for our base-$b$-digits of $n$.
+This is an interesting proof in that it also gives us a technique
+to construct a base-$b$ represenation of each integer.
+If we were to go down this road
+we would try to generalize how we solved
+exercise number 2-iii) above, it's worth a try for fun.
+
+However, we're going to follow a much more straightforward approach,
+albeit one that might not meet with G. H. Hardy's asthetic seal-of-approval
+as it involves looking at different ``cases". This approach risks making
+the proof potentially tedious to follow - but we'll try to keep it light
+and bouncy.
+
+The good news is that our proof will follow our intuition and experience with
+how we count (in base-ten) from our Sesame Street days.
+
+Consider the odometer in your car - for every extra mile
+you drive the odometer keeps rolling along
+making a new base-ten number in its display.
+If your odometer stretched off to the horizon on your left,
+then it's pretty easy to see that there is
+no limit on how big a number the odometer could count to.
+There's no reason that our odometer has to count in base-ten either,
+it could be a binary odometer with only the digits one and two in each of the 
+little dials that turn, always
+rolling off the miles, but showing the result in base-two.
+See binary odometer gif.
+
+The idea of the odometer can be formalized by using
+the Principle of Mathematical Induction that we introduced earlier,
+which we're going to use to prove that every integer has a base-$b$ representation.
+
+In order to see why
+our imaginary odometer
+approach (i.e.; induction) might not lead to the "uniquness" aspect of 
+the theorem, also imagine
+a magic box
+that also makes base-$b$ representations for each
+integer - and imagine that this box makes a different representation from our odometer.
+It's possible! Why not - we weren't careful to show that induction is the ONLY way
+to generate a base-$b$ representation of each number.
+In fact we just talked about another possible "magic box" that generates base-$b$ 
+representations of each interger - that is;
+we could use the Euclidean Division Theorem idea
+above as another way to generate base-$b$ digits.
+
+So - let's assume that this magic box exists and that it
+generates a different base-$b$ representation for a given integer.
+Then we'll show that having two different ways to represent the same integer
+leads to a logical contradiction.  So either our
+assumption is wrong or the axioms are.
+Since we're VERY confident in the axioms being correct we can only 
+conclude that our assumption must be wrong - meaning
+that there is only \emph{one} way 
+to make a base-$b$ represenation for each integer.
 
 Here's a little insight into how the existence (odometer) proof works, but applied to a specific number in base-ten:
 All we want to show is that for some number, if you add 1 to it, that it's also possible to express it as a valid number in base-ten.
