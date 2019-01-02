@@ -417,20 +417,17 @@ Every integer has a \emph{unique} representation in base-ten.
 \end{jprIn}
 
 \bigskip
-We know that for every non-zero integer,
-there exists another unique integer
-such that if you add them together you get zero, or algebraically:
-\[\text{For all integers }a\ne0\text{ there exists a unique integer }{-}a\text{ such that }a+(-a)=0\]
-This means that EVERY positive integer has a unique negative counterpart.
+We can also restrict our theorem to positive integers, becauase
+we know that for every positive integer
+there exists a unique negative integer
+(such that if you add them together you get zero).
 So if we can prove the
 Base-Ten Representation Theorem for the positive integers then we
-can easily extend it to the negative integers with a corollary.
-Our corollary will say something like ``Slap a `-' (minus)
+can easily extend it to the negative integers (and zero) with a corollary.
+Our corollary could say something like ``Slap a `-' (minus)
 sign in front of the positive base-ten representation to 
 get a unique representation for
 it's negative counterpart'' \dots{}or some such words.
-Also zero is easy to deal with separately, so to keep our lives
-simple let's restrict our attention to only proving the theorem for positive integers.
 
 Also, moving forward it would be helpful to have a name for our 
 positive integer so that we can refer to it directly - how about $n$ for ``number'':
@@ -483,7 +480,7 @@ to the reader. Why even talk about nine when the theorem is about base TEN?
 n =\ &9{\cdot}10^4+2{\cdot}10^3+d{\cdot}10^2+0{\cdot}10^1+7{\cdot}10^0,\text{ where}\\
 &d\text{ is an integer such that }0\le{}d<10
 \end{align*}
-This statement for $n$ only represents the integers 92007 to 92907, so let's come up
+This statement for $n$ only represents the integers 92007, 92107, \dots{} 92907, so let's come up
 with a statement for $n$ that will allow us to generate ANY five-digit number from 10000 
 the way up to 99999 (which is a complete list of all the five-digit numbers).
 
@@ -957,7 +954,7 @@ then what is 185190 expressed in base-twenty-three?
 \break
 \section*{The Principle of Mathematical Induction}
 
-As we discussed way up at the top of this essay,
+As we discussed way up at the top of this paper,
 we think about generating the set of positive integers as a process that builds them up one by one.
 That is, each successive integer is one more than the previous one,
 starting at 1, then one more
@@ -1216,43 +1213,46 @@ to make a base-$b$ representation for each integer.
 Without further adieu, let's get to the actual proofs!
 
 \section*{Existence Proof of the Basis Representation Theorem}
-Let $n$ and $b$ be positive integers such that $b\ge2$.\\
-Also let $k$ be a integer such that $k\ge0$.\\
-Furthermore let $i$ and $d_i$ be integers such that $0\le{}d_i\le{}(b-1)$ for all $i\ge0$.
+Let $b$ be a positive integer greater than 1.
 
-Prove:
-\begin{jprIn}
-$n$ can be represented as:
-\[n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\]
-for all $n$.
-\end{jprIn}
+We will show that for every positive integer $n$ there is a sequence
+of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
+
+\hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
+
+where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+
+%\begin{jprIn}
+%\end{jprIn}
+
+\bigskip
 Proof by induction on $n$.
 
-Base case:
-\begin{jprIn}
-Let $n=1$.
-
-\begin{jprIn}
-Choose $k=0$ and $d_0=1$.  Then,
-\[n=d_0b^0=1\cdot{}b^0=1\cdot{}1=1\]
-showing that we have a valid representation for 1 in base-$b$ since\\
-$d_0=1\le(b-1)$, for all $b\ge2$.
-\end{jprIn}
-\end{jprIn}
 \bigskip
-
-Induction Case:
+Base case, when $n=1$.
 
 \begin{jprIn}
-Assume that $n$ has a valid representation in base-$b$,
-that is, $n$ can be expressed as: 
-\[n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\]
-with all the appropriate conditions holding for $d_i$ and $k$ as outlined at the beginning of the proof;
-then we will prove that $n+1$ also has a valid representation in base-$b$.
+Let $d_0=1$.  Then,
 
-We're going to break this step into two cases which cover all possibilities.
+\hspace{3em}$n=d_0b^0=1\cdot{}b^0=1\cdot{}1=1$
+
+And since the digit ``1" is valid in any base $b>1$, this proves the base case.
+\end{jprIn}
 
 \break
+Induction Case:
+\begin{jprIn}
+Let $n$ be a positive integer, and assume that
+there is a sequence
+of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
+
+\hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
+
+where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+
+We will prove that $n+1$ can also be expressed in this form by
+looking at two cases.
+
 Case 1) $d_0<(b-1)$
 
 \begin{jprIn}
@@ -1260,16 +1260,17 @@ This case examines when the least significant
 digit of $n$ is \emph{strictly-less-than} the largest value it can take in base-$b$.
 For example, in base-two $d_0$ can only be zero;
 In base-five $d_0$ can be at most three;
-In base-ten $d_0$ can be at most eight, etc.
-This case is
-quite easy to deal with, so let's quickly dispense with it\footnote{Recall the axiom of ``Distribution'' that is $a(b+c)=ab+ac$}.
+In base-ten $d_0$ can be at most eight, etc.\footnote{Recall
+the axiom of ``Distribution'' that is $a(b+c)=ab+ac$}.
 \begin{align*}
-n &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\\
+n &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 &\text{(Induction Assumption.)}\\
 &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\text{if and only if,}\\
-n+1 &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + 1\\
-&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + b^0\\
-&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1 + (d_0+1)b^0
+n+1 &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + 1 &\text{(Add 1 to both sides.)}\\
+&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + b^0 &\text{(Restate 1 as }b^0\text{)}.\\
+&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1 + (d_0+1)b^0 &\text{(Factor out }b^0\text{)}.
 \end{align*}
+---jpr rewrite---
+
 we can restate our assumption that $d_0<(b-1)$ as $d_0\le(b-2)$, then
 \[(d_0+1)\le(b-2)+1=(b-1)\]
 showing us that the ``least significant digit"
