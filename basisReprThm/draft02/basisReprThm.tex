@@ -60,6 +60,7 @@
 %\usepackage{setspace}
 \usepackage{relsize}
 \usepackage{wasysym}
+%\usepackage{romannum}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -295,28 +296,32 @@ This way of breaking down the base-ten representation of a number into
 an algebraic expression can be done for EVERY string of decimal digits. It's the key to 
 understanding what a string of decimal digits means.
 
---jpr rewrite-- Think of each digit as being a little dial that controls how many lots
-of its corresponding power-of-ten will contribute to the value of the integer.
-Even the rightmost ``units'' digit (7 in our example) can be thought of as little dial
-that controls how many $10^0$'s (recall $10^0 = 1$!) contribute to the value of the integer.
-Writing it out like this we can see that there's nothing special about the units digit,
-it's just some number from 0 to 9 times a power-of-ten like any of the other digits.
-Including $10^0$ in the expression adds a kind of beauty because it shows us that all
-the digits can be treated with the same underlying idea.
+Recalling that $10^0 = 1$ you might wonder why we bother to multiply
+$7{\times{}}10^0=7{\times{}}1=7$ since there is no actual effect
+when multiplying by one.
+Even though it's not necessary, including the $10^0$ in the
+expression reveals a kind of mathematical symmetry.
+Each successive digit is multiplied by an ever
+decreasing power-of-ten, including
+the units digit,
+which is just some number from 0 to 9 times a power-of-ten
+like any of the other digits.
 
 Our example number 92507 only has five digits and it's biggest power-of-ten is $10^4$,
 but there's
 no limit on how big a power-of-ten could be involved in our expression.
 Look at ``a trillion and one'', i.e.; 1,000,000,000,001 which can be expressed as:
-\[1{\times{}}10^{12}+0{\times{}}10^{11}+0{\times{}}10^{10}+0{\times{}}10^{9}+\cdots{}+0{\times{}}10^{3}+0{\times{}}10^{2}+0{\times{}}10^{1}+1{\times{}}10^{0}\]
---jpr rewrite-- Let's look at another example - we don't have a word for this next number,
-and I don't have enough room on the page to write it out,
-but it would be twenty-thousand-and-one digits long, a
+\[1{\times{}}10^{12}+0{\times{}}10^{11}+0{\times{}}10^{10}+\cdots{}+0{\times{}}10^{2}+0{\times{}}10^{1}+1{\times{}}10^{0}\]
+%
+Or pushing that limit to silly heights we can also describe this next ludicrous number.
+It's twenty-thousand-and-one digits long, a
 ``7'' followed by 9999 zeros, then a ``3''
-followed by 9999 more zeros, then a ``5'':
+followed by 9999 more zeros, then a ``5'', which means this exactly:
 \[
 7{\times{}}10^{20000}+0{\times{}}10^{19999}+\cdots{}+0{\times{}}10^{10001}+3{\times{}}10^{10000}+0{\times{}}10^{9999}+\cdots{}+0{\times{}}10^{1}+5{\times{}}10^{0}\]
-How do we \emph{know} that we can create ALL the positive
+Clearly we can keep going as big as we want.
+
+But how do we \emph{know} that we can create ALL the positive
 integers with this scheme?
 How do we \emph{know} that we didn't miss one?
 How do we \emph{know} that some string of
@@ -383,7 +388,7 @@ Every integer has a representation in base-ten.
 \end{jprIn}
 
 \bigskip
---jpr rewrite, I vs you vs we --  Something else we know intuitively is that each number written
+Something else we know intuitively is that each number written
 in base-ten represents only ONE integer.
 It almost feels silly to spell it out, but if we were to count out
 4 piles of 100-apples-each-pile, then 9 piles of 10-apples-each-pile,
@@ -598,20 +603,15 @@ down to the next digit to its right which is $d_{k-1}$
 multiplied by ``ten-to-the-power-of-(kay-minus-one)''.})
 all the way down to the least-significant units-digit $d_0$ on the right.
 
-We are so darn close, but there is one picky detail that we have to be careful about.
-We can safely use the symbols for the integers from \emph{zero} to \emph{nine},
-as they exist independently from base-ten\footnote{as we discussed earlier
-these symbols: 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9 predate base-ten - they
-stand for the integers that represent our successive
-sized piles of apples from none, to \faApple{} up
-to \faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}.}.
-\emph{However} this theorem defines what base-ten means so how can we
-use ``10'' in our theorem?!  The answer is, we can't - at 
-least not without acknowledging it somehow.
+We are so darn close, but there is one super-picky detail
+that we should be concerned about.
+Our theorem establishes what it means to represent a number in base-ten, so until
+we've proven it, how can we actually use the first two-digit number ``10" to represent
+the integer ten!? We need a symbol for ten in the theorem,
+so what can we do?
 
-We have a couple of choices.
-Since we don't have an actual symbol for the integer ten,
-we have to make one up. The first possibility is:
+Apart from ``10" we don't have a symbol for the integer ten so
+we have to make one up:
 \begin{jprIn}
 Let $T$ represent the integer ten.
 
@@ -621,21 +621,15 @@ of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
 \hspace{3em}$n=d_k{\cdot}{T}^k+d_{k-1}{\cdot}{T}^{k-1}+\dots+d_2{\cdot}{T}^2+d_1{\cdot}{T}^1+d_0{\cdot}{T}^0$\\
 \dots{} etc.
 \end{jprIn}
-
---jpr rewrite - use smiley face for 10? -- The other choice is we could cheat a little,
-and define the symbol for \emph{ten} to be ``$1\hspace{-0.2em}0$''.
-I favor this approach for now, don't worry, it's not breaking any rules,
-you can go ahead and define things
-however you like in mathematics so long as it doesn't create inconsistencies.
-Anyway, we're not going
-to prove the Base-Ten Representation Theorem - we're going to keep digging,
-and eventually prove something more general where this problem disappears.
-But let's write it out anyway, since we've worked so hard to get this far PLUS
-it looks so nice!
-
+That's a little confusing, so 
+let's solve our problem by defining the 
+two digit number ``10" (i.e., a one followed by a zero) to be the integer ten.
+It's ok - we're not violating any rules by doing this. We're just defining
+a symbol (that we are familiar with) to stand in for the integer ten. Here's our
+FINAL draft of the theorem:
 \section*{Base-Ten Representation Theorem}
 \begin{jprIn}
-Let ${1\hspace{-0.12em}0}$ represent the integer ten.
+Let the two digit number ``${1\hspace{-0.12em}0}$" represent the integer ten.
 
 For every positive integer $n$ there is a unique
 sequence of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
@@ -646,8 +640,9 @@ where $0\le{}d_i<{1\hspace{-0.12em}0}$ for all $i$ in $\{0,1,2,\dots{},k\}$ and 
 
 Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\cdots}d_2d_1d_0$
 \end{jprIn}
-
 \bigskip
+
+\break
 Consider that base-ten is not the only base in use these days.
 Since the introduction of the EDVAC\footnote{You might be thinking, don't you
 mean ENIAC which was earlier? Actually no - the ENIAC
@@ -748,10 +743,14 @@ plus one lot of two, plus zero units":
 Written in terms of powers of two:
 $11010_{(\text{base-2})}=26=1\cdot2^4+1\cdot2^3+0\cdot2^2+1\cdot2^1+0\cdot2^0$.
 
-Each digit in base-two can be thought of as a little switch that
-turns on or off the contribution of its corresponding power-of-two.
-
-Look familiar? Let's restate our ``Base Ten Representation Theorem" but rewritten for base-two.
+Does that expression look familiar? It has exactly the same form
+as the expression for our five-digit base-ten number 92507.
+All the reasoning we used to come up with the statement of the ``Base-Ten
+Representation Theorem" can be used again, but swapping powers-of-two
+for powers-of-ten, and limiting the values for the digits
+to be zero or one.
+Following our line of reasoning this is what the Planet-Claire mathematicians would have
+come up with:
 
 \section*{Base-Two Representation Theorem}
 \begin{jprIn}
@@ -832,12 +831,29 @@ So to get the ``Base-Ten Representation Theorem'' let $b$ equal ten.
 To get the ``Base-Two Representation Theorem'' let $b=2$; or the ``Base-Nine Representation Theorem''
 let $b=9$; etc.
 
-Bonus: Because of the general nature of the ``Basis Representation Theorem''
-we also know that we can safely convert between
-different bases. (Why? \dots{}exercise left for the student).
+\bigskip
+The ``Basis Representation Theorem''
+implies that we can safely convert between
+different bases. Why? (Exercise left for student).
+
 Recall how we defined $(\text{A})_{16}=10$
 and $(\text{F})_{16}=15$ as base-sixteen digits, then:
-\[9,937,906=9\cdot{}16^5+7\cdot{}16^4+10\cdot{}16^3+3\cdot{}16^2+15\cdot{}16^1+2\cdot{}16^0=(\text{97A3F2})_{16}\]
+\[
+(\text{97A3F2})_{16}=9\cdot{}16^5+7\cdot{}16^4+10\cdot{}16^3+3\cdot{}16^2+15\cdot{}16^1+2\cdot{}16^0=9,937,906\]
+\dots{}which gives you an idea of how you can convert from an alternate base into base-ten.
+
+We should extend the Basis Representation Theorem to include all the integers.
+
+We can take comfort in knowing that this shouldn't be too difficult.
+0 itself is a perfectly acceptable representation for zero in all bases.
+Actually, we could have included zero as part of the original theorem if
+we had just allowed for the exception: ``\dots{}and $d_k\ne0$ except when $n=0$",
+but at this point we're just talking about book-keeping type details.
+
+Also, as we discussed earlier, since negative numbers are unique (they pair one-to-one with
+their positive counterpart) then by simply adding a new symbol like ``-'', and 
+defining what ``-1'' means, we should be able to make an extension to the 
+theorem that defines unique representations for negative numbers fairly easily.
 
 \break
 \section*{Epilogue}
@@ -1087,10 +1103,11 @@ we would try to generalize how we solved
 exercise number 2-iii) above, it's worth a try for fun.
 
 However, we're going to follow a much more straightforward approach,
+and use the Principle of Mathematical Induction directly on $n$.
+
+--jpr rewrite--
 albeit one that might not meet with G. H. Hardy's asthetic seal-of-approval
-as it involves looking at different ``cases". This approach risks making
-the proof potentially tedious to follow - but we'll try to keep it light
-and bouncy.
+as it involves looking at different ``cases".
 
 The good news is that our proof will follow our intuition and experience with
 how we count (in base-ten) from our Sesame Street days.
@@ -1109,52 +1126,61 @@ Follow this link to view a
 \href{http://www.orangeimagination.com/jprBinaryOdometer.gif}{mini binary-odometer}
 that endlessly counts from zero to fifteen, over and over.
 
-
 The idea of the odometer can be formalized by using
-the Principle of Mathematical Induction that we introduced earlier,
-which we're going to use to prove that every integer has a base-$b$ representation.
+the Principle of Mathematical Induction that we introduced earlier.
+We'll use induction to prove that every integer has a base-$b$ representation.
 
-In order to see why
-our imaginary odometer
-approach (i.e.; induction) might not lead to the ``uniqueness" aspect of 
-the theorem imagine
-a magic box
+Even though we can use induction to prove the existence of base-$b$
+numbers for every integer, let's think about why it
+might not be useful to prove the ``uniqueness" aspect of 
+the theorem.
+Imagine a magic-box
 that also makes base-$b$ representations for each
-integer - and imagine that this box makes a different representation from our odometer.
-It's possible! Why not - we weren't careful to show that induction is the ONLY way
-to generate a base-$b$ representation of each number.
-In fact we just talked about another possible ``magic box" that generates base-$b$ 
-representations of each integer - that is;
-we could use the Euclidean Division Theorem idea
-above as another way to generate base-$b$ digits.
+integer.
+In other words, if an odometer is induction then the magic-box
+is some different mechanism working in a different way.
+Why not? We weren't careful to show that induction is the ONLY way
+to generate a base-$b$ representation of each number. (It isn't.)
 
-So - let's assume that this magic box exists and that it
-generates a different base-$b$ representation for a given integer.
-Then we'll show that having two different ways to represent the same integer
-leads to a logical contradiction.  So either our
-assumption is wrong or the axioms are.
+So we need to prove that if such a magic-box exists then it MUST
+produce the same results as our odometer.
+
+The easiest way to prove this, is to assume that there is a magic-box
+that DOES NOT produce the same representation as our odometer, then we show that
+this assumption leads to an irreconcilable contradiction.
+So either our assumption is wrong or the axioms are.
 Since we're VERY confident in the axioms being correct we can only 
 conclude that our assumption must be wrong - meaning
 that there is only \emph{one} way 
 to make a base-$b$ representation for each integer.
 
-Here's a little insight into how the existence (odometer) proof works, but applied to a specific number in base-ten:
-All we want to show is that for some number, if you add 1 to it, that it's also possible to express it as a valid number in base-ten.
+\bigskip
+Here's a little insight into how the existence (odometer)
+proof works, but applied to a specific number in base-ten:
+All we want to show is that for some number,
+if you add 1 to it, that it's also possible to express it as a valid number in base-ten.
 
-For example, adding 1 to 69412995 gives us 69412996, which is pretty trivial to show that it's valid in base-ten, only the least-significant digit was
+For example, adding 1 to 69412995 gives us 69412996,
+which is pretty trivial to show that it's valid in base-ten,
+only the least-significant digit was
 changed, and it's clearly within the range of 0\dots{}9.
 
 But what about dealing with a ``carry'', for example 
-if we were adding 1 to 69412999? We'd need to algebraically capture the idea of the carry.  The way
-we do it in the proof is essentially to say that $69412999 = 69410000 + 2999 = 69410000 + (3000-1)$ so that when we add one to it, then
+if we were adding 1 to 69412999? We'd need to algebraically
+capture the idea of the carry.  The way
+we do it in the proof is essentially to say that
+$69412999 = 69410000 + 2999 = 69410000 + (3000-1)$
+so that when we add one to it, then
 it's clear that the answer is just:
 \[69412999 + 1 = 69410000 + (3000-1) + 1 = 69410000 + 3000 + (-1 + 1) = 69413000\]
 
 We need an algebraic mechanism like the one that rolls over the digits in the odometer.
 
-Secondly, the magic alternate base-ten reprn machine - we will use another technique, called proof by contradiction,
+Secondly, the magic alternate base-ten reprn machine - we
+will use another technique, called proof by contradiction,
 to prove that each such representation is unique - in other
-words there aren't two (or more) ways to represent the same integer in base-$b$.  That machine is impossible, but
+words there aren't two (or more) ways to represent the same
+integer in base-$b$.  That machine is impossible, but
 boiled down the abstract math level.
 
 \section*{Existence Proof of the Basis Representation Theorem}
