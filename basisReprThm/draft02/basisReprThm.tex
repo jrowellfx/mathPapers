@@ -414,13 +414,12 @@ In other words, for some power-of-ten
 could be 0, which means that it doesn't contribute ANY lots of $10^i$ to the value of $n$, all the way up to the maximum
 contribution of $9\cdot{}10^i$.
 
-Let's take a moment to acknowledge why we want to let people know that $d$ is an integer.
+Let's take a moment to consider why it's important to let people know that $d$ is an integer.
 From the context of our discussion you and I know we're only
-talking about 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9 when we say that $d$ is in the range $0\le{}d\le{}9$,
-but if someone were to come upon our statement in the wild how would they know that
+talking about 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9 when we say that $d$ is in the range $0\le{}d\le{}9$.
+However, if someone were to come upon our statement in the wild how would they know that
 the $d$ in ``$d\cdot{}10^2, 0\le{}d\le9$'' isn't a fraction like $\frac{22}{7}$, or the value of $\pi$ or something weird like that?
-Well they wouldn't unless we told them - so to be extra careful and make everything all nice and sparkling clear
-we tell them exactly what $d$ is, after all, it doesn't cost us much.
+Answer: They wouldn't know - so that's why it's important to spell it out, after all, it doesn't cost us much to do so.
 
 Our general expression for $n$ should only have one digit in the range of 0 to 9 associated with each power-of-ten, in other words our expression should never allow this:
 \[4\cdot10^2+7\cdot10^2\]
@@ -474,19 +473,20 @@ n =\ &d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0
 & d_3\text{ is an integer such that }0\le{}d_3\le{}9\text{, and}\\
 & d_4\text{ is an integer such that }1\le{}d_4\le{}9.
 \end{align*}
-Ok, hold on a minute - that's getting a little cumbersome and takes up way too much space,
-plus did  you notice how we slipped in that different range for $d_4$?  No? I'm not surprised,
-that sort of detail that $d_4$ can't be zero can easily get lost in the wave of stuff coming at you.
+Ok, hold on a minute - that's getting a little cumbersome;
+plus did  you notice how we slipped in that different range for $d_4$?
+Not a great presentation.
 
-A common notational convention in situations like this
+A common convention in situations like this
 is to let another term like $i$, for perhaps ``index'', stand in for the subscript then specify what values $i$ can assume
 so you can talk about all your `$d$'s at once:
 \begin{align*}
 n =\ &d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0,\\
-& \text{such that }
+& \text{where }
+d_i
+\text{ is an integer such that }
 0\le{}d_i\le{}9
-\text{ where }
-d_i\text{ is an integer for all }i\text{ in }0\le{}i\le{}4,\\
+\text{ for all }i\text{ in }0\le{}i\le{}4,\\
 & \text{furthermore }d_4\ne0
 \end{align*}
 %It's still a little wordy. Mathematics uses a lot phrases and ideas over and over, so it's come
@@ -504,7 +504,7 @@ d_i\text{ is an integer for all }i\text{ in }0\le{}i\le{}4,\\
 %We have a symbol that means ``is an element of'' which looks like this ``$\in$''.
 %So we can shorten ``$d$ is an element of $\mathbb{Z}$'' to ``$d\in\mathbb{Z}$''.
 %
-Perfect! That expression for $n$ describes ANY five-digit number - now we need to extend
+Better! That expression for $n$ describes ANY five-digit number - now we need to extend
 our hard-coded five-digit expression for $n$ to an arbitrary
 number of digits.
 Consider the following progression:
@@ -536,7 +536,7 @@ Let $n$ be a positive integer, then for every $n$ there exists a unique represen
 
 \hspace{3em}$n=d_k{\cdot}{1\hspace{-0.12em}0}^k+d_{k-1}{\cdot}{1\hspace{-0.12em}0}^{k-1}+\dots+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
 
-such that $0\le{}d_i\le{}9$, for all $i$ where $0\le{}i\le{}k$, furthermore $d_k\ne0$.
+where $d_i$ is an integer such that $0\le{}d_i\le{}9$ for all $i$ in $0\le{}i\le{}k$, furthermore $d_k\ne0$.
 
 Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\cdots}d_2d_1d_0$
 \end{jprIn}
@@ -581,7 +581,7 @@ then for every $n$ there exists a unique representation:
 
 \hspace{3em}$n=d_k{\cdot}{1\hspace{-0.12em}0}^k+d_{k-1}{\cdot}{1\hspace{-0.12em}0}^{k-1}+\dots+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
 
-such that $0\le{}d_i\le{}9$, for all $i$ where $0\le{}i\le{}k$, furthermore $d_k\ne0$.
+where $d_i$ is an integer such that $0\le{}d_i\le{}9$ for all $i$ in $0\le{}i\le{}k$, furthermore $d_k\ne0$.
 
 Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\cdots}d_2d_1d_0$
 \end{jprIn}
@@ -708,7 +708,7 @@ Let $n$ be a positive integer, then for every $n$ there exists a unique represen
 
 \hspace{3em}$n=d_k\cdot{}2^k+d_{k-1}\cdot{}2^{k-1}+\dots+d_2\cdot{}2^2+d_1\cdot{}2^1+d_0\cdot{}2^0$
 
-such that $0\le{}d_i\le{}1$, for all $i$ where $0\le{}i\le{}k$, furthermore $d_k\ne0$.
+where $d_i$ is an integer such that $0\le{}d_i\le{}1$ for all $i$ in $0\le{}i\le{}k$, furthermore $d_k\ne0$.
 
 Definition: $n$ is represented in base-two by the string of binary-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_2$
 \end{jprIn}
@@ -765,7 +765,7 @@ then for every $n$ there exists a unique representation:
 
 \hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$
 
-such that $0\le{}d_i\le{}(b-1)$, for all $i$ where $0\le{}i\le{}k$, furthermore $d_k\ne0$.
+where $d_i$ is an integer such that $0\le{}d_i\le{}(b-1)$ for all $i$ in $0\le{}i\le{}k$, furthermore $d_k\ne0$.
 
 Definition: $n$ is represented in base-$b$ by the string of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
 \end{jprIn}
