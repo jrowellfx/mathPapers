@@ -371,7 +371,7 @@ better theorem that covers base-ten and more. At the very least this new underst
 will help you to ``get'' the cryptic joke about binary on page one!
 
 \break
-Let's start our journey. We intuitively know that counting with
+We intuitively know that counting with
 base-ten covers all the positive integers.
 For example, the odometer in your car that keeps churning out
 new numbers for each mile you drive, starting from zero when it rolls
@@ -1215,6 +1215,7 @@ to make a base-$b$ representation for each integer.
 
 Without further adieu, let's get to the actual proof!
 
+\break
 \section*{Existence Proof of the Basis Representation Theorem}
 Let $b$ be a positive integer greater than 1.
 
@@ -1224,9 +1225,6 @@ of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
 \hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
 
 where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
-
-%\begin{jprIn}
-%\end{jprIn}
 
 \bigskip
 We will refer to the previous expression as the
@@ -1245,7 +1243,6 @@ Since $d_0<b$ for all $b$ and $d_0\ne0$ (note: $k=0$) proving that a
 base-$b$-representation exists for the integer 1.
 \end{jprIn}
 
-\break
 Induction Step:
 \begin{jprIn}
 Let $n$ be a positive integer, and assume that
@@ -1298,7 +1295,7 @@ Therefore, given the conditions of ``Case 1", $n+1$ has a base-$b$-representatio
 \bigskip
 Case 2) $d_0=(b-1)$
 \begin{jprIn}
-Now we'll look at the case when the least significant digit of $n$ is \emph{equal-to}
+Now we'll look at the case when the least significant digit of $n$ is \emph{exactly-equal-to}
 the largest value it can take in base-$b$.
 %(Note that  ``Case 1" and ``Case 2" cover all the possibilities for what $d_0$ can be.)
 (For example in base-two
@@ -1316,7 +1313,6 @@ We're going to split this case into two cases.
 Then we're going to find out what happens when we add 1 to each case, thus giving us our
 resultant expression for $n+1$
 
-\break
 Case 2a) ALL of the digits of $n$ are equal to $(b-1)$.
 \begin{jprIn}
 So $n$ can be expressed like this:
@@ -1404,20 +1400,21 @@ a valid base-$b$-representation whenever $n$ does.
 \end{jprIn}
 Taking ``Case 1" and ``Case 2" together proves that $n+1$
 always has a base-$b$-representation whenever $n$ does.
-Having also established the base-case, by the principle of mathematical induction
+Having also established the base-case, therefore by the principle of mathematical induction
 all positive integers have a base-$b$-representation.
 
 QED
 \end{jprIn}
-\bigskip
 
+\bigskip
 In order to proceed
 with proving the uniqueness aspect of the Basis Representation Theorem, we
 need to make use of a well established theorem
 called the ``Euclidean Division Theorem''.
-It sounds onerous, but don't worry, you all learned it
+It sounds onerous, but don't worry, you learned it
 in the third grade but perhaps not so formally, you called it ``long division''. It simply states the following:
 
+\break
 \section*{Euclidean Division Theorem}
 \begin{jprIn}
 For all integers $a$ and $b$ such that $b>0$,
@@ -1426,7 +1423,7 @@ Actually the theorem is stronger than we have stated here.
 Specifically, it only requires that $b\ne0$, however
 to keep the remainder positive, the restriction on $r$
 would have to be stated like
-this $0 \le r \le (\left|b\right|-1)$ to deal with
+this $0\le{}r<\left|b\right|$ to deal with
 the possibility that $b$ might be negative.}:
 \[a=qb+r  \text{ such that } 0\le{}r<b\]
 Definition: In the above equation:
@@ -1446,31 +1443,37 @@ answer ``six with one remaining''. Here 19 is the \emph{dividend},  3 is the \em
 \[19=6\cdot3+1\]
 Often proofs make use of little mini-theorems of their own.
 Creating these mini-theorems is a way to simplify a step in
-the main proof by establishing a useful non-trivial
+the main proof by establishing a useful
 intermediary result. It makes reading the main proof
 easier to follow by not having us get sidetracked with
 the technicalities of a step we want to make.
-These mini-theorems are called ``Lemmas''
-and we're going to make one to help with proving the uniqueness part
-of the Basis Representation Theorem, and we're going to make use of the
-Euclidean Division Theorem in proving our lemma.
+These mini-theorems are called ``Lemmas''.
+We're going to make a lemma to help with proving the uniqueness part
+of the Basis Representation Theorem. But first we're going to make use of the
+Euclidean Division Theorem to prove our lemma.
 
 \section*{Lemma}
 \begin{jprIn}
-Let $b, q$ and $r$ be integers such that $b>0$ and $0\le{}r<b$, then
-\[0=qb+r\]
-if and only if $q=0$ and $r=0$.
+Let $b, q$ and $r$ be integers such that $b>0$ and $0\le{}r<b$, then:
+\begin{center}
+$0=qb+r$ 
+\hspace{1.5em}if and only if\hspace{1.5em}
+$q=0$ and $r=0$.
+\end{center}
 \end{jprIn}
 
 \section*{Proof of Lemma}
 \begin{jprIn}
 Let $b, q$ and $r$ be integers such that $b>0$ and $0\le{}r<b$, then
 
-If $q=0$ and $r=0$, then
-\[qb+r=0\cdot{}b+0=0\]
-but also, by the Euclidean Division Theorem since $q$ and $r$ are unique for every dividend and divisor $b>0$,
-then we can also conclude that if $0=qb+r$ then $q=0$ and $r=0$ must be true, otherwise the quotient and remainder
-would not be unique. QED
+If $q=0$ and $r=0$, then \\
+\hphantom{2em}$qb+r=0\cdot{}b+0=0$
+
+\dots{}and if $0=qb+r$ then \\
+\hphantom{2em}because the Euclidean Division Theorem says that $q$ and $r$ are unique, therefore\\
+\hphantom{2em}$q=0$ and $r=0$ must be true otherwise they would not be unique.
+
+QED
 \end{jprIn}
 
 \section*{Uniqueness Proof of the Basis Representation Theorem}
@@ -1480,23 +1483,25 @@ Let $b$ be a positive integer greater than 1.
 By the ``Existence Proof of the Basis Representation Theorem'' we know
 that for every positive integer $n$ there is a sequence
 of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
-
-\hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
-
-\hspace{3em}where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+\begin{jprIn}
+$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$, where\\
+\hphantom{2em}$0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+\end{jprIn}
 
 Assume this expression for $n$ is not unique and that there also exists
 a different sequence
 of integers $c_0, c_1, c_2,\dots{},c_k$ such that:
+\begin{jprIn}
+$n=c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0$, where\\
+\hphantom{2em}where $0\le{}c_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $c_k\ne0$.
+\end{jprIn}
 
-\hspace{3em}$n=c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0$
-
-\hspace{3em}where $0\le{}c_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $c_k\ne0$.
-
-Let's further suppose that the index $j$ is the lowest power such that the integers $d_j\ne{}c_j$ and without any loss of generality
+Let's further suppose that $j$ is the lowest power such that the integers $d_j\ne{}c_j$ and without any loss of generality
 let's assume that $d_j>c_j$. Since both expressions are equal to $n$ then:
-\[c_kb^k+\dots+c_2b^2+c_1b^1+c_0b^0=d_kb^k+\dots+d_2b^2+d_1b^1+d_0b,\]
 \begin{center}
+$c_kb^k+\dots+c_2b^2+c_1b^1+c_0b^0=d_kb^k+\dots+d_2b^2+d_1b^1+d_0b,$
+
+\smallskip
 if and only if,
 \end{center}
 {\small
@@ -1524,14 +1529,13 @@ But $d_j-c_j = 0$ if and only if $d_j = c_j$
 contradicting our assumption that $d_j\ne{}c_j$. This implies that the initial assumption that ``$n$
 is not unique'' is \emph{false}, in other words:
 \begin{center}
-The base-$b$ representation of $n$ is unique.
+The base-$b$ representation of $n$ is unique.\\
+QED
 \end{center}
+%QED - Uniqueness Proof of the B.R.T.
 
 \bigskip
-Therefore since we have proven that there exists a base-$b$
-representation for ALL the nonnegative integers, \emph{and}
-that this representation is unique for ALL integers, then we
+Since we have proven that a base-$b$-representation exists for ALL the postive integers, \emph{and}
+that this representation is unique, then we
 have proven the Basis Representation Theorem.
-
-QED
 \end{document}
