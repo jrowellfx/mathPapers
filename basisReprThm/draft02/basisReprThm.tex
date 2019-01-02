@@ -1239,7 +1239,8 @@ Let $d_0=1$.  Then,
 
 \hspace{3em}$n=d_0b^0=1\cdot{}b^0=1\cdot{}1=1$
 
-And since the digit $1<b$ then we've proven the base case, in other words
+So since $d_0<b$ for all $b$ and $d_0\ne0$ (it's important to note that $k=0$ here),
+then we've proven the base case, in other words
 the integer one represents itself in all bases.
 \end{jprIn}
 
@@ -1263,7 +1264,7 @@ This case examines when the least significant
 digit of $n$ is \emph{strictly-less-than} the largest value it can take in base-$b$.
 For example, in base-two $d_0$ can only be zero;
 In base-five $d_0$ can be at most three;
-In base-ten $d_0$ can be at most eight, etc.\footnote{Please read the bidirectional arrow symbol $\Leftrightarrow$ as ``if and only if'' - it's like a logical ``equals'' sign}
+In base-ten $d_0$ can be at most eight, etc.\footnote{Please read the following bidirectional arrow symbol $\Leftrightarrow$ as ``if and only if'' - it's like a logical ``equals'' sign}
 %\footnote{Use
 %the axiom of Distribution \big(i.e.; $ac+bc=(a+b)c$\big) to factor out the $b^0$ below.}
 \begin{alignat*}{3}
@@ -1297,10 +1298,32 @@ Case 2) $d_0=(b-1)$
 Now we'll look at the case when the least significant digit of $n$ is equal
 to the largest value it can take in base-$b$, that is,
 $d_0=(b-1)$.
-(Note that  ``Case 1" and ``Case 2" cover all the possibilities for what $d_0$ can be.)
+%(Note that  ``Case 1" and ``Case 2" cover all the possibilities for what $d_0$ can be.)
 For example in base-two
 $d_0=1$; in base-five
 $d_0=4$; in base-ten $d_0=9$, etc.
+
+We're going to examine two cases within ``Case 2" here.  The first is
+when ALL the digits of $n$ are equal to $(b-1)$ (eg. $n=999999$ in base-ten).
+The second being when NOT ALL of the digits are equal to $(b-1)$, but at least $d_0$ is,
+and possibly $b_1, b_2,\dots{}$ for some number of
+the rightmost digits (eg. $n=782999$ in base-ten).
+
+Case 2a) ALL of the digits of $n$ are equal to $(b-1)$.
+\begin{jprIn}
+We're going to make use of the result that we proved in our ``Intermission: Extra Exercise"!
+Recall in the proof we showed that:
+\[1+b+b^2+\dots{}+b^k=\frac{b^{k+1}-1}{b-1}\]
+\begin{alignat*}{3}
+  &&n
+  &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 &&\quad\text{(Induction Assumption)}\\
+  &\Leftrightarrow\quad
+  &n+1
+  &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + 1 &&\quad\text{(Add 1 to both sides)}\\  
+  &&&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + b^0 &&\quad\text{(Restate 1 as }b^0\text{)}\\
+  &&&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1 + (d_0+1)b^0 &&\quad\text{(Axiom of Distribution)}
+\end{alignat*}
+\end{jprIn}
 
 Let $j$ be the lowest power-of-$b$ such that $d_j<(b-1)$,
 meaning we can write $n$ as follows (\dots{}in other words all the digits to the right of $d_j$ are equal to $(b-1)$):
