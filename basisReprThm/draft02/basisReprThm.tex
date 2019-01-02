@@ -61,6 +61,14 @@
 \usepackage{relsize}
 \usepackage{wasysym}
 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
 \newenvironment{jprIn}{\begin{adjustwidth}{2em}{}}{\end{adjustwidth}}
 \addtolength{\skip\footins}{6pt}
 
@@ -208,9 +216,9 @@ plus zero lots of a hundred, plus zero lots of ten, plus zero units".
 It gets a little tedious to be so specific when reading out
 a number so our language has developed quite a few verbal shortcuts.
 Furthermore it doesn't take long before we run out of fancy names
-for these ``powers of ten" like, million, billion, trillion,
+for these ``powers-of-ten" like, million, billion, trillion,
 zillion etc. So let's introduce some nice clean mathematical notation
-to describe these powers of ten and let's forget the fancy words.
+to describe these powers-of-ten and let's forget the fancy words.
 
 \begin{align*}
 100&=10\times10=10^2,\\
@@ -220,26 +228,31 @@ to describe these powers of ten and let's forget the fancy words.
 \underbrace{10\dots{}000}_\text{k zeros}&= \underbrace{10\times10\times10\times10\times\dots{}\times10}_\text{k 10s}=10^k
 \end{align*}
 $10^k$ means there are $k$ tens multiplied together - 
-also written as a 1 followed by $k$ zeros.
+also written as a 1 followed by $k$ zeros\footnote{$k$ is called the ``exponent'' and you should
+read the symbol $10^k$ as ``ten-raised-to-the-$k$\textsuperscript{th}-power'' or ``ten-to-the-k'',
+so $10^2$ is ``ten raised to the second power'' or $10^4$ is ``ten-to-the-fourth''.
+You may also see $10^2$ referred to as ``ten squared'', similarly $10^3$ as ``ten cubed'' - but since we 
+don't live in 4 dimensional hyperspace, we don't have a way of saying $10^4$ that has geometric meaning.}.
 The above list shows the cases for $k = 2$, 3 and 4.
 Using the $k$ like that is just a way to show that we can pick ANY whole number,
 i.e., there is no limit on how big $k$ can be.
 
 The notation of $10^k$ is very handy, in fact it extends
-to the case when $k=0$ and $k=1$.\footnote{$10^k$ also extends to the cases
-when $k$ is negative as in $10^{-1}$, or $10^{-2}$, etc. which means $\frac{1}{10}$ and $\frac{1}{100}$ respectively
-but those are called ``rational numbers''. We aren't concerning ourselves with rational numbers in this paper.}
+to the case when $k=0$ and $k=1$.
+%\footnote{$10^k$ also extends to the cases
+%when $k$ is negative as in $10^{-1}$, or $10^{-2}$, etc. which means $\frac{1}{10}$ and $\frac{1}{100}$ respectively
+%but those are called ``rational numbers''. We aren't concerning ourselves with rational numbers in this paper.}
 
-So $10^1$ means that there is only one ten multiplied together, or one ``0" following the ``1",
-in other words just the number 10 itself.
+So $10^1$ means\footnote{Don't forget to read $10^1$ as ``ten-to-the-one''.} that there is only one ten multiplied together, or one ``0" following the ``1",
+in other words just the number ten itself.
 
 %\looseness=-1
 How about when $k=0$?
 Examining the pattern of how the power $k$ relates to how many zeros follow the ``1"
 (eg, $10^1=10$, $10^2=100$, $10^3=1000$,
-etc.) then it makes sense that $10^0=1$,
+etc.) then it must be the case that $10^0=1$,
 i.e., no zeros follow the ``1", which is exactly right.
-Actually any number raised to the 0\textsuperscript{th} power~is~1.\footnote{Proof: Since $a^{b+c}=a^ba^c$ consider when $c=0$; that is,
+Furthermore any number raised to the 0\textsuperscript{th} power~is~1.\footnote{Proof: Since $a^{b+c}=a^ba^c$ consider when $c=0$; that is,
  $a^b=a^{b+0}=a^ba^0$ so because of the uniqueness of the multiplicative identity ``1'', then $a^0$ \emph{must} be 1 since it's behaving 
  like a ``1'' in the expression $a^b=a^ba^0$.}
 
@@ -261,11 +274,10 @@ plus zero lots of ten, plus seven units":
 \end{tabular}
 \end{center}
 
-Written\footnote{recall the ``bedmas'' convention when we have
-a string of numbers being added and multiplied together. ``bedmas'' reminds us to first apply brackets, then exponents,
-division, multiplication, addition then finally subtraction when trying to resolve an expression. Note that ``bedmas'' is just a convention, it's strictly adhered to but not
-a necessity in any way - aliens might use ``beasdm'' and their math would be just as valid as ours.}
-in terms of powers of ten: $92507=9\times10^4+2\times10^3+5\times10^2+0\times10^1+7\times10^0$.
+Written\footnote{Recall the mnemonic ``bedmas'' to see how this expression should be
+evaluated or follow this link ``\href{https://en.wikipedia.org/wiki/Order_of_operations}{Wiki-Order-of-Operations}'' if you've forgotten
+the somewhat arbitrary (but strictly adhered to) convention.}
+in terms of powers-of-ten: $92507=9{\times{}}10^4+2{\times{}}10^3+5{\times{}}10^2+0{\times{}}10^1+7{\times{}}10^0$.
 
 You can think of each digit as being a little dial that controls how many lots
 of its corresponding power-of-ten will contribute to the value of the integer. Please note
@@ -273,7 +285,7 @@ that we went ahead and multiplied the units digit (7 in our example) by $10^0$ (
 same as multiplying by 1) so that we can see that there's nothing special about the units digit,
 it's just some number between 0 and 9, times a power-of-ten like any of the other digits.
 It also adds a kind of beauty to the expression in that all
-the digits can be expressed in a similar matter.
+the digits can be treated in a similar matter.
 
 Claim: Given that we can use as high a power-of-ten as we like
 and we can string together \emph{as~long~a~list~of~digits} as pleases us,
@@ -295,7 +307,7 @@ everything else in mathematics is built\footnote{The axioms: For every integer $
 Associativity: $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$;
 Commutativity: $a+b=b+a$ and $ab=ba$;
 Distributive: $a(b+c)=ab+ac$;
-Identities: There are numbers 0 and 1 such that, $a+0=a$ and $a\times1=a$ and
+Identities: There are integers 0 and 1 such that, $a+0=a$ and $a\times1=a$ and
 Additive Inverse: $a+(-a)=0$. Note: in general integers do NOT have multiplicative inverses 
 that are also integers (eg. $\frac{1}{2}$ is the multiplicative inverse of 2 because $\frac{1}{2} \times 2=1$ but  $\frac{1}{2}$ is not an integer!)}.
 
@@ -339,12 +351,12 @@ in base-ten represents only ONE integer. It's almost stupid to spell it out, but
 we'd always get the exact same big sized pile of apples.
 
 It goes the other way too - that if we were handed a big pile of apples, and we started counting out
-piles of 100, and we got 4 such piles, but we didn't have enough left to make another pile of 100.
+piles of 100, and we got 4 such piles, but we didn't have enough left to make another pile of 100 -
 Then if we started counting out
-piles of 10, and we got 9 such piles, but we didn't have enough left to make another pile of 10.
+piles of 10, and we got 9 such piles, but we didn't have enough left to make another pile of 10 -
 Then if we finished by counting out 9 remaining apples
-then we would always get 499 apples; There is NO other way to split this big pile of apples up
-in ANY other way if we follow this rule.  In other words, each integer is representable by only ONE base-ten number.
+then we would always get ``499'' apples. There is NO other way to split this big pile of apples up
+in ANY other way if we follow this kind of procedure.  In other words, each integer is representable by only ONE base-ten number.
 
 Let's strengthen our theorem based on the last two observations.
 
@@ -356,7 +368,7 @@ Every integer is \emph{uniquely} representable in base-ten.
 So, now we have to spell out exactly what it means to represent a number in base-ten.
 
 Back a few pages we looked at the real meaning of the number 92507 by adding together
-various lots of powers of ten\footnote{It's time to replace our ``$\times{}$'' symbol for multiplication, with ``$\cdot{}$''
+various lots of powers-of-ten\footnote{It's time to replace our ``$\times{}$'' symbol for multiplication, with ``$\cdot{}$''
 because ``$\times{}$'' might get confused for an ``$x$'' in an expression,
 whereas ``$\cdot{}$'' never will be. Eg. $x\times{}2$ vs. $x\cdot{}2$, additionally ending up with something that is more aesthetically pleasing.}:
 \[92507=9\cdot10^4+2\cdot10^3+5\cdot10^2+0\cdot10^1+7\cdot10^0\]
@@ -385,16 +397,15 @@ In other words, for some power-of-ten
 could be 0, which means we don't have ANY lots of $10^i$, all the way up to the maximum
 of 9 lots of $10^i$.
 
-Our expression should only have one digit for each power-of-ten, in other words our expression should never allow
-something like this.
+Our general expression for an integer should only have one digit associated with each power-of-ten, in other words our expression should never allow this:
 \[4\cdot10^2+7\cdot10^2\]
-because we could group those powers of ten together like this:
+because we could group those powers-of-ten together like this:
 \[4\cdot10^2+7\cdot10^2 = (4+7)10^2=11\cdot10^2\]
 which violates our rule of keeping the value of the digit in the range of 0 to 9.
 
 --jpr--
 
-Also, we know that a number is composed of possibly many ``digits'' times various powers of ten, all added together.
+Also, we know that a number is composed of possibly many ``digits'' times various powers-of-ten, all added together.
 See our example for the number 92507 a few pages back, to remind you.
 
 Here's what the theorem might look like generalizing from our example of the integer 92507 on the previous page:
