@@ -443,21 +443,32 @@ that we are talking about the digit that is multiplied with $10^2$.
 Let our five-digit-number $n$ use $d_0,d_1,d_2,d_3$ and $d_4$ for its digits. Then
 the general expression for $n$ looks like this:
 \[n=d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0\]
-\dots{}where each of $d_0,d_1,d_2,d_3,d_4$ are between 0 and 9 inclusive, but $d_4$ can NOT be zero.
-Why? Because if $d_4$ were zero then $n$ would only be (at most) a four digit number.
-Let's specify this restriction, along with the expression:
+
+Since we're getting something that looks like some hard-core math, let's take a moment
+to read it out loud, as a Math professor might do in a lecture.  It might sound like this:
+\begin{jprIn}
+``$n$ is equal to dee-four times ten-to-the-fourth, \dots{}
+%\emph{{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}pause{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}}
+plus dee-three times ten-cubed, \dots{} plus dee-two times ten-squared,  \dots{} plus dee-one times ten,  \dots{} plus dee-zero times one.''
+\end{jprIn}
+
+When we write out our expression for our five-digit number $n$ we want to be sure
+to let people know that each of the digits $d_0,d_1,d_2,d_3$ and $d_4$ must be between 0 and 9 inclusive.
+
+Furthermore, to make sure $n$ is a legitimate five-digit number we have to call out the exception that $d_4$ can NOT be zero - it has to be at least 1.
+Why? Because if $d_4$ were allowed to be zero then $n$ might only be a four-digit number, or a three-digit number, or only two-digits etc.
+
+Let's call out this important information, along with the expression for $n$:
 \[n=d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0\text{, such that }0\le{}d_{\{0,1,2,3,4\}}\le{}9\text{, furthermore }d_4\ne0\]
-I just made up the notation $d_{\{0,1,2,3,4\}}$ which I'm hoping coveys the information that any of those five `$d$'s lies between 0 and 9 inclusive. A more 
-conventional notation is to let another term like $i$, for perhaps ``index'', stand in for the subscript then specify what values $i$ can assume.
-Like this:
+I just made up the notation $d_{\{0,1,2,3,4\}}$ which I'm hoping coveys the idea that any of those five `$d$'s lies between 0 and 9 inclusive. A more 
+conventional notation is to let another term like $i$, for perhaps ``index'', stand in for the subscript then specify what values $i$ can assume:
 \begin{align*}
 n =\ &d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0,\\
 & \text{such that }0\le{}d_i\le{}9\text{ where }0\le{}i\le{}4\text{, furthermore }d_4\ne0
 \end{align*}
 Perfect! That expression for $n$ describes ANY five-digit number - now we need to extend
-our hard-coded five-digit expression to an arbitrarily large
-number of digits (or any size for that matter, even one digit).
-
+our hard-coded five-digit expression for $n$ to an arbitrary
+number of digits.
 Consider the following progression:
 \begin{center}
 \begin{tabular}{r l}
@@ -471,7 +482,7 @@ $d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0$ & 5
 $d_k{\cdot}10^k+\dots{}+d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0$ & k+1\\
 \end{tabular}
 \end{center}
-Using $k$ like this let's us specify ANY amount of digits we want.  If we let $k=0$ we get the first ``single digit'' 
+Using $k$ like this let's us specify any number of digits we want.  If we let $k=0$ we get the first ``single digit'' 
 item on the list.  $k=4$ gives us our five-digit number above, or we could let $k$ be a billion, which would allow
 us to specifcy an integer that has a billion-and-one digits in it\footnote{A billion-and-one digit number is 
 \emph{ridiculously} large,
@@ -483,7 +494,6 @@ it in a revised draft of our theorem:
 
 \emph{Base-Ten Representation Theorem (close to final draft)}
 \begin{jprIn}
-
 Let $n$ be a positive integer, then for every $n$ there exists a unique representation:
 
 \hspace{3em}$n=d_k{\cdot}{1\hspace{-0.12em}0}^k+d_{k-1}{\cdot}{1\hspace{-0.12em}0}^{k-1}+\dots+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
@@ -492,195 +502,54 @@ such that $0\le{}d_i\le{}9$ where $0\le{}i\le{}k$, furthermore $d_k\ne0$.
 
 Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\cdots}d_2d_1d_0$
 \end{jprIn}
---jpr--
 
+Our newly added ``Definition'' introduces exactly what it means to write the number out in base-ten; that is,
+we toss out all the extraneous stuff from our expression
+and string all the digits one after another,
+from most significant digit $d_k$ on the left, to the next digit to it's right which is $d_{k-1}$
+(read as ``dee-kay-minus-one''\footnote{\dots{}and $d_{k-1}$ is multiplied by ``ten-to-the-power-of-(kay-minus-one)''.})
+ down to the least
+significant units digit $d_0$ on the right.
+
+We are so darn close, but there is one picky detail that we have to be careful about.
+We can safely use the symbols 
+for the integers from \emph{zero} to \emph{nine}, as they exist independently from base-ten\footnote{as we discussed earlier
+these symbols: 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9 predate base-ten - they stand for the integers that represent our successive
+sized piles of apples from none, to \faApple{} up
+to \faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}.}. \emph{However} this
+theorem defines what base-ten means so how can we use ``10'' in our theorem?!
+The answer is, we can't - at least not without acknowledging it somehow.
+
+We have a couple of choices.  Since we don't have an actual symbol for the integer ten, we have to make one up. The first possibility is:
 \begin{jprIn}
-Every positive integer can be uniquely written as a
-cumulative sum of multiples of increasing powers of \emph{ten}.
-We call the multiple of each power-of-ten a ``digit''
-where each digit is restricted to be between \emph{zero} and \emph{nine} inclusive.
-We call the \emph{non-zero} digit that corresponds to the highest power of \emph{ten} the ``most significant digit''.
-Similarly the digit that corresponds to the \emph{zero}\textsuperscript{th} power of \emph{ten} is called the ``least significant digit''.
+Let $n$ be a positive integer.  Let $T$ represent the integer ten,\\
+then for every $n$ there exists a unique representation:
 
-We write out the 
-base-\emph{ten}-representation of each integer by listing its digits, starting on the left with the most significant digit, followed by
-the next most significant digit
-
-successively down to the digit that represents the multiple
-of the lowest power of \emph{ten} - i.e., the \emph{zero}\textsuperscript{th} power of \emph{ten}. 
-We note that we can also write the number \emph{zero} in this manner by letting all the digits be \emph{zero}.
+\hspace{3em}$n=d_k{\cdot}{T}^k+d_{k-1}{\cdot}{T}^{k-1}+\dots+d_2{\cdot}{T}^2+d_1{\cdot}{T}^1+d_0{\cdot}{T}^0$\\
+\dots{} etc.
 \end{jprIn}
 
-This says what we want to say, but it's a little hard to visualize, it's too wordy and doesn't paint a nice picture - this is where Algebra comes in handy.
-
-Let's pretend that all we know how to do is count with apples.
-Strangely enough we also understand Algebra in some depth; which means we use variables and constants in expressions.
-We understand addition and multiplication and use exponents as notation to express repeated multiplication.
-We have axioms and understand concepts like equality. We're also logical and understand the
-truth of statements that use ``if  \dots{} then'', ``and'' and ``or''.
-
-Assuming that we're these mathematically-sophisticated-apple-counters,
-then let's grant that we have names for specific sized piles of apples from \emph{one} to say \dots{}\emph{eleven}. We also have symbols
-for the integers from \emph{zero} to \emph{nine}.
-
-So as mathematically-sophisticated-apple-counters we can say ``let $n$ (for \emph{number})
-be a positive integer.'' So now, when ever we see an $n$ we know that we mean ANY positive integer,
-covering every possible sized pile of apples.
-
-The integer \emph{ten} is special in this theorem, but we only have symbols for the integers zero through nine, but if would
-be useful to have a nice label for the integer \emph{ten} so that we could refer to it algebraically. (Remember we don't
-yet have base-ten that we can use to write ``10'' for the integer ten.
-We could say something like ``Let $T$ represent the integer ten''.
-Or perhaps
-we could cheat a little, and define the symbol for \emph{ten} to be ``$1\hspace{-0.2em}0$'' where we kind of squish the
-``1'' and ``0'' so close together that we can treat it like kind of a new symbol for ten.  Either way is fine.  Let's go with the cheating method
-and say ``Let `$1\hspace{-0.2em}0$' represent the integer ten.''
-
-We want to be able to say that $n$ can be represented by a string of digits, and we know
-each digit has to be less than the value of ten, but any number less than ten (including zero).  So now the Base-Ten Representation Theorem
-might look like this:
-
-\emph{Base-Ten Representation Theorem}: Let $n$ be a positive integer, then $n$ can be uniquely written in base-ten
-by a string of digits drawn each of which can take on one value from \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}.
-
-The way we are using $n$ (for number)
-let's use a $d$ for digits.  Hold on, we probably need more than one digit to represent $n$, in fact we
-have no idea how many digits we might need, so we need a list of digits for each $n$.
-
-Note that each digit of $n$ relates to some corresponding power of 10. So let's use the value of that power
-as a tagged-on label to each $d$.  For example ``$d$-one'' could be the digit that corresponds to the power $10^1$, ``$d$-two'' 
-could correspond to the power $10^2$, ``$d$-three'' for $10^3$, etc.  We can even say ``$d$-zero'', for our units digit that
-corresponds to the power-of-ten $10^0$.
-
-Let's not be so wordy in how we write out those $d$s, but we need a convention that let's us stick a number-label to a $d$ - so let's use a ``subscript''.
-Here's what it would look like; ``$d$-zero'' is written as $d_0$, ``$d$-one'' is $d_1$, ``$d$-two'' is $d_2$, ``$d$-three'' is $d_3$, etc.
-
-jpr - break here -...
-
-You are about to jump into the deep end and read something that's probably unlike anything that you come across in your day-to-day activities.
-If you're not familiar with reading mathematical statements it's kind of like a new language. It sometimes uses
-weird symbols like $\in$ which means ``is an element of" (or ``is a member of")
-and is always followed by something that is a ``set", like the symbol $\mathbb{Z}_{\ge 0}$ which
-we defined as being the set of nonnegative integers.
-
-So here goes, try reading through the theorem below, but if you get stuck, keep
-going, a detailed step-by-step explanation follows to guide you through the unfamiliar territory.
+The other choice is we could cheat a little, and define the symbol for \emph{ten} to be ``$1\hspace{-0.2em}0$''.
+I favor this approach for now, don't worry, it's not breaking any rules, you can go ahead and define things
+however you like in Mathematics so long as it doesn't create inconsistencies.  Anyway, we're not going
+to prove the Base-Ten Representation Theorem - we're going to keep digging, and eventually proves something
+more general where this problem disappears.  But let's write it out anyway, since we've worked so hard to get this far PLUS
+it looks so nice!
 
 \section*{Base-Ten Representation Theorem}
 
 \begin{jprIn}
-%Let $n$ be a positive integer, and let ``$1\!\mathsmaller{0}$'' represent the integer ten.\\
-%Let $n$ be a positive integer, and let ``$1\hspace{-0.3em}0\cdot{}$'' represent the integer ten.\\
-Let $n$ be a positive integer, and let ``$1\hspace{-0.12em}0$'' represent the integer ten.\\
-Then every $n$ can be uniquely expressed as follows:
+Let $n$ be a positive integer. Let ${1\hspace{-0.12em}0}$ represent the integer ten,\\
+then for every $n$ there exists a unique representation:
 
-\hspace{3em}$n=d_k{1\hspace{-0.12em}0}^k+d_{k-1}{1\hspace{-0.12em}0}^{k-1}+\dots+d_2{1\hspace{-0.12em}0}^2+d_1{1\hspace{-0.12em}0}^1+d_0{1\hspace{-0.12em}0}^0$
+\hspace{3em}$n=d_k{\cdot}{1\hspace{-0.12em}0}^k+d_{k-1}{\cdot}{1\hspace{-0.12em}0}^{k-1}+\dots+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
 
-where $d_k\ne0$ and $0 \le d_i < {1\hspace{-0.12em}0}$ for each $d_i$.
+such that $0\le{}d_i\le{}9$ where $0\le{}i\le{}k$, furthermore $d_k\ne0$.
 
-Definition: $n$ is represented in base-ten as $d_kd_{k-1}\dots{}d_2d_1d_0$
+Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\cdots}d_2d_1d_0$
 \end{jprIn}
 \bigskip
 
-A difficulty many folks have with math is the notation - it's
-a kind of a language unto itself - like a computer program is a language.
-Let's take our theorem statement by statement and turn it into English.
-
-\filbreak
-\begin{enumerate}[i)]
-\item ``Let $n,k\in \mathbb{Z}_{\ge 0}$"
-
-This means we are going to talk about two distinct numbers
-that we are labeling $n$ and $k$.
-That strange looking $\in$ means ``is an element of" (or ``is a member of")
-and is always followed by something that is a ``set".
-We talked above about the symbol $\mathbb{Z}_{\ge 0}$ which
-we defined as being the set of nonnegative integers.
-So, in other words, $n$ can be one of 0 or 1 or 2 or 3 or \dots{} 
-any number - no matter how large - and the same goes for $k$.
-
-This might be what it would sound like to read that line out loud:\\
-``Let $n$ and $k$ be elements of the set of nonnegative integers."
-
-\item ``Then every $n$ can be uniquely expressed as follows"
-
-What we are about to say applies to ALL nonnegative integers
-and furthermore the expression is going to be unique for each integer.
-
-\item ``$n=d_k10^k+d_{k-1}10^{k-1}+\dots+d_210^2+d_110^1+d_010^0$"
-
-This is the expression in question. It equates $n$ with a series of multiplications
-of some numbers (the $d_i$ terms where $i$ can be any
-number from 0 to $k$) times descending powers of 10,
-and adds them all together.
-
-It's useful to point out the meaning of our $d_0,d_1,d_2,\dots{},d_k$ and $d_i$ terms.
-Mathematical formulas such as this make judicious use of subscripts
-when coming up with names for lists of variables or constants.
-Subscripts following a letter or symbol, such as $d_0,d_1,d_2,\dots{}$
-are a handy way to get a list of variable or constant names that are similar looking to each other,
-and is meant to imply that they each fulfill a similar role to each other.
-Note here how the value of the subscript on each $d_i$ corresponds to its power-of-ten,
-even for the units digit when the subscript is 0,
-or the highest power case when the subscript is $k$. Please also note that it
-isn't necessary that the subscript indices match with the powers, but it's pretty helpful
-to tie the two terms together conceptually.
-
-If we had to read the line out loud it might sound something like this:\\
-``$n$ is equal to\dots{} $dee$-$kay$ times ten-to-the-$kay$,
-plus $dee$-$kay$-minus-one times ten-to-the-$kay$-minus-one,
-plus etc. etc., down to\dots{} $dee$-$two$ times ten-squared,
-plus $dee$-$one$ times ten, plus $dee$-$zero$ times one".
-
-\item ``for some $k$ such that $0 \le d_i \le 9$ where $d_i,i\in\mathbb{Z}$ and $0 \le i \le k$"
-
-The ``for some $k$" means that each integer $n$ has a specific $k$ associated with it.
-
-It then states that those $d_i$ terms are integers,
-and can ONLY take on the values 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9.
-Note that our uniqueness claim above means that each
-integer $n$ has its own unique list of `$d$'s.
-
-It also is very fastidiously pointing out that the little ``$i$'' we just introduced
-in the subscript of the `$d$'s is also an integer and can be as small as zero but
-only as large as our highest power $k$ - whatever $k$ might be.
-This is very picky stuff - like a computer program spelling things out
-very precisely so the computer knows exactly what you mean.
-(That's right - you are the computer).
-
-Sounding it out might sound like this:\\
-``for some $kay$ such that zero is less-than-or-equal-to $dee$-$i$
-which is less-than-or-equal-to nine, for each $dee$-$i$ and $i$,
-which are integers; also $i$ is between zero and $k$ inclusive"
-
-\filbreak
-\item ``Furthermore $d_k\ne0\dots{}$"
-
-This is spelling out one more important fastidious detail.
-We want to make sure that the ``most significant $d$", that is,
-our $d_k$ that goes along with the highest power $10^k$ is not 0,
-in other words it must be one of 1, 2, 3, 4, 5, 6, 7, 8 or 9.
-This is necessary so that we can get our uniqueness property,
-otherwise we could say 13 = 013 = 0000013 which are all the integer 13,
-so let's outlaw this uninteresting and annoying possibility.
-
-\item ``\dots{}except when $n=0$"
-
-\dots{}completing that last statement which allows for
-one exception to the requirement that the ``most significant digit"
-is not allowed to be zero, and that's exactly when the
-integer $n$ in question IS zero.
-
-\item ``Definition: $n$ is represented in base-ten as $d_kd_{k-1}\dots{}d_2d_1d_0$"
-
-This is introducing what it means to write the number out in base-ten; that is,
-we toss out all the extraneous stuff from our expression in (iii) above,
-and string all the ``digits" one after another,
-from most significant digit $d_k$ on the left down to least
-significant digit $d_0$ on the right.
-\end{enumerate}
-
-\bigskip
 Consider that base-ten is not the only base in use these days.
 Since the introduction of the EDVAC\footnote{You might be thinking, don't you
 mean ENIAC which was earlier? Actually no - the ENIAC
@@ -798,32 +667,23 @@ Sound familiar? Let's restate our theorem for base-ten but rewritten for base-tw
 \section*{Base-Two Representation Theorem}
 
 \begin{jprIn}
-Let $n,k\in \mathbb{Z}_{\ge 0}$. Then every $n$ can be uniquely expressed as follows:
+Let $n$ be a positive integer, then for every $n$ there exists a unique representation:
 
-\hspace{3em}$n=d_k2^k+d_{k-1}2^{k-1}+\dots+d_22^2+d_12^1+d_02^0$
+\hspace{3em}$n=d_k\cdot{}2^k+d_{k-1}\cdot{}2^{k-1}+\dots+d_2\cdot{}2^2+d_1\cdot{}2^1+d_0\cdot{}2^0$
 
-for some $k$ such that $0 \le d_i \le 1$ where $d_i,i\in\mathbb{Z}$ and $0 \le i \le k$.
+such that $0\le{}d_i\le{}1$ where $0\le{}i\le{}k$, furthermore $d_k\ne0$.
 
-Furthermore $d_k\ne0$ except when $n=0$.
-
-Definition: $n$ is represented in base-two as $(d_kd_{k-1}\dots{}d_2d_1d_0)_2$
+Definition: $n$ is represented in base-two by the string of binary-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_2$
 \end{jprIn}
 \bigskip
 
-Try reading the above out loud in your head,
-line by line, item by item, like we did above when
-we sounded it out for the Base-Ten Representation Theorem - it's
-helpful to turn the ``math-code" into understandable
-English and a useful habit to get into when reading mathematical statements.
-
-Before we go on,
-I want to introduce a little notation to help avoid confusion.
+Our new Base-Two Representation Theorem introduced some helpful new notation.
 How do you know what I'm talking about if I just
 write ``1000"? Do I mean $10^3$ or $2^3$?
 If there is any possibility for confusion we write
 the number like this $(1000)_{10}$ 
 for the base-ten version meaning one-thousand and $(1000)_2$
-for the binary version meaning eight.
+for the binary version meaning eight.  That's what the ``Definition'' is spelling out with the ``$(\dots)_2$'' extra notation.
 
 As is hinted by the habits of our various alien friends
 above it seems that we can use ANY integer greater than
