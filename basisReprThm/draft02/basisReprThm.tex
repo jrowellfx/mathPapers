@@ -322,8 +322,6 @@ Claim:
 By stringing together \emph{as~long~a~list~of~digits} as pleases us,
 we can uniquely represent every positive integer we want no matter how big it is.
 
-That's a pretty tall claim.
-
 How do we know that we can create ALL the positive
 integers with this scheme? For example,
 how do we know that we didn't miss one? Or how do we know that some string of
@@ -368,7 +366,6 @@ After all, how we count leaves no room for gaps.  We know that if we count up to
 that if we add 1, the 9's roll over to 0, and 1 gets added to the 4, like an odometer in your car,
 getting us to the very next integer which is 500.  We know this always works no matter what number we add 1 to.
 
-\break
 Our intuition is good - let's write it down as something that has to be
 in our theorem. We might say something like:
 
@@ -377,6 +374,7 @@ in our theorem. We might say something like:
 Every integer has a representation in base-ten.
 \end{jprIn}
 
+\bigskip
 Something else we know intuitively is that each number written
 in base-ten represents only ONE integer. It's almost feels silly to spell it out, but if we were to count out
 4 piles of 100-apples-each-pile, then 9 piles of 10-apples-each-pile, then count out 9 additional apples, \emph{then}
@@ -461,31 +459,41 @@ contribute to the value of $n$.
 $d$ must be an integer between 0 and 9 inclusive (we could say ``0 is less than or equal to $d$ which is also less than
 or equal to 9'' or ``$0\le{}d\le9$''), so the contribution of
 the digit $d$ to the value of $n$ would be this amount\footnote{Example:
-$91d32$, so the power of ten in question here is $10^2=100$ and if $0\le{}d\le9$, then
-our number could be 91032, 91132, 91232, 91332, 91432, 91532, 91632, 91732, 91832 or 91932.}:
+$92d07$, so the power of ten in question here is $10^2=100$ and if $0\le{}d\le9$, then
+our number could be
+92007,
+92107,
+92207,
+92307,
+92407,
+92507,
+92607,
+92707,
+92807 or
+92907.}:
 \[d\cdot10^i\text{, where }d\text{ is an integer such that }0\le{}d\le{}9\text{ and }i\ge{}0\]
 In other words, for some power-of-ten (the $10^i$) we have $d$ lots of it. Note that $d$
 could be 0, which means that it doesn't contribute ANY lots of $10^i$ to the value of $n$, all the way up to the maximum
 contribution of 9 lots of $10^i$.
 
-Let's take a moment to consider why it's important to let people know that $d$ is an integer.
-From the context of our discussion you and I know we're only
-talking about 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9 when we say that $d$ is in the range $0\le{}d\le{}9$.
-However, if someone were to come upon the following statement in the wild:
-\[d\cdot10^i\text{, such that }0\le{}d\le{}9\]
-\dots{}how would they know that $d$ isn't a fraction like $\frac{22}{7}$, or the value of $\pi$ or something weird like that?
-Answer: They wouldn't know -  which is why it's important to spell it out.
-\bigskip
-
-Our general expression for $n$ should only have one integer digit in the range of 0 to 9 associated with each power-of-ten, in other words our expression should never allow this:
-\[4\cdot10^2+7\cdot10^2\]
-because we could group those powers-of-ten together like this:
-\[4\cdot10^2+7\cdot10^2 = (4+7)10^2=11\cdot10^2\]
-\dots{}meaning the value of the \emph{actual} digit associated with $10^2$ is eleven, which as we examined above
-has nasty consequences, and thus 
-violates our rule of keeping the value of the digit in the range of 0 to 9.
-\bigskip
-
+%Let's take a moment to consider why it's important to let people know that $d$ is an integer.
+%From the context of our discussion you and I know we're only
+%talking about 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9 when we say that $d$ is in the range $0\le{}d\le{}9$.
+%However, if someone were to come upon the following statement in the wild:
+%\[d\cdot10^i\text{, such that }0\le{}d\le{}9\]
+%\dots{}how would they know that $d$ isn't a fraction like $\frac{22}{7}$, or the value of $\pi$ or something weird like that?
+%Answer: They wouldn't know -  which is why it's important to spell it out.
+%
+%\bigskip
+%Our general expression for $n$ should only have one integer digit in the range of 0 to 9 associated with each power-of-ten, in other words our expression should never allow this:
+%\[4\cdot10^2+7\cdot10^2\]
+%because we could group those powers-of-ten together like this:
+%\[4\cdot10^2+7\cdot10^2 = (4+7)10^2=11\cdot10^2\]
+%\dots{}meaning the value of the \emph{actual} digit associated with $10^2$ is eleven, which as we examined above
+%has nasty consequences, and thus 
+%violates our rule of keeping the value of the digit in the range of 0 to 9.
+%\bigskip
+%
 $n$ is likely composed of \emph{many} digits, each of which is multiplied by a distinct power-of-ten.
 Suppose $n$ is a five digit number. We've been using the specific five-digit number 92507 in our examples above,
 but now suppose $n$ is some number from 10000 all
@@ -616,7 +624,7 @@ however you like in mathematics so long as it doesn't create inconsistencies.  A
 to prove the Base-Ten Representation Theorem - we're going to keep digging, and eventually prove something
 more general where this problem disappears.  But let's write it out anyway, since we've worked so hard to get this far PLUS
 it looks so nice!
-\break
+
 \section*{Base-Ten Representation Theorem}
 \begin{jprIn}
 Let ${1\hspace{-0.12em}0}$ represent the integer ten.
@@ -681,7 +689,6 @@ four! What is ``11" in base-two? Using our technique to
 describe the digits we see that it's ``One lot of two, plus one unit",
 in other words three.
 
-\break
 Here's how they count on Planet-Claire using base-two:
 \begin{center}
 \begin{tabular}{r l c r l}
