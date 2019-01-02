@@ -310,11 +310,11 @@ Identities: There are integers 0 and 1 such that, $a+0=0+a=a$ and $a\cdot{}1=1\c
 Additive Inverse: $a+(-a)=0$. Note: in general integers do NOT have multiplicative inverses 
 that are also integers. (eg. $\frac{1}{2}$ is the multiplicative inverse of 2 because $\frac{1}{2}\cdot{}2=1$ but  $\frac{1}{2}$ is not an integer!)}.
 
-As obvious as it is, the fact that
+As obvious as it seems, the fact that
 we can use base-ten to represent the integers is NOT among the list of axioms.
 
 As discussed in the opening paragraph, we think that the way
-that we write a number, or say a number \emph{is} the number - no problem - it's totally correct to think this way.
+that we write a number, or say a number \emph{is} the number - no problem - it's totally fine to think this way.
 Numbers written in base-ten are in
 a perfect one-to-one correspondence with the integers so it's safe to think about numbers written 
 in base-ten as the integers.
@@ -325,7 +325,7 @@ a theorem, then we've proven that the theorem is true.
 A proof
 is just a series of arguments that logically connects our theorem directly\footnote{directly \dots{}or indirectly
 via other previously proven theorems.} to the axioms, so that the only way
-that our theorem would be false is if the axioms themselves are false.
+that our theorem could be false is if the axioms themselves are false.
 
 So let's think about what a ``Base-Ten Representation Theorem'' might look like
 so that once we prove it we may go forward using base-ten with impunity in talking about the more abstract set of integers.
@@ -335,7 +335,7 @@ After all, how we count leaves no room for gaps.  We know that if we count up to
 that if we add 1, the 9's roll over to 0, and 1 gets added to the 4, like an odometer in your car,
 getting us to the very next integer which is 500.  We know this always works no matter what number we add 1 to.
 
-Our intuition is good - Let's write it down as something that has to be
+Our intuition is good - let's write it down as something that has to be
 in our theorem. We might say something like:
 
 \emph{Base-Ten Representation Theorem (initial draft)}
@@ -345,7 +345,7 @@ Every integer is representable in base-ten.
  
 Something else we know intuitively is that any number written
 in base-ten represents only ONE integer. It's almost feels silly to spell it out, but if we were to count out
-4 piles of 100 apples, then 9 piles of 10 apples, then 9 additional apples, then
+4 piles of 100-apples-each, then 9 piles of 10-apples-each, then 9 additional apples, that
 we'd always get the exact same big sized pile of apples.
 
 It goes the other way too - that if we were handed a big pile of apples, and we started counting out
@@ -373,10 +373,10 @@ Base-Ten Representation Theorem for the positive integers then we
 can easily extend it to the negative integers with a corollary.
 Our corollary will say something like ``Slap a `-' (minus) sign in front of the positive base-ten representation to 
 get a unique representation for
-it's negative counterpart'' \dots{}or some such words.  Also zero is easy to deal separately, so to keep our lives
-simple and restrict our attention to only proving the theorem for positive integers.
+it's negative counterpart'' \dots{}or some such words.  Also zero is easy to deal with separately, so to keep our lives
+simple let's restrict our attention to only proving the theorem for positive integers.
 
-Furthermore, moving forward it would be helpful to have a name, or label, to stand in for any 
+Furthermore, moving forward it would be helpful to have a name, or label, to stand in for our 
 positive integer so that we can refer to it directly -
 So let's give it a name, how about $n$ for ``number'':
 
@@ -414,24 +414,24 @@ In other words, for some power-of-ten
 could be 0, which means that it doesn't contribute ANY lots of $10^i$ to the value of $n$, all the way up to the maximum
 contribution of $9\cdot{}10^i$.
 
-Our general expression for $n$ should only have one digit associated with each power-of-ten, in other words our expression should never allow this:
+Our general expression for $n$ should only have one digit in the range of 0 to 9 associated with each power-of-ten, in other words our expression should never allow this:
 \[4\cdot10^2+7\cdot10^2\]
 because we could group those powers-of-ten together like this:
 \[4\cdot10^2+7\cdot10^2 = (4+7)10^2=11\cdot10^2\]
-\dots{}which violates our rule of keeping the value of the digit in the range of 0 to 9.
+\dots{}meaning the value of the \emph{actual} digit associated with $10^2$ is eleven which violates our rule of keeping the value of the digit in the range of 0 to 9.
 
 $n$ is likely composed of \emph{many} digits, each of which is multiplied by a distinct power-of-ten.
 Suppose $n$ is a five digit number. We've been using the specific five-digit number 92507 in our examples above,
 but now suppose $n$ is any number from 10000 all
-the way up to 99999 (which is a complete list of all the five-digit numbers possible). If we were to describe
+the way up to 99999 (which is a complete list of all the five-digit numbers). If we were to describe
 this general five digit number, then we would need five different `$d$'s for each of the five digits.
-Somehow we need to associate a different digit $d$ with each of the powers
+Somehow we need to associate a different term $d$ with each of the powers
 $10^4$, $10^3$, $10^2$, $10^1$ and $10^0$.
 
 Mathematics has a convention for coming up with
-a list of terms (like variables or constants) for situations just like this -
+a list of terms for situations just like this -
 we tack a subscript onto the name like so: $d_2$ which you read as ``dee-two''\footnote{\dots{}yes like artoo-detoo, which perhaps
-George should have writen like ``$R_2D_2$'' and not ``R2-D2''!}.
+George should have writen as ``$R_2D_2$'' and not ``R2-D2''!}.
 $d_2$ is a term to represent a digit just like the $d$ we used above.  But now we can use that little subscript as a way to
 associate it to a specific power-of-ten. Naturally we'll associate $d_2$ with $10^2$ (ten squared) as follows; $d_2$ contributes to
 the value of $n$ by this amount:
@@ -455,7 +455,7 @@ When we write out our expression for our five-digit number $n$ we want to be sur
 to let people know that each of the digits $d_0,d_1,d_2,d_3$ and $d_4$ must be between 0 and 9 inclusive.
 
 Furthermore, to make sure $n$ is a legitimate five-digit number we have to call out the exception that $d_4$ can NOT be zero - it has to be at least 1.
-Why? Because if $d_4$ were allowed to be zero then $n$ might only be a four-digit number, or a three-digit number, or only two-digits etc.
+Why? Because if $d_4$ were allowed to be zero then $n$ would only be a four-digit number, or perhaps a three-digit number, or only two-digits etc.
 
 Let's call out this important information, along with the expression for $n$:
 \[n=d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0\text{, such that }0\le{}d_{\{0,1,2,3,4\}}\le{}9\text{, furthermore }d_4\ne0\]
@@ -567,10 +567,10 @@ in base-two with just the digits 0 and 1. How is this possible?
 Let's find out with an imaginary trip into space.
 
 Consider distant Planet-Nova on which the emergent
-intelligent species only have nine fingers.
+intelligent species only have nine fingers on their hands.
 They have three hands with three fingers each - anyway,
 that's why they use base-nine, so they only need the numbers 0,
-1, 2, 3, 4, 5, 6, 7 and 8 for their digits\footnote{Digit is another word for finger!}.
+1, 2, 3, 4, 5, 6, 7 and 8 for their digits\footnote{Digit is another word for finger! Of course that's where the math term got its start.}.
 So like we Earthlings do for the integer ten,
 instead of making up a new symbol for nine,
 they use ``10" to represent the integer nine - which
@@ -903,7 +903,7 @@ mathematicians who has ever lived - the young eight-year old was just getting st
 
 \break
 Anyway,
-to generalize Gauss's insight we can write the expression like this:
+to generalize young Gauss's insight we can write the expression like this:
 \[1+2+3+\ldots+n=\frac{n(n+1)}{2}\]
 So let's prove this relationship using the principle of mathematical induction.
 \bigskip
@@ -961,7 +961,7 @@ First we will prove that there is such a representation for all
 integers $n$ (existence proof) using the principle of mathematical induction.
 Meaning that every integer has a way of being written
 in the form described by the theorem - especially as
-relates to the bounds on the values that the digit can take on.
+relates to the bounds on the values that the digits can take on.
 
 Here's a little insight into how the existence proof works, but applied to a specific number in base-ten:
 All we want to show is that for any number, if you add 1 to it, that it's also possible to express it as a valid number in base-ten.
@@ -1043,7 +1043,7 @@ Since all the other terms $d_k,\dots,d_2,d_1$
 for $n+1$ are unchanged from their values for
 $n$ then all the digits of $n+1$ are valid in base-$b$.
 
-Therefore when $d_0$ is  \emph{strictly-less-than} $b-1$, then $n+1$ has a valid representation in base-$b$.
+Therefore when $d_0<(b-1)$, then $n+1$ always has a valid representation in base-$b$ whenever $n$ does.
 \end{jprIn}
 \bigskip
 
@@ -1083,7 +1083,7 @@ Since we picked $j$ such that $d_j<(b-1)$,
 we can restate the inequality as\\
 $d_j\le(b-2)$ therefore,
 \[(d_j+1)\le(b-2)+1=(b-1)\]
-meaning the $j$\textsuperscript{th} digit of $n+1$ is a valid base-$b$ digit.
+meaning the $j$\textsuperscript{th} digit of $n+1$ is less than or equal to $b-1$ meaning that it is a valid base-b digit.
 
 All digits $d_k,\dots,{}d_{j+1}$ remain unchanged from the base-$b$ representation of $n$,
 and all digits $d_{j-1},\dots{},d_0$ are 0.
@@ -1093,23 +1093,28 @@ Therefore all the digits of the base-$b$ representation of $n+1$ are valid in ba
 
 If you've been fastidiously following the conditions on our subscript $j$ above, then
 you may notice that
-our proof doesn't leave room for the case that \emph{all} the digits are equal to $(b-1)$ because of
-how we defined $j$. For example when $n=99999$ in base-ten.
+our proof doesn't quite leave room for the case that \emph{all} the digits are equal to $(b-1)$ because of
+how we defined $j$ (we're getting picky here). For example in base-ten when $n=99999$ there is no power of ten such that
+it's digit is less than 9 - remember we don't allow the most significant digit to be zero so we can't count 
+``099999'' as a valid base-ten number  (if we did, we could never get our uniquness property becase $99999 = 099999 = 0000099999$).
 
 Let's attend to this remaining detail.
 
 Suppose $d_i=(b-1)$ for all $0\le{}i\le{}k$, then let $d_{k+1}=0$ and $j=k+1$.
 
-All the arguments we just made are essentially the same so picking up at equation (1) above, with our new terms, we have:
+All the arguments we just made above are essentially the same here so picking up at equation (1) above, with our new terms, we have:
 \begin{align*}
 n+1 &=(d_j+1)b^j\\
 &=(d_{k+1}+1)b^{k+1}\\
 &=(0+1)b^{k+1}\\
-&=b^{k+1}
+&=1\cdot{}b^{k+1}
 \end{align*}
 Meaning that $n+1$ now has one more digit than $n$, namely $d_{k+1}$ and it's equal to 1,
 with all the rest of the digits for $n+1$ being 0 - which is a valid representation for $n+1$ in base-$b$ for all $b\ge2$.
+
+Therefore when $d_0=(b-1)$, then $n+1$ always has a valid representation in base-$b$ whenever $n$ does.
 \end{jprIn}
+Taking case 1) and case 2) together proves that $n+1$ always has a valid representation in base-$b$ whenever $n$ does.
 Therefore 
 by the principle of mathematical induction,
 we have proven that there is a base-$b$ representation for all nonnegative integers.
@@ -1124,14 +1129,14 @@ It sounds onerous, but don’t worry, you all learned it
 in the third grade but perhaps not so formally, you called it ``long division''. It simply states the following:
 
 \break
-\section*{Euclidean Division Theorem\footnote{We introduce a new math symbol here, and use one that was
+\section*{Euclidean Division Theorem\footnote{We introduce a new math symbol here, plus use one that was
 mentioned in passing much earlier in the paper.  Namely the $\in$ which means ``is an element of'' or
 ``is a member of'' and is always followed by something that is a set.  We introduced the symbol $\mathbb{Z}$ as the
 ``set of integers''.  So ``$a,b\in{}\mathbb{Z}$'' means that $a$ and $b$ are integers.}}
 \begin{jprIn}
 For all $a,b\in{}\mathbb{Z}$ where $b>0$, there exists \emph{unique} integers $q$ and $r$ such
 that
-that\footnote{Actually the theorem is stronger than we have stated here. Specifically, it only requires that $b\ne0$, however
+that\footnote{Aside: Actually the theorem is stronger than we have stated here. Specifically, it only requires that $b\ne0$, however
 to keep the remainder positive, the restriction on $r$ would have to be stated like
 this $0 \le r \le (\left|b\right|-1)$ to deal with the possibility that $b$ might be negative.}:
 \[a=qb+r  \text{ where } 0\le{}r\le{}(b-1)\]
@@ -1181,7 +1186,7 @@ would not be unique. QED
 
 \section*{Uniqueness Proof of the Basis Representation Theorem}
 Let $n$ and $b$ be positive integers such that $b\ge2$.\\
-Also let $k$ be a integer such that $k\ge0$.\\
+Also let $k\in\mathbb{Z}$ such that $k\ge0$.\\
 Furthermore let $i, c_i, d_i\in\mathbb{Z}$ such that
 $0\le{}c_i\le{}(b-1)$ and $0\le{}d_i\le{}(b-1)$ for all $i\ge0$.
 
