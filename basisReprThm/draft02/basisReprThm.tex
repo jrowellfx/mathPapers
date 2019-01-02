@@ -53,7 +53,8 @@
 % JPR added
 \usepackage{fontawesome}
 \usepackage{amsfonts}
-\usepackage{amsmath}
+%\usepackage{amsmath}
+\usepackage{mathtools}% includes amsmath
 \usepackage{changepage}
 \usepackage{enumerate}
 %\usepackage{setspace}
@@ -233,7 +234,7 @@ So $10^1$ means that there is only one 10 multiplied together, or one ``0" follo
 in other words just the number 10 itself.
 
 %\looseness=-1
-How about when $k=0$.
+How about when $k=0$?
 Examining the pattern of how the power $k$ relates to how many zeros follow the ``1"
 (eg, $10^1=10$, $10^2=100$, $10^3=1000$,
 etc.) then it makes sense that $10^0=1$,
@@ -300,7 +301,7 @@ Definition: $n$ is represented in base-ten as $d_kd_{k-1}\dots{}d_2d_1d_0$
 
 A difficulty many folks have with math is the notation - it's
 a kind of a language unto itself - like a computer program is a language.
-Let's take our theorem statement by statement and turn it into english.
+Let's take our theorem statement by statement and turn it into English.
 
 \begin{enumerate}[i)]
 \item ``Let $n,k\in \mathbb{Z}_{\ge 0}$"
@@ -315,7 +316,7 @@ So, in other words, $n$ can be one of 0 or 1 or 2 or 3 or \dots{}
 any number - no matter how large - and the same goes for $k$.
 
 This might be what it would sound like to read that line out loud:\\
-``Let $n$ and $k$ be elements of the set of nonnegative Integers."
+``Let $n$ and $k$ be elements of the set of nonnegative integers."
 
 \item ``Then every $n$ can be uniquely expressed as follows"
 
@@ -354,7 +355,7 @@ The ``for some $k$" means that each integer $n$ has a specific $k$ associated wi
 It then states that those $d_i$ terms are integers,
 and can ONLY take on the values 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9.
 Note that our uniqueness claim above means that each
-integer $n$ has it's own unique list of $d$'s.
+integer $n$ has its own unique list of $d$'s.
 
 It also is very fastidiously pointing out that the little ``$i$'' we just introduced
 in the subscript of the $d$'s is also an integer and can be as small as zero but
@@ -469,24 +470,25 @@ base-two & base-ten & \; \; \; \; & base-two & base-ten\\
 Note something interesting in the list above - the powers of two,
 written in base-two,
 resemble our powers of 10 in base-ten! That is:
-$1=2^0=1$,
-$2=2^1=10$\textsubscript{(base-2)},
-$4=2^2=100$\textsubscript{(base-2)},
-$8=2^3=1000$\textsubscript{(2)},
-$16=2^4=10000$\textsubscript{(2)},
-$32=2^5=100000$\textsubscript{(2)},
-$64=2^6=1000000$\textsubscript{(2)},
-$128=2^7=10000000$\textsubscript{(2)},
-$256=2^8=100000000$\textsubscript{(2)},
-\dots{}
+\begin{small}
+\begin{center}
+\begin{spreadlines}{0em}
+\begin{align*}
+1 = 2^0&= 1, & 32 = 2^5&= 100000_{(\text{base-2})},\\
+2 = 2^1&= 10_{(\text{base-2})}, & 64 = 2^6&= 1000000_{(\text{base-2})},\\
+4 = 2^2&= 100_{(\text{base-2})}, & 128 = 2^7&= 10000000_{(\text{base-2})},\\
+8 = 2^3&= 1000_{(\text{base-2})},& 256 = 2^8&= 100000000_{(\text{base-2})},\\
+16 = 2^4&= 10000_{(\text{base-2})},& & \dots{}\\
+\end{align*}
+\end{spreadlines}
+\end{center}
+\end{small}
 
-\break
 Let's look at the binary number 11010 for example.
 Using our wordy technique to describe the number
 we can see that it's ``One lot of sixteen,
 plus one lot of eight, plus zero lots of four,
 plus one lot of two, plus zero units": 
-
 \begin{center}
 \begin{tabular}{r r r r c r r l}
 \phantom & 1 & $\times$ & 10000 & \phantom & \phantom & 10000 & (16)\\
@@ -498,8 +500,7 @@ plus one lot of two, plus zero units":
 \phantom & \phantom & \phantom & \phantom & \phantom & = & 11010 & (26)\\
 \end{tabular}
 \end{center}
-
-Written in terms of powers of two: $11010=1\times2^4+1\times2^3+0\times2^2+1\times2^1+0\times2^0$.
+Written in terms of powers of two: $11010_{(\text{base-2})}=26=1\times2^4+1\times2^3+0\times2^2+1\times2^1+0\times2^0$.
 
 Each digit in base-two can be thought of as a little switch that
 turns on or off the contribution of its corresponding power of two.
@@ -564,7 +565,7 @@ calculator and a pad of paper and pencil) then you can
 figure out that it's (33019)\textsubscript{10}.
 
 Note that if we omit the parentheses and subscript from a number,
-it means we're talking about it in base-ten - our ``default" base.
+it means we're talking about it in base-ten; our ``default" base.
 Case in point: the subscripts that we use to denote the base
 (like the ``16" in (80FB)\textsubscript{16}) are written in base-ten!
 
@@ -602,7 +603,7 @@ taking us to 2,
 then 3, 4, 5, \dots{}ad~infinitum\footnote{``ad infinitum'' means ``to infinity'', or ``continue forever, without limit''.}\dots
 
 This idea of being able to step one after the other,
-beginning at 1 and going forever is called the ``Principle of Mathematical
+beginning at 1 and going forever is embodied within the ``Principle of Mathematical
 Induction" and is a basic property of the positive integers.
 This principle is more than just a way to generate the set of integers,
 it's also a way of thinking about properties of the integers.
@@ -685,7 +686,9 @@ and prove that it must also be true for $n+1$:
 Which proves young Gauss's expression is true for
 the positive integer $n+1$ whenever it's true for $n$ - then
 by the principle of mathematical induction,
-the expression is true for all positive integers. (QED)
+the expression is true for all positive integers. QED\footnote{``QED'' - is often used at the conclusion of a proof to state that it’s
+done - it’s an acronym for the Latin phrase ``quod erat demonstrandum'' which means ``that which was to be demonstrated''.
+In other words we’ve proven what we set out to prove.}
 
 \break
 We are going to use the principle of mathematical induction to prove the Basis Representation Theorem.
@@ -703,7 +706,7 @@ For example, adding 1 to 69412995 gives us 69412996, which is pretty trivial to 
 changed, and it's clearlly within the range of 0\dots{}9.
 
 But what about dealing with a ``carry'', for example 
-if we were adding 1 to 69412999? We'd need to algebraically capture the idea of the carry.  They way
+if we were adding 1 to 69412999? We'd need to algebraically capture the idea of the carry.  The way
 we do it in the proof is essentially to say that $69412999 = 69410000 + 2999 = 69410000 + (3000-1)$ so that when we add one to it, then
 it's clear that the answer is just:
 \[69412999 + 1 = 69410000 + (3000-1) + 1 = 69410000 + 3000 + (-1 + 1) = 69413000\]
@@ -715,7 +718,8 @@ words there aren't two (or more) ways to represent the same integer in base-$b$.
 
 Base case:
 \begin{jprIn}
-Since $n=0$ is a slightly special case in the theorem, then lets look at both $n=0$ and $n=1$ for our base case.
+The Principle of Mathematical Induction always starts with 1\footnote{The Principle of Mathematical induction only talks about positive integers, not zero}, but we also need to take
+care of the slightly special case of $n=0$; so let's also take care of $n=0$ then $n=1$ which will serve as our base induction step.
 
 Let $n=0$.
 
@@ -728,7 +732,7 @@ showing that we have a valid representation for 0 in base-$b$ since our only dig
 $d_0=0\le(b-1)$, for all $b\ge2$.
 \end{jprIn}
 
-Now Let $n=1$.
+Now let $n=1$.
 
 \begin{jprIn}
 In this case, we can choose $k=0$ and $d_0=1$.  Then,
@@ -761,7 +765,8 @@ For example, in base-two $d_0$ can only be zero;
 In base-five $d_0$ can be at most three;
 In base-ten $d_0$ can be at most eight, etc.
 This case is
-quite easy to deal with, so let's quickly dispense with it\footnote{It will be helpful at this point to recall the axiom of ``Distribution'' that is $a(b+c)=ab+ac$.}.
+quite easy to deal with, so let's quickly dispense with it\footnote{It will be helpful at this point to recall the axiom of ``Distribution'' that is $a(b+c)=ab+ac$,
+in fact it might not hurt to do a quick refresh the rest as well, ``Associativity''': $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$, ``Commutativity'': $a+b=b+a$ and $ab=ba$, ``Existence of inverses and identities'': $a+0=a$ and $a\times1=a$ and $a+(-a)=0$. Note: integers do NOT have multiplicative inverses}.
 \begin{align*}
 n &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\\
 &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\text{if and only if,}\\
@@ -788,8 +793,7 @@ Case 2) $d_0=(b-1)$
 Now we'll look at the case when the least significant digit of $n$ is equal
 to the largest value it can take in base-$b$, that is,
 $d_0=(b-1)$.
-(Note that between ``Case 2" here and ``Case 1" above,
-we're covering all the possibilities for what $d_0$ can be.)
+(Note that  ``Case 1" and ``Case 2" cover all the possibilities for what $d_0$ can be.)
 For example in base-two
 $d_0=1$; in base-five
 $d_0=4$; in base-ten $d_0=9$, etc.
@@ -797,7 +801,7 @@ $d_0=4$; in base-ten $d_0=9$, etc.
 %\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 Let $j\in \mathbb{Z}_{\ge 0}$ be the lowest power of $b$ such that $d_j<(b-1)$,
-meaning we can write $n$ as follows for some $j$:
+meaning we can write $n$ as follows (\dots{}in other words all the digits to the right of $d_j$ are equal to $(b-1)$):
 \[n = d_kb^k+d_{k-1}b^{k-1}+\dots+d_jb^j+(b-1)b^{j-1}+\dots+(b-1)b^1+(b-1)b^0\]
 For example,
 if $n=69412999$,
@@ -817,7 +821,7 @@ n+1 &=d_kb^k+\dots+(d_j+1)b^j-1+1 \nonumber \\
 &= d_kb^k+\dots+(d_j+1)b^j \label{eqnA}
 \end{align}
 Since we picked $j$ such that $d_j<(b-1)$,
-less restate the inequality as\\
+we can restate the inequality as\\
 $d_j\le(b-2)$ therefore,
 \[(d_j+1)\le(b-2)+1=(b-1)\]
 meaning the $j$\textsuperscript{th} digit of $n+1$ is a valid base-$b$ digit.
@@ -847,9 +851,7 @@ n+1 &=(d_j+1)b^j\\
 Meaning that $n+1$ now has a $(k+1)$\textsuperscript{st} digit and it's equal to 1,
 with all the rest of the digits being 0 - which is a valid representation for $n+1$ in base-$b$ for all $b\ge2$.
 
-QED\footnote{``QED'' - is often used at the conclusion of a proof to state that it’s
-done - it’s an acronym for the Latin phrase ``quod erat demonstrandum'' which means ``that which was to be demonstrated''.
-In other words we’ve proven the existence part of the Basis Representation Theorem.} - existence proof.
+QED - existence proof.
 \end{jprIn}
 \end{jprIn}
 \bigskip
@@ -896,10 +898,10 @@ answer ``six with one remaining''. Here 19 is the \emph{dividend},  3 is the \em
 6 is the \emph{quotient} and 1 is the \emph{remainder}. Written in the form of the theorem:
 \[19=6\times3+1\]
 Often proofs make use of little mini-theorems of their own.
-Creating these mini-theorems is way to simplify a step in
+Creating these mini-theorems is a way to simplify a step in
 the main proof by establishing a useful non-trivial
 intermediary result. It makes reading the main proof
-easier to follow by not having us get side tracked with
+easier to follow by not having us get sidetracked with
 the technicalities of a step we want to make.
 These mini-theorems are called ``Lemmas''
 and we’re going to make one to help with proving the uniqueness part
@@ -933,7 +935,7 @@ Assume $n$ is not unique and that,
 and,
 \[n=c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0\]
 Let's further suppose that the index $j$ is the lowest power such that the digits $d_j\ne{}c_j$ and without any loss of generality,
-let's assume that $dj>cj$.
+let's assume that $d_j>c_j$.
 
 Therefore:
 \[c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b\]
@@ -1054,6 +1056,24 @@ Hint: use induction on $n$, the base case being $n=1$.
 \item $185190 = (\text{F}51\text{H})_{23}$
 \item $291480 = (10\text{M}01)_{23}$
 \end{enumerate}
+\break
+\item Proof
+Base case: $n=1$
+\[\frac{b^1-1}{b-1}=\frac{b-1}{b-1}=1=b^0=b^{1-1}\]
+
+Induction step:
+Assume the following
+\[1+b+b^2+\dots+b^{n-1} = \frac{b^n-1}{b-1}\]
+Then,
+\begin{align*}
+&(1+b+b^2+\dots+b^{n-1}) + b^n\\
+= &\frac{b^n-1}{b-1}+b^n\\
+= &\frac{b^n-1}{b-1}+\frac{b^n(b-1)}{b-1}\\
+= &\frac{b^n-1+b^{n+1}-b^n}{b-1}\\
+= &\frac{b^{n+1}+b^n-b^n-1}{b-1}\\
+= &\frac{b^{n+1}-1}{b-1}\\
+\end{align*}
+QED
 \end{enumerate}
 
 \end{document}
