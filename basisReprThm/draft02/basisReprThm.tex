@@ -345,29 +345,28 @@ inverse of 2 because $\frac{1}{2}\cdot{}2=1$ but $\frac{1}{2}$ is not an integer
 As obvious as it seems, the fact that
 we can use base-ten to represent the integers is NOT among the list of axioms.
 
-As expected,
-numbers written in base-ten are in
-a perfect one-to-one correspondence with the integers so
-it's safe to think that each
-integer has its own unique base-ten label.
-But at least once in the past, someone has to take the time to
-spell out exactly what it means to represent a number in base-ten. This kind of a statement
-is called a theorem\footnote{I can't find where
-the first such theorem was stated, I think it's quite recent.}. Then that theorem must be proven to be true with a series of arguments that logically connects it
+However because base-ten numbers are in
+a perfect one-to-one correspondence with the integers then
+it's safe to think of each
+integer's unique base-ten label \emph{as} the integer.
+But to firmly establish this fact we need to (at least once) take the time to
+spell out exactly what it means to represent a number in base-ten with a theorem\footnote{I can't find where
+the first such theorem was stated, I think it's quite recent.}. Then that theorem must be proven to
+be true with a series of arguments that logically connects it
 directly\footnote{directly \dots{}or indirectly
 via other previously proven theorems.} to the axioms, so that the only way
 that the theorem could be false is if the axioms themselves are false.
 
 I could just state the ``Base-Ten Representation Theorem'' right here, but
 how to get to its clear, simple and succinct statement is an interesting journey.
-The rest of the paper is about taking this journey. In fact we're going to end up generalizing upon our
+The rest of the paper is that journey. In fact we're going to end up generalizing upon our
 intuitive understanding about
 counting with base-ten and come up with a
 better theorem that covers base-ten and more. At the very least this new understanding
 will help you to ``get'' the cryptic joke about binary on page one!
 
 \break
-So let's start our journey. We intuitively know that counting with
+Let's start our journey. We intuitively know that counting with
 base-ten covers all the positive integers.
 For example, the odometer in your car that keeps churning out
 new numbers for each mile you drive, starting from zero when it rolls
@@ -1103,10 +1102,13 @@ If your odometer stretched off to the horizon on your left,
 then it's pretty easy to see that there is
 no limit on how big a number the odometer could count to.
 There's no reason that our odometer has to count in base-ten either,
-it could be a binary odometer with only the digits one and two in each of the 
+it could be a binary odometer with only the digits zero and one in each of the 
 little dials that turn, always
 rolling off the miles, but showing the result in base-two.
-See binary odometer gif.
+Follow this link to view a
+\href{http://www.orangeimagination.com/jprBinaryOdometer.gif}{mini binary-odometer}
+that endlessly counts from zero to fifteen, over and over.
+
 
 The idea of the odometer can be formalized by using
 the Principle of Mathematical Induction that we introduced earlier,
@@ -1114,15 +1116,15 @@ which we're going to use to prove that every integer has a base-$b$ representati
 
 In order to see why
 our imaginary odometer
-approach (i.e.; induction) might not lead to the "uniquness" aspect of 
-the theorem, also imagine
+approach (i.e.; induction) might not lead to the ``uniqueness" aspect of 
+the theorem imagine
 a magic box
 that also makes base-$b$ representations for each
 integer - and imagine that this box makes a different representation from our odometer.
 It's possible! Why not - we weren't careful to show that induction is the ONLY way
 to generate a base-$b$ representation of each number.
-In fact we just talked about another possible "magic box" that generates base-$b$ 
-representations of each interger - that is;
+In fact we just talked about another possible ``magic box" that generates base-$b$ 
+representations of each integer - that is;
 we could use the Euclidean Division Theorem idea
 above as another way to generate base-$b$ digits.
 
@@ -1134,7 +1136,7 @@ assumption is wrong or the axioms are.
 Since we're VERY confident in the axioms being correct we can only 
 conclude that our assumption must be wrong - meaning
 that there is only \emph{one} way 
-to make a base-$b$ represenation for each integer.
+to make a base-$b$ representation for each integer.
 
 Here's a little insight into how the existence (odometer) proof works, but applied to a specific number in base-ten:
 All we want to show is that for some number, if you add 1 to it, that it's also possible to express it as a valid number in base-ten.
