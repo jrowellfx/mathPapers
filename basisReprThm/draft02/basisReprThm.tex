@@ -661,23 +661,18 @@ mathematicians who has ever lived - the young eight-year old was just getting st
 
 Anyway,
 to generalize Gauss's insight we can write the expression like this:
-
 \[1+2+3+\ldots+n=\frac{n(n+1)}{2}\]
-
 So let's prove this relationship using the principle of mathematical induction.
 \bigskip
 
 Let $n=1$ for the ``base case'',
 then
-
 \[\frac{1(1+1)}{2}=\frac{2}{2}=1\]
-
 Which is the trivial sum of the first positive integer 1.
 \bigskip
 
 Now let's assume the relationship is true for $n$,
 and prove that it must also be true for $n+1$:
-
 \begin{align*}
 &(1+2+3+\ldots+n) + (n+1)\\
 = & \; \frac{n(n+1)}{2} + (n+1)\\
@@ -687,13 +682,12 @@ and prove that it must also be true for $n+1$:
 = & \; \frac{(n+1)(n+2)}{2}\\
 = & \; \frac{(n+1)((n+1)+1)}{2}
 \end{align*}
-
 Which proves young Gauss's expression is true for
 the positive integer $n+1$ whenever it's true for $n$ - then
 by the principle of mathematical induction,
-the expression is true for all positive integers.
-\bigskip
+the expression is true for all positive integers. (QED)
 
+\break
 We are going to use the principle of mathematical induction to prove the Basis Representation Theorem.
 
 First we will prove that there is such a representation for all
@@ -713,7 +707,6 @@ if we were adding 1 to 69412999? We'd need to algebraically capture the idea of 
 we do it in the proof is essentially to say that $69412999 = 69410000 + 2999 = 69410000 + (3000-1)$ so that when we add one to it, then
 it's clear that the answer is just:
 \[69412999 + 1 = 69410000 + (3000-1) + 1 = 69410000 + 3000 + (-1 + 1) = 69413000\]
-
 After the existence proof has been established we will use another technique, called proof by contradiction,
 to prove that each such representation is unique - in other
 words there aren't two (or more) ways to represent the same integer in base-$b$.
@@ -886,9 +879,7 @@ that
 that\footnote{Actually the theorem is stronger than we have stated here. Specifically, it only requires that $b\ne0$, however
 to keep the remainder positive, the restriction on $r$ is stated like
 this $0 \le r \le (\left|b\right|-1)$ to deal with the possibility that $b$ might be negative.}:
-
 \[a=qb+r  \text{ and } 0\le{}r\le{}(b-1)\]
-
 Definition: In the above equation:
 \begin{jprIn}
 \begin{tabular}{l l}
@@ -941,8 +932,7 @@ Assume $n$ is not unique and that,
 \[n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\]
 and,
 \[n=c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0\]
-
-Let's further suppose that the index $j$ is the first power such that the digits $d_j\ne{}c_j$ and without any loss of generality,
+Let's further suppose that the index $j$ is the lowest power such that the digits $d_j\ne{}c_j$ and without any loss of generality,
 let's assume that $dj>cj$.
 
 Therefore:
@@ -950,7 +940,6 @@ Therefore:
 if and only if,
 \[0=(d_k-c_k)b^k+(d_{k-1}-c_{k-1})b^{k-1}+\dots+(d_j-c_j)b^j\]
 if and only if,
-
 \[\frac{0}{b^j}=\frac{(d_k-c_k)b^k+(d_{k-1}-c_{k-1})b^{k-1}+\dots+(d_j-c_j)b^j}{b^j}\text{, since }b\ne0\]
 if and only if,
 \[0=(d_k-c_k)b^{k-j}+(d_{k-1}-c_{k-1})b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})b+(d_j-c_j)\]
@@ -1033,7 +1022,6 @@ So the remainder is 5 our $d_1$ digit.  Let's keep going, this time dividing the
 \[76 = 7\times{}10+6\]
 and finally,
 \[7= 0\times{}10+7\]
-
 So, our series of remainders happens to be the digits of the number in base 10.
 Specifically $d_3 = 7$, $d_2=6$, $d_1=5$ and $d_0=4$.
 
@@ -1045,9 +1033,7 @@ then what is 185190 expressed in base-twenty-three?
 \item 291480 expressed in base-twenty-three?
 \end{enumerate}
 \item If $b, n \in \mathbb{Z}_{\ge 0}$ and $b\ne1$ then prove,
-
 \[1+b+b^2+\dots+b^{n-1} = \frac{b^n-1}{b-1}\]
-
 Hint: use induction on $n$, the base case being $n=1$.
 
 \end{enumerate}
