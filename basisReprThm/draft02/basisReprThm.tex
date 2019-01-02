@@ -1084,7 +1084,7 @@ How do we prove our theorem? There are several ways to approach it.
 
 The mathematician George E. Andrews (in his book
 ``Number Theory") has an interesting proof.
-He asks us to imagine a function that, given a positive integer $n$,
+He asks us to imagine a function that given a positive integer $n$,
 counts the number of base-$b$ representations of $n$.
 Then with a series of inequalities he shows that this counting-function
 MUST produce a count of ``1" for every $n$, both establishing the uniqueness 
@@ -1093,10 +1093,10 @@ It's a cool proof - short and sweet, I'll bet G. H. Hardy would approve of
 it from an aesthetic standpoint.
 
 We could also use the Euclidean Division Theorem to prove our theorem.
-We can show that by dividing our integer $n$ by $b$, then dividing that
+We could show that by dividing our integer $n$ by $b$, then dividing that
 result by $b$ again, then again, and again, etc. that we'd get a series
 of remainders which are the base-$b$-digits of $n$.
-This is an interesting proof in that it also gives us a technique
+This is an interesting approach to the proof in that it also gives us a technique
 to construct a base-$b$ represenation of each integer.
 If we were to go down this road
 we would try to generalize how we solved
@@ -1106,32 +1106,89 @@ However, we're going to follow a much more straightforward approach.
 We'll use the Principle of Mathematical Induction directly on $n$
 to prove that
 a base-$b$ representation of each positive integer exists.
+Then we'll use a different approach to prove that each such representation is unique.
 
-Then we'll use another approach to prove that each such representation is unique.
-
-A helpful way to think about how we're going
-to use the
+\bigskip
+Using the
 Principle of Mathematical Induction 
-is to imagine
-an arbitrarily long odometer in your car.
-Then it's easy to imagine that for ANY number that
-could be displayed on it's dials, if we drove another mile then
-it would always generate another valid number.
+to prove that a base-$b$ number exists for all the positive integers is pretty simple.
+The crux of the approach is to show that if $n$ can be expressed in base-$b$,
+then it necessarily follows that $n+1$ can also be represented in base-$b$.
 
-We need to take care of a few cases algebraically to match the kinds
-of things you see in the odometer:
+This is best thought of as a magic
+odometer in your new magic car.
+As you pull it out of the dealership parking lot
+on the first day you notice its odometer is only one digit wide.
+That one and only display-digit shows a ``1", I guess the factory was only one mile away.
 
-i) the units digit is less than 9, so driving one more mile only spins
-that first dial to the next number.\\
-ii) The units digit, and perhaps several to the left of it, are all 9's,
-so driving one more mile will spin all those 9's at once back to zero,
-at the same time adding one more to the first non-nine dial by spinning it to the next
-higher number.\\
-iii) All the digits from the units digit up are 9's until we get to a zero,
-so the next mile driven is going to 
-change that first zero dial to a 1 while spinning all the nines back to zero.
-In this case the number of digits will have been extended by one.
+As you get close to the end of your drive home
+you see you've clocked 9 miles.
+Naturally you're a little curious about how it's going to
+count to 10 since the odometer apparently only has one digit for counting.
+While pondering this curiosity you see the 9 starting to roll
+over back to 0, and a second digit to it's left magically materializes!
+It rolls to a 1 as the 9 settles back to 0.
+Nice new feature - the unlimited odometer!
+Apparently this magic odometer only adds new digits to the left
+as it needs them.
+The magic odometer should be able to display ANY number of miles, no matter how large.
+(Good thing too, this
+new line of magic cars from Tesla are guaranteed to last forever.)
 
+Our proof is going to take care of the three cases that happen with
+the magic-odometer. Imagine that we've already driven some arbitrarily large
+number of miles, and we're watching the odometer roll over to the
+next mile. We have the following cases:
+
+\begin{enumerate}[i)]
+\item The units digit is less than 9, so driving one more mile only increments
+the units digit, not affecting any of the other digits.
+
+Example: We've driven 782995 miles so far, so the next mile driven is
+$782995 + 1 = 782996$.
+
+So that units digit turned from a ``5" to a ``6", all the rest of
+the digits remaining unchanged,
+so the new number is a legitimate base-ten number.
+\item The units digit, and perhaps a few directly to the left of it, are all 9's,
+so driving one more mile will spin all those 9's to 0,
+at the same time incrementing
+the rightmost digit \emph{that isn't a} 9 by one.
+
+Example: We've driven 782999 miles so far, so the next mile driven is:
+\begin{align*}
+782999+1 &= 780000+2999+1\\
+&=780000+(3000-1)+1\\
+&=780000+3000+(-1+1)\\
+&=780000+3000+0\\
+&=783000
+\end{align*}
+That looks overly complicated, but I broke it down
+like that to demonstrate the idea behind the algebraic ``trick" that's
+used in the proof.
+
+Anyway, it's clear that the first ``non-nine" number, in our case the ``2", got changed
+to a ``3" and all the 9's got changed to 0's, and the rest were unchanged
+leaving us with a legitimate base-ten number.
+\item ALL the digits from the units digit up to the highest digit are 9's,
+so driving one more mile
+engages the magic odometer feature, materializing a new leftmost digit.
+The newly materialized digit turns to a 1 and all the 9's spin back to 0.
+In this case the number of digits on the odometer will have been extended by one.
+
+Example: We've driven 999999 miles so far, so the next mile driven is:
+\begin{align*}
+999999+1 &=(1000000-1)+1\\
+&=1000000+(-1+1)\\
+&=1000000+0\\
+&=1000000
+\end{align*}
+Same ``trick" as the previous case, but this time our number grew from a
+six digit number to a seven digit number. Ya, we just drove a million miles
+which is definitely a legitimate base-ten number!
+\end{enumerate}
+
+\bigskip
 Even though we can use induction to prove the existence of base-$b$
 numbers for every integer, let's think about why it
 might not be useful to prove the ``uniqueness" aspect of 
@@ -1156,34 +1213,7 @@ conclude that our assumption must be wrong - meaning
 that there is only \emph{one} way 
 to make a base-$b$ representation for each integer.
 
-\bigskip
-Here's a little insight into how the existence (odometer)
-proof works, but applied to a specific number in base-ten:
-All we want to show is that for some number,
-if you add 1 to it, that it's also possible to express it as a valid number in base-ten.
-
-For example, adding 1 to 69412995 gives us 69412996,
-which is pretty trivial to show that it's valid in base-ten,
-only the least-significant digit was
-changed, and it's clearly within the range of 0\dots{}9.
-
-But what about dealing with a ``carry'', for example 
-if we were adding 1 to 69412999? We'd need to algebraically
-capture the idea of the carry.  The way
-we do it in the proof is essentially to say that
-$69412999 = 69410000 + 2999 = 69410000 + (3000-1)$
-so that when we add one to it, then
-it's clear that the answer is just:
-\[69412999 + 1 = 69410000 + (3000-1) + 1 = 69410000 + 3000 + (-1 + 1) = 69413000\]
-
-We need an algebraic mechanism like the one that rolls over the digits in the odometer.
-
-Secondly, the magic alternate base-ten reprn machine - we
-will use another technique, called proof by contradiction,
-to prove that each such representation is unique - in other
-words there aren't two (or more) ways to represent the same
-integer in base-$b$.  That machine is impossible, but
-boiled down the abstract math level.
+Without further adieu, let's get to the actual proofs!
 
 \section*{Existence Proof of the Basis Representation Theorem}
 Let $n$ and $b$ be positive integers such that $b\ge2$.\\
