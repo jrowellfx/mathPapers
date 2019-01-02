@@ -96,7 +96,7 @@
 Most of us think about ``whole numbers'' not too differently from the way
 we learned to count by watching Sesame Street,
 the difference being that now we can count a little higher.
-How we've trained ourselves it's automatic to think the way
+How we've trained ourselves, it's automatic to think the way
 that we write a number or say a number \emph{is} the number.
 
 If I owe you 13 cents and I give you one dime and three pennies then 
@@ -240,7 +240,7 @@ Examining the pattern of how the power $k$ relates to how many zeros follow the 
 etc.) then it makes sense that $10^0=1$,
 i.e., no zeros follow the ``1", which is exactly right.
 Actually any number raised to the 0\textsuperscript{th} power~is~1.\footnote{Proof:
- $a^b=a^{b+0}=a^ba^0$ so because of the uniqueness of the multiplicative identity, then $a^0=1$ for all $a\ne0$.}
+ $a^b=a^{b+0}=a^ba^0$ so because of the uniqueness of the multiplicative identity ``1'', then $a^0=1$.}
 
 Let's look at an example.
 Reading the number 46307 out according to our technique we can see
@@ -641,7 +641,7 @@ At this point we really ought to get to the proof of the ``Basis Representation 
 However, truth be told, the proof that I have outlined below is a little heavy going - not difficult,
 but not really a great introductory proof for the first time mathematician.
 In fact here's what one of the
-world's greatest Mathematicians\footnote{along with the aforementioned Gauss and Euclid.},
+world's greatest Mathematicians\footnote{along with the Gauss and Euclid mentioned later in this paper.},
 G.~H.~Hardy, had to say about such
 proofs\footnote{in an essay he wrote called ``A Mathematician's Apology''.}:
 
@@ -864,7 +864,7 @@ Here's a little insight into how the existence proof works, but applied to a spe
 All we want to show is that for any number, if you add 1 to it, that it's also possible to express it as a valid number in base-ten.
 
 For example, adding 1 to 69412995 gives us 69412996, which is pretty trivial to show that it's valid in base-ten, only the least-significant digit was
-changed, and it's clearlly within the range of 0\dots{}9.
+changed, and it's clearly within the range of 0\dots{}9.
 
 But what about dealing with a ``carry'', for example 
 if we were adding 1 to 69412999? We'd need to algebraically capture the idea of the carry.  The way
@@ -961,7 +961,7 @@ $d_0=4$; in base-ten $d_0=9$, etc.
 
 %\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
-Let $j\in \mathbb{Z}_{\ge 0}$ be the lowest power of $b$ such that $d_j<(b-1)$,
+Let $j$ be the lowest power of $b$ such that $d_j<(b-1)$,
 meaning we can write $n$ as follows (\dots{}in other words all the digits to the right of $d_j$ are equal to $(b-1)$):
 \[n = d_kb^k+d_{k-1}b^{k-1}+\dots+d_jb^j+(b-1)b^{j-1}+\dots+(b-1)b^1+(b-1)b^0\]
 For example,
@@ -970,7 +970,7 @@ then $j=3$,
 since $10^3$ is the lowest power of 10 such that its digit $d_3$ is less than 9 (it's 2).\footnote{It will
 be helpful at this point to recall some rules of exponents, that is $a^ba^c=a^{b+c}$.}
 \begin{align*}
-n &=d_kb^k+\dots+d_jb^j+(b-1)b^{j-1}+\dots+(b-1)b^1+(b-1)b^0\\
+n &=d_kb^k+\dots+d_jb^j+(b-1)b^{j-1}+(b-1)b^{j-2}+\dots+(b-1)b^1+(b-1)b^0\\
 &= d_kb^k+\dots+d_jb^j+(b^j-b^{j-1})+(b^{j-1}-b^{j-2})+\dots+(b^2-b^1)+(b^1-b^0)\\
 &= d_kb^k+\dots+(d_jb^j+b^j)+(-b^{j-1}+b^{j-1})+\dots+(-b^2+b^2)+(-b^1+b^1)-b^0\\
 &= d_kb^k+\dots+(d_j+1)b^j-b^0\\
@@ -1103,11 +1103,14 @@ $q=0$ and $d_j-c_j = 0$.
 
 But $d_j-c_j = 0$ if and only if $d_j = c_j$
 which contradicts our assumption that $d_j\ne{}c_j$. This implies that the initial assumption that ``$n$
-is not unique'' is \emph{false}, in other words:\\
-\centerline{The base-$b$ representation of $n$ is unique.}
+is not unique'' is \emph{false}, in other words:
+\begin{center}
+The base-$b$ representation of $n$ is unique.
+\end{center}
 
-Therefore since we have proven that there exists a base-$b$ representation of ALL the nonnegative integers, \emph{and}
-that this representation is unique for ALL such integers, then we have proven the Basis Representation Theorem.
+\bigskip
+Therefore since we have proven that there exists a base-$b$ representation for ALL the nonnegative integers, \emph{and}
+that this representation is unique for ALL integers, then we have proven the Basis Representation Theorem.
 
 QED
 \end{document}
