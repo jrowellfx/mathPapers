@@ -18,7 +18,7 @@
 \geometry{a4paper} % or letterpaper (US) or a5paper or....
 % \geometry{margin=2in} % for example, change the margins to 2 inches all round
 % \geometry{landscape} % set up the page for landscape
-%   read geometry.pdf for detailed page layout information
+% read geometry.pdf for detailed page layout information
 
 \usepackage{graphicx} % support the \includegraphics command and options
 
@@ -58,7 +58,7 @@
 \usepackage{enumerate}
 %\usepackage{setspace}
 
-\newenvironment{jprIn1}{\begin{adjustwidth}{3em}{}}{\end{adjustwidth}}
+\newenvironment{jprIn}{\begin{adjustwidth}{2em}{}}{\end{adjustwidth}}
 
 %%% END Article customizations
 
@@ -67,7 +67,7 @@
 \title{SesameStreet++}
 \author{James Rowell}
 %\date{} % Activate to display a given date or no date (if empty),
-         % otherwise the current date is printed 
+% otherwise the current date is printed 
 
 \begin{document}
 \maketitle
@@ -85,7 +85,7 @@ the difference being that now we can count a little higher.
 How we've trained ourselves it's automatic to think that the way
 we write a number or say a number \emph{is} the number.
 
-If I say ``I owe you 13 cents'' and I give you one dime and three pennies then 
+If I owe you 13 cents and I give you one dime and three pennies then 
 after thanking me profusely for repaying this staggering debt,
 we'll agree that it's settled with those coins equaling 13 pennies. 
 We identify the symbol ``13'' very strongly with this particular number - it would 
@@ -131,7 +131,7 @@ we use this symbol: $\mathbb{Z}_{\ge 0}$.
 
 However, using a ``1" followed by a ``3" to represent
 ``\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}"
-is VERY handy.  So we use Hindu-Arabic numbers and the positional notation of ``base-ten",
+is VERY handy. So we use Hindu-Arabic numbers and the positional notation of ``base-ten",
 more commonly known as ``decimal", to represent each specific integer.
 We slap a ``-" on the front if we need to talk about a negative integer.
 
@@ -173,7 +173,7 @@ So our very first two-digit number 10 means ``one lot of ten - plus zero units".
 When we see ``11" - we interpret it to mean ``one lot of ten - plus one unit",
 and ``12" is ``one lot of ten - plus two units", etc.
 Continuing on; ``20" - we interpret to mean ``two lots of ten,
-plus zero units", etc.  up to ``90" meaning ``nine lots of ten,
+plus zero units", etc. up to ``90" meaning ``nine lots of ten,
 plus zero units".
 
 Following this line of reasoning since ``10" now means the integer ten,
@@ -193,7 +193,7 @@ It get's a little tedious to be so specific when reading out
 a number so our language has developed quite a few verbal shortcuts.
 Furthermore it doesn't take long before we run out of fancy names
 for these ``powers of ten" like, million, billion, trillion,
-zillion etc.  So let's introduce some nice clean mathematical notation
+zillion etc. So let's introduce some nice clean mathematical notation
 to describe these powers of ten and let's forget the fancy words.
 
 \begin{align*}
@@ -201,12 +201,12 @@ to describe these powers of ten and let's forget the fancy words.
 1000&= 10\times10\times10=10^3,\\
 10000&= 10\times10\times10\times10=10^4,\\
 \dots{}\\
-\underbrace{10\dots{}000}_\text{k zeros}&= \underbrace{10\times10\times10\times10\times\dots{}\times10}_\text{k 10s}=10^k\\
+\underbrace{10\dots{}000}_\text{k zeros}&= \underbrace{10\times10\times10\times10\times\dots{}\times10}_\text{k 10s}=10^k
 \end{align*}
-The $10^k$ means there are  $k$  10's multiplied together - 
-also written as a 1 followed by  $k$  zeros.
+The $10^k$ means there are $k$ 10's multiplied together - 
+also written as a 1 followed by $k$ zeros.
 The above list shows the cases for $k = 2$, 3 and 4.
-Using the $k$  like that is just a way to show that we can pick ANY whole number,
+Using the $k$ like that is just a way to show that we can pick ANY whole number,
 i.e., there is no limit on how big $k$ can be.
 
 The notation of $10^k$ is very handy, in fact it extends to the case when $k=0$ and $k=1$.
@@ -230,8 +230,8 @@ plus zero lots of ten, plus seven units":
 
 \begin{center}
 \begin{tabular}{r r r r c r r}
-\phantom  & 4 & $\times$ & 10000 & \phantom & \phantom & 40000\\
-+ & 6 & $\times$ & 1000  & \phantom & + & 6000\\
+\phantom & 4 & $\times$ & 10000 & \phantom & \phantom & 40000\\
++ & 6 & $\times$ & 1000 & \phantom & + & 6000\\
 + & 3 & $\times$ & 100 & \; \; = \; \; & + & 300\\
 + & 0 & $\times$ & 10 & \phantom & + & 00\\
 + & 7 & $\times$ & 1 & \phantom & + & 7\\
@@ -265,7 +265,7 @@ which we're going to do!
 
 \section*{Base-Ten Representation Theorem}
 
-\begin{jprIn1}
+\begin{jprIn}
 Let $n,k\in \mathbb{Z}_{\ge 0}$. Then every $n$ can be uniquely expressed as follows:
 
 \hspace{3em}$n=d_k10^k+d_{k-1}10^{k-1}+\dots+d_210^2+d_110^1+d_010^0$
@@ -275,7 +275,7 @@ for some $k$ such that $0 \le d_i \le 9$ where $d_i,i\in\mathbb{Z}$ and $0 \le i
 Furthermore $d_k\ne0$ except when $n=0$.
 
 Definition: $n$ is represented in base-ten as $d_kd_{k-1}\dots{}d_2d_1d_0$
-\end{jprIn1}
+\end{jprIn}
 \bigskip
 
 A difficulty many folks have with math is the notation - it's
@@ -304,12 +304,12 @@ and furthermore the expression is going to be unique for each integer.
 
 \item ``$n=d_k10^k+d_{k-1}10^{k-1}+\dots+d_210^2+d_110^1+d_010^0$"
 
-This is the expression in question.  It equates $n$ with a series of multiplications
+This is the expression in question. It equates $n$ with a series of multiplications
 of some numbers (the $d_i$ terms where $i$ can be any
 number from 0 to $k$) times descending powers of 10,
 and adds them all together.
 
-It's useful to point out the meaning of our ``$d_0,d_1,d_2,\dots{},d_i,d_k$'' terms.
+It's useful to point out the meaning of our ``$d_0,d_1,d_2,\dots{},d_k$'' and $d_i$ terms.
 Mathematical formulas such as this make judicious use of ``subscripts''
 when coming up with names for lists of variables or constants.
 Subscripts following a letter or symbol, such as $d_0,d_1,d_2,\dots{}$
@@ -377,7 +377,7 @@ Before we prove our theorem,
 consider that base-ten is not the only base in use these days.
 Since the introduction of the EDVAC\footnote{You might be thinking, don't you
 mean ENIAC which was eariler? Actually no - the ENIAC
-used base-10 accumulators, not binary!} computer, around 1950,
+used base-ten accumulators, not binary!} computer, around 1950,
 there have been many orders of magnitude more calculations done
 in base-two (otherwise known as binary) by computers than have EVER
 been done by people in base-ten for the entirety of human history.
@@ -389,7 +389,7 @@ can only take one of two states, that is; ``off" or ``on".
 We interpret these two states to represent these two numbers: 0 and 1.
 By doing so, in the same way that base-ten uses ten numbers 0,
 1, 2, 3, 4, 5, 6, 7, 8, and 9 for its digits; we can represent integers
-in base-two with just the digits 0 and 1.  How is this possible?
+in base-two with just the digits 0 and 1. How is this possible?
 Let's find out with an imaginary trip into space.
 
 Consider distant Planet-Nova on which the emergent
@@ -404,7 +404,7 @@ for them means ``One lot of nine, plus zero units".
 
 Similarly on Planet-Ocho, since they only have eight fingers,
 then they use base-eight and only use numbers 0, 1,
-2, 3, 4, 5, 6 and 7 for their digits.  For them ``10''
+2, 3, 4, 5, 6 and 7 for their digits. For them ``10''
 means ``One lot of eight, plus zero units".
 
 On and on past Planet-Gary-Seven, and Planet-Secks, Planet-Penta, \dots{}
@@ -427,21 +427,21 @@ in other words three.
 Here's how they count on Planet-Claire using base-two:
 \begin{center}
 \begin{tabular}{r l c r l}
-%\phantom  & 4 & $\times$ & 10000 & \phantom & \phantom & 40000\\
-base-two & base-ten  & \; \; \; \; & base-two & base-ten\\
-0 & 0  & \phantom& (\dots cont)\\
-1 & 1  & \phantom& 1101 & 13\\
-10 & 2  & \phantom& 1110 & 14\\
-11 & 3  & \phantom& 1111 & 15\\
-100 & 4  & \phantom& 10000 & 16\\
-101 & 5  & \phantom& 10001 & 17\\
-110 & 6  & \phantom& \dots{}\\
-111 & 7  & \phantom& 11111 & 31\\
-1000 & 8  & \phantom& 100000 & 32\\
-1001 & 9  & \phantom& \dots{}\\
+%\phantom & 4 & $\times$ & 10000 & \phantom & \phantom & 40000\\
+base-two & base-ten & \; \; \; \; & base-two & base-ten\\
+0 & 0 & \phantom& (\dots cont)\\
+1 & 1 & \phantom& 1101 & 13\\
+10 & 2 & \phantom& 1110 & 14\\
+11 & 3 & \phantom& 1111 & 15\\
+100 & 4 & \phantom& 10000 & 16\\
+101 & 5 & \phantom& 10001 & 17\\
+110 & 6 & \phantom& \dots{}\\
+111 & 7 & \phantom& 11111 & 31\\
+1000 & 8 & \phantom& 100000 & 32\\
+1001 & 9 & \phantom& \dots{}\\
 1010 & 10 & \phantom & 1000000 & 64\\
-1011 & 11  & \phantom& 10000000 & 128\\
-1100 & 12 (cont\dots)  & \phantom& 100000000 & 256\\
+1011 & 11 & \phantom& 10000000 & 128\\
+1100 & 12 (cont\dots) & \phantom& 100000000 & 256\\
 \end{tabular}
 \end{center}
 
@@ -467,8 +467,8 @@ plus one lot of two, plus zero units":
 
 \begin{center}
 \begin{tabular}{r r r r c r r l}
-\phantom  & 1 & $\times$ & 10000 & \phantom & \phantom & 10000 & (16)\\
-+ & 1 & $\times$ & 1000  & \phantom & + & 1000 & (8)\\
+\phantom & 1 & $\times$ & 10000 & \phantom & \phantom & 10000 & (16)\\
++ & 1 & $\times$ & 1000 & \phantom & + & 1000 & (8)\\
 + & 0 & $\times$ & 100 & \; \; = \; \; & + & 000 & \\
 + & 1 & $\times$ & 10 & \phantom & + & 10 & (2)\\
 + & 0 & $\times$ & 1 & \phantom & + & 0\\
@@ -490,7 +490,7 @@ Sound familiar? Let's restate our theorem for base-ten but rewritten for base-tw
 
 \section*{Base-Two Representation Theorem}
 
-\begin{jprIn1}
+\begin{jprIn}
 Let $n,k\in \mathbb{Z}_{\ge 0}$. Then every $n$ can be uniquely expressed as follows:
 
 \hspace{3em}$n=d_k2^k+d_{k-1}2^{k-1}+\dots+d_22^2+d_12^1+d_02^0$
@@ -500,7 +500,7 @@ for some $k$ such that $0 \le d_i \le 1$ where $d_i,i\in\mathbb{Z}$ and $0 \le i
 Furthermore $d_k\ne0$ except when $n=0$.
 
 Definition: $n$ is represented in base-two as $(d_kd_{k-1}\dots{}d_2d_1d_0)_2$
-\end{jprIn1}
+\end{jprIn}
 \bigskip
 
 Try reading the above out loud in your head,
@@ -558,7 +558,7 @@ then we'll automatically get all the cases of specific bases for free.
 
 \section*{Basis Representation Theorem}
 
-\begin{jprIn1}
+\begin{jprIn}
 Let $n,k,b\in \mathbb{Z}_{\ge 0}$ such that $b\ge2$.
 Then every $n$ can be uniquely expressed as follows:
 
@@ -569,23 +569,23 @@ for some $k$ such that $0 \le d_i \le (b-1)$ where $d_i,i\in\mathbb{Z}$ and $0 \
 Furthermore $d_k\ne0$ except when $n=0$.
 
 Definition: $n$ is represented in base-$b$ as $(d_kd_{k-1}\dots{}d_2d_1d_0)_b$
-\end{jprIn1}
+\end{jprIn}
 \bigskip
 
 As we discussed way up at the top of this essay,
- we think about positive integers as a process that builds them up one by one.
+we think about positive integers as a process that builds them up one by one.
 That is, each successive integer is one more than the previous one,
 starting at 1, then one more
 taking us to 2,
-then 3, 4, 5, \dots{}ad infinitum\dots
+then 3, 4, 5, \dots{}ad infinitum\footnote{``ad infinitum'' means ``to infinity'', or ``continue forever, without limit''.}\dots
 
-This idea of stepping one after the other,
+This idea of being able to step one after the other,
 beginning at 1 and going forever is called the ``Principle of Mathematical
 Induction" and is a basic property of the positive integers.
 This principle is more than just a way to generate the set of integers,
-it's a way of thinking about properties of the integers.
+it's also a way of thinking about properties of the integers.
 
-Suppose that $P(n)$ means that the property $P$ holds
+Suppose\footnote{The wording of this definition of ``The Principle of Mathematical Induction'' is borrowed from ``Calculus'' by Michael Spivak - an fabulous introductory textbook to Analysis.} that $P(n)$ means that the property $P$ holds
 for the number $n$; where $n$ is a positive integer.
 Then the principle of mathematical induction states that $P(n)$
 is true for ALL positive integers n provided that:
@@ -617,7 +617,7 @@ as a young boy in
 the 1780s who was assigned (along with all his classmates)
 the tedious task of summing the first 100 integers -
 Presumably to keep them quiet and busy while the
-teacher corrected some papers.  Anyway,
+teacher corrected some papers. Anyway,
 young Gauss immediately produced the answer
 5050, before most of the boys had summed the first couple of numbers.
 It wasn't young Gauss's extraordinary computational speed which allowed
@@ -652,177 +652,200 @@ then
 Which is the trivial sum of the first positive integer 1.
 \bigskip
 
-Now let's assume the relationship is true for n,
-and prove that it must also be true for n+1:
+Now let's assume the relationship is true for $n$,
+and prove that it must also be true for $n+1$:
 
 \begin{align*}
-(1+2+3+\ldots+n) + (n+1) &=  \frac{n(n+1)}{2} + (n+1)\\
-&= \frac{n(n+1)}{2} + \frac{2(n+1)}{2}\\
-&= \frac{n^2+n+2n+2}{2}\\
-&= \frac{n^2+3n+2}{2}\\
-&= \frac{(n+1)(n+2)}{2}\\
+&(1+2+3+\ldots+n) + (n+1)\\
+= & \; \frac{n(n+1)}{2} + (n+1)\\
+= & \; \frac{n(n+1)}{2} + \frac{2(n+1)}{2}\\
+= & \; \frac{n^2+n+2n+2}{2}\\
+= & \; \frac{n^2+3n+2}{2}\\
+= & \; \frac{(n+1)(n+2)}{2}\\
+= & \; \frac{(n+1)((n+1)+1)}{2}
 \end{align*}
 
-Which proves young Gauss's expression is true for the positive integer $n+1$ whenever it's true for $n$ - then
-by the principle of mathematical induction, the expression is true for all positive integers.
+%\begin{align*}
+%&\phantom\;\;\;\;\ (1+2+3+\ldots+n) + (n+1)\\
+%&= \frac{n(n+1)}{2} + (n+1)\\
+%&= \frac{n(n+1)}{2} + \frac{2(n+1)}{2}\\
+%&= \frac{n^2+n+2n+2}{2}\\
+%&= \frac{n^2+3n+2}{2}\\
+%&= \frac{(n+1)(n+2)}{2}
+%\end{align*}
+
+Which proves young Gauss's expression is true for
+the positive integer $n+1$ whenever it's true for $n$ - then
+by the principle of mathematical induction,
+the expression is true for all positive integers.
 \bigskip
 
 We are going to use the principle of mathematical induction to prove the Basis Representation Theorem.
 
-First we will prove that there is such a representation for all integers $n$ (existence proof).
-Meaning that every integer has a way of being written in the form described by the theorem - especially as relates to the restrictions on the values that the ``digits" can take on.
-After that has been established we will use another technique to prove that each such representation is unique - in other words there aren't two (or more) ways to represent the same integer in base-$b$.
+First we will prove that there is such a representation for all
+integers $n$ (existence proof).
+Meaning that every integer has a way of being written
+in the form described by the theorem - especially as
+relates to the restrictions on the values that the ``digits" can take on.
+After that has been established we will use another technique
+to prove that each such representation is unique - in other
+words there aren't two (or more) ways to represent the same integer in base-$b$.
 
 \break
 \section*{Existence Proof of the Basis Representation Theorem}
 
 Base case:
-Let’s prove both $n=0$ and $n=1$ to start us off.
+\begin{jprIn}
+Since $n=0$ is a slightly special case in the theorem, then lets look at both $n=0$ and $n=1$ to start our base case.
 
 Let $n=0$.
 
-\begin{jprIn1}
+\begin{jprIn}
 We can choose $k=0$ and $d_0=0$.
-(This is the one exception spelled out in the theorem in which the most significant digit of n is allowed to be zero.) Then,
+(This is the one exception spelled out in the theorem in
+which the most significant digit of n is allowed to be zero.) Then,
 \[n=d_0b^0=0\times{}b^0=0\]
 showing that we have a valid representation for 0 in base-$b$ since our only digit\\
 $d_0=0\le(b-1)$, for all $b\ge2$.
-\end{jprIn1}
+\end{jprIn}
 
 Now Let $n=1$.
 
-\begin{jprIn1}
-In this case,
-we can choose $k=0$ and $d_0=1$.
-Then,
-
+\begin{jprIn}
+In this case, we can choose $k=0$ and $d_0=1$.  Then,
 \[n=d_0b^0=1\times{}b^0=1\times{}1=1\]
-
 showing that we have a valid representation for 1 in base-$b$ since\\
-$d_0=1\le(b-1), \forall{} b\ge2$.
-\end{jprIn1}
-
-Induction Case:
-Assume the theorem is true for $n$;
-prove it must also be true for $n+1$:
+$d_0=1\le(b-1)$, for all $b\ge2$.
+\end{jprIn}
+\end{jprIn}
 \bigskip
 
-Assume that $n$ has a valid representation in base-$b$.
-That is,
-we assume that n can be written thus: 
-n=dkbk+dk-1bk-1+?+d2b2+d1b1+d0b0
-with all the appropriate conditions holding for the values of diand b and k; and we will prove thatn+1also has a valid representation in base-b.
+Induction Case:
 
-We’re going to break this step into two cases which between the two covers all possibilities.
+\begin{jprIn}
+Assume that $n$ has a valid representation in base-$b$,
+that is, $n$ can be written thus: 
+\[n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\]
+with all the appropriate conditions holding for the
+values of $d_i$, $b$ and $k$;
+and we will prove that $n+1$ also has a valid representation in base-$b$.
 
-Case 1) 0d0(b-2)
-This case looks at the situation where the least significant digit of n is strictly-less-than the LARGEST value it can take in base-b.
+We're going to break this step into two cases which cover all possibilities.
 
-For example,
-in base-two,
-d0 can only be 0.
-In base-five,
-d0can be at most 3.
-In base-ten,
-d0 can be at most 8,
-etc.
+Case 1) $d_0\le(b-2)$
 
-So we can express n+1as follows: 
-n+1 =(dkbk+dk-1bk-1+?+d2b2+d1b1+d0b0)+1
-= dkbk+dk-1bk-1+?+d2b2+d1b1+d0b0+11
-= dkbk+dk-1bk-1+?+d2b2+d1b1+d0b0+1b0
-= dkbk+dk-1bk-1+?+d2b2+d1b1+(d0+1)b0
-and since d0(b-2)(our assumption for ``case 1"),
-then 
-(d0+1)(b-2)+1(b-1),
-therefore the ``least significant digit" (i.
-e.
-(d0+1)which corresponds the lowest powerb0) of n+1 is less than or equal to(b-1),
-which means it is a valid digit in base-b.
+\begin{jprIn}
+This case examines when the least significant
+digit of $n$ is \emph{strictly-less-than} the largest value it can take in base-$b$.
+For example, in base-two $d_0$ can only be zero;
+In base-five $d_0$ can be at most three;
+In base-ten $d_0$ can be at most eight, etc.
+This case is
+quite easy to deal with, so let's quickly dispense with it.
+\begin{align*}
+n &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\\
+&\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\text{if and only if,}\\
+n+1 &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + 1\\
+&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + b^0\\
+&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1 + (d_0+1)b^0
+\end{align*}
+and our by assumption that $d_0\le(b-2)$, then
+\[(d_0+1)\le(b-2)+1=(b-1)\]
+showing us that the ``least significant digit"
+of $n+1$, being $(d_0+1)$, is less than or equal to $(b-1)$ which means that
+$(d_0+1)$ is a valid digit in base-$b$.
 
-Since all other diterms (i.
-e.
-d1,d2,?,dk) for n+1are unchanged from their representations for n and n is assumed to be a valid representation in base-b then all the digits of n+1are valid in base-b.
+Since all the other $d_i$ terms ($d_1,d_2,\dots,d_k$)
+for $n+1$ are unchanged from their values for
+$n$ then all the digits of $n+1$ are valid in base-$b$.
 
-Therefore we’ve established the truth of ``Case 1" for the integer n+1.
+Therefore we've established the truth of ``Case 1" for the integer $n+1$.
+\end{jprIn}
+\bigskip
 
-Case 2) d0=(b-1) 
-Now we’ll look at the case when the least significant digit of n is equal to the largest value it can take in base-b,
-that is,
-d0=(b-1).
+Case 2) $d_0=(b-1)$
+\begin{jprIn}
+Now we'll look at the case when the least significant digit of $n$ is equal
+to the largest value it can take in base-$b$, that is,
+$d_0=(b-1)$.
 (Note that between ``Case 2" here and ``Case 1" above,
-we’re covering all the possibilities for what d0 can be.
-)
-For example in base-two,
-d0=1; in base 5,
-d0=4; in base-ten d0=9,
-etc.
+we're covering all the possibilities for what $d_0$ can be.)
+For example in base-two
+$d_0=1$; in base-five
+$d_0=4$; in base-ten $d_0=9$, etc.
 
-Let’s temporarily introduce a new digit,
-dk+1=0 to our representation of n.
-The motivation being that in the situation where we’re adding 1 to 999,
-that we need another ``digit" to ``carry" the 1 over into so that we can get 1000.
+%\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
-n =dkbk+dk-1bk-1+?+d2b2+d1b1+d0b0 (definition of n)
-=0+dkbk+dk-1bk-1+?+d2b2+d1b1+d0b0 (add zero)
-=0bk+1+dkbk+dk-1bk-1+?+d2b2+d1b1+d0b0 (multiply bk+1by zero)
-=dk+1bk+1+dkbk+dk-1bk-1+?+d2b2+d1b1+d0b0 (subst dk+1for zero)
-Also,
-let jZ0be the lowest power of b such that dj<(b-1),
-meaning we can write n as follows:
-n =dk+1bk+1+?+djbj+(b-1)bj-1+?+(b-1)b1+(b-1)b0
+Let $j\in \mathbb{Z}_{\ge 0}$ be the lowest power of $b$ such that $d_j<(b-1)$,
+meaning we can write $n$ as follows for some $j$:
+\[n = d_kb^k+d_{k-1}b^{k-1}+\dots+d_jb^j+(b-1)b^{j-1}+\dots+(b-1)b^1+(b-1)b^0\]
 For example,
-if n=69412999,
-then j=3,
-since 103is the lowest power of 10 such that its digit d3=2 is less than 9.
+if $n=69412999$,
+then $j=3$,
+since $10^3$ is the lowest power of 10 such that its digit $d_3$ is less than 9 (it's 2).
+\begin{align*}
+n &=d_kb^k+\dots+d_jb^j+(b-1)b^{j-1}+\dots+(b-1)b^1+(b-1)b^0\\
+&= d_kb^k+\dots+d_jb^j+(b^j-b^{j-1})+(b^{j-1}-b^{j-2})+\dots+(b^2-b^1)+(b^1-b^0)\\
+&= d_kb^k+\dots+(d_jb^j+b^j)+(-b^{j-1}+b^{j-1})+\dots+(-b^2+b^2)+(-b^1+b^1)-b^0\\
+&= d_kb^k+\dots+(d_j+1)b^j-b^0\\
+&= d_kb^k+\dots+(d_j+1)b^j-1
+\end{align*}
+Therefore,
+\begin{align}
+n+1 &=d_kb^k+\dots+(d_j+1)b^j-1+1 \nonumber \\
+&= d_kb^k+\dots+(d_j+1)b^j \label{eqnA}
+\end{align}
+Since we picked $j$ such that $d_j<(b-1)$,
+less restate the inequality as\\
+$d_j\le(b-2)$ therefore,
+\[(d_j+1)\le(b-2)+1=(b-1)\]
+meaning the $j$\textsuperscript{th} digit of $n+1$ is a valid base-$b$ digit.
 
-n =dk+1bk+1+?+djbj+(b-1)bj-1+?+(b-1)b1+(b-1)b0
-= dk+1bk+1+?+djbj+(bj-bj-1)+?+(b2-b1)+(b1-b0)
-= dk+1bk+1+?+djbj+bj+(-bj-1+bj-1)+?+(-b2+b2)+(-b1+b1)-b0
-= dk+1bk+1+?+(dj+1)bj-b0
-= dk+1bk+1+?+(dj+1)bj-1
-Therefore
-n+1 =dk+1bk+1+?+(dj+1)bj-1+1
-= dk+1bk+1+?+(dj+1)bj
-Since we picked j such that dj<(b-1),
-less restate the inequality as dj(b-2)therefore,
-(dj+1)(b-2)+1(b-1),
-meaning the digit (dj+1) for the base-b representation of n+1is valid for base-b.
+All digits $d_k,\dots,{}d_{j+1}$ remain unchanged from the base-$b$ representation of $n$,
+and all digits $d_{j-1},\dots{},d_0$ are 0.
 
-All digits dj+1and higher remain unchanged from what they were for the base-b representation of n,
-and all digits dj-1and lower are 0.
-Therefore all the digits of the base-b representation of n+1are valid in base-b.
+Therefore all the digits of the base-$b$ representation of $n+1$ are valid in base-$b$.
+\bigskip
 
-To cleanly button this up we note that if we were dealing with the case that j=k+1,
-(eg.
-n was something like 99999) then we can see that n+1=bk+1because:
-n+1 =(dj+1)bj
-=(dk+1+1)bk+1
-=(0+1)bk+1
-=bk+1
-Meaning that n+1has a (k+1)st digit and it’s equal to 1,
-with all the rest of the digits following being 0.
+\break
+If you've been fastidiously following the conditions on our subscript $j$ above, then
+you may notice that
+our proof doesn't leave room for the case that \emph{all} the digits are equal to $(b-1)$ because of
+how we defined $j$. For example when $n=99999$.
 
-In all other cases (i.
-e.
-; j< (k+1)) we discard the extra ``temporary" digit dk+1=0 that we created from our expression,
-and are left with an expression for n+1 that valid for base-b.
+Let's attend to this remaining situation.
 
-QED - existence proof
+Suppose $d_i=(b-1)$ for all $0\le{}i\le{}k$, then let $d_{k+1}=0$ and $j=k+1$.
 
-Uniqueness Proof:
+So picking up at equation \eqref{eqnA} with our new terms we have:
+\begin{align*}
+n+1 &=(d_j+1)b^j\\
+&=(d_{k+1}+1)b^{k+1}\\
+&=(0+1)b^{k+1}\\
+&=b^{k+1}
+\end{align*}
+Meaning that $n+1$ now has a $(k+1)$\textsuperscript{st} digit and it's equal to 1,
+with all the rest of the digits being 0 - which is a valid representation for $n+1$ in base-$b$ for all $b\ge2$.
+
+QED\footnote{``QED'' - is often used at the conclusion of a proof to state that it’s
+done - it’s an acronym for the latin phrase ``quod erat demonstrandum'' which means ``that which was to be demonstrated''.
+In other words we’ve proven the existence part of the Basis Representation Theorem.} - existence proof.
+\end{jprIn}
+\end{jprIn}
+\bigskip
+\section*{Uniqueness Proof of the Basis Representation Theorem}
+
 Suppose n is not unique and that,
-n=dkbk+dk-1bk-1+?+d2b2+d1b1+d0b0,
-
+\[n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\]
 also suppose,
-n=ckbk+ck-1bk-1+?+c2b2+c1b1+c0b0
-Let’s further suppose that the index j is the first power such that the digits djcjand without any loss of generality,
-let’s assume that dj>cj.
+\[n=c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0\]
+
+Let's further suppose that the index $j$ is the first power such that the digits $d_j\ne{}c_j$ and without any loss of generality,
+let's assume that $dj>cj$.
 
 Therefore:
-ckbk+ck-1bk-1+?+c2b2+c1b1+c0b0=dkbk+dk-1bk-1+?+d2b2+d1b1+d0b0
+\[c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b\]
 if and only if,
-0=(dk-ck)bk+(dk-1-ck-1)bk-1+?+(dj-cj)bj
-
+\[0=(d_k-c_k)b^k+(d_{k-1}-c_{k-1})b^{k-1}+\dots+(d_j-c_j)b^j\]
 
 \end{document}
