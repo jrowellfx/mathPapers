@@ -614,7 +614,7 @@ for the number $n$; where $n$ is a positive integer.
 Then the principle of mathematical induction states that $P(n)$
 is true for ALL positive integers $n$ provided that\footnote{This wording of the
 definition of ``The Principle of Mathematical Induction'' is essentially borrowed
-from ``Calculus'' by Michael Spivak - an fabulous introductory textbook on Analysis.}:
+from ``Calculus'' by Michael Spivak - a fabulous introductory textbook on Analysis.}:
 
 \begin{enumerate}[i)]
 \item $P(1)$ is true
@@ -669,7 +669,7 @@ So let's prove this relationship using the principle of mathematical induction.
 Let $n=1$ for the ``base case'',
 then
 \[\frac{1(1+1)}{2}=\frac{2}{2}=1\]
-Which is the trivial sum of the first positive integer 1.
+Which is the trivial sum\footnote{The word ``sum'' here is used in the context of the expression we are trying to prove. In this case we are summing only one item thus it's ``trivial''.} of the first positive integer 1.
 \bigskip
 
 Now let's assume the relationship is true for $n$,
@@ -691,10 +691,10 @@ done - it’s an acronym for the Latin phrase ``quod erat demonstrandum'' which 
 In other words we’ve proven what we set out to prove.}
 
 \break
-We are going to use the principle of mathematical induction to prove the Basis Representation Theorem.
+We are going to use two techniques to prove the Basis Representation Theorem.
 
 First we will prove that there is such a representation for all
-integers $n$ (existence proof).
+integers $n$ (existence proof) using the principle of mathematical induction.
 Meaning that every integer has a way of being written
 in the form described by the theorem - especially as
 relates to the restrictions on the values that the ``digits" can take on.
@@ -710,7 +710,7 @@ if we were adding 1 to 69412999? We'd need to algebraically capture the idea of 
 we do it in the proof is essentially to say that $69412999 = 69410000 + 2999 = 69410000 + (3000-1)$ so that when we add one to it, then
 it's clear that the answer is just:
 \[69412999 + 1 = 69410000 + (3000-1) + 1 = 69410000 + 3000 + (-1 + 1) = 69413000\]
-After the existence proof has been established we will use another technique, called proof by contradiction,
+Secondly, we will use another technique, called proof by contradiction,
 to prove that each such representation is unique - in other
 words there aren't two (or more) ways to represent the same integer in base-$b$.
 
@@ -719,7 +719,7 @@ words there aren't two (or more) ways to represent the same integer in base-$b$.
 Base case:
 \begin{jprIn}
 The Principle of Mathematical Induction always starts with 1\footnote{The Principle of Mathematical induction only talks about positive integers, not zero}, but we also need to take
-care of the slightly special case of $n=0$; so let's also take care of $n=0$ then $n=1$ which will serve as our base induction step.
+care of the slightly special case of $n=0$; so let's take care of $n=0$ AND $n=1$ which will serve as our base induction step.
 
 Let $n=0$.
 
@@ -765,8 +765,8 @@ For example, in base-two $d_0$ can only be zero;
 In base-five $d_0$ can be at most three;
 In base-ten $d_0$ can be at most eight, etc.
 This case is
-quite easy to deal with, so let's quickly dispense with it\footnote{It will be helpful at this point to recall the axiom of ``Distribution'' that is $a(b+c)=ab+ac$,
-in fact it might not hurt to do a quick refresh the rest as well, ``Associativity''': $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$, ``Commutativity'': $a+b=b+a$ and $ab=ba$, ``Existence of inverses and identities'': $a+0=a$ and $a\times1=a$ and $a+(-a)=0$. Note: integers do NOT have multiplicative inverses}.
+quite easy to deal with, so let's quickly dispense with it\footnote{It will be helpful at this point to recall the axiom of ``Distribution'' that is $a(b+c)=ab+ac$;
+In fact, it might not hurt to do a quick refresh of some of the others as well, ``Associativity''': $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$, ``Commutativity'': $a+b=b+a$ and $ab=ba$, ``Existence of inverses and identities'': $a+0=a$ and $a\times1=a$ and $a+(-a)=0$. Note: in general integers do NOT have multiplicative inverses}.
 \begin{align*}
 n &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\\
 &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\text{if and only if,}\\
@@ -850,9 +850,10 @@ n+1 &=(d_j+1)b^j\\
 \end{align*}
 Meaning that $n+1$ now has a $(k+1)$\textsuperscript{st} digit and it's equal to 1,
 with all the rest of the digits being 0 - which is a valid representation for $n+1$ in base-$b$ for all $b\ge2$.
-
-QED - existence proof.
 \end{jprIn}
+Therefore 
+by the principle of mathematical induction,
+we have proven that there is a base-$b$ representation for all nonnegative integers.
 \end{jprIn}
 \bigskip
 
@@ -931,36 +932,39 @@ QED
 \section*{Uniqueness Proof of the Basis Representation Theorem}
 
 Assume $n$ is not unique and that,
-\[n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\]
-and,
-\[n=c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0\]
+\begin{align*}
+n&=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\text{, and}\\
+n&=c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0
+\end{align*}
 Let's further suppose that the index $j$ is the lowest power such that the digits $d_j\ne{}c_j$ and without any loss of generality,
 let's assume that $d_j>c_j$.
 
-Therefore:
-\[c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b\]
-if and only if,
-\[0=(d_k-c_k)b^k+(d_{k-1}-c_{k-1})b^{k-1}+\dots+(d_j-c_j)b^j\]
-if and only if,
-\[\frac{0}{b^j}=\frac{(d_k-c_k)b^k+(d_{k-1}-c_{k-1})b^{k-1}+\dots+(d_j-c_j)b^j}{b^j}\text{, since }b\ne0\]
-if and only if,
-\[0=(d_k-c_k)b^{k-j}+(d_{k-1}-c_{k-1})b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})b+(d_j-c_j)\]
-if and only if,
-\[0=\big((d_k-c_k)b^{k-j-1}+(d_{k-1}-c_{k-1})b^{k-j-2}+\dots+(d_{j+1}-c_{j+1})\big)b+(d_j-c_j)\]
+Therefore\footnote{Please read the bidirectional arrow symbol $\Leftrightarrow$ as ``if and only if'' - it's like a logical ``equals'' sign}:
+\begin{align*}
+& c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b\\
+\Leftrightarrow\;\;\;\;&0=(d_k-c_k)b^k+(d_{k-1}-c_{k-1})b^{k-1}+\dots+(d_j-c_j)b^j\\
+\Leftrightarrow\;\;\;\;& \frac{0}{b^j}=\frac{(d_k-c_k)b^k+(d_{k-1}-c_{k-1})b^{k-1}+\dots+(d_j-c_j)b^j}{b^j}\text{, since }b\ne0\\
+\Leftrightarrow\;\;\;\;& 0=(d_k-c_k)b^{k-j}+(d_{k-1}-c_{k-1})b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})b+(d_j-c_j)\\
+\Leftrightarrow\;\;\;\;& 0=\big((d_k-c_k)b^{k-j-1}+(d_{k-1}-c_{k-1})b^{k-j-2}+\dots+(d_{j+1}-c_{j+1})\big)b+(d_j-c_j)
+\end{align*}
 Let $q=\big((d_k-c_k)b^{k-j-1}+(d_{k-1}-c_{k-1})b^{k-j-2}+\dots+(d_{j+1}-c_{j+1})\big)$, then
 \[0=qb+(d_j-c_j)\]
 Since $0\le(d_j-c_j)\le(b-1)$ and $b>0$ then by our lemma we know that\\
 $q=0$ and $d_j-c_j = 0$.
 
 But $d_j-c_j = 0$ if and only if $d_j = c_j$
-which contradicts our assumption that $d_j\ne{}c_j$. This implies that the initial assumption that $n$
-is not unique is \emph{false}, in other words:
-
+which contradicts our assumption that $d_j\ne{}c_j$. This implies that the initial assumption that ``$n$
+is not unique'' is \emph{false}, in other words:
+\begin{center}
 The base-$b$ representation of $n$ is unique.
+\end{center}
+Therefore since we have proven that there exists a base-$b$ representation of ALL the nonnegative integers, \emph{and}
+that this representation is unique for ALL such integers, then we have proven the Basis Representation Theorem.
 
 QED
 
-\break
+\section*{Epilogue}
+
 Thanks for taking that little ride - if you got this far,
 then I'd love to give you 50 gold stars!
 In addition, being Canadian, I feel compelled to apologize for a couple of things.
@@ -991,6 +995,9 @@ Perhaps it's a little too out there for our Sesame-Street-plus-plus
 approach that this paper is going for. Like I mentioned in a footnote above,
 if you want to check it out, it's easy to find on the web at the site ``ProofWiki''.
 
+I encourage you to try your hands at the following exercises.  Answers are supplied - but don't peek until you try them yourself!
+
+\break
 \section*{Exercises}
 \begin{enumerate}
 \item What are the following numbers expressed in base-ten?
@@ -1037,9 +1044,8 @@ then what is 185190 expressed in base-twenty-three?
 \item If $b, n \in \mathbb{Z}_{\ge 0}$ and $b\ne1$ then prove,
 \[1+b+b^2+\dots+b^{n-1} = \frac{b^n-1}{b-1}\]
 Hint: use induction on $n$, the base case being $n=1$.
-
 \end{enumerate}
-
+\break
 \section*{Answers}
 \begin{enumerate}
 \item What are the following numbers expressed in base-ten?
@@ -1056,7 +1062,6 @@ Hint: use induction on $n$, the base case being $n=1$.
 \item $185190 = (\text{F}51\text{H})_{23}$
 \item $291480 = (10\text{M}01)_{23}$
 \end{enumerate}
-\break
 \item Proof
 Base case: $n=1$
 \[\frac{b^1-1}{b-1}=\frac{b-1}{b-1}=1=b^0=b^{1-1}\]
@@ -1075,5 +1080,4 @@ Then,
 \end{align*}
 QED
 \end{enumerate}
-
 \end{document}
