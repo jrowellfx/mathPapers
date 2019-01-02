@@ -481,19 +481,22 @@ In doing so we'd loose the fact that writing a number in base-ten is unique beca
 %\begin{center}
 \[\text{1\hspace{-0.6em}\raisebox{0.05em}{$\sim$}}00 =\text{1\hspace{-0.6em}\raisebox{0.05em}{$\sim$}}\cdot{}10^2 = 11\cdot10^2=(10+1)10^2=10\cdot10^2+1\cdot10^2=1\cdot10^3+1\cdot10^2=1100\]
 %\begin{center}
-That would be disastrous - We might as well use Roman Numerals for all
-the confusion that would ensue!
+That would be disastrous, two ways to say the same number?! We might as well use Roman Numerals for all
+the confusion that would ensue.
 \bigskip
 
 Let $d$ represent one of the digits of $n$.
 So $d$ represents how many lots of some power-of-ten,
 say $10^i$  ($i$ is 0, 1, 2, 3, etc.),
 contribute to the value of $n$.
-$d$ must be an integer between 0 and 9
-inclusive (we could say ``0 is less than or equal to $d$ which is also less than
-or equal to 9'' or ``$0\le{}d\le9$''), so the contribution of
+The digit $d$ must be an integer between 0 and 9 inclusive -
+What's so special about nine?  The fact that it's exactly one less than
+ten is the important point. We can convey this important detail when
+we describe the range of values that $d$ can assume by using
+this inequality: ``$0\le{}d<10$"\footnote{Read this inquality as ``zero is
+less-than-or-equal-to dee which is strictly-less-than ten".}. So the contribution of
 the digit $d$ to the value of $n$ would be this amount\footnote{Example:
-$92d07$, so the power-of-ten in question here is $10^2=100$ and if $0\le{}d\le9$, then
+$92d07$, so the power-of-ten in question here is $10^2=100$ and if $0\le{}d<10$, then
 our number could be
 92007,
 92107,
@@ -506,31 +509,13 @@ our number could be
 92807 or
 92907.}:
 \[d\cdot10^i\text{, where }d\text{ is an integer such
-that }0\le{}d\le{}9\text{ and }i\ge{}0\]
+that }0\le{}d<10\text{ and }i\ge{}0\]
 In other words, for some power-of-ten (the $10^i$) we
 have $d$ lots of it. Note that $d$
 could be 0, which means that it doesn't contribute ANY
 lots of $10^i$ to the value of $n$, all the way up to the maximum
 contribution of 9 lots of $10^i$.
 
-%Let's take a moment to consider why it's important to let people know that $d$ is an integer.
-%From the context of our discussion you and I know we're only
-%talking about 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9 when we say that $d$ is in the range $0\le{}d\le{}9$.
-%However, if someone were to come upon the following statement in the wild:
-%\[d\cdot10^i\text{, such that }0\le{}d\le{}9\]
-%\dots{}how would they know that $d$ isn't a fraction like $\frac{22}{7}$, or the value of $\pi$ or something weird like that?
-%Answer: They wouldn't know -  which is why it's important to spell it out.
-%
-%\bigskip
-%Our general expression for $n$ should only have one integer digit in the range of 0 to 9 associated with each power-of-ten, in other words our expression should never allow this:
-%\[4\cdot10^2+7\cdot10^2\]
-%because we could group those powers-of-ten together like this:
-%\[4\cdot10^2+7\cdot10^2 = (4+7)10^2=11\cdot10^2\]
-%\dots{}meaning the value of the \emph{actual} digit associated with $10^2$ is eleven, which as we examined above
-%has nasty consequences, and thus 
-%violates our rule of keeping the value of the digit in the range of 0 to 9.
-%\bigskip
-%
 $n$ is likely composed of \emph{many} digits,
 each of which is multiplied by a distinct power-of-ten.
 Suppose $n$ is a five digit number.
@@ -552,7 +537,7 @@ But now we can use that little subscript as a way to
 associate it to a specific power-of-ten.
 Naturally we'll associate $d_2$ with $10^2$ (ten squared) as follows; $d_2$ contributes to
 the value of $n$ by this amount:
-\[d_2\cdot10^2\text{, where }d_2\text{ is an integer such that }0\le{}d_2\le{}9\]
+\[d_2\cdot10^2\text{, where }d_2\text{ is an integer such that }0\le{}d_2<10\]
 If we define $d_2$ like this, then we know that when we refer to the digit $d_2$
 that we are talking about the digit that is multiplied with $10^2$.
 
@@ -579,11 +564,11 @@ four-digit number, or perhaps a three-digit number, or only two-digits etc.
 Let's call out this important information, along with the expression for $n$:
 \begin{align*}
 n =\ &d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0\text{, where}\\
-& d_0\text{ is an integer such that }0\le{}d_0\le{}9\text{, and}\\
-& d_1\text{ is an integer such that }0\le{}d_1\le{}9\text{, and}\\
-& d_2\text{ is an integer such that }0\le{}d_2\le{}9\text{, and}\\
-& d_3\text{ is an integer such that }0\le{}d_3\le{}9\text{, and}\\
-& d_4\text{ is an integer such that }1\le{}d_4\le{}9.
+& d_0\text{ is an integer such that }0\le{}d_0<10\text{, and}\\
+& d_1\text{ is an integer such that }0\le{}d_1<10\text{, and}\\
+& d_2\text{ is an integer such that }0\le{}d_2<10\text{, and}\\
+& d_3\text{ is an integer such that }0\le{}d_3<10\text{, and}\\
+& d_4\text{ is an integer such that }1\le{}d_4<10.
 \end{align*}
 Ok, hold on a minute - that's getting a little cumbersome;
 plus did  you notice how we slipped in that different range for $d_4$?
@@ -597,7 +582,7 @@ Let $d_0, d_1, d_2,d_3$ and $d_4$ be integers such that:
 
 \hspace{3em}$n=d_4{\cdot}{1\hspace{-0.12em}0}^4+d_3{\cdot}{1\hspace{-0.12em}0}^3+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
 
-where $0\le{}d_i\le{}9$ for all $i$ in $\{0,1,2,3,4\}$ and $d_4\ne0$.
+where $0\le{}d_i<10$ for all $i$ in $\{0,1,2,3,4\}$ and $d_4\ne0$.
 \end{jprIn}
 
 Better! That expression for $n$ describes EVERY five-digit number - now we need to extend
@@ -638,7 +623,7 @@ of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
 
 \hspace{3em}$n=d_k{\cdot}{1\hspace{-0.12em}0}^k+d_{k-1}{\cdot}{1\hspace{-0.12em}0}^{k-1}+\dots+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
 
-where $0\le{}d_i\le{}9$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+where $0\le{}d_i<10$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
 
 Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\cdots}d_2d_1d_0$
 \end{jprIn}
@@ -701,12 +686,6 @@ where $0\le{}d_i<{1\hspace{-0.12em}0}$ for all $i$ in $\{0,1,2,\dots{},k\}$ and 
 
 Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\cdots}d_2d_1d_0$
 \end{jprIn}
-
-Please note we changed up one \emph{tiny} detail, instead of saying our digits are
-``less than or equal to nine" - we changed it to say ``less than ten" - which means
-the same thing, but the fact that the digit is strictly less than ten
-is conceptually more important than it is less than or equal to nine (which is
-exactly one-less-than ten) but that information is subtle.
 
 \bigskip
 Consider that base-ten is not the only base in use these days.
