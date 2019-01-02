@@ -142,8 +142,6 @@ Each successively bigger pile of apples corresponds with each successive whole n
 We expand this entire set of whole numbers to include their
 negative-counterparts and call this larger set ``integers".
 We denote the set of integers with this symbol: $\mathbb{Z}$.
-If we only want to talk about positive integers along with zero,
-we use this symbol: $\mathbb{Z}_{\ge 0}$.
 
 However, using a ``1" followed by a ``3" to represent the integer
 ``\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}"
@@ -263,8 +261,11 @@ plus zero lots of ten, plus seven units":
 \end{tabular}
 \end{center}
 
-Written\footnote{recall the ``bedmas'' convention for ``order of operations'' when we have
-a string of numbers and operations like multiplication, addition and exponents etc.; that is, } in terms of powers of ten: $46307=4\times10^4+6\times10^3+3\times10^2+0\times10^1+7\times10^0$.
+Written\footnote{recall the ``bedmas'' convention when we have
+a string of numbers being added and multiplied together. ``bedmas'' reminds us to first apply brackets, then exponents,
+division, multiplication, addition then finally subtraction when trying to resolve an expression. Note that ``bedmas'' is just a convention, it's strictly adhered to but not
+a necessity in any way - aliens might use ``beasdm'' and their math would be just as valid as ours.}
+in terms of powers of ten: $46307=4\times10^4+6\times10^3+3\times10^2+0\times10^1+7\times10^0$.
 
 You can think of each digit as being a little dial that controls how many lots
 of its corresponding power of ten will contribute to the value of the integer. Please note
@@ -275,12 +276,12 @@ It also adds a kind of beauty to the expression in that all
 the digits can be expressed in a similar matter.
 
 Claim: Given that we can use as high a power of ten as we like
-and we can string together as LONG A LIST of digits as pleases us,
-that means that we can create ANY INTEGER WE WANT no matter how big it is.
+and we can string together \emph{as~long~a~list~of~digits} as pleases us,
+that means that we can create \emph{any} positive integer we want no matter how big it is.
 
 That's a pretty tall claim.
 
-How do we know that we can create ALL the nonnegative
+How do we know that we can create ALL the positive
 integers with this scheme? For example,
 how do we know that we didn't miss one? Or how do we know that some string of
 digits doesn't represent two different integers? I know it seems silly to ask these kinds of questions - 
@@ -290,7 +291,13 @@ if there was a problem, you'd think we'd have heard about it by now! ...so, obvi
 Here's the thing about mathematics - the \emph{only} ideas we take as obvious
 are the axioms - those are the mathematical ideas that are so simple that they can't be expressed in
 yet other even-simpler ideas. The axioms are the minimal set of simple, obvious, irrefutable ideas from which
-everything else in mathematics is built.
+everything else in mathematics is built\footnote{The axioms: For every integer $a,b\text{ and }c$:
+``Associativity'': $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$;
+``Commutativity'': $a+b=b+a$ and $ab=ba$;
+``Distribution'' $a(b+c)=ab+ac$;
+``Existence of additive and multiplicative identities'': There are numbers 0 and 1 such that, $a+0=a$ and $a\times1=a$ and
+``The existence of additive inverses'': $a+(-a)=0$. Note: in general integers do NOT have multiplicative inverses 
+that are also integers (eg. $\frac{1}{2}$ is the multiplicative inverse of 2 because $\frac{1}{2} \times 2=1$ but  $\frac{1}{2}$ is not an integer!)}.
 
 The fact that
 we can use base-ten to represent the integers is NOT among the list of axioms.
@@ -307,28 +314,54 @@ a theorem, then we show that our theorem \emph{must} be true with a ``proof''.
 A proof
 is just a series of arguments that logically connects our theorem directly\footnote{directly \dots{}or indirectly
 via other previously proven theorems} to the axioms, so that the only way
-that our theorem would be false is if the axioms themselves are false\footnote{The axioms: For every integer $a,b\text{ and }c$:
-``Associativity'': $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$;
-``Commutativity'': $a+b=b+a$ and $ab=ba$;
-``Distribution'' $a(b+c)=ab+ac$;
-``Existence of additive and multiplicative identities'': There are numbers 0 and 1 such that, $a+0=a$ and $a\times1=a$ and
-``The existence of additive inverses'': $a+(-a)=0$. Note: in general integers do NOT have multiplicative inverses (except 1 and -1) 
-that are also integers (eg. $\frac{1}{2}$ is the multiplicative inverse of 2 because $\frac{1}{2} \times 2=1$ but  $\frac{1}{2}$ is not an integer!)}.
+that our theorem would be false is if the axioms themselves are false.
 
 So let's see if we can formulate a theorem about what base-ten means
 in a precise and economical way that says everything (but no more) about it
 so that we may use it with impunity in talking about the more abstract set of integers.
+Here's what the theorem might look like:
 
-Let's start. We want to talk about each and every whole number in the
-same way, so let's give this whole-number a name.  Let's use $n$, for \emph{number}.
+\emph{Base-Ten Theorem (wordy)}
+\begin{jprIn}
+Every positive integer can be written uniquely as a
+sum of multiples of successive powers of ten, such that any given multiple is no greater than nine, but can be as low as zero.
+We call each of these multiples a ``digit'' and write out each integer by listing its digits, starting on the left with the
+digit that corresponds to the multiple of the highest power of ten, successively down to the digit that represents the multiple
+of the zeroth power of ten. We note that we can also write the number zero in this manner by letting all the digits be zero.
+\end{jprIn}
 
-We want to be able to say that $n$ can be represented by a string of digits,
-where the value of each digit can be zero or one, or two, or \dots{} up to one-less-than-ten.
-We don't want to say specifically what the digit is, just that each digit has such a value.
+This says what we want to say, but it's a little hard to visualize - this is where Algebra comes in very handy.
+
+Let's pretend that all we know how to do is count with apples.
+Strangely enough we also understand Algebra in some depth; which means we use variables and constants in expressions.
+We understand addition and multiplication and use exponents as notation to express repeated multiplication.
+We have axioms and understand concepts like equality. We're also logical and understand the
+truth of statements that use ``if  \dots{} then'', ``and'' and ``or''.
+
+Assuming that we're these mathematically-sophisticated-apple-counters,
+then let's grant that we have names for specific sized piles of apples from \emph{one} to say \dots{}\emph{eleven}. We also have symbols
+for the integers from \emph{zero} to \emph{nine}.
+
+So as mathematically-sophisticated-apple-counters we can say ``let $n$ (for \emph{number})
+be a positive integer.'' So now, when ever we see an $n$ we know that we mean ANY positive integer,
+covering every possible sized pile of apples.
+
+The integer ten is special in this theorem, but we only have symbols for the integers zero through nine, so we need to make
+up a symbol to stand in for our integer ten.  We could say something like ``Let $T$ represent the integer ten'', or
+we could cheat a little, and define the symbol for ten to be ``$1\hspace{-0.2em}0$'' where we kind of squish the
+``1'' and ``0'' so close together that we can treat it like kind of a new symbol for ten.  Either way is fine.  Let's go with the cheating method
+and say ``Let `$1\hspace{-0.2em}0$' represent the integer ten.''
+
+We want to be able to say that $n$ can be represented by a string of digits, and we know
+each digit has to be less than the value of ten, but any number less than ten (including zero).  So now the base-ten theorem
+might look like this:
+
+\emph{Base-Ten Theorem}: Let $n$ be a positive integer, then $n$ can be uniquely written in base-ten
+by a string of digits drawn each of which can take on one value from \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}.
 
 The way we are using $n$ (for number)
-let's use a $d$ for digits.  Hold on, we probably need more than one digit to represent $n$, in fact we have no idea how many digits we might need!
-We need a list of digits for each $n$.
+let's use a $d$ for digits.  Hold on, we probably need more than one digit to represent $n$, in fact we
+have no idea how many digits we might need, so we need a list of digits for each $n$.
 
 Note that each digit of $n$ relates to some corresponding power of 10. So let's use the value of that power
 as a tagged-on label to each $d$.  For example ``$d$-one'' could be the digit that corresponds to the power $10^1$, ``$d$-two'' 
@@ -354,12 +387,12 @@ going, a detailed step-by-step explanation follows to guide you through the unfa
 \begin{jprIn}
 %Let $n$ be a positive integer, and let ``$1\!\mathsmaller{0}$'' represent the integer ten.\\
 %Let $n$ be a positive integer, and let ``$1\hspace{-0.3em}0\cdot{}$'' represent the integer ten.\\
-Let $n$ be a positive integer, and let ``$1\hspace{-0.19em}0$'' represent the integer ten.\\
+Let $n$ be a positive integer, and let ``$1\hspace{-0.12em}0$'' represent the integer ten.\\
 Then every $n$ can be uniquely expressed as follows:
 
-\hspace{3em}$n=d_k{1\hspace{-0.19em}0}^k+d_{k-1}{1\hspace{-0.19em}0}^{k-1}+\dots+d_2{1\hspace{-0.19em}0}^2+d_1{1\hspace{-0.19em}0}^1+d_0{1\hspace{-0.19em}0}^0$
+\hspace{3em}$n=d_k{1\hspace{-0.12em}0}^k+d_{k-1}{1\hspace{-0.12em}0}^{k-1}+\dots+d_2{1\hspace{-0.12em}0}^2+d_1{1\hspace{-0.12em}0}^1+d_0{1\hspace{-0.12em}0}^0$
 
-where $d_k\ne0$ and $0 \le d_i < {1\hspace{-0.19em}0}$ for each $d_i$.
+where $d_k\ne0$ and $0 \le d_i < {1\hspace{-0.12em}0}$ for each $d_i$.
 
 Definition: $n$ is represented in base-ten as $d_kd_{k-1}\dots{}d_2d_1d_0$
 \end{jprIn}
