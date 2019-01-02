@@ -1072,17 +1072,20 @@ only one item thus it's ``trivial''.} of the first positive integer 1.
 
 Now let's assume the relationship is true for $n$,
 and prove that it must also be true for $n+1$ for our ``induction step":
-\begin{align*}
-&(1+2+3+\ldots+n) + (n+1)\\
-= & \; \frac{n(n+1)}{2} + (n+1)\\
-= & \; \frac{n(n+1)}{2} + \frac{2(n+1)}{2}\\
-= & \; \frac{n^2+n+2n+2}{2}\\
-= & \; \frac{n^2+3n+2}{2}\\
-= & \; \frac{(n+1)(n+2)}{2}\\
-= & \; \frac{(n+1)((n+1)+1)}{2}
-\end{align*}
+\begin{alignat*}{2}
+&(1+2+3+\ldots+n) + (n+1) \;\;  &&\text{(Add together 1 through }n+1\text{.)}\\
+=\ &\frac{n(n+1)}{2} + (n+1) &&\text{(Substitute induction assumption for 1 through }n\text{.)}\\
+=\ &\frac{n(n+1)}{2} + \frac{2(n+1)}{2} &&\text{(Common denominator of 2.)}\\
+=\ &\frac{n^2+n+2n+2}{2} &&\text{(Multiply out numerator.)}\\
+=\ &\frac{n^2+3n+2}{2} &&\text{(Add like terms.)}\\
+=\ &\frac{(n+1)(n+2)}{2} &&\text{(Factor numerator.)}\\
+=\ &\frac{(n+1)((n+1)+1)}{2} &&\text{(Rewrite in terms of }(n+1)\text{.)}
+\end{alignat*}
 Which proves young Gauss's expression is true for
-the positive integer $n+1$ whenever it's true for $n$ - then
+the positive integer $n+1$ whenever it's true for $n$ (to see this, compare
+our new expression for adding the first $(n+1)$ integers
+to the expression for $n$ at the top
+of the page) - then
 by the principle of mathematical induction,
 the expression is true for all positive integers. QED\footnote{``QED'' - is
 often used at the conclusion of a proof to state that it's
@@ -1103,14 +1106,14 @@ Induction step:
 Assume the following
 \[1+b+b^2+\dots+b^{n-1} = \frac{b^n-1}{b-1}\]
 Then,
-\begin{align*}
-&(1+b+b^2+\dots+b^{n-1}) + b^n\\
-=\ &\frac{b^n-1}{b-1}+b^n\\
-=\ &\frac{b^n-1}{b-1}+\frac{b^n(b-1)}{b-1}\\
-=\ &\frac{b^n-1+b^{n+1}-b^n}{b-1}\\
-=\ &\frac{b^{n+1}+b^n-b^n-1}{b-1}\\
-=\ &\frac{b^{n+1}-1}{b-1}
-\end{align*}
+\begin{alignat*}{2}
+&(1+b+b^2+\dots+b^{n-1}) + b^n  \;\;  &&\text{(Add }n+1\text{ terms of series together.)}\\
+=\ &\frac{b^n-1}{b-1}+b^n &&\text{(Substitute induction assumption for first }n\text{ terms.)}\\
+=\ &\frac{b^n-1}{b-1}+\frac{b^n(b-1)}{b-1}  &&\text{(Common denominator of }b-1\text{.)}\\
+=\ &\frac{b^n-1+b^{n+1}-b^n}{b-1} &&\text{(Multiply out numerator.)}\\
+=\ &\frac{b^{n+1}+b^n-b^n-1}{b-1} &&\text{(Reorder terms (Associativity).)}\\
+=\ &\frac{b^{n+1}-1}{b-1} &&\text{(Adding then subtracting }b^n\text{ is zero.)}
+\end{alignat*}
 QED
 \section*{Proof of the Basis Representation Theorem}
 How do we prove our theorem? There are several ways to approach it.
@@ -1298,7 +1301,9 @@ This case examines when the least significant
 digit of $n$ is \emph{strictly-less-than} the largest value it can take in base-$b$.
 (For example, in base-two $d_0 = 0$;
 In base-five $d_0\le{}3$;
-In base-ten $d_0\le{}8$.)\footnote{Please read the following bidirectional arrow symbol $\Leftrightarrow$ as ``if and only if'' - it's like a logical ``equals'' sign}
+In base-ten $d_0\le{}8$.)\footnote{Please read the following
+bidirectional arrow symbol $\Leftrightarrow$
+as ``if and only if'' - it's like a logical ``equals'' sign}
 %\footnote{Use
 %the axiom of Distribution \big(i.e.; $ac+bc=(a+b)c$\big) to factor out the $b^0$ below.}
 {\small
