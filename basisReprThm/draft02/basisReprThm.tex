@@ -1084,51 +1084,53 @@ How do we prove our theorem? There are several ways to approach it.
 
 The mathematician George E. Andrews (in his book
 ``Number Theory") has an interesting proof.
-He asks us to imagine a function that, given an integer,
-counts the number of base-$b$ representations that the integer has.
-Then with a series of inequalities he shows that this counting function
-MUST produce a count of ``1" for each integer, both establishing the uniqueness 
+He asks us to imagine a function that, given a positive integer $n$,
+counts the number of base-$b$ representations of $n$.
+Then with a series of inequalities he shows that this counting-function
+MUST produce a count of ``1" for every $n$, both establishing the uniqueness 
 and the existence in one fell swoop.
-Cool proof - and it's short and tight, I'll bet G. H. Hardy would approve of
+It's a cool proof - short and sweet, I'll bet G. H. Hardy would approve of
 it from an aesthetic standpoint.
 
-We could also use the Euclidean Division Theorem to prove our
-theorem.
-We can show that by repeatedly dividing our integer $n$ by $b$
-that we'd get a series of remainders that we could use for our base-$b$-digits of $n$.
+We could also use the Euclidean Division Theorem to prove our theorem.
+We can show that by dividing our integer $n$ by $b$, then dividing that
+result by $b$ again, then again, and again, etc. that we'd get a series
+of remainders which are the base-$b$-digits of $n$.
 This is an interesting proof in that it also gives us a technique
 to construct a base-$b$ represenation of each integer.
 If we were to go down this road
 we would try to generalize how we solved
 exercise number 2-iii) above, it's worth a try for fun.
 
-However, we're going to follow a much more straightforward approach,
-and use the Principle of Mathematical Induction directly on $n$.
+However, we're going to follow a much more straightforward approach.
+We'll use the Principle of Mathematical Induction directly on $n$
+to prove that
+a base-$b$ representation of each positive integer exists.
 
---jpr rewrite--
-albeit one that might not meet with G. H. Hardy's asthetic seal-of-approval
-as it involves looking at different ``cases".
+Then we'll use another approach to prove that each such representation is unique.
 
-The good news is that our proof will follow our intuition and experience with
-how we count (in base-ten) from our Sesame Street days.
+A helpful way to think about how we're going
+to use the
+Principle of Mathematical Induction 
+is to imagine
+an arbitrarily long odometer in your car.
+Then it's easy to imagine that for ANY number that
+could be displayed on it's dials, if we drove another mile then
+it would always generate another valid number.
 
-Consider the odometer in your car - for every extra mile
-you drive the odometer keeps rolling along
-making a new base-ten number in its display.
-If your odometer stretched off to the horizon on your left,
-then it's pretty easy to see that there is
-no limit on how big a number the odometer could count to.
-There's no reason that our odometer has to count in base-ten either,
-it could be a binary odometer with only the digits zero and one in each of the 
-little dials that turn, always
-rolling off the miles, but showing the result in base-two.
-Follow this link to view a
-\href{http://www.orangeimagination.com/jprBinaryOdometer.gif}{mini binary-odometer}
-that endlessly counts from zero to fifteen, over and over.
+We need to take care of a few cases algebraically to match the kinds
+of things you see in the odometer:
 
-The idea of the odometer can be formalized by using
-the Principle of Mathematical Induction that we introduced earlier.
-We'll use induction to prove that every integer has a base-$b$ representation.
+i) the units digit is less than 9, so driving one more mile only spins
+that first dial to the next number.\\
+ii) The units digit, and perhaps several to the left of it, are all 9's,
+so driving one more mile will spin all those 9's at once back to zero,
+at the same time adding one more to the first non-nine dial by spinning it to the next
+higher number.\\
+iii) All the digits from the units digit up are 9's until we get to a zero,
+so the next mile driven is going to 
+change that first zero dial to a 1 while spinning all the nines back to zero.
+In this case the number of digits will have been extended by one.
 
 Even though we can use induction to prove the existence of base-$b$
 numbers for every integer, let's think about why it
