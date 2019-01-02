@@ -48,14 +48,26 @@
 \usepackage{relsize}
 \usepackage{wasysym}
 %\usepackage{romannum}
-
-\usepackage{hyperref}
+ 
+\usepackage[pdftex,
+            pdfauthor={James Rowell},
+            pdftitle={\jobname},
+            pdfsubject={SesameStreet++ or The Basis Representation Theorem},
+            pdfkeywords={decimal, base-ten, binary, base-two, integers, theorem, proof, mathematics, number-theory},
+            pdfproducer={Latex},
+            pdfcreator={miktex or lualatex}]{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
     filecolor=magenta,      
     urlcolor=blue,
 }
+\usepackage{hyperxmp}
+\hypersetup{
+    pdfauthor={James Philip Rowell},
+    pdfcopyright={Copyright © 2017 by James Philip Rowell. All rights reserved.}
+}
+\usepackage{lipsum}
 
 \newenvironment{jprIn}{\begin{adjustwidth}{2em}{}}{\end{adjustwidth}}
 \addtolength{\skip\footins}{6pt}
@@ -142,6 +154,7 @@ is VERY handy. So we use Hindu-Arabic numbers and the positional notation of ``b
 more commonly known as ``decimal", to represent each specific integer.
 We slap a ``-" on the front if we need to talk about a negative integer.
 
+\break
 Base-ten representation of an integer is far superior to ancient Roman numerals for example.
 Try adding two numbers together in ancient Rome, or worse,
 multiplying or dividing them.
@@ -329,6 +342,7 @@ after all, people have been counting in base-ten for almost two thousand years,
 if there was a problem, you'd think we'd have heard about it by now! ...so, obviously it works.
 
 Here's the thing about modern mathematics - the \emph{only} ideas we take as obvious
+and don't require deeper explanation
 are the axioms - those are the mathematical ideas that
 are so simple that they can't be expressed in
 yet other even-simpler ideas. The axioms are the minimal set of simple,
@@ -888,7 +902,8 @@ should resemble a simple and clear-cut constellation, not a scattered
 cluster in the Milky Way.''
 \end{jprIn}
 
-I couldn't agree more and apologize in advance for it's lack of elegance.
+The proof of the Basis Representation Theorem supplied in this paper is of the duller type described by Hardy.  
+I couldn't agree more with him so I apologize in advance for the proof's lack of elegance.
 I still invite you to to take a stab at following it,
 I tried my best to make it clear and interesting.
 If you do try to follow it (it's at the end of this paper) - it does
@@ -897,13 +912,13 @@ of which is that it works, some of the algebraic manipulations are amusing,
 but most importantly you'll learn about a very powerful tool
 called ``The Principle of Mathematical Induction''. 
 
-Better than diving into a proof here, please try
+Better than diving into the proof right away, please try
 your hand at a couple of exercises for fun! If you get stuck, or to
 check your work, the
 answers are also supplied below - but please don't peek until you try the questions yourself.
 
 If you feel bewildered when facing the exercises below, know that you are in good
-company - this is a common feeling among Mathematicians, you'll get used to it!
+company - this is a common feeling among mathematicians, you'll get used to it!
 But like any ``workout'' if you push through you will succeed and get stronger, I promise.
 
 \section*{Exercises}
@@ -1214,7 +1229,7 @@ the theorem.
 Imagine a magic-box
 that also makes base-$b$ representations for each
 integer.
-In other words, if the odometer is the P. of M. Induction then the magic-box
+In other words, if the odometer is the principle-of-mathematical-induction then the magic-box
 is some different mechanism working in a different way.
 Why not? We weren't careful to show that induction is the ONLY way
 to generate a base-$b$ representation for each number. (It isn't.)
@@ -1257,7 +1272,8 @@ Let $d_0=1$ be the only integer in the sequence.  Then,
 
 \hspace{3em}$d_0b^0=1\cdot{}b^0=1\cdot{}1=1=n$
 
-Since $d_0<b$ for all $b$ and $d_0\ne0$ (note: $k=0$) proving that a
+Since $d_0<b$ and $d_0\ne0$ (note: $k=0$) then this
+shows that a 
 base-$b$-representation exists for the integer 1.
 \end{jprIn}
 
