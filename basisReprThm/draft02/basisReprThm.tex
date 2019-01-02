@@ -306,10 +306,10 @@ yet other even-simpler ideas. The axioms are the minimal set of simple, obvious,
 everything else in mathematics is built\footnote{The axioms: For every integer $a,b\text{ and }c$:
 Associativity: $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$;
 Commutativity: $a+b=b+a$ and $ab=ba$;
-Distributive: $a(b+c)=ab+ac$;
-Identities: There are integers 0 and 1 such that, $a+0=a$ and $a\times1=a$ and
+Distributive: $a(b+c)=(b+c)a=ab+ac$;
+Identities: There are integers 0 and 1 such that, $a+0=0+a=a$ and $a\cdot{}1=1\cdot{}a=a$ and
 Additive Inverse: $a+(-a)=0$. Note: in general integers do NOT have multiplicative inverses 
-that are also integers (eg. $\frac{1}{2}$ is the multiplicative inverse of 2 because $\frac{1}{2} \times 2=1$ but  $\frac{1}{2}$ is not an integer!)}.
+that are also integers. (eg. $\frac{1}{2}$ is the multiplicative inverse of 2 because $\frac{1}{2}\cdot{}2=1$ but  $\frac{1}{2}$ is not an integer!)}.
 
 As obvious as it is, the fact that
 we can use base-ten to represent the integers is NOT among the list of axioms.
@@ -325,7 +325,7 @@ spelled out exactly what it means to write a number in base-ten with
 a theorem, then we proved that the theorem \emph{must} be true.
 A proof
 is just a series of arguments that logically connects our theorem directly\footnote{directly \dots{}or indirectly
-via other previously proven theorems} to the axioms, so that the only way
+via other previously proven theorems.} to the axioms, so that the only way
 that our theorem would be false is if the axioms themselves are false.
 
 So let's think about what a base-ten representation theorem might look like
@@ -337,16 +337,16 @@ to count that process leaves no room for gaps.  We know that if we count up to s
 that if we add 1, the 9's roll over to 0, and 1 gets added to the 4, like an odometer in your car,
 getting us to the very next integer which is 500.  We know this always works no matter what number we add 1 to.
 
-Exactly - our intuition is good. Let's write it down as something that has to be
-in our theorem. We would say something like.
+Our intuition is good - Let's write it down as something that has to be
+in our theorem. We might say something like:
 
 \emph{Base-Ten Theorem (initial draft)}
 \begin{jprIn}
 Every integer is representable in base-ten.
 \end{jprIn}
  
-Something else that's important, and something we know intuitively, is that any number written
-in base-ten represents only ONE integer. It's almost stupid to spell it out, but if we were to count out
+Something else we know intuitively is that any number written
+in base-ten represents only ONE integer. It's almost feels silly to spell it out, but if we were to count out
 4 piles of 100 apples, then 9 piles of 10 apples, then 9 additional apples, then
 we'd always get the exact same big sized pile of apples.
 
@@ -355,8 +355,8 @@ piles of 100, and we got 4 such piles, but we didn't have enough left to make an
 Then if we started counting out
 piles of 10, and we got 9 such piles, but we didn't have enough left to make another pile of 10 -
 Then if we finished by counting out 9 remaining apples
-then we would always get ``499'' apples. There is NO other way to split this big pile of apples up
-in ANY other way if we follow this kind of procedure.  In other words, each integer is representable by only ONE base-ten number.
+then we would always get ``499'' apples. There is NO other way to divvy up this big pile of apples
+if we follow this kind of procedure.  In other words, each integer is representable by only ONE base-ten number.
 
 Let's strengthen our theorem based on the last two observations.
 
@@ -365,12 +365,36 @@ Let's strengthen our theorem based on the last two observations.
 Every integer is \emph{uniquely} representable in base-ten.
 \end{jprIn}
 
+Integers can be positive or negative (or zero). One of our axioms states that for every non-zero integer,
+there exists a \emph{different} unique integer
+such that if you add them together you get zero, or algebraically:
+\[\text{For all integers }a\ne0\text{ there exists a unique integer }{-}a\text{ such that }a+(-a)=0\]
+If we restrict our
+attention to positive integers
+in proving the Base-Ten Theorem,
+then we can easily extend it to the negative integers by
+slapping a ``-'' (minus) sign in front of the positive base-ten representation to 
+get a unique representation for
+ALL the negative integers as well\footnote{We're also
+going to skip including zero in our theorem - we're only going to prove the
+theorem for positive integers, adding zero and negative numbers is trivial after we do this - you'll see.}.
+
+Also, it would be nice to have a name, or label, to stand in for any 
+positive integer so that we can refer to it directly -
+So let's give it a name, how about $n$ for ``number'':
+
+\emph{Base-Ten Theorem (third draft)}
+\begin{jprIn}
+Let $n$ be a positive integer, then $n$ is \emph{uniquely} representable in base-ten.
+\end{jprIn}
+
 So, now we have to spell out exactly what it means to represent a number in base-ten.
 
 Back a few pages we looked at the real meaning of the number 92507 by adding together
 various lots of powers-of-ten\footnote{It's time to replace our ``$\times{}$'' symbol for multiplication, with ``$\cdot{}$''
 because ``$\times{}$'' might get confused for an ``$x$'' in an expression,
-whereas ``$\cdot{}$'' never will be. Eg. $x\times{}2$ vs. $x\cdot{}2$, additionally ending up with something that is more aesthetically pleasing.}:
+whereas ``$\cdot{}$'' never will be. Eg. $x\times{}2$ vs. $x\cdot{}2$, additionally ending up with something that is more aesthetically pleasing.
+You may also see the ``$\cdot$'' omitted entirely as in $ab$ - which means $a\cdot{}b$ as you have seen in earlier footnotes.}:
 \[92507=9\cdot10^4+2\cdot10^3+5\cdot10^2+0\cdot10^1+7\cdot10^0\]
 
 The numbers 9, 2, 5, 0 and 7 are called ``digits'' and each digit
@@ -389,8 +413,8 @@ For example, if we had 9 piles of ten apples each, but still had exactly ten app
 to the other 9 piles of ten and count it as 1 pile of a hundred.  That's the rule - we are only allowed
 at most 9 lots of a certain power-of-ten sized piles of apples.
 
-Let the term $d$ be one of the digits in our number. So $d$ represents how many lots of some power-of-ten we have,
-and $d$ must be between 0 and 9 inclusive, so the contribution of that digit to the integer would be this amount:
+Let the term $d$ be one of the digits in our number $n$. So $d$ represents how many lots of some power-of-ten we have,
+and $d$ must be between 0 and 9 inclusive, so the contribution of that digit to $n$ would be this amount:
 \[d\cdot10^i\text{, where }0\le{}d\le{}9\text{ and }i\ge{}0\]
 In other words, for some power-of-ten
 (that's the $i$ which can be anything, like 0, 1, 2, 3, etc.) we have $d$ lots of it. Note that $d$
@@ -401,14 +425,41 @@ Our general expression for an integer should only have one digit associated with
 \[4\cdot10^2+7\cdot10^2\]
 because we could group those powers-of-ten together like this:
 \[4\cdot10^2+7\cdot10^2 = (4+7)10^2=11\cdot10^2\]
-which violates our rule of keeping the value of the digit in the range of 0 to 9.
+\dots{}which violates our rule of keeping the value of the digit in the range of 0 to 9.
 
---jpr--
+$n$ is likely composed of many digits, each of which is multiplied by a distinct power-of-ten.
+Say $n$ is a four digit number, then we need four different $d$ terms, one to associate with each power-of-ten
+from $10^3$, $10^2$, $10^1$ down to $10^0$.
 
-Also, we know that a number is composed of possibly many ``digits'' times various powers-of-ten, all added together.
-See our example for the number 92507 a few pages back, to remind you.
+%It's useful to point out the meaning of our $d_0,d_1,d_2,\dots{},d_k$ and $d_i$ terms.
+Mathematics has a convention for coming up with
+a list of variables or constants -
+We tack a subscript onto the variable-name, like this:
+\[d_2\cdot{}10^2\]
+\dots{}connecting the term $d_2$ (read it as ``dee-two''\footnote{\dots{}yes like artoo-detoo, which perhaps
+George should have writen like ``$R_2D_2$'' and not ``R2-D2''!}) together with $10^2$.
+In other words, if we define $d_2$ like this, then we know that when we refer to the term $d_2$
+that we are talking about the digit that is associated with $10^2$.
 
-Here's what the theorem might look like generalizing from our example of the integer 92507 on the previous page:
+Let our four-digit-number $n$ use $d_0,d_1,d_2$ and $d_3$ for its digits. Then
+the general expression for $n$ looks like this:
+\[n=d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0\]
+\dots{}where each of $d_0,d_1,d_2,d_3$ are between 0 and 9 inclusive, but $d_3$ can NOT be zero!
+
+Why? Because if $d_3$ were zero then $n$ would only be (at most) a three digit number!
+
+\begin{center}
+\begin{tabular}{r l}
+expression for $n$ & number-of-digits\\
+$d_0{\cdot}10^0$ & 1\\
+$d_1{\cdot}10^1+d_0{\cdot}10^0$ & 2\\
+$d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0$ & 3\\
+$d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0$ & 4\\
+$d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0$ & 5\\
+\dots{} & \dots{}\\
+$d_k{\cdot}10^k+\dots{}+d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0$ & k+1\\
+\end{tabular}
+\end{center}
 
 \emph{Base-Ten Theorem (wordy)}
 \begin{jprIn}
@@ -454,7 +505,7 @@ we could cheat a little, and define the symbol for \emph{ten} to be ``$1\hspace{
 and say ``Let `$1\hspace{-0.2em}0$' represent the integer ten.''
 
 We want to be able to say that $n$ can be represented by a string of digits, and we know
-each digit has to be less than the value of ten, but any number less than ten (including zero).  So now the base-ten theorem
+each digit has to be less than the value of ten, but any number less than ten (including zero).  So now the Base-Ten Theorem
 might look like this:
 
 \emph{Base-Ten Theorem}: Let $n$ be a positive integer, then $n$ can be uniquely written in base-ten
@@ -729,7 +780,7 @@ Definition: $n$ is represented in base-two as $(d_kd_{k-1}\dots{}d_2d_1d_0)_2$
 
 Try reading the above out loud in your head,
 line by line, item by item, like we did above when
-we sounded it out for the base-ten theorem - it's
+we sounded it out for the Base-Ten Theorem - it's
 helpful to turn the ``math-code" into understandable
 English and a useful habit to get into when reading mathematical statements.
 
