@@ -321,19 +321,18 @@ a perfect one-to-one correspondence with the integers so it's safe to think abou
 in base-ten as the integers.
 
 However, the reason that we know that it's safe to think this way is because we 
-spelled out exactly what it means to write a number in base-ten with 
-a theorem, then we proved that the theorem \emph{must} be true.
+spelled out what it means to represent a number in base-ten with 
+a theorem, then we've proven that the theorem is true.
 A proof
 is just a series of arguments that logically connects our theorem directly\footnote{directly \dots{}or indirectly
 via other previously proven theorems.} to the axioms, so that the only way
 that our theorem would be false is if the axioms themselves are false.
 
-So let's think about what a base-ten representation theorem might look like
+So let's think about what a base-ten-representation-theorem might look like
 so that once we prove it we may go forward using base-ten with impunity in talking about the more abstract set of integers.
 
 For starters, we intuitively know that counting with base-ten covers all the possible integers.
-After all, when we learned how
-to count that process leaves no room for gaps.  We know that if we count up to say... 499,
+After all, how we count leaves no room for gaps.  We know that if we count up to say... 499,
 that if we add 1, the 9's roll over to 0, and 1 gets added to the 4, like an odometer in your car,
 getting us to the very next integer which is 500.  We know this always works no matter what number we add 1 to.
 
@@ -366,7 +365,7 @@ Every integer is \emph{uniquely} representable in base-ten.
 \end{jprIn}
 
 Integers can be positive or negative (or zero). One of our axioms states that for every non-zero integer,
-there exists a \emph{different} unique integer
+there exists another unique integer
 such that if you add them together you get zero, or algebraically:
 \[\text{For all integers }a\ne0\text{ there exists a unique integer }{-}a\text{ such that }a+(-a)=0\]
 If we restrict our
@@ -379,7 +378,7 @@ ALL the negative integers as well\footnote{We're also
 going to skip including zero in our theorem - we're only going to prove the
 theorem for positive integers, adding zero and negative numbers is trivial after we do this - you'll see.}.
 
-Also, it would be nice to have a name, or label, to stand in for any 
+It would be helpful to have a name, or label, to stand in for any 
 positive integer so that we can refer to it directly -
 So let's give it a name, how about $n$ for ``number'':
 
@@ -396,19 +395,18 @@ because ``$\times{}$'' might get confused for an ``$x$'' in an expression,
 whereas ``$\cdot{}$'' never will be. Eg. $x\times{}2$ vs. $x\cdot{}2$, additionally ending up with something that is more aesthetically pleasing.
 You may also see the ``$\cdot$'' omitted entirely as in $ab$ - which means $a\cdot{}b$ as you have seen in earlier footnotes.}:
 \[92507=9\cdot10^4+2\cdot10^3+5\cdot10^2+0\cdot10^1+7\cdot10^0\]
-
-The numbers 9, 2, 5, 0 and 7 are called ``digits'' and each digit
-is associated with a specific power-of-ten.  The rightmost units digit, or least-significant digit, 7, is multiplied by 1
-(written as $10^0$ for consistency); we shift one digit to the left and find a 0 which is multiplied by $10^1$;
-we shift another digit to the left and find a 5 which is multiplied by $10^2$, etc\dots{}
-until we finally we've shifted 4 times to the left and arrived at the most-significant digit, 9, which is multiplied by $10^4$.
+To review: each digit 9, 2, 5, 0 and 7 are 
+associated with a specific power-of-ten.  The rightmost units digit, or least-significant-digit 7 is multiplied by 1
+(written as $10^0$ for consistency); Shifting one digit to the left we find a 0 which is multiplied by $10^1$;
+Another digit to the left find a 5 which is multiplied by $10^2$, etc\dots{}
+until we finally we've shifted 4 times to the left and arrived at the most-significant-digit 9 which is multiplied by $10^4$.
 Finally we add all these products together.
 This kind of expression is implicit \emph{every time} we write out a number in base-ten. 
 This algebraic expression is the key to linking base-ten numbers to the integers.
 
 It's critical to recognize that we only allow our digits to be 0 through 9, no other values are allowed.
-Specifically, 9 is the maximum number of lots of any given
-power-of-ten sized piles of apples we are allowed to make, otherwise we could have made a pile of the next higher power-of-ten.
+Specifically, 9 are the most lots of any given
+power-of-ten we are allowed to use in our base-ten representation of $n$, otherwise we could have made a pile of the next higher power-of-ten.
 For example, if we had 9 piles of ten apples each, but still had exactly ten apples left over, we would simply add that ten
 to the other 9 piles of ten and count it as 1 pile of a hundred.  That's the rule - we are only allowed
 at most 9 lots of a certain power-of-ten sized piles of apples.
@@ -421,7 +419,7 @@ In other words, for some power-of-ten
 could be 0, which means we don't have ANY lots of $10^i$, all the way up to the maximum
 of 9 lots of $10^i$.
 
-Our general expression for an integer should only have one digit associated with each power-of-ten, in other words our expression should never allow this:
+Our general expression for $n$ should only have one digit associated with each power-of-ten, in other words our expression should never allow this:
 \[4\cdot10^2+7\cdot10^2\]
 because we could group those powers-of-ten together like this:
 \[4\cdot10^2+7\cdot10^2 = (4+7)10^2=11\cdot10^2\]
@@ -444,10 +442,15 @@ that we are talking about the digit that is associated with $10^2$.
 Let our four-digit-number $n$ use $d_0,d_1,d_2$ and $d_3$ for its digits. Then
 the general expression for $n$ looks like this:
 \[n=d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0\]
-\dots{}where each of $d_0,d_1,d_2,d_3$ are between 0 and 9 inclusive, but $d_3$ can NOT be zero!
-
-Why? Because if $d_3$ were zero then $n$ would only be (at most) a three digit number!
-
+\dots{}where each of $d_0,d_1,d_2,d_3$ are between 0 and 9 inclusive, but $d_3$ can NOT be zero.
+Why? Because if $d_3$ were zero then $n$ would only be (at most) a three digit number.
+Let's specify this restriction, along with the expression:
+\[n=d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0\text{, where }0\le{}d_{\{0,1,2,3\}}\le{}9\text{, and }d_3\ne0\]
+I just made up the notation $d_{\{0,1,2,3\}}$ which I'm hoping coveys the information that each $d$ lies between 0 and 9 inclusive. A more 
+conventional way to express this idea is to let another term, like $i$ for ``index'', stand in for the subscript then specify what values the subscript can assume.
+Like this:
+\[n=d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0\text{, where }0\le{}d_i\le{}9\text{, and }0\le{}i\le{}3\text{, furthermore }d_3\ne0\]
+In other words, 
 \begin{center}
 \begin{tabular}{r l}
 expression for $n$ & number-of-digits\\
