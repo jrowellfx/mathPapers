@@ -96,8 +96,8 @@
 Most of us think about ``whole numbers'' not too differently from the way
 we learned to count by watching Sesame Street,
 the difference being that now we can count a little higher.
-How we've trained ourselves it's automatic to think that the way
-we write a number or say a number \emph{is} the number.
+How we've trained ourselves it's automatic to think the way
+that we write a number or say a number \emph{is} the number.
 
 If I owe you 13 cents and I give you one dime and three pennies then 
 after thanking me profusely for repaying this staggering debt,
@@ -143,7 +143,7 @@ We denote the set of integers with this symbol: $\mathbb{Z}$.
 If we only want to talk about positive integers along with zero,
 we use this symbol: $\mathbb{Z}_{\ge 0}$.
 
-However, using a ``1" followed by a ``3" to represent
+However, using a ``1" followed by a ``3" to represent the integer
 ``\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}\faApple{}"
 is VERY handy. So we use Hindu-Arabic numbers and the positional notation of ``base-ten",
 more commonly known as ``decimal", to represent each specific integer.
@@ -272,18 +272,53 @@ and we can string together as LONG A LIST of digits as pleases us,
 that means that we can create ANY INTEGER WE WANT no matter how big it is.
 
 That's a pretty tall claim.
+
 How do we know that we can create ALL the nonnegative
 integers with this scheme? For example,
 how do we know that we didn't miss one? Or how do we know that some string of
-digits doesn't represent two different integers? I know it seems silly to ask that,
-but attention to these kinds of details is what is referred to as ``rigor"
-in Mathematics - it's necessary so we don't end up fooling ourselves or spouting
-bullshit - or if we are full of it then it's easy
-for other Mathematicians to call us on our nonsense.
+digits doesn't represent two different integers? I know it seems silly to ask these kinds of questions - 
+after all, people have been counting in base-ten for almost two thousand years,
+if there was a problem, you'd think we'd have heard about it by now! ...so, obviously it works.
 
-We're going to jump into the deep end and make our claim in a careful mathy kind of way.
-Such a careful statement is called a theorem - theorems require proof which we will get to below.
+Here's the thing about mathematics - the \emph{only} ideas we take as obvious
+are the axioms - those are the mathematical ideas that are so simple that they can't be expressed in
+yet other even simpler ideas. The axioms are the minimal set of simple, obvious, irrefutable ideas from which
+everything else in mathematics is built.
 
+However, the fact that
+we can use base-ten to represent the integers is NOT among the list of axioms.
+
+As discussed in the opening paragraph, we think that the way
+that we write a number, or say a number \emph{is} the number - it's definitely not wrong to think this way.
+Numbers written in base-ten are in
+a perfect one-to-one correspondence with the integers, so in actuality it's safe to think about numbers written 
+in base-ten \emph{as} the integers.
+
+But the only reason it's safe to think about base-ten numbers \emph{as} the
+integers, is because we've taken the time
+to carefully and clearly spell out exactly what it means to write out a number in base-ten
+with something called a theorem.
+Then we show that our theorem \emph{must} be true with a ``proof''. A proof
+is just a series of arguments that logically connects our theorem directly (or indirectly
+via other previously proven theorems) to the axioms, so that the only way
+that our theorem could be false, is if the axioms themselves were false.
+
+So let's formulate our ideas about the wonders of base-ten
+in a careful kind of way that says everything we come to expect from it,
+so that we may use it with impunity in talking about the more abstract set of integers.
+
+You are about to jump into the deep end read something that's probably unlike most
+things you come across in your day-to-day activities.
+If you're not familiar with reading mathematical statements it's kind of like a new language. It sometimes uses
+weird symbols like $\in$ which means ``is an element of" (or ``is a member of")
+and is always followed by something that is a ``set", one of which we've talked about above,
+namely the symbol $\mathbb{Z}_{\ge 0}$ which
+we defined as being the set of nonnegative integers.
+
+So here goes, try reading through the theorem below, but if you get stuck, keep
+going, a detailed explanation follows to guide you through the unfamiliar territory.
+
+\break
 \section*{Base-Ten Representation Theorem}
 
 \begin{jprIn}
@@ -569,7 +604,7 @@ it means we're talking about it in base-ten; our ``default" base.
 Case in point: the subscripts that we use to denote the base
 (like the ``16" in (80FB)\textsubscript{16}) are written in base-ten!
 
-We really need to get on with proving our two theorems above.
+We should probably prove our two theorems above.
 But what about proving the ``base-nine" version of the theorem for the aliens on Planet-Nova,
 or the ``base-eight" version for the inhabitants of Planet-Ocho?
 
@@ -714,6 +749,10 @@ Secondly, we will use another technique, called proof by contradiction,
 to prove that each such representation is unique - in other
 words there aren't two (or more) ways to represent the same integer in base-$b$.
 
+After all that - I invite you to skip all the way to the Epilogue and Exercises section of this
+paper. Truth be told, the proof is kind of tedious, and heavy going following subscripts and such.
+Take a breather, try the exercises, and then perhaps come back to the proof later.
+
 \section*{Existence Proof of the Basis Representation Theorem}
 
 Base case:
@@ -766,7 +805,7 @@ In base-five $d_0$ can be at most three;
 In base-ten $d_0$ can be at most eight, etc.
 This case is
 quite easy to deal with, so let's quickly dispense with it\footnote{It will be helpful at this point to recall the axiom of ``Distribution'' that is $a(b+c)=ab+ac$;
-In fact, it might not hurt to do a quick refresh of some of the others as well, ``Associativity''': $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$, ``Commutativity'': $a+b=b+a$ and $ab=ba$, ``Existence of inverses and identities'': $a+0=a$ and $a\times1=a$ and $a+(-a)=0$. Note: in general integers do NOT have multiplicative inverses}.
+In fact, it might not hurt to do a quick refresh of some of the others as well, ``Associativity''': $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$, ``Commutativity'': $a+b=b+a$ and $ab=ba$, ``Existence of inverses and identities'': $a+0=a$ and $a\times1=a$ and $a+(-a)=0$. Note: in general integers do NOT have multiplicative inverses.}.
 \begin{align*}
 n &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\\
 &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\text{if and only if,}\\
