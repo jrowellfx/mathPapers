@@ -233,7 +233,7 @@ read the symbol $10^k$ as ``ten-raised-to-the-$k$\textsuperscript{th}-power'' or
 so $10^2$ is ``ten raised to the second power'' or $10^4$ is ``ten-to-the-fourth''.
 You may also see $10^2$ referred to as ``ten squared'', similarly $10^3$ as ``ten cubed'' - but since we 
 don't live in 4 dimensional hyperspace, we don't have a way of saying $10^4$ that has geometric meaning.}.
-The above list shows the cases for $k = 2$, 3 and 4.
+The above list explicitly shows the cases for $k = 2$, 3 and 4.
 Using the $k$ like that is just a way to show that we can pick ANY whole number,
 i.e., there is no limit on how big $k$ can be.
 
@@ -274,9 +274,8 @@ plus zero lots of ten, plus seven units":
 \end{tabular}
 \end{center}
 
-Written\footnote{Recall the mnemonic ``bedmas'' to see how this expression should be
-evaluated or follow this link ``\href{https://en.wikipedia.org/wiki/Order_of_operations}{Wiki-Order-of-Operations}'' if you've forgotten
-the somewhat arbitrary (but strictly adhered to) convention.}
+Written\footnote{Recall the mnemonic ``bedmas'' for the ``\href{https://en.wikipedia.org/wiki/Order_of_operations}{Order of Operations}'' in
+evaluating an expression, which is no different from what we did in our table above the expression.}
 in terms of powers-of-ten: $92507=9{\times{}}10^4+2{\times{}}10^3+5{\times{}}10^2+0{\times{}}10^1+7{\times{}}10^0$.
 
 You can think of each digit as being a little dial that controls how many lots
@@ -328,7 +327,7 @@ is just a series of arguments that logically connects our theorem directly\footn
 via other previously proven theorems.} to the axioms, so that the only way
 that our theorem would be false is if the axioms themselves are false.
 
-So let's think about what a base-ten-representation-theorem might look like
+So let's think about what a ``Base-Ten Representation Theorem'' might look like
 so that once we prove it we may go forward using base-ten with impunity in talking about the more abstract set of integers.
 
 For starters, we intuitively know that counting with base-ten covers all the possible integers.
@@ -445,7 +444,7 @@ the general expression for $n$ looks like this:
 \[n=d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0\]
 
 Since we're getting something that looks like some hard-core math, let's take a moment
-to read it out loud, as a Math professor might do in a lecture.  It might sound like this:
+to read it out loud, as a Math-Professor might do in a lecture.  It might sound like this:
 \begin{jprIn}
 ``$n$ is equal to dee-four times ten-to-the-fourth, \dots{}
 %\emph{{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}pause{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}}
@@ -505,11 +504,10 @@ Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\
 
 Our newly added ``Definition'' introduces exactly what it means to write the number out in base-ten; that is,
 we toss out all the extraneous stuff from our expression
-and string all the digits one after another,
-from most significant digit $d_k$ on the left, to the next digit to it's right which is $d_{k-1}$
+and string all the digits one after another.
+Starting at the most-significant digit $d_k$ on the left, down to the next digit to its right which is $d_{k-1}$
 (read as ``dee-kay-minus-one''\footnote{\dots{}and $d_{k-1}$ is multiplied by ``ten-to-the-power-of-(kay-minus-one)''.})
- down to the least
-significant units digit $d_0$ on the right.
+all the way down to the least-significant units-digit $d_0$ on the right.
 
 We are so darn close, but there is one picky detail that we have to be careful about.
 We can safely use the symbols 
@@ -572,7 +570,7 @@ Consider distant Planet-Nova on which the emergent
 intelligent species only have nine fingers.
 They have three hands with three fingers each - anyway,
 that's why they use base-nine, so they only need the numbers 0,
-1, 2, 3, 4, 5, 6, 7 and 8 for their digits.
+1, 2, 3, 4, 5, 6, 7 and 8 for their digits\footnote{Digit is another word for finger!}.
 So like we Earthlings do for the integer ten,
 instead of making up a new symbol for nine,
 they use ``10" to represent the integer nine - which
@@ -696,7 +694,7 @@ which is base-sixteen.
 Base-sixteen introduces some new single-character symbols to the usual numbers 0, 1,
 2, thru 9,
 to represent the numbers 10, 11, 12, 13, 14 and 15.
-Base-sixteen adds the ``digits'' A, B, C, D, E and F where
+Base-sixteen adds the digits A, B, C, D, E and F where
 A\textsubscript{16}=(10)\textsubscript{10},
 B\textsubscript{16}=(11)\textsubscript{10},
 C\textsubscript{16}=(12)\textsubscript{10},
@@ -710,9 +708,9 @@ it means we're talking about it in base-ten; our ``default" base.
 Case in point: the subscripts that we use to denote the base
 (like the ``16" in (80FB)\textsubscript{16}) are written in base-ten!
 
-We could go ahead and prove two theorems above,
-but what about proving the ``base-nine" version of the theorem for the aliens on Planet-Nova,
-or the ``base-eight" version for the inhabitants of Planet-Ocho?
+We could go ahead and prove our ``Base-Ten'' and ``Base-Two'' theorems above,
+but what about proving the ``Base-Nine" version of the theorem for the aliens on Planet-Nova,
+or the ``Base-Eight" version for the inhabitants of Planet-Ocho?
 
 To cover all bases (pun intended) let's restate our theorem for the general case,
 call it ``base-$b$",
@@ -723,21 +721,19 @@ then we'll automatically get all the cases of specific bases for free.
 \section*{Basis Representation Theorem}
 
 \begin{jprIn}
-Let $n,k,b\in \mathbb{Z}_{\ge 0}$ such that $b\ge2$.
-Then every $n$ can be uniquely expressed as follows:
+Let $n$ and $b$ be positive integers such that $b\ge2$,\\
+then for every $n$ there exists a unique representation:
 
 \hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$
 
-for some $k$ such that $0 \le d_i \le (b-1)$ where $d_i,i\in\mathbb{Z}$ and $0 \le i \le k$.
+such that $0\le{}d_i\le{}(b-1)$ where $0\le{}i\le{}k$, furthermore $d_k\ne0$.
 
-Furthermore $d_k\ne0$ except when $n=0$.
-
-Definition: $n$ is represented in base-$b$ as $(d_kd_{k-1}\dots{}d_2d_1d_0)_b$
+Definition: $n$ is represented in base-$b$ by the string of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
 \end{jprIn}
 \bigskip
 
-So, to get the ``Base-Ten Representation Theorem'', let $b=10$.
-To get the ``Base-Two Representation Theorem'', let $b=2$''; or the ``Base-Nine Representation Theorem'',
+So to get the ``Base-Ten Representation Theorem'' let $b$ equal ten.
+To get the ``Base-Two Representation Theorem'' let $b=2$; or the ``Base-Nine Representation Theorem''
 let $b=9$; ``Base-Eight\dots{}'' let $b=8$''; ``Base-Sixteen\dots{}'' let $b=16$''; etc.
 
 Bonus: Because of the general nature of the ``Basis Representation Theorem'' we also know that we can safely convert between
@@ -771,7 +767,7 @@ of which is that it is correct.
 Yes it works,  perhaps not as elegantly as Mr. Hardy could provide to us, but I'm no G. H. Hardy.
 
 I think at this point you are well equipped you to try your hands at a couple of exercises for fun. If you get stuck, or to
-check your work the
+check your work, the
 answers are also supplied below - but please don't peek until you try the questions yourself!
 
 \section*{Exercises}
@@ -937,14 +933,11 @@ done - it’s an acronym for the Latin phrase ``quod erat demonstrandum'' which 
 In other words we’ve proven what we set out to prove.}
 
 \section*{Intermission: Extra Exercise}
-
-If $b, n \in \mathbb{Z}_{\ge 0}$ and $b\ne1$ then prove,
+If $b, n$ are nonnegative integers and $b\ne1$ then prove,
 \[1+b+b^2+\dots+b^{n-1} = \frac{b^n-1}{b-1}\]
 Hint: use induction on $n$, the base case being $n=1$.
 
-\section*{Answer to Extra Exercise}
-Proof
-
+\section*{Proof for Extra Exercise}
 Base case: $n=1$
 \[\frac{b^1-1}{b-1}=\frac{b-1}{b-1}=1=b^0=b^{1-1}\]
 
@@ -968,7 +961,7 @@ First we will prove that there is such a representation for all
 integers $n$ (existence proof) using the principle of mathematical induction.
 Meaning that every integer has a way of being written
 in the form described by the theorem - especially as
-relates to the restrictions on the values that the ``digits" can take on.
+relates to the bounds on the values that the digit can take on.
 
 Here's a little insight into how the existence proof works, but applied to a specific number in base-ten:
 All we want to show is that for any number, if you add 1 to it, that it's also possible to express it as a valid number in base-ten.
@@ -986,27 +979,24 @@ to prove that each such representation is unique - in other
 words there aren't two (or more) ways to represent the same integer in base-$b$.
 
 \section*{Existence Proof of the Basis Representation Theorem}
+Let $n$ and $b$ be positive integers such that $b\ge2$.\\
+Also let $k$ be a integer such that $k\ge0$.\\
+Furthermore let $i$ and $d_i$ be integers such that $0\le{}d_i\le{}(b-1)$ for all $i\ge0$.
+
+Prove:
+\begin{jprIn}
+$n$ can be represented as:
+\[n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\]
+for all $n$.
+\end{jprIn}
+Proof by induction on $n$.
 
 Base case:
 \begin{jprIn}
-The Principle of Mathematical Induction always starts with 1\footnote{The Principle of Mathematical induction only talks about positive integers, not zero}, but we also need to take
-care of the slightly special case of $n=0$; so let's take care of $n=0$ AND $n=1$ which will serve as our base induction step.
-
-Let $n=0$.
+Let $n=1$.
 
 \begin{jprIn}
-We can choose $k=0$ and $d_0=0$.
-(This is the one exception spelled out in the theorem in
-which the most significant digit of n is allowed to be zero.) Then,
-\[n=d_0b^0=0\cdot{}b^0=0\]
-showing that we have a valid representation for 0 in base-$b$ since our only digit\\
-$d_0=0\le(b-1)$, for all $b\ge2$.
-\end{jprIn}
-
-Now let $n=1$.
-
-\begin{jprIn}
-In this case, we can choose $k=0$ and $d_0=1$.  Then,
+Choose $k=0$ and $d_0=1$.  Then,
 \[n=d_0b^0=1\cdot{}b^0=1\cdot{}1=1\]
 showing that we have a valid representation for 1 in base-$b$ since\\
 $d_0=1\le(b-1)$, for all $b\ge2$.
@@ -1018,15 +1008,14 @@ Induction Case:
 
 \begin{jprIn}
 Assume that $n$ has a valid representation in base-$b$,
-that is, $n$ can be written thus: 
+that is, $n$ can be expressed as: 
 \[n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\]
-with all the appropriate conditions holding for the
-values of $d_i$, $b$ and $k$;
-and we will prove that $n+1$ also has a valid representation in base-$b$.
+with all the appropriate conditions holding for $d_i$ and $k$ as outlined at the beginning of the proof;
+then we will prove that $n+1$ also has a valid representation in base-$b$.
 
 We're going to break this step into two cases which cover all possibilities.
 
-\filbreak
+\break
 Case 1) $d_0<(b-1)$
 
 \begin{jprIn}
@@ -1047,14 +1036,14 @@ n+1 &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + 1\\
 we can restate our assumption that $d_0<(b-1)$ as $d_0\le(b-2)$, then
 \[(d_0+1)\le(b-2)+1=(b-1)\]
 showing us that the ``least significant digit"
-of $n+1$, being $(d_0+1)$, is less than or equal to $(b-1)$ which means that
+of $n+1$, now being $(d_0+1)$, is less than or equal to $(b-1)$ which means that
 $(d_0+1)$ is a valid digit in base-$b$.
 
 Since all the other terms $d_k,\dots,d_2,d_1$
 for $n+1$ are unchanged from their values for
 $n$ then all the digits of $n+1$ are valid in base-$b$.
 
-Therefore we've established the truth of ``Case 1" for the integer $n+1$.
+Therefore when $d_0$ is  \emph{strictly-less-than} $b-1$, then $n+1$ has a valid representation in base-$b$.
 \end{jprIn}
 \bigskip
 
@@ -1105,7 +1094,7 @@ Therefore all the digits of the base-$b$ representation of $n+1$ are valid in ba
 If you've been fastidiously following the conditions on our subscript $j$ above, then
 you may notice that
 our proof doesn't leave room for the case that \emph{all} the digits are equal to $(b-1)$ because of
-how we defined $j$. For example when $n=99999$.
+how we defined $j$. For example when $n=99999$ in base-ten.
 
 Let's attend to this remaining detail.
 
@@ -1118,8 +1107,8 @@ n+1 &=(d_j+1)b^j\\
 &=(0+1)b^{k+1}\\
 &=b^{k+1}
 \end{align*}
-Meaning that $n+1$ now has a $(k+1)$\textsuperscript{st} digit and it's equal to 1,
-with all the rest of the digits being 0 - which is a valid representation for $n+1$ in base-$b$ for all $b\ge2$.
+Meaning that $n+1$ now has one more digit than $n$, namely $d_{k+1}$ and it's equal to 1,
+with all the rest of the digits for $n+1$ being 0 - which is a valid representation for $n+1$ in base-$b$ for all $b\ge2$.
 \end{jprIn}
 Therefore 
 by the principle of mathematical induction,
@@ -1135,14 +1124,17 @@ It sounds onerous, but don’t worry, you all learned it
 in the third grade but perhaps not so formally, you called it ``long division''. It simply states the following:
 
 \break
-\section*{Euclidean Division Theorem}
+\section*{Euclidean Division Theorem\footnote{We introduce a new math symbol here, and use one that was
+mentioned in passing much earlier in the paper.  Namely the $\in$ which means ``is an element of'' or
+``is a member of'' and is always followed by something that is a set.  We introduced the symbol $\mathbb{Z}$ as the
+``set of integers''.  So ``$a,b\in{}\mathbb{Z}$'' means that $a$ and $b$ are integers.}}
 \begin{jprIn}
-For all $a,b\in{}\mathbb{Z}$ where $b>0$, there exists unique integers $q$ and $r$ such
+For all $a,b\in{}\mathbb{Z}$ where $b>0$, there exists \emph{unique} integers $q$ and $r$ such
 that
 that\footnote{Actually the theorem is stronger than we have stated here. Specifically, it only requires that $b\ne0$, however
-to keep the remainder positive, the restriction on $r$ is stated like
+to keep the remainder positive, the restriction on $r$ would have to be stated like
 this $0 \le r \le (\left|b\right|-1)$ to deal with the possibility that $b$ might be negative.}:
-\[a=qb+r  \text{ and } 0\le{}r\le{}(b-1)\]
+\[a=qb+r  \text{ where } 0\le{}r\le{}(b-1)\]
 Definition: In the above equation:
 \begin{jprIn}
 \begin{tabular}{l l}
@@ -1188,24 +1180,28 @@ would not be unique. QED
 \end{jprIn}
 
 \section*{Uniqueness Proof of the Basis Representation Theorem}
+Let $n$ and $b$ be positive integers such that $b\ge2$.\\
+Also let $k$ be a integer such that $k\ge0$.\\
+Furthermore let $i, c_i, d_i\in\mathbb{Z}$ such that
+$0\le{}c_i\le{}(b-1)$ and $0\le{}d_i\le{}(b-1)$ for all $i\ge0$.
 
-Assume $n$ is not unique and that,
-\begin{align*}
-n&=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\text{, and}\\
-n&=c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0
-\end{align*}
+By the ``Existence Proof of the Basis Representation Theorem'' we know that $n$ can
+always be expressed in this form:
+\[n=d_kb^k+\dots+d_2b^2+d_1b^1+d_0b^0\]
+Assume this expression for $n$ is not unique and that it can also be expressed as
+\[n=c_kb^k+\dots+c_2b^2+c_1b^1+c_0b^0\]
 Let's further suppose that the index $j$ is the lowest power such that the digits $d_j\ne{}c_j$ and without any loss of generality,
 let's assume that $d_j>c_j$.
 
 Therefore\footnote{Please read the bidirectional arrow symbol $\Leftrightarrow$ as ``if and only if'' - it's like a logical ``equals'' sign}:
 \begin{align*}
-& c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b\\
-\Leftrightarrow\;\;\;\;&0=(d_k-c_k)b^k+(d_{k-1}-c_{k-1})b^{k-1}+\dots+(d_j-c_j)b^j\\
-\Leftrightarrow\;\;\;\;& \frac{0}{b^j}=\frac{(d_k-c_k)b^k+(d_{k-1}-c_{k-1})b^{k-1}+\dots+(d_j-c_j)b^j}{b^j}\text{, since }b\ne0\\
-\Leftrightarrow\;\;\;\;& 0=(d_k-c_k)b^{k-j}+(d_{k-1}-c_{k-1})b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})b+(d_j-c_j)\\
-\Leftrightarrow\;\;\;\;& 0=\big((d_k-c_k)b^{k-j-1}+(d_{k-1}-c_{k-1})b^{k-j-2}+\dots+(d_{j+1}-c_{j+1})\big)b+(d_j-c_j)
+& c_kb^k+\dots+c_2b^2+c_1b^1+c_0b^0=d_kb^k+\dots+d_2b^2+d_1b^1+d_0b\\
+\Leftrightarrow\;\;\;\;&0=(d_k-c_k)b^k+\dots+(d_j-c_j)b^j\\
+\Leftrightarrow\;\;\;\;& \frac{0}{b^j}=\frac{(d_k-c_k)b^k+\dots+(d_j-c_j)b^j}{b^j}\text{, since }b\ne0\\
+\Leftrightarrow\;\;\;\;& 0=(d_k-c_k)b^{k-j}+\dots+(d_{j+1}-c_{j+1})b+(d_j-c_j)\\
+\Leftrightarrow\;\;\;\;& 0=\big((d_k-c_k)b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})\big)b+(d_j-c_j)
 \end{align*}
-Let $q=\big((d_k-c_k)b^{k-j-1}+(d_{k-1}-c_{k-1})b^{k-j-2}+\dots+(d_{j+1}-c_{j+1})\big)$, then
+Let $q=\big((d_k-c_k)b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})\big)$, then
 \[0=qb+(d_j-c_j)\]
 Since $0\le(d_j-c_j)\le(b-1)$ and $b>0$ then by our lemma we know that\\
 $q=0$ and $d_j-c_j = 0$.
