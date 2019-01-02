@@ -156,7 +156,10 @@ Roman system only effectively allowed counting up to 4999.
 Using base-ten for us is automatic,
 we barely think about it when we're adding numbers or multiplying
 them - but it's worth looking carefully at how base-ten
-works - so let's examine it from the ground up.
+works - so let's examine it from the ground up\footnote{Please forgive the incredibly obvious nature of much
+of the following discussion, but I want to take a good running start
+at some more difficult notions, so I figured that it's helpful
+to start with stuff that everyone already knows, but looking at it with fresh eyes.}.
 
 It's useful to have simple symbols to represent each of the integers from one to nine,
 namely our familiar 1, 2, 3, 4, 5, 6, 7, 8 and 9
@@ -272,11 +275,7 @@ bullshit - or if we are full of it then it's easy
 for other Mathematicians to call us on our nonsense.
 
 We're going to jump into the deep end and make our claim in a careful mathy kind of way.
-Such a careful statement is called a theorem - theorems require proof which we will get to. It might get tough once we get
-to the proof. You are
-probably going to have to
-exercise some math-brain-muscles which is hard work, but like any workouts, the more you
-do them, and make even a tiny effort, the stronger you get, so I encourage you to persevere.
+Such a careful statement is called a theorem - theorems require proof which we will get to below.
 
 \section*{Base-Ten Representation Theorem}
 
@@ -705,7 +704,20 @@ integers $n$ (existence proof).
 Meaning that every integer has a way of being written
 in the form described by the theorem - especially as
 relates to the restrictions on the values that the ``digits" can take on.
-After that has been established we will use another technique
+
+Here's a little insight into how the existence proof works, but applied a specific number in base-ten:
+All we want to show is that for any number, if you add 1 to it, that it's also possible to express it as a valid number in base-ten.
+
+For example, adding 1 to 69412995 gives us 69412996, which is pretty trivial to show that it's valid in base-ten, only the least-significant digit was
+changed, and it's clearlly within the range of 0\dots{}9.
+
+But what about dealing with a ``carry'', for example 
+if we were adding 1 to 69412999? We'd need to algebraically capture the idea of the carry.  They way
+we do it in the proof is essentially to say that $69412999 = 69410000 + 2999 = 69410000 + (3000-1)$ so that when we add one to it, then
+it's clear that the answer is just:\\
+\[69412999 + 1 = 69410000 + (3000-1) + 1 = 69410000 + 3000 + (-1 + 1) = 69413000\]
+
+After the existence proof has been established we will use another technique, called proof by contradiction,
 to prove that each such representation is unique - in other
 words there aren't two (or more) ways to represent the same integer in base-$b$.
 
@@ -737,6 +749,7 @@ $d_0=1\le(b-1)$, for all $b\ge2$.
 \end{jprIn}
 \bigskip
 
+\break
 Induction Case:
 
 \begin{jprIn}
@@ -852,17 +865,18 @@ In other words we’ve proven the existence part of the Basis Representation The
 \bigskip
 
 \break
-In order to proceed\footnote{I don't want to misrepresent that the proof in
-this paper is the only way to prove the
-Basis Representation Theorem, in fact I know of at least two others. 
-
-One is more constructive,
-and makes extensive use of the Euclidean Division Theorem but it's just as lengthy as ours here. However it does give
-some nifty insight in how to convert any integer into a specific base.
-
-Another is quite elegant and short but pretty abstract, and not particularly useful for our purposes.
-However, you can find it in the book ``Number Theory'' by George E. Andrews, and also on
-proofwiki site, just search for the ``Basis Representation Theorem'' to find the proof.}
+In order to proceed
+% \footnote{I don't want to misrepresent that the proof in
+% this paper is the only way to prove the
+% Basis Representation Theorem, in fact I know of at least two others. 
+% 
+% One is more constructive,
+% and makes extensive use of the Euclidean Division Theorem but it's just as lengthy as ours here. However it does give
+% some nifty insight in how to convert any integer into a specific base.
+% 
+% Another is quite elegant and short but pretty abstract, and not particularly useful for our purposes.
+% However, you can find it in the book ``Number Theory'' by George E. Andrews, and also on
+% proofwiki site, just search for the ``Basis Representation Theorem'' to find the proof.}
 with proving the uniqueness aspect of the Basis Representation Theorem, we
 need to make use of a well established theorem
 called the ``Euclidean Division Theorem''.
@@ -871,7 +885,10 @@ in the third grade but perhaps not so formally - you called it ``long division''
 
 \section*{Euclidean Division Theorem}
 \begin{jprIn}
-For all $a,b\in{}\mathbb{Z}$ where $b\ne0$, there exists unique integers $q$ and $r$ such that:
+For all $a,b\in{}\mathbb{Z}$ where $b>0$, there exists unique integers $q$ and $r$ such
+that\footnote{Actually the theorem
+is stronger, allowing for $b$ to be negative, so the constraints on $r$ are actually expressed as $0\le{}r\le(|b|-1)$ but that involves introducing the
+concept of ``absolute value'' which is easy, but unnecessary for us right now, our weaker version of the theorem will suit us fine.}:
 \[a=qb+r  \text{ and } 0\le{}r\le{}(b-1)\]
 Definition: In the above equation:
 \begin{jprIn}
@@ -904,12 +921,19 @@ of the ``Basis Representation Theorem''. We're going to make use of the
 \begin{jprIn}
 Let $b, q, r \in{} \mathbb{Z}$ such that $b>0$ and $0\le{}r\le(b-1)$, then
 \[0=qb+r\]
-if and only if $q=0$ and $r=0$
+if and only if $q=0$ and $r=0$.
 \end{jprIn}
 
 \section*{Proof of Lemma}
 \begin{jprIn}
-tbd
+Let $b, q, r \in{} \mathbb{Z}$ such that $b>0$.
+
+Let $q=0$ and $r=0$, then since
+\[qb+r=0\cdot{}b+0=0\]
+then by the uniqueness property of $q$ and $r$ according to the Euclidean Division theorem,
+then there are no other such values for $q$ and $r$ that would satisfy this equation.
+
+QED
 \end{jprIn}
 
 \section*{Uniqueness Proof of the Basis Representation Theorem}
@@ -935,7 +959,7 @@ if and only if,
 \[0=\big((d_k-c_k)b^{k-j-1}+(d_{k-1}-c_{k-1})b^{k-j-2}+\dots+(d_{j+1}-c_{j+1})\big)b+(d_j-c_j)\]
 Let $q=\big((d_k-c_k)b^{k-j-1}+(d_{k-1}-c_{k-1})b^{k-j-2}+\dots+(d_{j+1}-c_{j+1})\big)$, then
 \[0=qb+(d_j-c_j)\]
-Since $0\le(d_j-c_j)\le(b-1)$ and $b>0$ then by our Lemma we know that\\
+Since $0\le(d_j-c_j)\le(b-1)$ and $b>0$ then by our lemma we know that\\
 $q=0$ and $d_j-c_j = 0$.
 
 But $d_j-c_j = 0$ if and only if $d_j = c_j$
@@ -945,4 +969,38 @@ is not unique is \emph{false}, in other words:
 The base-$b$ representation of $n$ is unique.
 
 QED
+
+% \break
+% Thanks for taking that little ride - if you got this far, then I'd love to give you 50 gold stars!  In addition, being Canadian, I feel compelled to apologize for a couple of things.
+% 
+% First, if I turned you off math more than you were before, then I failed miserably!  For that you deserve a HUGE Canadian apology.
+% 
+% Second, if this paper did turn you off, then I might not blame you, as this proof is hardly what one would call elegant.  In fact here's what another of the
+% world's greatest Mathematicians, ``G.H. Hardy'' had to say about proofs like this\footnote{coincidentally in an essay he wrote
+% called ``A Mathematician's Apology''}:
+% 
+% \begin{jprIn}
+% ``We do not want many `variations' in the proof of a mathematical theorem: `enumeration of cases', indeed, is one
+% of the duller forms of mathematical argument. A mathematical proof should resemble a simple and clear-cut constellation, not a scattered
+% cluster in the Milky Way.''
+% \end{jprIn}
+% 
+% I couldn't agree more, however, a more elegant proof along the lines of what Hardy argues for, I think is provided by George E. Andrews in his
+% introductory book called ``Number Theory''. Andrew's proof is cool, and the logic inescapable, but not an obvious way to approach the problem.
+% Perhaps it's a little too out there for our Sesame-Street-plus-plus approach that this paper is going for. Like I mentioned in a footnote above,
+% if you want to check it out, it's easy to find on the web at the site ``ProofWiki''.
+% 
+% If you want a taste of an elegant proof, then surely this is the classic go to example, also from Euclid in 300 BC, and his reasoning (translated to
+% modern Algebra) goes like this:
+% 
+% \section*{Infinitude of Primes Theorem}
+% \begin{jprIn}
+% There are infinitely many primes.
+% \end{jprIn}
+% 
+% \section*{Proof of the Infinitude of Primes Theorem}
+% \begin{jprIn}
+% Assume that the number of primes is finite. %That is, there exists a set $\mathbb{P}=\set{p_0, p_1, p_2,\dots,p_n}$ 
+% \end{jprIn}
+
 \end{document}
