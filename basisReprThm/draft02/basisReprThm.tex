@@ -829,7 +829,7 @@ To get the ``Base-Two Representation Theorem'' let $b=2$; or the ``Base-Nine Rep
 let $b=9$; etc.
 
 \bigskip
-The ``Basis Representation Theorem''
+The Basis Representation Theorem
 implies that we can safely convert between
 different bases. Why? (Exercise left for student).
 
@@ -854,7 +854,7 @@ theorem that defines unique representations for negative numbers fairly easily.
 
 \break
 \section*{Epilogue}
-At this point we really ought to get to the proof of the ``Basis Representation Theorem''.
+At this point we really ought to get to the proof of the Basis Representation Theorem.
 
 However truth be told, the proof supplied below, while elementary, isn't the most beautiful proof 
 in the world and thus not necessarily the best to follow for the first time mathematician.
@@ -963,8 +963,8 @@ then 3, 4, 5, \dots{}ad~infinitum\footnote{``ad
 infinitum'' means ``to infinity'', or ``continue forever, without limit''.}.
 
 This idea of being able to step one after the other,
-beginning at 1 and going forever is embodied within the ``Principle of Mathematical
-Induction" and is a basic property of the positive integers.
+beginning at 1 and going forever is embodied within the principle of mathematical
+induction and is a basic property of the positive integers.
 This principle is more than just a way to generate the set of integers,
 it's also a way of thinking about properties of the integers.
 
@@ -992,7 +992,7 @@ etc., over and over for all positive integers.
 Some people picture an infinite row of dominoes.
 Having condition i) (called the ``base case") is like being
 able to knock over the first domino.
-Then knowing condition ii) is also true is like the
+Then knowing condition ii) is also true (called the ``induction step") is like the
 fact that any one domino has the ability to knock over the next.
 Once you've knocked over the first domino,
 they all fall.
@@ -1038,7 +1038,7 @@ only one item thus it's ``trivial''.} of the first positive integer 1.
 \bigskip
 
 Now let's assume the relationship is true for $n$,
-and prove that it must also be true for $n+1$:
+and prove that it must also be true for $n+1$ for our ``induction step":
 \begin{align*}
 &(1+2+3+\ldots+n) + (n+1)\\
 = & \; \frac{n(n+1)}{2} + (n+1)\\
@@ -1072,14 +1072,14 @@ Assume the following
 Then,
 \begin{align*}
 &(1+b+b^2+\dots+b^{n-1}) + b^n\\
-= &\frac{b^n-1}{b-1}+b^n\\
-= &\frac{b^n-1}{b-1}+\frac{b^n(b-1)}{b-1}\\
-= &\frac{b^n-1+b^{n+1}-b^n}{b-1}\\
-= &\frac{b^{n+1}+b^n-b^n-1}{b-1}\\
-= &\frac{b^{n+1}-1}{b-1}
+=\ &\frac{b^n-1}{b-1}+b^n\\
+=\ &\frac{b^n-1}{b-1}+\frac{b^n(b-1)}{b-1}\\
+=\ &\frac{b^n-1+b^{n+1}-b^n}{b-1}\\
+=\ &\frac{b^{n+1}+b^n-b^n-1}{b-1}\\
+=\ &\frac{b^{n+1}-1}{b-1}
 \end{align*}
 QED
-\section*{Proof of the  Basis Representation Theorem}
+\section*{Proof of the Basis Representation Theorem}
 How do we prove our theorem? There are several ways to approach it.
 
 The mathematician George E. Andrews (in his book
@@ -1103,14 +1103,14 @@ we would try to generalize how we solved
 exercise number 2-iii) above, it's worth a try for fun.
 
 However, we're going to follow a much more straightforward approach.
-We'll use the Principle of Mathematical Induction directly on $n$
+We'll use the principle of mathematical induction directly on $n$
 to prove that
 a base-$b$ representation of each positive integer exists.
 Then we'll use a different approach to prove that each such representation is unique.
 
 \bigskip
 Using the
-Principle of Mathematical Induction 
+principle of mathematical induction 
 to prove that a base-$b$ number exists for all the positive integers is pretty simple.
 The crux of the approach is to show that if $n$ can be expressed in base-$b$,
 then it necessarily follows that $n+1$ can also be represented in base-$b$.
@@ -1229,21 +1229,24 @@ where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
 %\end{jprIn}
 
 \bigskip
-Proof by induction on $n$.
+We will refer to the previous expression as the
+``base-$b$-representation" for $n$ in the following induction proof.
 
 \bigskip
-Base case, when $n=1$.
-
+Base case:
 \begin{jprIn}
+Consider when $n=1$.
+
 Let $d_0=1$ be the only integer in the sequence.  Then,
 
 \hspace{3em}$d_0b^0=1\cdot{}b^0=1\cdot{}1=1=n$
 
-Since $d_0<b$ for all $b$ and $d_0\ne0$ (note: $k=0$) proving existence when $n=1$.
+Since $d_0<b$ for all $b$ and $d_0\ne0$ (note: $k=0$) proving that a
+base-$b$-representation exists for the integer 1.
 \end{jprIn}
 
 \break
-Induction Case:
+Induction Step:
 \begin{jprIn}
 Let $n$ be a positive integer, and assume that
 there is a sequence
@@ -1253,8 +1256,8 @@ of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
 
 where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
 
-We will prove that $n+1$ can also be expressed in this form by
-looking at two cases.
+We will prove that $n+1$ also has a
+base-$b$-representation by looking at two cases.
 
 \bigskip
 Case 1) $d_0<(b-1)$
@@ -1266,6 +1269,7 @@ In base-five $d_0\le{}3$;
 In base-ten $d_0\le{}8$.)\footnote{Please read the following bidirectional arrow symbol $\Leftrightarrow$ as ``if and only if'' - it's like a logical ``equals'' sign}
 %\footnote{Use
 %the axiom of Distribution \big(i.e.; $ac+bc=(a+b)c$\big) to factor out the $b^0$ below.}
+{\small
 \begin{alignat*}{3}
   &&n
   &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 &&\quad\text{(Induction Assumption)}\\
@@ -1275,7 +1279,8 @@ In base-ten $d_0\le{}8$.)\footnote{Please read the following bidirectional arrow
   &&&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + b^0 &&\quad\text{(Restate 1 as }b^0\text{)}\\
   &&&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1 + (d_0+1)b^0 &&\quad\text{(Axiom of Distribution)}
 \end{alignat*}
-The expression for $n+1$ uses the same sequence of integers $d_k, d_{k-1},\dots{},d_2,d_1$ as $n$, with only
+}The expression for $n+1$ uses the same sequence of
+integers $d_k, d_{k-1},\dots{},d_2,d_1$ as $n$, with only
 change being that the integer $d_0$ was altered to $(d_0{+}1)$, but since:
 \begin{alignat*}{3}
   &&d_0
@@ -1287,7 +1292,7 @@ change being that the integer $d_0$ was altered to $(d_0{+}1)$, but since:
   &d_0+1
   &< b
 \end{alignat*}
-Therefore the expression for $n+1$ exists in the desired form whenever $n$ has such an expression.
+Therefore, given the conditions of ``Case 1", $n+1$ has a base-$b$-representation whenever $n$ does.
 \end{jprIn}
 
 \bigskip
@@ -1321,12 +1326,11 @@ So $n$ can be expressed like this:
 \end{alignat*}
 Recall in the ``Extra Exercise: Geometric Series Theorem"
 we showed that:
-
 \[1+b+b^2+\dots{}+b^k=\frac{b^{k+1}-1}{b-1}\]
 
 We can use this theorem to show that $n+1=b^{k+1}$ as follows:
 \smallskip
-\begin{small}
+{\small
 \begin{alignat*}{3}
   &&b^k+\dots{}+b^2+b+1
   &= \frac{b^{k+1}-1}{b-1} &&\quad\text{(Reorder terms of G.S.Thm.)}\\
@@ -1346,12 +1350,13 @@ We can use this theorem to show that $n+1=b^{k+1}$ as follows:
   &n+1
   &= b^{k+1} &&\quad\text{(Add 1 to both sides)}
 \end{alignat*}
-\end{small}
-\smallskip
-Therefor $n+1$ can be written as follows:
+}We can rewrite $n+1$ as follows:
 \[n+1= 1\cdot{}b^{k+1}+0\cdot{}b^{k}+\dots{}+0\cdot{}b^2+0\cdot{}b^1+0\cdot{}b^0,\]
-which is a valid expression for $n+1$ for all $b>1$. We note that the length of the sequence of
-integers associated with $n+1$ is one longer than the sequence for $n$ - i.e. $n+1$ one digit longer that $n$.
+Therefore, given the conditions of ``case 2a", $n+1$ has
+a valid base-$b$-representation whenever $n$ does.
+We note that
+the number of integers in the sequence associated
+with $n+1$ is one longer than for $n$. i.e., $n+1$ is one digit longer that $n$.
 
 \bigskip
 \end{jprIn}
@@ -1360,8 +1365,9 @@ Case 2b) $d_0=(b-1)$ but at least one other digit is not equal to $(b-1)$
 Let $j$ be the lowest power-of-$b$ such that $d_j<(b{-}1)$,
 i.e.; we can write $n$ as follows:
 \[n = d_kb^k+d_{k-1}b^{k-1}+\dots+d_jb^j+(b{-}1)b^{j-1}+\dots+(b{-}1)b^1+(b{-}1)b^0\]
-Similar to how we used the ``Geometric Series Theorem'' above, we can simplify the expression for $n$ as follows:
-\begin{small}
+Similar to how we used the ``Geometric Series Theorem'' above,
+we can simplify the expression for $n$ as follows:
+{\small
 \begin{alignat*}{3}
   &&n
   &= d_kb^k+\dots+d_jb^j+\big((b{-}1)b^{j-1}+\dots+(b{-}1)b^1+(b{-}1)b^0\big)&&\\
@@ -1375,14 +1381,14 @@ Similar to how we used the ``Geometric Series Theorem'' above, we can simplify t
   &n+1
   &=  d_kb^k+\dots+(d_j+1)b^j &&\text{(Distr Axiom)}
 \end{alignat*}
-\end{small}
-Rewriting the expression for $n$ in explicit terms:
+}Rewriting the expression for $n$ in explicit terms:
 \[n+1= d_kb^k+\dots+d_{j+1}b^{j+1}+(d_j+1)b^j+0{\cdot{}}{}b^{j-1}+\dots{}+0{\cdot{}}b^1+0{\cdot{}}b^0\]
-We can see that the expression for $n+1$ uses the same sequence of integers $d_k,\dots{},d_{j+1}$ as $n$.
+We can see that the expression for $n+1$ uses the same
+sequence of integers $d_k,\dots{},d_{j+1}$ as $n$.
 The integer $d_j$ was altered to $(d_j{+}1)$, but since:
 \begin{alignat*}{3}
   &&d_j
-  &< (b-1) &&\quad\text{(Assumption above)}\\
+  &< (b-1) &&\quad\text{(Previous assumption)}\\
   &\Leftrightarrow\quad
   &d_j+1
   &< (b-1)+1 &&\quad\text{(Add 1 to both sides)}\\  
@@ -1390,63 +1396,39 @@ The integer $d_j$ was altered to $(d_j{+}1)$, but since:
   &d_j+1
   &< b
 \end{alignat*}
-Therefor the integer $d_j+1$ associated with $b^j$ in the expression for $n+1$ is valid.
+Furthermore the remaining sequence of integers $d_{j-1}=\dots{}=d_2=d_1=d_0=0$.
 
-Since the remaining sequence of integers $d_{j-1}=\dots{}=d_2=d_1=d_0=0$ are also valid, 
-therefore the expression for $n+1$ can
-be expressed in the desired form whenever $n$ can.
-%\begin{align*}
-%n &=d_kb^k+\dots+d_jb^j+(b-1)b^{j-1}+(b-1)b^{j-2}+\dots+(b-1)b^1+(b-1)b^0\\
-%&= d_kb^k+\dots+d_jb^j+(b^j-b^{j-1})+(b^{j-1}-b^{j-2})+\dots+(b^2-b^1)+(b^1-b^0)\\
-%&= d_kb^k+\dots+(d_jb^j+b^j)+(-b^{j-1}+b^{j-1})+\dots+(-b^2+b^2)+(-b^1+b^1)-b^0\\
-%&= d_kb^k+\dots+(d_j+1)b^j-b^0\\
-%&= d_kb^k+\dots+(d_j+1)b^j-1
-%\end{align*}
-%Therefore,
-%\begin{align}
-%n+1 &=d_kb^k+\dots+(d_j+1)b^j-1+1 \nonumber \\
-%&= d_kb^k+\dots+(d_j+1)b^j \label{eqnA}
-%\end{align}
-%Since we picked $j$ such that $d_j<(b-1)$,
-%we can restate the inequality as\\
-%$d_j\le(b-2)$ therefore,
-%\[(d_j+1)\le(b-2)+1=(b-1)\]
-%meaning the $j$\textsuperscript{th} digit of $n+1$ is less than or equal to $b-1$ meaning that it is a valid base-$b$ digit.
-%
-%All digits $d_k,\dots,{}d_{j+1}$ remain unchanged from the base-$b$ representation of $n$,
-%and all digits $d_{j-1},\dots{},d_0$ are 0.
-%
-%Therefore all the digits of the base-$b$ representation of $n+1$ are valid in base-$b$.
+Therefore, given the conditions of ``case 2b", $n+1$ has
+a valid base-$b$-representation whenever $n$ does.
 \end{jprIn}
 \end{jprIn}
-Taking case 1) and case 2) together proves that $n+1$
-always has a valid sequence of integers corresponding to the expression in the theorem whenever $n$ does.
-Therefore together with the base-case and by the principle of mathematical induction,
-all positive integers
-have valid sequences of integers corresponding to the expression in the theorem.
+Taking ``Case 1" and ``Case 2" together proves that $n+1$
+always has a base-$b$-representation whenever $n$ does.
+Having also established the base-case, by the principle of mathematical induction
+all positive integers have a base-$b$-representation.
 
 QED
 \end{jprIn}
 \bigskip
 
 In order to proceed
-with proving the uniqueness aspect of the ``Basis Representation Theorem", we
+with proving the uniqueness aspect of the Basis Representation Theorem, we
 need to make use of a well established theorem
 called the ``Euclidean Division Theorem''.
 It sounds onerous, but don't worry, you all learned it
 in the third grade but perhaps not so formally, you called it ``long division''. It simply states the following:
 
-\section*{Euclidean Division Theorem\footnote{We introduce a new math symbol here, plus use one that was
-mentioned in passing much earlier in the paper.  Namely the $\in$ which means ``is an element of'' or
-``is a member of'' and is always followed by something that is a set.  We introduced the symbol $\mathbb{Z}$ as the
-``set of integers''.  So ``$a,b\in{}\mathbb{Z}$'' means that $a$ and $b$ are integers.}}
+\section*{Euclidean Division Theorem}
 \begin{jprIn}
-For all $a,b\in{}\mathbb{Z}$ such that $b>0$, there exists \emph{unique} integers $q$ and $r$ such
-that
-that\footnote{Aside: Actually the theorem is stronger than we have stated here. Specifically, it only requires that $b\ne0$, however
-to keep the remainder positive, the restriction on $r$ would have to be stated like
-this $0 \le r \le (\left|b\right|-1)$ to deal with the possibility that $b$ might be negative.}:
-\[a=qb+r  \text{ such that } 0\le{}r\le{}(b-1)\]
+For all integers $a$ and $b$ such that $b>0$,
+there exist \emph{unique} integers $q$ and $r$ such that\footnote{Aside:
+Actually the theorem is stronger than we have stated here.
+Specifically, it only requires that $b\ne0$, however
+to keep the remainder positive, the restriction on $r$
+would have to be stated like
+this $0 \le r \le (\left|b\right|-1)$ to deal with
+the possibility that $b$ might be negative.}:
+\[a=qb+r  \text{ such that } 0\le{}r<b\]
 Definition: In the above equation:
 \begin{jprIn}
 \begin{tabular}{l l}
@@ -1470,19 +1452,19 @@ easier to follow by not having us get sidetracked with
 the technicalities of a step we want to make.
 These mini-theorems are called ``Lemmas''
 and we're going to make one to help with proving the uniqueness part
-of the ``Basis Representation Theorem", and we're going to make use of the
+of the Basis Representation Theorem, and we're going to make use of the
 Euclidean Division Theorem in proving our lemma.
 
 \section*{Lemma}
 \begin{jprIn}
-Let $b, q, r \in{} \mathbb{Z}$ such that $b>0$ and $0\le{}r\le(b-1)$, then
+Let $b, q$ and $r$ be integers such that $b>0$ and $0\le{}r<b$, then
 \[0=qb+r\]
 if and only if $q=0$ and $r=0$.
 \end{jprIn}
 
 \section*{Proof of Lemma}
 \begin{jprIn}
-Let $b, q, r \in{} \mathbb{Z}$ such that $b>0$ and $0\le{}r\le{}(b-1)$.
+Let $b, q$ and $r$ be integers such that $b>0$ and $0\le{}r<b$, then
 
 If $q=0$ and $r=0$, then
 \[qb+r=0\cdot{}b+0=0\]
@@ -1517,6 +1499,7 @@ let's assume that $d_j>c_j$. Since both expressions are equal to $n$ then:
 \begin{center}
 if and only if,
 \end{center}
+{\small
 \begin{alignat*}{3}
   &&0
   &= (d_k-c_k)b^k+\dots+(d_j-c_j)b^j&&\quad\text{(Subtract LHS from both sides)}\\
@@ -1528,20 +1511,13 @@ if and only if,
   &=(d_k-c_k)b^{k-j}+\dots+(d_{j+1}-c_{j+1})b+(d_j-c_j) &&\quad\text{(Divide each term in numerator by }b^j{)}\\
   &\Leftrightarrow\quad
   &0
-  &= \big((d_k-c_k)b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})\big)b+(d_j-c_j) &&\quad\text{(Factor out common }b{)}\\
+  &= \big((d_k-c_k)b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})\big)b+(d_j-c_j) &&\quad\text{(Factor out common }b{)}
 \end{alignat*}
-%
-%Therefore\footnote{Please read the bidirectional arrow symbol $\Leftrightarrow$ as ``if and only if'' - it's like a logical ``equals'' sign}:
-%\begin{align*}
-%& c_kb^k+\dots+c_2b^2+c_1b^1+c_0b^0=d_kb^k+\dots+d_2b^2+d_1b^1+d_0b\\
-%\Leftrightarrow\;\;\;\;&0=(d_k-c_k)b^k+\dots+(d_j-c_j)b^j\\
-%\Leftrightarrow\;\;\;\;& \frac{0}{b^j}=\frac{(d_k-c_k)b^k+\dots+(d_j-c_j)b^j}{b^j}\text{, since }b\ne0\\
-%\Leftrightarrow\;\;\;\;& 0=(d_k-c_k)b^{k-j}+\dots+(d_{j+1}-c_{j+1})b+(d_j-c_j)\\
-%\Leftrightarrow\;\;\;\;& 0=\big((d_k-c_k)b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})\big)b+(d_j-c_j)
-%\end{align*}
+}
+
 Let $q=\big((d_k-c_k)b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})\big)$, then
 \[0=qb+(d_j-c_j)\]
-Since $0\le(d_j-c_j)\le(b-1)$ and $b>0$ then by our lemma we know that\\
+Since $0\le(d_j-c_j)<b$ and $b>0$ then by our lemma we know that
 $q=0$ and $d_j-c_j = 0$.
 
 But $d_j-c_j = 0$ if and only if $d_j = c_j$
