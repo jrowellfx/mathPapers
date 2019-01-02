@@ -58,6 +58,8 @@
 \usepackage{changepage}
 \usepackage{enumerate}
 %\usepackage{setspace}
+\usepackage{relsize}
+\usepackage{wasysym}
 
 \newenvironment{jprIn}{\begin{adjustwidth}{2em}{}}{\end{adjustwidth}}
 \addtolength{\skip\footins}{6pt}
@@ -228,7 +230,7 @@ i.e., there is no limit on how big $k$ can be.
 The notation of $10^k$ is very handy, in fact it extends
 to the case when $k=0$ and $k=1$.\footnote{$10^k$ also extends to the cases
 when $k$ is negative as in $10^{-1}$, or $10^{-2}$, etc. which means $\frac{1}{10}$ and $\frac{1}{100}$ respectively
-but those are called ``Rational'' numbers and we aren't concerning ourselves with those kinds of numbers in this paper.}
+but those are called ``rational numbers''. We aren't concerning ourselves with rational numbers in this paper.}
 
 So $10^1$ means that there is only one 10 multiplied together, or one ``0" following the ``1",
 in other words just the number 10 itself.
@@ -239,8 +241,9 @@ Examining the pattern of how the power $k$ relates to how many zeros follow the 
 (eg, $10^1=10$, $10^2=100$, $10^3=1000$,
 etc.) then it makes sense that $10^0=1$,
 i.e., no zeros follow the ``1", which is exactly right.
-Actually any number raised to the 0\textsuperscript{th} power~is~1.\footnote{Proof:
- $a^b=a^{b+0}=a^ba^0$ so because of the uniqueness of the multiplicative identity ``1'', then $a^0=1$.}
+Actually any number raised to the 0\textsuperscript{th} power~is~1.\footnote{Proof: Since $a^{b+c}=a^ba^c$ consider when $c=0$; that is,
+ $a^b=a^{b+0}=a^ba^0$ so because of the uniqueness of the multiplicative identity ``1'', then $a^0$ \emph{must} be 1 since it's behaving 
+ like a ``1'' in the expression $a^b=a^ba^0$.}
 
 Let's look at an example.
 Reading the number 46307 out according to our technique we can see
@@ -260,12 +263,16 @@ plus zero lots of ten, plus seven units":
 \end{tabular}
 \end{center}
 
-Written in terms of powers of ten: $46307=4\times10^4+6\times10^3+3\times10^2+0\times10^1+7\times10^0$.
+Written\footnote{recall the ``bedmas'' convention for ``order of operations'' when we have
+a string of numbers and operations like multiplication, addition and exponents etc.; that is, } in terms of powers of ten: $46307=4\times10^4+6\times10^3+3\times10^2+0\times10^1+7\times10^0$.
 
 You can think of each digit as being a little dial that controls how many lots
-of its corresponding power of ten\footnote{We go ahead and multiply the units digit (7 in our example) by $10^0$ (even though
-multiplying by $10^0=1$ doesn't do anything) so that we can see that there's nothing special about the units digit,
-it's some number times a power of ten like any of the other digits.} will contribute to the value of the integer.
+of its corresponding power of ten will contribute to the value of the integer. Please note
+that we went ahead and multiplied the units digit (7 in our example) by $10^0$ (which is the
+same as multiplying by 1) so that we can see that there's nothing special about the units digit,
+it's just some number between 0 and 9, times a power of ten like any of the other digits.
+It also adds a kind of beauty to the expression in that all
+the digits can be expressed in a similar matter.
 
 Claim: Given that we can use as high a power of ten as we like
 and we can string together as LONG A LIST of digits as pleases us,
@@ -291,21 +298,47 @@ we can use base-ten to represent the integers is NOT among the list of axioms.
 As discussed in the opening paragraph, we think that the way
 that we write a number, or say a number \emph{is} the number - it's definitely not wrong to think this way.
 Numbers written in base-ten are in
-a perfect one-to-one correspondence with the integers, so in actuality it's safe to think about numbers written 
-in base-ten \emph{as} the integers.
+a perfect one-to-one correspondence with the integers so it's safe to think about numbers written 
+in base-ten as the integers.
 
-But the only reason it's safe to think about base-ten numbers \emph{as} the
-integers, is because we've taken the time
-to carefully and clearly spell out exactly what it means to write out a number in base-ten
-with something called a theorem.
-Then we show that our theorem \emph{must} be true with a ``proof''. A proof
-is just a series of arguments that logically connects our theorem directly (or indirectly
-via other previously proven theorems) to the axioms, so that the only way
-that our theorem could be false, is if the axioms themselves are false.
+The reason it's safe to think this way is because we 
+spell out exactly what it means to write a number in base-ten with 
+a theorem, then we show that our theorem \emph{must} be true with a ``proof''.
+A proof
+is just a series of arguments that logically connects our theorem directly\footnote{directly \dots{}or indirectly
+via other previously proven theorems} to the axioms, so that the only way
+that our theorem would be false is if the axioms themselves are false\footnote{The axioms: For every integer $a,b\text{ and }c$:
+``Associativity'': $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$;
+``Commutativity'': $a+b=b+a$ and $ab=ba$;
+``Distribution'' $a(b+c)=ab+ac$;
+``Existence of additive and multiplicative identities'': There are numbers 0 and 1 such that, $a+0=a$ and $a\times1=a$ and
+``The existence of additive inverses'': $a+(-a)=0$. Note: in general integers do NOT have multiplicative inverses (except 1 and -1) 
+that are also integers (eg. $\frac{1}{2}$ is the multiplicative inverse of 2 because $\frac{1}{2} \times 2=1$ but  $\frac{1}{2}$ is not an integer!)}.
 
-So let's formulate our ideas about the wonders of base-ten
-in a careful kind of way that says everything we come to expect from it,
+So let's see if we can formulate a theorem about what base-ten means
+in a precise and economical way that says everything (but no more) about it
 so that we may use it with impunity in talking about the more abstract set of integers.
+
+Let's start. We want to talk about each and every whole number in the
+same way, so let's give this whole-number a name.  Let's use $n$, for \emph{number}.
+
+We want to be able to say that $n$ can be represented by a string of digits,
+where the value of each digit can be zero or one, or two, or \dots{} up to one-less-than-ten.
+We don't want to say specifically what the digit is, just that each digit has such a value.
+
+The way we are using $n$ (for number)
+let's use a $d$ for digits.  Hold on, we probably need more than one digit to represent $n$, in fact we have no idea how many digits we might need!
+We need a list of digits for each $n$.
+
+Note that each digit of $n$ relates to some corresponding power of 10. So let's use the value of that power
+as a tagged-on label to each $d$.  For example ``$d$-one'' could be the digit that corresponds to the power $10^1$, ``$d$-two'' 
+could correspond to the power $10^2$, ``$d$-three'' for $10^3$, etc.  We can even say ``$d$-zero'', for our units digit that
+corresponds to the power of ten $10^0$.
+
+Let's not be so wordy in how we write out those $d$s, but we need a convention that let's us stick a number-label to a $d$ - so let's use a ``subscript''.
+Here's what it would look like; ``$d$-zero'' is written as $d_0$, ``$d$-one'' is $d_1$, ``$d$-two'' is $d_2$, ``$d$-three'' is $d_3$, etc.
+
+jpr - break here -...
 
 You are about to jump into the deep end and read something that's probably unlike anything that you come across in your day-to-day activities.
 If you're not familiar with reading mathematical statements it's kind of like a new language. It sometimes uses
@@ -319,13 +352,14 @@ going, a detailed step-by-step explanation follows to guide you through the unfa
 \section*{Base-Ten Representation Theorem}
 
 \begin{jprIn}
-Let $n,k\in \mathbb{Z}_{\ge 0}$. Then every $n$ can be uniquely expressed as follows:
+%Let $n$ be a positive integer, and let ``$1\!\mathsmaller{0}$'' represent the integer ten.\\
+%Let $n$ be a positive integer, and let ``$1\hspace{-0.3em}0\cdot{}$'' represent the integer ten.\\
+Let $n$ be a positive integer, and let ``$1\hspace{-0.19em}0$'' represent the integer ten.\\
+Then every $n$ can be uniquely expressed as follows:
 
-\hspace{3em}$n=d_k10^k+d_{k-1}10^{k-1}+\dots+d_210^2+d_110^1+d_010^0$
+\hspace{3em}$n=d_k{1\hspace{-0.19em}0}^k+d_{k-1}{1\hspace{-0.19em}0}^{k-1}+\dots+d_2{1\hspace{-0.19em}0}^2+d_1{1\hspace{-0.19em}0}^1+d_0{1\hspace{-0.19em}0}^0$
 
-for some $k$ such that $0 \le d_i \le 9$ where $d_i,i\in\mathbb{Z}$ and $0 \le i \le k$.
-
-Furthermore $d_k\ne0$ except when $n=0$.
+where $d_k\ne0$ and $0 \le d_i < {1\hspace{-0.19em}0}$ for each $d_i$.
 
 Definition: $n$ is represented in base-ten as $d_kd_{k-1}\dots{}d_2d_1d_0$
 \end{jprIn}
@@ -926,8 +960,7 @@ For example, in base-two $d_0$ can only be zero;
 In base-five $d_0$ can be at most three;
 In base-ten $d_0$ can be at most eight, etc.
 This case is
-quite easy to deal with, so let's quickly dispense with it\footnote{It will be helpful at this point to recall the axiom of ``Distribution'' that is $a(b+c)=ab+ac$;
-In fact, it might not hurt to do a quick refresh of some of the others as well, ``Associativity''': $(a+b)+c=a+(b+c)$ and $a(bc)=(ab)c$, ``Commutativity'': $a+b=b+a$ and $ab=ba$, ``Existence of inverses and identities'': $a+0=a$ and $a\times1=a$ and $a+(-a)=0$. Note: in general integers do NOT have multiplicative inverses.}.
+quite easy to deal with, so let's quickly dispense with it\footnote{Recall the axiom of ``Distribution'' that is $a(b+c)=ab+ac$}.
 \begin{align*}
 n &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\\
 &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\text{if and only if,}\\
