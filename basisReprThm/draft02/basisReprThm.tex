@@ -999,36 +999,74 @@ Perhaps it's a little too out there for our Sesame-Street-plus-plus
 approach that this paper is going for. Like I mentioned in a footnote above,
 if you want to check it out, it's easy to find on the web at the site ``ProofWiki''.
 
-If you want a taste of an elegant proof, then surely this is the
-classic go-to example, also from Euclid in 300 BC, and his reasoning (translated to
-modern Algebra) goes like this:
+\section*{Exercises}
+\begin{enumerate}
+\item What are the following numbers expressed in base-ten?
+\begin{enumerate}[i)]
+\item $(11010)_2$
+\item $(\text{A}053\text{D})_{16}$
+\item $(1017)_{23}$
+\end{enumerate}
+\item What are the following base-ten numbers expressed in an alternate base?
+\begin{enumerate}[i)]
+\item 33 expressed in base-two?
+\item 127 expressed in base-two? (Hint: $127 = (128-1)$)
+\item 8079 expressed in base-sixteen?
 
-\section*{Infinitude of Primes Theorem}
-\begin{jprIn}
-There are infinitely many primes.
-\end{jprIn}
+Hint: For a moment, pretend that we don't use base-ten to
+write out our numbers, instead picture a pile of apples.
+Can you picture 7654 apples?  Yes?  Good let's use 7654 as our example.
 
-\section*{Proof of the Infinitude of Primes Theorem}
-\begin{jprIn}
-Assume that the number of primes is finite.
+If we apply the Euclidean Division Theorem to 7654 using 10 as a divisor we get the following:
+\[7654 = 765\times{}10+4\]
+Notice the remainder 4 is the least significant digit (our $d_0$ in the theorem) of our
+integer 7654.
 
-Suppose that
-\[p_1=2<p_2=3<p_3=5<\dots<p_n\]
- is a list of ALL the primes.
+How do we get the next digit, i.e. $d_1$ that corresponds to the $10^1$ term? Well, it’s kind of cheating, but
+since we happen to be looking at the numbers written in
+base-ten we can see it sitting right there in at the
+end of the quotient 765. Let's apply the Euclidean Division Theorem with 10 as the divisor, but
+this time to 765:
+\[765 = 76\times{}10+5\]
+So the remainder is 5 our $d_1$ digit.  Let's keep going, this time dividing the previous quotient 76 by 10.\dots	
+\[76 = 7\times{}10+6\]
+and finally,
+\[7= 0\times{}10+7\]
 
-Let $P=p_1p_2p_3\dots{}p_n+1$.
+So, our series of remainders happens to be the digits of the number in base 10.
+Specifically $d_3 = 7$, $d_2=6$, $d_1=5$ and $d_0=4$.
 
-Then for any prime $p_i$ in our list (where $1\le{}i\le{}n$) we have:
-\[P=(p_1p_2p_3\dots{}p_{i-1}p_{i+1}\dots{}p_n)p_i + 1\]
-which demonstrates (by the Euclidean Division Theorem) that there is always a remainder
-of 1 when you divide $P$ by any of the primes in the list.
+Try doing that for 8079, but use 16 instead of 10 as the divisor.
+\item Let $\text{A}_{23} = 10, \text{B}_{23} = 11, \text{C}_{23} = 12, \text{D}_{23} = 13, \text{E}_{23} = 14, \text{F}_{23} = 15,
+\text{G}_{23} = 16,\\
+\text{H}_{23} = 17, \text{I}_{23} = 18, \text{J}_{23} = 19, \text{K}_{23} = 20, \text{L}_{23} = 21$ and $\text{M}_{23} = 22$,\\
+then what is 185190 expressed in base-twenty-three?
+\item 291480 expressed in base-twenty-three?
+\end{enumerate}
+\item If $b, n \in \mathbb{Z}_{\ge 0}$ and $b\ne1$ then prove,
 
-Therefore either $P$ itself is prime, or if $P$ is composite then there is another prime that is not on the list that divides $P$ (leaving remainder zero).
+\[1+b+b^2+\dots+b^{n-1} = \frac{b^n-1}{b-1}\]
 
-In either case, we have demonstrated that there must be a prime that is not on our list, so the assumption that we can make such a finite list is false.
+Hint: use induction on $n$, the base case being $n=1$.
 
-Therefore, the list of primes is infinite.
+\end{enumerate}
 
-\end{jprIn}
+\section*{Answers}
+\begin{enumerate}
+\item What are the following numbers expressed in base-ten?
+\begin{enumerate}[i)]
+\item $(11010)_2 = 53$
+\item $(\text{A}053\text{D})_{16}=656701$
+\item $(1017)_{23} = 12197$
+\end{enumerate}
+\item What are the following base-ten numbers expressed in an alternate base?
+\begin{enumerate}[i)]
+\item $33 = (100001)_2$
+\item $127 = (1111111)_2$
+\item $8079 = (1\text{F}8\text{F})_{16}$
+\item $185190 = (\text{F}51\text{H})_{23}$
+\item $291480 = (10\text{M}01)_{23}$
+\end{enumerate}
+\end{enumerate}
 
 \end{document}
