@@ -1057,12 +1057,12 @@ done - it's an acronym for the Latin phrase
 ``quod erat demonstrandum'' which means ``that which was to be demonstrated''.
 In other words we've proven what we set out to prove.}
 
-\section*{Intermission: Extra Exercise}
+\section*{Extra Exercise: Geometric Series Theorem}
 If $b, n$ are nonnegative integers and $b\ne1$ then prove,
 \[1+b+b^2+\dots+b^{n-1} = \frac{b^n-1}{b-1}\]
-Hint: use induction on $n$, the base case being $n=1$.
+Hint: use induction on $n$, the base case being $n=1$.  Try it, you can do it!
 
-\section*{Proof for Extra Exercise}
+\section*{Proof for Extra Exercise: Geometric Series Theorem}
 Base case: $n=1$
 \[\frac{b^1-1}{b-1}=\frac{b-1}{b-1}=1=b^0=b^{1-1}\]
 
@@ -1076,7 +1076,7 @@ Then,
 = &\frac{b^n-1}{b-1}+\frac{b^n(b-1)}{b-1}\\
 = &\frac{b^n-1+b^{n+1}-b^n}{b-1}\\
 = &\frac{b^{n+1}+b^n-b^n-1}{b-1}\\
-= &\frac{b^{n+1}-1}{b-1}\\
+= &\frac{b^{n+1}-1}{b-1}
 \end{align*}
 QED
 \section*{Proof of the  Basis Representation Theorem}
@@ -1235,13 +1235,11 @@ Proof by induction on $n$.
 Base case, when $n=1$.
 
 \begin{jprIn}
-Let $d_0=1$.  Then,
+Let $d_0=1$ be the only integer in the sequence.  Then,
 
-\hspace{3em}$n=d_0b^0=1\cdot{}b^0=1\cdot{}1=1$
+\hspace{3em}$d_0b^0=1\cdot{}b^0=1\cdot{}1=1=n$
 
-So since $d_0<b$ for all $b$ and $d_0\ne0$ (it's important to note that $k=0$ here),
-then we've proven the base case, in other words
-the integer one represents itself in all bases.
+Since $d_0<b$ for all $b$ and $d_0\ne0$ (note: $k=0$) proving existence when $n=1$.
 \end{jprIn}
 
 \break
@@ -1258,13 +1256,14 @@ where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
 We will prove that $n+1$ can also be expressed in this form by
 looking at two cases.
 
+\bigskip
 Case 1) $d_0<(b-1)$
 \begin{jprIn}
 This case examines when the least significant
 digit of $n$ is \emph{strictly-less-than} the largest value it can take in base-$b$.
-For example, in base-two $d_0$ can only be zero;
-In base-five $d_0$ can be at most three;
-In base-ten $d_0$ can be at most eight, etc.\footnote{Please read the following bidirectional arrow symbol $\Leftrightarrow$ as ``if and only if'' - it's like a logical ``equals'' sign}
+(For example, in base-two $d_0 = 0$;
+In base-five $d_0\le{}3$;
+In base-ten $d_0\le{}8$.)\footnote{Please read the following bidirectional arrow symbol $\Leftrightarrow$ as ``if and only if'' - it's like a logical ``equals'' sign}
 %\footnote{Use
 %the axiom of Distribution \big(i.e.; $ac+bc=(a+b)c$\big) to factor out the $b^0$ below.}
 \begin{alignat*}{3}
@@ -1277,7 +1276,7 @@ In base-ten $d_0$ can be at most eight, etc.\footnote{Please read the following 
   &&&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1 + (d_0+1)b^0 &&\quad\text{(Axiom of Distribution)}
 \end{alignat*}
 The expression for $n+1$ uses the same sequence of integers $d_k, d_{k-1},\dots{},d_2,d_1$ as $n$, with only
-change being the integer associated with $b^0$, but since:
+change being that the integer $d_0$ was altered to $(d_0{+}1)$, but since:
 \begin{alignat*}{3}
   &&d_0
   &< (b-1) &&\quad\text{(Case 1 Assumption)}\\
@@ -1288,107 +1287,145 @@ change being the integer associated with $b^0$, but since:
   &d_0+1
   &< b
 \end{alignat*}
-Therefore the expression for $n+1$ can
-be expressed in the desired form whenever $n$ can.
+Therefore the expression for $n+1$ exists in the desired form whenever $n$ has such an expression.
 \end{jprIn}
 
 \bigskip
 Case 2) $d_0=(b-1)$
 \begin{jprIn}
-Now we'll look at the case when the least significant digit of $n$ is equal
-to the largest value it can take in base-$b$, that is,
-$d_0=(b-1)$.
+Now we'll look at the case when the least significant digit of $n$ is \emph{equal-to}
+the largest value it can take in base-$b$.
 %(Note that  ``Case 1" and ``Case 2" cover all the possibilities for what $d_0$ can be.)
-For example in base-two
+(For example in base-two
 $d_0=1$; in base-five
-$d_0=4$; in base-ten $d_0=9$, etc.
+$d_0=4$; in base-ten $d_0=9$.)
 
-We're going to examine two cases within ``Case 2" here.  The first is
-when ALL the digits of $n$ are equal to $(b-1)$ (eg. $n=999999$ in base-ten).
-The second being when NOT ALL of the digits are equal to $(b-1)$, but at least $d_0$ is,
-and possibly $b_1, b_2,\dots{}$ for some number of
-the rightmost digits (eg. $n=782999$ in base-ten).
+We're going to split this case into two cases.
 
+\begin{enumerate}[a)]
+\item \emph{All} the digits of $n$ are equal-to $b{-}1$ (eg. 999999 in base-ten).
+\item $d_0=(b-1)$ but \emph{at least one other} digit is not-equal-to $(b-1)$\\
+(eg. 782999 in base-ten).
+\end{enumerate}
+
+Then we're going to find out what happens when we add 1 to each case, thus giving us our
+resultant expression for $n+1$
+
+\break
 Case 2a) ALL of the digits of $n$ are equal to $(b-1)$.
 \begin{jprIn}
-We're going to make use of the result that we proved in our ``Intermission: Extra Exercise"!
-Recall in the proof we showed that:
-\[1+b+b^2+\dots{}+b^k=\frac{b^{k+1}-1}{b-1}\]
+So $n$ can be expressed like this:
 \begin{alignat*}{3}
-  &&n
-  &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 &&\quad\text{(Induction Assumption)}\\
+  &\quad&n
+  &= (b{-}1)b^k+\dots{}+(b{-}1)b^2+(b{-}1)b^1+(b{-}1)b^0 &&\quad\text{(Induction Assumption)}
+\end{alignat*}
+Recall in the ``Extra Exercise: Geometric Series Theorem"
+we showed that:
+
+\[1+b+b^2+\dots{}+b^k=\frac{b^{k+1}-1}{b-1}\]
+
+We can use this theorem to show that $n+1=b^{k+1}$ as follows:
+\smallskip
+\begin{small}
+\begin{alignat*}{3}
+  &&b^k+\dots{}+b^2+b+1
+  &= \frac{b^{k+1}-1}{b-1} &&\quad\text{(Reorder terms of G.S.Thm.)}\\
+  &\Leftrightarrow\quad
+  &b^k+\dots{}+b^2+b^1+b^0
+  &= \frac{b^{k+1}-1}{b-1} &&\quad\text{(Rewrite with }b^1, b^0\text{)}\\
+  &\Leftrightarrow\quad
+  &(b-1)(b^k+\dots{}+b^2+b^1+b^0)
+  &= b^{k+1}-1 &&\quad\text{(Mult both side by }(b{-}1)\text{)}\\
+  &\Leftrightarrow\quad
+  &(b{-}1)b^k+\dots{}+(b{-}1)b^1+(b{-}1)b^0
+  &= b^{k+1}-1 &&\quad\text{(Distribution of }(b{-}1)\text{)}\\
+  &\Leftrightarrow\quad
+  &n
+  &= b^{k+1}-1 &&\quad\text{(Substitute }n\text{ for expression)}\\
   &\Leftrightarrow\quad
   &n+1
-  &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + 1 &&\quad\text{(Add 1 to both sides)}\\  
-  &&&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0 + b^0 &&\quad\text{(Restate 1 as }b^0\text{)}\\
-  &&&= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1 + (d_0+1)b^0 &&\quad\text{(Axiom of Distribution)}
+  &= b^{k+1} &&\quad\text{(Add 1 to both sides)}
 \end{alignat*}
-\end{jprIn}
+\end{small}
+\smallskip
+Therefor $n+1$ can be written as follows:
+\[n+1= 1\cdot{}b^{k+1}+0\cdot{}b^{k}+\dots{}+0\cdot{}b^2+0\cdot{}b^1+0\cdot{}b^0,\]
+which is a valid expression for $n+1$ for all $b>1$. We note that the length of the sequence of
+integers associated with $n+1$ is one longer than the sequence for $n$ - i.e. $n+1$ one digit longer that $n$.
 
-Let $j$ be the lowest power-of-$b$ such that $d_j<(b-1)$,
-meaning we can write $n$ as follows (\dots{}in other words all the digits to the right of $d_j$ are equal to $(b-1)$):
-\[n = d_kb^k+d_{k-1}b^{k-1}+\dots+d_jb^j+(b-1)b^{j-1}+\dots+(b-1)b^1+(b-1)b^0\]
-For example,
-if $n=782999$,
-then $j=3$,
-since $10^3$ is the lowest power-of-ten such that its digit $d_3$ is
-less than 9 (it's 2).\footnote{It will
-be helpful at this point to recall some rules of exponents, that is $a^ba^c=a^{b+c}$.}
-\begin{align*}
-n &=d_kb^k+\dots+d_jb^j+(b-1)b^{j-1}+(b-1)b^{j-2}+\dots+(b-1)b^1+(b-1)b^0\\
-&= d_kb^k+\dots+d_jb^j+(b^j-b^{j-1})+(b^{j-1}-b^{j-2})+\dots+(b^2-b^1)+(b^1-b^0)\\
-&= d_kb^k+\dots+(d_jb^j+b^j)+(-b^{j-1}+b^{j-1})+\dots+(-b^2+b^2)+(-b^1+b^1)-b^0\\
-&= d_kb^k+\dots+(d_j+1)b^j-b^0\\
-&= d_kb^k+\dots+(d_j+1)b^j-1
-\end{align*}
-Therefore,
-\begin{align}
-n+1 &=d_kb^k+\dots+(d_j+1)b^j-1+1 \nonumber \\
-&= d_kb^k+\dots+(d_j+1)b^j \label{eqnA}
-\end{align}
-Since we picked $j$ such that $d_j<(b-1)$,
-we can restate the inequality as\\
-$d_j\le(b-2)$ therefore,
-\[(d_j+1)\le(b-2)+1=(b-1)\]
-meaning the $j$\textsuperscript{th} digit of $n+1$ is less than or equal to $b-1$ meaning that it is a valid base-$b$ digit.
-
-All digits $d_k,\dots,{}d_{j+1}$ remain unchanged from the base-$b$ representation of $n$,
-and all digits $d_{j-1},\dots{},d_0$ are 0.
-
-Therefore all the digits of the base-$b$ representation of $n+1$ are valid in base-$b$.
 \bigskip
-
-If you've been fastidiously following the conditions on our subscript $j$ above, then
-you may notice that
-our proof doesn't quite leave room for the case
-that \emph{all} the digits are equal to $(b-1)$ because of
-how we defined $j$ (we're getting picky here).
-For example in base-ten when $n=99999$ there is no power-of-ten such that
-it's digit is less than 9 - remember we don't allow the most
-significant digit to be zero so we can't count 
-``099999'' as a valid base-ten number  (if we did, we
-could never get our uniquness property becase $99999 = 099999 = 0000099999$).
-
-Let's attend to this remaining detail.
-
-Suppose $d_i=(b-1)$ for all $i$ where $0\le{}i\le{}k$, then let $d_{k+1}=0$ and $j=k+1$.
-
-All the arguments we just made above are essentially the same here so picking up at equation (1) above, with our new terms, we have:
-\begin{align*}
-n+1 &=(d_j+1)b^j\\
-&=(d_{k+1}+1)b^{k+1}\\
-&=(0+1)b^{k+1}\\
-&=1\cdot{}b^{k+1}
-\end{align*}
-Meaning that $n+1$ now has one more digit than $n$, namely $d_{k+1}$ and it's equal to 1,
-with all the rest of the digits for $n+1$ being 0 - which is a valid representation for $n+1$ in base-$b$ for all $b\ge2$.
-
-Therefore when $d_0=(b-1)$, then $n+1$ always has a valid representation in base-$b$ whenever $n$ does.
 \end{jprIn}
-Taking case 1) and case 2) together proves that $n+1$ always has a valid representation in base-$b$ whenever $n$ does.
-Therefore 
-by the principle of mathematical induction,
-we have proven that there is a base-$b$ representation for all nonnegative integers.
+Case 2b) $d_0=(b-1)$ but at least one other digit is not equal to $(b-1)$
+\begin{jprIn}
+Let $j$ be the lowest power-of-$b$ such that $d_j<(b{-}1)$,
+i.e.; we can write $n$ as follows:
+\[n = d_kb^k+d_{k-1}b^{k-1}+\dots+d_jb^j+(b{-}1)b^{j-1}+\dots+(b{-}1)b^1+(b{-}1)b^0\]
+Similar to how we used the ``Geometric Series Theorem'' above, we can simplify the expression for $n$ as follows:
+\begin{small}
+\begin{alignat*}{3}
+  &&n
+  &= d_kb^k+\dots+d_jb^j+\big((b{-}1)b^{j-1}+\dots+(b{-}1)b^1+(b{-}1)b^0\big)&&\\
+  &\Leftrightarrow\quad
+  &n
+  &= d_kb^k+\dots+d_jb^j+(b^j-1) &&\text{(Geom. Series Thm.)}\\
+  &\Leftrightarrow\quad
+  &n+1
+  &=  d_kb^k+\dots+d_jb^j+b^j &&\text{(Add 1 to both sides)}\\
+  &\Leftrightarrow\quad
+  &n+1
+  &=  d_kb^k+\dots+(d_j+1)b^j &&\text{(Distr Axiom)}
+\end{alignat*}
+\end{small}
+Rewriting the expression for $n$ in explicit terms:
+\[n+1= d_kb^k+\dots+d_{j+1}b^{j+1}+(d_j+1)b^j+0{\cdot{}}{}b^{j-1}+\dots{}+0{\cdot{}}b^1+0{\cdot{}}b^0\]
+We can see that the expression for $n+1$ uses the same sequence of integers $d_k,\dots{},d_{j+1}$ as $n$.
+The integer $d_j$ was altered to $(d_j{+}1)$, but since:
+\begin{alignat*}{3}
+  &&d_j
+  &< (b-1) &&\quad\text{(Assumption above)}\\
+  &\Leftrightarrow\quad
+  &d_j+1
+  &< (b-1)+1 &&\quad\text{(Add 1 to both sides)}\\  
+  &\Leftrightarrow\quad
+  &d_j+1
+  &< b
+\end{alignat*}
+Therefor the integer $d_j+1$ associated with $b^j$ in the expression for $n+1$ is valid.
+
+Since the remaining sequence of integers $d_{j-1}=\dots{}=d_2=d_1=d_0=0$ are also valid, 
+therefore the expression for $n+1$ can
+be expressed in the desired form whenever $n$ can.
+%\begin{align*}
+%n &=d_kb^k+\dots+d_jb^j+(b-1)b^{j-1}+(b-1)b^{j-2}+\dots+(b-1)b^1+(b-1)b^0\\
+%&= d_kb^k+\dots+d_jb^j+(b^j-b^{j-1})+(b^{j-1}-b^{j-2})+\dots+(b^2-b^1)+(b^1-b^0)\\
+%&= d_kb^k+\dots+(d_jb^j+b^j)+(-b^{j-1}+b^{j-1})+\dots+(-b^2+b^2)+(-b^1+b^1)-b^0\\
+%&= d_kb^k+\dots+(d_j+1)b^j-b^0\\
+%&= d_kb^k+\dots+(d_j+1)b^j-1
+%\end{align*}
+%Therefore,
+%\begin{align}
+%n+1 &=d_kb^k+\dots+(d_j+1)b^j-1+1 \nonumber \\
+%&= d_kb^k+\dots+(d_j+1)b^j \label{eqnA}
+%\end{align}
+%Since we picked $j$ such that $d_j<(b-1)$,
+%we can restate the inequality as\\
+%$d_j\le(b-2)$ therefore,
+%\[(d_j+1)\le(b-2)+1=(b-1)\]
+%meaning the $j$\textsuperscript{th} digit of $n+1$ is less than or equal to $b-1$ meaning that it is a valid base-$b$ digit.
+%
+%All digits $d_k,\dots,{}d_{j+1}$ remain unchanged from the base-$b$ representation of $n$,
+%and all digits $d_{j-1},\dots{},d_0$ are 0.
+%
+%Therefore all the digits of the base-$b$ representation of $n+1$ are valid in base-$b$.
+\end{jprIn}
+\end{jprIn}
+Taking case 1) and case 2) together proves that $n+1$
+always has a valid sequence of integers corresponding to the expression in the theorem whenever $n$ does.
+Therefore together with the base-case and by the principle of mathematical induction,
+all positive integers
+have valid sequences of integers corresponding to the expression in the theorem.
+
+QED
 \end{jprIn}
 \bigskip
 
@@ -1399,7 +1436,6 @@ called the ``Euclidean Division Theorem''.
 It sounds onerous, but don't worry, you all learned it
 in the third grade but perhaps not so formally, you called it ``long division''. It simply states the following:
 
-\break
 \section*{Euclidean Division Theorem\footnote{We introduce a new math symbol here, plus use one that was
 mentioned in passing much earlier in the paper.  Namely the $\in$ which means ``is an element of'' or
 ``is a member of'' and is always followed by something that is a set.  We introduced the symbol $\mathbb{Z}$ as the
@@ -1456,34 +1492,60 @@ would not be unique. QED
 \end{jprIn}
 
 \section*{Uniqueness Proof of the Basis Representation Theorem}
-Let $n$ and $b$ be positive integers such that $b\ge2$.\\
-Also let $k\in\mathbb{Z}$ such that $k\ge0$.\\
-Furthermore let $i, c_i, d_i\in\mathbb{Z}$ such that
-$0\le{}c_i\le{}(b-1)$ and $0\le{}d_i\le{}(b-1)$ for all $i\ge0$.
 
-By the ``Existence Proof of the Basis Representation Theorem'' we know that $n$ can
-always be expressed in this form:
-\[n=d_kb^k+\dots+d_2b^2+d_1b^1+d_0b^0\]
-Assume this expression for $n$ is not unique and that it can also be expressed as
-\[n=c_kb^k+\dots+c_2b^2+c_1b^1+c_0b^0\]
-Let's further suppose that the index $j$ is the lowest power such that the digits $d_j\ne{}c_j$ and without any loss of generality,
-let's assume that $d_j>c_j$.
+Let $b$ be a positive integer greater than 1.
 
-Therefore\footnote{Please read the bidirectional arrow symbol $\Leftrightarrow$ as ``if and only if'' - it's like a logical ``equals'' sign}:
-\begin{align*}
-& c_kb^k+\dots+c_2b^2+c_1b^1+c_0b^0=d_kb^k+\dots+d_2b^2+d_1b^1+d_0b\\
-\Leftrightarrow\;\;\;\;&0=(d_k-c_k)b^k+\dots+(d_j-c_j)b^j\\
-\Leftrightarrow\;\;\;\;& \frac{0}{b^j}=\frac{(d_k-c_k)b^k+\dots+(d_j-c_j)b^j}{b^j}\text{, since }b\ne0\\
-\Leftrightarrow\;\;\;\;& 0=(d_k-c_k)b^{k-j}+\dots+(d_{j+1}-c_{j+1})b+(d_j-c_j)\\
-\Leftrightarrow\;\;\;\;& 0=\big((d_k-c_k)b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})\big)b+(d_j-c_j)
-\end{align*}
+By the ``Existence Proof of the Basis Representation Theorem'' we know
+that for every positive integer $n$ there is a sequence
+of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
+
+\hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
+
+\hspace{3em}where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+
+Assume this expression for $n$ is not unique and that there also exists
+a different sequence
+of integers $c_0, c_1, c_2,\dots{},c_k$ such that:
+
+\hspace{3em}$n=c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0$
+
+\hspace{3em}where $0\le{}c_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $c_k\ne0$.
+
+Let's further suppose that the index $j$ is the lowest power such that the integers $d_j\ne{}c_j$ and without any loss of generality
+let's assume that $d_j>c_j$. Since both expressions are equal to $n$ then:
+\[c_kb^k+\dots+c_2b^2+c_1b^1+c_0b^0=d_kb^k+\dots+d_2b^2+d_1b^1+d_0b,\]
+\begin{center}
+if and only if,
+\end{center}
+\begin{alignat*}{3}
+  &&0
+  &= (d_k-c_k)b^k+\dots+(d_j-c_j)b^j&&\quad\text{(Subtract LHS from both sides)}\\
+  &\Leftrightarrow\quad
+  &\frac{0}{b^j}
+  &= \frac{(d_k-c_k)b^k+\dots+(d_j-c_j)b^j}{b^j} &&\quad\text{(Divide by }b^j\text{, since }b>0\text{)}\\
+  &\Leftrightarrow\quad
+  &0
+  &=(d_k-c_k)b^{k-j}+\dots+(d_{j+1}-c_{j+1})b+(d_j-c_j) &&\quad\text{(Divide each term in numerator by }b^j{)}\\
+  &\Leftrightarrow\quad
+  &0
+  &= \big((d_k-c_k)b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})\big)b+(d_j-c_j) &&\quad\text{(Factor out common }b{)}\\
+\end{alignat*}
+%
+%Therefore\footnote{Please read the bidirectional arrow symbol $\Leftrightarrow$ as ``if and only if'' - it's like a logical ``equals'' sign}:
+%\begin{align*}
+%& c_kb^k+\dots+c_2b^2+c_1b^1+c_0b^0=d_kb^k+\dots+d_2b^2+d_1b^1+d_0b\\
+%\Leftrightarrow\;\;\;\;&0=(d_k-c_k)b^k+\dots+(d_j-c_j)b^j\\
+%\Leftrightarrow\;\;\;\;& \frac{0}{b^j}=\frac{(d_k-c_k)b^k+\dots+(d_j-c_j)b^j}{b^j}\text{, since }b\ne0\\
+%\Leftrightarrow\;\;\;\;& 0=(d_k-c_k)b^{k-j}+\dots+(d_{j+1}-c_{j+1})b+(d_j-c_j)\\
+%\Leftrightarrow\;\;\;\;& 0=\big((d_k-c_k)b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})\big)b+(d_j-c_j)
+%\end{align*}
 Let $q=\big((d_k-c_k)b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})\big)$, then
 \[0=qb+(d_j-c_j)\]
 Since $0\le(d_j-c_j)\le(b-1)$ and $b>0$ then by our lemma we know that\\
 $q=0$ and $d_j-c_j = 0$.
 
 But $d_j-c_j = 0$ if and only if $d_j = c_j$
-which contradicts our assumption that $d_j\ne{}c_j$. This implies that the initial assumption that ``$n$
+contradicting our assumption that $d_j\ne{}c_j$. This implies that the initial assumption that ``$n$
 is not unique'' is \emph{false}, in other words:
 \begin{center}
 The base-$b$ representation of $n$ is unique.
