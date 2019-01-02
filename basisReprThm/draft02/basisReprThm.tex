@@ -165,7 +165,7 @@ we barely think about it when we're adding numbers or multiplying
 them - but it's worth looking carefully at how base-ten
 works - so let's examine it from the ground up\footnote{Please forgive the incredibly obvious nature of much
 of the following discussion, but I want to take a good running start
-at some more difficult notions. Perhaps looking at the familiar with fresh eyes will help in seeing the new ideas easier.}.
+at some more unfamiliar notions. Perhaps looking at the familiar with fresh eyes will help in seeing the new ideas easier.}.
 
 It's useful to have simple symbols to represent each of the integers from one to nine,
 namely our familiar 1, 2, 3, 4, 5, 6, 7, 8 and 9
@@ -204,7 +204,7 @@ plus zero lots of ten, plus zero units" otherwise known
 as ``a thousand" or more specifically ``one lot of a thousand,
 plus zero lots of a hundred, plus zero lots of ten, plus zero units".
 
-It get's a little tedious to be so specific when reading out
+It gets a little tedious to be so specific when reading out
 a number so our language has developed quite a few verbal shortcuts.
 Furthermore it doesn't take long before we run out of fancy names
 for these ``powers of ten" like, million, billion, trillion,
@@ -329,16 +329,17 @@ of some numbers (the $d_i$ terms where $i$ can be any
 number from 0 to $k$) times descending powers of 10,
 and adds them all together.
 
-It's useful to point out the meaning of our ``$d_0,d_1,d_2,\dots{},d_k$'' and $d_i$ terms.
-Mathematical formulas such as this make judicious use of ``subscripts''
+It's useful to point out the meaning of our $d_0,d_1,d_2,\dots{},d_k$ and $d_i$ terms.
+Mathematical formulas such as this make judicious use of subscripts
 when coming up with names for lists of variables or constants.
 Subscripts following a letter or symbol, such as $d_0,d_1,d_2,\dots{}$
 are a handy way to get a list of variable or constant names that are similar looking to each other,
 and is meant to imply that they each fulfill a similar role to each other.
-Note here how the value of the subscript on each ``$d$" corresponds to its power of ten,
+Note here how the value of the subscript on each $d_i$ corresponds to its power of ten,
 even in the single digit case when the subscript is 0,
 or the highest power case when the subscript is $k$. Please also note that it
-isn't necessary that the subscript indices match with the powers, but it seems helpful! 
+isn't necessary that the subscript indices match with the powers, but it's pretty helpful
+to tie the two terms together conceptually.
 
 If we had to read the line out loud it might sound something like this:\\
 ``$n$ is equal to\dots{} $dee$-$kay$ times ten-to-the-$kay$,
@@ -396,7 +397,7 @@ significant digit $d_0$ on the right.
 Before we prove our theorem,
 consider that base-ten is not the only base in use these days.
 Since the introduction of the EDVAC\footnote{You might be thinking, don't you
-mean ENIAC which was eariler? Actually no - the ENIAC
+mean ENIAC which was earlier? Actually no - the ENIAC
 used base-ten accumulators, not binary!} computer, around 1950,
 there have been many orders of magnitude more calculations done
 in base-two (otherwise known as binary) by computers than have EVER
@@ -526,9 +527,9 @@ Definition: $n$ is represented in base-two as $(d_kd_{k-1}\dots{}d_2d_1d_0)_2$
 
 Try reading the above out loud in your head,
 line by line, item by item, like we did above when
-we ``sounded it out" for the base-ten theorem - it's
+we sounded it out for the base-ten theorem - it's
 helpful to turn the ``math-code" into understandable
-english and a useful habit to get into when reading mathematical statements.
+English and a useful habit to get into when reading mathematical statements.
 
 Before we go on,
 I want to introduce a little notation to help avoid confusion.
@@ -701,7 +702,7 @@ Meaning that every integer has a way of being written
 in the form described by the theorem - especially as
 relates to the restrictions on the values that the ``digits" can take on.
 
-Here's a little insight into how the existence proof works, but applied a specific number in base-ten:
+Here's a little insight into how the existence proof works, but applied to a specific number in base-ten:
 All we want to show is that for any number, if you add 1 to it, that it's also possible to express it as a valid number in base-ten.
 
 For example, adding 1 to 69412995 gives us 69412996, which is pretty trivial to show that it's valid in base-ten, only the least-significant digit was
@@ -854,7 +855,7 @@ Meaning that $n+1$ now has a $(k+1)$\textsuperscript{st} digit and it's equal to
 with all the rest of the digits being 0 - which is a valid representation for $n+1$ in base-$b$ for all $b\ge2$.
 
 QED\footnote{``QED'' - is often used at the conclusion of a proof to state that it’s
-done - it’s an acronym for the latin phrase ``quod erat demonstrandum'' which means ``that which was to be demonstrated''.
+done - it’s an acronym for the Latin phrase ``quod erat demonstrandum'' which means ``that which was to be demonstrated''.
 In other words we’ve proven the existence part of the Basis Representation Theorem.} - existence proof.
 \end{jprIn}
 \end{jprIn}
@@ -874,9 +875,9 @@ some nifty insight in how to convert any integer into a specific base.
 
 Another is quite elegant and short, but abstract. It's not particularly illuminating for our purposes.
 However, you can find it in the book ``Number Theory'' by George E. Andrews, and also on
-the website ``proofwiki'', just search for the ``Basis Representation Theorem'' to find the proof.}
+the website ``ProofWiki'', just search for ``Basis Representation Theorem'' to find the proof.}
 It sounds onerous, but don’t worry, you all learned it
-in the third grade but perhaps not so formally - you called it ``long division''. It simply states the following:
+in the third grade but perhaps not so formally, you called it ``long division''. It simply states the following:
 
 \section*{Euclidean Division Theorem}
 \begin{jprIn}
@@ -903,7 +904,6 @@ For example if someone asks you ``What is nineteen divided by three?'', you’d
 answer ``six with one remaining''. Here 19 is the \emph{dividend},  3 is the \emph{divisor},
 6 is the \emph{quotient} and 1 is the \emph{remainder}. Written in the form of the theorem:
 \[19=6\times3+1\]
-
 Often proofs make use of little mini-theorems of their own.
 Creating these mini-theorems is way to simplify a step in
 the main proof by establishing a useful non-trivial
@@ -911,9 +911,9 @@ intermediary result. It makes reading the main proof
 easier to follow by not having us get side tracked with
 the technicalities of a step we want to make.
 These mini-theorems are called ``Lemmas''
-and we’re going to make one to help with proving the ``uniqueness'' part
-of the ``Basis Representation Theorem''. We're going to make use of the
-``Euclidean Division Theorem'' in proving our lemma.
+and we’re going to make one to help with proving the uniqueness part
+of the Basis Representation Theorem. We're going to make use of the
+Euclidean Division Theorem in proving our lemma.
 
 \section*{Lemma}
 \begin{jprIn}
@@ -924,12 +924,13 @@ if and only if $q=0$ and $r=0$.
 
 \section*{Proof of Lemma}
 \begin{jprIn}
-Let $b, q, r \in{} \mathbb{Z}$ such that $b>0$.
+Let $b, q, r \in{} \mathbb{Z}$ such that $b>0$ and $0\le{}r\le{}(b-1)$.
 
-Let $q=0$ and $r=0$, then since
+If $q=0$ and $r=0$, then
 \[qb+r=0\cdot{}b+0=0\]
-then by the uniqueness property of $q$ and $r$ according to the Euclidean Division theorem,
-then there are no other such values for $q$ and $r$ that would satisfy this equation.
+but also, by the Euclidean Division Theorem since $q$ and $r$ are unique for every dividend and divisor $b>0$,
+then we can also conclude that if $0=qb+r$ then $q=0$ and $r=0$ must be true, otherwise the quotient and remainder
+would not be unique.
 
 QED
 \end{jprIn}
@@ -976,11 +977,11 @@ In addition, being Canadian, I feel compelled to apologize for a couple of thing
 First, if I turned you off math more than you were before,
 then I failed miserably!  For that you deserve a HUGE Canadian apology.
 
-Second, if this paper did turn you off,
-then I might not blame you, as this proof is hardly what one would call elegant.
-In fact here's what another\footnote{besides aforementioned Gauss and Euclid.}
-of the
-world's greatest Mathematicians, ``G.H. Hardy'' had to say about
+Second, if this paper did turn you off
+then I might not blame you as this proof is hardly what one would call elegant.
+In fact here's what one of the
+world's greatest Mathematicians\footnote{along with the aforementioned Gauss and Euclid.},
+G.~H.~Hardy, had to say about
 proofs like this\footnote{coincidentally in an essay he wrote called ``A Mathematician's Apology''.}:
 
 \begin{jprIn}
@@ -992,7 +993,7 @@ cluster in the Milky Way.''
 \end{jprIn}
 
 I couldn't agree more, however, a more elegant proof along the lines
-of what Hardy argues for, I think is provided by George E. Andrews in his
+of what Hardy argues for is possibly provided by George E. Andrews in his
 introductory book called ``Number Theory''. Andrew's proof is cool,
 and the logic inescapable, but not an obvious way to approach the problem.
 Perhaps it's a little too out there for our Sesame-Street-plus-plus
