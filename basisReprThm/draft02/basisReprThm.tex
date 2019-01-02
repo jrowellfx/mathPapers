@@ -328,7 +328,7 @@ that our theorem could be false is if the axioms themselves are false.
 
 So let's think about what a ``Base-Ten Representation Theorem'' might look like
 so that once we prove it we may confidently go forward using base-ten with
-impunity knowing that we can ``name'' each and every integer with it's own unique label.
+impunity knowing that we can represent each and every integer with it's own unique label.
 
 For starters, we intuitively know that counting with base-ten covers all the possible integers.
 After all, how we count leaves no room for gaps.  We know that if we count up to say... 499,
@@ -377,9 +377,8 @@ get a unique representation for
 it's negative counterpart'' \dots{}or some such words.  Also zero is easy to deal with separately, so to keep our lives
 simple let's restrict our attention to only proving the theorem for positive integers.
 
-Moving forward it would be helpful to have a name, or label, to stand in for our 
-positive integer so that we can refer to it directly -
-So let's give it a name, how about $n$ for ``number'':
+Moving forward it would be helpful to have a name for our 
+positive integer so that we can refer to it directly - how about $n$ for ``number'':
 
 \emph{Base-Ten Representation Theorem (third draft)}
 \begin{jprIn}
@@ -401,7 +400,7 @@ You may also see the ``$\cdot$'' omitted entirely as in $ab$ - which means $a\cd
 let's come up
 with a general expression of this form that can describe ANY positive integer $n$.
 
-It's important to remember that we only allow `$n$'s digits to take on the values 0 through 9 - no other values are allowed.
+It's important to remember that we only allow $n$'s digits to take on the values 0 through 9 - no other values are allowed.
 Most noteworthy is there are at most 9 lots of each given
 power-of-ten in our base-ten-representation of $n$.
 For example, if we counted out 9 piles of ten-apples each, but still ten more apples to count, we would simply add that extra pile of ten-apples
@@ -424,9 +423,9 @@ talking about 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9 when we say that $d$ is in the rang
 However, if someone were to come upon the following statement in the wild:
 \[d\cdot10^i\text{, such that }0\le{}d\le{}9\]
 \dots{}how would they know that $d$ isn't a fraction like $\frac{22}{7}$, or the value of $\pi$ or something weird like that?
-Answer: They wouldn't know - so that's why it's important to spell it out.
+Answer: They wouldn't know -  which is why it's important to spell it out.
 
-Our general expression for $n$ should only have one digit in the range of 0 to 9 associated with each power-of-ten, in other words our expression should never allow this:
+Our general expression for $n$ should only have one integer digit in the range of 0 to 9 associated with each power-of-ten, in other words our expression should never allow this:
 \[4\cdot10^2+7\cdot10^2\]
 because we could group those powers-of-ten together like this:
 \[4\cdot10^2+7\cdot10^2 = (4+7)10^2=11\cdot10^2\]
@@ -785,8 +784,7 @@ I couldn't agree more which is why I'm pushing the proof to a section at the end
 feel free to skip.
 I still invite you to to take a stab at following it, I tried my best to make it clear, but don't feel bad if it
 makes your head hurt. If you do try to follow it - it does have some points of interest - not the least
-of which is that it works.
-Yes it works,  perhaps not as elegantly as Mr. Hardy could provide to us, but I'm no G. H. Hardy.
+of which is that it works - perhaps not as elegantly as Mr. Hardy could provide to us, but I'm no G. H. Hardy.
 
 I think at this point you are well equipped you to try your hands at a couple of exercises for fun. If you get stuck, or to
 check your work, the
