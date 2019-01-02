@@ -372,9 +372,9 @@ This means that EVERY positive integer has a unique negative counterpart.
 So if we can prove the
 Base-Ten Representation Theorem for the positive integers then we
 can easily extend it to the negative integers with a corollary.
-Our corollary will say something like ``slap a `-' (minus) sign in front of the positive base-ten representation to 
+Our corollary will say something like ``Slap a `-' (minus) sign in front of the positive base-ten representation to 
 get a unique representation for
-it's negative counterpart''.  Also zero is easy to deal separately, so to keep our lives
+it's negative counterpart'' \dots{}or some such words.  Also zero is easy to deal separately, so to keep our lives
 simple and restrict our attention to only proving the theorem for positive integers.
 
 Furthermore, moving forward it would be helpful to have a name, or label, to stand in for any 
@@ -398,8 +398,8 @@ You may also see the ``$\cdot$'' omitted entirely as in $ab$ - which means $a\cd
 let's come up
 with a general expression of this form that can describe ANY positive integer $n$.
 
-It's important to remember that we only allow $n$'s digits to take on the values 0 through 9, no other values are allowed.
-Most noteworthy is there can be at most 9 lots of any given
+It's important to remember that we only allow `$n$'s digits to take on the values 0 through 9 - no other values are allowed.
+Most noteworthy is there are at most 9 lots of any given
 power-of-ten in our base-ten-representation of $n$.
 For example, if we counted out 9 piles of ten-apples each, but still ten more apples to count, we would simply add that extra pile of ten-apples
 to the other 9 piles of ten-apples and count it as 1 pile of a hundred-apples.  That's the rule - we are only allowed
@@ -429,10 +429,9 @@ this general five digit number, then we would need five different `$d$'s for eac
 Somehow we need to associate a different digit $d$ with each of the powers
 $10^4$, $10^3$, $10^2$, $10^1$ and $10^0$.
 
-%It's useful to point out the meaning of our $d_0,d_1,d_2,\dots{},d_k$ and $d_i$ terms.
 Mathematics has a convention for coming up with
-a list of variables or constants for situations just like this -
-we tack a subscript onto the variable-name like this: $d_2$ which you read as ``dee-two''\footnote{\dots{}yes like artoo-detoo, which perhaps
+a list of terms (like variables or constants) for situations just like this -
+we tack a subscript onto the name like so: $d_2$ which you read as ``dee-two''\footnote{\dots{}yes like artoo-detoo, which perhaps
 George should have writen like ``$R_2D_2$'' and not ``R2-D2''!}.
 $d_2$ is a term to represent a digit just like the $d$ we used above.  But now we can use that little subscript as a way to
 associate it to a specific power-of-ten. Naturally we'll associate $d_2$ with $10^2$ (ten squared) as follows; $d_2$ contributes to
@@ -447,15 +446,17 @@ the general expression for $n$ looks like this:
 \dots{}where each of $d_0,d_1,d_2,d_3,d_4$ are between 0 and 9 inclusive, but $d_4$ can NOT be zero.
 Why? Because if $d_4$ were zero then $n$ would only be (at most) a four digit number.
 Let's specify this restriction, along with the expression:
-\[n=d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0\text{, where }0\le{}d_{\{0,1,2,3,4\}}\le{}9\text{, and }d_4\ne0\]
-I just made up the notation $d_{\{0,1,2,3,4\}}$ which I'm hoping coveys the information that each $d$ lies between 0 and 9 inclusive. A more 
-conventional way to express this idea is to let another term, like $i$ for ``index'', stand in for the subscript then specify what values the subscript can assume.
+\[n=d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0\text{, such that }0\le{}d_{\{0,1,2,3,4\}}\le{}9\text{, furthermore }d_4\ne0\]
+I just made up the notation $d_{\{0,1,2,3,4\}}$ which I'm hoping coveys the information that any of those five `$d$'s lies between 0 and 9 inclusive. A more 
+conventional notation is to let another term like $i$, for perhaps ``index'', stand in for the subscript then specify what values $i$ can assume.
 Like this:
-\begin{jprIn}
-$n=d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0$\\
-such that $0\le{}d_i\le{}9$ where $0\le{}i\le{}4$, furthermore $d_4\ne0$
-\end{jprIn}
-So this expression for $n$ describes ANY five-digit number in general terms. Now we need to lift our restriction of five-digits to an arbitrarily large number of digits.
+\begin{align*}
+n =\ &d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0,\\
+& \text{such that }0\le{}d_i\le{}9\text{ where }0\le{}i\le{}4\text{, furthermore }d_4\ne0
+\end{align*}
+Perfect! That expression for $n$ describes ANY five-digit number - now we need to extend
+our hard-coded five-digit expression to an arbitrarily large
+number of digits (or any size for that matter, even one digit).
 
 Consider the following progression:
 \begin{center}
@@ -470,10 +471,29 @@ $d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0$ & 5
 $d_k{\cdot}10^k+\dots{}+d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0$ & k+1\\
 \end{tabular}
 \end{center}
+Using $k$ like this let's us specify ANY amount of digits we want.  If we let $k=0$ we get the first ``single digit'' 
+item on the list.  $k=4$ gives us our five-digit number above, or we could let $k$ be a billion, which would allow
+us to specifcy an integer that has a billion-and-one digits in it\footnote{A billion-and-one digit number is 
+\emph{ridiculously} large,
+consider that our estimate of the number of molecules in the entire universe would only need a base-ten
+number with the $k$ set to somewhere between 78 and 82 to count them all.}!
 
---jpr edit to here--
+So there we have it, we found our expression for being able to express ANY positive integer, let's use
+it in a revised draft of our theorem:
 
-\emph{Base-Ten Representation Theorem (wordy)}
+\emph{Base-Ten Representation Theorem (close to final draft)}
+\begin{jprIn}
+
+Let $n$ be a positive integer, then for every $n$ there exists a unique representation:
+
+\hspace{3em}$n=d_k{\cdot}{1\hspace{-0.12em}0}^k+d_{k-1}{\cdot}{1\hspace{-0.12em}0}^{k-1}+\dots+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
+
+such that $0\le{}d_i\le{}9$ where $0\le{}i\le{}k$, furthermore $d_k\ne0$.
+
+Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\cdots}d_2d_1d_0$
+\end{jprIn}
+--jpr--
+
 \begin{jprIn}
 Every positive integer can be uniquely written as a
 cumulative sum of multiples of increasing powers of \emph{ten}.
@@ -619,10 +639,10 @@ The ``for some $k$" means that each integer $n$ has a specific $k$ associated wi
 It then states that those $d_i$ terms are integers,
 and can ONLY take on the values 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9.
 Note that our uniqueness claim above means that each
-integer $n$ has its own unique list of $d$'s.
+integer $n$ has its own unique list of `$d$'s.
 
 It also is very fastidiously pointing out that the little ``$i$'' we just introduced
-in the subscript of the $d$'s is also an integer and can be as small as zero but
+in the subscript of the `$d$'s is also an integer and can be as small as zero but
 only as large as our highest power $k$ - whatever $k$ might be.
 This is very picky stuff - like a computer program spelling things out
 very precisely so the computer knows exactly what you mean.
