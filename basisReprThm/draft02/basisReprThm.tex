@@ -1,24 +1,11 @@
-% !TEX TS-program = pdflatex
-% !TEX encoding = UTF-8 Unicode
-
-% This is a simple template for a LaTeX document using the "article" class.
-% See "book", "report", "letter" for other types of document.
-
-%\documentclass[11pt]{article} % use larger type; default would be 10pt
 \documentclass{article}
 
 \usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
-
-%%% Examples of Article customizations
-% These packages are optional, depending whether you want the features they provide.
-% See the LaTeX Companion or other references for full information.
 
 %%% PAGE DIMENSIONS
 \usepackage{geometry} % to change the page dimensions
 \geometry{letterpaper} % or letterpaper (US) or a5paper or....
 \geometry{margin=1.35in} % for example, change the margins to 2 inches all round
-% \geometry{landscape} % set up the page for landscape
-% read geometry.pdf for detailed page layout information
 
 \usepackage{graphicx} % support the \includegraphics command and options
 
@@ -84,10 +71,7 @@
 \usepackage{perpage}
 \MakePerPage{footnote}
 
-
 %%% END Article customizations
-
-%%% The "real" document content comes below...
 
 \title{SesameStreet++}
 \author{James Rowell}
@@ -97,11 +81,11 @@
 \begin{document}
 \maketitle
 \begin{em}
-\small{}There are 10 sorts of people in the world: those who understand binary and those who don't.
+\centerline{\small{}There are 10 sorts of people in the world: those who understand binary and those who don't.}
 %\par
 %\setlength{\parskip}{0pt}
 \end{em}
-\normalsize
+%\normalsize
 \bigskip
 
 Most of us think about ``whole numbers'' not too differently from the way
@@ -229,7 +213,8 @@ to describe these powers-of-ten and let's forget the fancy words.
 1000&= 10\times10\times10=10^3,\\
 10000&= 10\times10\times10\times10=10^4,\\
 \dots{}\\
-\underbrace{10\dots{}000}_\text{k zeros}&= \underbrace{10\times10\times10\times10\times\dots{}\times10}_\text{k 10s}=10^k
+\underbrace{10\dots{}000}_\text{k zeros}&=
+\underbrace{10\times10\times10\times10\times\dots{}\times10}_\text{k 10s}=10^k
 \end{align*}
 $10^k$ means there are $k$ tens multiplied together - 
 also written as a 1 followed by $k$ zeros\footnote{$k$ is called the ``exponent'' and you should
@@ -311,14 +296,27 @@ Our example number 92507 only has five digits and it's biggest power-of-ten is $
 but there's
 no limit on how big a power-of-ten could be involved in our expression.
 Look at ``a trillion and one'', i.e.; 1,000,000,000,001 which can be expressed as:
-\[1{\times{}}10^{12}+0{\times{}}10^{11}+0{\times{}}10^{10}+\cdots{}+0{\times{}}10^{2}+0{\times{}}10^{1}+1{\times{}}10^{0}\]
+\[1{\times{}}10^{12}
++0{\times{}}10^{11}
++0{\times{}}10^{10}
++\cdots{}
++0{\times{}}10^{2}
++0{\times{}}10^{1}
++1{\times{}}10^{0}\]
 %
 Or pushing that limit to silly heights we can also describe this next ludicrous number.
 It's twenty-thousand-and-one digits long, a
 ``7'' followed by 9999 zeros, then a ``3''
 followed by 9999 more zeros, then a ``5'', which means this:
-\[
-7{\times{}}10^{20000}+0{\times{}}10^{19999}+\cdots{}+0{\times{}}10^{10001}+3{\times{}}10^{10000}+0{\times{}}10^{9999}+\cdots{}+0{\times{}}10^{1}+5{\times{}}10^{0}\]
+\[7{\times{}}10^{20000}
++0{\times{}}10^{19999}
++\cdots{}
++0{\times{}}10^{10001}
++3{\times{}}10^{10000}
++0{\times{}}10^{9999}
++\cdots{}
++0{\times{}}10^{1}
++5{\times{}}10^{0}\]
 Clearly we can keep going as high as we like.
 
 But how do we \emph{know} that we can create ALL the positive
@@ -538,7 +536,12 @@ when you want to talk about all your `$d$'s at once:
 \begin{jprIn}
 Let $d_0, d_1, d_2,d_3$ and $d_4$ be integers such that:
 
-\hspace{3em}$n=d_4{\cdot}{1\hspace{-0.12em}0}^4+d_3{\cdot}{1\hspace{-0.12em}0}^3+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
+\hspace{3em}$n
+=d_4{\cdot}{1\hspace{-0.12em}0}^4
++d_3{\cdot}{1\hspace{-0.12em}0}^3
++d_2{\cdot}{1\hspace{-0.12em}0}^2
++d_1{\cdot}{1\hspace{-0.12em}0}^1
++d_0{\cdot}{1\hspace{-0.12em}0}^0$
 
 where $0\le{}d_i<10$ for all $i$ in $\{0,1,2,3,4\}$ and $d_4\ne0$.
 \end{jprIn}
@@ -631,7 +634,13 @@ Let the two digit number ``${1\hspace{-0.12em}0}$" represent the integer ten.
 For every positive integer $n$ there is a unique
 sequence of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
 
-\hspace{3em}$n=d_k{\cdot}{1\hspace{-0.12em}0}^k+d_{k-1}{\cdot}{1\hspace{-0.12em}0}^{k-1}+\dots+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
+\hspace{3em}$n
+=d_k{\cdot}{1\hspace{-0.12em}0}^k
++d_{k-1}{\cdot}{1\hspace{-0.12em}0}^{k-1}
++\dots
++d_2{\cdot}{1\hspace{-0.12em}0}^2
++d_1{\cdot}{1\hspace{-0.12em}0}^1
++d_0{\cdot}{1\hspace{-0.12em}0}^0$
 
 where $0\le{}d_i<{1\hspace{-0.12em}0}$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
 
@@ -836,7 +845,14 @@ different bases. Why? (Exercise left for student).
 Recall how we defined $(\text{A})_{16}=10$
 and $(\text{F})_{16}=15$ as base-sixteen digits, then:
 \[
-(\text{97A3F2})_{16}=9\cdot{}16^5+7\cdot{}16^4+10\cdot{}16^3+3\cdot{}16^2+15\cdot{}16^1+2\cdot{}16^0=9,937,906\]
+(\text{97A3F2})_{16}
+=9\cdot{}16^5
++7\cdot{}16^4
++10\cdot{}16^3
++3\cdot{}16^2
++15\cdot{}16^1
++2\cdot{}16^0
+=9,937,906\]
 \dots{}which gives you an idea of how you can convert from an alternate base into base-ten.
 
 We should extend the Basis Representation Theorem to include all the integers.
@@ -853,11 +869,11 @@ defining what ``-1'' means, we should be able to make an extension to the
 theorem that defines unique representations for negative numbers fairly easily.
 
 \break
-\section*{Epilogue}
+\section*{Intermission}
 At this point we really ought to get to the proof of the Basis Representation Theorem.
 
 However truth be told, the proof supplied below, while elementary, isn't the most beautiful proof 
-in the world and thus not necessarily the best to follow for the first time mathematician.
+in the world.
 In fact here's what one of the
 world's greatest mathematicians\footnote{along with the Gauss
 and Euclid mentioned later in this paper.},
@@ -872,21 +888,23 @@ should resemble a simple and clear-cut constellation, not a scattered
 cluster in the Milky Way.''
 \end{jprIn}
 
-I couldn't agree more which is why I'm pushing the proof to
-a section at the end of this paper, which you may
-feel free to skip.
+I couldn't agree more and apologize in advance for it's lack of elegance.
 I still invite you to to take a stab at following it,
-I tried my best to make it clear and interesting,
-but don't feel bad if it
-makes your head hurt. If you do try to follow it - it does
+I tried my best to make it clear and interesting.
+If you do try to follow it (it's at the end of this paper) - it does
 have some points of interest - not the least
-of which is that it works but more importantly you'll learn about a very powerful tool
+of which is that it works, some of the algebraic manipulations are amusing,
+but most importantly you'll learn about a very powerful tool
 called ``The Principle of Mathematical Induction''. 
 
-I think at this point you are well equipped you to try
-your hands at a couple of exercises for fun. If you get stuck, or to
+Better than diving into a proof here, please try
+your hand at a couple of exercises for fun! If you get stuck, or to
 check your work, the
-answers are also supplied below - but please don't peek until you try the questions yourself!
+answers are also supplied below - but please don't peek until you try the questions yourself.
+
+If you feel bewildered when facing the exercises below, know that you are in good
+company - this is a common feeling among Mathematicians, you'll get used to it!
+But like any ``workout'' if you push through you will succeed and get stronger, I promise.
 
 \section*{Exercises}
 \begin{enumerate}
@@ -1060,7 +1078,7 @@ In other words we've proven what we set out to prove.}
 \section*{Extra Exercise: Geometric Series Theorem}
 If $b, n$ are nonnegative integers and $b\ne1$ then prove,
 \[1+b+b^2+\dots+b^{n-1} = \frac{b^n-1}{b-1}\]
-Hint: use induction on $n$, the base case being $n=1$.  Try it, you can do it!
+Hint: use induction on $n$, the base case being $n=1$.  Before you turn the page, try proving this, you can do it!
 
 \section*{Proof for Extra Exercise: Geometric Series Theorem}
 Base case: $n=1$
@@ -1243,6 +1261,7 @@ Since $d_0<b$ for all $b$ and $d_0\ne0$ (note: $k=0$) proving that a
 base-$b$-representation exists for the integer 1.
 \end{jprIn}
 
+\bigskip
 Induction Step:
 \begin{jprIn}
 Let $n$ be a positive integer, and assume that
@@ -1309,9 +1328,9 @@ We're going to split this case into two cases.
 \item $d_0=(b-1)$ but \emph{at least one other} digit is not-equal-to $(b-1)$\\
 (eg. 782999 in base-ten).
 \end{enumerate}
-
-Then we're going to find out what happens when we add 1 to each case, thus giving us our
-resultant expression for $n+1$
+%
+%Then we're going to find out what happens when we add 1 to each case, thus giving us our
+%resultant expression for $n+1$
 
 Case 2a) ALL of the digits of $n$ are equal to $(b-1)$.
 \begin{jprIn}
@@ -1346,7 +1365,7 @@ We can use this theorem to show that $n+1=b^{k+1}$ as follows:
   &n+1
   &= b^{k+1} &&\quad\text{(Add 1 to both sides)}
 \end{alignat*}
-}We can rewrite $n+1$ as follows:
+}Let's rewrite $n+1$:
 \[n+1= 1\cdot{}b^{k+1}+0\cdot{}b^{k}+\dots{}+0\cdot{}b^2+0\cdot{}b^1+0\cdot{}b^0,\]
 Therefore, given the conditions of ``case 2a", $n+1$ has
 a valid base-$b$-representation whenever $n$ does.
@@ -1354,7 +1373,7 @@ We note that
 the number of integers in the sequence associated
 with $n+1$ is one longer than for $n$. i.e., $n+1$ is one digit longer that $n$.
 
-\bigskip
+\break
 \end{jprIn}
 Case 2b) $d_0=(b-1)$ but at least one other digit is not equal to $(b-1)$
 \begin{jprIn}
@@ -1412,7 +1431,7 @@ with proving the uniqueness aspect of the Basis Representation Theorem, we
 need to make use of a well established theorem
 called the ``Euclidean Division Theorem''.
 It sounds onerous, but don't worry, you learned it
-in the third grade but perhaps not so formally, you called it ``long division''. It simply states the following:
+in the third grade but perhaps not so formally, you called it ``long division''. It simply states the following\dots{}
 
 \break
 \section*{Euclidean Division Theorem}
@@ -1464,7 +1483,7 @@ $q=0$ and $r=0$.
 
 \section*{Proof of Lemma}
 \begin{jprIn}
-Let $b, q$ and $r$ be integers such that $b>0$ and $0\le{}r<b$, then
+Let $b, q$ and $r$ be integers such that $b>0$ and $0\le{}r<b$.
 
 If $q=0$ and $r=0$, then \\
 \hphantom{2em}$qb+r=0\cdot{}b+0=0$
@@ -1538,4 +1557,30 @@ QED
 Since we have proven that a base-$b$-representation exists for ALL the postive integers, \emph{and}
 that this representation is unique, then we
 have proven the Basis Representation Theorem.
+
+\break
+\section*{Epilogue}
+It is my great hope that this paper, while on a very simple subject (so simple that we rightfully take
+it for granted), tickled your fancy even just a little bit, and opened you up to some new pleasures.
+
+I honestly don't know
+if I've taken a fruitful approach to draw new people into the world of mathematics. My reasoning
+is that taking such a familiar subject and applying rigorous mathematical reasoning,
+that you could get familiar with the ``language'' of mathematics and get a taste for the
+sharpness of the thought process. Most importantly I hope
+you found some amusement in and among the mathematical tidbits sprinkled here 
+and there.
+
+I take great pleasure in math, even though I'm no mathematician (by any stretch of the imagination)
+I don't let that stop me digging in and trying to digest new ideas as I stumble across them. I feel that
+not being able to enjoy mathematics is as tragic as someone who is blind who can't enjoy the MoMA, or
+someone who is deaf who can't while away the hours listening to their favorite band. This paper is
+my attempt at trying to open up the world of mathematics to you so that you can also enjoy one of the greatest
+achievements humanity has to offer.
+
+%The world of mathematics is rich and varied, and filled with such fascinating characters (the mathematicians
+%themselves) who by rights ought to be treated like rock stars.
+%
+If this paper has the opposite effect, then I apologize from the bottom of my heart, as I have
+done you a great disservice.
 \end{document}
