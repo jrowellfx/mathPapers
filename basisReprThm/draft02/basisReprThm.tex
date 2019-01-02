@@ -219,7 +219,7 @@ to describe these powers of ten and let's forget the fancy words.
 \dots{}\\
 \underbrace{10\dots{}000}_\text{k zeros}&= \underbrace{10\times10\times10\times10\times\dots{}\times10}_\text{k 10s}=10^k
 \end{align*}
-$10^k$ means there are $k$ 10's multiplied together - 
+$10^k$ means there are $k$ tens multiplied together - 
 also written as a 1 followed by $k$ zeros.
 The above list shows the cases for $k = 2$, 3 and 4.
 Using the $k$ like that is just a way to show that we can pick ANY whole number,
@@ -230,7 +230,7 @@ to the case when $k=0$ and $k=1$.\footnote{$10^k$ also extends to the cases
 when $k$ is negative as in $10^{-1}$, or $10^{-2}$, etc. which means $\frac{1}{10}$ and $\frac{1}{100}$ respectively
 but those are called ``rational numbers''. We aren't concerning ourselves with rational numbers in this paper.}
 
-So $10^1$ means that there is only one 10 multiplied together, or one ``0" following the ``1",
+So $10^1$ means that there is only one ten multiplied together, or one ``0" following the ``1",
 in other words just the number 10 itself.
 
 %\looseness=-1
@@ -268,14 +268,14 @@ a necessity in any way - aliens might use ``beasdm'' and their math would be jus
 in terms of powers of ten: $92507=9\times10^4+2\times10^3+5\times10^2+0\times10^1+7\times10^0$.
 
 You can think of each digit as being a little dial that controls how many lots
-of its corresponding power of ten will contribute to the value of the integer. Please note
+of its corresponding power-of-ten will contribute to the value of the integer. Please note
 that we went ahead and multiplied the units digit (7 in our example) by $10^0$ (which is the
 same as multiplying by 1) so that we can see that there's nothing special about the units digit,
-it's just some number between 0 and 9, times a power of ten like any of the other digits.
+it's just some number between 0 and 9, times a power-of-ten like any of the other digits.
 It also adds a kind of beauty to the expression in that all
 the digits can be expressed in a similar matter.
 
-Claim: Given that we can use as high a power of ten as we like
+Claim: Given that we can use as high a power-of-ten as we like
 and we can string together \emph{as~long~a~list~of~digits} as pleases us,
 that means that we can create \emph{any} positive integer we want no matter how big it is.
 
@@ -322,7 +322,7 @@ so that once we prove it we may go forward using base-ten with impunity in talki
 For starters, we intuitively know that counting with base-ten covers all the possible integers.
 After all, when we learned how
 to count that process leaves no room for gaps.  We know that if we count up to say... 499,
-that if we add one, the nines roll over to zero, and 1 gets added to the 4, like an odometer in your car,
+that if we add 1, the 9's roll over to 0, and 1 gets added to the 4, like an odometer in your car,
 getting us to the very next integer which is 500.  We know this always works no matter what number we add 1 to.
 
 Exactly - our intuition is good. Let's write it down as something that has to be
@@ -335,15 +335,15 @@ Every integer is representable in base-ten.
  
 Something else that's important, and something we know intuitively, is that any number written
 in base-ten represents only ONE integer. It's almost stupid to spell it out, but if we were to count out
-four piles of one-hundred apples, then nine piles of ten apples, then nine additional apples, then
+4 piles of 100 apples, then 9 piles of 10 apples, then 9 additional apples, then
 we'd always get the exact same big sized pile of apples.
 
 It goes the other way too - that if we were handed a big pile of apples, and we started counting out
 piles of 100, and we got 4 such piles, but we didn't have enough left to make another pile of 100.
 Then if we started counting out
 piles of 10, and we got 9 such piles, but we didn't have enough left to make another pile of 10.
-Then if we finished by counting out nine remaining single apples
-then we know we have 499 apples, and there is NO other way to split this big pile up
+Then if we finished by counting out 9 remaining apples
+then we would always get 499 apples; There is NO other way to split this big pile of apples up
 in ANY other way if we follow this rule.  In other words, each integer is representable by only ONE base-ten number.
 
 Let's strengthen our theorem based on the last two observations.
@@ -362,31 +362,37 @@ whereas ``$\cdot{}$'' never will be. Eg. $x\times{}2$ vs. $x\cdot{}2$, additiona
 \[92507=9\cdot10^4+2\cdot10^3+5\cdot10^2+0\cdot10^1+7\cdot10^0\]
 
 The numbers 9, 2, 5, 0 and 7 are called ``digits'' and each digit
-is associated with a specific power of ten.  The rightmost units, or least-significant digit (7) is multiplied by 1
-or better yet $10^0$; the next digit to the left (0) is multiplied by $10^1$, etc\dots{}
-until we finally come to the leftmost or most-significant digit (9) which is multiplied by $10^4$, THEN we add them all together.
-This kind of expression is implicit \emph{every-time} we write out a number in base-ten. 
+is associated with a specific power-of-ten.  The rightmost units digit, or least-significant digit, 7, is multiplied by 1
+(written as $10^0$ for consistency); we shift one digit to the left and find a 0 which is multiplied by $10^1$;
+we shift another digit to the left and find a 5 which is multiplied by $10^2$, etc\dots{}
+until we finally we've shifted 4 times to the left and arrived at the most-significant digit, 9, which is multiplied by $10^4$.
+Finally we add all these products together.
+This kind of expression is implicit \emph{every time} we write out a number in base-ten. 
 This algebraic expression is the key to linking base-ten numbers to the integers.
 
-It's critical to recognize that we only allow our digits to be zero through nine, no other values are allowed.
-Specifically, nine is the maximum number of lots of any given
-``power of ten'' sized piles of apples we are allowed to make, otherwise we could have made a pile of the next higher power of ten.
-For example, if we had nine piles of ten apples each, but still had exactly ten apples left over, we would simply add that ten
-to the other nine piles of ten and count it as one pile of a hundred.  That's the rule - we are only allowed
-at most nine lots of a certain ``power of ten'' sized pile of apples.
+It's critical to recognize that we only allow our digits to be 0 through 9, no other values are allowed.
+Specifically, 9 is the maximum number of lots of any given
+power-of-ten sized piles of apples we are allowed to make, otherwise we could have made a pile of the next higher power-of-ten.
+For example, if we had 9 piles of ten apples each, but still had exactly ten apples left over, we would simply add that ten
+to the other 9 piles of ten and count it as 1 pile of a hundred.  That's the rule - we are only allowed
+at most 9 lots of a certain power-of-ten sized piles of apples.
 
-Let's call $d$ a ``digit'' of our number such that the $d$ represents how many lots of some power of ten we have,
-then $d$ must be between zero and nine inclusive, and the contribution of that digit to the integer would be this:
+Let the term $d$ be one of the digits in our number. So $d$ represents how many lots of some power-of-ten we have,
+and $d$ must be between 0 and 9 inclusive, so the contribution of that digit to the integer would be this amount:
 \[d\cdot10^i\text{, where }0\le{}d\le{}9\text{ and }i\ge{}0\]
-In other words, for some power of ten (that's the $i$ which is any number greater than or equal to zero) we have $d$ lots of it. Note that $d$
-could be zero, which means we don't have ANY lots of this particular power of ten, all the way up to the maximum
-number of lots of it being nine.
+In other words, for some power-of-ten
+(that's the $i$ which can be anything, like 0, 1, 2, 3, etc.) we have $d$ lots of it. Note that $d$
+could be 0, which means we don't have ANY lots of $10^i$, all the way up to the maximum
+of 9 lots of $10^i$.
 
-Our expression for the integer should only have one digit for each power of ten, in other words we wouldn't want to have
+Our expression should only have one digit for each power-of-ten, in other words our expression should never allow
 something like this.
 \[4\cdot10^2+7\cdot10^2\]
 because we could group those powers of ten together like this:
 \[4\cdot10^2+7\cdot10^2 = (4+7)10^2=11\cdot10^2\]
+which violates our rule of keeping the value of the digit in the range of 0 to 9.
+
+--jpr--
 
 Also, we know that a number is composed of possibly many ``digits'' times various powers of ten, all added together.
 See our example for the number 92507 a few pages back, to remind you.
@@ -397,7 +403,7 @@ Here's what the theorem might look like generalizing from our example of the int
 \begin{jprIn}
 Every positive integer can be uniquely written as a
 cumulative sum of multiples of increasing powers of \emph{ten}.
-We call the multiple of each power of ten a ``digit''
+We call the multiple of each power-of-ten a ``digit''
 where each digit is restricted to be between \emph{zero} and \emph{nine} inclusive.
 We call the \emph{non-zero} digit that corresponds to the highest power of \emph{ten} the ``most significant digit''.
 Similarly the digit that corresponds to the \emph{zero}\textsuperscript{th} power of \emph{ten} is called the ``least significant digit''.
@@ -450,7 +456,7 @@ have no idea how many digits we might need, so we need a list of digits for each
 Note that each digit of $n$ relates to some corresponding power of 10. So let's use the value of that power
 as a tagged-on label to each $d$.  For example ``$d$-one'' could be the digit that corresponds to the power $10^1$, ``$d$-two'' 
 could correspond to the power $10^2$, ``$d$-three'' for $10^3$, etc.  We can even say ``$d$-zero'', for our units digit that
-corresponds to the power of ten $10^0$.
+corresponds to the power-of-ten $10^0$.
 
 Let's not be so wordy in how we write out those $d$s, but we need a convention that let's us stick a number-label to a $d$ - so let's use a ``subscript''.
 Here's what it would look like; ``$d$-zero'' is written as $d_0$, ``$d$-one'' is $d_1$, ``$d$-two'' is $d_2$, ``$d$-three'' is $d_3$, etc.
@@ -520,7 +526,7 @@ when coming up with names for lists of variables or constants.
 Subscripts following a letter or symbol, such as $d_0,d_1,d_2,\dots{}$
 are a handy way to get a list of variable or constant names that are similar looking to each other,
 and is meant to imply that they each fulfill a similar role to each other.
-Note here how the value of the subscript on each $d_i$ corresponds to its power of ten,
+Note here how the value of the subscript on each $d_i$ corresponds to its power-of-ten,
 even for the units digit when the subscript is 0,
 or the highest power case when the subscript is $k$. Please also note that it
 isn't necessary that the subscript indices match with the powers, but it's pretty helpful
@@ -1047,7 +1053,7 @@ Now let $n=1$.
 
 \begin{jprIn}
 In this case, we can choose $k=0$ and $d_0=1$.  Then,
-\[n=d_0b^0=1\cdot{}b^0=1\times{}1=1\]
+\[n=d_0b^0=1\cdot{}b^0=1\cdot{}1=1\]
 showing that we have a valid representation for 1 in base-$b$ since\\
 $d_0=1\le(b-1)$, for all $b\ge2$.
 \end{jprIn}
@@ -1197,7 +1203,7 @@ This is how you first learned to divide.
 For example if someone asks you ``What is nineteen divided by three?'', you’d
 answer ``six with one remaining''. Here 19 is the \emph{dividend},  3 is the \emph{divisor},
 6 is the \emph{quotient} and 1 is the \emph{remainder}. Written in the form of the theorem:
-\[19=6\times3+1\]
+\[19=6\cdot3+1\]
 Often proofs make use of little mini-theorems of their own.
 Creating these mini-theorems is a way to simplify a step in
 the main proof by establishing a useful non-trivial
