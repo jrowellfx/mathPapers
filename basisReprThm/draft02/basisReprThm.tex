@@ -287,7 +287,7 @@ the digits can be treated in a similar matter.
 
 Claim: Given that we can use as high a power-of-ten as we like
 and we can string together \emph{as~long~a~list~of~digits} as pleases us,
-that means that we can create \emph{every} positive integer we want no matter how big it is.
+that means that we can create \emph{any} positive integer we want no matter how big it is.
 
 That's a pretty tall claim.
 
@@ -487,7 +487,7 @@ when you want to talk about all your `$d$'s at once:
 \begin{jprIn}
 Let $d_0, d_1, d_2,d_3$ and $d_4$ be integers such that:
 
-\hspace{3em}$n=d_4{\cdot}{1\hspace{-0.12em}0}^4+d_3{\cdot}{1\hspace{-0.12em}0}^3+\dots+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
+\hspace{3em}$n=d_4{\cdot}{1\hspace{-0.12em}0}^4+d_3{\cdot}{1\hspace{-0.12em}0}^3+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
 
 where $0\le{}d_i\le{}9$ for all $i$ in $\{0,1,2,3,4\}$ and $d_4\ne0$.
 \end{jprIn}
@@ -975,15 +975,23 @@ Then,
 \end{align*}
 QED
 \section*{Proof of the  Basis Representation Theorem}
-We are going to use two techniques to prove the Basis Representation Theorem.
+So how to prove the theorem?  We're going to prove the theorem by following our
+experience with and intuition about about base-ten numbers.
+For example, the odometer in your car - as you keep adding one to the 
+miles, it keeps making a new base-ten number, it keeps rolling along, making new base-ten numbers, each a new one
+and each one with well defined meaning in base-ten.
+Each one is a totally valid base-ten number.
+We could have an odometer that rolls off binary digits - same idea.  See binary odometer gif.
 
-First we will prove that there is such a representation for all
-integers $n$ (existence proof) using the principle of mathematical induction.
-Meaning that every integer has a way of being written
-in the form described by the theorem - especially as
-relates to the bounds on the values that the digits can take on.
+But that odometer trick is only one possible way tthat we could have made a base-ten number -
+there might some magic box that also makes them. Maybe it makes them differently?
+Well - let's assume that this magic box does exist and that it made a different base-ten number for the
+same integer... then we show that this is impossible.  That proves that there is only one way 
+to make them.
 
-Here's a little insight into how the existence proof works, but applied to a specific number in base-ten:
+So the odometer idea is captured by Mathematical Induciton.
+
+Here's a little insight into how the existence (odometer) proof works, but applied to a specific number in base-ten:
 All we want to show is that for some number, if you add 1 to it, that it's also possible to express it as a valid number in base-ten.
 
 For example, adding 1 to 69412995 gives us 69412996, which is pretty trivial to show that it's valid in base-ten, only the least-significant digit was
@@ -994,9 +1002,13 @@ if we were adding 1 to 69412999? We'd need to algebraically capture the idea of 
 we do it in the proof is essentially to say that $69412999 = 69410000 + 2999 = 69410000 + (3000-1)$ so that when we add one to it, then
 it's clear that the answer is just:
 \[69412999 + 1 = 69410000 + (3000-1) + 1 = 69410000 + 3000 + (-1 + 1) = 69413000\]
-Secondly, we will use another technique, called proof by contradiction,
+
+We need an algebraic mechanism like the one that rolls over the digits in the odometer.
+
+Secondly, the magic alternate base-ten reprn machine - we will use another technique, called proof by contradiction,
 to prove that each such representation is unique - in other
-words there aren't two (or more) ways to represent the same integer in base-$b$.
+words there aren't two (or more) ways to represent the same integer in base-$b$.  That machine is impossible, but
+boiled down the abstract math level.
 
 \section*{Existence Proof of the Basis Representation Theorem}
 Let $n$ and $b$ be positive integers such that $b\ge2$.\\
