@@ -292,9 +292,8 @@ in terms of powers-of-ten:
 $92507=9{\times{}}10^4+2{\times{}}10^3+5{\times{}}10^2+0{\times{}}10^1+7{\times{}}10^0$.
 
 This way of breaking down the base-ten representation of a number into
-this kind of an algebraic expression can ALWAYS be done for any number. It's the key to getting
-a handle on precisely what a string of decimal digits means. We're going to keep coming
-back to this expression so let's continue examining it to more fully understand its significance.
+this kind of an algebraic expression can be done for EVERY string of decimal digits. It's the key to 
+understanding what a string of decimal digits means.
 
 Think of each digit as being a little dial that controls how many lots
 of its corresponding power-of-ten will contribute to the value of the integer.
@@ -305,7 +304,7 @@ it's just some number from 0 to 9 times a power-of-ten like any of the other dig
 Including $10^0$ in the expression adds a kind of beauty because it shows us that all
 the digits can be treated with the same underlying idea.
 
-Our number 92507 only has five digits and it's biggest power-of-ten is $10^4$,
+Our example number 92507 only has five digits and it's biggest power-of-ten is $10^4$,
 but there's
 no limit on how big a power-of-ten could be involved in our expression.
 Look at ``a trillion and one'', i.e.; 1,000,000,000,001 which can be expressed as:
@@ -317,10 +316,10 @@ but it would be twenty-thousand-and-one digits long, a
 followed by 9999 more zeros, then a ``5'':
 \[
 7{\times{}}10^{20000}+0{\times{}}10^{19999}+\cdots{}+0{\times{}}10^{10001}+3{\times{}}10^{10000}+0{\times{}}10^{9999}+\cdots{}+0{\times{}}10^{1}+5{\times{}}10^{0}\]
-
-How do we know that we can create ALL the positive
-integers with this scheme? For example,
-how do we know that we didn't miss one? Or how do we know that some string of
+How do we \emph{know} that we can create ALL the positive
+integers with this scheme?
+How do we \emph{know} that we didn't miss one?
+How do we \emph{know} that some string of
 digits doesn't represent two different integers?
 I know it seems silly to ask these kinds of questions - 
 after all, people have been counting in base-ten for almost two thousand years,
@@ -346,39 +345,38 @@ inverse of 2 because $\frac{1}{2}\cdot{}2=1$ but $\frac{1}{2}$ is not an integer
 As obvious as it seems, the fact that
 we can use base-ten to represent the integers is NOT among the list of axioms.
 
-As discussed in the opening paragraph, we think that the way
-that we write a number, or say a number \emph{is} the number - no
-problem - it's totally fine to think this way.
-Numbers written in base-ten are in
+As expected,
+numbers written in base-ten are in
 a perfect one-to-one correspondence with the integers so
-it's safe to think about numbers written 
-in base-ten as the integers.
-
-However, the reason that we \emph{really} know that it's safe to think this way is because we 
-spelled out what it means to represent a number in base-ten with 
-a theorem, then we've proven that the theorem is true.
-A proof
-is just a series of arguments that logically connects our theorem
+it's safe to think that each
+integer has its own unique base-ten label.
+But at least once in the past, someone has to take the time to
+spell out exactly what it means to represent a number in base-ten. This kind of a statement
+is called a theorem\footnote{I can't find where
+the first such theorem was stated, I think it's quite recent.}. Then that theorem must be proven to be true with a series of arguments that logically connects it
 directly\footnote{directly \dots{}or indirectly
 via other previously proven theorems.} to the axioms, so that the only way
-that our theorem could be false is if the axioms themselves are false.
+that the theorem could be false is if the axioms themselves are false.
 
-So let's formalize all the stuff that we intuitively know about
-counting with base-ten, and call it the ``Base-Ten Representation Theorem''.
-Then we'll prove it so that we may confidently go forward using it with
-impunity - knowing that each and every integer has it's own unique base-ten label.
+I could just state the ``Base-Ten Representation Theorem'' right here, but
+how to get to its clear, simple and succinct statement is an interesting journey.
+The rest of the paper is about taking this journey. In fact we're going to end up generalizing upon our
+intuitive understanding about
+counting with base-ten and come up with a
+better theorem that covers base-ten and more. At the very least this new understanding
+will help you to ``get'' the cryptic joke about binary on page one!
 
-For starters, we intuitively know that counting with
-base-ten covers all the possible integers.
-After all, how we count leaves no room for gaps.
-We know that if we count up to say... 499,
-that if we add 1, the 9's roll over to 0,
-and 1 gets added to the 4, like an odometer in your car,
-getting us to the very next integer which is 500.
-We know this always works no matter what number we add 1 to.
+\break
+So let's start our journey. We intuitively know that counting with
+base-ten covers all the positive integers.
+For example, the odometer in your car that keeps churning out
+new numbers for each mile you drive, starting from zero when it rolls
+off the production line.  If your odometer was long enough that it 
+stretched off past the horizon on your left, there's no limit on
+how many miles you could count.
 
-Our intuition is good - let's write it down as something that has to be
-in our theorem. We might say something like:
+Our intuition is good - let's write it down
+in our theorem. We might say:
 
 \emph{Base-Ten Representation Theorem (initial draft)}
 \begin{jprIn}
@@ -430,13 +428,12 @@ it's negative counterpart'' \dots{}or some such words.
 Also zero is easy to deal with separately, so to keep our lives
 simple let's restrict our attention to only proving the theorem for positive integers.
 
-\bigskip
-Moving forward it would be helpful to have a name for our 
+Also, moving forward it would be helpful to have a name for our 
 positive integer so that we can refer to it directly - how about $n$ for ``number'':
 
 \emph{Base-Ten Representation Theorem (third draft)}
 \begin{jprIn}
-Every positive integer $n$ has a unique representation in base-ten.
+Every \emph{positive} integer $n$ has a unique representation in base-ten.
 \end{jprIn}
 
 At the moment it's not very helpful to have named $n$ (the theorem as it stands
@@ -457,32 +454,8 @@ in $ab$ - which means $a\cdot{}b$ as you have seen in earlier footnotes.}:
 let's come up
 with a general expression of this form that can describe ANY positive integer $n$.
 
-%Let's look at a general description for just one digit of $n$.
-%
-%It's important to remember that we only allow $n$'s digits
-%to take on the values from 0 to at most 9 - no other values are allowed.
-%For example, if we counted out 9 piles of ten-apples each,
-%but still ten more apples to count,
-%we would simply add that extra pile of ten-apples
-%to the other 9 piles of ten-apples and count it as 1 pile of a hundred-apples.
-%That's the rule - we are only allowed
-%at most 9 lots of a certain power-of-ten sized pile-of-apples.
-%
-%Thinking about it another way, if we allowed a digit to take on a value
-%that was greater than nine - it would affect
-%MORE than just the power-of-ten that it's associated to.
-%Say we allowed digits to be as big as eleven and
-%that we use this ancient mystical symbol for eleven that I just
-%made up which looks like this {1\hspace{-0.6em}\raisebox{0.05em}{$\sim$}}.
-%
-%In doing so we'd loose the fact that writing a number in base-ten is unique because:
-%\[\text{1\hspace{-0.6em}\raisebox{0.05em}{$\sim$}}00 =\text{1\hspace{-0.6em}\raisebox{0.05em}{$\sim$}}\cdot{}10^2 = 11\cdot10^2=(10+1)10^2=10\cdot10^2+1\cdot10^2=1\cdot10^3+1\cdot10^2=1100\]
-%That would be disastrous, two ways to say the same number?! We might as well use Roman Numerals for all
-%the confusion that would ensue.
-%\bigskip
-
 Let's replace one of the digits in our example number 92507 with $d$, how about the 5 like this $92d07$. What I
-mean becomes clear if I write it out like this:
+mean becomes clear if I write it out:
 \[n=92d07=9{\cdot}10^4+2{\cdot}10^3+d{\cdot}10^2+0{\cdot}10^1+7{\cdot}10^0\]
 So $n$ is one of the following numbers:
 92007,
@@ -496,40 +469,23 @@ So $n$ is one of the following numbers:
 92807 or
 92907.
 
-%So $d$ represents how many lots of some power-of-ten %,
-%say $10^i$  (where $i$ is 0, 1, 2, 3, etc.),
-%contribute to the value of $n$.
 As you can see, the digit $d$ must be an integer between 0 and 9 inclusive 
 which we can write as ``$0\le{}d\le{}9$'' however I suggest that ``$0\le{}d<10$" is better\footnote{Read 
-$0\le{}d\le{}9$ as ``zero is less-than-or-equal-to dee which is less-than-or-equal-to ten"
-and $0\le{}d<10$ as ``zero is less-than-or-equal-to dee which is strictly-less-than ten".}!
+$0\le{}d\le{}9$ as ``zero is less-than-or-equal-to dee which is less-than-or-equal-to nine"
+and $0\le{}d<10$ as ``zero is less-than-or-equal-to dee which is (strictly) less-than ten".}!
 It's logically equivalent to ``$0\le{}d\le{}9$''  but conveys more important information
 to the reader. Why even talk about nine when the theorem is about base TEN?
-
-Say $d$ represents the ``hundreds'' digit of $n$. So in our example number 92507 let's substitute
-the ``5'' with $d$ - like this $92d07$.  So, $d$ contributes this much to the value of $n$.
-
-, so the power-of-ten in question here is $10^2=100$ and if $0\le{}d<10$, then
-our number could be
-
-
-\[d\cdot10^2\text{, where }d\text{ is an integer such that }0\le{}d<10\]
-
-In other words, for some power-of-ten (the $10^i$) we
-have $d$ lots of it. Note that $d$
-could be 0, which means that it doesn't contribute ANY
-lots of $10^i$ to the value of $n$, all the way up to the maximum
-contribution of 9 lots of $10^i$.
-
-$n$ is likely composed of \emph{many} digits,
-each of which is multiplied by a distinct power-of-ten.
-Suppose $n$ is a five digit number.
-We've been using the specific five-digit number 92507 in our examples above,
-but now suppose $n$ is some number from 10000 all
+\begin{align*}
+n =\ &9{\cdot}10^4+2{\cdot}10^3+d{\cdot}10^2+0{\cdot}10^1+7{\cdot}10^0,\text{ where}\\
+&d\text{ is an integer such that }0\le{}d<10
+\end{align*}
+This statement for $n$ only represents the integers 92007 to 92907, so let's come up
+with a statement for $n$ that will allow us to generate ANY five-digit number from 10000 
 the way up to 99999 (which is a complete list of all the five-digit numbers).
-If we were to describe this general five-digit number, then we would need
-five different `$d$'s for each of the five digits.
-Somehow we need to associate a different term $d$ with each of the powers
+
+In order to describe this general five-digit number, we need
+five different `$d$'s, one for each of the five digits.
+In other words, we need to associate a different term $d$ with each of the powers
 $10^4$, $10^3$, $10^2$, $10^1$ and $10^0$.
 
 Mathematics has a convention for coming up with
@@ -540,33 +496,22 @@ George should have writen as ``$R_2D_2$'' and not ``R2-D2''!}.
 $d_2$ is a term to represent a digit just like the $d$ we used above.
 But now we can use that little subscript as a way to
 associate it to a specific power-of-ten.
-Naturally we'll associate $d_2$ with $10^2$ (ten squared) as follows; $d_2$ contributes to
-the value of $n$ by this amount:
-\[d_2\cdot10^2\text{, where }d_2\text{ is an integer such that }0\le{}d_2<10\]
+Naturally we'll associate $d_2$ with $10^2$ (ten squared) as follows:
+\begin{align*}
+n =\ &9{\cdot}10^4+2{\cdot}10^3+d_2{\cdot}10^2+0{\cdot}10^1+7{\cdot}10^0,\text{ where}\\
+&d_2\text{ is an integer such that }0\le{}d_2<10
+\end{align*}
 If we define $d_2$ like this, then we know that when we refer to the digit $d_2$
 that we are talking about the digit that is multiplied with $10^2$.
 
+\break
 Let our five-digit-number $n$ use $d_0,d_1,d_2,d_3$ and $d_4$ for its digits. Then
-the general expression for $n$ looks like this:
-\[n=d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0\]
-
-Since we're getting something that looks like hard-core math, let's take a moment
-to read it out loud, as a Math-Professor might do in a lecture.  It might sound like this:
-\begin{jprIn}
+the general expression for $n$ looks like this\footnote{That expression looks like
+hard-core math, so let's take a moment
+to read it out loud, as a Math-Professor might do in a lecture.  She might say:
 ``$n$ is equal to dee-four times ten-to-the-fourth, \dots{}
-plus dee-three times ten-cubed, \dots{} plus dee-two times ten-squared,  \dots{} plus dee-one times ten,  \dots{} plus dee-zero times one.''
-\end{jprIn}
-
-When we write out our expression for our five-digit number $n$ we want to be sure
-to let people know that each of the digits $d_0,d_1,d_2,d_3$ and $d_4$
-are nonnegative integers less than ten.
-
-Furthermore, to make sure $n$ is a legitimate five-digit number we have to
-call out the exception that $d_4$ can NOT be zero - it has to be at least 1.
-Why? Because if $d_4$ were zero then $n$ would only be a
-four-digit number, or perhaps a three-digit number, or only two-digits etc.
-
-Let's call out this important information, along with the expression for $n$:
+plus dee-three times ten-cubed, \dots{} plus dee-two times ten-squared,
+  \dots{} plus dee-one times ten,  \dots{} plus dee-zero times one.''}:
 \begin{align*}
 n =\ &d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0\text{, where}\\
 & d_0\text{ is an integer such that }0\le{}d_0<10\text{, and}\\
@@ -575,13 +520,20 @@ n =\ &d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0
 & d_3\text{ is an integer such that }0\le{}d_3<10\text{, and}\\
 & d_4\text{ is an integer such that }1\le{}d_4<10.
 \end{align*}
-Ok, hold on a minute - that's getting a little cumbersome;
+Ok, hold on a minute - that's getting a little cumbersome. it's clunky and hard to read -
 plus did  you notice how we slipped in that different range for $d_4$?
-Not a great presentation.
 
-A common convention in situations like this
+First let's deal with the different range on that $d_4$. To make sure $n$ is a legitimate five-digit number we have to
+call out the exception that $d_4$ can NOT be zero - it has to be at least 1.
+Why? Because if $d_4$ were zero then $n$ would only be a
+four-digit number, or perhaps a three-digit number, or only two-digits etc.
+
+Secondly, to clean up the presentation
+a common convention
 is to let another term like $i$, for perhaps ``index'', stand in for the subscript
 when you want to talk about all your `$d$'s at once:
+\begin{jprIn}
+\begin{jprIn}
 \begin{jprIn}
 Let $d_0, d_1, d_2,d_3$ and $d_4$ be integers such that:
 
@@ -589,9 +541,12 @@ Let $d_0, d_1, d_2,d_3$ and $d_4$ be integers such that:
 
 where $0\le{}d_i<10$ for all $i$ in $\{0,1,2,3,4\}$ and $d_4\ne0$.
 \end{jprIn}
+\end{jprIn}
+\end{jprIn}
+We did it! Those statements, and the expression for $n$ describe EVERY five-digit number.
 
-Better! That expression for $n$ describes EVERY five-digit number - now we need to extend
-our hard-coded five-digit expression for $n$ to an arbitrary
+So NOW let's extend
+our five-digit expression for $n$ to an arbitrary
 number of digits.
 Consider the following progression:
 \begin{center}
@@ -617,6 +572,7 @@ consider that our estimate of the number of molecules in
 the entire universe would only need a base-ten
 number with the $k$ set to somewhere between 78 and 82 to count them all.}!
 
+\break
 So there we have it, we found our expression for being able to
 express each positive integer, let's use
 it in a revised draft of our theorem:
@@ -763,6 +719,7 @@ base-two & base-ten & \; \; \; \; & base-two & base-ten\\
 1100 & 12 (cont\dots) & \phantom& 100000000 & 256
 \end{tabular}
 \end{center}
+\break
 Note something interesting in the list above - the powers of two,
 written in base-two,
 resemble our powers of 10 in base-ten! That is:
@@ -797,7 +754,6 @@ turns on or off the contribution of its corresponding power-of-two.
 
 Look familiar? Let's restate our ``Base Ten Representation Theorem" but rewritten for base-two.
 
-\break
 \section*{Base-Two Representation Theorem}
 \begin{jprIn}
 For every positive integer $n$ there is a unique
@@ -884,12 +840,12 @@ Recall how we defined $(\text{A})_{16}=10$
 and $(\text{F})_{16}=15$ as base-sixteen digits, then:
 \[9,937,906=9\cdot{}16^5+7\cdot{}16^4+10\cdot{}16^3+3\cdot{}16^2+15\cdot{}16^1+2\cdot{}16^0=(\text{97A3F2})_{16}\]
 
+\break
 \section*{Epilogue}
 At this point we really ought to get to the proof of the ``Basis Representation Theorem''.
 
-However, truth be told, the proof supplied below
-is a little heavy going - not difficult,
-but not really a great introductory proof for the first time mathematician.
+However truth be told, the proof supplied below, while elementary, isn't the most beautiful proof 
+in the world and thus not necessarily the best to follow for the first time mathematician.
 In fact here's what one of the
 world's greatest mathematicians\footnote{along with the Gauss
 and Euclid mentioned later in this paper.},
@@ -912,8 +868,8 @@ I tried my best to make it clear and interesting,
 but don't feel bad if it
 makes your head hurt. If you do try to follow it - it does
 have some points of interest - not the least
-of which is that it works - perhaps not as elegantly as
-Mr. Hardy could provide to us, but I'm no G. H. Hardy.
+of which is that it works but more importantly you'll learn about a very powerful tool
+called ``The Principle of Mathematical Induction''. 
 
 I think at this point you are well equipped you to try
 your hands at a couple of exercises for fun. If you get stuck, or to
@@ -1038,6 +994,7 @@ presumably to keep them quiet and busy while the
 teacher corrected some papers. Anyway,
 young Gauss immediately produced the answer,
 5050, before most of the boys had summed the first couple of numbers.
+
 It wasn't young Gauss's extraordinary computational speed which allowed
 him to perform this dazzling task,
 but he had the deeper insight that instead of adding 1 plus 2,
