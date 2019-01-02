@@ -59,6 +59,12 @@
 %\usepackage{setspace}
 
 \newenvironment{jprIn}{\begin{adjustwidth}{2em}{}}{\end{adjustwidth}}
+\addtolength{\skip\footins}{6pt}
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+\usepackage{perpage}
+\MakePerPage{footnote}
+
 
 %%% END Article customizations
 
@@ -203,24 +209,30 @@ to describe these powers of ten and let's forget the fancy words.
 \dots{}\\
 \underbrace{10\dots{}000}_\text{k zeros}&= \underbrace{10\times10\times10\times10\times\dots{}\times10}_\text{k 10s}=10^k
 \end{align*}
-The $10^k$ means there are $k$ 10's multiplied together - 
+$10^k$ means there are $k$ 10's multiplied together - 
 also written as a 1 followed by $k$ zeros.
 The above list shows the cases for $k = 2$, 3 and 4.
 Using the $k$ like that is just a way to show that we can pick ANY whole number,
 i.e., there is no limit on how big $k$ can be.
 
-The notation of $10^k$ is very handy, in fact it extends to the case when $k=0$ and $k=1$.
+The notation of $10^k$ is very handy, in fact it extends
+to the case when $k=0$ and $k=1$.\footnote{$10^k$ also extends to the cases
+when $k$ is negative as in $10^{-1}$, or $10^{-2}$, etc. which means $\frac{1}{10}$ and $\frac{1}{100}$ respectively
+but those are called ``Rational'' numbers and we aren't concerning ourselves with those kinds of numbers in this paper.}
 
 So $10^1$ means that there is only one 10 multiplied together, or one ``0" following the ``1",
 in other words just the number 10 itself.
 
+%\looseness=-1
 How about when $k=0$.
 Examining the pattern of how the power $k$ relates to how many zeros follow the ``1"
 (eg, $10^1=10$, $10^2=100$, $10^3=1000$,
 etc.) then it makes sense that $10^0=1$,
 i.e., no zeros follow the ``1", which is exactly right.
-Actually any number raised to the 0\textsuperscript{th} power is 1,
-but we'll leave that explanation for another time.
+Actually any number raised to the 0\textsuperscript{th} power~is~1.\footnote{Proof:
+ $a^b=a^{b+0}=a^ba^0$ so because of the uniqueness of the multiplicative identity, then $a^0=1$ for all $a\ne0$. Furthermore
+ mathematicians just go ahead and define $0^0=1$ because it's not inconsistent to do so, you can make a couple of decent arguments as to why
+ it make sense, and it makes certain equations and relationships much simpler and more elegant to express.}
 
 Let's look at an example.
 Reading the number 46307 out according to our technique we can see
@@ -259,9 +271,12 @@ in Mathematics - it's necessary so we don't end up fooling ourselves or spouting
 bullshit - or if we are full of it then it's easy
 for other Mathematicians to call us on our nonsense.
 
-We're going to jump into the deep end and make our claim in a careful mathematical way.
-Such a careful statement is called a theorem - theorems require proof,
-which we're going to do!
+We're going to jump into the deep end and make our claim in a careful mathy kind of way.
+Such a careful statement is called a theorem - theorems require proof which we will get to. It might get tough once we get
+to the proof. You are
+probably going to have to
+exercise some math-brain-muscles which is hard work, but like any workouts, the more you
+do them, and make even a tiny effort, the stronger you get, so I encourage you to persevere.
 
 \section*{Base-Ten Representation Theorem}
 
@@ -459,6 +474,7 @@ $128=2^7=10000000$\textsubscript{(2)},
 $256=2^8=100000000$\textsubscript{(2)},
 \dots{}
 
+\break
 Let's look at the binary number 11010 for example.
 Using our wordy technique to describe the number
 we can see that it's ``One lot of sixteen,
@@ -526,7 +542,7 @@ In fact computer graphics artists are known
 to stumble upon numbers written in hexadecimal (usually relating to specifying a color-channel),
 which is base-sixteen.
 
-Base-sixteen introduces some new single-character symbols to the usual numbers 1,
+Base-sixteen introduces some new single-character symbols to the usual numbers 0, 1,
 2, thru 9,
 to represent the numbers 10, 11, 12, 13, 14 and 15.
 Base-sixteen adds the ``digits'' A, B, C, D, E and F where
@@ -573,11 +589,11 @@ Definition: $n$ is represented in base-$b$ as $(d_kd_{k-1}\dots{}d_2d_1d_0)_b$
 \bigskip
 
 As we discussed way up at the top of this essay,
-we think about positive integers as a process that builds them up one by one.
+we think about generating the set of positive integers as a process that builds them up one by one.
 That is, each successive integer is one more than the previous one,
 starting at 1, then one more
 taking us to 2,
-then 3, 4, 5, \dots{}ad infinitum\footnote{``ad infinitum'' means ``to infinity'', or ``continue forever, without limit''.}\dots
+then 3, 4, 5, \dots{}ad~infinitum\footnote{``ad infinitum'' means ``to infinity'', or ``continue forever, without limit''.}\dots
 
 This idea of being able to step one after the other,
 beginning at 1 and going forever is called the ``Principle of Mathematical
@@ -585,10 +601,13 @@ Induction" and is a basic property of the positive integers.
 This principle is more than just a way to generate the set of integers,
 it's also a way of thinking about properties of the integers.
 
-Suppose\footnote{The wording of this definition of ``The Principle of Mathematical Induction'' is borrowed from ``Calculus'' by Michael Spivak - an fabulous introductory textbook to Analysis.} that $P(n)$ means that the property $P$ holds
+Suppose
+that $P(n)$ means that the property $P$ holds
 for the number $n$; where $n$ is a positive integer.
 Then the principle of mathematical induction states that $P(n)$
-is true for ALL positive integers n provided that:
+is true for ALL positive integers $n$ provided that\footnote{This wording of the
+definition of ``The Principle of Mathematical Induction'' is essentially borrowed
+from ``Calculus'' by Michael Spivak - an fabulous introductory textbook to Analysis.}:
 
 \begin{enumerate}[i)]
 \item $P(1)$ is true
@@ -613,12 +632,12 @@ they all fall.
 
 Let's look at a simple example:
 Perhaps you've heard the story of young Carl Friedrich Gauss
-as a young boy in
+as a boy in
 the 1780s who was assigned (along with all his classmates)
 the tedious task of summing the first 100 integers -
-Presumably to keep them quiet and busy while the
+presumably to keep them quiet and busy while the
 teacher corrected some papers. Anyway,
-young Gauss immediately produced the answer
+young Gauss immediately produced the answer,
 5050, before most of the boys had summed the first couple of numbers.
 It wasn't young Gauss's extraordinary computational speed which allowed
 him to perform this dazzling task,
@@ -630,11 +649,10 @@ and 3 with 98,
 etc.,
 that each of those pairs added up to 101,
 furthermore he knew he'd have 50 such pairs,
-meaning he could state the result in a heartbeat ``5050".
+meaning he could state the result in a heartbeat - tada - ``5050"!
 Gauss is widely regarded as being one of the greatest
 mathematicians who has ever lived - the young eight-year old was just getting started.
 
-\break
 Anyway,
 to generalize Gauss's insight we can write the expression like this:
 
@@ -691,12 +709,11 @@ After that has been established we will use another technique
 to prove that each such representation is unique - in other
 words there aren't two (or more) ways to represent the same integer in base-$b$.
 
-\break
 \section*{Existence Proof of the Basis Representation Theorem}
 
 Base case:
 \begin{jprIn}
-Since $n=0$ is a slightly special case in the theorem, then lets look at both $n=0$ and $n=1$ to start our base case.
+Since $n=0$ is a slightly special case in the theorem, then lets look at both $n=0$ and $n=1$ for our base case.
 
 Let $n=0$.
 
@@ -741,7 +758,7 @@ For example, in base-two $d_0$ can only be zero;
 In base-five $d_0$ can be at most three;
 In base-ten $d_0$ can be at most eight, etc.
 This case is
-quite easy to deal with, so let's quickly dispense with it.
+quite easy to deal with, so let's quickly dispense with it\footnote{It will be helpful at this point to recall the axiom of ``Distribution'' that is $a(b+c)=ab+ac$.}.
 \begin{align*}
 n &= d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\\
 &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\text{if and only if,}\\
@@ -782,7 +799,8 @@ meaning we can write $n$ as follows for some $j$:
 For example,
 if $n=69412999$,
 then $j=3$,
-since $10^3$ is the lowest power of 10 such that its digit $d_3$ is less than 9 (it's 2).
+since $10^3$ is the lowest power of 10 such that its digit $d_3$ is less than 9 (it's 2).\footnote{It will
+be helpful at this point to recall some rules of exponents, that is $a^ba^c=a^{b+c}$.}
 \begin{align*}
 n &=d_kb^k+\dots+d_jb^j+(b-1)b^{j-1}+\dots+(b-1)b^1+(b-1)b^0\\
 &= d_kb^k+\dots+d_jb^j+(b^j-b^{j-1})+(b^{j-1}-b^{j-2})+\dots+(b^2-b^1)+(b^1-b^0)\\
@@ -807,17 +825,16 @@ and all digits $d_{j-1},\dots{},d_0$ are 0.
 Therefore all the digits of the base-$b$ representation of $n+1$ are valid in base-$b$.
 \bigskip
 
-\break
 If you've been fastidiously following the conditions on our subscript $j$ above, then
 you may notice that
 our proof doesn't leave room for the case that \emph{all} the digits are equal to $(b-1)$ because of
 how we defined $j$. For example when $n=99999$.
 
-Let's attend to this remaining situation.
+Let's attend to this remaining detail.
 
 Suppose $d_i=(b-1)$ for all $0\le{}i\le{}k$, then let $d_{k+1}=0$ and $j=k+1$.
 
-So picking up at equation \eqref{eqnA} with our new terms we have:
+All the arguments we just made are essentially the same so picking up at equation \eqref{eqnA} above, with our new terms, we have:
 \begin{align*}
 n+1 &=(d_j+1)b^j\\
 &=(d_{k+1}+1)b^{k+1}\\
@@ -833,11 +850,73 @@ In other words we’ve proven the existence part of the Basis Representation The
 \end{jprIn}
 \end{jprIn}
 \bigskip
+
+\break
+In order to proceed\footnote{I don't want to misrepresent that the proof in
+this paper is the only way to prove the
+Basis Representation Theorem, in fact I know of at least two others. 
+
+One is more constructive,
+and makes extensive use of the Euclidean Division Theorem but it's just as lengthy as ours here. However it does give
+some nifty insight in how to convert any integer into a specific base.
+
+Another is quite elegant and short but pretty abstract, and not particularly useful for our purposes.
+However, you can find it in the book ``Number Theory'' by George E. Andrews, and also on
+proofwiki site, just search for the ``Basis Representation Theorem'' to find the proof.}
+with proving the uniqueness aspect of the Basis Representation Theorem, we
+need to make use of a well established theorem
+called the ``Euclidean Division Theorem''.
+It sounds onerous, but don’t worry, you all learned it
+in the third grade but perhaps not so formally - you called it ``long division''. It simply states the following:
+
+\section*{Euclidean Division Theorem}
+\begin{jprIn}
+For all $a,b\in{}\mathbb{Z}$ where $b\ne0$, there exists unique integers $q$ and $r$ such that:
+\[a=qb+r  \text{ and } 0\le{}r\le{}(b-1)\]
+Definition: In the above equation:
+\begin{jprIn}
+\begin{tabular}{l l}
+a is the \emph{dividend} & (``the number being divided'')\\
+b is the \emph{divisor} & (``the number doing the dividing'')\\
+q is the \emph{quotient} & (``the result of the division'')\\
+r is the \emph{remainder} & (``the leftover'')
+\end{tabular}
+\end{jprIn}
+\end{jprIn}
+This is how you first learned to divide.
+For example if someone asks you ``What is nineteen divided by three?'', you’d
+answer ``six with one remaining''. Here 19 is the \emph{dividend},  3 is the \emph{divisor},
+6 is the \emph{quotient} and 1 is the \emph{remainder}. Written in the form of the theorem:
+\[19=6\times3+1\]
+
+Often proofs make use of little mini-theorems of their own.
+Creating these mini-theorems is way to simplify a step in
+the main proof by establishing a useful non-trivial
+intermediary result. It makes reading the main proof
+easier to follow by not having us get side tracked with
+the technicalities of a step we want to make.
+These mini-theorems are called ``Lemmas''
+and we’re going to make one to help with proving the ``uniqueness'' part
+of the ``Basis Representation Theorem''. We're going to make use of the
+``Euclidean Division Theorem'' in proving our lemma.
+
+\section*{Lemma}
+\begin{jprIn}
+Let $b, q, r \in{} \mathbb{Z}$ such that $b>0$ and $0\le{}r\le(b-1)$, then
+\[0=qb+r\]
+if and only if $q=0$ and $r=0$
+\end{jprIn}
+
+\section*{Proof of Lemma}
+\begin{jprIn}
+tbd
+\end{jprIn}
+
 \section*{Uniqueness Proof of the Basis Representation Theorem}
 
-Suppose n is not unique and that,
+Assume $n$ is not unique and that,
 \[n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\]
-also suppose,
+and,
 \[n=c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0\]
 
 Let's further suppose that the index $j$ is the first power such that the digits $d_j\ne{}c_j$ and without any loss of generality,
@@ -847,5 +926,23 @@ Therefore:
 \[c_kb^k+c_{k-1}b^{k-1}+\dots+c_2b^2+c_1b^1+c_0b^0=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b\]
 if and only if,
 \[0=(d_k-c_k)b^k+(d_{k-1}-c_{k-1})b^{k-1}+\dots+(d_j-c_j)b^j\]
+if and only if,
 
+\[\frac{0}{b^j}=\frac{(d_k-c_k)b^k+(d_{k-1}-c_{k-1})b^{k-1}+\dots+(d_j-c_j)b^j}{b^j}\text{, since }b\ne0\]
+if and only if,
+\[0=(d_k-c_k)b^{k-j}+(d_{k-1}-c_{k-1})b^{k-j-1}+\dots+(d_{j+1}-c_{j+1})b+(d_j-c_j)\]
+if and only if,
+\[0=\big((d_k-c_k)b^{k-j-1}+(d_{k-1}-c_{k-1})b^{k-j-2}+\dots+(d_{j+1}-c_{j+1})\big)b+(d_j-c_j)\]
+Let $q=\big((d_k-c_k)b^{k-j-1}+(d_{k-1}-c_{k-1})b^{k-j-2}+\dots+(d_{j+1}-c_{j+1})\big)$, then
+\[0=qb+(d_j-c_j)\]
+Since $0\le(d_j-c_j)\le(b-1)$ and $b>0$ then by our Lemma we know that\\
+$q=0$ and $d_j-c_j = 0$.
+
+But $d_j-c_j = 0$ if and only if $d_j = c_j$
+which contradicts our assumption that $d_j\ne{}c_j$. This implies that the initial assumption that $n$
+is not unique is \emph{false}, in other words:
+
+The base-$b$ representation of $n$ is unique.
+
+QED
 \end{document}
