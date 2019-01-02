@@ -246,7 +246,6 @@ to the case when $k=0$ and $k=1$.
 So $10^1$ means\footnote{Don't forget to read $10^1$ as ``ten-to-the-one''.} that there is only one ten multiplied together, or one ``0" following the ``1",
 in other words just the number ten itself.
 
-%\looseness=-1
 How about when $k=0$?
 Examining the pattern of how the power $k$ relates to how many zeros follow the ``1"
 (eg, $10^1=10$, $10^2=100$, $10^3=1000$,
@@ -340,17 +339,6 @@ Our intuition is good - let's write it down as something that has to be
 in our theorem. We might say something like:
 
 \emph{Base-Ten Representation Theorem (initial draft)}
-%\begin{jprIn}
-% Let ${1\hspace{-0.12em}0}$ represent the integer ten.
-%
-%For every positive integer $n$ there is a unique sequence of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
-%
-%\hspace{3em}$n=d_k{\cdot}{1\hspace{-0.12em}0}^k+d_{k-1}{\cdot}{1\hspace{-0.12em}0}^{k-1}+\dots+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
-%
-%where $0\le{}d_i\le{}9$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
-%
-%Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\cdots}d_2d_1d_0$
-%\end{jprIn}
 \begin{jprIn}
 Every integer has a representation in base-ten.
 \end{jprIn}
@@ -372,17 +360,6 @@ if we follow this procedure.  In other words, each integer is represented by onl
 Let's strengthen our theorem based on the last two observations.
 
 \emph{Base-Ten Representation Theorem (second draft)}
-%\begin{jprIn}
-% Let ${1\hspace{-0.12em}0}$ represent the integer ten.
-%
-%For every positive integer $n$ there is a unique sequence of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
-%
-%\hspace{3em}$n=d_k{\cdot}{1\hspace{-0.12em}0}^k+d_{k-1}{\cdot}{1\hspace{-0.12em}0}^{k-1}+\dots+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
-%
-%where $0\le{}d_i\le{}9$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
-%
-%Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\cdots}d_2d_1d_0$
-%\end{jprIn}
 \begin{jprIn}
 Every integer has a unique representation in base-ten.
 \end{jprIn}
@@ -431,17 +408,6 @@ For example, if we counted out 9 piles of ten-apples each, but still ten more ap
 to the other 9 piles of ten-apples and count it as 1 pile of a hundred-apples.  That's the rule - we are only allowed
 at most 9 lots of a certain power-of-ten sized pile-of-apples.
 
-%\begin{jprIn}
-% Let ${1\hspace{-0.12em}0}$ represent the integer ten.
-%
-%For every positive integer $n$ there is a unique sequence of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
-%
-%\hspace{3em}$n=d_k{\cdot}{1\hspace{-0.12em}0}^k+d_{k-1}{\cdot}{1\hspace{-0.12em}0}^{k-1}+\dots+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
-%
-%where $0\le{}d_i\le{}9$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
-%
-%Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\cdots}d_2d_1d_0$
-%\end{jprIn}
 Let the term $d$ represent one of the digits of $n$.
 So $d$ represents how many lots of some power-of-ten contribute to the value of $n$.
 $d$ must be an integer between 0 and 9 inclusive (we could say ``0 is less than or equal to $d$ which is also less than
@@ -493,7 +459,6 @@ Since we're getting something that looks like hard-core math, let's take a momen
 to read it out loud, as a Math-Professor might do in a lecture.  It might sound like this:
 \begin{jprIn}
 ``$n$ is equal to dee-four times ten-to-the-fourth, \dots{}
-%\emph{{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}pause{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}}
 plus dee-three times ten-cubed, \dots{} plus dee-two times ten-squared,  \dots{} plus dee-one times ten,  \dots{} plus dee-zero times one.''
 \end{jprIn}
 
@@ -521,14 +486,8 @@ A common convention in situations like this
 is to let another term like $i$, for perhaps ``index'', stand in for the subscript
 when you want to talk about all your `$d$'s at once:
 \begin{jprIn}
-%For every positive integer $n$ there is a unique sequence of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
 Let $d_0, d_1, d_2,d_3$ and $d_4$ be integers such that:
 
-%\hspace{3em}$n=d_k{\cdot}{1\hspace{-0.12em}0}^k+d_{k-1}{\cdot}{1\hspace{-0.12em}0}^{k-1}+\dots+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
-%
-%where $0\le{}d_i\le{}9$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
-%
-%n =\ &d_4{\cdot}10^4+d_3{\cdot}10^3+d_2{\cdot}10^2+d_1{\cdot}10^1+d_0{\cdot}10^0,\\
 \hspace{3em}$n=d_4{\cdot}{1\hspace{-0.12em}0}^4+d_3{\cdot}{1\hspace{-0.12em}0}^3+\dots+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
 
 where $0\le{}d_i\le{}9$ for all $i$ in $\{0,1,2,3,4\}$ and $d_4\ne0$.
@@ -691,9 +650,6 @@ base-two & base-ten & \; \; \; \; & base-two & base-ten\\
 Note something interesting in the list above - the powers of two,
 written in base-two,
 resemble our powers of 10 in base-ten! That is:
-%\begin{small}
-%\begin{center}
-%\begin{spreadlines}{0em}
 \begin{align*}
 1 = 2^0&= 1, & 32 = 2^5&= 100000_{(\text{base-2})},\\
 2 = 2^1&= 10_{(\text{base-2})}, & 64 = 2^6&= 1000000_{(\text{base-2})},\\
@@ -701,9 +657,6 @@ resemble our powers of 10 in base-ten! That is:
 8 = 2^3&= 1000_{(\text{base-2})},& 256 = 2^8&= 100000000_{(\text{base-2})},\\
 16 = 2^4&= 10000_{(\text{base-2})},& & \dots{}
 \end{align*}
-%\end{spreadlines}
-%\end{center}
-%\end{small}
 Let's look at the binary number 11010 for example.
 Using our wordy technique to describe the number
 we can see that it's ``One lot of sixteen,
@@ -739,15 +692,6 @@ For every positive integer $n$ there is a unique sequence of integers $d_0, d_1,
 \hspace{3em}$n=d_k2^k+d_{k-1}2^{k-1}+\dots+d_22^2+d_12^1+d_02^0$,
 
 where $0\le{}d_i\le{}1$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
-%
-%Definition: $n$ is represented in base-$b$ by the string of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
-%\end{jprIn}
-%\begin{jprIn}
-%Let $n$ be a positive integer, then for every $n$ there exists a unique representation:
-%
-%\%hspace{3em}$n=d_k\cdot{}2^k+d_{k-1}\cdot{}2^{k-1}+\dots+d_2\cdot{}2^2+d_1\cdot{}2^1+d_0\cdot{}2^0$
-%
-%where $d_i$ is an integer such that $0\le{}d_i\le{}1$ for all $i$ in $0\le{}i\le{}k$, furthermore $d_k\ne0$.
 
 Definition: $n$ is represented in base-two by the string of binary-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_2$
 \end{jprIn}
@@ -797,7 +741,6 @@ If we can prove that theorem,
 then we'll automatically get all the cases of specific bases for free.
 
 \section*{Basis Representation Theorem}
-
 \begin{jprIn}
 Let $b$ be a positive integer greater than 1.
 
@@ -810,16 +753,6 @@ where $0\le{}d_i\le{}(b-1)$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
 Definition: $n$ is represented in base-$b$ by the string of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
 \end{jprIn}
 \bigskip
-%\begin{jprIn}
-%Let $n$ and $b$ be positive integers such that $b\ge2$,\\
-%then for every $n$ there exists a unique representation:
-%
-%\hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$
-%
-%where $d_i$ is an integer such that $0\le{}d_i\le{}(b-1)$ for all $i$ in $0\le{}i\le{}k$, furthermore $d_k\ne0$.
-%
-%Definition: $n$ is represented in base-$b$ by the string of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
-%\end{jprIn}
 
 So to get the ``Base-Ten Representation Theorem'' let $b$ equal ten.
 To get the ``Base-Two Representation Theorem'' let $b=2$; or the ``Base-Nine Representation Theorem''
@@ -1145,8 +1078,6 @@ $d_0=(b-1)$.
 For example in base-two
 $d_0=1$; in base-five
 $d_0=4$; in base-ten $d_0=9$, etc.
-
-%\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 Let $j$ be the lowest power of $b$ such that $d_j<(b-1)$,
 meaning we can write $n$ as follows (\dots{}in other words all the digits to the right of $d_j$ are equal to $(b-1)$):
