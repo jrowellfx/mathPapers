@@ -147,10 +147,25 @@ c_{n}b^0
 }
 \end{jprIn}
 
-\section*{Proof of Lemma}
+\section*{Proof of Lemma by Induction}
+Base case when \(n=1\):
 \begin{jprIn}
-QED
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group
+\begin{center}
+\begin{equation*}
+(c_0)b + c_1
+=
+c_0b^1 + c_1b^0
+\end{equation*}
+\end{center}
+\egroup
+}
+We also note that the Lemma holds for the case when \(n=0\) as \((c_0) = c_0b^0\)
 \end{jprIn}
+Induction step: Assume the lemma is true for \(n=k\) and prove that it must be true for \(n=k+1\).
+QED
 
 \section*{Euclidean Division Theorem}
 \begin{jprIn}
