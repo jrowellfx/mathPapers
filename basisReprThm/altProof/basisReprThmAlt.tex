@@ -170,21 +170,15 @@ As a reminder, a statement of the ``Euclidean Division Theorem'' follows,
 \section*{Euclidean Division Theorem}
 \begin{jprIn}
 For all integers \(a\) and \(b\) such that \(b>0\),
-there exist \emph{unique} integers \(q\) and \(r\) such that\footnote{Aside:
-Actually the theorem is stronger than we have stated here.
-Specifically, it only requires that \(b\ne0\), however,
-to keep the remainder positive, the restriction on \(r\)
-would have to be stated like
-this \(0\le{}r<\left|b\right|\) to deal with
-the possibility that \(b\) might be negative.}:
+there exist \emph{unique} integers \(q\) and \(r\) such that:
 \[a=qb+r  \text{ such that } 0\le{}r<b\]
 Definition: In the above equation:
 \begin{jprIn}
 \begin{tabular}{l l}
-a is the \emph{dividend} & (``the number being divided'')\\
-b is the \emph{divisor} & (``the number doing the dividing'')\\
-q is the \emph{quotient} & (``the result of the division'')\\
-r is the \emph{remainder} & (``the leftover'')
+\(a\) is the \emph{dividend} & (``the number being divided'')\\
+\(b\) is the \emph{divisor} & (``the number doing the dividing'')\\
+\(q\) is the \emph{quotient} & (``from Latin \emph{quotiens} `how many times' \(b\) goes into \(a\)'')\\
+\(r\) is the \emph{remainder} & (``what's left over after the division'')
 \end{tabular}
 \end{jprIn}
 \end{jprIn}
@@ -194,7 +188,7 @@ r is the \emph{remainder} & (``the leftover'')
 Let \(b\) be a positive integer greater than 1 and
 let \(n\) be a positive integer.
 
-Dividing \(n\) by \(b\) we get integers \(q_1\) and \(d_0\) such that,
+Dividing \(n\) by \(b\) we get non-negative integers \(q_1\) and \(d_0\) such that,
 \begin{alignat*}{1}
 n\ &= q_1b + d_0; \text{ where, } 0 \le{} d_0 < b.\\
 \intertext{If \(q_1 \ne{} 0\) we continue this process by dividing \(b\) into \(q_1\) to get integers \(q_2\) and \(d_1\) such that,}
@@ -208,6 +202,21 @@ q_{k-1}\ &= q_{k}b + d_{k-1}; \text{ where, } 0 \le{} d_{k-1} < b\\
 q_{k}\ &= q_{k+1}b + d_k; \text{ where, } 0 \le{} d_k < b
 \end{alignat*}
 
-We know that there must be an integer \(k\) for which \(q_{k+1} = 0\) because,
+There \emph{must} be an integer \(k\) for which \(q_{k+1} = 0\) because for
+any \(q_i = q_{i+1}b + d_i\) we have,
+\begin{alignat*}{1}
+q_i\  &= q_{i+1}b + d_i\\
+\ &\ge{} q_{i+1}b + 0\\
+\ &\ge{} 2q_{i+1}\\
+\ &> q_{i+1}
+\end{alignat*}
 
+Let \(q_0 = n\), then the above argument shows that we have a sequence of inequalities,
+\[q_0 > q_1 > q_2 > q_3 > \dots{} > q_k > q_{k+1},\]
+which must terminate with \(q_{k+1} = 0\) for some \(k \ge{} 0\) because no quotient can be negative.
+(As an interesting aside, \(k = {\lfloor}log_b(n){\rfloor} + 1\).)
+
+\break
+By back-substituting each expression for \(q_{i+1}\) into the previous expression for \(q_i\),
+starting with our last expression \(q_k\), we get:
 \end{document}
