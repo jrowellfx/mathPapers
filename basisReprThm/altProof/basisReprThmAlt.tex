@@ -95,13 +95,6 @@
 
 \begin{document}
 \maketitle
-%\begin{em}
-%\centerline{\small{}There are 10 sorts of people in the world: those who understand binary and those who don't.}
-%\par
-%\setlength{\parskip}{0pt}
-%\end{em}
-%\normalsize
-%\bigskip
 
 \section*{Basis Representation Theorem}
 \begin{jprIn}
@@ -193,7 +186,7 @@ Dividing \(n\) by \(b\) we get non-negative integers \(q_1\) and \(d_0\) such th
 n\ &= q_1b + d_0; \text{ where, } 0 \le{} d_0 < b.\\
 \intertext{If \(q_1 \ne{} 0\) we continue this process by dividing \(b\) into \(q_1\) to get integers \(q_2\) and \(d_1\) such that,}
 q_1\ &= q_2b + d_1; \text{ where, } 0 \le{} d_1 < b,\\
-\intertext{As long as the new quotient (eg. \(q_2\) above) is non-zero, we continue this process
+\intertext{As long as the new quotient (i.e., \(q_2\)) is non-zero, we continue this process
 until we get a quotient, say \(q_{k+1} = 0\), as follows,}
 q_2\ &= q_3b + d_2; \text{ where, } 0 \le{} d_2 < b\\
 q_3\ &= q_4b + d_3; \text{ where, } 0 \le{} d_3 < b\\
@@ -213,10 +206,24 @@ q_i\  &= q_{i+1}b + d_i\\
 
 Let \(q_0 = n\), then the above argument shows that we have a sequence of inequalities,
 \[q_0 > q_1 > q_2 > q_3 > \dots{} > q_k > q_{k+1},\]
-which must terminate with \(q_{k+1} = 0\) for some \(k \ge{} 0\) because no quotient can be negative.
+which must terminate with \(q_{k+1} = 0\) for some \(k \ge{} 0\) since no quotient can be negative.
 (As an interesting aside, \(k = {\lfloor}log_b(n){\rfloor} + 1\).)
 
 \break
 By back-substituting each expression for \(q_{i+1}\) into the previous expression for \(q_i\),
 starting with our last expression \(q_k\), we get:
+
+\[n = (((\dots{}(((d_k)b + d_{k-1})b + d_{k-2})b + \dots{} d_{2})b + d_{1})b + d_0)\]
+
+By an application of our lemma (noting the change of indices: \(d_k = c_0,
+d_{k-1} = c_1, \dots{},\newline d_1 = c_{k-1}, d_0 = c_k\)), then we can conclude that:
+
+\[n = d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0.\]
+
+Furthermore \(0\le{}d_i<b\) for all \(i\) in \(\{0,1,2,\dots{},k\}\) and \(d_k\ne0\).
+
+\(d_k\) not zero because otherwise \(q_i\) would have been zero and the process would have stopped at step \(k-1\)
+
+Since Eucl Div Thm guarantees uniqueness, then QED.
+
 \end{document}
