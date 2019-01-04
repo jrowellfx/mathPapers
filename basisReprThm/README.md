@@ -5,7 +5,7 @@ source of which is the file:
 
     basisReprThm.tex,
 
-which has been TeXed and typset into the file:
+which has been TeXed and typeset into the file:
 
     basisReprThm.pdf.
 
@@ -36,3 +36,7 @@ draft02 files underwent many changes, and have many revisions, but a
 total rewrite led to abandoning this set of drafts and the work
 was continued (and essentially completed) with the files
 mentioned at the top of this README.
+
+Furthermore, altProof contains an alternate proof of the theorem
+that was suggested in the paper following the technique of
+exercise 2-iii.
