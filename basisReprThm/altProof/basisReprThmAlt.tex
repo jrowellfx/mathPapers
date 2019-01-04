@@ -126,7 +126,7 @@ also be proven by generalizing the technique used in exercise 2-iii; that proof 
 
 \section*{Lemma}
 \begin{jprIn}
-Let \(b\) be an integer such that \(b\ne{}0\) and \(c_0, c_1, c_2, \dots{}, c_n\) be a sequence of integers, then:
+Let \(b\) be an integer where \(b\ne{}0\) and \(c_0, c_1, c_2, \dots{}, c_n\) be a sequence of integers, then:
 {\footnotesize
 \bgroup                                  %% open the group
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group
@@ -148,25 +148,25 @@ c_{n}b^0
 \end{jprIn}
 
 \section*{Proof of Lemma by Induction}
-Base case when \(n=1\):
+Base case:
 \begin{jprIn}
-{\small
-\bgroup                                  %% open the group
-\setlength{\abovedisplayskip}{0pt}       %% effective inside the group
-\begin{center}
-\begin{equation*}
-(c_0)b + c_1
-=
-c_0b^1 + c_1b^0
-\end{equation*}
-\end{center}
-\egroup
-}
-We also note that the Lemma holds for the case when \(n=0\) as \((c_0) = c_0b^0\)
+When \(n=1\) we have \((c_0)b + c_1 = c_0b^1 + c_1b^0\), and
+also note that the lemma holds for \(n=0\) since \((c_0) = c_0b^0\).
 \end{jprIn}
-Induction step: Assume the lemma is true for \(n=k\) and prove that it must be true for \(n=k+1\).
+Induction step:
+\begin{jprIn}
+Assume the lemma is true for \(n=k\) and prove it true for \(n=k+1\).
+{\small
+\begin{alignat*}{1}
+&((((\dots{}(((c_0)b + c_1)b + c_2)b + \dots{} c_{k-2})b + c_{k-1})b + c_k)b + c_{k+1})\\
+=\  &((c_0b^k + c_1b^{k-1} + c_2b^{k-2} + \dots{} + c_{k-2}b^2 + c_{k-1}b^1 + c_{k}b^0)b + c_{k+1})\\
+=\  &c_0b^{k+1} + c_1b^{k} + c_2b^{k-1} + \dots{} + c_{k-2}b^3 + c_{k-1}b^2 + c_{k}b^1 + c_{k+1}b^0
+\end{alignat*}
+}
+\end{jprIn}
 QED
 
+As a reminder, a statement of the ``Euclidean Division Theorem'' follows,
 \section*{Euclidean Division Theorem}
 \begin{jprIn}
 For all integers \(a\) and \(b\) such that \(b>0\),
@@ -188,5 +188,26 @@ r is the \emph{remainder} & (``the leftover'')
 \end{tabular}
 \end{jprIn}
 \end{jprIn}
+
+\section*{Proof of Basis Representation Theorem}
+
+Let \(b\) be a positive integer greater than 1 and
+let \(n\) be a positive integer.
+
+Dividing \(n\) by \(b\) we get integers \(q_1\) and \(d_0\) such that,
+\begin{alignat*}{1}
+n\ &= q_1b + d_0; \text{ where, } 0 \le{} d_0 < b.\\
+\intertext{If \(q_1 \ne{} 0\) we continue this process by dividing \(b\) into \(q_1\) to get integers \(q_2\) and \(d_1\) such that,}
+q_1\ &= q_2b + d_1; \text{ where, } 0 \le{} d_1 < b,\\
+\intertext{As long as the new quotient (eg. \(q_2\) above) is non-zero, we continue this process
+until we get a quotient, say \(q_{k+1} = 0\), as follows,}
+q_2\ &= q_3b + d_2; \text{ where, } 0 \le{} d_2 < b\\
+q_3\ &= q_4b + d_3; \text{ where, } 0 \le{} d_3 < b\\
+\dots{}\\
+q_{k-1}\ &= q_{k}b + d_{k-1}; \text{ where, } 0 \le{} d_{k-1} < b\\
+q_{k}\ &= q_{k+1}b + d_k; \text{ where, } 0 \le{} d_k < b
+\end{alignat*}
+
+We know that there must be an integer \(k\) for which \(q_{k+1} = 0\) because,
 
 \end{document}
