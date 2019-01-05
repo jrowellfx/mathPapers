@@ -49,10 +49,12 @@
 \usepackage{relsize}
 \usepackage{wasysym}
 %\usepackage{romannum}
+
+\newcommand{\jprVersion}{v33} % version
  
 \usepackage[pdftex,
             pdfauthor={James Philip Rowell},
-            pdftitle={\jobname},
+	    pdftitle={\jobname.\jprVersion},
             pdfsubject={Magic Numbers},
             pdfkeywords={decimal, base-ten, binary, base-two, integers,
 	    theorem, proof, mathematics, number-theory, divisors, magic-number},
@@ -66,7 +68,7 @@
 }
 \usepackage{hyperxmp}
 \hypersetup{
-    pdfauthor={James Philip Philip Rowell},
+    pdfauthor={James Philip Rowell},
     pdfcopyright={Copyright  2017 by James Philip Rowell. All rights reserved.}
 }
 \usepackage{lipsum}
@@ -89,11 +91,10 @@
 
 %%% END Article customizations
 
-\title{Magic-Numbers}
+\title{\vspace{-1.5cm}Magic-Numbers}
 \author{James Philip Rowell}
-% \date{February 16, 2018} % Activate to display a given date or no date (if empty),
-\date{} % Activate to display a given date or no date (if empty),
-% otherwise the current date is printed 
+\date{\vspace{-0.5cm}\footnotesize\today\ (\jprVersion)} % Activate to display a given date or no date (if empty),
+% otherwise the current date is printed
 
 \begin{document}
 \maketitle
@@ -170,7 +171,7 @@ I'm guessing that they probably use some form of positional-notation,
 but instead of base-ten they probably use base-7, base-21,
 or base-49\footnote{For an understanding of alternate bases please see
 the paper ``\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0}
-{Counting}'' by James Philip Rowell}.
+{Counting}'' also by James Rowell}.
 
 Let's examine some numbers
 in other bases - Note the first number being multiplied versus the base of the converted-number.
@@ -236,7 +237,7 @@ number\footnote{``\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.
 \begin{jprIn}
 For all integers $a$ and $b$ such that $b\ne0$,
 there exist \emph{unique} integers $q$ and $r$ such that:
-\[a=qb+r  \text{ such that } 0\le{}r<\lvert{}b\rvert\]
+\[a=qb+r  \text{; where } 0\le{}r<\lvert{}b\rvert\]
 Definition: In the above equation\footnote{Recall
 that $\lvert{}b\rvert$ means the ``absolute value'' of $b$ and is always positive. For
 example $\lvert{}{-13}\rvert = 13$.}:
@@ -244,8 +245,8 @@ example $\lvert{}{-13}\rvert = 13$.}:
 \begin{tabular}{l l}
 \(a\) is the \emph{dividend} & (``the number being divided'')\\
 \(b\) is the \emph{divisor} & (``the number doing the dividing'')\\
-\(q\) is the \emph{quotient} & (``the result of the division'')\\
-\(r\) is the \emph{remainder} & (``the leftover'')
+\(q\) is the \emph{quotient} & (``from Latin \emph{quotiens} `how many times' \(b\) goes into \(a\)'')\\
+\(r\) is the \emph{remainder} & (``what's left over (if anything) after the division'')
 \end{tabular}
 \end{jprIn}
 \end{jprIn}
@@ -407,5 +408,5 @@ presented as a simple exercise for students in elementary-algebra or elementary-
 
 However, it's fun and I want to use this theorem and some other observations about times-tables to see if I can determine
 what the ``best'' base-number-system might be! (I'll define ``best'' later.) At any rate, I think the
-Heptapods in ``Arrival'' might be the winners with base-21. Stay tuned for my next paper!
+Heptapods in ``Arrival'' might be the winners with base-21. Stay tuned for that paper!
 \end{document}
