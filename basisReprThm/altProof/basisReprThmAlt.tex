@@ -113,9 +113,16 @@ of base-\(b\)-digits \((d_kd_{k-1}{\cdots}d_2d_1d_0)_b\)
 \bigskip
 
 
-The paper ``\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0}{Counting}''
-proves the ``Basis Representation Theorem'' by induction but suggests that it could
-also be proven by generalizing the technique used in exercise 2-iii; that proof follows.
+The paper ``\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0}{Counting}\footnote{
+Also written by James Rowell.}''
+proves the above theorem by induction, but suggests that it could
+also be proven by generalizing a
+technique\footnote{Exercise 2-iii from the paper
+``\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0}{Counting}''.}
+used to calculate the digits of a number for a given base.
+The following proof uses that approach, involving repeated divisions of \(n\)
+by the base \(b\), the remainders of which end up being
+the base-\(b\) digits of \(n\).
 
 \section*{Lemma}
 \begin{jprIn}
@@ -125,7 +132,7 @@ Let \(b\) be an integer where \(b\ne{}0\) and \(c_0, c_1, c_2, \dots{}, c_n\) be
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group
 \begin{center}
 \begin{equation*}
-(((\dots{}(((c_0)b + c_1)b + c_2)b + \dots{} c_{n-2})b + c_{n-1})b + c_n)
+(((\dots{}(((c_0)b + c_1)b + c_2)b + \dots{} + c_{n-2})b + c_{n-1})b + c_n)
 =
 c_0b^n + 
 c_1b^{n-1} + 
@@ -151,7 +158,7 @@ Induction step:
 Assume the lemma is true for \(n=k\) and prove it true for \(n=k+1\).
 {\small
 \begin{alignat*}{1}
-&((((\dots{}(((c_0)b + c_1)b + c_2)b + \dots{} c_{k-2})b + c_{k-1})b + c_k)b + c_{k+1})\\
+&((((\dots{}(((c_0)b + c_1)b + c_2)b + \dots{} + c_{k-2})b + c_{k-1})b + c_k)b + c_{k+1})\\
 =\  &((c_0b^k + c_1b^{k-1} + c_2b^{k-2} + \dots{} + c_{k-2}b^2 + c_{k-1}b^1 + c_{k}b^0)b + c_{k+1})\\
 =\  &c_0b^{k+1} + c_1b^{k} + c_2b^{k-1} + \dots{} + c_{k-2}b^3 + c_{k-1}b^2 + c_{k}b^1 + c_{k+1}b^0
 \end{alignat*}
@@ -171,7 +178,7 @@ Definition: In the above equation:
 \(a\) is the \emph{dividend} & (``the number being divided'')\\
 \(b\) is the \emph{divisor} & (``the number doing the dividing'')\\
 \(q\) is the \emph{quotient} & (``from Latin \emph{quotiens} `how many times' \(b\) goes into \(a\)'')\\
-\(r\) is the \emph{remainder} & (``what's left over after the division'')
+\(r\) is the \emph{remainder} & (``what's left over (if anything) after the division'')
 \end{tabular}
 \end{jprIn}
 \end{jprIn}
@@ -195,8 +202,8 @@ q_{k-1}\ &= q_{k}b + d_{k-1}; \text{ where, } 0 \le{} d_{k-1} < b\\
 q_{k}\ &= q_{k+1}b + d_k; \text{ where, } 0 \le{} d_k < b
 \end{alignat*}
 
-There \emph{must} be an integer \(k\) for which \(q_{k+1} = 0\) because for
-any \(q_i = q_{i+1}b + d_i\) we have,
+There will be an integer \(k\) for which \(q_{k+1} = 0\) but \(q_k \ne{} 0\), because for
+all \(q_i\) in the above list of equations we have,
 \begin{alignat*}{1}
 q_i\  &= q_{i+1}b + d_i\\
 \ &\ge{} q_{i+1}b + 0\\
@@ -204,15 +211,25 @@ q_i\  &= q_{i+1}b + d_i\\
 \ &> q_{i+1}
 \end{alignat*}
 
-Let \(q_0 = n\), then the above argument shows that we have a sequence of inequalities,
-\[q_0 > q_1 > q_2 > q_3 > \dots{} > q_k > q_{k+1},\]
-which must terminate with \(q_{k+1} = 0\) for some \(k \ge{} 0\) since no quotient can be negative.
-(As an interesting aside, \(k = {\lfloor}log_b(n){\rfloor} + 1\).)
+Letting \(q_0 = n\), then the above strict-inequality leads us to conclude that,
+\[q_0 > q_1 > q_2 > q_3 > \dots{} > q_k > q_{k+1}.\]
+Since no quotients are negative then the sequence
+must terminate with \(q_{k+1} = 0\) for some \(k \ge{} 0\).\footnote{As an
+interesting aside, \(k = {\lfloor}log_b(n){\rfloor} + 1\).} We must note that in
+this case, \(d_k \ne{} 0\), since if it were then \(q_k = 0\), which can't be 
+true otherwise the process would have stopped one step earlier.
 
 \break
-By back-substituting each expression for \(q_{i+1}\) into the previous expression for \(q_i\),
-starting with our last expression \(q_k\), we get:
-
+Back-substituting each expression for \(q_{i+1}\) into the expression for \(q_i\),
+starting with \(q_{k+1}\),
+\begin{alignat*}{1}
+q_{k+1} &= 0,\\
+q_k &= 0\cdot{}b + d_k,\\
+q_{k-1} &= (d_k)b + d_{k-1},\\
+q_{k-2} &= ((d_k)b + d_{k-1})b + d_{k-2},\\
+\dots{},
+\end{alignat*}
+hence,
 \[n = (((\dots{}(((d_k)b + d_{k-1})b + d_{k-2})b + \dots{} d_{2})b + d_{1})b + d_0)\]
 
 By an application of our lemma (noting the change of indices: \(d_k = c_0,
@@ -222,8 +239,10 @@ d_{k-1} = c_1, \dots{},\newline d_1 = c_{k-1}, d_0 = c_k\)), then we can conclud
 
 Furthermore \(0\le{}d_i<b\) for all \(i\) in \(\{0,1,2,\dots{},k\}\) and \(d_k\ne0\).
 
-\(d_k\) not zero because otherwise \(q_i\) would have been zero and the process would have stopped at step \(k-1\)
+Furthermore the ``Euclidean Division Theorem'' guarantees that each sequence
+of integers \(d_0, d_1, d_2, \dots{}, d_k\) is unique
+because each \(q_i\) and \(d_i\) resulting from each division is unique.
 
-Since Eucl Div Thm guarantees uniqueness, then QED.
+QED
 
 \end{document}
