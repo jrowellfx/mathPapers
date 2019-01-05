@@ -49,7 +49,7 @@
 \usepackage{wasysym}
 %\usepackage{romannum}
 
-\newcommand{\jprVersion}{v01} % version
+\newcommand{\jprVersion}{v02} % version
  
 \usepackage[pdftex,
             pdfauthor={James Philip Rowell},
@@ -106,12 +106,7 @@ of integers \(d_0, d_1, d_2,\dots{},d_k\) such that:
 \hspace{3em}\(n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0\),
 
 where \(0\le{}d_i<b\) for all \(i\) in \(\{0,1,2,\dots{},k\}\) and \(d_k\ne0\).
-
-Definition: \(n\) is represented in base-\(b\) by the string
-of base-\(b\)-digits \((d_kd_{k-1}{\cdots}d_2d_1d_0)_b\)
 \end{jprIn}
-\bigskip
-
 
 The paper ``\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0}{Counting}\footnote{
 Also written by James Rowell.}''
@@ -192,31 +187,31 @@ Dividing \(n\) by \(b\) we get non-negative integers \(q_1\) and \(d_0\) such th
 \begin{alignat*}{1}
 n\ &= q_1b + d_0; \text{ where, } 0 \le{} d_0 < b.\\
 \intertext{If \(q_1 \ne{} 0\) we continue this process by dividing \(b\) into \(q_1\) to get integers \(q_2\) and \(d_1\) such that,}
-q_1\ &= q_2b + d_1; \text{ where, } 0 \le{} d_1 < b,\\
-\intertext{As long as the new quotient (i.e., \(q_2\)) is non-zero, we continue this process
-until we get a quotient, say \(q_{k+1} = 0\), as follows,}
-q_2\ &= q_3b + d_2; \text{ where, } 0 \le{} d_2 < b\\
-q_3\ &= q_4b + d_3; \text{ where, } 0 \le{} d_3 < b\\
-\dots{}\\
-q_{k-1}\ &= q_{k}b + d_{k-1}; \text{ where, } 0 \le{} d_{k-1} < b\\
-q_{k}\ &= q_{k+1}b + d_k; \text{ where, } 0 \le{} d_k < b
+q_1\ &= q_2b + d_1; \text{ where, } 0 \le{} d_1 < b.\\
+\intertext{As long as the new quotient (in this case \(q_2\)) is non-zero, we continue this process
+until we get a quotient, say \(q_{k+1} = 0\), as follows:}
+q_2\ &= q_3b + d_2; \text{ where, } 0 \le{} d_2 < b,\\
+q_3\ &= q_4b + d_3; \text{ where, } 0 \le{} d_3 < b,\\
+ &\dots{},\\
+q_{k-1}\ &= q_{k}b + d_{k-1}; \text{ where, } 0 \le{} d_{k-1} < b,\\
+q_{k}\ &= q_{k+1}b + d_k; \text{ where, } 0 \le{} d_k < b.
 \end{alignat*}
 
-There will be an integer \(k\) for which \(q_{k+1} = 0\) but \(q_k \ne{} 0\), because for
-all \(q_i\) in the above list of equations we have,
+We are guaranteed to get an integer \(k\) for which \(q_{k+1} = 0\) but \(q_k \ne{} 0\), because for
+all \(q_i\) in the above list of equations,
 \begin{alignat*}{1}
 q_i\  &= q_{i+1}b + d_i\\
 \ &\ge{} q_{i+1}b + 0\\
 \ &\ge{} 2q_{i+1}\\
-\ &> q_{i+1}
+\ &> q_{i+1},
 \end{alignat*}
 
-Letting \(q_0 = n\), then the above strict-inequality leads us to conclude that,
+and letting \(q_0 = n\), the above strict-inequality leads us to conclude that,
 \[q_0 > q_1 > q_2 > q_3 > \dots{} > q_k > q_{k+1}.\]
 Since no quotients are negative then the sequence
 must terminate with \(q_{k+1} = 0\) for some \(k \ge{} 0\).\footnote{As an
-interesting aside, \(k = {\lfloor}log_b(n){\rfloor} + 1\).} We must note that in
-this case, \(d_k \ne{} 0\), since if it were then \(q_k = 0\), which can't be 
+interesting aside, \(k = {\lfloor}log_b(n){\rfloor} + 1\).} We note that
+\(d_k \ne{} 0\), since if it were then \(q_k = 0\), which can't be 
 true otherwise the process would have stopped one step earlier.
 
 \break
@@ -227,19 +222,17 @@ q_{k+1} &= 0,\\
 q_k &= 0\cdot{}b + d_k,\\
 q_{k-1} &= (d_k)b + d_{k-1},\\
 q_{k-2} &= ((d_k)b + d_{k-1})b + d_{k-2},\\
-\dots{},
+q_{k-3} &= (((d_k)b + d_{k-1})b + d_{k-2})b + d_{k-3},\\
+ &\dots{},\\
+\intertext{finally ending with,}
+n &= (((\dots{}(((d_k)b + d_{k-1})b + d_{k-2})b + \dots{} d_{2})b + d_{1})b + d_0)
 \end{alignat*}
-hence,
-\[n = (((\dots{}(((d_k)b + d_{k-1})b + d_{k-2})b + \dots{} d_{2})b + d_{1})b + d_0)\]
-
 By an application of our lemma (noting the change of indices: \(d_k = c_0,
-d_{k-1} = c_1, \dots{},\newline d_1 = c_{k-1}, d_0 = c_k\)), then we can conclude that:
-
+d_{k-1} = c_1, \dots{},\newline d_1 = c_{k-1}, d_0 = c_k\)), we can conclude that:
 \[n = d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0.\]
-
 Furthermore \(0\le{}d_i<b\) for all \(i\) in \(\{0,1,2,\dots{},k\}\) and \(d_k\ne0\).
 
-Furthermore the ``Euclidean Division Theorem'' guarantees that each sequence
+Finally the ``Euclidean Division Theorem'' guarantees that each sequence
 of integers \(d_0, d_1, d_2, \dots{}, d_k\) is unique
 because each \(q_i\) and \(d_i\) resulting from each division is unique.
 
