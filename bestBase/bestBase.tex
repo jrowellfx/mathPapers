@@ -99,16 +99,43 @@
 \centerline{\small{}What might the ``best'' number system be?}
 \end{em}
 
-If you got to hit the reset button on all our conventions about
+If we hit the reset button on our conventions about
 how we count, and were tasked with finding the BEST number system
-for how we refer to and talk about integers in our day-to-day lives
-do you think you'd pick decimal?
+for how we denote individual integers,
+should we pick decimal?
 
 Let's ignore that the fact
 that Sesame Street drilled into several generations of kids heads
-that ``10'' means ten things.
+that ``10'' means ten things. Oh, and that the entire world 
+has been using it for about 600 to 800 years or so. So ignoring those
+insurmountable obstacles\dots{}
 
-So what criteria might we use to select the method by which we count
+Then what criteria might we use to select the method by which we count
 and give names to each individual integer?
+
+I think we can discount many esoteric systems, like mixed radix systems, as
+being impractical for casual use.
+
+We can also discount systems like more ancient number systems that introduced
+new symbols for larger and larger numbers (e.g. Roman Numerals) since you can't cover
+the integers with such a system.
+
+I think the choice simply boils down to which base should we choose given the...
+
+\section*{Basis Representation Theorem}
+\begin{jprIn}
+Let $b$ be a positive integer greater than 1.
+
+For every positive integer $n$ there is a unique sequence
+of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
+
+\hspace{3em}$n=d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0$,
+
+where $0\le{}d_i<b$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
+
+Definition: $n$ is represented in base-$b$ by the string
+of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
+\end{jprIn}
+
 
 \end{document}
