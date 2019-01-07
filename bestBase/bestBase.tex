@@ -84,7 +84,7 @@
 
 \usepackage{perpage}
 \usepackage[bottom]{footmisc}
-\MakePerPage{footnote}
+
 
 %%% END Article customizations
 
@@ -99,8 +99,8 @@
 \centerline{\small{}What might the ``best'' number system be?}
 \end{em}
 
-If we cleared the slate and could hit the reset-button on our conventions for
-counting in decimal, plus we were tasked with finding the \emph{best} number system for use,
+If we could hit the reset-button on how we count
+using decimal numbers, and were tasked with finding the \emph{best} number system for use,
 would we pick decimal?
 
 I know, I know, until we attempt to define what ``best'' means, it's impossible to
@@ -109,22 +109,22 @@ But please bear with me as we flesh this out a bit.
 
 Let's ignore that the fact
 that Sesame Street drilled into several generations of kids heads
-that ``10'' means ten things. Oh, and that the most of the world 
+that ``10'' means ten things. Oh, and that the most of the world
 has been using decimal for about 600 to 800 years or so; So ignoring those
 insurmountable obstacles\dots{}
 
-Then what criteria might we use to select the method by which we count
-and give names to each individual integer?
+Then what criteria might we use to select which number system we'd adopt for counting?
 
-I think we can discount many esoteric systems, for example mixed radix systems, as
-being impractical for day-to-day use. They are more mathematical curiosities than
-practical systems for everyday use.
+I think we can discount many esoteric systems, for example mixed radix systems,
+or base-\(e\), as being impractical for day-to-day use. They are interesting
+and instructive mathematical curiosities but impractical for everyday use.
 
-We can also discount more ancient number systems which introduced
-new symbols for larger and larger numbers (e.g. Roman Numerals) since you can't cover
-all the integers with such a system.
+We can also discount ancient number systems which introduced
+new symbols for larger and larger numbers, since they don't
+cover all the integers. 
+For example Roman Numerals only effectively allowed counting upto 4999.
 
-I believe the choice boils down to which base should we choose given the...
+I believe our choice boils down to the question: ``Which value for \(b\) should we choose given the following theorem?''
 
 \section*{Basis Representation Theorem}
 \begin{jprIn}
@@ -141,20 +141,19 @@ Definition: $n$ is represented in base-$b$ by the string
 of base-$b$-digits $(d_kd_{k-1}{\cdots}d_2d_1d_0)_b$
 \end{jprIn}
 
-Our beloved theorem doesn't say anything about the practicalities behind
+The theorem doesn't say anything about the practicalities behind
 using a given base. For example, it's convenient to have 
 simple symbols to represent each integer from \(0, 1, \dots{}, (b-1)\) so
-that any number can be written in way that's easy for us to parse.
+that any number can be written in way that's easy for us to read. Needless to say,
+in decimal we use these symbols for the integers zero through nine: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
 
-We don't live in a world where we routinely deal with numbers up in the nose-bleed
-heights. Most of us know that 1 billion is equal to \(10^9\), and probably as many
-people know that 1 Trillion is \(10^12\), but it starts getting hazy beyond that.
-For example, Quadrillion and Quintillion mean what?
-We also have a few names for some special cases like Googol which is \(10^100\).
-Anyway, the point is, we live
-down near zero, not up in the heights, and we need words to help talk about our
-day-to-day numbers.
+Computer Scientists add the letters A, B, C, D, E, F to represent the integers ten through fifteen
+when writing numbers in base-sixteen. For example the number (10F2)\(_{16}\) is the decimal integer
+4,338.
 
-The words we use a intimately tied to our choice of base-ten.
+Also we possibly need new words for the numbers that go along with our choice for \(b\).
+For example the words ``fourteen'' and ``twenty-seven'' are intimately tied with their meaning in decimal.
+It's unclear how you'd even say ``14'' or ``27'' in a different base. For example ``14'' in base-5 is really the
+integer nine.
 
 \end{document}
