@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+\usepackage{lmodern}
 
 %%% PAGE DIMENSIONS
 \usepackage{geometry} % to change the page dimensions
@@ -48,8 +49,11 @@
 \usepackage{relsize}
 \usepackage{wasysym}
 %\usepackage{romannum}
+\usepackage{perpage}
+\usepackage[bottom]{footmisc}
+\MakePerPage{footnote}
 
-\newcommand{\jprVersion}{v16} % version
+\newcommand{\jprVersion}{v17} % version
  
 \usepackage[pdftex,
             pdfauthor={James Philip Rowell},
@@ -81,10 +85,6 @@
 \renewcommand*{\thefootnote}{%
   \fnsymbolwrap{\value{footnote}}%
 }
-
-\usepackage{perpage}
-\usepackage[bottom]{footmisc}
-\MakePerPage{footnote}
 
 %%% END Article customizations
 
@@ -138,12 +138,11 @@ Roman system only effectively allowed counting up to 4999.
 
 Even though we
 use different symbols
-than
+from
 the ancient Romans, we are all
 talking about the same set of numbers underneath,
 called integers\footnote{Integers are 
 the set of all the positive whole numbers, as well as zero and all the negative counterparts to each positive number.
-%We denote the set of integers with this symbol: $\mathbb{Z}$.
 }.
 Mathematics deals with numbers in a pure sort of way, divorced from specific symbols
 used to represent a given number.
@@ -151,10 +150,6 @@ When we talk about positive integers in mathematics
 we're really talking about different sized piles of apples.
 Each successive integer
 represents a successively larger pile of apples.
-% In fact sometimes (when thinking about mathy-stuff)
-% it's helpful to try to forget about the specific symbols
-% we use like ``9'' and ``10'' or ``IX'' and ``X'' and think about each integer as a specific sized pile
-% of apples.
 
 \emph{However}, we use decimal-numbers all the time in mathematics,
 rarely thinking in terms of piles of apples.
@@ -295,11 +290,6 @@ i.e., there is no limit on how big $k$ can be.
 
 The notation of $10^k$ is handy and extends
 to the case when $k=0$ and $k=1$.
-%\footnote{$10^k$ also extends to the cases
-%when $k$ is negative as in $10^{-1}$, or $10^{-2}$, etc.
-%which means $\frac{1}{10}$ and $\frac{1}{100}$ respectively
-%but those are called ``rational numbers''. We aren't concerning
-%ourselves with rational numbers in this paper.}
 
 So $10^1$ means\footnote{Don't forget to read $10^1$
 as ``ten-to-the-one''.} that there is only one ten multiplied together,
@@ -407,7 +397,6 @@ in our theorem. We might say:
 Every integer has a representation in base-ten.
 \end{jprIn}
 
-%\bigskip
 Something else we know intuitively is that each number written
 in base-ten represents only ONE integer. That is, there aren't two different
 sized piles of apples represented by the same decimal-number. Similarly there
@@ -590,18 +579,6 @@ where $0\le{}d_i<{1\hspace{-0.12em}0}$ for all $i$ in $\{0,1,2,\dots{},k\}$ and 
 Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\cdots}d_2d_1d_0$
 \end{jprIn}
 
-% \emph{Base-Ten Representation Theorem (close to final draft)}
-% \begin{jprIn}
-% For every positive integer $n$ there is a unique sequence
-% of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
-% 
-% \hspace{3em}$n=d_k{\cdot}{1\hspace{-0.12em}0}^k+d_{k-1}{\cdot}{1\hspace{-0.12em}0}^{k-1}+\dots+d_2{\cdot}{1\hspace{-0.12em}0}^2+d_1{\cdot}{1\hspace{-0.12em}0}^1+d_0{\cdot}{1\hspace{-0.12em}0}^0$
-% 
-% where $0\le{}d_i<10$ for all $i$ in $\{0,1,2,\dots{},k\}$ and $d_k\ne0$.
-% 
-% Definition: $n$ is represented in base-ten by the string of digits $d_kd_{k-1}{\cdots}d_2d_1d_0$
-% \end{jprIn}
-
 Our newly added ``Definition'' introduces exactly what it means to write
 the number out in base-ten; that is,
 we toss out all the extraneous stuff from our expression
@@ -617,32 +594,6 @@ I also threw in the opening statement
 since the theorem itself is defining what it even means to write out
 a multiple digit number, so until this theorem is established, ``10'' could
 mean anything.
-
-% We are so darn close, but there is one super-picky detail
-% that we should be concerned about.
-% Our theorem establishes what it means to represent a number in base-ten, so until
-% we've proven it, how can we actually use the first two-digit-number ``10'' to represent
-% the integer ten!? We need a symbol for ten in the theorem,
-% so what can we do?
-% 
-% Apart from ``10'' we don't have a symbol for the integer ten so
-% we have to make one up, how about $T$ for ``Ten'':
-% \begin{jprIn}
-% Let $T$ represent the integer ten.
-% 
-% For every positive integer $n$ there is a unique sequence
-% of integers $d_0, d_1, d_2,\dots{},d_k$ such that:
-% 
-% \hspace{3em}$n=d_k{\cdot}{T}^k+d_{k-1}{\cdot}{T}^{k-1}+\dots+d_2{\cdot}{T}^2+d_1{\cdot}{T}^1+d_0{\cdot}{T}^0$\\
-% \dots{} etc.
-% \end{jprIn}
-% That's a little confusing, so 
-% let's solve our problem by defining the 
-% two-digit-number ``10'' (i.e., a one followed by a zero) to be the integer ten.
-% It's OK - we're not violating any rules by doing this. At this point we're just defining
-% a symbol to stand in for the integer ten. Here's our
-% FINAL draft of the theorem:
-% \bigskip
 
 \section*{Generalize the Theorem}
 
@@ -698,8 +649,6 @@ four! What is ``11'' in base-two? Using our technique to
 describe the digits we see that it's ``One set of two, plus one unit'',
 in other words, three.
 
-% \break
-Here's how they count on Planet-Claire using base-two:
 \begin{center}
 \begin{tabular}{r l c r l}
 base-two & base-ten & \; \; \; \; & base-two & base-ten\\
@@ -757,7 +706,6 @@ to be zero or one.
 Following our line of reasoning this is what the Planet-Claire mathematicians would have
 come up with\dots
 
-% \break
 \section*{Base-Two Representation Theorem}
 \begin{jprIn}
 For every positive integer $n$ there is a unique
@@ -976,12 +924,6 @@ Each successively bigger pile of apples corresponds with each successive positiv
 We keep adding one more to get the next integer, we keep adding one more,
 over and over forever to get them all.
 
-% That is, each successive integer is one more than the previous one,
-% starting at 1, then one more
-% taking us to 2,
-% then 3, 4, 5, \dots{}ad~infinitum\footnote{``ad
-% infinitum'' means ``to infinity'', or ``continue forever, without limit''.}.
-
 This idea of being able to step one after the other,
 beginning at 1 and going forever is embodied within the principle of mathematical
 induction and is a basic property of the positive integers.
@@ -1054,7 +996,6 @@ Which is the trivial sum\footnote{The word ``sum'' here is used
 in the context of the expression
 we are trying to prove. In this case we are summing
 only one item thus it's ``trivial''.} of the first positive integer 1.
-%\bigskip
 
 Now for our ``induction step'': We assume the relationship is true for $n=k$; that is,
 \[1+2+3+\ldots+k=\frac{k(k+1)}{2}\]
@@ -1239,8 +1180,6 @@ In base-five $d_0\le{}3$;
 In base-ten $d_0\le{}8$.)\footnote{Please read the following
 bidirectional arrow symbol $\Leftrightarrow$
 as ``if and only if'' - it's like a logical ``equals'' sign}
-%\footnote{Use
-%the axiom of Distribution \big(i.e.; $ac+bc=(a+b)c$\big) to factor out the $b^0$ below.}
 {\small
 \begin{alignat*}{3}
   &&n
@@ -1272,7 +1211,6 @@ Case 2) $d_0=(b-1)$
 \begin{jprIn}
 Now we'll look at the case when the least-significant-digit of $n$ is \emph{exactly-equal-to}
 the largest value it can take in base-$b$.
-%(Note that  ``Case 1'' and ``Case 2'' cover all the possibilities for what $d_0$ can be.)
 (For example, in base-two
 $d_0=1$; in base-five
 $d_0=4$; in base-ten $d_0=9$.)
@@ -1284,9 +1222,6 @@ We're going to split this case into two cases.
 \item $d_0=(b-1)$ but \emph{at least one other} digit is not-equal-to $(b-1)$\\
 (eg. 782999 in base-ten).
 \end{enumerate}
-%
-%Then we're going to find out what happens when we add 1 to each case, thus giving us our
-%resultant expression for $n+1$
 
 Case 2a) ALL of the digits of $n$ are equal to $(b-1)$.
 \begin{jprIn}
