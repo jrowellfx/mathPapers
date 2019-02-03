@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+\usepackage{lmodern}
 
 %%% PAGE DIMENSIONS
 \usepackage{geometry} % to change the page dimensions
@@ -48,6 +49,9 @@
 \usepackage{relsize}
 \usepackage{wasysym}
 %\usepackage{romannum}
+\usepackage{perpage}
+\usepackage[bottom]{footmisc}
+\MakePerPage{footnote}
 
 \newcommand{\jprVersion}{v62} % version
  
@@ -81,10 +85,6 @@
 \renewcommand*{\thefootnote}{%
   \fnsymbolwrap{\value{footnote}}%
 }
-
-\usepackage{perpage}
-\usepackage[bottom]{footmisc}
-\MakePerPage{footnote}
 
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 
@@ -136,11 +136,9 @@ or constant (eg. \(a_1, a_k, m, n, i, p, q\)) in this
 paper is going to represent a non-negative integer, or occasionally a rational-number;
 However, we will almost always describe a rational-number in terms of one integer divided
 by another integer, like \(\frac{p}{q}\).}, say \(\frac{m}{q}\), can be
-% \emph{uniquely}
 written as an
 integer part, \(i\), plus a fractional\newline part, \(\frac{p}{q}\), such that
 \(\frac{m}{q} = i + \frac{p}{q}\), where \(0 \le{} \frac{p}{q} < 1\).
-%(note that \(i\) can be zero).
 
 So trying to represent any positive
 rational number \(\frac{m}{q}\) in the form of the theorem, the integer \(a_1\)
@@ -324,9 +322,8 @@ So assuming the lemma is true for \(k = n\), we show that it must be true for \(
   =\  &\frac{(n+1)!-1}{(n+1)!}
 \end{alignat*}
 }
-\dots{}thus establishing Lemma 1 for all values of \(k \ge 2\).\qquad QED.
+\dots{}thus establishing Lemma 1 for all values of \(k \ge 2\).\hspace*{\fill}QED
 
-% \bigskip % Need bigger skip this time.
 \vspace{18pt}
 The following lemma captures an idea that is perhaps most easily grasped by analogy to the
 basis-representation-theorem for integers. For base-ten numbers we can say,
@@ -378,10 +375,11 @@ For integers \(i,k\) where \(2\le{}i<k\),
   =\  &\frac{k!-1}{k!} - \frac{i!-1}{i!}\qquad \qquad \text{(by Lemma 1)}\\
   =\  &\frac{k!}{k!} - \frac{1}{k!} - \frac{i!}{i!} + \frac{1}{i!}\\
   =\  &\frac{1}{i!} - \frac{1}{k!}\\
-  <\  &\frac{1}{i!} \qquad \qquad \qquad \qquad \qquad \text{QED.}
+  <\  &\frac{1}{i!}
 \end{align*}
 \egroup
 }
+\hspace*{\fill}QED
 
 \section*{Definitions}
 
@@ -438,7 +436,7 @@ We're going to establish the equality
 of \(\mathcal{S}_k\) and \(\mathcal{F}_k\) by showing that some key properties
 of the two sets are the same; then by the
 pigeon-hole principle
-each element from one set must be equal to exactly one element from the other set
+each element from one set must be equal to exactly one element from the other set.
 Note that we will not describe how to equate one specific element
 to the other, just that it must be true that there is a one-to-one equality between such pairs.
 
@@ -509,9 +507,6 @@ that differ. In other words,
 \(a_2\!=\!b_2,\ a_3\!=\!b_3, \dots{},\ a_{i-1}\!=\!b_{i-1},\ a_i\!\ne{}\!b_i\).
 Without loss of generality, further suppose that \(a_i > b_i\).
 It follows that,
-% 
-% Because
-% of the equality of the two different representations for \(\frac{p}{k!}\) we can now write,
 
 {\footnotesize
 \bgroup
@@ -546,11 +541,6 @@ But \(a_i - b_i \ge{} 1\), so
 \(\frac{a_i - b_i}{i!} \ge{} \frac{1}{i!}\).
 \end{center}
 
-% In the case that \(i = k\) we get an immediate contradiction because 
-% equation \eqref{eqn1} tells us that \(\frac{a_i - b_i}{i!} = 0\) which is
-% clearly false.
-% 
-% So let's carry on assuming that \(i < k\)
 Furthermore, let's examine
 one of the terms
 on the right-side of \eqref{eqn1}, say
@@ -620,7 +610,7 @@ can be written as \(s = \frac{p}{k!}\), for some \(p\) where
 \(0\le{}\frac{p}{k!}<1\), and that \(\mathcal{F}_k\) contains \emph{every} such number,
 then by the pigeon-hole principle it follows that \(\mathcal{S}_k = \mathcal{F}_k\).
 
-QED.
+\hspace*{\fill}QED
 
 \section*{Corollary to Lemma 3}
 
@@ -740,7 +730,7 @@ hence by the transitivity of equality, and equation \eqref{eqn2} above,
 \(\mathcal{S} = \mathbb{Q}_{01}\).
 \end{center}
 
-QED.
+\hspace*{\fill}QED
 
 \section*{Corollary to Lemma 4}
 
@@ -764,22 +754,6 @@ and \(\frac{(k+1)\cdot{}p}{(k+1)!} \in \mathcal{F}_{k+1}\),
 therefore \(\frac{p}{k!} \in \mathcal{F}_{k+1}\),
 hence \(\mathcal{F}_k \subset \mathcal{F}_{k+1}\).
 
-% and
-% Lemma 3 tells us that \(\mathcal{F}_k = \mathcal{S}_k\),
-% so proving that 
-% \(\mathcal{F}_i\) is a proper subset of its successor \(\mathcal{F}_{i+1}, \forall i \ge{} 2\)
-% means that it must be true for \(\mathcal{S}_i, \forall i \ge{} 2\).
-% However it's interesting to see the specific
-% mechanisms that makes each sequence of supersets true without relying on Lemma 3.
-% We'll start with \(\mathcal{F}_k\).
-
-% Since each successive set is larger, then by induction it is straightforward to conclude that
-% \(\mathcal{F}_2
-% \subset \mathcal{F}_3
-% \subset \mathcal{F}_4
-% \subset \dots{}
-% \), for all \(\mathcal{F}_i\), \(i \ge{} 2\).
-
 Similarly
 \(\mathcal{S}_2
 \subset \mathcal{S}_3
@@ -796,14 +770,6 @@ and
 \in \mathcal{S}_{k+1}\). Hence 
 \(\mathcal{S}_k \subset \mathcal{S}_{k+1}\).
 
-% Since each successive set's size grow larger, then
-% by induction it is straightforward to conclude that
-% \(\mathcal{S}_2
-% \subset \mathcal{S}_3
-% \subset \mathcal{S}_4
-% \subset \dots{}
-% \), for all \(\mathcal{S}_i\), \(i \ge{} 2\).
-
 These infinite chains of super-sets helps us to think about the
 meaning of our new sets
 \(\mathcal{F}\) and \(\mathcal{S}\), each of which are defined as a union of 
@@ -817,10 +783,6 @@ the whole previous collection out, then using the entire contents of
 the new largest set in its place. Either way of thinking about
 building up our infinite union of sets is valid.
 
-% For all \(a \in \mathcal{S}\), the factorial-representation for \(a\) is unique.
-% This is fairly trivial to see, because by definition an element of a set is unique,
-% and since no elements ever disappear from a union of sets, then it must be true.
-% However to shed more light on the matter, 
 So once a particular rational number \(\frac{p}{q} \in \mathbb{Q}_{01}\)
 finds it's way into one of the sets \(\mathcal{S}_i\) for some \(i\), then it will forever
 be in all successive sets \(\mathcal{S}_n\) for \(n > i\), and it's factorial-representation is
@@ -880,8 +842,6 @@ unique factorial-representation for \(\frac{p}{q}\).
 
 So \(\frac{p}{q} = \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_n}{n!} \in \mathcal{S}_n\), for some
 \(n \ge{} 2\).
-% , and this sum is uniquely associated with \(\frac{p}{q}\).
-% for all rational numbers \(\frac{p}{q}\).
 If we choose \(k\) such that \(a_k \ne{} 0 \) but \(a_{k+1} =
 a_{k+2} =
 a_{k+3} =
@@ -892,7 +852,7 @@ a_{n} = 0\) then we can satisfy the condition that the last term in the sum is n
 \(a_1 + \frac{a_2}{2!} + \frac{a_3}{3!} + \dots{} + \frac{a_k}{k!}\)
 is uniquely associated with the rational number \(\frac{j}{q}\).
 
-QED.
+\hspace*{\fill}QED
 
 \break
 \section*{Additional Observations}
@@ -978,7 +938,6 @@ definitely in \(\mathcal{S}_5\) because,
 \setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
 \begin{center}
 \begin{equation*}
-% \frac{1}{5} = 
 \frac{0}{2}
 + \frac{1}{2\cdot{}3}
 + \frac{0}{2\cdot{}3\cdot{}4}
@@ -1002,14 +961,6 @@ Also, \(
 \frac{ 4}{6},
 \frac{ 5}{6}
 \}
-% = \{
-% \frac{ 0}{6},
-% \frac{ 1}{6},
-% \frac{ 1}{3},
-% \frac{ 1}{2},
-% \frac{ 2}{3},
-% \frac{ 5}{6}
-% \}
 \),
 which demonstrates the claim that \(\mathcal{S}_3\)
 contains \(\frac{p}{6}\),\newline where \(0 \le{} \frac{p}{6} < 1\).
@@ -1028,15 +979,4 @@ because we can't point to any particular \(\mathcal{S}_k\) that the fractional-p
 Not surprising really, since this number is the well known constant \(e\).
 Is this a proof that \(e\) is irrational?
 
-% Also, I think it is easy to demonstrate the following,
-% where \(\mathbb{Q}^+\) is the set of all non-negative rational numbers:
-% 
-% {\small
-% \begin{gather*}
-% \mathbb{Q}^+ = \{1\} \cup \bigcup\limits_{k=2}^{\infty} \{k\} \cup \mathcal{S}_k,
-% \end{gather*}
-% }
-% 
-% which suggests an easy way to show that \(\mathbb{Q}^+\) is countably infinite.
-% 
 \end{document}
