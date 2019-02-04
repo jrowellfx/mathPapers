@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+\usepackage{lmodern}
 
 %%% PAGE DIMENSIONS
 \usepackage{geometry} % to change the page dimensions
@@ -48,8 +49,11 @@
 \usepackage{relsize}
 \usepackage{wasysym}
 %\usepackage{romannum}
+\usepackage{perpage}
+\usepackage[bottom]{footmisc}
+\MakePerPage{footnote}
 
-\newcommand{\jprVersion}{v02} % version
+\newcommand{\jprVersion}{v03} % version
  
 \usepackage[pdftex,
             pdfauthor={James Philip Rowell},
@@ -81,10 +85,6 @@
 \renewcommand*{\thefootnote}{%
   \fnsymbolwrap{\value{footnote}}%
 }
-
-\usepackage{perpage}
-\usepackage[bottom]{footmisc}
-\MakePerPage{footnote}
 
 %%% END Article customizations
 
@@ -162,9 +162,8 @@ Assume the lemma is true for \(n=k\) and prove it true for \(n=k+1\).
 \end{alignat*}
 }
 \end{jprIn}
-QED
+\hspace*{\fill}QED
 
-As a reminder, a statement of the ``Euclidean Division Theorem'' follows,
 \section*{Euclidean Division Theorem}
 \begin{jprIn}
 For all integers \(a\) and \(b\) such that \(b>0\),
@@ -230,8 +229,10 @@ q_{k-3} &= (((d_k)b + d_{k-1})b + d_{k-2})b + d_{k-3},\\
 \intertext{finally ending with,}
 n &= (((\dots{}(((d_k)b + d_{k-1})b + d_{k-2})b + \dots{} d_{2})b + d_{1})b + d_0)
 \end{alignat*}
-By an application of our lemma (noting the change of indices: \(d_k = c_0,
-d_{k-1} = c_1, \dots{},\newline d_1 = c_{k-1}, d_0 = c_k\)), we can conclude that:
+By an application of our lemma, where we substitute
+\(d_k = c_0,
+d_{k-1} = c_1, \dots{},\newline d_1 = c_{k-1}, d_0 = c_k\) (whose only purpose is to
+swap the indices of the coefficients from ascending to descending), we can conclude that:
 \[n = d_kb^k+d_{k-1}b^{k-1}+\dots+d_2b^2+d_1b^1+d_0b^0.\]
 Furthermore \(0\le{}d_i<b\) for all \(i\) in \(\{0,1,2,\dots{},k\}\) and \(d_k\ne0\).
 
@@ -239,6 +240,6 @@ Finally the ``Euclidean Division Theorem'' guarantees that each sequence
 of integers \(d_0, d_1, d_2, \dots{}, d_k\) is unique
 because each \(q_i\) and \(d_i\) resulting from each division is unique.
 
-QED
+\hspace*{\fill}QED
 
 \end{document}
