@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+\usepackage{lmodern}
 
 %%% PAGE DIMENSIONS
 \usepackage{geometry} % to change the page dimensions
@@ -49,8 +50,11 @@
 \usepackage{relsize}
 \usepackage{wasysym}
 %\usepackage{romannum}
+\usepackage{perpage}
+\usepackage[bottom]{footmisc}
+\MakePerPage{footnote}
 
-\newcommand{\jprVersion}{v33} % version
+\newcommand{\jprVersion}{v34} % version
  
 \usepackage[pdftex,
             pdfauthor={James Philip Rowell},
@@ -84,10 +88,6 @@
 \renewcommand*{\thefootnote}{%
   \fnsymbolwrap{\value{footnote}}%
 }
-
-\usepackage{perpage}
-\usepackage[bottom]{footmisc}
-\MakePerPage{footnote}
 
 %%% END Article customizations
 
@@ -342,8 +342,9 @@ $m\mid{}(b-1)$ then,
 \[b^k\equiv1\pmod{m}\text{, for all integers }k\ge0\]
 
 \break
-Proof of Lemma:
-\begin{jprIn}
+\section*{Proof of Lemma}
+%Proof of Lemma:
+%%% \begin{jprIn}
 Let $k$, $b$ and $m$ be integers as described in the lemma, then there exists an integer $q$ such that,
 \begin{alignat*}{4}
 &&m\cdot{}q
@@ -367,8 +368,8 @@ Let $k$, $b$ and $m$ be integers as described in the lemma, then there exists an
 &1
 &\equiv b^k &&\pmod{m} &&\quad\text{(Substitute }b\text{ for 1 since they are congruent)}
 \end{alignat*}
-QED - Lemma.
-\end{jprIn}
+%%% \end{jprIn}
+\hspace*{\fill}QED
 
 \section*{Proof of Magic-Number Theorem}
 
@@ -399,7 +400,7 @@ Also let $m$ be a positive integer such that $m\mid{}(b-1)$. Therefore,
 &\equiv d_k+d_{k-1}+\dots+d_2+d_1+d_0 &&\pmod{m} &&\quad\text{(Substitute sum of digits for }n\text{)}
 \end{alignat*}
 }
-QED
+\hspace*{\fill}QED
 \section*{Epilogue}
 It's amazing how simple is is to prove our theorem using modular arithmetic. I believe the magic-number-theorem
 isn't usually granted any special status (like giving it a name and adding a new
