@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+\usepackage{lmodern}
 
 %%% PAGE DIMENSIONS
 \usepackage{geometry} % to change the page dimensions
@@ -48,10 +49,15 @@
 \usepackage{relsize}
 \usepackage{wasysym}
 %\usepackage{romannum}
+\usepackage{perpage}
+\usepackage[bottom]{footmisc}
+\MakePerPage{footnote}
+
+\newcommand{\jprVersion}{v09} % version
  
 \usepackage[pdftex,
             pdfauthor={James Philip Rowell},
-            pdftitle={\jobname},
+            pdftitle={\jobname.\jprVersion},
             pdfsubject={Proof of Chapter 1, Section 5, Examples III, Number 3 from G.H. Hardy `A Course of Pure Mathematics'.},
             pdfkeywords={approximation, square root of two, rational numbers, theorem, proof, mathematics, number theory, Hardy, A Course of Pure Mathematics},
             pdfproducer={Latex},
@@ -80,17 +86,13 @@
   \fnsymbolwrap{\value{footnote}}%
 }
 
-\usepackage{perpage}
-\usepackage[bottom]{footmisc}
-\MakePerPage{footnote}
-
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 
 %%% END Article customizations
 
 \author{James Philip Rowell}
 \title{\vspace{-1.5cm}Rational Approximations to $\sqrt{2}$}
-\date{} % Activate to display a given date or no date (if empty), otherwise the current date is printed 
+\date{\vspace{-0.5cm}\footnotesize\today\ (\jprVersion)}
 \begin{document}
 \maketitle
 
@@ -195,7 +197,7 @@ Let \(m, n\) and \(a\) be integers, where \(m\) and \(n\) are positive and \(a \
   \text{\hspace{0.5em}}&=\text{\hspace{0.5em}}
   \frac{m^2}{n^2}+\frac{a}{n^2}\\
 \end{alignat*}
-\centerline{QED}
+\hspace*{\fill}QED
 
 \section*{Proof of Theorem}
 Define the `error' of a rational approximation to $\sqrt{2}$ as the difference between the
@@ -222,6 +224,6 @@ If $\frac{m^2}{n^2} < 2$ then $a$ is positive therefore $\frac{(m+2n)}{(m+n)} > 
 If $\frac{m^2}{n^2} > 2$ then $a$ is negative therefore $\frac{(m+2n)}{(m+n)} < 2$.
 
 \bigskip
-\centerline{QED}
+\hspace*{\fill}QED
 
 \end{document}
