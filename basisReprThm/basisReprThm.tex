@@ -53,7 +53,7 @@
 \usepackage[bottom]{footmisc}
 \MakePerPage{footnote}
 
-\newcommand{\jprVersion}{v17} % version
+\newcommand{\jprVersion}{v18} % version
  
 \usepackage[pdftex,
             pdfauthor={James Philip Rowell},
@@ -1017,7 +1017,9 @@ start to work with our induction-assumption and see where it leads.
 Which proves young Gauss's expression is true for
 the positive integer $n = k+1$ whenever it's true for $n = k$; so
 by the principle of mathematical induction,
-the expression is true for all positive integers. QED\footnote{``QED'' - is
+the expression is true for all positive integers.
+
+\hspace*{\fill}QED\footnote{``QED'' - is
 often used at the conclusion of a proof to state that it's
 done - it's an acronym for the Latin phrase
 ``quod erat demonstrandum'' which means ``that which was to be demonstrated''.
@@ -1046,7 +1048,7 @@ Then we prove the following when \(n = k + 1\),
 =\ &\frac{b^{k+1}+b^k-b^k-1}{b-1} &&\text{(Reorder terms (Associativity).)}\\
 =\ &\frac{b^{k+1}-1}{b-1} &&\text{(Adding then subtracting }b^k\text{ is zero.)}
 \end{alignat*}
-QED
+\hspace*{\fill}QED
 \section*{Idea behind Induction Proof for the Basis-Reprn-Thm}
 Using the
 principle of mathematical induction 
@@ -1312,7 +1314,7 @@ always has a base-$b$-representation whenever $n$ does.
 Having also established the base-case, therefore by the principle of mathematical induction
 all positive integers have a base-$b$-representation.
 
-QED
+\hspace*{\fill}QED
 \end{jprIn}
 
 \section*{Idea behind Uniqueness Proof for the Basis-Reprn-Thm}
@@ -1410,7 +1412,7 @@ placed on the values for $b$ and $r$, then the Euclidean Division Theorem tells 
 that $q$ and $r$ are unique, therefore 
 $q=0$ and $r=0$ is the only solution to this equation.
 
-QED
+\hspace*{\fill}QED
 \end{jprIn}
 
 \break
@@ -1467,9 +1469,9 @@ But $d_j-c_j = 0$ if and only if $d_j = c_j$
 contradicting our assumption that $d_j\ne{}c_j$. This implies that the initial assumption that ``$n$
 is not unique'' is \emph{false}, in other words:
 \begin{center}
-The base-$b$ representation of $n$ is unique.\\
-QED
+The base-$b$ representation of $n$ is unique.
 \end{center}
+\hspace*{\fill}QED
 
 \bigskip
 Since we have proven that a base-$b$-representation exists for ALL the positive integers \emph{and}
