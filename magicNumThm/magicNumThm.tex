@@ -54,7 +54,7 @@
 \usepackage[bottom]{footmisc}
 \MakePerPage{footnote}
 
-\newcommand{\jprVersion}{v34} % version
+\newcommand{\jprVersion}{v35} % version
  
 \usepackage[pdftex,
             pdfauthor={James Philip Rowell},
@@ -115,7 +115,7 @@ Is A Magic Number}''
 which most kids from the 70's/80's know -
 However referring to 9 as a magic-number isn't
 as well known\footnote{According to my own \emph{highly scientific (cough cough)}
-informal poll conducted Facebook, %\today{}
+informal poll conducted on Facebook, %\today{}
 ``9'' is NOT the first thing that pops into people's heads when they
 hear the phrase ``magic-number'' - in fact no one answered ``9'' in my poll.}.
 
@@ -146,7 +146,7 @@ is divisible by 9.
 For example:
 \begin{jprIn}
 $9^5=9\cdot{}9\cdot{}9\cdot{}9\cdot{}9=59049$
-\quad and \quad $5+9+0+4+9=27$ \quad and \quad $\frac{27}{9} = 3$.
+\quad and \quad $5+9+0+4+9=27$ \quad where \quad $\frac{27}{9} = 3$.
 \end{jprIn}
 
 But 3 is also has this magic-number property, for example:
@@ -171,10 +171,15 @@ I'm guessing that they probably use some form of positional-notation,
 but instead of base-ten they probably use base-7, base-21,
 or base-49\footnote{For an understanding of alternate bases please see
 the paper ``\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0}
-{Counting}'' also by James Rowell}.
+{Counting}'' also by James Rowell}, so they would have different magic-numbers from us.
 
-Let's examine some numbers
-in other bases - Note the first number being multiplied versus the base of the converted-number.
+Let's examine some numbers converted from our familiar base-ten
+to a different base.
+In each example, please note the 
+first number being multiplied versus the base of the converted-number. In our first example
+%the base is 5 and
+we look at the integer 268, which is $5-1$ (otherwise known as 4) times 67 but we examine it written in
+base-5. See how when we sum up the digits of the converted number, the sum is divisible by 4.
 %{\small
 %\begin{itemize}
 %\item $4\cdot{}67=268$ in base-5 is $(2033)_5$ and $2+0+3+3=8$ ($\frac{8}{4}=2$).
@@ -186,11 +191,11 @@ in other bases - Note the first number being multiplied versus the base of the c
 %}
 %% {\small
 \begin{alignat*}{8}
- 4&\cdot{}67=268          &&\text{ in base-5 is } (2033)_5       &&\quad\text{and}\quad &     2+0+3+3&=8  &&\quad(\tfrac{8}{4}=2) \\
- 7&\cdot{}181=1267        &&\text{ in base-8 is } (2363)_8       &&\quad\text{and}\quad &     2+3+6+3&=14 &&\quad(\tfrac{14}{7}=2) \\
-15&\cdot{}23=345          &&\text{ in base-16 is } (159)_{16}    &&\quad\text{and}\quad &       1+5+9&=15 &&\quad(\tfrac{15}{15}=1) \\
-20&\cdot{}908249=18164980 &&\text{ in base-21 is } (498991)_{21} &&\quad\text{and}\quad & 4+9+8+9+9+1&=40 &&\quad(\tfrac{40}{20}=2) \\
-30&\cdot{}35951=1078530   &&\text{ in base-31 is } (15699)_{31}  &&\quad\text{and}\quad &   1+5+6+9+9&=30 &&\quad(\tfrac{30}{30}=1)
+ 4&\cdot{}67=268          &&\text{ in base-5 is } (2033)_5       &&\quad\text{but}\quad &     2+0+3+3&=8  &&\quad\text{and } (\tfrac{8}{4}=2) \\
+ 7&\cdot{}181=1267        &&\text{ in base-8 is } (2363)_8       &&\quad\text{but}\quad &     2+3+6+3&=14 &&\quad\text{and } (\tfrac{14}{7}=2) \\
+15&\cdot{}23=345          &&\text{ in base-16 is } (159)_{16}    &&\quad\text{but}\quad &       1+5+9&=15 &&\quad\text{and } (\tfrac{15}{15}=1) \\
+20&\cdot{}908249=18164980 &&\text{ in base-21 is } (498991)_{21} &&\quad\text{but}\quad & 4+9+8+9+9+1&=40 &&\quad\text{and } (\tfrac{40}{20}=2) \\
+30&\cdot{}35951=1078530   &&\text{ in base-31 is } (15699)_{31}  &&\quad\text{but}\quad &   1+5+6+9+9&=30 &&\quad\text{and } (\tfrac{30}{30}=1)
 \end{alignat*}
 %% }
 Notice the pattern in our examples:
