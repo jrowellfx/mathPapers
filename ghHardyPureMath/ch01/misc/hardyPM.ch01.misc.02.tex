@@ -53,7 +53,7 @@
 \usepackage[bottom]{footmisc}
 \MakePerPage{footnote}
 
-\newcommand{\jprVersion}{v62} % version
+\newcommand{\jprVersion}{v63} % version
  
 \usepackage[pdftex,
             pdfauthor={James Philip Rowell},
@@ -103,6 +103,8 @@ presents us with, and asks us to prove, a fascinating result.
 The theorem feels like what the `\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0}
 {basis-representation-theorem}'
 is for integers, but for rational numbers \dots{} beautiful!
+
+As a bonus, we can use the following theorem to prove that the famous mathematical constant \(e\) is irrational with almost no extra effort!
 
 \section*{Factorial Representation Theorem\footnote{The theorem is not named in the textbook, so I named it.}}
 
@@ -971,12 +973,26 @@ will be found by choosing the smallest
 \(k\) such that \(q\) divides \(k!\)\! .
 
 However, I'll leave that examination for another day.
+\subsubsection*{Bonus: Proof that \(e\) is irrational.}
 
-The number 
-\(2\!+\!\frac{1}{2!}\!+\!\frac{1}{3!}\!+\!\frac{1}{4!}\!+\!\frac{1}{5!}\!+\!\dots{}\) can't
-be a rational number, as its fractional-part is not in \(\mathcal{S}\)
-because we can't point to any particular \(\mathcal{S}_k\) that the fractional-part would be a member of.
-Not surprising really, since this number is the well known constant \(e\).
-Is this a proof that \(e\) is irrational?
+It is well known that the mathematical constant \(e\) can be expressed as follows:
+
+{\small
+\bgroup                                  %% open the group
+\setlength{\abovedisplayskip}{0pt}       %% effective inside the group    
+\begin{center}
+\begin{equation*}
+e = 2 + \frac{1}{2!} + \frac{1}{3!} + \frac{1}{4!} + \frac{1}{5!} + \dots{}. 
+\end{equation*}
+\end{center}
+\egroup
+}
+
+
+Its
+easy to see that its fractional-part is not in \(\mathcal{S}\)
+because we can't point to any particular \(\mathcal{S}_k\) that it would be a member of.
+
+Therefore \(e\) is irrational.
 
 \end{document}
