@@ -176,7 +176,7 @@ the paper ``\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl
 {Counting}'' also by James Rowell}, so they would have different magic-numbers from us.
 
 Let's examine some numbers converted from our familiar base-ten
-to a different base.
+to different bases.
 In each example, let's multiply the base-minus-1 with some other number.
 268 is our first example, which is 4 times 67 but we'll look at it in base-5.
 Notice how the sum of the digits of the base-5
@@ -201,9 +201,13 @@ representation of 268 is divisible by 4.
 %% }
 Notice the pattern in our examples:
 $b-1$ acts like a magic-number in base-$b$.
-As with the number 4 in the first example:
-clearly 4 divides 268 (sixty-seven times),
-but when writing out 268 in base-5 we see that the sum of those digits is also divisible by 4.
+In the first example 4 divides 268 (sixty-seven times),
+but when writing out 268 in base-5 we can see that the
+sum of those digits is also divisible by 4.
+
+Similarly in the second example 7 divides 1267, and 1267 written in base-8 
+shows us that the sum of those digits is also divisible by 7. Similar story with the
+remaining examples.
 
 Let's take a look at some other examples in base-31.
 It appears that 2, 3, 5, 6, 10, 15 (along with 30 above)
@@ -234,11 +238,11 @@ we know that all numbers are divisible by 1, and adding up any set of digits is 
 divisible by 1, but this isn't very interesting
 so let's exclude 1 from being considered as a magic-number - it's not helpful information.
 
+\break
+
 Let's review what it means for a number to be divisible 
 by another
 number\footnote{``\href {https://www.dropbox.com/s/bwmrffmkcidnf27/basisReprThm.pdf?dl=0} {Counting}'' p. 21}.
-
-\break
 \section*{Euclidean Division Theorem}
 \begin{jprIn}
 For all integers $a$ and $b$ such that $b\ne0$,
