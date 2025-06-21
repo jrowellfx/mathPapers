@@ -2,7 +2,7 @@
 
 This directory contains the current up-to-date and working copy
 of James Philip Rowell's paper entitled "Counting"; the tex
-source of which is the file:
+source is the file:
 
 ```
     basisReprThm.tex,
