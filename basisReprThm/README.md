@@ -1,14 +1,17 @@
 # Basis Representation Theorem
+
 This directory contains the current up-to-date and working copy
 of James Philip Rowell's paper entitled "Counting"; the tex
 source of which is the file:
 
+```
     basisReprThm.tex,
+```
+which has been TeXed, with `pdflatex`  and typeset into the file:
 
-which has been TeXed and typeset into the file:
-
+```
     basisReprThm.pdf.
-
+```
 Use "git log --follow basisRepnThm.pdf" (for example) to get a
 complete log of changes to these files, as a name change
 using "git mv" was made at one point preventing typical
